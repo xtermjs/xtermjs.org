@@ -1,0 +1,13 @@
+---
+layout: default
+permalink: /
+---
+
+<div class="home">
+
+  <article>
+  	{% capture about %}{% include xtermjs-description.md %}{% endcapture %}
+    {{ about | markdownify }}
+  </article>
+
+</div>
