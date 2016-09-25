@@ -6,14 +6,8 @@ title: Documentation
 
 <h2>Guides</h2>
 
+{% include docs-categoty-article-list.html category="Guides" %}
+
 <h2>API Reference</h2>
 
-<ul class="docs-list">
-  {% for doc in site.docs %}
-  {% if doc.category == 'API' %}
-  <li>
-    <a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a>
-  </li>
-  {% endif %}
-  {% endfor %}
-</ul>
+{% include docs-categoty-article-list.html category="API" %}
