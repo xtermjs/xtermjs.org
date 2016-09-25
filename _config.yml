@@ -4,6 +4,8 @@ description: Terminal front-end component written in JavaScript that works in th
 baseurl: ""
 url: "http://xtermjs.org"
 
+version: "2.0.0"
+
 markdown: kramdown
 
 defaults:
@@ -14,4 +16,6 @@ include:
   - _pages
 
 collections:
-    docs: {output: true, permalink: '/docs/:path/'}
+    docs:
+      output: true
+      permalink: '/docs/:path/'

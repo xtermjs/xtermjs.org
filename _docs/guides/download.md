@@ -3,7 +3,7 @@ title: Downloading
 category: Guides
 ---
 
-There are several ways to download xterm.js, depending on the way you want to consume it inside your JavaScript application. We suggest strongly though using a package manager like [NPM](npmjs.org/package/xterm) or [Bower](http://bower.io/).
+There are several ways to download xterm.js, depending on the way you want to consume it inside your JavaScript application. We suggest strongly though using a package manager like [NPM](https://npmjs.org/package/xterm) or [Bower](https://bower.io/).
 
 You can either download official releases of xterm.js or arbitrary commits, which is not encouraged for production usage. All the production ready releases of xterm.js are available at [https://github.com/sourcelair/xterm.js/releases](https://github.com/sourcelair/xterm.js/releases).
 
