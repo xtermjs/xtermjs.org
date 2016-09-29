@@ -16,6 +16,6 @@ include:
   - _pages
 
 collections:
-    docs:
-      output: true
-      permalink: '/docs/:path/'
+  docs:
+    output: true
+    permalink: '/docs/:path/'
