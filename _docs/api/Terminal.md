@@ -35,65 +35,6 @@ term.textarea.onkeydown = function (e) {
 }
 ```
 
-## Events
-
-The `Terminal` instances emit the following events.
-
-### `blur`
-
-Emitted when the terminal blurs (loses focus).
-
-### `data`
-
-- `data` - String - The data to be handled by the terminal
-
-Emitted when a chunch of data is being dispatched to the terminal for handling.
-
-### `focus`
-
-Emitted when the terminal gets focus.
-
-### `key`
-
-- `key` - String - The key that got handled
-- `e` - KeyboardEvent - The original `keyDown` or `keyPress` event
-
-Emitted when the terminal handles a keydown or keypress event.
-
-### `keydown`
-
-- `e` - KeyboardEvent - The original `keyDown`
-
-Emitted after a `keyDown` event on the terminal.
-
-### `keydown`
-
-- `e` - KeyboardEvent - The original `keyPress`
-
-Emitted after a `keyPress` event on the terminal.
-
-### `open`
-
-Emitted when the terminal gets opened in a DOM element.
-
-### `refresh`
-
-- `data` - Object - `{element: this.element,  start: start, end: end}`
-
-Emitted when the terminal gets a content refresh (re-render).
-
-### `resize`
-
-- `data` - Object - `{terminal: this, cols: x, rows: y}`
-
-Emitted when the terminal gets resized to a new geometry.
-
-### `scroll`
-
-- `ydisp` - Number - The number of rows the terminal scrolled down (or up if negative).
-
-Emitted when the terminal scrolls vertically
-
 
 ## Methods
 
@@ -101,13 +42,13 @@ Emitted when the terminal scrolls vertically
 
 - `customKeydownHandler` - Function - The custom KeyboardEvent handler to attach.
 
-Run a custom keydown handler before any keys are processed and
-allow consumers to decide what keys should be processed by the terminal.
+Attach a custom keydown handler to allow consumers to allow certain key strokes
+to skip processing by the terminal.
 
 ```javascript
-// Completely ignore the `Esc` key using a custom keydown handler.
+// Completely ignore the `Tab` key using a custom keydown handler.
 term.attachCustomKeydownHandler(function (e) {
-  if (e.keyCode == 27) {
+  if (e.keyCode == 9) {
     // Do nothing
     e.preventDefault();
     return false;
@@ -117,7 +58,7 @@ term.attachCustomKeydownHandler(function (e) {
 
 ### `blur`
 
-Remove the focus from the terminal
+Remove the focus from the terminal.
 
 ```javascript
 term.blur();
@@ -185,20 +126,6 @@ Stop running a callback on an event.
 term.off('resize', logResize)
 ```
 
-### `emit(event, data)`
-
-- `event` - string - The event to emit on the terminal
-- `data` - Function - The data to emit along with the event
-
-Emit an event on the terminal.
-
-```javascript
-// Emit an event after handling a keydown event along with the event object.
-term.attachCustomKeydownHandler(function (e) {
-  term.emit('keydownHandled', e)
-});
-```
-
 ### `open(parent)`
 
 - `parent` - HTMLElement - The DOM element to host the terminal
@@ -229,7 +156,7 @@ term.refresh(10, 20);
 
 ### `reset()`
 
-Reset the terminal; reconstruct the instance and re-render the whole screen.
+Reset the terminal; reconstruct the instance and re-render the whole buffer.
 
 ```javascript
 term.reset();
@@ -293,3 +220,67 @@ Writes the given text to the terminal, followed by a line break (`\n`).
 // Writes "Hello World!\n" in the terminal.
 term.write('Hello World!')
 ```
+
+
+## Events
+
+The `Terminal` instances emit the following events.
+
+You can listen to an event with the [`on`](#onevent-callback) method and
+stop listening to an event with the [`off`](#onevent-callback) method.
+
+### `blur`
+
+Emitted when the terminal blurs (loses focus).
+
+### `data`
+
+- `data` - String - The data to be handled by the terminal
+
+Emitted when a chunch of data is being dispatched to the terminal for handling.
+
+### `focus`
+
+Emitted when the terminal gets focus.
+
+### `key`
+
+- `key` - String - The key that got handled
+- `e` - KeyboardEvent - The original `keydown` or `keypress` event
+
+Emitted when the terminal handles a keydown or keypress event.
+
+### `keydown`
+
+- `e` - KeyboardEvent - The original `keydown`
+
+Emitted after a `keydown` event on the terminal.
+
+### `keypress`
+
+- `e` - KeyboardEvent - The original `keypress`
+
+Emitted after a `keypress` event on the terminal.
+
+### `open`
+
+Emitted when the terminal gets opened in a DOM element.
+
+### `refresh`
+
+- `data` - Object - `{element: this.element,  start: start, end: end}`
+
+Emitted when the terminal gets a content refresh (re-render).
+
+### `resize`
+
+- `data` - Object - `{terminal: this, cols: x, rows: y}`
+
+Emitted when the terminal gets resized to a new geometry.
+
+### `scrollDisp`
+
+- `ydisp` - Number - The number of rows the terminal scrolled down (or up if negative).
+
+Emitted when the terminal scrolls vertically
+

@@ -22,7 +22,7 @@ bower install --save xterm.js
 ```
 
 ## GitHub Releases
-All xterm.js releases are available as tar and zip archives at [https://github.com/sourcelair/xterm.js/releases](https://github.com/sourcelair/xterm.js/releases), to download them manually.
+All xterm.js releases are available as tar.gz and zip archives at [https://github.com/sourcelair/xterm.js/releases](https://github.com/sourcelair/xterm.js/releases), to download them manually.
 
 ## Clone the Git repository
 You can always clone the whole xterm.js repository and checkout any arbitrary commit you would like to use. We suggest not doing this though unless you are certain about your actions, as only official tagged releases of xterm.js are considered production-ready.
