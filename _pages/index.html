@@ -10,4 +10,22 @@ permalink: /
     {{ about | markdownify }}
   </article>
 
+  <h2>Quick start</h2>
+  {% highlight html %}
+  <!doctype html>
+  <html>
+    <head>
+      <link rel="stylesheet" href="bower_components/xterm.js/dist/xterm.css" />
+      <script src="bower_components/xterm.js/dist/xterm.js"></script>
+    </head>
+    <body>
+      <div id="terminal"></div>
+      <script>
+      	var term = new Terminal();
+        term.open(document.getElementById('#terminal'));
+        term.write('Hello from xterm.js $ ')
+      </script>
+    </body>
+  </html>
+  {% endhighlight %}
 </div>
