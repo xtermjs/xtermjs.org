@@ -1,0 +1,11 @@
+code {
+  color: #333;
+}
+
+a code {
+  color: $link-color;
+}
+
+a:hover code {
+  color: $link-hover-color;
+}

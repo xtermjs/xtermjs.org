@@ -1,0 +1,6 @@
+[*]
+indent_style = space
+indent_width = 2
+indent_size = 2
+insert_final_new_line = true
+trim_trailing_whitespace = true

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<article class="post" >
+	<header>
+		<h1>{{ page.title}}</h1>
+        <div clas="post-meta">
+        	<time><i class="fa fa-calendar"></i> {{ page.date | date: '%B %d, %Y' }}</time>
+            <span class="post-author">
+                <a href="https://github.com/{{ page.author }}" class="author-link ml-3"><img src="https://github.com/{{ page.author }}.png?size=36" alt="{{ page.author }}" class="avatar mr-2">{{ page.author }}</a>
+            </span>
+        </div>
+	</header>
+  {{ content }}
+</article>
+

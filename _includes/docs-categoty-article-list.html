@@ -1,0 +1,9 @@
+<ul class="docs-list">
+  {% for doc in site.docs %}
+  {% if doc.category == include.category %}
+  <li>
+    <a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>

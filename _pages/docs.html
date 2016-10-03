@@ -1,0 +1,23 @@
+---
+layout: page
+permalink: /docs/
+title: Documentation
+no_header: true
+---
+
+{{ site.docs.permalink }}
+
+<header class="docs-header" >
+	<h1>
+    <a href="{{ page.url }}">{{ page.title }}</a>
+    <span class="docs-version">{{ site.version }}</span>
+  </h1>
+</header>
+
+<h2>Guides</h2>
+
+{% include docs-categoty-article-list.html category="Guides" %}
+
+<h2>API Reference</h2>
+
+{% include docs-categoty-article-list.html category="API" %}

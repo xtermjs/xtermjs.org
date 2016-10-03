@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <span class="navbar-brand breadcrumbs">
+        <a href="/">xterm.js</a>
+        {% if layout.collection %}
+        /
+        <a href="{{ layout.collection_link }}">{{ layout.collection }}</a>
+        {% endif %}
+      </span>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/docs">Docs</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li>
+        <a href="https://github.com/sourcelair/xterm.js">
+        	<i class="fa fa-github"></i>
+        </a>
+      </li>
+    </ul>
+  </div><!-- /.container-fluid -->
+</nav>
