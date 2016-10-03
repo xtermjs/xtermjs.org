@@ -278,7 +278,7 @@ Emitted when the terminal gets a content refresh (re-render).
 
 Emitted when the terminal gets resized to a new geometry.
 
-### `scrollDisp`
+### `scroll`
 
 - `ydisp` - Number - The number of rows the terminal scrolled down (or up if negative).
 
