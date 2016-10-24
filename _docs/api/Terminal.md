@@ -13,6 +13,34 @@ var term = new Terminal();
 term.open(document.getElementById('xterm-container'));
 ```
 
+## Constructor
+
+Create a new terminal by using the `Terminal([options])` constructor.
+
+### Options
+
+#### `cursorBlink` (boolean)
+
+Whether the terminal cursor blinks
+
+#### `cols` (number)
+
+The number of columns of the terminal (horizontal size).
+
+#### `rows` (number)
+
+The number of rows of the terminal (vertical size).
+
+### Example
+
+```javascript
+var term = new Terminal({
+  cursorBlink: false,  // Do not blink the terminal's cursor
+  cols: 120,  // Set the terminal's width to 120 columns
+  rows: 80  // Set the terminal's height to 80 rows
+});
+```
+
 ## Attributes
 
 ### `element`
