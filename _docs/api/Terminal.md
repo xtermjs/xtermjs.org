@@ -206,7 +206,7 @@ term.resize(120, 80);
 
 - `n` - Number - The number of rows to scroll down (or up if negative)
 
-Resize the geometry of the terminal.
+Scroll the terminal by a number of lines.
 
 ```javascript
 // Scroll the terminal down by 5 rows
@@ -214,6 +214,36 @@ term.scrollDisp(5);
 
 // Then scroll up to the previous position
 term.scrollDisp(-5);
+```
+
+### `scrollPages(n)`
+
+- `n` - Number - The number of pages to scroll down (or up if negative)
+
+Scroll the terminal by a number of pages.
+
+```javascript
+// Scroll the terminal down 1 page
+term.scrollDisp(1);
+
+// Then scroll up to the previous position
+term.scrollDisp(-1);
+```
+
+### `scrollToTop()`
+
+Scrolls the terminal to the top of the buffer.
+
+```javascript
+term.scrollToTop();
+```
+
+### `scrollToBottom()`
+
+Scrolls the terminal to the bottom of the buffer.
+
+```javascript
+term.scrollToBottom();
 ```
 
 ### `setOption(key, value)`
