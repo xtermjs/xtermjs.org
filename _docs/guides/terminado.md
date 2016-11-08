@@ -3,9 +3,9 @@ title: Connecting to Terminado
 category: Guides
 ---
 
-Xterm.js can connect to backends other than the default node.js backend, as an example we will build a simple [Terminado](https://github.com/takluyver/terminado) application, and hook up to it with `Xterm.js`. `Terminado` is a python/tornado websocket host for terminal applications.
+Xterm.js can connect to backends other than the default node.js backend, as an example we will build a simple [Terminado](https://github.com/takluyver/terminado) application, and hook up to it with xterm.js. Terminado is a python/tornado websocket host for terminal applications.
 
-We begin by downloading and installing `Terminado` with `pip install terminado`.  The script for a basic `Terminado` application is surprisingly simple:
+We begin by downloading and installing Terminado with `pip install terminado`.  The script for a basic `Terminado` application is surprisingly simple:
 
 ```python
 import tornado.web
