@@ -33,7 +33,7 @@ This script (referred to as `app.py`) is adapted from the [`Terminado` "single" 
     <link rel="stylesheet" href="/dist/xterm.css" />
     <link rel="stylesheet" href="/demo/style.css" />
     <script src="/dist/xterm.js"></script>
-    <script src="/addons/terminado/terminado.js"></script>
+    <script src="/dist/addons/terminado/terminado.js"></script>
   </head>
   <body>
     <div class="container">
@@ -57,4 +57,4 @@ Save this file as `index.html` alongside `app.py` in the root directory of the `
 
 ## Terminado communications protocol
 
-The difference between the `terminadoAttach()` function provided by the `terminado` addon and the `attach()` function provided by the `attach` addon are minor. `Terminado` simply requires messages declare the type of data they carry by sending (for example) `['stdin', stdin_data]` instead of `stdin_data` over the websockets. The differences between the two addons can be easily seen by diff'ing the two addons' javascript files in the `addons` directory of the `Xterm.js` repository.
+The difference between the `terminadoAttach()` function provided by the `terminado` addon and the `attach()` function provided by the `attach` addon are minor. `Terminado` simply requires messages declare the type of data they carry by sending (for example) `['stdin', stdin_data]` instead of `stdin_data` over the websockets. The differences between the two addons can be easily seen by diff'ing the two addons' javascript files in the `dist/addons` directory of the `xterm.js` repository.
