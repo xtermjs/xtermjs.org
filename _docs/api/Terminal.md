@@ -31,6 +31,14 @@ The number of columns of the terminal (horizontal size).
 
 The number of rows of the terminal (vertical size).
 
+#### `scrollback` (number)
+
+The number of rows to be persisted in terminal buffer for scrolling (default: `1000`).
+
+#### `tabStopWidth` (number)
+
+The number of columns a tab stop should occupy (default: `8`).
+
 ### Example
 
 ```javascript
