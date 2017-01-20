@@ -340,5 +340,5 @@ Emitted when the terminal gets resized to a new geometry.
 
 - `ydisp` - Number - The number of rows the terminal scrolled down (or up if negative).
 
-Emitted when the terminal scrolls vertically
+Emitted when the terminal scrolls vertically. This event can be emitted manually to synchronize the scroll bar, this is useful if the terminal was resized while it was `display: none`.
 
