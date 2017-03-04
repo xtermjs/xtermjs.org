@@ -350,3 +350,8 @@ Emitted when the terminal gets resized to a new geometry.
 
 Emitted when the terminal scrolls vertically. This event can be emitted manually to synchronize the scroll bar, this is useful if the terminal was resized while it was `display: none`.
 
+### `title`
+
+- `title` - String - The title of the terminal
+
+Emitted when the terminal's title get updated via the [appropriate xterm escape sequence](http://tldp.org/HOWTO/Xterm-Title-3.html).
