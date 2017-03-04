@@ -48,7 +48,7 @@ To use an addon in a plain browser environment, just include the JavaScript file
   <head>
     <link rel="stylesheet" href="bower_components/xterm.js/dist/xterm.css" />
     <script src="bower_components/xterm.js/dist/xterm.js"></script>
-    <script src="bower_components/xterm.js/addons/fit.js"></script>
+    <script src="bower_components/xterm.js/dist/addons/fit.js"></script>
   </head>
   <body>
     <div id="terminal"></div>
