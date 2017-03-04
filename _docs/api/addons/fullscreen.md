@@ -24,7 +24,7 @@ term.toggleFullscreen();  // Now the terminal should be back to normal
 
 ### `toggleFullscreen([fullscreen])`
 
-- `fullscreen` - Boolean - Whether to set terminal to fullscreen mode or not
+- `fullscreen` - Boolean - Whether to set the terminal to fullscreen mode or not
 
 Set or unset the terminal's fullscreen mode according to the given argument. If no `fullscreen` argument was given, then invert the terminal's fullscreen mode.
 

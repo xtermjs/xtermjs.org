@@ -139,12 +139,12 @@ var doesTheTerminalCursorBlink = term.getOption('cursorBlink');
 - `addon` - String - The name of the add-on to load
 - `callback` - Function - The callback to run after running the add-on ()
 
-Attempts to load an add-on using [CommonJS](https://nodejs.org/docs/latest/api/modules.html) or with [RequireJS](http://requirejs.org/), if [CommonJS](https://nodejs.org/docs/latest/api/modules.html) is not available. If none of them is available a [console error](https://developer.mozilla.org/es/docs/Web/API/Console/error) is being printed.
+Attempts to load an add-on using [CommonJS](https://nodejs.org/docs/latest/api/modules.html) or with [RequireJS](http://requirejs.org/), if [CommonJS](https://nodejs.org/docs/latest/api/modules.html) is not available. If none of them are available, an [error is sent to the console](https://developer.mozilla.org/es/docs/Web/API/Console/error).
 
 > **Attention!** This is a static method, since it extends the basic `Terminal` prototype and not a single `Terminal` instance.
 
 ```javascript
-Terminal.loadAddon('fit'); // Loads the `fit` addon and adds it's methods to the Terminal prototype
+Terminal.loadAddon('fit'); // Loads the `fit` addon and adds its methods to the `Terminal` prototype
 
 var term = new Terminal();
 
