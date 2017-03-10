@@ -1,0 +1,1 @@
+<a href="https://github.com/{{ include.username }}"> <img class="avatar mr-2" src="https://github.com/{{ include.username }}.png?s=32" /> {{ include.username }}</a> for [{{ include.description }}]({% if include.pr %}https://github.com/sourcelair/xterm.js/pull/{{ include.pr }}{% else %}{{ include.link }}{% endif %})
