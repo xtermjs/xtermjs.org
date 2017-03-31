@@ -303,7 +303,7 @@ Writes the given text to the terminal, followed by a line break (`\n`).
 
 ```javascript
 // Writes "Hello World!\n" in the terminal.
-term.write('Hello World!')
+term.writeln('Hello World!')
 ```
 
 
