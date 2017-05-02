@@ -181,17 +181,20 @@ Stop running a callback on an event.
 term.off('resize', logResize)
 ```
 
-### `open(parent)`
+### `open(parent, focus)`
 
 - `parent` - HTMLElement - The DOM element to host the terminal
+- `focus` - Boolean - Focus the terminal, after it gets instantiated in the DOM
 
-Open the terminal into the given parent element
+Open the terminal into the given parent element.
+
+> ⚠️  The `focus` argument currently defaults to `true` but starting with xterm.js 3.0 it will default to `false`.
 
 ```javascript
 var terminalParent = document.getElementById('xterm-container');
 
 // Expose the terminal into `terminalParent`.
-term.open(terminalParent);
+term.open(terminalParent, false);
 ```
 
 ### `refresh(start, end, queue)`
