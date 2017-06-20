@@ -160,6 +160,24 @@ if (term.hasSelection()) {
 }
 ```
 
+### `loadAddon(addon[, callback])`
+
+- `addon` - String - The name of the add-on to load
+- `callback` - Function - The callback to run after running the add-on ()
+
+Attempts to load an add-on using [CommonJS](https://nodejs.org/docs/latest/api/modules.html) or with [RequireJS](http://requirejs.org/), if [CommonJS](https://nodejs.org/docs/latest/api/modules.html) is not available. If none of them are available, an [error is sent to the console](https://developer.mozilla.org/es/docs/Web/API/Console/error).
+
+> **Attention!** This is a static method, since it extends the basic `Terminal` prototype and not a single `Terminal` instance.
+
+```javascript
+Terminal.loadAddon('fit'); // Loads the `fit` addon and adds its methods to the `Terminal` prototype
+
+var term = new Terminal();
+
+term.open(document.getElementById('#terminal'));
+term.fit(); // This method is now available for usage
+```
+
 ### `on(event, callback)`
 
 - `event` - string - The event to attach the callback
@@ -188,17 +206,20 @@ Stop running a callback on an event.
 term.off('resize', logResize)
 ```
 
-### `open(parent)`
+### `open(parent, focus)`
 
 - `parent` - HTMLElement - The DOM element to host the terminal
+- `focus` - Boolean - Focus the terminal, after it gets instantiated in the DOM
 
-Open the terminal into the given parent element
+Open the terminal into the given parent element.
+
+> ⚠️  The `focus` argument currently defaults to `true` but starting with xterm.js 3.0 it will default to `false`.
 
 ```javascript
 var terminalParent = document.getElementById('xterm-container');
 
 // Expose the terminal into `terminalParent`.
-term.open(terminalParent);
+term.open(terminalParent, false);
 ```
 
 ### `refresh(start, end, queue)`
@@ -318,7 +339,7 @@ Writes the given text to the terminal, followed by a line break (`\n`).
 
 ```javascript
 // Writes "Hello World!\n" in the terminal.
-term.write('Hello World!')
+term.writeln('Hello World!')
 ```
 
 
@@ -384,3 +405,8 @@ Emitted when the terminal gets resized to a new geometry.
 
 Emitted when the terminal scrolls vertically. This event can be emitted manually to synchronize the scroll bar, this is useful if the terminal was resized while it was `display: none`.
 
+### `title`
+
+- `title` - String - The title of the terminal
+
+Emitted when the terminal's title get updated via the [appropriate xterm escape sequence](http://tldp.org/HOWTO/Xterm-Title-3.html).

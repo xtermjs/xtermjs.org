@@ -1,9 +1,0 @@
-{
-  "name": "xterm-js-org",
-  "private": true,
-  "version": "2.0.0",
-  "scripts": {
-    "preinstall": "gem install jekyll",
-    "start": "bundle exec jekyll serve --port $PORT||4000"
-  }
-}
