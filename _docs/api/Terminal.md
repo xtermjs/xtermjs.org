@@ -108,6 +108,14 @@ term.blur();
 term.clear();
 ```
 
+### `clearSelection`
+
+Clears the current terminal selection.
+
+```javascript
+term.clearSelection();
+```
+
 ### `destroy`
 
  Destroys the terminal and detaches it from the DOM.
@@ -134,6 +142,24 @@ Retrieves an option from the terminal.
 var doesTheTerminalCursorBlink = term.getOption('cursorBlink');
 ```
 
+### `getSelection`
+
+Gets the terminal's current selection, this is useful for implementing copy behavior outside of xterm.js.
+
+```javascript
+console.log('Selection: ' + term.getSelection());
+```
+
+### `hasSelection`
+
+Gets whether the terminal has an active selection.
+
+```javascript
+if (term.hasSelection()) {
+  term.clearSelection();
+}
+```
+
 ### `loadAddon(addon[, callback])`
 
 - `addon` - String - The name of the add-on to load
@@ -151,7 +177,6 @@ var term = new Terminal();
 term.open(document.getElementById('#terminal'));
 term.fit(); // This method is now available for usage
 ```
-
 
 ### `on(event, callback)`
 
@@ -274,6 +299,14 @@ Scrolls the terminal to the bottom of the buffer.
 
 ```javascript
 term.scrollToBottom();
+```
+
+### `selectAll`
+
+Selects all text within the terminal.
+
+```javascript
+term.selectAll();
 ```
 
 ### `setOption(key, value)`
