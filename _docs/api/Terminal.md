@@ -74,16 +74,17 @@ term.textarea.onkeydown = function (e) {
 
 ## Methods
 
-### `attachCustomKeydownHandler(customKeydownHandler)`
+### `attachCustomKeyEventHandler(customKeydownHandler)`
 
 - `customKeydownHandler` - Function - The custom KeyboardEvent handler to attach.
 
-Attach a custom keydown handler to allow consumers to allow certain key strokes
-to skip processing by the terminal.
+Attach a custom key event handler to allow consumers to allow certain key strokes
+to skip processing by the terminal. Return false to prevent xterm.js from
+processing the the key event.
 
 ```javascript
-// Completely ignore the `Tab` key using a custom keydown handler.
-term.attachCustomKeydownHandler(function (e) {
+// Completely ignore the `Tab` key using a custom key event handler.
+term.attachCustomKeyEventHandler(function (e) {
   if (e.keyCode == 9) {
     // Do nothing
     e.preventDefault();
