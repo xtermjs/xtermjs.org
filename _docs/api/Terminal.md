@@ -87,7 +87,6 @@ processing the the key event.
 term.attachCustomKeyEventHandler(function (e) {
   if (e.keyCode == 9) {
     // Do nothing
-    e.preventDefault();
     return false;
   }
 });
