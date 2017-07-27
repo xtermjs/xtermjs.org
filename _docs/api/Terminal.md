@@ -385,7 +385,7 @@ Emitted after a `keypress` event on the terminal.
 
 ### `lineFeed`
 
-Emitted when the terminal gets a line feed `Ctrl-J` or a new line character.
+Emitted when the terminal gets a line feed or new line character.
 
 ### `open`
 
