@@ -383,6 +383,10 @@ Emitted after a `keydown` event on the terminal.
 
 Emitted after a `keypress` event on the terminal.
 
+### `lineFeed`
+
+Emitted when the terminal gets a line feed or new line character.
+
 ### `open`
 
 Emitted when the terminal gets opened in a DOM element.
