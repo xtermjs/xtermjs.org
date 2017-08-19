@@ -358,7 +358,7 @@ Emitted when the terminal blurs (loses focus).
 
 - `data` - String - The data to be handled by the terminal
 
-Emitted when a chunch of data is being dispatched to the terminal for handling.
+Emitted when a chunk of data is being dispatched to the terminal for handling.
 
 ### `focus`
 
