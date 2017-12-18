@@ -211,7 +211,7 @@ term.off('resize', logResize)
 - `parent` - HTMLElement - The DOM element to host the terminal
 - `focus` - Boolean - Focus the terminal, after it gets instantiated in the DOM
 
-Open the terminal into the given parent element.
+Open the terminal into the given parent element. The parent element should be visible (have dimensions) when `open` is called as several DOM-based measurements need to be performed when this function is called.
 
 > ⚠️  The `focus` argument currently defaults to `true` but starting with xterm.js 3.0 it will default to `false`.
 
