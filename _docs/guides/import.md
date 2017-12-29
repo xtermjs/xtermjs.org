@@ -3,7 +3,7 @@ title: Importing
 category: Guides
 ---
 
-The preferred way to import xterm.js and its add-ons is the [`import` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) of ES6 Modules.
+The preferred way to import xterm.js and its addons is the [`import` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) of ES6 Modules.
 
 > **⚠️  Attention!** Do not forget to import the [CSS stylesheet](https://github.com/sourcelair/xterm.js/blob/master/src/xterm.css) of xterm.js into your app to get it working appropriately.
 

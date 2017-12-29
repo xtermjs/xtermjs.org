@@ -160,22 +160,22 @@ if (term.hasSelection()) {
 }
 ```
 
-### `loadAddon(addon[, callback])`
+### `applyAddon(addon)` *(static method)*
 
-- `addon` - String - The name of the add-on to load
-- `callback` - Function - The callback to run after running the add-on ()
-
-Attempts to load an add-on using [CommonJS](https://nodejs.org/docs/latest/api/modules.html) or with [RequireJS](http://requirejs.org/), if [CommonJS](https://nodejs.org/docs/latest/api/modules.html) is not available. If none of them are available, an [error is sent to the console](https://developer.mozilla.org/es/docs/Web/API/Console/error).
+- `addon` - Object - The addon to apply on the `Terminal` constructor
 
 > **Attention!** This is a static method, since it extends the basic `Terminal` prototype and not a single `Terminal` instance.
 
 ```javascript
-Terminal.loadAddon('fit'); // Loads the `fit` addon and adds its methods to the `Terminal` prototype
+import { Terminal } from './xterm';
+import * as fit from './xterm/lib/addons/fit/fit';
+
+Terminal.applyAddon(fit);
 
 var term = new Terminal();
 
 term.open(document.getElementById('#terminal'));
-term.fit(); // This method is now available for usage
+term.fit(); // The `fit` method is now available for usage, since we applied the `fit` addon.
 ```
 
 ### `on(event, callback)`
