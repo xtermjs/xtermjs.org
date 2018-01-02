@@ -15,8 +15,8 @@ To use an xterm.js addon, you have to:
 ## Example
 
 ```javascript
-import { Terminal } from './xterm';
-import * as fit from './xterm/lib/addons/fit/fit';
+import { Terminal } from 'xterm';
+import * as fit from 'xterm/lib/addons/fit/fit';
 
 Terminal.applyAddon(fit);
 term.open(document.getElementById('#terminal'));

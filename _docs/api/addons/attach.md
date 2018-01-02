@@ -11,7 +11,7 @@ This allows easy hooking of the terminal front-end to background processes and i
 import * as Terminal from 'xterm';
 import * as attach from 'xterm/addons/attach/attach';
 
-Terminal.applyAddon(attach);  // Applu the `attach` addon
+Terminal.applyAddon(attach);  // Apply the `attach` addon
 
 var term = new Terminal();
 var socket = new WebSocket('wss://docker.example.com/containers/mycontainerid/attach/ws');
