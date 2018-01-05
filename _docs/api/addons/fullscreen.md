@@ -8,9 +8,10 @@ The fullscreen addon provides the `toggleFullscreen` method that makes the termi
 > ⚠️ **Attention:** Do not forget to include [`addons/fullscreen/fullscreen.css`](https://github.com/sourcelair/xterm.js/blob/master/addons/fullscreen/fullscreen.css)!
 
 ```javascript
-var Terminal = require('xterm');
+import * as Terminal from 'xterm';
+import * as fullscreen from 'xterm/addons/fullscreen/fullscreen';
 
-Terminal.loadAddon('fullscreen');  // Load the `fullscreen` addon
+Terminal.applyAddon(fullscreen);  // Apply the `fullscreen` addon
 
 var term = new Terminal();
 

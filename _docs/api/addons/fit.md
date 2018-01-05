@@ -6,9 +6,10 @@ category: addon
 The fit addon provides the `fit` method that lets you adjust the size and geometry (columns 𝗑 rows) of the terminal to fit the size of the parent element.
 
 ```javascript
-var Terminal = require('xterm');
+import * as Terminal from 'xterm';
+import * as fit from 'xterm/addons/fit/fit';
 
-Terminal.loadAddon('fit');  // Load the `fit` addon
+Terminal.applyAddon(fit);  // Apply the `fit` addon
 
 var term = new Terminal();
 

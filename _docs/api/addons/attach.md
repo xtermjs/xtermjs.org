@@ -8,9 +8,10 @@ The attach addon provides methods for attaching a terminal to a WebSocket stream
 This allows easy hooking of the terminal front-end to background processes and interact with it, just like you would do with in a local terminal. This means that the front-end terminal (a [`Terminal`](/docs/api/Terminal/) instance) will render the stdout and stderr logs of the back-end process and will send to it all keyboard and mouse events captured.
 
 ```javascript
-var Terminal = require('xterm');
+import * as Terminal from 'xterm';
+import * as attach from 'xterm/addons/attach/attach';
 
-Terminal.loadAddon('attach');  // Load the `attach` addon
+Terminal.applyAddon(attach);  // Apply the `attach` addon
 
 var term = new Terminal();
 var socket = new WebSocket('wss://docker.example.com/containers/mycontainerid/attach/ws');

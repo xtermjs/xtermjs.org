@@ -8,9 +8,10 @@ The terminado addon provides almost identical functionality with the [`attach`](
 You can read more about how to use this add on in the [Connecting with Terminado](/docs/guides/terminado/) guide.
 
 ```javascript
-var Terminal = require('xterm');
+import * as Terminal from 'xterm';
+import * as terminado from 'xterm/addons/terminado/terminado';
 
-Terminal.loadAddon('terminado');  // Load the `terminado` addon
+Terminal.applyAddon(terminado);  // Apply the `terminado` addon
 
 var term = new Terminal();
 var socket = new WebSocket('wss://terminado.example.com/websocket');
