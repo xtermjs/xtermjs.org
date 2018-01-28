@@ -7,7 +7,7 @@ The fit addon provides the `fit` method that lets you adjust the size and geomet
 
 ```javascript
 import * as Terminal from 'xterm';
-import * as fit from 'xterm/addons/fit/fit';
+import * as fit from 'xterm/lib/addons/fit/fit';
 
 Terminal.applyAddon(fit);  // Apply the `fit` addon
 

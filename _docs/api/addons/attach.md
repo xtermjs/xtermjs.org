@@ -9,7 +9,7 @@ This allows easy hooking of the terminal front-end to background processes and i
 
 ```javascript
 import * as Terminal from 'xterm';
-import * as attach from 'xterm/addons/attach/attach';
+import * as attach from 'xterm/lib/addons/attach/attach';
 
 Terminal.applyAddon(attach);  // Apply the `attach` addon
 
