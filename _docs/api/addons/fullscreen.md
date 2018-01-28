@@ -9,7 +9,7 @@ The fullscreen addon provides the `toggleFullscreen` method that makes the termi
 
 ```javascript
 import * as Terminal from 'xterm';
-import * as fullscreen from 'xterm/addons/fullscreen/fullscreen';
+import * as fullscreen from 'xterm/lib/addons/fullscreen/fullscreen';
 
 Terminal.applyAddon(fullscreen);  // Apply the `fullscreen` addon
 

@@ -9,7 +9,7 @@ You can read more about how to use this add on in the [Connecting with Terminado
 
 ```javascript
 import * as Terminal from 'xterm';
-import * as terminado from 'xterm/addons/terminado/terminado';
+import * as terminado from 'xterm/lib/addons/terminado/terminado';
 
 Terminal.applyAddon(terminado);  // Apply the `terminado` addon
 
