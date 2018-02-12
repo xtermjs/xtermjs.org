@@ -80,7 +80,7 @@ term.textarea.onkeydown = function (e) {
 
 Attach a custom key event handler to allow consumers to allow certain key strokes
 to skip processing by the terminal. Return false to prevent xterm.js from
-processing the the key event.
+processing the key event.
 
 ```javascript
 // Completely ignore the `Tab` key using a custom key event handler.
