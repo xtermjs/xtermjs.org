@@ -383,7 +383,7 @@ Emitted after a `keydown` event on the terminal.
 
 Emitted after a `keypress` event on the terminal.
 
-### `lineFeed`
+### `linefeed`
 
 Emitted when the terminal gets a line feed or new line character.
 
