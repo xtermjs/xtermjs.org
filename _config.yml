@@ -15,6 +15,10 @@ defaults:
 include:
   - _pages
 
+exclude:
+  - gulpfile.js
+  - package.json
+
 collections:
   docs:
     output: true

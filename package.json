@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "xtermjs.org",
+  "description": "",
+  "version": "0.0.1",
+  "main": "N/A",
+  "repository": "https://github.com/xtermjs/xtermjs.org",
+  "license": "MIT",
+  "scripts": {
+    "build:docs": "gulp docs"
+  },
+  "dependencies": {
+    "@types/node": "^6.0.108",
+    "fs-extra": "^6.0.1",
+    "gulp": "^3.9.1",
+    "gulp-typedoc": "^2.2.0",
+    "typedoc": "^0.11.1",
+    "typedoc-plugin-markdown": "^1.1.11"
+  }
+}
