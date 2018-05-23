@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Copyright (c) 2018 The xterm.js authors. All rights reserved.
+# @license MIT
+
+# This script is used to conditionally chain CI builds.
+
+# References:
+# https://docs.travis-ci.com/user/deployment/script/
+# https://docs.travis-ci.com/user/deployment#Deploying-to-Multiple-Providers
+# https://docs.travis-ci.com/user/triggering-builds/
+
+# The target github repository and branch
+REPO_SLUG="${1:-xtermjs/xtermjs.org}"
+BRANCH="${2:-master}"
+# The CI build message
+MESSAGE="${3:-Update for xterm.js v$TRAVIS_TAG}"
+
+# The following .travis.yml shows the idea way of calling this script.
+# path="$REPO_SLUG/$BRANCH/bin/trigger-build"
+#
+# deploy:
+#   - provider: script
+#     script: curl -L https://raw.githubusercontent.com/$path | bash
+#     on:
+#       tags: true
+#       branch: master
+
+if [ -z $TRAVIS_TOKEN ]; then
+  echo "Missing required environment variable: TRAVIS_TOKEN"
+  exit 1
+fi
+
+# Escape the forward slash i.e. "/" => "%2F"
+slug="${REPO_SLUG/\//%2F}"
+body=`cat << EOF
+{
+  "request": {
+    "message": "$MESSAGE",
+    "branch": "$BRANCH"
+  },
+}
+EOF
+`
+# Request a build of the last commit to $BRANCH
+curl -s -X POST \
+     -H "Content-Type: application/json" \
+     -H "Accept: application/json" \
+     -H "Travis-API-Version: 3" \
+     -H "Authorization: token $TRAVIS_TOKEN" \
+     -d "$body" \
+     "https://api.travis-ci.org/repo/${slug}/requests"

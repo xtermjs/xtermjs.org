@@ -1,0 +1,88 @@
+#!/bin/bash
+
+# Copyright (c) 2018 The xterm.js authors. All rights reserved.
+# @license MIT
+
+# ~* SECURITY NOTICE *~
+# Do not source this script!
+# Do not rely on CI's attempt to hide sensitive output!
+
+set -e
+set +x
+
+git clone --recursive https://github.com/xtermjs/xterm.js
+TAG=$(cd xterm.js && git describe --tags)
+
+npm run build:docs
+
+# This function should remain CI-agnostic to avoid tight integrations
+update() {
+  if [[ $TAG =~ ^([0-9]\.){2}[0-9] ]]; then
+    local version="$BASH_REMATCH"
+  else
+    echo "Skipping update: unknown xterm.js repo tag format (${TAG})"
+    return 0
+  fi
+  if [ -z $GH_TOKEN ]; then
+    echo "Aborting update: missing github token"
+    return 1
+  fi
+
+  local repo_slug="${1:-xtermjs/xtermjs.org}"
+  local branch="${2:-master}"
+  local remote="https://$GH_TOKEN@github.com/${repo_slug}.git"
+
+  echo "Updating ${branch}..."
+
+  # If a specific commit was checked out, we're in a detached head state
+  # Ensure git is configured to checkout master
+  git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+  git fetch --tags
+
+  # Checkout master and perform version check
+  git checkout ${branch}
+  if git rev-list "docs-$version" > /dev/null 2>&1; then
+    echo "Skipping update: docs are up to date with xterm.js v$version"
+    return 0
+  fi
+
+  # Add docs, and commit
+  git add _docs/api/terminal/
+  git config --global user.email "${COMMIT_EMAIL:-ci-name@ci.tld}"
+  git config --global user.name "${COMMIT_USER:-ci-name}"
+  git commit -m "${COMMIT_MESSAGE:-Update docs: build ID [skip ci]}"
+  git tag docs-$version
+
+  # Push to Github - Security Note: redirect stderr and stdout to /dev/null
+  git remote add deploy ${remote} > /dev/null 2>&1
+  git push --follow-tags --quiet --set-upstream deploy ${branch}
+}
+
+# This script ignores PR, non-master branch, unknown CI, and scheduled builds.
+# It will only call update for builds triggered by API. See AppVeyor notes...
+# Travis and AppVeyor respect the [skip ci] commit message. The additional
+# check is to account for potential CI bugs.
+if [ "$CI" = "true" -o "$CONTINOUS_INTEGRATION" = "true" ]; then
+  if [ "$TRAVIS" = "true" ] && \
+     [ "$TRAVIS_EVENT_TYPE" = "api" ] && \
+     [ "$TRAVIS_PULL_REQUEST" != "true" ] && \
+     [ "$TRAVIS_BRANCH" = "master" ] && \
+     [[ $TRAVIS_COMMIT_MESSAGE != *\[skip\ ci\]* ]]; then
+    COMMIT_EMAIL="travis@travis-ci.org"
+    COMMIT_USER="Travis CI"
+    COMMIT_MESSAGE="Update docs to $TAG: $TRAVIS_BUILD_ID [skip ci]"
+    update
+  elif [ "$APPVEYOR" = "true" -a "$APPVEYOR_REPO_PROVIDER" = "github" ] && \
+       [ -z "$APPVEYOR_PULL_REQUEST_NUMBER" ] && \
+       [ "APPVEYOR_SCHEDULED_BUILD" != "true" ] && \
+       [ "$APPVEYOR_REPO_BRANCH" = "master" ] && \
+       [[ $APPVEYOR_REPO_COMMIT_MESSAGE != *\[skip\ ci\]* ]]; then
+    # AppVeyor can ignore all commits and build only for API calls
+    # by using `skip_commits.message` with an always true regex i.e. /*/
+    # https://www.appveyor.com/docs/how-to/filtering-commits/
+    COMMIT_EMAIL="appveyor@appveyor.com"
+    COMMIT_USER="AppVeyor"
+    COMMIT_MESSAGE="Update docs to $TAG: $APPVEYOR_BUILD_ID [skip ci]"
+    update
+  fi
+fi
