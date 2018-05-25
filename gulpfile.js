@@ -8,25 +8,18 @@ const typedoc = require('gulp-typedoc');
 const fs = require('fs-extra');
 const path = require('path');
 
-gulp.task('docs:clean', async function() {
-  const directory = path.join(__dirname, '_docs/api/terminal');
-  if (await fs.pathExists(directory)) {
-    await fs.remove(directory);
-  }
-})
-
 /**
  * Generate TypeScript project markdown
  */
-gulp.task('docs:build', ['docs:clean'], function() {
-  return gulp.src('./xterm.js/typings/xterm.d.ts')
+gulp.task('typedoc', function() {
+  return gulp.src('./_xterm.js/typings/xterm.d.ts')
   .pipe(typedoc({
     // TypeScript options (see typescript docs)
     module: 'commonjs',
     target: 'es5',
 
     // Output options (see typedoc docs)
-    out: './_docs/api/terminal/',
+    out: './_typedoc',
     // Required to process .d.ts files
     includeDeclarations: true,
     // Exclude @types/node, etc.
@@ -46,81 +39,101 @@ gulp.task('docs:build', ['docs:clean'], function() {
 /**
  * This task works around the following issues:
  *
- * _docs/api/terminal/README.md only contains a link to
- * _docs/api/terminal/modules/_xterm_d_.md
- *
- * _docs/api/terminal/modules/_xterm_d_.md only contains a link to
- * _docs/api/terminal/modules/_xterm_d_._xterm_.md
- *
- * The nearly empty files are removed and
- * _docs/api/terminal/modules/_xterm_d_._xterm_.md is moved to
- * _docs/api/terminal/index.md
- *
- * Links are modified to reflect these changes.
+ * Some files are nearly empty i.e. README.md and modules/_xterm_d_.md
+ * Files are not well named and Jekyll ignores files prefixed with underscores
+ * Links to markdown documents must not have an ".md" extension, etc.
  * @TODO: Some interfaces are too verbose and should be simplified
+ *
+ * The files are renamed/moved to ./_docs/api/terminal and links are updated
+ * as necessary to work after being processed by Jekyll
  */
-gulp.task('docs:patch', ['docs:build'], async function() {
-  const docs = (...args) =>
-    path.join(__dirname, '_docs/api/terminal', ...args);
+gulp.task('docs', ['typedoc'], async function() {
+  // YAML Front Matters for Jekyll
+  const header = (title, category = 'API', layout = 'docs') =>
+    `---\ntitle: ${title}\ncategory: ${category}\nlayout: ${layout}\n---\n\n`;
 
-  // Remove unnecessary files
-  await fs.remove(docs('README.md'));
-  await fs.remove(docs('modules/_xterm_d_.md'));
+  // Retains hash identifiers if they exist
+  const rename = (basename) => {
+    const match = basename.match(/^.*?([^\._]+)_?\.md(#.*|$)/);
+    if (match === null) {
+      throw new Error(`Unknown file naming scheme: ${basename}`)
+    }
+    return match[1] + match[2];
+  };
 
-  // Regex to match filenames that should be replaced with index.md
-  const filenames = /(readme\.|(modules\/)?(_xterm_(d_)?\.)+)md(?=#|$)/i;
+  const srcdir = path.join(__dirname, '_typedoc');
+  const outdir = path.join(__dirname, '_docs/api/terminal');
 
-  // All of the files that need to be updated are in subdirs
-  for (const dirname of await fs.readdir(docs())) {
-    const directory = docs(dirname);
+  // Cleanup
+  if (await fs.pathExists(outdir)) {
+    await fs.remove(outdir);
+  }
+
+  const excludes = /\/(README.md|modules\/_xterm_d_.md)$/i;
+  const directories = ['.'];
+
+  for (const /* relative */ subdir of directories) {
+    const directory = path.join(srcdir, subdir);
     for (const basename of await fs.readdir(directory)) {
-      const document = path.join(directory, basename);
-      // Match markdown links i.e. [name](../some/relative/file)
-      const re = /\[([^\[\]]*)\]\(([^()]*)\)/g;
-
-      let data = await fs.readFile(document, 'utf-8');
-      let modified = false;
-      let match;
-
-      if (basename === '_xterm_d_._xterm_.md') {
-        // Remove the navigation links from the index document
-        data = data.substring(data.indexOf('\n') + 1);
-        modified = true;
+      const file = path.join(directory, basename);
+      if (excludes.test(file)) {
+        continue;
       }
 
-      while ((match = re.exec(data)) !== null) {
-        let [link, title, uri] = match;
-        let replacement = '';
+      const stats = await fs.lstat(file);
+      if (stats.isDirectory()) {
+        directories.push(path.join(subdir, basename));
+        continue;
+      }
 
-        if (/_xterm_(d_)?\.md(#|$)/.test(uri) &&
-            data.substring(re.lastIndex, re.lastIndex + 3) === ' > ') {
-          // Remove the navigation link and the angle bracket that follows
-          re.lastIndex += 3;
-        }
-        else if (filenames.test(uri)) {
-          uri = uri.replace(filenames, 'index.md');
-          replacement = `[${title}](${uri})`;
-        }
-        else {
+      let data = await fs.readFile(file, 'utf-8');
+      let title = '';
+      let match;
+
+      // Match markdown links i.e. [name](../some/relative/file)
+      const re = /\[([^\[\]]*)\]\(([^()]*)\)/g;
+      while ((match = re.exec(data)) !== null) {
+        let [link, link_title, uri] = match;
+
+        if (/^https?/.test(uri)) {
           continue;
         }
 
+        if (uri.indexOf(basename) !== -1) {
+          // Extract the page title from the self-referring navigation link
+          if (uri.endsWith(basename) /* without hash identifier */) {
+            title = link_title;
+          }
+          uri = uri.indexOf('#') !== -1 ? uri.replace(basename, '') : '#';
+        }
+        else {
+          const link_name = rename(path.basename(uri));
+          const link_path = path.dirname(uri);
+          uri = '../' + (link_path === '.' ?
+            link_name : link_path + '/' + link_name);
+        }
+
+        const replacement = `[${link_title}](${uri})`;
         data = data.substr(0, match.index) + replacement
           + data.substr(re.lastIndex);
         re.lastIndex = match.index + replacement.length;
-        modified = true;
       }
 
-      if (modified) {
-        await fs.writeFile(document, data, 'utf-8');
+      if (title === '') {
+        throw new Error(`Failed to extract document title from: ${file}`);
       }
+
+      // Remove the navigation links from the top of the document
+      data = data.substring(data.indexOf('\n') + 1);
+      // Prepend the YAML Front Matters
+      data = header(title, subdir === '.' ? 'API' : `API-${subdir}`) + data;
+
+      const dest = path.join(outdir, subdir);
+      await fs.ensureDir(dest);
+      const outfile = path.join(dest, rename(basename) + '.md');
+      await fs.writeFile(outfile, data, 'utf-8');
     }
   }
-
-  // Move the main markdown document to ./_docs/api/terminal/index.md
-  await fs.move(docs('modules/_xterm_d_._xterm_.md'),
-                docs('index.md'));
 });
 
-gulp.task('docs', ['docs:patch']);
 gulp.task('default', ['docs']);

@@ -15,12 +15,16 @@ no_header: true
 </header>
 
 <h2>Guides</h2>
-
-{% include docs-categoty-article-list.html category="Guides" %}
+{% include docs-category-article-list.html category="Guides" %}
 
 <h2>API Reference</h2>
+{% include docs-category-article-list.html category="API" %}
+<h4>Modules</h4>
+{% include docs-category-article-list.html category="API-modules" %}
+<h4>Classes</h4>
+{% include docs-category-article-list.html category="API-classes" %}
+<h4>Interfaces</h4>
+{% include docs-category-article-list.html category="API-interfaces" %}
 
-{% include docs-categoty-article-list.html category="API" %}
-
-<h3>Addons</h3>
-{% include docs-categoty-article-list.html category="addon" %}
+<h4>Addons</h4>
+{% include docs-category-article-list.html category="addon" %}

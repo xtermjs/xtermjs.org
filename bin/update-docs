@@ -10,8 +10,8 @@
 set -e
 set +x
 
-git clone --recursive https://github.com/xtermjs/xterm.js
-TAG=$(cd xterm.js && git describe --tags)
+git clone --recursive https://github.com/xtermjs/xterm.js _xterm.js
+TAG=$(cd _xterm.js && git describe --tags)
 
 npm run build:docs
 

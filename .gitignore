@@ -6,4 +6,5 @@ _site
 package-lock.json
 node_modules/
 
-xterm.js/
+_typedoc/
+_xterm.js/

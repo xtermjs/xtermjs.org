@@ -18,8 +18,9 @@ include:
 exclude:
   - gulpfile.js
   - package.json
+  - node_modules/
   - bin/
-
+  
 collections:
   docs:
     output: true

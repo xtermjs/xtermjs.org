@@ -1,8 +1,11 @@
 ---
 layout: default
 ---
+
 <header>
+  {% unless page.category contains "API" %}
 	<h1>{% if page.category == "addon" %}Addons / {% endif %}<a href="{{ page.url }}">{{ page.title }}</a></h1>
+  {% endunless %}
 </header>
 
 <article class="docs-content">{{ content }}</article>
