@@ -1,3 +1,10 @@
 _site
 .sass-cache
 .jekyll-metadata
+
+# Node.js
+package-lock.json
+node_modules/
+
+_typedoc/
+_xterm.js/
