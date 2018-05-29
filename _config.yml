@@ -1,10 +1,10 @@
 title: Xterm.js
 email: paris@sourcelair.com
 description: Terminal front-end component written in JavaScript that works in the browser.
-baseurl: ""
-url: "http://xtermjs.org"
+baseurl: ''
+url: 'http://xtermjs.org'
 
-version: "3.4"
+version: '3.4'
 
 markdown: kramdown
 
@@ -20,8 +20,11 @@ exclude:
   - package.json
   - node_modules/
   - bin/
-  
+
 collections:
   docs:
     output: true
     permalink: '/docs/:path/'
+
+relative_links:
+  collections: true
