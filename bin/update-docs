@@ -74,7 +74,7 @@ if [ "$CI" = "true" -o "$CONTINOUS_INTEGRATION" = "true" ]; then
     update
   elif [ "$APPVEYOR" = "true" -a "$APPVEYOR_REPO_PROVIDER" = "github" ] && \
        [ -z "$APPVEYOR_PULL_REQUEST_NUMBER" ] && \
-       [ "APPVEYOR_SCHEDULED_BUILD" != "true" ] && \
+       [ "$APPVEYOR_SCHEDULED_BUILD" != "true" ] && \
        [ "$APPVEYOR_REPO_BRANCH" = "master" ] && \
        [[ $APPVEYOR_REPO_COMMIT_MESSAGE != *\[skip\ ci\]* ]]; then
     # AppVeyor can ignore all commits and build only for API calls
