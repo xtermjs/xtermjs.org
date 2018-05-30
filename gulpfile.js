@@ -41,97 +41,77 @@ gulp.task('typedoc', function() {
  *
  * Some files are nearly empty i.e. README.md and modules/_xterm_d_.md
  * Files are not well named and Jekyll ignores files prefixed with underscores
- * Links to markdown documents must not have an ".md" extension, etc.
  * @TODO: Some interfaces are too verbose and should be simplified
  *
- * The files are renamed/moved to ./_docs/api/terminal and links are updated
- * as necessary to work after being processed by Jekyll
+ * The files are renamed/moved to <project>/_docs/api/terminal/
  */
 gulp.task('docs', ['typedoc'], async function() {
-  // YAML Front Matters for Jekyll
-  const header = (title, category = 'API', layout = 'docs') =>
-    `---\ntitle: ${title}\ncategory: ${category}\nlayout: ${layout}\n---\n\n`;
+  // Removes prefixes and outer underscores from the basename of paths
+  // (1): ../classes/_xterm_d_._xterm_.foo.md#bar => ../classes/foo.md#bar
+  // (2): modules/_xterm_d_._xterm_.md => modules/xterm.md
+  const rename = (uri) =>
+    uri.replace(/(?:_?([^\/\.]+[^_])_?\.)+(md(?=#.*|$))/, '$1.$2');
 
-  // Retains hash identifiers if they exist
-  const rename = (basename) => {
-    const match = basename.match(/^.*?([^\._]+)_?\.md(#.*|$)/);
-    if (match === null) {
-      throw new Error(`Unknown file naming scheme: ${basename}`)
-    }
-    return match[1] + match[2];
-  };
+  // The relative destination directory for processed files
+  const destination = './_docs/api/terminal/';
 
-  const srcdir = path.join(__dirname, '_typedoc');
-  const outdir = path.join(__dirname, '_docs/api/terminal');
+  const srcDir = path.join(__dirname, '_typedoc');
+  const outDir = path.resolve(__dirname, destination);
 
-  // Cleanup
-  if (await fs.pathExists(outdir)) {
-    await fs.remove(outdir);
+  // Remove old build artifacts: rm -rf ${outDir}
+  if (await fs.pathExists(outDir)) {
+    await fs.remove(outDir);
   }
 
-  const excludes = /\/(README.md|modules\/_xterm_d_.md)$/i;
-  const directories = ['.'];
+  // The directories are used to specify a docs category: API-classes, etc.
+  const directories = ['modules', 'classes', 'interfaces'];
 
-  for (const /* relative */ subdir of directories) {
-    const directory = path.join(srcdir, subdir);
-    for (const basename of await fs.readdir(directory)) {
-      const file = path.join(directory, basename);
-      if (excludes.test(file)) {
-        continue;
-      }
+  for (const dirType of directories) {
+    const files = await fs.readdir(path.join(srcDir, dirType));
+    for (const basename of files) {
+      if (basename === '_xterm_d_.md') continue;
 
-      const stats = await fs.lstat(file);
-      if (stats.isDirectory()) {
-        directories.push(path.join(subdir, basename));
-        continue;
-      }
+      const srcFile = path.join(srcDir, dirType, basename);
+      const outFile = path.join(outDir, dirType, rename(basename));
 
-      let data = await fs.readFile(file, 'utf-8');
-      let title = '';
+      // YAML Front Matters for Jekyll
+      let header = `---\ncategory: API-${dirType}\nlayout: docs\n---\n\n`;
+      let data = await fs.readFile(srcFile, 'utf-8');
       let match;
 
       // Match markdown links i.e. [name](../some/relative/file)
       const re = /\[([^\[\]]*)\]\(([^()]*)\)/g;
       while ((match = re.exec(data)) !== null) {
-        let [link, link_title, uri] = match;
+        let [link, title, uri] = match;
 
         if (/^https?/.test(uri)) {
           continue;
         }
 
-        if (uri.indexOf(basename) !== -1) {
-          // Extract the page title from the self-referring navigation link
-          if (uri.endsWith(basename) /* without hash identifier */) {
-            title = link_title;
-          }
-          uri = uri.indexOf('#') !== -1 ? uri.replace(basename, '') : '#';
-        }
-        else {
-          const link_name = rename(path.basename(uri));
-          const link_path = path.dirname(uri);
-          uri = '../' + (link_path === '.' ?
-            link_name : link_path + '/' + link_name);
+        // Use the title from a self-referencing navigation link
+        if (uri.endsWith(basename)) {
+          header = header.replace(/^(---)(?=\ncat)/, `$1\ntitle: ${title}`);
         }
 
-        const replacement = `[${link_title}](${uri})`;
-        data = data.substr(0, match.index) + replacement
-          + data.substr(re.lastIndex);
-        re.lastIndex = match.index + replacement.length;
+        // Resolve the URI relative to the current file
+        uri = path.resolve(outFile, '../', rename(uri));
+        // Convert to a relative destination i.e. _docs/a/t/c/terminal.md
+        uri = path.normalize(path.join(destination,
+                             path.relative(outDir, uri)));
+        // Split the URI into two parts: path and hash identifier
+        uri = uri.match(/([^#]*)(#.*|$)/);
+
+        link = `[${title}]({% link ${uri[1]} %}${uri[2]})`;
+
+        data = data.substr(0, match.index) + link + data.substr(re.lastIndex);
+        re.lastIndex = match.index + link.length;
       }
 
-      if (title === '') {
-        throw new Error(`Failed to extract document title from: ${file}`);
-      }
+      // Remove the navigation links and prepend YAML Front Matters
+      data = header + data.substr(data.indexOf('\n') + 1);
 
-      // Remove the navigation links from the top of the document
-      data = data.substring(data.indexOf('\n') + 1);
-      // Prepend the YAML Front Matters
-      data = header(title, subdir === '.' ? 'API' : `API-${subdir}`) + data;
-
-      const dest = path.join(outdir, subdir);
-      await fs.ensureDir(dest);
-      const outfile = path.join(dest, rename(basename) + '.md');
-      await fs.writeFile(outfile, data, 'utf-8');
+      await fs.ensureDir(path.dirname(outFile));
+      await fs.writeFile(outFile, data, 'utf-8');
     }
   }
 });
