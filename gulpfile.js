@@ -24,7 +24,10 @@ gulp.task('typedoc', function () {
 
   generateDocs([`${xterm}/typings/xterm.d.ts`], `${rawDocs}/terminal`);
   // This invocation was required to avoid plugin already loaded error(s).
-  generateDocs(addons, `${rawDocs}/addons`);
+  generateDocs(addons, `${rawDocs}/addons`, {
+    // Excludes symbols that are not exported from the output
+    excludeNotExported: true,
+  });
 });
 
 /**
@@ -46,7 +49,7 @@ gulp.task('default', ['docs']);
 /**
  * See: http://typedoc.org/api/classes/application.html#generatedocs
  */
-function generateDocs(src, out) {
+function generateDocs(src, out, options) {
   const app = new typedoc.Application({
     // Required to process .d.ts files
     includeDeclarations: true,
@@ -67,7 +70,9 @@ function generateDocs(src, out) {
     },
     // TypeScript options
     module: 'commonjs',
-    target: 'es5'
+    target: 'es5',
+    // Additional options that may override current options
+    ...options
   });
 
   app.generateDocs(src, out);
