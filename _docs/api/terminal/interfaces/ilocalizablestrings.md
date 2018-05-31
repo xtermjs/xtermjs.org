@@ -1,11 +1,8 @@
 ---
 title: ILocalizableStrings
-category: API-interfaces
+category: terminal-interfaces
 layout: docs
 ---
-
-
-# Interface: ILocalizableStrings
 
 ## Hierarchy
 
@@ -15,9 +12,9 @@ layout: docs
 
 ### Properties
 
-* [blankLine](#blankline)
-* [promptLabel](#promptlabel)
-* [tooMuchOutput](#toomuchoutput)
+* [blankLine]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %}#blankline)
+* [promptLabel]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %}#promptlabel)
+* [tooMuchOutput]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %}#toomuchoutput)
 
 ---
 

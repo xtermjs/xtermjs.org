@@ -1,11 +1,8 @@
 ---
 title: IDisposable
-category: API-interfaces
+category: terminal-interfaces
 layout: docs
 ---
-
-
-# Interface: IDisposable
 
 An object that can be disposed via a dispose function.
 
@@ -13,17 +10,17 @@ An object that can be disposed via a dispose function.
 
 **IDisposable**
 
-↳  [IMarker](../imarker)
+↳  [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
 
 ## Implemented by
 
-* [Terminal](../../classes/terminal)
+* [Terminal]({% link _docs/api/terminal/classes/terminal.md %})
 
 ## Index
 
 ### Methods
 
-* [dispose](#dispose)
+* [dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)
 
 ---
 

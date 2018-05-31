@@ -1,11 +1,8 @@
 ---
 title: "xterm"
-category: API-modules
+category: terminal-modules
 layout: docs
 ---
-
-
-# Module: "xterm"
 
 *__license__*: MIT
 
@@ -15,21 +12,21 @@ This contains the type declarations for the xterm.js library. Note that some int
 
 ### Classes
 
-* [Terminal](../../classes/terminal)
+* [Terminal]({% link _docs/api/terminal/classes/terminal.md %})
 
 ### Interfaces
 
-* [IDisposable](../../interfaces/idisposable)
-* [IEventEmitter](../../interfaces/ieventemitter)
-* [ILinkMatcherOptions](../../interfaces/ilinkmatcheroptions)
-* [ILocalizableStrings](../../interfaces/ilocalizablestrings)
-* [IMarker](../../interfaces/imarker)
-* [ITerminalOptions](../../interfaces/iterminaloptions)
-* [ITheme](../../interfaces/itheme)
+* [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
+* [IEventEmitter]({% link _docs/api/terminal/interfaces/ieventemitter.md %})
+* [ILinkMatcherOptions]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %})
+* [ILocalizableStrings]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %})
+* [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
+* [ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %})
+* [ITheme]({% link _docs/api/terminal/interfaces/itheme.md %})
 
 ### Type aliases
 
-* [FontWeight](#fontweight)
+* [FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)
 
 ---
 

@@ -1,11 +1,8 @@
 ---
 title: ITerminalOptions
-category: API-interfaces
+category: terminal-interfaces
 layout: docs
 ---
-
-
-# Interface: ITerminalOptions
 
 An object containing start up options for the terminal.
 
@@ -17,29 +14,29 @@ An object containing start up options for the terminal.
 
 ### Properties
 
-* [allowTransparency](#allowtransparency)
-* [bellSound](#bellsound)
-* [bellStyle](#bellstyle)
-* [cols](#cols)
-* [cursorBlink](#cursorblink)
-* [cursorStyle](#cursorstyle)
-* [disableStdin](#disablestdin)
-* [drawBoldTextInBrightColors](#drawboldtextinbrightcolors)
-* [enableBold](#enablebold)
-* [experimentalCharAtlas](#experimentalcharatlas)
-* [fontFamily](#fontfamily)
-* [fontSize](#fontsize)
-* [fontWeight](#fontweight)
-* [fontWeightBold](#fontweightbold)
-* [letterSpacing](#letterspacing)
-* [lineHeight](#lineheight)
-* [macOptionIsMeta](#macoptionismeta)
-* [rightClickSelectsWord](#rightclickselectsword)
-* [rows](#rows)
-* [screenReaderMode](#screenreadermode)
-* [scrollback](#scrollback)
-* [tabStopWidth](#tabstopwidth)
-* [theme](#theme)
+* [allowTransparency]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#allowtransparency)
+* [bellSound]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#bellsound)
+* [bellStyle]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#bellstyle)
+* [cols]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#cols)
+* [cursorBlink]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#cursorblink)
+* [cursorStyle]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#cursorstyle)
+* [disableStdin]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#disablestdin)
+* [drawBoldTextInBrightColors]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#drawboldtextinbrightcolors)
+* [enableBold]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#enablebold)
+* [experimentalCharAtlas]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#experimentalcharatlas)
+* [fontFamily]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#fontfamily)
+* [fontSize]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#fontsize)
+* [fontWeight]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#fontweight)
+* [fontWeightBold]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#fontweightbold)
+* [letterSpacing]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#letterspacing)
+* [lineHeight]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#lineheight)
+* [macOptionIsMeta]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#macoptionismeta)
+* [rightClickSelectsWord]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#rightclickselectsword)
+* [rows]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#rows)
+* [screenReaderMode]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#screenreadermode)
+* [scrollback]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#scrollback)
+* [tabStopWidth]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#tabstopwidth)
+* [theme]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#theme)
 
 ---
 
@@ -191,7 +188,7 @@ ___
 
 ### `<Optional>` fontWeight
 
-**● fontWeight**: *[FontWeight](../../modules/xterm#fontweight)*
+**● fontWeight**: *[FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)*
 
 *Defined in [xterm.d.ts:100](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L100)*
 
@@ -202,7 +199,7 @@ ___
 
 ### `<Optional>` fontWeightBold
 
-**● fontWeightBold**: *[FontWeight](../../modules/xterm#fontweight)*
+**● fontWeightBold**: *[FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)*
 
 *Defined in [xterm.d.ts:105](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L105)*
 
@@ -301,7 +298,7 @@ ___
 
 ### `<Optional>` theme
 
-**● theme**: *[ITheme](../itheme)*
+**● theme**: *[ITheme]({% link _docs/api/terminal/interfaces/itheme.md %})*
 
 *Defined in [xterm.d.ts:154](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L154)*
 

@@ -1,11 +1,8 @@
 ---
 title: ITheme
-category: API-interfaces
+category: terminal-interfaces
 layout: docs
 ---
-
-
-# Interface: ITheme
 
 Contains colors to theme the terminal with.
 
@@ -17,27 +14,27 @@ Contains colors to theme the terminal with.
 
 ### Properties
 
-* [background](#background)
-* [black](#black)
-* [blue](#blue)
-* [brightBlack](#brightblack)
-* [brightBlue](#brightblue)
-* [brightCyan](#brightcyan)
-* [brightGreen](#brightgreen)
-* [brightMagenta](#brightmagenta)
-* [brightRed](#brightred)
-* [brightWhite](#brightwhite)
-* [brightYellow](#brightyellow)
-* [cursor](#cursor)
-* [cursorAccent](#cursoraccent)
-* [cyan](#cyan)
-* [foreground](#foreground)
-* [green](#green)
-* [magenta](#magenta)
-* [red](#red)
-* [selection](#selection)
-* [white](#white)
-* [yellow](#yellow)
+* [background]({% link _docs/api/terminal/interfaces/itheme.md %}#background)
+* [black]({% link _docs/api/terminal/interfaces/itheme.md %}#black)
+* [blue]({% link _docs/api/terminal/interfaces/itheme.md %}#blue)
+* [brightBlack]({% link _docs/api/terminal/interfaces/itheme.md %}#brightblack)
+* [brightBlue]({% link _docs/api/terminal/interfaces/itheme.md %}#brightblue)
+* [brightCyan]({% link _docs/api/terminal/interfaces/itheme.md %}#brightcyan)
+* [brightGreen]({% link _docs/api/terminal/interfaces/itheme.md %}#brightgreen)
+* [brightMagenta]({% link _docs/api/terminal/interfaces/itheme.md %}#brightmagenta)
+* [brightRed]({% link _docs/api/terminal/interfaces/itheme.md %}#brightred)
+* [brightWhite]({% link _docs/api/terminal/interfaces/itheme.md %}#brightwhite)
+* [brightYellow]({% link _docs/api/terminal/interfaces/itheme.md %}#brightyellow)
+* [cursor]({% link _docs/api/terminal/interfaces/itheme.md %}#cursor)
+* [cursorAccent]({% link _docs/api/terminal/interfaces/itheme.md %}#cursoraccent)
+* [cyan]({% link _docs/api/terminal/interfaces/itheme.md %}#cyan)
+* [foreground]({% link _docs/api/terminal/interfaces/itheme.md %}#foreground)
+* [green]({% link _docs/api/terminal/interfaces/itheme.md %}#green)
+* [magenta]({% link _docs/api/terminal/interfaces/itheme.md %}#magenta)
+* [red]({% link _docs/api/terminal/interfaces/itheme.md %}#red)
+* [selection]({% link _docs/api/terminal/interfaces/itheme.md %}#selection)
+* [white]({% link _docs/api/terminal/interfaces/itheme.md %}#white)
+* [yellow]({% link _docs/api/terminal/interfaces/itheme.md %}#yellow)
 
 ---
 

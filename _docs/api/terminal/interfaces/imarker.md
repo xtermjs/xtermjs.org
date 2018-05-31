@@ -1,15 +1,12 @@
 ---
 title: IMarker
-category: API-interfaces
+category: terminal-interfaces
 layout: docs
 ---
 
-
-# Interface: IMarker
-
 ## Hierarchy
 
- [IDisposable](../idisposable)
+ [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 **↳ IMarker**
 
@@ -17,13 +14,13 @@ layout: docs
 
 ### Properties
 
-* [id](#id)
-* [isDisposed](#isdisposed)
-* [line](#line)
+* [id]({% link _docs/api/terminal/interfaces/imarker.md %}#id)
+* [isDisposed]({% link _docs/api/terminal/interfaces/imarker.md %}#isdisposed)
+* [line]({% link _docs/api/terminal/interfaces/imarker.md %}#line)
 
 ### Methods
 
-* [dispose](#dispose)
+* [dispose]({% link _docs/api/terminal/interfaces/imarker.md %}#dispose)
 
 ---
 
@@ -65,7 +62,7 @@ ___
 
 ▸ **dispose**(): `void`
 
-*Inherited from [IDisposable](../idisposable).[dispose](../idisposable#dispose)*
+*Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
 *Defined in [xterm.d.ts:259](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L259)*
 

@@ -1,11 +1,8 @@
 ---
 title: ILinkMatcherOptions
-category: API-interfaces
+category: terminal-interfaces
 layout: docs
 ---
-
-
-# Interface: ILinkMatcherOptions
 
 An object containing options for a link matcher.
 
@@ -17,12 +14,12 @@ An object containing options for a link matcher.
 
 ### Properties
 
-* [leaveCallback](#leavecallback)
-* [matchIndex](#matchindex)
-* [priority](#priority)
-* [tooltipCallback](#tooltipcallback)
-* [validationCallback](#validationcallback)
-* [willLinkActivate](#willlinkactivate)
+* [leaveCallback]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#leavecallback)
+* [matchIndex]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#matchindex)
+* [priority]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#priority)
+* [tooltipCallback]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#tooltipcallback)
+* [validationCallback]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#validationcallback)
+* [willLinkActivate]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#willlinkactivate)
 
 ---
 

@@ -1,11 +1,8 @@
 ---
 title: IEventEmitter
-category: API-interfaces
+category: terminal-interfaces
 layout: docs
 ---
-
-
-# Interface: IEventEmitter
 
 ## Hierarchy
 
@@ -13,16 +10,16 @@ layout: docs
 
 ## Implemented by
 
-* [Terminal](../../classes/terminal)
+* [Terminal]({% link _docs/api/terminal/classes/terminal.md %})
 
 ## Index
 
 ### Methods
 
-* [addDisposableListener](#adddisposablelistener)
-* [emit](#emit)
-* [off](#off)
-* [on](#on)
+* [addDisposableListener]({% link _docs/api/terminal/interfaces/ieventemitter.md %}#adddisposablelistener)
+* [emit]({% link _docs/api/terminal/interfaces/ieventemitter.md %}#emit)
+* [off]({% link _docs/api/terminal/interfaces/ieventemitter.md %}#off)
+* [on]({% link _docs/api/terminal/interfaces/ieventemitter.md %}#on)
 
 ---
 
@@ -32,7 +29,7 @@ layout: docs
 
 ###  addDisposableListener
 
-▸ **addDisposableListener**(type: *`string`*, handler: *`function`*): [IDisposable](../idisposable)
+▸ **addDisposableListener**(type: *`string`*, handler: *`function`*): [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 *Defined in [xterm.d.ts:252](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L252)*
 
@@ -43,7 +40,7 @@ layout: docs
 | type | `string` |
 | handler | `function` |
 
-**Returns:** [IDisposable](../idisposable)
+**Returns:** [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 ___
 <a id="emit"></a>

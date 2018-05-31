@@ -1,11 +1,8 @@
 ---
 title: Terminal
-category: API-classes
+category: terminal-classes
 layout: docs
 ---
-
-
-# Class: Terminal
 
 The class that represents an xterm.js terminal.
 
@@ -15,58 +12,58 @@ The class that represents an xterm.js terminal.
 
 ## Implements
 
-* [IEventEmitter](../../interfaces/ieventemitter)
-* [IDisposable](../../interfaces/idisposable)
+* [IEventEmitter]({% link _docs/api/terminal/interfaces/ieventemitter.md %})
+* [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 ## Index
 
 ### Constructors
 
-* [constructor](#constructor)
+* [constructor]({% link _docs/api/terminal/classes/terminal.md %}#constructor)
 
 ### Properties
 
-* [cols](#cols)
-* [element](#element)
-* [markers](#markers)
-* [rows](#rows)
-* [textarea](#textarea)
-* [strings](#strings)
+* [cols]({% link _docs/api/terminal/classes/terminal.md %}#cols)
+* [element]({% link _docs/api/terminal/classes/terminal.md %}#element)
+* [markers]({% link _docs/api/terminal/classes/terminal.md %}#markers)
+* [rows]({% link _docs/api/terminal/classes/terminal.md %}#rows)
+* [textarea]({% link _docs/api/terminal/classes/terminal.md %}#textarea)
+* [strings]({% link _docs/api/terminal/classes/terminal.md %}#strings)
 
 ### Methods
 
-* [addDisposableListener](#adddisposablelistener)
-* [addMarker](#addmarker)
-* [attachCustomKeyEventHandler](#attachcustomkeyeventhandler)
-* [blur](#blur)
-* [clear](#clear)
-* [clearSelection](#clearselection)
-* [deregisterLinkMatcher](#deregisterlinkmatcher)
-* [destroy](#destroy)
-* [dispose](#dispose)
-* [emit](#emit)
-* [focus](#focus)
-* [getOption](#getoption)
-* [getSelection](#getselection)
-* [hasSelection](#hasselection)
-* [off](#off)
-* [on](#on)
-* [open](#open)
-* [refresh](#refresh)
-* [registerLinkMatcher](#registerlinkmatcher)
-* [reset](#reset)
-* [resize](#resize)
-* [scrollLines](#scrolllines)
-* [scrollPages](#scrollpages)
-* [scrollToBottom](#scrolltobottom)
-* [scrollToLine](#scrolltoline)
-* [scrollToTop](#scrolltotop)
-* [selectAll](#selectall)
-* [selectLines](#selectlines)
-* [setOption](#setoption)
-* [write](#write)
-* [writeln](#writeln)
-* [applyAddon](#applyaddon)
+* [addDisposableListener]({% link _docs/api/terminal/classes/terminal.md %}#adddisposablelistener)
+* [addMarker]({% link _docs/api/terminal/classes/terminal.md %}#addmarker)
+* [attachCustomKeyEventHandler]({% link _docs/api/terminal/classes/terminal.md %}#attachcustomkeyeventhandler)
+* [blur]({% link _docs/api/terminal/classes/terminal.md %}#blur)
+* [clear]({% link _docs/api/terminal/classes/terminal.md %}#clear)
+* [clearSelection]({% link _docs/api/terminal/classes/terminal.md %}#clearselection)
+* [deregisterLinkMatcher]({% link _docs/api/terminal/classes/terminal.md %}#deregisterlinkmatcher)
+* [destroy]({% link _docs/api/terminal/classes/terminal.md %}#destroy)
+* [dispose]({% link _docs/api/terminal/classes/terminal.md %}#dispose)
+* [emit]({% link _docs/api/terminal/classes/terminal.md %}#emit)
+* [focus]({% link _docs/api/terminal/classes/terminal.md %}#focus)
+* [getOption]({% link _docs/api/terminal/classes/terminal.md %}#getoption)
+* [getSelection]({% link _docs/api/terminal/classes/terminal.md %}#getselection)
+* [hasSelection]({% link _docs/api/terminal/classes/terminal.md %}#hasselection)
+* [off]({% link _docs/api/terminal/classes/terminal.md %}#off)
+* [on]({% link _docs/api/terminal/classes/terminal.md %}#on)
+* [open]({% link _docs/api/terminal/classes/terminal.md %}#open)
+* [refresh]({% link _docs/api/terminal/classes/terminal.md %}#refresh)
+* [registerLinkMatcher]({% link _docs/api/terminal/classes/terminal.md %}#registerlinkmatcher)
+* [reset]({% link _docs/api/terminal/classes/terminal.md %}#reset)
+* [resize]({% link _docs/api/terminal/classes/terminal.md %}#resize)
+* [scrollLines]({% link _docs/api/terminal/classes/terminal.md %}#scrolllines)
+* [scrollPages]({% link _docs/api/terminal/classes/terminal.md %}#scrollpages)
+* [scrollToBottom]({% link _docs/api/terminal/classes/terminal.md %}#scrolltobottom)
+* [scrollToLine]({% link _docs/api/terminal/classes/terminal.md %}#scrolltoline)
+* [scrollToTop]({% link _docs/api/terminal/classes/terminal.md %}#scrolltotop)
+* [selectAll]({% link _docs/api/terminal/classes/terminal.md %}#selectall)
+* [selectLines]({% link _docs/api/terminal/classes/terminal.md %}#selectlines)
+* [setOption]({% link _docs/api/terminal/classes/terminal.md %}#setoption)
+* [write]({% link _docs/api/terminal/classes/terminal.md %}#write)
+* [writeln]({% link _docs/api/terminal/classes/terminal.md %}#writeln)
+* [applyAddon]({% link _docs/api/terminal/classes/terminal.md %}#applyaddon)
 
 ---
 
@@ -76,7 +73,7 @@ The class that represents an xterm.js terminal.
 
 ###  constructor
 
-⊕ **new Terminal**(options?: *[ITerminalOptions](../../interfaces/iterminaloptions)*): [Terminal](#)
+⊕ **new Terminal**(options?: *[ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %})*): [Terminal]({% link _docs/api/terminal/classes/terminal.md %})
 
 *Defined in [xterm.d.ts:307](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L307)*
 
@@ -86,9 +83,9 @@ Creates a new `Terminal` object.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| `Optional` options | [ITerminalOptions](../../interfaces/iterminaloptions) |  An object containing a set of options. |
+| `Optional` options | [ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}) |  An object containing a set of options. |
 
-**Returns:** [Terminal](#)
+**Returns:** [Terminal]({% link _docs/api/terminal/classes/terminal.md %})
 
 ___
 
@@ -120,7 +117,7 @@ ___
 
 ###  markers
 
-**● markers**: *[IMarker](../../interfaces/imarker)[]*
+**● markers**: *[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})[]*
 
 *Defined in [xterm.d.ts:302](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L302)*
 
@@ -153,7 +150,7 @@ ___
 
 ### `<Static>` strings
 
-**● strings**: *[ILocalizableStrings](../../interfaces/ilocalizablestrings)*
+**● strings**: *[ILocalizableStrings]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %})*
 
 *Defined in [xterm.d.ts:307](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L307)*
 
@@ -167,7 +164,7 @@ ___
 
 ###  addDisposableListener
 
-▸ **addDisposableListener**(type: *`string`*, handler: *`function`*): [IDisposable](../../interfaces/idisposable)
+▸ **addDisposableListener**(type: *`string`*, handler: *`function`*): [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 *Defined in [xterm.d.ts:390](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L390)*
 
@@ -178,14 +175,14 @@ ___
 | type | `string` |
 | handler | `function` |
 
-**Returns:** [IDisposable](../../interfaces/idisposable)
+**Returns:** [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 ___
 <a id="addmarker"></a>
 
 ###  addMarker
 
-▸ **addMarker**(cursorYOffset: *`number`*): [IMarker](../../interfaces/imarker)
+▸ **addMarker**(cursorYOffset: *`number`*): [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
 
 *Defined in [xterm.d.ts:447](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L447)*
 
@@ -197,7 +194,7 @@ ___
 | ------ | ------ | ------ |
 | cursorYOffset | `number` |  The y position offset of the marker from the cursor. |
 
-**Returns:** [IMarker](../../interfaces/imarker)
+**Returns:** [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
 
 ___
 <a id="attachcustomkeyeventhandler"></a>
@@ -297,7 +294,7 @@ ___
 
 ▸ **dispose**(): `void`
 
-*Implementation of [IDisposable](../../interfaces/idisposable).[dispose](../../interfaces/idisposable#dispose)*
+*Implementation of [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
 *Defined in [xterm.d.ts:481](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L481)*
 
@@ -310,7 +307,7 @@ ___
 
 ▸ **emit**(type: *`string`*, data?: *`any`*): `void`
 
-*Implementation of [IEventEmitter](../../interfaces/ieventemitter).[emit](../../interfaces/ieventemitter#emit)*
+*Implementation of [IEventEmitter]({% link _docs/api/terminal/interfaces/ieventemitter.md %}).[emit]({% link _docs/api/terminal/interfaces/ieventemitter.md %}#emit)*
 
 *Defined in [xterm.d.ts:388](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L388)*
 
@@ -655,7 +652,7 @@ ___
 
 ###  registerLinkMatcher
 
-▸ **registerLinkMatcher**(regex: *`RegExp`*, handler: *`function`*, options?: *[ILinkMatcherOptions](../../interfaces/ilinkmatcheroptions)*): `number`
+▸ **registerLinkMatcher**(regex: *`RegExp`*, handler: *`function`*, options?: *[ILinkMatcherOptions]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %})*): `number`
 
 *Defined in [xterm.d.ts:434](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L434)*
 
@@ -667,7 +664,7 @@ ___
 | ------ | ------ | ------ |
 | regex | `RegExp` |  The regular expression to search for, specifically this searches the textContent of the rows. You will want to use \\s to match a space ' ' character for example. |
 | handler | `function` |  The callback when the link is called. |
-| `Optional` options | [ILinkMatcherOptions](../../interfaces/ilinkmatcheroptions) |  Options for the link matcher. |
+| `Optional` options | [ILinkMatcherOptions]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}) |  Options for the link matcher. |
 
 **Returns:** `number`
 The ID of the new matcher, this can be used to deregister.
@@ -842,7 +839,7 @@ ___
 
 ▸ **setOption**(key: *"handler"*, value: *`function`*): `void`
 
-▸ **setOption**(key: *"theme"*, value: *[ITheme](../../interfaces/itheme)*): `void`
+▸ **setOption**(key: *"theme"*, value: *[ITheme]({% link _docs/api/terminal/interfaces/itheme.md %})*): `void`
 
 ▸ **setOption**(key: * "cols" &#124; "rows"*, value: *`number`*): `void`
 
@@ -961,7 +958,7 @@ Sets an option on the terminal.
 | Param | Type | Description |
 | ------ | ------ | ------ |
 | key | "theme" |  The option key. |
-| value | [ITheme](../../interfaces/itheme) |  The option value. |
+| value | [ITheme]({% link _docs/api/terminal/interfaces/itheme.md %}) |  The option value. |
 
 **Returns:** `void`
 
