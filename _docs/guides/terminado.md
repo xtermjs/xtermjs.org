@@ -40,13 +40,17 @@ This script (referred to as `app.py`) is adapted from the [`Terminado` "single" 
       <div id="terminal-container"></div>
     </div>
     <script>
+      terminado.apply(Terminal);
+
       var term = new Terminal(),
           protocol = (location.protocol === 'https:') ? 'wss://' : 'ws://',
           socketURL = protocol + location.hostname + ((location.port) ? (':' + location.port) : '') + "/websocket";
           sock = new WebSocket(socketURL);
+
       sock.addEventListener('open', function () {
         term.terminadoAttach(sock);
       });
+
       term.open(document.getElementById('terminal-container'));
     </script>
   </body>
