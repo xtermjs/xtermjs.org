@@ -1,9 +1,19 @@
 <ul class="docs-list">
   {% for doc in site.docs %}
-  {% if doc.category == include.category %}
-  <li>
-    <a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a>
-  </li>
-  {% endif %}
+    {% if doc.category == include.category %}
+      {% assign url = "{{ site.baseurl }}{{ doc.url }}" %}
+      <li>
+      {% unless include.category == "addons" %}
+        <a href="{{ url }}">{{ doc.title }}</a>
+      {% else %}
+        <a href="{{ url }}?repo=xterm.js-addon-attach">Attach</a>
+        <a href="{{ url }}?repo=xterm.js-addon-fit">Fit</a>
+        <a href="{{ url }}?repo=xterm.js-addon-fullscreen">Fullscreen</a>
+        <a href="{{ url }}?repo=xterm.js-addon-terminado">Terminado</a>
+        <a href="{{ url }}?repo=xterm.js-addon-winptycompat">WinptyCompat</a>
+        <a href="{{ url }}?repo=xterm.js-addon-zmodem">Zmodem</a>
+      {% endif %}
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>
