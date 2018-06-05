@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<header id="docs-header"></header>
+
+<article class="docs-content" id="docs-content"></article>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise/dist/es6-promise.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/unfetch/dist/unfetch.umd.js"></script>
+
+<script>
+    var header = document.getElementById('docs-header');
+    var content = document.getElementById('docs-content');
+
+    var params={};
+    window.location.search
+    .replace(/[?&]+([^=&]+)=([^&]*)/gi, function(s, k, v) { 
+      params[key] = decodeURIComponent(value);
+    });
+
+    if (!params.repo) {
+      window.alert('Error: url query is missing repo name');
+    }
+
+    params.page = params.page || 'docs/README.md';
+    var url = 'https://cdn.jsdelivr.net/gh/xtermjs/'
+      + params.repo + '/' + params.page;
+    
+    if (!window.Promise) {
+      window.Promise = ES6Promise;
+    } 
+    if (!window.fetch) {
+      window.fetch = unfetch;
+    }
+
+    fetch(url)
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (body) {
+      content.innerHTML = marked(body);
+      document.title = content.getElementsByTagName('h1')[0].innerHTML;
+      header.innerHTML = '<h1><a href="' + location + '">'
+                       + document.title
+                       + '</a></h1>';
+      var anchors = content.getElementsByTagName('a');
+      for (var href, i = 0; i < anchors.length; i++) {
+        anchors[i].addEventListener('click', onClick);
+      }
+    })
+    .catch(function (error) {
+      content.innerHTML = '<p>Oops! There was a problem rendering the page.</p>'
+                        + '<p>' + error.message + '</p>';
+    });
+
+    function onClick(event) {
+      var href = event.target.getAttribute('href');
+      if (!/^(https?|#)/.test(href)) {
+        // split on hash
+        anchor.setAttribute('href', window.location.href.split(/[#?]/)[0]
+          + '?repo=' + params.repo + '&page=' + encodeURIComponent(href));
+      }
+    }
+</script>
