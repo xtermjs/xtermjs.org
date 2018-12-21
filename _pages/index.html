@@ -1,18 +1,23 @@
 ---
 layout: default
 permalink: /
+demo: true
 ---
 
 <div class="home">
 
   <article>
-  	{% capture about %}{% include xtermjs-description.md %}{% endcapture %}
+    {% capture about %}{% include xtermjs-description.md %}{% endcapture %}
     {{ about | markdownify }}
   </article>
 
   {% capture getting_started %}{% include getting-started.md %}{% endcapture %}
   {{ getting_started | markdownify }}
 
+  {% capture demo %}{% include demo.html %}{% endcapture %}
+  {{ demo }}
+
   {% capture real_world_uses %}{% include real-world-uses.md %}{% endcapture %}
   {{ real_world_uses | markdownify }}
+
 </div>
