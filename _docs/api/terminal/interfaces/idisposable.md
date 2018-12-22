@@ -13,17 +13,17 @@ An object that can be disposed via a dispose function.
 
 **IDisposable**
 
-↳  [IMarker](../imarker)
+↳  [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
 
 ## Implemented by
 
-* [Terminal](../../classes/terminal)
+* [Terminal]({% link _docs/api/terminal/classes/terminal.md %})
 
 ## Index
 
 ### Methods
 
-* [dispose](#dispose)
+* [dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)
 
 ---
 
@@ -35,7 +35,7 @@ An object that can be disposed via a dispose function.
 
 ▸ **dispose**(): `void`
 
-*Defined in [xterm.d.ts:259](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L259)*
+*Defined in [xterm.d.ts:306](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L306)*
 
 **Returns:** `void`
 

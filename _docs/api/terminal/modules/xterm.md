@@ -15,21 +15,22 @@ This contains the type declarations for the xterm.js library. Note that some int
 
 ### Classes
 
-* [Terminal](../../classes/terminal)
+* [Terminal]({% link _docs/api/terminal/classes/terminal.md %})
 
 ### Interfaces
 
-* [IDisposable](../../interfaces/idisposable)
-* [IEventEmitter](../../interfaces/ieventemitter)
-* [ILinkMatcherOptions](../../interfaces/ilinkmatcheroptions)
-* [ILocalizableStrings](../../interfaces/ilocalizablestrings)
-* [IMarker](../../interfaces/imarker)
-* [ITerminalOptions](../../interfaces/iterminaloptions)
-* [ITheme](../../interfaces/itheme)
+* [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
+* [IEventEmitter]({% link _docs/api/terminal/interfaces/ieventemitter.md %})
+* [ILinkMatcherOptions]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %})
+* [ILocalizableStrings]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %})
+* [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
+* [ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %})
+* [ITheme]({% link _docs/api/terminal/interfaces/itheme.md %})
 
 ### Type aliases
 
-* [FontWeight](#fontweight)
+* [FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)
+* [RendererType]({% link _docs/api/terminal/modules/xterm.md %}#renderertype)
 
 ---
 
@@ -39,12 +40,22 @@ This contains the type declarations for the xterm.js library. Note that some int
 
 ###  FontWeight
 
-**ΤFontWeight**: * "normal" &#124; "bold" &#124; "100" &#124; "200" &#124; "300" &#124; "400" &#124; "500" &#124; "600" &#124; "700" &#124; "800" &#124; "900"
-*
+**Ƭ FontWeight**: *"normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900"*
 
-*Defined in [xterm.d.ts:14](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L14)*
+*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L16)*
 
 A string representing text font weight.
+
+___
+<a id="renderertype"></a>
+
+###  RendererType
+
+**Ƭ RendererType**: *"dom" | "canvas"*
+
+*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L21)*
+
+A string representing a renderer type.
 
 ___
 
