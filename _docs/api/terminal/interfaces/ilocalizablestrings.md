@@ -15,9 +15,9 @@ layout: docs
 
 ### Properties
 
-* [blankLine](#blankline)
-* [promptLabel](#promptlabel)
-* [tooMuchOutput](#toomuchoutput)
+* [blankLine]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %}#blankline)
+* [promptLabel]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %}#promptlabel)
+* [tooMuchOutput]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %}#toomuchoutput)
 
 ---
 
@@ -29,7 +29,7 @@ layout: docs
 
 **● blankLine**: *`string`*
 
-*Defined in [xterm.d.ts:269](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L269)*
+*Defined in [xterm.d.ts:316](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L316)*
 
 ___
 <a id="promptlabel"></a>
@@ -38,7 +38,7 @@ ___
 
 **● promptLabel**: *`string`*
 
-*Defined in [xterm.d.ts:270](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L270)*
+*Defined in [xterm.d.ts:317](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L317)*
 
 ___
 <a id="toomuchoutput"></a>
@@ -47,7 +47,7 @@ ___
 
 **● tooMuchOutput**: *`string`*
 
-*Defined in [xterm.d.ts:271](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L271)*
+*Defined in [xterm.d.ts:318](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L318)*
 
 ___
 

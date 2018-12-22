@@ -10,6 +10,7 @@
 set -e
 set +x
 
+rm -rf _xterm.js
 git clone --recursive https://github.com/xtermjs/xterm.js _xterm.js
 TAG=$(cd _xterm.js && git describe --tags)
 

@@ -17,27 +17,27 @@ Contains colors to theme the terminal with.
 
 ### Properties
 
-* [background](#background)
-* [black](#black)
-* [blue](#blue)
-* [brightBlack](#brightblack)
-* [brightBlue](#brightblue)
-* [brightCyan](#brightcyan)
-* [brightGreen](#brightgreen)
-* [brightMagenta](#brightmagenta)
-* [brightRed](#brightred)
-* [brightWhite](#brightwhite)
-* [brightYellow](#brightyellow)
-* [cursor](#cursor)
-* [cursorAccent](#cursoraccent)
-* [cyan](#cyan)
-* [foreground](#foreground)
-* [green](#green)
-* [magenta](#magenta)
-* [red](#red)
-* [selection](#selection)
-* [white](#white)
-* [yellow](#yellow)
+* [background]({% link _docs/api/terminal/interfaces/itheme.md %}#background)
+* [black]({% link _docs/api/terminal/interfaces/itheme.md %}#black)
+* [blue]({% link _docs/api/terminal/interfaces/itheme.md %}#blue)
+* [brightBlack]({% link _docs/api/terminal/interfaces/itheme.md %}#brightblack)
+* [brightBlue]({% link _docs/api/terminal/interfaces/itheme.md %}#brightblue)
+* [brightCyan]({% link _docs/api/terminal/interfaces/itheme.md %}#brightcyan)
+* [brightGreen]({% link _docs/api/terminal/interfaces/itheme.md %}#brightgreen)
+* [brightMagenta]({% link _docs/api/terminal/interfaces/itheme.md %}#brightmagenta)
+* [brightRed]({% link _docs/api/terminal/interfaces/itheme.md %}#brightred)
+* [brightWhite]({% link _docs/api/terminal/interfaces/itheme.md %}#brightwhite)
+* [brightYellow]({% link _docs/api/terminal/interfaces/itheme.md %}#brightyellow)
+* [cursor]({% link _docs/api/terminal/interfaces/itheme.md %}#cursor)
+* [cursorAccent]({% link _docs/api/terminal/interfaces/itheme.md %}#cursoraccent)
+* [cyan]({% link _docs/api/terminal/interfaces/itheme.md %}#cyan)
+* [foreground]({% link _docs/api/terminal/interfaces/itheme.md %}#foreground)
+* [green]({% link _docs/api/terminal/interfaces/itheme.md %}#green)
+* [magenta]({% link _docs/api/terminal/interfaces/itheme.md %}#magenta)
+* [red]({% link _docs/api/terminal/interfaces/itheme.md %}#red)
+* [selection]({% link _docs/api/terminal/interfaces/itheme.md %}#selection)
+* [white]({% link _docs/api/terminal/interfaces/itheme.md %}#white)
+* [yellow]({% link _docs/api/terminal/interfaces/itheme.md %}#yellow)
 
 ---
 
@@ -49,7 +49,7 @@ Contains colors to theme the terminal with.
 
 **● background**: *`string`*
 
-*Defined in [xterm.d.ts:164](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L164)*
+*Defined in [xterm.d.ts:211](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L211)*
 
 The default background color
 
@@ -60,7 +60,7 @@ ___
 
 **● black**: *`string`*
 
-*Defined in [xterm.d.ts:172](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L172)*
+*Defined in [xterm.d.ts:219](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L219)*
 
 ANSI black (eg. `\x1b[30m`)
 
@@ -71,7 +71,7 @@ ___
 
 **● blue**: *`string`*
 
-*Defined in [xterm.d.ts:180](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L180)*
+*Defined in [xterm.d.ts:227](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L227)*
 
 ANSI blue (eg. `\x1b[34m`)
 
@@ -82,7 +82,7 @@ ___
 
 **● brightBlack**: *`string`*
 
-*Defined in [xterm.d.ts:188](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L188)*
+*Defined in [xterm.d.ts:235](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L235)*
 
 ANSI bright black (eg. `\x1b[1;30m`)
 
@@ -93,7 +93,7 @@ ___
 
 **● brightBlue**: *`string`*
 
-*Defined in [xterm.d.ts:196](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L196)*
+*Defined in [xterm.d.ts:243](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L243)*
 
 ANSI bright blue (eg. `\x1b[1;34m`)
 
@@ -104,7 +104,7 @@ ___
 
 **● brightCyan**: *`string`*
 
-*Defined in [xterm.d.ts:200](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L200)*
+*Defined in [xterm.d.ts:247](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L247)*
 
 ANSI bright cyan (eg. `\x1b[1;36m`)
 
@@ -115,7 +115,7 @@ ___
 
 **● brightGreen**: *`string`*
 
-*Defined in [xterm.d.ts:192](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L192)*
+*Defined in [xterm.d.ts:239](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L239)*
 
 ANSI bright green (eg. `\x1b[1;32m`)
 
@@ -126,7 +126,7 @@ ___
 
 **● brightMagenta**: *`string`*
 
-*Defined in [xterm.d.ts:198](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L198)*
+*Defined in [xterm.d.ts:245](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L245)*
 
 ANSI bright magenta (eg. `\x1b[1;35m`)
 
@@ -137,7 +137,7 @@ ___
 
 **● brightRed**: *`string`*
 
-*Defined in [xterm.d.ts:190](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L190)*
+*Defined in [xterm.d.ts:237](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L237)*
 
 ANSI bright red (eg. `\x1b[1;31m`)
 
@@ -148,7 +148,7 @@ ___
 
 **● brightWhite**: *`string`*
 
-*Defined in [xterm.d.ts:202](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L202)*
+*Defined in [xterm.d.ts:249](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L249)*
 
 ANSI bright white (eg. `\x1b[1;37m`)
 
@@ -159,7 +159,7 @@ ___
 
 **● brightYellow**: *`string`*
 
-*Defined in [xterm.d.ts:194](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L194)*
+*Defined in [xterm.d.ts:241](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L241)*
 
 ANSI bright yellow (eg. `\x1b[1;33m`)
 
@@ -170,7 +170,7 @@ ___
 
 **● cursor**: *`string`*
 
-*Defined in [xterm.d.ts:166](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L166)*
+*Defined in [xterm.d.ts:213](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L213)*
 
 The cursor color
 
@@ -181,7 +181,7 @@ ___
 
 **● cursorAccent**: *`string`*
 
-*Defined in [xterm.d.ts:168](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L168)*
+*Defined in [xterm.d.ts:215](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L215)*
 
 The accent color of the cursor (used as the foreground color for a block cursor)
 
@@ -192,7 +192,7 @@ ___
 
 **● cyan**: *`string`*
 
-*Defined in [xterm.d.ts:184](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L184)*
+*Defined in [xterm.d.ts:231](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L231)*
 
 ANSI cyan (eg. `\x1b[36m`)
 
@@ -203,7 +203,7 @@ ___
 
 **● foreground**: *`string`*
 
-*Defined in [xterm.d.ts:162](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L162)*
+*Defined in [xterm.d.ts:209](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L209)*
 
 The default foreground color
 
@@ -214,7 +214,7 @@ ___
 
 **● green**: *`string`*
 
-*Defined in [xterm.d.ts:176](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L176)*
+*Defined in [xterm.d.ts:223](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L223)*
 
 ANSI green (eg. `\x1b[32m`)
 
@@ -225,7 +225,7 @@ ___
 
 **● magenta**: *`string`*
 
-*Defined in [xterm.d.ts:182](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L182)*
+*Defined in [xterm.d.ts:229](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L229)*
 
 ANSI magenta (eg. `\x1b[35m`)
 
@@ -236,7 +236,7 @@ ___
 
 **● red**: *`string`*
 
-*Defined in [xterm.d.ts:174](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L174)*
+*Defined in [xterm.d.ts:221](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L221)*
 
 ANSI red (eg. `\x1b[31m`)
 
@@ -247,7 +247,7 @@ ___
 
 **● selection**: *`string`*
 
-*Defined in [xterm.d.ts:170](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L170)*
+*Defined in [xterm.d.ts:217](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L217)*
 
 The selection color (can be transparent)
 
@@ -258,7 +258,7 @@ ___
 
 **● white**: *`string`*
 
-*Defined in [xterm.d.ts:186](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L186)*
+*Defined in [xterm.d.ts:233](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L233)*
 
 ANSI white (eg. `\x1b[37m`)
 
@@ -269,7 +269,7 @@ ___
 
 **● yellow**: *`string`*
 
-*Defined in [xterm.d.ts:178](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L178)*
+*Defined in [xterm.d.ts:225](https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L225)*
 
 ANSI yellow (eg. `\x1b[33m`)
 

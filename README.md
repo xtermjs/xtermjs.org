@@ -11,3 +11,10 @@ bundle install
 # Serve the website
 bundle exec jekyll serve
 ```
+
+## Update API documentation
+
+```bash
+npm install
+./bin/update-docs
+```
