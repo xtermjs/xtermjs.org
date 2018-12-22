@@ -12,6 +12,7 @@ const path = require('path');
  * Generate TypeScript project markdown
  */
 gulp.task('typedoc', function() {
+  const version = require('./_xterm.js/package.json').version;
   return gulp.src('./_xterm.js/typings/xterm.d.ts')
   .pipe(typedoc({
     // TypeScript options (see typescript docs)
@@ -27,7 +28,7 @@ gulp.task('typedoc', function() {
     // Excludes private class members
     excludePrivate: true,
     // The branch or revision that will be used to create src links
-    gitRevision: 'master',
+    gitRevision: version,
 
     // TypeDoc options (see typedoc docs)
     readme: 'none',
