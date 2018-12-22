@@ -1,7 +1,6 @@
 ---
 layout: default
 permalink: /
-demo: true
 ---
 
 <div class="home">
@@ -14,8 +13,7 @@ demo: true
   {% capture getting_started %}{% include getting-started.md %}{% endcapture %}
   {{ getting_started | markdownify }}
 
-  {% capture demo %}{% include demo.html %}{% endcapture %}
-  {{ demo }}
+  {% include demo.html %}
 
   {% capture real_world_uses %}{% include real-world-uses.md %}{% endcapture %}
   {{ real_world_uses | markdownify }}
