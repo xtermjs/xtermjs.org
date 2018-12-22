@@ -6,13 +6,16 @@ permalink: /
 <div class="home">
 
   <article>
-  	{% capture about %}{% include xtermjs-description.md %}{% endcapture %}
+    {% capture about %}{% include xtermjs-description.md %}{% endcapture %}
     {{ about | markdownify }}
   </article>
 
   {% capture getting_started %}{% include getting-started.md %}{% endcapture %}
   {{ getting_started | markdownify }}
 
+  {% include demo.html %}
+
   {% capture real_world_uses %}{% include real-world-uses.md %}{% endcapture %}
   {{ real_world_uses | markdownify }}
+
 </div>
