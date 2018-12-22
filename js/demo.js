@@ -19,7 +19,7 @@ $(function () {
         term.writeln('');
         term.prompt();
 
-        term._core.register(term.addDisposableListener('key', (key, ev) => {
+        term.on('key', function(key, ev) {
             const printable = !ev.altKey && !ev.altGraphKey && !ev.ctrlKey && !ev.metaKey;
 
             if (ev.keyCode === 13) {
@@ -32,11 +32,11 @@ $(function () {
             } else if (printable) {
                 term.write(key);
             }
-        }));
+        });
 
-        term._core.register(term.addDisposableListener('paste', (data, ev) => {
+        term.on('paste', function(data) {
             term.write(data);
-        }));
+        });
     }
     runFakeTerminal();
 });
