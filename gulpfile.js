@@ -13,6 +13,13 @@ const path = require('path');
  */
 gulp.task('typedoc', function() {
   const version = require('./_xterm.js/package.json').version;
+
+  // Update API doc version number
+  const majorMinorVersion = version.substr(0, version.lastIndexOf('.'));
+  const configYaml = fs.readFileSync('./_config.yml').toString();
+  const newConfigYaml = configYaml.replace(/version:.*/, 'version: \'' + majorMinorVersion + '\'')
+  fs.writeFileSync('./_config.yml', newConfigYaml);
+
   return gulp.src('./_xterm.js/typings/xterm.d.ts')
   .pipe(typedoc({
     // TypeScript options (see typescript docs)
