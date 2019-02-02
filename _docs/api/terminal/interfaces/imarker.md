@@ -35,7 +35,7 @@ layout: docs
 
 **● id**: *`number`*
 
-*Defined in [xterm.d.ts:310](https://github.com/xtermjs/xterm.js/blob/3.10.0/typings/xterm.d.ts#L310)*
+*Defined in [xterm.d.ts:299](https://github.com/xtermjs/xterm.js/blob/3.11.0/typings/xterm.d.ts#L299)*
 
 ___
 <a id="isdisposed"></a>
@@ -44,7 +44,7 @@ ___
 
 **● isDisposed**: *`boolean`*
 
-*Defined in [xterm.d.ts:311](https://github.com/xtermjs/xterm.js/blob/3.10.0/typings/xterm.d.ts#L311)*
+*Defined in [xterm.d.ts:300](https://github.com/xtermjs/xterm.js/blob/3.11.0/typings/xterm.d.ts#L300)*
 
 ___
 <a id="line"></a>
@@ -53,7 +53,7 @@ ___
 
 **● line**: *`number`*
 
-*Defined in [xterm.d.ts:312](https://github.com/xtermjs/xterm.js/blob/3.10.0/typings/xterm.d.ts#L312)*
+*Defined in [xterm.d.ts:301](https://github.com/xtermjs/xterm.js/blob/3.11.0/typings/xterm.d.ts#L301)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 *Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
-*Defined in [xterm.d.ts:306](https://github.com/xtermjs/xterm.js/blob/3.10.0/typings/xterm.d.ts#L306)*
+*Defined in [xterm.d.ts:295](https://github.com/xtermjs/xterm.js/blob/3.11.0/typings/xterm.d.ts#L295)*
 
 **Returns:** `void`
 
