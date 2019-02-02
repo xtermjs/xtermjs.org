@@ -34,12 +34,12 @@ An object containing options for a link matcher.
 
 **● leaveCallback**: *`function`*
 
-*Defined in [xterm.d.ts:277](https://github.com/xtermjs/xterm.js/blob/3.10.0/typings/xterm.d.ts#L277)*
+*Defined in [xterm.d.ts:266](https://github.com/xtermjs/xterm.js/blob/3.11.0/typings/xterm.d.ts#L266)*
 
 A callback that fires when the mouse leaves a link. Note that this can happen even when tooltipCallback hasn't fired for the link yet.
 
 #### Type declaration
-▸(event: *`MouseEvent`*, uri: *`string`*): `boolean` | `void`
+▸(event: *`MouseEvent`*, uri: *`string`*): `boolean` \| `void`
 
 **Parameters:**
 
@@ -48,7 +48,7 @@ A callback that fires when the mouse leaves a link. Note that this can happen ev
 | event | `MouseEvent` |
 | uri | `string` |
 
-**Returns:** `boolean` | `void`
+**Returns:** `boolean` \| `void`
 
 ___
 <a id="matchindex"></a>
@@ -57,7 +57,7 @@ ___
 
 **● matchIndex**: *`number`*
 
-*Defined in [xterm.d.ts:260](https://github.com/xtermjs/xterm.js/blob/3.10.0/typings/xterm.d.ts#L260)*
+*Defined in [xterm.d.ts:249](https://github.com/xtermjs/xterm.js/blob/3.11.0/typings/xterm.d.ts#L249)*
 
 The index of the link from the regex.match(text) call. This defaults to 0 (for regular expressions without capture groups).
 
@@ -68,7 +68,7 @@ ___
 
 **● priority**: *`number`*
 
-*Defined in [xterm.d.ts:284](https://github.com/xtermjs/xterm.js/blob/3.10.0/typings/xterm.d.ts#L284)*
+*Defined in [xterm.d.ts:273](https://github.com/xtermjs/xterm.js/blob/3.11.0/typings/xterm.d.ts#L273)*
 
 The priority of the link matcher, this defines the order in which the link matcher is evaluated relative to others, from highest to lowest. The default value is 0.
 
@@ -79,12 +79,12 @@ ___
 
 **● tooltipCallback**: *`function`*
 
-*Defined in [xterm.d.ts:271](https://github.com/xtermjs/xterm.js/blob/3.10.0/typings/xterm.d.ts#L271)*
+*Defined in [xterm.d.ts:260](https://github.com/xtermjs/xterm.js/blob/3.11.0/typings/xterm.d.ts#L260)*
 
 A callback that fires when the mouse hovers over a link for a moment.
 
 #### Type declaration
-▸(event: *`MouseEvent`*, uri: *`string`*): `boolean` | `void`
+▸(event: *`MouseEvent`*, uri: *`string`*): `boolean` \| `void`
 
 **Parameters:**
 
@@ -93,7 +93,7 @@ A callback that fires when the mouse hovers over a link for a moment.
 | event | `MouseEvent` |
 | uri | `string` |
 
-**Returns:** `boolean` | `void`
+**Returns:** `boolean` \| `void`
 
 ___
 <a id="validationcallback"></a>
@@ -102,7 +102,7 @@ ___
 
 **● validationCallback**: *`function`*
 
-*Defined in [xterm.d.ts:266](https://github.com/xtermjs/xterm.js/blob/3.10.0/typings/xterm.d.ts#L266)*
+*Defined in [xterm.d.ts:255](https://github.com/xtermjs/xterm.js/blob/3.11.0/typings/xterm.d.ts#L255)*
 
 A callback that validates whether to create an individual link, pass whether the link is valid to the callback.
 
@@ -125,7 +125,7 @@ ___
 
 **● willLinkActivate**: *`function`*
 
-*Defined in [xterm.d.ts:292](https://github.com/xtermjs/xterm.js/blob/3.10.0/typings/xterm.d.ts#L292)*
+*Defined in [xterm.d.ts:281](https://github.com/xtermjs/xterm.js/blob/3.11.0/typings/xterm.d.ts#L281)*
 
 A callback that fires when the mousedown and click events occur that determines whether a link will be activated upon click. This enables only activating a link when a certain modifier is held down, if not the mouse event will continue propagation (eg. double click to select word).
 
