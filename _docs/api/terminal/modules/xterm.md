@@ -42,7 +42,7 @@ This contains the type declarations for the xterm.js library. Note that some int
 
 **Ƭ FontWeight**: *"normal" \| "bold" \| "100" \| "200" \| "300" \| "400" \| "500" \| "600" \| "700" \| "800" \| "900"*
 
-*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/3.11.0/typings/xterm.d.ts#L16)*
+*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/3.12.0/typings/xterm.d.ts#L16)*
 
 A string representing text font weight.
 
@@ -53,7 +53,7 @@ ___
 
 **Ƭ RendererType**: *"dom" \| "canvas"*
 
-*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/3.11.0/typings/xterm.d.ts#L21)*
+*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/3.12.0/typings/xterm.d.ts#L21)*
 
 A string representing a renderer type.
 
