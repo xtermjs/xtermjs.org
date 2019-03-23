@@ -32,7 +32,7 @@ computational environment for Jupyter, supporting interactive data science and s
 - [**Kubebox**](https://github.com/astefanutti/kubebox): Terminal console for Kubernetes clusters.
 - [**Azure Cloud Shell**](https://shell.azure.com): Azure Cloud Shell is a Microsoft-managed admin machine built on Azure, for Azure.
 - [**atom-xterm**](https://atom.io/packages/atom-xterm): Atom plugin for providing terminals inside your Atom workspace.
-- [**rtty**](https://github.com/zhaojh329/rtty): A reverse proxy WebTTY. It is composed of the client and the server.
+- [**rtty**](https://github.com/zhaojh329/rtty): Access your terminals from anywhere via the web.
 - [**Pisth**](https://github.com/ColdGrub1384/Pisth): An SFTP and SSH client for iOS
 - [**abstruse**](https://github.com/bleenco/abstruse): Abstruse CI is a continuous integration platform based on Node.JS and Docker.
 - [**Microsoft SQL Operations Studio**](https://github.com/Microsoft/sqlopsstudio): A data management tool that enables working with SQL Server, Azure SQL DB and SQL DW from Windows, macOS and Linux
