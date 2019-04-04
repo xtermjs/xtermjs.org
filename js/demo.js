@@ -26,7 +26,7 @@ $(function () {
                 term.prompt();
             } else if (ev.keyCode === 8) {
                 // Do not delete the prompt
-                if (term.x > 2) {
+                if (term._core.buffer.x > 2) {
                     term.write('\b \b');
                 }
             } else if (printable) {
