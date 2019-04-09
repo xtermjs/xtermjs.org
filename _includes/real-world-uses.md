@@ -41,3 +41,4 @@ computational environment for Jupyter, supporting interactive data science and s
 - [**Hyper**](https://hyper.is): A terminal built on web technologies
 - [**Diag**](https://diag.ai): A better way to troubleshoot problems faster. Capture, share and reapply troubleshooting knowledge so you can focus on solving problems that matter.
 - [**GoTTY**](https://github.com/yudai/gotty): A simple command line tool that shares your terminal as a web application based on xterm.js.
+- [**Bastillion**](https://www.bastillion.io): Bastillion is an open-source web-based SSH console that centrally manages administrative access to systems. 
