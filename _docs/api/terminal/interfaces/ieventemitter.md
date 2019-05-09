@@ -34,7 +34,7 @@ layout: docs
 
 ▸ **addDisposableListener**(type: *`string`*, handler: *`function`*): [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
-*Defined in [xterm.d.ts:288](https://github.com/xtermjs/xterm.js/blob/3.12.0/typings/xterm.d.ts#L288)*
+*Defined in [xterm.d.ts:300](https://github.com/xtermjs/xterm.js/blob/3.13.0/typings/xterm.d.ts#L300)*
 
 **Parameters:**
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **emit**(type: *`string`*, data?: *`any`*): `void`
 
-*Defined in [xterm.d.ts:287](https://github.com/xtermjs/xterm.js/blob/3.12.0/typings/xterm.d.ts#L287)*
+*Defined in [xterm.d.ts:299](https://github.com/xtermjs/xterm.js/blob/3.13.0/typings/xterm.d.ts#L299)*
 
 **Parameters:**
 
@@ -70,7 +70,7 @@ ___
 
 ▸ **off**(type: *`string`*, listener: *`function`*): `void`
 
-*Defined in [xterm.d.ts:286](https://github.com/xtermjs/xterm.js/blob/3.12.0/typings/xterm.d.ts#L286)*
+*Defined in [xterm.d.ts:298](https://github.com/xtermjs/xterm.js/blob/3.13.0/typings/xterm.d.ts#L298)*
 
 **Parameters:**
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **on**(type: *`string`*, listener: *`function`*): `void`
 
-*Defined in [xterm.d.ts:285](https://github.com/xtermjs/xterm.js/blob/3.12.0/typings/xterm.d.ts#L285)*
+*Defined in [xterm.d.ts:297](https://github.com/xtermjs/xterm.js/blob/3.13.0/typings/xterm.d.ts#L297)*
 
 **Parameters:**
 

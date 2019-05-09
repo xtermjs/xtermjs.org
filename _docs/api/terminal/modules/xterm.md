@@ -20,6 +20,7 @@ This contains the type declarations for the xterm.js library. Note that some int
 ### Interfaces
 
 * [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
+* [IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})
 * [IEventEmitter]({% link _docs/api/terminal/interfaces/ieventemitter.md %})
 * [ILinkMatcherOptions]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %})
 * [ILocalizableStrings]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %})
@@ -42,7 +43,7 @@ This contains the type declarations for the xterm.js library. Note that some int
 
 **Ƭ FontWeight**: *"normal" \| "bold" \| "100" \| "200" \| "300" \| "400" \| "500" \| "600" \| "700" \| "800" \| "900"*
 
-*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/3.12.0/typings/xterm.d.ts#L16)*
+*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/3.13.0/typings/xterm.d.ts#L16)*
 
 A string representing text font weight.
 
@@ -53,7 +54,7 @@ ___
 
 **Ƭ RendererType**: *"dom" \| "canvas"*
 
-*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/3.12.0/typings/xterm.d.ts#L21)*
+*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/3.13.0/typings/xterm.d.ts#L21)*
 
 A string representing a renderer type.
 
