@@ -15,6 +15,8 @@ An object that can be disposed via a dispose function.
 
 ↳  [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
 
+↳  [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})
+
 ## Implemented by
 
 * [Terminal]({% link _docs/api/terminal/classes/terminal.md %})
@@ -35,7 +37,7 @@ An object that can be disposed via a dispose function.
 
 ▸ **dispose**(): `void`
 
-*Defined in [xterm.d.ts:307](https://github.com/xtermjs/xterm.js/blob/3.13.0/typings/xterm.d.ts#L307)*
+*Defined in [xterm.d.ts:307](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L307)*
 
 **Returns:** `void`
 

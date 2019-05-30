@@ -29,7 +29,7 @@ layout: docs
 
 **● blankLine**: *`string`*
 
-*Defined in [xterm.d.ts:325](https://github.com/xtermjs/xterm.js/blob/3.13.0/typings/xterm.d.ts#L325)*
+*Defined in [xterm.d.ts:325](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L325)*
 
 ___
 <a id="promptlabel"></a>
@@ -38,7 +38,7 @@ ___
 
 **● promptLabel**: *`string`*
 
-*Defined in [xterm.d.ts:326](https://github.com/xtermjs/xterm.js/blob/3.13.0/typings/xterm.d.ts#L326)*
+*Defined in [xterm.d.ts:326](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L326)*
 
 ___
 <a id="toomuchoutput"></a>
@@ -47,7 +47,7 @@ ___
 
 **● tooMuchOutput**: *`string`*
 
-*Defined in [xterm.d.ts:327](https://github.com/xtermjs/xterm.js/blob/3.13.0/typings/xterm.d.ts#L327)*
+*Defined in [xterm.d.ts:327](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L327)*
 
 ___
 
