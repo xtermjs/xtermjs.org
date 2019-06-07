@@ -92,7 +92,11 @@ gulp.task('docs', ['typedoc'], async function() {
       while ((match = re.exec(data)) !== null) {
         let [link, title, uri] = match;
 
+        // Replace xtermjs.org repo links with xterm.js
         if (/^https?/.test(uri)) {
+          uri = uri.replace('xtermjs.org/blob', 'xterm.js/blob');
+          link = `[${title}](${uri})`;
+          data = `${data.substr(0, match.index)}${link}${data.substr(re.lastIndex)}`;
           continue;
         }
 
