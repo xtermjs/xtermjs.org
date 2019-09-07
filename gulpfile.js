@@ -57,7 +57,7 @@ gulp.task('typedoc', function() {
  *
  * The files are renamed/moved to <project>/_docs/api/terminal/
  */
-gulp.task('docs', ['typedoc'], async function() {
+gulp.task('docs', gulp.series('typedoc', async function() {
   // Removes prefixes and outer underscores from the basename of paths
   // (1): ../classes/_xterm_d_._xterm_.foo.md#bar => ../classes/foo.md#bar
   // (2): modules/_xterm_d_._xterm_.md => modules/xterm.md
@@ -130,6 +130,6 @@ gulp.task('docs', ['typedoc'], async function() {
       await fs.writeFile(outFile, data, 'utf-8');
     }
   }
-});
+}));
 
-gulp.task('default', ['docs']);
+gulp.task('default', gulp.series('docs'));
