@@ -7,12 +7,16 @@ const gulp = require('gulp');
 const typedoc = require('gulp-typedoc');
 const fs = require('fs-extra');
 const path = require('path');
+const cp = require('child_process');
 
 /**
  * Generate TypeScript project markdown
  */
 gulp.task('typedoc', function() {
   const version = require('./_xterm.js/package.json').version;
+
+  // Checkout tag to make sure correct API docs are produced
+  cp.spawnSync('git', ['checkout', version], { cwd: path.join(__dirname, '_xterm.js') });
 
   // Update API doc version number
   const majorMinorVersion = version.substr(0, version.lastIndexOf('.'));
