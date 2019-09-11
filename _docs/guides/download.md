@@ -5,9 +5,10 @@ category: Guides
 
 The recommended way to get xterm.js is via a package manager like [npm](https://npmjs.org/package/xterm) or [Yarn](https://yarnpkg.com/en/).
 
-You can either download official releases of xterm.js or arbitrary commits, which is not encouraged for production usage. All the production ready releases of xterm.js are available at [https://github.com/sourcelair/xterm.js/releases](https://github.com/sourcelair/xterm.js/releases).
+You can either download official releases of xterm.js or arbitrary commits, which is not encouraged for production usage. All the production ready releases of xterm.js are available at [https://github.com/xtermjs/xterm.js/releases](https://github.com/xtermjs/xterm.js/releases).
 
 ## Npm and Yarn
+
 The best way to download xterm.js for use in your project is with [`npm`](http://npmjs.org/) or [`yarn`](https://yarnpkg.com/en/).
 
 ```bash
@@ -18,7 +19,8 @@ npm install --save xterm
 ```
 
 ## GitHub Releases
-All xterm.js releases are available as tar.gz and zip archives at [https://github.com/sourcelair/xterm.js/releases](https://github.com/sourcelair/xterm.js/releases), to download them manually.
+
+All xterm.js releases are available as tar.gz and zip archives at [https://github.com/xtermjs/xterm.js/releases](https://github.com/xtermjs/xterm.js/releases), to download them manually.
 
 ## Clone the Git repository
 You can clone the xterm.js repository and checkout any arbitrary commit you would like to use.
@@ -28,7 +30,7 @@ You can clone the xterm.js repository and checkout any arbitrary commit you woul
 Also, make sure to **manually install dependencies and build xterm.js** after cloning.
 
 ```bash
-git clone https://github.com/sourcelair/xterm.js
+git clone https://github.com/xtermjs/xterm.js
 cd xterm.js
 npm install
 npm run build
