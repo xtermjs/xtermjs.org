@@ -24,10 +24,11 @@ This contains the type declarations for the xterm.js library. Note that some int
 * [IBufferLine]({% link _docs/api/terminal/interfaces/ibufferline.md %})
 * [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 * [IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})
-* [IEventEmitter]({% link _docs/api/terminal/interfaces/ieventemitter.md %})
+* [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})
 * [ILinkMatcherOptions]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %})
 * [ILocalizableStrings]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %})
 * [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
+* [IParser]({% link _docs/api/terminal/interfaces/iparser.md %})
 * [ISelectionPosition]({% link _docs/api/terminal/interfaces/iselectionposition.md %})
 * [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})
 * [ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %})
@@ -36,6 +37,7 @@ This contains the type declarations for the xterm.js library. Note that some int
 ### Type aliases
 
 * [FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)
+* [LogLevel]({% link _docs/api/terminal/modules/xterm.md %}#loglevel)
 * [RendererType]({% link _docs/api/terminal/modules/xterm.md %}#renderertype)
 
 ---
@@ -48,9 +50,20 @@ This contains the type declarations for the xterm.js library. Note that some int
 
 **Ƭ FontWeight**: *"normal" \| "bold" \| "100" \| "200" \| "300" \| "400" \| "500" \| "600" \| "700" \| "800" \| "900"*
 
-*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L16)*
+*Defined in [xterm.d.ts:16](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L16)*
 
 A string representing text font weight.
+
+___
+<a id="loglevel"></a>
+
+###  LogLevel
+
+**Ƭ LogLevel**: *"debug" \| "info" \| "warn" \| "error" \| "off"*
+
+*Defined in [xterm.d.ts:21](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L21)*
+
+A string representing log level.
 
 ___
 <a id="renderertype"></a>
@@ -59,7 +72,7 @@ ___
 
 **Ƭ RendererType**: *"dom" \| "canvas"*
 
-*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L21)*
+*Defined in [xterm.d.ts:26](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L26)*
 
 A string representing a renderer type.
 

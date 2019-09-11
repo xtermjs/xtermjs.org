@@ -7,6 +7,8 @@ layout: docs
 
 # Interface: IBufferCell
 
+Represents a single cell in the terminal's buffer.
+
 ## Hierarchy
 
 **IBufferCell**
@@ -28,7 +30,7 @@ layout: docs
 
 **● char**: *`string`*
 
-*Defined in [xterm.d.ts:1002](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L1002)*
+*Defined in [xterm.d.ts:921](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L921)*
 
 The character within the cell.
 
@@ -39,7 +41,7 @@ ___
 
 **● width**: *`number`*
 
-*Defined in [xterm.d.ts:1011](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L1011)*
+*Defined in [xterm.d.ts:930](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L930)*
 
 The width of the character. Some examples:
 
