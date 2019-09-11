@@ -2,7 +2,7 @@ This repository hosts the code for http://xtermjs.org.
 
 ## Running the website locally
 
-You need ruby installed first.
+You need [ruby](https://www.ruby-lang.org) and [bundler](https://bundler.io) installed first.
 
 ```bash
 # Install dependencies
