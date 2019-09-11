@@ -7,6 +7,8 @@ layout: docs
 
 # Interface: ILocalizableStrings
 
+The set of localizable strings.
+
 ## Hierarchy
 
 **ILocalizableStrings**
@@ -15,7 +17,6 @@ layout: docs
 
 ### Properties
 
-* [blankLine]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %}#blankline)
 * [promptLabel]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %}#promptlabel)
 * [tooMuchOutput]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %}#toomuchoutput)
 
@@ -23,22 +24,15 @@ layout: docs
 
 ## Properties
 
-<a id="blankline"></a>
-
-###  blankLine
-
-**● blankLine**: *`string`*
-
-*Defined in [xterm.d.ts:325](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L325)*
-
-___
 <a id="promptlabel"></a>
 
 ###  promptLabel
 
 **● promptLabel**: *`string`*
 
-*Defined in [xterm.d.ts:326](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L326)*
+*Defined in [xterm.d.ts:339](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L339)*
+
+The aria label for the underlying input textarea for the terminal.
 
 ___
 <a id="toomuchoutput"></a>
@@ -47,7 +41,9 @@ ___
 
 **● tooMuchOutput**: *`string`*
 
-*Defined in [xterm.d.ts:327](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L327)*
+*Defined in [xterm.d.ts:345](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L345)*
+
+Announcement for when line reading is suppressed due to too many lines being printed to the terminal when `screenReaderMode` is enabled.
 
 ___
 

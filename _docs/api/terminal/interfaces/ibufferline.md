@@ -7,6 +7,8 @@ layout: docs
 
 # Interface: IBufferLine
 
+Represents a line in the terminal's buffer.
+
 ## Hierarchy
 
 **IBufferLine**
@@ -32,7 +34,7 @@ layout: docs
 
 **● isWrapped**: *`boolean`*
 
-*Defined in [xterm.d.ts:975](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L975)*
+*Defined in [xterm.d.ts:890](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L890)*
 
 Whether the line is wrapped from the previous line.
 
@@ -44,9 +46,9 @@ ___
 
 ###  getCell
 
-▸ **getCell**(x: *`number`*): [IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %})
+▸ **getCell**(x: *`number`*): [IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %}) \| `undefined`
 
-*Defined in [xterm.d.ts:985](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L985)*
+*Defined in [xterm.d.ts:901](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L901)*
 
 Gets a cell from the line, or undefined if the line index does not exist.
 
@@ -58,7 +60,7 @@ Note that the result of this function should be used immediately after calling a
 | ------ | ------ | ------ |
 | x | `number` |  The character index to get. |
 
-**Returns:** [IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %})
+**Returns:** [IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %}) \| `undefined`
 
 ___
 <a id="translatetostring"></a>
@@ -67,7 +69,7 @@ ___
 
 ▸ **translateToString**(trimRight?: *`boolean`*, startColumn?: *`number`*, endColumn?: *`number`*): `string`
 
-*Defined in [xterm.d.ts:995](https://github.com/xtermjs/xterm.js/blob/3.14.0/typings/xterm.d.ts#L995)*
+*Defined in [xterm.d.ts:911](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L911)*
 
 Gets the line as a string. Note that this is gets only the string for the line, not taking isWrapped into account.
 

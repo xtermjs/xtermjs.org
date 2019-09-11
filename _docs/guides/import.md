@@ -13,7 +13,7 @@ The preferred way to import xterm.js and its addons is the [`import` statement](
 
 import { Terminal } from 'xterm';
 
-let term = new Terminal();
+const term = new Terminal();
 
 term.open(document.getElementById('xterm-container'));
 ```
