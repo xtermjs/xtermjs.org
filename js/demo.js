@@ -18,26 +18,26 @@ $(function () {
         term.writeln('This is a local terminal emulation, without a real terminal in the back-end.');
         term.writeln('Type some keys and commands to play around.');
         term.writeln('');
-        term.prompt();
+        prompt(term);
 
-        term.on('key', function(key, ev) {
-            const printable = !ev.altKey && !ev.altGraphKey && !ev.ctrlKey && !ev.metaKey;
+        term.onKey(e => {
+            const printable = !e.domEvent.altKey && !e.domEvent.altGraphKey && !e.domEvent.ctrlKey && !e.domEvent.metaKey;
 
-            if (ev.keyCode === 13) {
-                term.prompt();
-            } else if (ev.keyCode === 8) {
+            if (e.domEvent.keyCode === 13) {
+                prompt(term);
+            } else if (e.domEvent.keyCode === 8) {
                 // Do not delete the prompt
                 if (term._core.buffer.x > 2) {
                     term.write('\b \b');
                 }
             } else if (printable) {
-                term.write(key);
+                term.write(e.key);
             }
         });
+    }
 
-        term.on('paste', function(data) {
-            term.write(data);
-        });
+    function prompt(term) {
+      term.write('\r\n$ ');
     }
     runFakeTerminal();
 });
