@@ -37,7 +37,7 @@ Represents a terminal buffer.
 
 **● baseY**: *`number`*
 
-*Defined in [xterm.d.ts:863](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L863)*
+*Defined in [xterm.d.ts:871](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L871)*
 
 The line within the buffer where the top of the bottom page is (when fully scrolled down);
 
@@ -48,7 +48,7 @@ ___
 
 **● cursorX**: *`number`*
 
-*Defined in [xterm.d.ts:852](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L852)*
+*Defined in [xterm.d.ts:860](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L860)*
 
 The x position of the cursor. This ranges between `0` (left side) and `Terminal.cols - 1` (right side).
 
@@ -59,7 +59,7 @@ ___
 
 **● cursorY**: *`number`*
 
-*Defined in [xterm.d.ts:846](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L846)*
+*Defined in [xterm.d.ts:854](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L854)*
 
 The y position of the cursor. This ranges between `0` (when the cursor is at baseY) and `Terminal.rows - 1` (when the cursor is on the last row).
 
@@ -70,7 +70,7 @@ ___
 
 **● length**: *`number`*
 
-*Defined in [xterm.d.ts:868](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L868)*
+*Defined in [xterm.d.ts:876](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L876)*
 
 The amount of lines in the buffer.
 
@@ -81,7 +81,7 @@ ___
 
 **● viewportY**: *`number`*
 
-*Defined in [xterm.d.ts:857](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L857)*
+*Defined in [xterm.d.ts:865](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L865)*
 
 The line within the buffer where the top of the viewport is.
 
@@ -95,7 +95,7 @@ ___
 
 ▸ **getLine**(y: *`number`*): [IBufferLine]({% link _docs/api/terminal/interfaces/ibufferline.md %}) \| `undefined`
 
-*Defined in [xterm.d.ts:880](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L880)*
+*Defined in [xterm.d.ts:888](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L888)*
 
 Gets a line from the buffer, or undefined if the line index does not exist.
 

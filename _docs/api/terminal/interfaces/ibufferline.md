@@ -34,7 +34,7 @@ Represents a line in the terminal's buffer.
 
 **● isWrapped**: *`boolean`*
 
-*Defined in [xterm.d.ts:890](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L890)*
+*Defined in [xterm.d.ts:898](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L898)*
 
 Whether the line is wrapped from the previous line.
 
@@ -48,7 +48,7 @@ ___
 
 ▸ **getCell**(x: *`number`*): [IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %}) \| `undefined`
 
-*Defined in [xterm.d.ts:901](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L901)*
+*Defined in [xterm.d.ts:909](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L909)*
 
 Gets a cell from the line, or undefined if the line index does not exist.
 
@@ -69,7 +69,7 @@ ___
 
 ▸ **translateToString**(trimRight?: *`boolean`*, startColumn?: *`number`*, endColumn?: *`number`*): `string`
 
-*Defined in [xterm.d.ts:911](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L911)*
+*Defined in [xterm.d.ts:919](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L919)*
 
 Gets the line as a string. Note that this is gets only the string for the line, not taking isWrapped into account.
 

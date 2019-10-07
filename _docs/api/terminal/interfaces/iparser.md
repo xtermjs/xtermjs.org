@@ -32,7 +32,7 @@ layout: docs
 
 ▸ **addCsiHandler**(id: *[IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})*, callback: *`function`*): [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
-*Defined in [xterm.d.ts:993](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L993)*
+*Defined in [xterm.d.ts:1001](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L1001)*
 
 Adds a handler for CSI escape sequences.
 
@@ -53,7 +53,7 @@ ___
 
 ▸ **addDcsHandler**(id: *[IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})*, callback: *`function`*): [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
-*Defined in [xterm.d.ts:1012](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L1012)*
+*Defined in [xterm.d.ts:1020](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L1020)*
 
 Adds a handler for DCS escape sequences.
 
@@ -74,7 +74,7 @@ ___
 
 ▸ **addEscHandler**(id: *[IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})*, handler: *`function`*): [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
-*Defined in [xterm.d.ts:1025](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L1025)*
+*Defined in [xterm.d.ts:1033](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L1033)*
 
 Adds a handler for ESC escape sequences.
 
@@ -95,7 +95,7 @@ ___
 
 ▸ **addOscHandler**(ident: *`number`*, callback: *`function`*): [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
-*Defined in [xterm.d.ts:1043](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L1043)*
+*Defined in [xterm.d.ts:1051](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L1051)*
 
 Adds a handler for OSC escape sequences.
 
