@@ -55,7 +55,7 @@ An object containing start up options for the terminal.
 
 **● allowTransparency**: *`boolean`*
 
-*Defined in [xterm.d.ts:38](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L38)*
+*Defined in [xterm.d.ts:38](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L38)*
 
 Whether background should support non-opaque color. It must be set before executing the `Terminal.open()` method and can't be changed later without executing it again. Note that enabling this can negatively impact performance.
 
@@ -66,7 +66,7 @@ ___
 
 **● bellSound**: *`string`*
 
-*Defined in [xterm.d.ts:43](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L43)*
+*Defined in [xterm.d.ts:43](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L43)*
 
 A data uri of the sound to use for the bell when `bellStyle = 'sound'`.
 
@@ -77,7 +77,7 @@ ___
 
 **● bellStyle**: *"none" \| "sound"*
 
-*Defined in [xterm.d.ts:48](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L48)*
+*Defined in [xterm.d.ts:48](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L48)*
 
 The type of the bell notification the terminal will use.
 
@@ -88,7 +88,7 @@ ___
 
 **● cols**: *`number`*
 
-*Defined in [xterm.d.ts:63](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L63)*
+*Defined in [xterm.d.ts:63](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L63)*
 
 The number of columns in the terminal.
 
@@ -99,7 +99,7 @@ ___
 
 **● convertEol**: *`boolean`*
 
-*Defined in [xterm.d.ts:58](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L58)*
+*Defined in [xterm.d.ts:58](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L58)*
 
 When enabled the cursor will be set to the beginning of the next line with every new line. This equivalent to sending '\\r\\n' for each '\\n'. Normally the termios settings of the underlying PTY deals with the translation of '\\n' to '\\r\\n' and this setting should not be used. If you deal with data from a non-PTY related source, this settings might be useful.
 
@@ -110,7 +110,7 @@ ___
 
 **● cursorBlink**: *`boolean`*
 
-*Defined in [xterm.d.ts:68](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L68)*
+*Defined in [xterm.d.ts:68](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L68)*
 
 Whether the cursor blinks.
 
@@ -121,7 +121,7 @@ ___
 
 **● cursorStyle**: *"block" \| "underline" \| "bar"*
 
-*Defined in [xterm.d.ts:73](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L73)*
+*Defined in [xterm.d.ts:73](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L73)*
 
 The style of the cursor.
 
@@ -132,7 +132,7 @@ ___
 
 **● disableStdin**: *`boolean`*
 
-*Defined in [xterm.d.ts:78](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L78)*
+*Defined in [xterm.d.ts:78](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L78)*
 
 Whether input should be disabled.
 
@@ -143,7 +143,7 @@ ___
 
 **● drawBoldTextInBrightColors**: *`boolean`*
 
-*Defined in [xterm.d.ts:83](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L83)*
+*Defined in [xterm.d.ts:83](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L83)*
 
 Whether to draw bold text in bright colors. The default is true.
 
@@ -154,7 +154,7 @@ ___
 
 **● fontFamily**: *`string`*
 
-*Defined in [xterm.d.ts:93](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L93)*
+*Defined in [xterm.d.ts:93](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L93)*
 
 The font family used to render text.
 
@@ -165,7 +165,7 @@ ___
 
 **● fontSize**: *`number`*
 
-*Defined in [xterm.d.ts:88](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L88)*
+*Defined in [xterm.d.ts:88](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L88)*
 
 The font size used to render text.
 
@@ -176,7 +176,7 @@ ___
 
 **● fontWeight**: *[FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)*
 
-*Defined in [xterm.d.ts:98](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L98)*
+*Defined in [xterm.d.ts:98](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L98)*
 
 The font weight used to render non-bold text.
 
@@ -187,7 +187,7 @@ ___
 
 **● fontWeightBold**: *[FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)*
 
-*Defined in [xterm.d.ts:103](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L103)*
+*Defined in [xterm.d.ts:103](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L103)*
 
 The font weight used to render bold text.
 
@@ -198,7 +198,7 @@ ___
 
 **● letterSpacing**: *`number`*
 
-*Defined in [xterm.d.ts:108](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L108)*
+*Defined in [xterm.d.ts:108](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L108)*
 
 The spacing in whole pixels between characters..
 
@@ -209,7 +209,7 @@ ___
 
 **● lineHeight**: *`number`*
 
-*Defined in [xterm.d.ts:113](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L113)*
+*Defined in [xterm.d.ts:113](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L113)*
 
 The line height used to render text.
 
@@ -220,7 +220,7 @@ ___
 
 **● logLevel**: *[LogLevel]({% link _docs/api/terminal/modules/xterm.md %}#loglevel)*
 
-*Defined in [xterm.d.ts:125](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L125)*
+*Defined in [xterm.d.ts:125](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L125)*
 
 What log level to use, this will log for all levels below and including what is set:
 
@@ -237,7 +237,7 @@ ___
 
 **● macOptionClickForcesSelection**: *`boolean`*
 
-*Defined in [xterm.d.ts:139](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L139)*
+*Defined in [xterm.d.ts:139](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L139)*
 
 Whether holding a modifier key will force normal selection behavior, regardless of whether the terminal is in mouse events mode. This will also prevent mouse events from being emitted by the terminal. For example, this allows you to use xterm.js' regular selection inside tmux with mouse mode enabled.
 
@@ -248,7 +248,7 @@ ___
 
 **● macOptionIsMeta**: *`boolean`*
 
-*Defined in [xterm.d.ts:130](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L130)*
+*Defined in [xterm.d.ts:130](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L130)*
 
 Whether to treat option as the meta key.
 
@@ -259,7 +259,7 @@ ___
 
 **● rendererType**: *[RendererType]({% link _docs/api/terminal/modules/xterm.md %}#renderertype)*
 
-*Defined in [xterm.d.ts:149](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L149)*
+*Defined in [xterm.d.ts:149](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L149)*
 
 The type of renderer to use, this allows using the fallback DOM renderer when canvas is too slow for the environment. The following features do not work when the DOM renderer is used:
 
@@ -273,7 +273,7 @@ ___
 
 **● rightClickSelectsWord**: *`boolean`*
 
-*Defined in [xterm.d.ts:155](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L155)*
+*Defined in [xterm.d.ts:155](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L155)*
 
 Whether to select the word under the cursor on right click, this is standard behavior in a lot of macOS applications.
 
@@ -284,7 +284,7 @@ ___
 
 **● rows**: *`number`*
 
-*Defined in [xterm.d.ts:160](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L160)*
+*Defined in [xterm.d.ts:160](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L160)*
 
 The number of rows in the terminal.
 
@@ -295,7 +295,7 @@ ___
 
 **● screenReaderMode**: *`boolean`*
 
-*Defined in [xterm.d.ts:167](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L167)*
+*Defined in [xterm.d.ts:167](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L167)*
 
 Whether screen reader support is enabled. When on this will expose supporting elements in the DOM to support NVDA on Windows and VoiceOver on macOS.
 
@@ -306,7 +306,7 @@ ___
 
 **● scrollback**: *`number`*
 
-*Defined in [xterm.d.ts:174](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L174)*
+*Defined in [xterm.d.ts:174](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L174)*
 
 The amount of scrollback in the terminal. Scrollback is the amount of rows that are retained when lines are scrolled beyond the initial viewport.
 
@@ -317,7 +317,7 @@ ___
 
 **● tabStopWidth**: *`number`*
 
-*Defined in [xterm.d.ts:179](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L179)*
+*Defined in [xterm.d.ts:179](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L179)*
 
 The size of tab stops in the terminal.
 
@@ -328,7 +328,7 @@ ___
 
 **● theme**: *[ITheme]({% link _docs/api/terminal/interfaces/itheme.md %})*
 
-*Defined in [xterm.d.ts:184](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L184)*
+*Defined in [xterm.d.ts:184](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L184)*
 
 The color theme of the terminal.
 
@@ -339,7 +339,7 @@ ___
 
 **● windowsMode**: *`boolean`*
 
-*Defined in [xterm.d.ts:196](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L196)*
+*Defined in [xterm.d.ts:196](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L196)*
 
 Whether "Windows mode" is enabled. Because Windows backends winpty and conpty operate by doing line wrapping on their side, xterm.js does not have access to wrapped lines. When Windows mode is enabled the following changes will be in effect:
 
@@ -353,7 +353,7 @@ ___
 
 **● wordSeparator**: *`string`*
 
-*Defined in [xterm.d.ts:202](https://github.com/Tyriar/xterm.js/blob/4.0.0/typings/xterm.d.ts#L202)*
+*Defined in [xterm.d.ts:202](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L202)*
 
 A string containing all characters that are considered word separated by the double click to select work logic.
 
