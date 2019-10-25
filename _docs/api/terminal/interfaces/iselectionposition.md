@@ -32,7 +32,7 @@ An object representing a selection within the terminal.
 
 **● endColumn**: *`number`*
 
-*Defined in [xterm.d.ts:837](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L837)*
+*Defined in [xterm.d.ts:854](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L854)*
 
 The end column of the selection.
 
@@ -43,7 +43,7 @@ ___
 
 **● endRow**: *`number`*
 
-*Defined in [xterm.d.ts:842](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L842)*
+*Defined in [xterm.d.ts:859](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L859)*
 
 The end row of the selection.
 
@@ -54,7 +54,7 @@ ___
 
 **● startColumn**: *`number`*
 
-*Defined in [xterm.d.ts:827](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L827)*
+*Defined in [xterm.d.ts:844](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L844)*
 
 The start column of the selection.
 
@@ -65,7 +65,7 @@ ___
 
 **● startRow**: *`number`*
 
-*Defined in [xterm.d.ts:832](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L832)*
+*Defined in [xterm.d.ts:849](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L849)*
 
 The start row of the selection.
 

@@ -32,7 +32,7 @@ An addon that can provide additional functionality to the terminal.
 
 ▸ **activate**(terminal: *[Terminal]({% link _docs/api/terminal/classes/terminal.md %})*): `void`
 
-*Defined in [xterm.d.ts:817](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L817)*
+*Defined in [xterm.d.ts:834](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L834)*
 
 This is called when the addon is activated.
 
@@ -53,7 +53,7 @@ ___
 
 *Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
-*Defined in [xterm.d.ts:300](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L300)*
+*Defined in [xterm.d.ts:315](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L315)*
 
 **Returns:** `void`
 
