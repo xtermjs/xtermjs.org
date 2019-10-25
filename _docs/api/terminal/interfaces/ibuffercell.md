@@ -30,7 +30,7 @@ Represents a single cell in the terminal's buffer.
 
 **● char**: *`string`*
 
-*Defined in [xterm.d.ts:929](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L929)*
+*Defined in [xterm.d.ts:981](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L981)*
 
 The character within the cell.
 
@@ -41,7 +41,7 @@ ___
 
 **● width**: *`number`*
 
-*Defined in [xterm.d.ts:938](https://github.com/xtermjs/xterm.js/blob/4.1.0/typings/xterm.d.ts#L938)*
+*Defined in [xterm.d.ts:990](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L990)*
 
 The width of the character. Some examples:
 
