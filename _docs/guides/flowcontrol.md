@@ -17,7 +17,7 @@ term.write(chunk_1);
 term.write(chunk_n);
 ```
 
-`write` itself is non-blocking, it buffers the data and returns immediately. The data will be processed with the next event loop invocation, the amount processed depends on a timer constraint and shall not take longer than 12ms (hardcoded, see [WriteBuffer.ts#L19-L25](https://github.com/xtermjs/xterm.js/blob/7f598a36753f4d950ee63dc91bd6a92290f7e037/src/common/input/WriteBuffer.ts#L19-L25)). This is needed to give the renderer time to update and draw the new content with decent FPS (varies between 30 and 60).
+`write` itself is non-blocking, it buffers the data and returns immediately. The data will be processed with the next event loop invocation, the amount processed depends on a timer constraint and shall not take longer than 12ms (hardcoded in [WriteBuffer.ts#L19-L25](https://github.com/xtermjs/xterm.js/blob/7f598a36753f4d950ee63dc91bd6a92290f7e037/src/common/input/WriteBuffer.ts#L19-L25)). This is needed to give the renderer time to update and draw the new content with decent FPS (varies between 30 and 60).
 
 Compared to very fast producers (up to several GB/s) this system has a rather low throughput (5 - 35 MB/s), thus fast producers might keep growing the input write buffer. To avoid an out of memory exception in xterm.js this buffer has a hardcoded limit of 50 MB (see [WriteBuffer.ts#L9-L17](https://github.com/xtermjs/xterm.js/blob/7f598a36753f4d950ee63dc91bd6a92290f7e037/src/common/input/WriteBuffer.ts#L9-L17)). Any data beyond that limit gets discarded.
 
@@ -31,7 +31,7 @@ term.write(chunk, () => {
   // do something when finished processing `chunk`
 });
 ```
-The callback gets called once when the chunk was processed. This waiting condition can be appplied directly to incoming interfaces like the pty object of `node-pty`:
+The callback gets called once when the chunk was processed. This waiting condition can be applied directly to incoming interfaces like the pty object of `node-pty`:
 
 ```Javascript
 pty.onData(chunk => {
@@ -41,7 +41,7 @@ pty.onData(chunk => {
   });
 });
 ```
-Here the `pause` and the `resume` methods will take care of the flow control propagation to the underlying OS-pty with back pressure and real blocking semantics. This will also work across several layers (for websockets see also [below](#flow-control-over-websockets)).
+Here the `pause` and the `resume` methods will take care of the flow control propagation to the underlying OS-pty with back pressure and real blocking semantics. This will also work across several layers (for websockets also see [below](#flow-control-over-websockets)).
 
 Still this simple mechanism is quite inefficient for several reasons - it stops the data flow on the OS-pty for every single chunk (worst case - a single byte), waits a tiny bit for the processing to re-enable the data flow afterwards. The waits will sum up to a rather big idle time, furthermore the needed kernel context switches for the blocking/unblocking of the OS-pty will create additional nonsense workload. In the end the total throughput will drop.
 
@@ -72,7 +72,7 @@ pty.onData(chunk => {
 });
 ```
 
-This mechanism avoids most `pause` and `resume` calls and tries to get a steady flow between LOW and HIGH watermark. Optimal values for HIGH and LOW will vary alot depending on the circumstances. Rule of thumb - to keep the emulator snappy for keystrokes under fast input HIGH should not be greater than 500K. A good test scenario is running `yes`, then pressing Ctrl-C and see if the response is within an acceptible range.
+This mechanism avoids most `pause` and `resume` calls and tries to get a steady flow between LOW and HIGH watermark. Optimal values for HIGH and LOW will vary alot depending on the circumstances. Rule of thumb - to keep the emulator snappy for keystrokes under fast input HIGH should not be greater than 500K. A good test scenario is running `yes`, then pressing Ctrl-C and check if the response is within an acceptible range.
 
 Note that this variant still does some nonsence work - it places a callback for every single chunk of data. There are several ways to reduce the callback pressure, e.g. place it only on every n-th chunk, or, as shown here, count pending callbacks instead:
 
