@@ -21,11 +21,45 @@ Beside string data `xterm.js` might send raw byte data with the `onBinary` event
 
 `xterm.js` does not support any legacy encoding and prolly never will. If you have to deal with older systems or programs that dont understand UTF-8, we strongly suggest to use a streamline transcoder like [luit](https://linux.die.net/man/1/luit) to translate between the foreign encoding and UTF-8. `luit` was designed with terminal data streams in mind and can handle most scenarios with escape sequences correctly. If it does not suit your purpose or is not available for your system refer to general converters that most environments offer (e.g. [iconv](https://en.wikipedia.org/wiki/Iconv)).
 
-### Typical issues with encodings and how to fix them
+### Typical encodings issues with xterm.js
+
+#### Wrong locale
+
+On modern systems make sure to set your `locale` to an UTF8 variant representing your localization needs, e.g. for a German based system it may look like this:
+
+```bash
+$> locale
+LANG=de_DE.UTF-8
+LANGUAGE=de_DE
+LC_CTYPE="de_DE.UTF-8"
+LC_NUMERIC="de_DE.UTF-8"
+LC_TIME="de_DE.UTF-8"
+LC_COLLATE="de_DE.UTF-8"
+LC_MONETARY="de_DE.UTF-8"
+LC_MESSAGES="de_DE.UTF-8"
+LC_PAPER="de_DE.UTF-8"
+LC_NAME="de_DE.UTF-8"
+LC_ADDRESS="de_DE.UTF-8"
+LC_TELEPHONE="de_DE.UTF-8"
+LC_MEASUREMENT="de_DE.UTF-8"
+LC_IDENTIFICATION="de_DE.UTF-8"
+LC_ALL=
+```
+
+We cannot explained the `locale` system here in detail, just a few notes:
+- For program input/output the important entry is `LC_CTYPE`.
+- `LC_ALL` can be used to override all other settings.
+- Other entries can further customize special localization needs, like collation order or date format.
+- Empty entries default to `"C"` (this is treated differently depending on the clib, in summary it means that a character representation is bound to one byte and only ASCII can be used savely)
+
+If you find `LC_CTYPE` and `LC_ALL` being empty or set to some string not containing `'UTF-8'` in the name, programs will not be able to correctly deal with non ASCII characters with xterm.js. To fix this, either:
+- overwrite `LC_CTYPE` in local session only, e.g. by `export LC_CTYPE="xy_AB.UTF-8"` (selected locale must be installed)
+- change system locale to UTF8 variant (consult your OS documentation about localization)
+
+If you cannot change the locale to some UTF8 variant (some old OS might not provide UTF8 support), see [Legacy Encodings](#legacy-encodings).
 
 
-TODO...
-
+#### 
 
 
 ## Rationale & Background
