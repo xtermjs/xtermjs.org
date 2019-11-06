@@ -110,7 +110,41 @@ There might be more elegant or stricter solutions than these, depending on your 
 
 ## Flow control over websockets
 
-TODO...
+If a websocket is between your backend and xterm.js additional work is needed to get proper flow control. Basic problem we have to work around is the non-blocking nature of message delivery, i.e. buffers on both ends of the websocket implementation might stock up data (sending and receiving side). This means we cannot reliably implement a flow control for those buffer directly (neither does the websocket protocol offer hooks for this).
 
-- dont have a blocking interface
-- needs a way to propagate the write callback...attach addon to the rescue
+It is still possible to get some flow control working on top of websockets. For this we simply treat the websocket transport as a datasink with infinite buffers and unknown latency and skip it in the flow control handling. Instead we span the write callback accounting from client side to server side, schematically:
+
+client:
+```Javascript
+if (ackCondition) {
+  term.write(chunk, () => { /* send custom ACK to server */ });
+} else {
+  term.write(chunk);  // fast path
+}
+```
+
+server:
+```Javascript
+pty.onData(chunk => {
+  socket.write(chunk);
+  if (stopCondition) {
+    pty.pause();
+  }
+});
+socket.onData(chunk => {
+  if (isACK(chunk)) {
+    condition.alter();
+    if (!stopCondition) {
+      pty.resume();
+    }
+  } else {
+    pty.write(chunk);
+  }
+});
+```
+
+Here it is important that `ackCondition` on client side and `condition` / `stopCondition` on server side agree about the things to measure or the flow control will block the stream sooner or later. Furthermore the ACK message needs to be marked as a special message to not get confused as normal data (custom message protocol).
+
+If you dont want to develop this with your own message protocol maybe have a look on ready-to-go solutions like [Socket.IO](https://socket.io/) or [sockette](https://github.com/lukeed/sockette). Both also provide mechanisms to forward events/callbacks, which can simplify the implementation alot.
+
+Furthermore an upcoming release of the attach addon might contain a simplified flow control propagation example based on the schema above.
