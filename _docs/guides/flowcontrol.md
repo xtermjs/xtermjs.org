@@ -74,7 +74,7 @@ pty.onData(chunk => {
 
 This mechanism avoids most `pause` and `resume` calls and tries to get a steady flow between LOW and HIGH watermark. Optimal values for HIGH and LOW will vary alot depending on the circumstances. Rule of thumb - to keep the emulator snappy for keystrokes under fast input HIGH should not be greater than 500K. A good test scenario is running `yes`, then pressing Ctrl-C and check if the response is within an acceptible range.
 
-Note that this variant still does some nonsence work - it places a callback for every single chunk of data. There are several ways to reduce the callback pressure, e.g. place it only on every n-th chunk, or, as shown here, count pending callbacks instead:
+Note that this variant still does some nonsense work - it places a callback for every single chunk of data. There are several ways to reduce the callback pressure, e.g. place it only on every n-th chunk, or, as shown here, count pending callbacks instead:
 
 ```Javascript
 const CALLBACK_BYTE_LIMIT = 100000;
