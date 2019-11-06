@@ -15,6 +15,7 @@ category: Guides
 
 String data will be output by `xterm.js` as JS strings (`onData` event) and might contain any valid Unicode codepoint, thus should be treated as UTF-16/UCS-2. For OS interaction this data should be converted to UTF-8 bytes (automatically done by `node-pty`).
 
+(upcoming xterm.js versions)  
 Beside string data `xterm.js` might send raw byte data with the `onBinary` event. For easier consumption the payload is a JS string, but should be treated as 8-bit data (`'binary'` encoding in nodejs). Currently this is only used for mouse reports that cannot be encoded legally in UTF-8.
 
 ### Legacy Encodings
@@ -46,7 +47,7 @@ LC_IDENTIFICATION="de_DE.UTF-8"
 LC_ALL=
 ```
 
-We cannot explained the `locale` system here in detail, just a few notes:
+We cannot explain the `locale` system here in detail, just a few notes:
 - For program input/output the important entry is `LC_CTYPE`.
 - `LC_ALL` can be used to override all other settings.
 - Other entries can further customize special localization needs, like collation order or date format.
@@ -61,10 +62,32 @@ If you cannot change the locale to some UTF8 variant (some old OS might not prov
 
 #### Wrong $LANG environment variable
 
-Some programs might not relies on locale settings directly, instead evaluate the environment variable `$LANG`. Typically this variable contains the default locale of the system, but can be used to customize this setting for individual programs.
+Some programs might not rely on locale settings directly, instead evaluate the environment variable `$LANG`. Typically this variable contains the default locale of the system, but can be used to customize this setting for individual programs.
 
 Make sure that `$LANG` contains an UTF8 capable locale (if in doubt, use the default UTF8 locale). On systems without UTF8 support refer to [Legacy Encodings](#legacy-encodings).
 
+#### Integration issues / PTY bridge
+
+xterm.js is heavily tested against `node-pty` as it is shipped mostly with nodejs based solutions. With `node-pty` the integration is straight forward for most cases:
+
+```Javascript
+pty.onData(recv => terminal.write(recv));
+terminal.onData(send => pty.write(send));
+// for raw bytes from the terminal (optional, see above)
+terminal.onBinary(send => pty.write(Buffer.from(send, {encoding: 'binary'})));
+```
+
+Note that `node-pty` assumes UTF-8 as default encoding, thus interprets any bytes from OS-PTY as UTF-8. Of course this will not work anymore if the OS-PTY does not send UTF8 data. This is a common problem with remote ssh connections to older systems with some legacy encoding. A possible solution to still get support for older encodings might look like this:
+- disable automatic UTF8 decoding in `node-pty` with ctor option `{encoding: null}`, now `recv` will be raw bytes
+- spawn a `luit` subprocess with correct input encoding, output will be UTF8
+- reroute the raw bytes through the subprocess
+- grab the output (now UTF8 bytes) and feed them to xterm.js
+- repeat the same for the opposite direction with flipped encodings on `luit`
+- swap subprocesses if encoding needs change
+
+With the npm package `iconv` a similar result can be achieved, but keep in mind that `luit` was crafted to work with terminal streams, while `iconv` was created for text documents (some encodings treat C1 codes differently based on terminal vs. text document domain, also BOMs might need special care).
+
+For integrations not based on `node-pty` please refer to [Input](#input) and [Output](#output). A rule of thumb here is - always treat xterm.js side as UTF8 and transcode non-UTF8 OS-PTY data accordingly in both directions. Since most languages and transports have proper UTF8 support these days it might be a good idea to transcode the data as close as possible to the raw OS-PTY byte sink. If in doubt check encoding support of every single component the data has to go through.
 
 ## Rationale & Background
 
@@ -185,14 +208,15 @@ __5. Terminal / Console output__
 
   *Summary*: Final step, which does the reverse mapping to output meaningful characters on the screen (byte to character mapping).
 
+__6. Summary__
+
 As one can see there is alot going on to get those strings shown in a terminal window with lots of assumptions. Whenever a terminal outputs scrambled data for a certain process, at least one assumption on the way to the terminal was wrong:
 
 - wrong editor encoding  
   This was a common issue in the past for programming beginners, nowadays most editors use UTF-8 as default and every compiler / interpreter understands that.
 - `setlocale` is missing or the wrong locale was applied  
-  This is not a problem for pure 7-bit ASCII data, in fact this is most common in system software that only outputs english. Many low level C programs never call `setlocale` explicitly. For any program dealing with non ASCII string data this might lead to scrambled output. This is also a problem for environments that try to detect the right output encoding but get outsmarted by a complicated system configuration or unsupported output encoding. Especially in Python or nodejs a developer should be prepared for this and has sometimes to fix the output encoding himself. 
+  This is not a problem for pure 7-bit ASCII data, in fact this is most common in system software that only outputs English (many low level C programs never call `setlocale` explicitly). For any program dealing with non-ASCII string data this might lead to scrambled output. This is also a problem for environments that try to detect the right output encoding but get outsmarted by a complicated system configuration or unsupported output encoding. Especially in Python or nodejs developers should be prepared for this and sometimes have to fix the output encoding.
 - terminal encoding differs from encoding used in `setlocale`  
   That is a quite common issue, e.g. when connecting to a remote system with `ssh` that uses a different system encoding than the terminal's host system without additional transcoding. This also can happen if a certain program deliberately sets its own encoding not compatible with the terminal's encoding (like some applications do under Windows, e.g. `git-bash` which defaults to UTF-8 regardless of the system encoding).
 - terminal encoding is not capable to decode a certain codepoint  
-  As written above most terminals these days are UTF-8 based, thus should understand all valid Unicode codepoints. This will still happen if the user sets the terminal encoding to a legacy encoding by purpose but guessed the encoding of the program on the other side wrong. Most terminals will show non decodeable codepoints as '?' or "�" (U+FFFD).
-
+  As written above most terminals these days are UTF-8 based, thus should understand all valid Unicode codepoints. This will still happen if the user sets the terminal encoding to a legacy encoding by purpose but guessed the encoding of the program on the other side wrong. Most terminals will show non decodeable codepoints as '?' or "�" (U+FFFD). Furthermore some font renderer might output other replacement symbols if a certain glyph is not supported.
