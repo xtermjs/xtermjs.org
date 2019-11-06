@@ -59,7 +59,11 @@ If you find `LC_CTYPE` and `LC_ALL` being empty or set to some string not contai
 If you cannot change the locale to some UTF8 variant (some old OS might not provide UTF8 support), see [Legacy Encodings](#legacy-encodings).
 
 
-#### 
+#### Wrong $LANG environment variable
+
+Some programs might not relies on locale settings directly, instead evaluate the environment variable `$LANG`. Typically this variable contains the default locale of the system, but can be used to customize this setting for individual programs.
+
+Make sure that `$LANG` contains an UTF8 capable locale (if in doubt, use the default UTF8 locale). On systems without UTF8 support refer to [Legacy Encodings](#legacy-encodings).
 
 
 ## Rationale & Background
