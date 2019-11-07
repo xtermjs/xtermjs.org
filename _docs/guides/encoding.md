@@ -33,7 +33,7 @@ $> LC_ALL=fr_FR luit ssh legacy-machine
 
 #### Wrong locale
 
-On modern systems make sure to set your `locale` to an UTF8 variant representing your localization needs, e.g. for a German based system it may look like this:
+On modern systems make sure to set your `locale` to an UTF-8 variant representing your localization needs, e.g. for a German based system it may look like this:
 
 ```bash
 $> locale
@@ -62,16 +62,16 @@ We cannot explain the `locale` system here in detail, just a few notes:
 
 If you find `LC_CTYPE` and `LC_ALL` being empty or set to some string not containing `'UTF-8'` in the name, programs will not be able to correctly deal with non ASCII characters with xterm.js. To fix this, either:
 - overwrite `LC_CTYPE` in local session only, e.g. by `export LC_CTYPE="xy_AB.UTF-8"` (selected locale must be installed)
-- change system locale to UTF8 variant (consult your OS documentation about localization)
+- change system locale to UTF-8 variant (consult your OS documentation about localization)
 
-If you cannot change the locale to some UTF8 variant (some old OS might not provide UTF8 support), see [Legacy Encodings](#legacy-encodings).
+If you cannot change the locale to some UTF-8 variant (some old OS might not provide UTF-8 support), see [Legacy Encodings](#legacy-encodings).
 
 
 #### Wrong $LANG environment variable
 
 Some programs might not rely on locale settings directly, instead evaluate the environment variable `$LANG`. Typically this variable contains the default locale of the system, but can be used to customize this setting for individual programs.
 
-Make sure that `$LANG` contains an UTF8 capable locale (if in doubt, use the default locale). On systems without UTF8 support refer to [Legacy Encodings](#legacy-encodings).
+Make sure that `$LANG` contains an UTF-8 capable locale (if in doubt, use the default locale). On systems without UTF-8 support refer to [Legacy Encodings](#legacy-encodings).
 
 #### Integration issues / PTY bridge
 
@@ -82,7 +82,7 @@ pty.onData(recv => terminal.write(recv));
 terminal.onData(send => pty.write(send));
 ```
 
-Note that `node-pty` assumes UTF-8 as default encoding, thus interprets any bytes from OS-PTY as UTF-8. Of course this will not work anymore if the OS-PTY does not send UTF8 data. To solve this on integration level, `luit` can be used by wrapping the initial shell command:
+Note that `node-pty` assumes UTF-8 as default encoding, thus interprets any bytes from OS-pty as UTF-8. Of course this will not work anymore if the OS-pty does not send UTF-8 data. To solve this on integration level, `luit` can be used by wrapping the initial shell command:
 
 __before:__
 ```Javascript
@@ -114,7 +114,7 @@ Offering a runtime encoding switch to users can be achieved with both, but you w
   - No stream support. This is not an issue if you only want to support 8-bit encodings. For multibyte encodings (e.g. CJK) you have to implement countermeasures to catch partly transmitted byte sequences before transcoding the data.
   - `luit` supports rewriting of several terminal sequences (7bit rewrites, changing character sets) while `iconv` does not know anything about terminal sequences at all. In general this should not be a problem in conjunction with xterm.js, it supports 8-bit sequences just fine and will fall back to UTF-8 for unknown character set commands.
 
-For integrations not based on `node-pty` please refer to [Input](#input) and [Output](#output). A rule of thumb here is - always treat xterm.js side as UTF8 and transcode non-UTF8 OS-PTY data accordingly in both directions. Since most languages and transports have proper UTF8 support these days it might be a good idea to transcode the data as close as possible to the raw OS-PTY byte sink. If in doubt check encoding support of every single component the data has to go through.
+For integrations not based on `node-pty` please refer to [Input](#input) and [Output](#output). A rule of thumb here is - always treat xterm.js side as UTF-8 and transcode non-UTF-8 OS-pty data accordingly in both directions. Since most languages and transports have proper UTF-8 support these days it might be a good idea to transcode the data as close as possible to the raw OS-pty byte sink. If in doubt check encoding support of every single component the data has to go through.
 
 ## Rationale & Background
 
