@@ -13,14 +13,21 @@ category: Guides
 
 ### Output
 
-String data will be output by `xterm.js` as JS strings (`onData` event) and might contain any valid Unicode codepoint, thus should be treated as UTF-16/UCS-2. For OS interaction this data should be converted to UTF-8 bytes (automatically done by `node-pty`).
-
-(upcoming xterm.js versions)  
-Beside string data `xterm.js` might send raw byte data with the `onBinary` event. For easier consumption the payload is a JS string, but should be treated as 8-bit data (`'binary'` encoding in nodejs). Currently this is only used for mouse reports that cannot be encoded legally in UTF-8.
+String data will be output by `xterm.js` as JS strings (`onData` event) and might contain any valid Unicode codepoint, thus should be treated as UTF-16/UCS-2. For OS interaction this data should be converted to UTF-8 bytes (automatically done by [node-pty](https://github.com/microsoft/node-pty)).
 
 ### Legacy Encodings
 
-`xterm.js` does not support any legacy encoding and prolly never will. If you have to deal with older systems or programs that dont understand UTF-8, we strongly suggest to use a streamline transcoder like [luit](https://linux.die.net/man/1/luit) to translate between the foreign encoding and UTF-8. `luit` was designed with terminal data streams in mind and can handle most scenarios with escape sequences correctly. If it does not suit your purpose or is not available for your system refer to general converters that most environments offer (e.g. [iconv](https://en.wikipedia.org/wiki/Iconv)).
+`xterm.js` does not support any legacy encoding and probably never will. If you have to deal with older systems or programs that dont understand UTF-8, we strongly suggest to use a streamline transcoder like [luit](https://linux.die.net/man/1/luit) to translate between the foreign encoding and UTF-8. `luit` was designed with terminal data streams in mind and can handle most scenarios with escape sequences correctly. If it does not suit your purpose or is not available for your system refer to general converters that most environments offer (e.g. [iconv](https://en.wikipedia.org/wiki/Iconv)).
+
+__example:__ luit using latin-1 for a single program
+```bash
+&> luit -encoding ISO8859-1 -- command
+```
+
+__example:__ luit transcoding a ssh connection
+```bash
+&> LC_ALL=fr_FR luit ssh legacy-machine
+```
 
 ### Typical encodings issues with xterm.js
 
@@ -64,11 +71,11 @@ If you cannot change the locale to some UTF8 variant (some old OS might not prov
 
 Some programs might not rely on locale settings directly, instead evaluate the environment variable `$LANG`. Typically this variable contains the default locale of the system, but can be used to customize this setting for individual programs.
 
-Make sure that `$LANG` contains an UTF8 capable locale (if in doubt, use the default UTF8 locale). On systems without UTF8 support refer to [Legacy Encodings](#legacy-encodings).
+Make sure that `$LANG` contains an UTF8 capable locale (if in doubt, use the default locale). On systems without UTF8 support refer to [Legacy Encodings](#legacy-encodings).
 
 #### Integration issues / PTY bridge
 
-xterm.js is heavily tested against `node-pty` as it is shipped mostly with nodejs based solutions. With `node-pty` the integration is straight forward for most cases:
+xterm.js is heavily tested against `node-pty` as it is shipped mostly with Node.js based solutions. With `node-pty` the integration is straight forward for most cases:
 
 ```Javascript
 pty.onData(recv => terminal.write(recv));
@@ -77,15 +84,37 @@ terminal.onData(send => pty.write(send));
 terminal.onBinary(send => pty.write(Buffer.from(send, {encoding: 'binary'})));
 ```
 
-Note that `node-pty` assumes UTF-8 as default encoding, thus interprets any bytes from OS-PTY as UTF-8. Of course this will not work anymore if the OS-PTY does not send UTF8 data. This is a common problem with remote ssh connections to older systems with some legacy encoding. A possible solution to still get support for older encodings might look like this:
-- disable automatic UTF8 decoding in `node-pty` with ctor option `{encoding: null}`, now `recv` will be raw bytes
-- spawn a `luit` subprocess with correct input encoding, output will be UTF8
-- reroute the raw bytes through the subprocess
-- grab the output (now UTF8 bytes) and feed them to xterm.js
-- repeat the same for the opposite direction with flipped encodings on `luit`
-- swap subprocesses if encoding needs change
+Note that `node-pty` assumes UTF-8 as default encoding, thus interprets any bytes from OS-PTY as UTF-8. Of course this will not work anymore if the OS-PTY does not send UTF8 data. To solve this on integration level, `luit` can be used by wrapping the initial shell command:
 
-With the npm package `iconv` a similar result can be achieved, but keep in mind that `luit` was crafted to work with terminal streams, while `iconv` was created for text documents (some encodings treat C1 codes differently based on terminal vs. text document domain, also BOMs might need special care).
+__before:__
+```Javascript
+const pty = node_pty.spawn(shell, [], {...});
+```
+
+__after:__
+```Javascript
+const pty = node_pty.spawn('luit', ['-encoding', 'ENCODING', '<other options>', '--', shell], {...});
+```
+
+With the npm package `iconv` a similar result can be achieved on individual chunk level:
+
+```Javascript
+const Iconv  = require('iconv').Iconv;
+const receiveConverter = new Iconv('ISO-8859-1', 'UTF-8');
+const sendConverter = new Iconv('UTF-8', 'ISO-8859-1');
+...
+const pty = node_pty.spawn(shell, {encoding=null, ...});
+pty.onData(recv => terminal.write(receiveConverter.convert(recv)));
+terminal.onData(send => pty.write(sendConverter.convert(send)));
+```
+
+Offering a runtime encoding switch to users can be achieved with both, but you will have to work around these limitations:
+- `luit`:
+  - No Windows support.
+  - Sits interactively on the pty stream, thus encoding cannot be switched easily without destroying/recreating the pty. To circumvent this, `luit` supports a `-c` cmdline switch where it can act as an independent subprocess. Your success with this might vary.
+- `iconv`:
+  - No stream support. This is not an issue if you only want to support 8-bit encodings. For multibyte encodings (e.g. CJK) you have to implement countermeasures to catch partly transmitted byte sequences before transcoding the data.
+  - `luit` supports rewriting of several terminal sequences (7bit rewrites, changing character sets) while `iconv` does not know anything about terminal sequences at all. In general this should not be a problem in conjunction with xterm.js, it supports 8-bit sequences just fine and will fallback to UTF-8 for unknown character set commands.
 
 For integrations not based on `node-pty` please refer to [Input](#input) and [Output](#output). A rule of thumb here is - always treat xterm.js side as UTF8 and transcode non-UTF8 OS-PTY data accordingly in both directions. Since most languages and transports have proper UTF8 support these days it might be a good idea to transcode the data as close as possible to the raw OS-PTY byte sink. If in doubt check encoding support of every single component the data has to go through.
 
@@ -191,7 +220,7 @@ __2. Compilation__
 
 __3. Execution__
 
-  During execution, `printf` simply grabs the memory location of the bytes and puts everything up to the null termination into `STDOUT`. `wprintf` additionally changes `STDOUT` into wide mode and then operates the same as `printf` but with different type widths (2 byte in UTF-16, 4 in UTF-32). `setlocale` is needed to initialize the C runtime with the expected output encoding offered by the system, which turns the internal byte representation into a byte stream in the system encoding (UTF-8 on most systems). Note that other programming languages provide similar interfaces to locale settings (like `java.util.Locale` in Java). Further note that some languages hide this step from the developers and try to detect the correct output encoding on their own (e.g. Python, nodejs).
+  During execution, `printf` simply grabs the memory location of the bytes and puts everything up to the null termination into `STDOUT`. `wprintf` additionally changes `STDOUT` into wide mode and then operates the same as `printf` but with different type widths (2 byte in UTF-16, 4 in UTF-32). `setlocale` is needed to initialize the C runtime with the expected output encoding offered by the system, which turns the internal byte representation into a byte stream in the system encoding (UTF-8 on most systems). Note that other programming languages provide similar interfaces to locale settings (like `java.util.Locale` in Java). Further note that some languages hide this step from the developers and try to detect the correct output encoding on their own (e.g. Python, Node.js).
 
   *Summary*: A step, that transcodes from the process in-memory encoding to the appropriate **output encoding**.  
   *Note*: The locale subsystem deals with many more localization related aspects beside text encodings ([Wikipedia](https://en.wikipedia.org/wiki/Locale_(computer_software))).
@@ -215,7 +244,7 @@ As one can see there is alot going on to get those strings shown in a terminal w
 - wrong editor encoding  
   This was a common issue in the past for programming beginners, nowadays most editors use UTF-8 as default and every compiler / interpreter understands that.
 - `setlocale` is missing or the wrong locale was applied  
-  This is not a problem for pure 7-bit ASCII data, in fact this is most common in system software that only outputs English (many low level C programs never call `setlocale` explicitly). For any program dealing with non-ASCII string data this might lead to scrambled output. This is also a problem for environments that try to detect the right output encoding but get outsmarted by a complicated system configuration or unsupported output encoding. Especially in Python or nodejs developers should be prepared for this and sometimes have to fix the output encoding.
+  This is not a problem for pure 7-bit ASCII data, in fact this is most common in system software that only outputs English (many low level C programs never call `setlocale` explicitly). For any program dealing with non-ASCII string data this might lead to scrambled output. This is also a problem for environments that try to detect the right output encoding but get outsmarted by a complicated system configuration or unsupported output encoding. Especially in Python or Node.js developers should be prepared for this and sometimes have to fix the output encoding.
 - terminal encoding differs from encoding used in `setlocale`  
   That is a quite common issue, e.g. when connecting to a remote system with `ssh` that uses a different system encoding than the terminal's host system without additional transcoding. This also can happen if a certain program deliberately sets its own encoding not compatible with the terminal's encoding (like some applications do under Windows, e.g. `git-bash` which defaults to UTF-8 regardless of the system encoding).
 - terminal encoding is not capable to decode a certain codepoint  
