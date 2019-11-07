@@ -105,7 +105,7 @@ pty.onData(chunk => {
 ```
 Now a callback would only occur every 100k bytes, HIGH/LOW now limit the pending callbacks. This again needs testing and fine tuning, furthermore the average chunk length should be much smaller than CALLBACK_BYTE_LIMIT to really benefit from the fast path.
 
-There might be more elegant or stricter solutions than these, depending on your needs. Feel free to come up with your suggestion to improve this guide. For non `node-pty` backends you will most likely have to build a flow control mechanism based on websockets as an additional transport layer (see below). Also note that a custom flow control mechanism can easily stop the whole stream forever if the limits are not calculated/applied correctly. Special care is needed if a lossy transport is involved (would be needed anyway for data integrity checks).
+There might be more elegant or stricter solutions than these, depending on your needs. Feel free to come up with your suggestion to improve this guide. For non-`node-pty` backends you will most likely have to build a flow control mechanism based on websockets as an additional transport layer (see below). Also note that a custom flow control mechanism can easily stop the whole stream forever if the limits are not calculated/applied correctly. Special care is needed if a lossy transport is involved (would be needed anyway for data integrity checks).
 
 
 ## Flow control over websockets
