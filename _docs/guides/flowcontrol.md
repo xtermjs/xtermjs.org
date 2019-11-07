@@ -5,7 +5,7 @@ category: Guides
 
 # Flow Control for xterm.js
 
-Very fast producers on application side can overwhelm xterm.js with to much data per time. If that happens, the emulator will get sluggish, might not respond to keystrokes anymore or even worse, some transport buffers might overflow and segfault. To get fast producers under control we need **flow control**.
+Very fast producers on the application side can overwhelm xterm.js with too much data. If that happens, the emulator will get sluggish, might not respond to keystrokes anymore or even worse, some transport buffers might overflow and segfault. To get fast producers under control we need **flow control**.
 
 ## How xterm.js processes incoming data
 
@@ -17,9 +17,9 @@ term.write(chunk_1);
 term.write(chunk_n);
 ```
 
-`write` itself is non-blocking, it buffers the data and returns immediately. The data will be processed with the next event loop invocation, the amount processed depends on a timer constraint and shall not take longer than 12ms (hardcoded in [WriteBuffer.ts#L19-L25](https://github.com/xtermjs/xterm.js/blob/7f598a36753f4d950ee63dc91bd6a92290f7e037/src/common/input/WriteBuffer.ts#L19-L25)). This is needed to give the renderer time to update and draw the new content with decent FPS (varies between 30 and 60).
+`write` itself is non-blocking, it buffers the data and returns immediately. The data will be processed with the next event loop invocation, the amount processed depends on a timer constraint and is designed to take less time than a single frame (16ms) to avoid blocking the UI thread.
 
-Compared to very fast producers (up to several GB/s) this system has a rather low throughput (5 - 35 MB/s), thus fast producers might keep growing the input write buffer. To avoid an out of memory exception in xterm.js this buffer has a hardcoded limit of 50 MB (see [WriteBuffer.ts#L9-L17](https://github.com/xtermjs/xterm.js/blob/7f598a36753f4d950ee63dc91bd6a92290f7e037/src/common/input/WriteBuffer.ts#L9-L17)). Any data beyond that limit gets discarded.
+Compared to very fast producers (up to several GB/s) this system has a rather low throughput (5 - 35 MB/s), thus fast producers might keep growing the input write buffer. To avoid an out of memory exception in xterm.js this buffer has a hardcoded limit ([50MB at time of writing](https://github.com/xtermjs/xterm.js/blob/7f598a36753f4d950ee63dc91bd6a92290f7e037/src/common/input/WriteBuffer.ts#L9-L17)). Any data beyond that limit gets discarded.
 
 
 ## Most simple flow control mechanism (inefficient)
@@ -45,12 +45,12 @@ Here the `pause` and the `resume` methods will take care of the flow control pro
 
 Still this simple mechanism is quite inefficient for several reasons - it stops the data flow on the OS-pty for every single chunk (worst case - a single byte), waits a tiny bit for the processing to re-enable the data flow afterwards. The waits will sum up to a rather big idle time, furthermore the needed kernel context switches for the blocking/unblocking of the OS-pty will create additional nonsense workload. In the end the total throughput will drop.
 
-If more layers are involved (e.g. websockets), their processing/latency will further add on top resulting in a really bad throughput.
+If more layers are involved (e.g. websockets), their processing/latency will further add more on top resulting in a really bad throughput.
 
 
 ## Ideas for a better mechanism
 
-A more advanced mechanism would try to lower the needs for `pause` and `resume` calls. This can be achieved by measuring the written data as watermark, compare it with high and low limits and use write callbacks as a commit response:
+A more advanced mechanism would try to lower the needs for `pause` and `resume` calls. This can be achieved by measuring the written data as a "watermark", compare it with high and low limits and use write callbacks as a commit response:
 
 ```Javascript
 const HIGH = 100000;
@@ -105,16 +105,16 @@ pty.onData(chunk => {
 ```
 Now a callback would only occur every 100k bytes, HIGH/LOW now limit the pending callbacks. This again needs testing and fine tuning, furthermore the average chunk length should be much smaller than CALLBACK_BYTE_LIMIT to really benefit from the fast path.
 
-There might be more elegant or stricter solutions than these, depending on your needs. Feel free to come up with your solution as PR. For non `node-pty` backends you will most likely have to build a flow control mechanism based on websockets as an additional transport layer (see below). Also note that a custom flow control mechanism can easily stop the whole stream forever if the limits are not calculated/applied correctly. Special care is needed if a lossy transport is involved (would be needed anyway for data integrity checks).
+There might be more elegant or stricter solutions than these, depending on your needs. Feel free to come up with your suggestion to improve this guide. For non `node-pty` backends you will most likely have to build a flow control mechanism based on websockets as an additional transport layer (see below). Also note that a custom flow control mechanism can easily stop the whole stream forever if the limits are not calculated/applied correctly. Special care is needed if a lossy transport is involved (would be needed anyway for data integrity checks).
 
 
 ## Flow control over websockets
 
-If a websocket is between your backend and xterm.js additional work is needed to get proper flow control. Basic problem we have to work around is the non-blocking nature of message delivery, i.e. buffers on both ends of the websocket implementation might stock up data (sending and receiving side). This means we cannot reliably implement a flow control for those buffer directly (neither does the websocket protocol offer hooks for this).
+If a websocket is between your backend and xterm.js, additional work is needed to get proper flow control. The basic problem we have to work around is the non-blocking nature of message delivery, i.e. buffers on both ends of the websocket implementation might stock up data (sending and receiving side). This means we cannot reliably implement a flow control for those buffers directly (the websocket protocol also doesn't offer hooks for this).
 
 It is still possible to get some flow control working on top of websockets. For this we simply treat the websocket transport as a datasink with infinite buffers and unknown latency and skip it in the flow control handling. Instead we span the write callback accounting from client side to server side, schematically:
 
-client:
+**Client:**
 ```Javascript
 if (ackCondition) {
   term.write(chunk, () => { /* send custom ACK to server */ });
@@ -123,7 +123,7 @@ if (ackCondition) {
 }
 ```
 
-server:
+**Server:**
 ```Javascript
 pty.onData(chunk => {
   socket.write(chunk);
@@ -143,8 +143,6 @@ socket.onData(chunk => {
 });
 ```
 
-Here it is important that `ackCondition` on client side and `condition` / `stopCondition` on server side agree about the things to measure or the flow control will block the stream sooner or later. Furthermore the ACK message needs to be marked as a special message to not get confused as normal data (custom message protocol).
+Here it is important that `ackCondition` on the client side and `condition` / `stopCondition` on the server side agree about the things to measure or the flow control will block the stream sooner or later. Furthermore the ACK message needs to be marked as a special message to not get confused as normal data (custom message protocol).
 
 If you dont want to develop this with your own message protocol maybe have a look on ready-to-go solutions like [Socket.IO](https://socket.io/) or [sockette](https://github.com/lukeed/sockette). Both also provide mechanisms to forward events/callbacks, which can simplify the implementation alot.
-
-Furthermore an upcoming release of the attach addon might contain a simplified flow control propagation example based on the schema above.
