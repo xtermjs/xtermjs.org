@@ -80,8 +80,6 @@ xterm.js is heavily tested against `node-pty` as it is shipped mostly with Node.
 ```Javascript
 pty.onData(recv => terminal.write(recv));
 terminal.onData(send => pty.write(send));
-// for raw bytes from the terminal (optional, see above)
-terminal.onBinary(send => pty.write(Buffer.from(send, 'binary')));
 ```
 
 Note that `node-pty` assumes UTF-8 as default encoding, thus interprets any bytes from OS-PTY as UTF-8. Of course this will not work anymore if the OS-PTY does not send UTF8 data. To solve this on integration level, `luit` can be used by wrapping the initial shell command:
