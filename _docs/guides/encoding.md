@@ -21,12 +21,12 @@ String data will be output by `xterm.js` as JS strings (`onData` event) and migh
 
 __example:__ luit using latin-1 for a single program
 ```bash
-&> luit -encoding ISO8859-1 -- command
+$> luit -encoding ISO8859-1 -- command
 ```
 
 __example:__ luit transcoding a ssh connection
 ```bash
-&> LC_ALL=fr_FR luit ssh legacy-machine
+$> LC_ALL=fr_FR luit ssh legacy-machine
 ```
 
 ### Typical encodings issues with xterm.js
@@ -114,7 +114,7 @@ Offering a runtime encoding switch to users can be achieved with both, but you w
   - Sits interactively on the pty stream, thus encoding cannot be switched easily without destroying/recreating the pty. To circumvent this, `luit` supports a `-c` cmdline switch where it can act as an independent subprocess. Your success with this might vary.
 - `iconv`:
   - No stream support. This is not an issue if you only want to support 8-bit encodings. For multibyte encodings (e.g. CJK) you have to implement countermeasures to catch partly transmitted byte sequences before transcoding the data.
-  - `luit` supports rewriting of several terminal sequences (7bit rewrites, changing character sets) while `iconv` does not know anything about terminal sequences at all. In general this should not be a problem in conjunction with xterm.js, it supports 8-bit sequences just fine and will fallback to UTF-8 for unknown character set commands.
+  - `luit` supports rewriting of several terminal sequences (7bit rewrites, changing character sets) while `iconv` does not know anything about terminal sequences at all. In general this should not be a problem in conjunction with xterm.js, it supports 8-bit sequences just fine and will fall back to UTF-8 for unknown character set commands.
 
 For integrations not based on `node-pty` please refer to [Input](#input) and [Output](#output). A rule of thumb here is - always treat xterm.js side as UTF8 and transcode non-UTF8 OS-PTY data accordingly in both directions. Since most languages and transports have proper UTF8 support these days it might be a good idea to transcode the data as close as possible to the raw OS-PTY byte sink. If in doubt check encoding support of every single component the data has to go through.
 
