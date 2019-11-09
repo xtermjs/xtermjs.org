@@ -19,17 +19,17 @@ Basic rules:
 
 xterm.js provides the terminal logic written in Typescript (Javascript). The screen screen output relies on semantics provided by a modern HTML engine. Both facts introduce serveral security concerns.
 
-**Javascript**
+**Javascript**  
 The runtime logic of xterm.js is standalone, thus has no dependencies to other third party Javascript packages. We do this on purpose to avoid possible attacks through malicious code, that might have been added to a package we cannot control. This very strict handling seems abit paranoid, but keep in mind, that unintended access to a running terminal can not only harm the hosting system, but all systems a terminal session might be connected to.
 
 For your application, most likely relying on third party packages, we can only encourage you to apply very high security standards when dealing with foreign code, to double check packages' trustworthiness or to take appropriate steps if in doubt.
 
-**HTML engine**
+**HTML engine**  
 By using web technologies for the screen output xterm.js basically inherits all security concerns of web browsers with all possible attack vectors. Bad enough? No, it gets worse - by placing a terminal into a HTML document it gives direct system access to any Javascript on that page (which also shortcuts browser security measures like process sandboxing). Outch.
 
 
--cdn?
--ads in pages?
--other foreign stuff?
+- cdn?
+- ads in pages?
+- other foreign stuff?
 
 **websockets**
