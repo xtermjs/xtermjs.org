@@ -63,7 +63,7 @@ Furthermore we want to emphasize some basic rules, that should apply to any clea
 - **No autoupdating foreign content. No ads.**  
   As simple as that - if something blinks and tries to get your attention it probably wants to get your credit card number. If your application has to rely on ad funding, strictly separate the terminal component from the more flashy parts of your application, never put it next to it. Again refer to the cheat series above to further mitigate possible CSRF/XSS vectors across several pages of your application. Note that you cannot expect from the user to decide whether you properly secured some random iframe content.
 - **No dynamic Javascript code updates at runtime.**  
-  Dont span flow control over several JS resources that might get reloaded/updated during runtime. This again is hard to track for users and should not be used for any JS code that resides next to the terminal component. Instead try to prebundle the needed JS resources into a static asset, that can be inspected and evaluated during security auditions.
+  Dont span your application's control flow over several JS resources that might get reloaded/updated during runtime. This again is hard to track for users and should not be used for any JS code that resides next to the terminal component. Instead try to prebundle the needed JS resources into a static asset, that can be inspected and evaluated during security auditions.
 
 ### 2. XSS and xterm.js in particular
 
