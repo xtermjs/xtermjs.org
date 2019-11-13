@@ -23,7 +23,7 @@ xterm.js provides the terminal logic written in Typescript which compiles down t
 
 The runtime logic of xterm.js is standalone, thus has no dependencies to other third-party Javascript packages. [One of the reasons](https://github.com/xtermjs/xterm.js/wiki/Contributing#third-party-dependencies) we do this is to avoid attacks through malicious third-party code, that might have been added to a package we cannot control. This very strict handling seems a bit paranoid, but keep in mind, that unintended access to a running terminal cannot only harm the hosting system, but all systems a terminal session might be connected to. For xterm.js addons this strict rule is not applied (consult the addon maintainer). We are also less strict about first party addons included in the core repository in this regard.
 
-For your application, most likely relying on third-party packages, we can only encourage you to apply very high security standards when dealing with foreign code, double checking a packages' trustworthiness or to take appropriate steps if in doubt.
+For your application, most likely relying on third-party packages, we can only encourage you to apply very high security standards when dealing with foreign code, double checking a package's trustworthiness or to take appropriate steps if in doubt.
 
 ### HTML engine
 
@@ -74,6 +74,7 @@ One of the main threat for the terminal component is fact, that any JS code with
 - dont update/inject JS code during runtime purposefully (no `eval`, no `fetch(SOME_JS)`)
 - watch out for third-party resources pulling JS code into the scripting context, if you dont control that resource dont use it (e.g. no webfont loader)
 - avoid anything that complicates the scripting context access or might be subject of weak browser security settings like embedded iframes or non HTML/JS/CSS media resources
+- harden the scripting context further by applying strict origin control rules (e.g. CORS)
 
 For complex single page applications (SPA) these rules are not always maintainable without big sacrifices in functionality. In that case put the terminal component into its own scripting context (e.g. a subpage) with a smaller feature set to reduce the chance of security holes. Again refer to the cheat series above to further mitigate possible CSRF/XSS vectors across several pages of your application.
 
