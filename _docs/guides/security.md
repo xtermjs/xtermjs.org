@@ -83,9 +83,9 @@ Embedding terminal I/O into a HTML document introduces another threat for web ap
 - `Terminal.onTitleChange`
 - linkifier interface
 - any `Terminal.buffer` access
-- any parser hooks to digest escape sequences
+- custom parser hooks to digest and present terminal data
 
-Always make sure to apply the data in a secure way (e.g. open links in a separate context).
+Always make sure to apply the data of those methods in a secure way (e.g. open links presented from terminal side in a separate context, no `innerHTML`).
 
 
 ### 3. websockets
@@ -94,6 +94,6 @@ If your application relies on websocket transport to drive the terminal I/O, fur
 
 **Warning: Never use the demo application and the attach addon of the core repository directly to build your websocket solution!**
 
-The demo application of the core repository is only meant for local development purposes of xterm.js itself and does not contain any security measures. Note that a websocket does not share typical security features applied by the browser engine to other resources like origin restrictions or CORS. Thus it is important to further secure the websocket yourself:
+The demo application of the core repository is only meant for local development purposes of xterm.js itself and does not contain any security measures. Note that a websocket does not share typical security features applied by the browser engine to other resources like origin restrictions / CORS. Thus it is important to further secure the websocket yourself:
 - use secure transport (wss)
 - always use additional protocols on top of websocket messages to provide appropriate authorization and authentication mechanisms
