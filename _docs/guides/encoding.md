@@ -36,7 +36,7 @@ __example:__ luit transcoding a ssh connection
 $> LC_ALL=fr_FR luit ssh legacy-machine
 ```
 
-`luit` and `iconv` can also be used on integration level, see [Integration issues / PTY bridge](#integration-issues-/-pty-bridge).
+`luit` and `iconv` can also be used on integration level, see [Integration issues / PTY bridge](#integration-issues--pty-bridge).
 
 ### Typical encodings issues with xterm.js
 
