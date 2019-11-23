@@ -147,7 +147,7 @@ __Refresher - what is a text encoding?__
 An encoding is a mapping of a piece of information to some meaning, a convention what it represents / stands for. 
 In a computer system a text encoding typically maps certain bit sequences (numbers) to characters (charmap).
 
-Historically text encodings evolved with the invention of automated information processing and the need to represent natural language systems in a machine / memory state (from Morse code, Baudot, ASCII up to Unicode variants). The earlier encodings were limited to certain languages (like ASCII with english letters only) and had a smaller memory footprint (ASCII is only 7 bit per character). With the broader adoption of computer systems worldwide in the 70s and 80s this was a big limitation and led to the standardization of language specific 8-bit encodings (DOS encodings, ISO 8859), which can encode most latin based languages and several others with small alphabets. Languages with really big alphabets like CJK still could not be represented, thus several multibyte encoding systems were developed. This led to a nightmare of different encoding systems and eventually to the idea to standardize this further in "one to rule them all" - Unicode (first release 1990).
+Historically text encodings evolved with the invention of automated information processing and the need to represent natural language systems in a machine / memory state (from Morse code, Baudot, ASCII up to Unicode variants). The earlier encodings were limited to certain languages (like ASCII with english letters only) and had a smaller memory footprint (ASCII is only 7 bit per character). With the broader adoption of computer systems worldwide in the 70s and 80s this was a big limitation and led to the standardization of language specific 8-bit encodings (DOS encodings, ISO 8859), which can encode most latin based languages and several others with small alphabets. Languages with really big alphabets like CJK still could not be represented, thus several multibyte encoding systems were developed. This led to a nightmare of different encoding systems and eventually to the idea to standardize this further in "one to rule them all" - Unicode (first release 1991).
 
 See the [Wikipedia entry](https://en.wikipedia.org/wiki/Character_encoding) for more background on the evolution of text encodings.
 
@@ -156,28 +156,28 @@ __What encodings are currently in use?__
 
 That is somewhat tricky to answer. In general we see a replacement of all legacy encodings by Unicode variants on all systems. But its still possible get in contact with legacy encodings on older systems / machines. Therefore we gonna list here the most common:
 
-- ASCII  
+- [ASCII](https://en.wikipedia.org/wiki/ASCII)  
   fundamental 7-bit encoding, unlikely to go anytime soon as it is weaved into ISO-8859 encodings and Unicode (1:1 compatible). 
 
-- ISO-8859 family  
-  several 8-bit encodings. 8859-1 (western/latin-1) was the standard of HTML4 and in many older POSIX systems. This family has several derived encodings like Windows-1252. Still in use, but mostly replaced by Unicode encodings.
+- [ISO-8859 family](https://en.wikipedia.org/wiki/ISO/IEC_8859)  
+  several 8-bit encodings. 8859-1 (western/latin-1) was the standard of HTML4 and in many older POSIX systems. This family has several derived encodings like [Windows-1252](https://en.wikipedia.org/wiki/Windows-1252). Still in use, but mostly replaced by Unicode encodings.
 
 - other 8-bit encodings  
-  Beside the ISO-8859 family there were other 8-bit encodings quite common in the 80s. Most common was CP-437 as default on IBM-PCs (DOS encoding). CP-437 and its other language variants (like CP-850) can still be found on some systems (e.g. as legacy encoding in cmd.exe on Windows). Not used in the web context.
+  Beside the ISO-8859 family there were other 8-bit encodings quite common in the 80s. Most common was [CP-437](https://en.wikipedia.org/wiki/Code_page_437) as default on IBM-PCs (DOS encoding). CP-437 and its other language variants (like CP-850) can still be found on some systems (e.g. as legacy encoding in cmd.exe on Windows). Not used in the web context.
 
-- CJK encodings  
+- [CJK encodings](https://en.wikipedia.org/wiki/CJK_characters)  
   This is the most heterogeneous group of encodings with very different encoding paradigms. Most can be seen as ancient and are replaced by Unicode. If interested, see a list of formerly common CJK encodings [here](https://en.wikipedia.org/wiki/CJK_characters#Encoding).
 
-- Unicode  
+- [Unicode](https://en.wikipedia.org/wiki/Unicode)  
   Standard for most scenarios these days replacing 8-bit and CJK encodings. The Unicode specification maintains a really big table of 1,114,112 codepoints in several 16-bit planes (U+0000 to U+10FFFF). Most of these codepoints are not defined yet, they are subject to ongoing specifications done by the Unicode Consortium. Unicode is backwards compatible to ASCII (incorporates ASCII as a subset).  
-  Note that the Unicode table is not an encoding itself, it is treated as an abstract character room, that an Unicode compatible encoding should be capable to represent. Thus the real memory representation is left to a certain Unicode encoding. Thats where the UTF encoding family enters the stage (beside some others not listed here).
+  Note that the Unicode table is not an encoding itself, it is treated as an abstract character room, that an Unicode compatible encoding should be capable to represent. Thus the real memory representation is left to a certain Unicode encoding. Thats where the [UTF encoding family](https://en.wikipedia.org/wiki/Unicode#UTF) enters the stage (beside some others not listed here).
 
   Due to being really big a direct 1:1 mapping of codepoints is not feasible anymore in many circumstances as every codepoint (character position in the Unicode table) would take at least 2^21 bits (or 4 bytes memory aligned). Thus several UTF encodings were developed to optimize the handling in regards of memory consumption and / or string processing speed:
-    - UTF-8  
+    - [UTF-8](https://en.wikipedia.org/wiki/UTF-8)  
     Developed by the father of UNIX [Mr. Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson), UTF-8 is optimized to reduce memory consumption and bandwidth, which makes it ideal as an exchange format. It achieves that as a variable multibyte encoding (up to 4 bytes) that represents more common codepoints with shorter byte sequences (ASCII, the most common in english / western languages, takes only one byte, thus an ASCII string is directly compatible to UTF-8 on byte level). Downside is a higher processing penalty for typical string actions, therefore it is less commonly seen for in-memory handling. Standard in most modern data exchanges (like WWW), recently some programming languages started to use it as internal memory represenation (e.g. Rust). UTF-8 has several advantages over other Unicode encodings like "self healing" (dropping a byte does not scramble the whole data) and not being endianess dependent.
-    - UTF-16  
-    This originates back to earlier Unicode specifications with only 65,535 codepoints (UCS-2, 16-bit). Apparently 65,535 codepoints were not sufficiant to represent enough characters, thus the Unicode table was extended to 1,114,112 codepoints and the former UCS-2 encoding was expanded to a variable multibyte encoding, where the higher codepoints are formed by surrogate pairs. This is seen in many systems as default internal Unicode encoding (in Windows as wchar_t, internal string representation in Java and .NET), also Javascript uses this internally (with a fallback to UCS-2 in most engines). Regarding speed / memory consumption UTF-16 is a mixed case, while it can encode CJK codepoints < 65,536 more efficiently than UTF-8 (3 bytes), ASCII is more expensive and it is still quite expensive to process due to the surrogate pairs. Also its memory layout depents on endianess (UTF-16BE, UTF-16LE), is not self healing and not directly ASCII compatible (needs one padding byte). Thus it is hardly used for data exchange.
-    - UTF-32  
+    - [UTF-16](https://en.wikipedia.org/wiki/UTF-16)  
+    This originates back to earlier Unicode specifications with only 65,535 codepoints ([UCS-2](https://en.wikipedia.org/wiki/Universal_Coded_Character_Set), 16-bit). Apparently 65,535 codepoints were not sufficiant to represent enough characters, thus the Unicode table was extended to 1,114,112 codepoints and the former UCS-2 encoding was expanded to a variable multibyte encoding, where the higher codepoints are formed by surrogate pairs. This is seen in many systems as default internal Unicode encoding (in Windows as wchar_t, internal string representation in Java and .NET), also Javascript uses this internally (with a fallback to UCS-2 in most engines). Regarding speed / memory consumption UTF-16 is a mixed case, while it can encode CJK codepoints < 65,536 more efficiently than UTF-8 (3 bytes), ASCII is more expensive and it is still quite expensive to process due to the surrogate pairs. Also its memory layout depents on endianess (UTF-16BE, UTF-16LE), is not self healing and not directly ASCII compatible (needs one padding byte). Thus it is hardly used for data exchange.
+    - [UTF-32](https://en.wikipedia.org/wiki/UTF-32)  
     This encoding maps codepoints directly to 4 byte numbers in the memory, thus it is stable in terms of memory offsets and very fast for string processing. Used by many modern POSIX systems (wchar_t in C/C++). Not suitable for data exchange due to high memory consumption, endianess (UTF-32BE, UTF-32LE), no self healing and not directly ASCII compatible (needs 3 padding bytes).
 
 
