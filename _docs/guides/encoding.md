@@ -3,17 +3,24 @@ title: Encoding
 category: Guides
 ---
 
-## xterm.js and Encodings
-
 ### Input
 
-`xterm.js` supports these input encodings:
-- JS strings (interpreted as UTF-16 with UCS-2 fallback)
-- UTF-8 bytes
+`Terminal.write` supports these input types with the following encoding:
+- `string` interpreted as UTF-16
+- `Uint8Array` as sequence of UTF-8 byte values
+
+The input decoders are stream aware, thus will compose codepoints from consecutive multibyte chunks.
 
 ### Output
 
-String data will be output by `xterm.js` as JS strings (`onData` event) and might contain any valid Unicode codepoint, thus should be treated as UTF-16/UCS-2. For OS interaction this data should be converted to UTF-8 bytes (automatically done by [node-pty](https://github.com/microsoft/node-pty)).
+- `Terminal.onData`
+
+  contains real string data with any valid Unicode codepoint, thus the payload should be treated as UTF-16/UCS-2. For OS interaction this data should be converted to UTF-8 bytes (automatically done by [node-pty](https://github.com/microsoft/node-pty)). If you need legacy encoding support, see [below](#legacy-encodings).
+
+- `Terminal.onBinary`
+
+  contains raw binary data. For easier consumption the payload is a `string` type, but should be treated as a binary string, where a codepoint directly maps to the 8-bit byte value. The payload should never contain a higher codepoint than 255. If you find a higher codepoint, strip the high bits (e.g. `data[n] & 0xFF`) before processing and file an issue, as it is most likely a problem on the event triggering side. In nodejs you can consume the payload with the `'binary'` encoding, which automatically takes care of the high bits (e.g. `Buffer.from(data, 'binary')`). xterm.js currently uses `onBinary` only for legacy mouse reports, that cannot be encoded in UTF-8.  
+  **Caveat:** Watch out for automatic UTF-8 conversions done by some nodejs interfaces with `string` type, always go with the buffer variant if possible.
 
 ### Legacy Encodings
 
@@ -28,6 +35,8 @@ __example:__ luit transcoding a ssh connection
 ```bash
 $> LC_ALL=fr_FR luit ssh legacy-machine
 ```
+
+`luit` and `iconv` can also be used on integration level, see [Integration issues / PTY bridge](#integration-issues-/-pty-bridge).
 
 ### Typical encodings issues with xterm.js
 
@@ -82,7 +91,7 @@ pty.onData(recv => terminal.write(recv));
 terminal.onData(send => pty.write(send));
 ```
 
-Note that `node-pty` assumes UTF-8 as default encoding, thus interprets any bytes from OS-pty as UTF-8. Of course this will not work anymore if the OS-pty does not send UTF-8 data. To solve this on integration level, `luit` can be used by wrapping the initial shell command:
+Note that `node-pty` assumes UTF-8 as default encoding, thus interprets any bytes from OS-pty as UTF-8. Of course this will not work anymore if the OS-pty does not send or expect UTF-8 data. To solve this on integration level, `luit` can be used by wrapping the initial shell command:
 
 __before:__
 ```Javascript
@@ -106,12 +115,12 @@ pty.onData(recv => terminal.write(receiveConverter.convert(recv)));
 terminal.onData(send => pty.write(sendConverter.convert(send)));
 ```
 
-Offering a runtime encoding switch to users can be achieved with both, but you will have to work around these limitations:
+Both solutions have several drawbacks that you will have to work around if you want legacy encoding support on integration level (e.g. for a runtime encoding switch offered to users):
 - `luit`:
   - No Windows support.
   - Sits interactively on the pty stream, thus encoding cannot be switched easily without destroying/recreating the pty. To circumvent this, `luit` supports a `-c` cmdline switch where it can act as an independent subprocess. Your success with this might vary.
 - `iconv`:
-  - No stream support. This is not an issue if you only want to support 8-bit encodings. For multibyte encodings (e.g. CJK) you have to implement countermeasures to catch partly transmitted byte sequences before transcoding the data.
+  - No stream support. For multibyte encodings (e.g. CJK) you have to implement countermeasures to catch partly transmitted byte sequences before transcoding the data.
   - `luit` supports rewriting of several terminal sequences (7bit rewrites, changing character sets) while `iconv` does not know anything about terminal sequences at all. In general this should not be a problem in conjunction with xterm.js, it supports 8-bit sequences just fine and will fall back to UTF-8 for unknown character set commands.
 
 For integrations not based on `node-pty` please refer to [Input](#input) and [Output](#output). A rule of thumb here is - always treat xterm.js side as UTF-8 and transcode non-UTF-8 OS-pty data accordingly in both directions. Since most languages and transports have proper UTF-8 support these days it might be a good idea to transcode the data as close as possible to the raw OS-pty byte sink. If in doubt check encoding support of every single component the data has to go through.
