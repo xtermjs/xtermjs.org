@@ -29,7 +29,7 @@ For your application, most likely relying on third-party packages, we can only e
 
 By using web technologies for the screen output xterm.js basically inherits all security concerns of web browsers with all known attack vectors. Bad enough? No, it gets worse - by placing a terminal into a HTML document it exposes direct shell access to any Javascript code on that page. Also keystrokes for terminal input have to go through Javascript, thus sensitive data like passwords can be read by any JS code. Users with high security requirements might stop right here and question a terminal solution based on web technologies. And yes, they have many good reasons to do so. Still we are going to try to give some advice to integration developers to mitigate most concerns.
 
-**Excursion: hints for users with high security requirements**
+**Excursion: Hints for users with high security requirements**
 - **Is the xterm.js application (incl. server component) self-controlled or from a trustworthy, secured and stable source?**  
   If you can answer that question with yes it is probably safe to use the application as intended. Just keep in mind that even for self-deployed solutions the code already can be compromised, thus code audits might be needed to further backup the trust.
 - **Does the xterm.js application load many third-party resources?**  
@@ -63,23 +63,23 @@ Furthermore we want to emphasize some basic rules, that should apply to any clea
 - **No autoupdating foreign content. No ads.**  
   As simple as that - if something blinks and tries to get your attention it probably wants to get your credit card number. If your application has to rely on ad funding, strictly separate the terminal component from the more flashy parts of your application, never put it next to it. Again refer to the cheat series above to further mitigate possible CSRF/XSS vectors across several pages of your application. Note that you cannot expect from the user to decide whether you properly secured some random iframe content.
 - **No dynamic Javascript code updates at runtime.**  
-  Dont span your application's control flow over several JS resources that might get reloaded/updated during runtime. This again is hard to track for users and should not be used for any JS code that resides next to the terminal component. Instead try to prebundle the needed JS resources into a static asset, that can be inspected and evaluated during security auditions.
+  Don't span your application's control flow over several JS resources that might get reloaded/updated during runtime. This again is hard to track for users and should not be used for any JS code that resides next to the terminal component. Instead try to prebundle the needed JS resources into a static asset, that can be inspected and evaluated during security auditions.
 
 
 ### 2. XSS and xterm.js in particular
 
 **HTML/JS to terminal attack vector**  
-One of the main threat for the terminal component is fact, that any JS code within reach of the component can manipulate xterm.js and the terminal I/O with all consequences. Thus it is important to properly secure the component's scripting context, which typically spans the embedding HTML page. Special care has to be taken to mitigate cross-side-scripting attacks (XSS):
+One of the main threats for the terminal component is that any JS code within reach of the component can manipulate xterm.js and the terminal I/O. Due to this, it is important to properly secure the component's scripting context, which typically spans the embedding HTML page. Special care has to be taken to mitigate cross-side-scripting attacks (XSS):
 - always use secure methods to update DOM content, never use easy-to-go methods that carry the risk of placing new JS code into the scripting context (e.g. never use `innerHTML`)
-- dont update/inject JS code during runtime purposefully (no `eval`, no `fetch(SOME_JS)`)
-- watch out for third-party resources pulling JS code into the scripting context, if you dont control that resource dont use it (e.g. no webfont loader)
-- avoid anything that complicates the scripting context access or might be subject of weak browser security settings like embedded iframes or non HTML/JS/CSS media resources
+- don't update/inject JS code during runtime purposefully (no `eval`, no `fetch(SOME_JS)`)
+- watch out for third-party resources pulling JS code into the scripting context, if you don't control that resource then don't use it (e.g. no foreign webfont loader)
+- avoid anything that complicates the scripting context access or that might be subject to weak browser security settings like embedded iframes or non HTML/JS/CSS media resources
 - harden the scripting context further by applying strict origin control rules (e.g. CORS)
 
 For complex single page applications (SPA) these rules are not always maintainable without big sacrifices in functionality. In that case put the terminal component into its own scripting context (e.g. a subpage) with a smaller feature set to reduce the chance of security holes. Again refer to the cheat series above to further mitigate possible CSRF/XSS vectors across several pages of your application.
 
 **terminal to HTML/JS attack vector**  
-Embedding terminal I/O into a HTML document introduces another threat for web applications - anything coming from the terminal might contain malicious data. Thus it is important to treat terminal data always as untrusted when dealing with it on DOM level. xterm.js itself takes great care in its renderers to not let any terminal data cross the data-Javascript border. There are several API methods that may expose terminal data directly to embedders for further consumption:
+Embedding terminal I/O into a HTML document introduces another threat for web applications - anything coming from the terminal might contain malicious data. Thus it is important to treat terminal data always as untrusted when dealing with it on the DOM-level. xterm.js itself takes great care in its renderers to not let any terminal data cross the data-Javascript border. There are several API methods that may expose terminal data directly to embedders for further consumption:
 - `Terminal.onTitleChange`
 - linkifier interface
 - any `Terminal.buffer` access
@@ -96,4 +96,4 @@ If your application relies on websocket transport to drive the terminal I/O, fur
 
 The demo application of the core repository is only meant for local development purposes of xterm.js itself and does not contain any security measures. Note that a websocket does not share typical security features applied by the browser engine to other resources like origin restrictions / CORS. Thus it is important to further secure the websocket yourself:
 - use secure transport (wss)
-- always use additional protocols on top of websocket messages to provide appropriate authorization and authentication mechanisms
+- use additional protocols on top of websocket messages to provide appropriate authorization and authentication mechanisms
