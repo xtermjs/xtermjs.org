@@ -132,6 +132,10 @@ strong {
   margin-top: 20px;
 }
 
+.docs-content tr:not(:last-child) td {
+  padding-bottom: 1em;
+}
+
 .docs-content td:not(:last-child) {
   padding-right: 1em;
 }
