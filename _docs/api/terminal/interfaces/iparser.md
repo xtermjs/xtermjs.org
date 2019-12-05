@@ -32,7 +32,7 @@ layout: docs
 
 ▸ **addCsiHandler**(id: *[IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})*, callback: *`function`*): [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
-*Defined in [xterm.d.ts:1053](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L1053)*
+*Defined in [xterm.d.ts:1076](https://github.com/Tyriar/xterm.js/blob/4.3.0/typings/xterm.d.ts#L1076)*
 
 Adds a handler for CSI escape sequences.
 
@@ -41,7 +41,7 @@ Adds a handler for CSI escape sequences.
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | id | [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}) |  Specifies the function identifier under which the callback gets registered, e.g. {final: 'm'} for SGR. |
-| callback | `function` |  The function to handle the sequence. The callback is called with the numerical params. If the sequence has subparams the array will contain subarrays with their numercial values. Return true if the sequence was handled; false if we should try a previous handler (set by addCsiHandler or setCsiHandler). The most recently-added handler is tried first. |
+| callback | `function` |  The function to handle the sequence. The callback is called with the numerical params. If the sequence has subparams the array will contain subarrays with their numercial values. Return true if the sequence was handled; false if we should try a previous handler (set by addCsiHandler or setCsiHandler). The most recently added handler is tried first. |
 
 **Returns:** [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 An IDisposable you can call to remove this handler.
@@ -53,7 +53,7 @@ ___
 
 ▸ **addDcsHandler**(id: *[IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})*, callback: *`function`*): [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
-*Defined in [xterm.d.ts:1072](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L1072)*
+*Defined in [xterm.d.ts:1095](https://github.com/Tyriar/xterm.js/blob/4.3.0/typings/xterm.d.ts#L1095)*
 
 Adds a handler for DCS escape sequences.
 
@@ -62,7 +62,7 @@ Adds a handler for DCS escape sequences.
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | id | [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}) |  Specifies the function identifier under which the callback gets registered, e.g. {intermediates: '$' final: 'q'} for DECRQSS. |
-| callback | `function` |  The function to handle the sequence. Note that the function will only be called once if the sequence finished sucessfully. There is currently no way to intercept smaller data chunks, data chunks will be stored up until the sequence is finished. Since DCS sequences are not limited by the amount of data this might impose a problem for big payloads. Currently xterm.js limits DCS payload to 10 MB which should give enough room for most use cases. The function gets the payload and numerical parameters as arguments. Return true if the sequence was handled; false if we should try a previous handler (set by addDcsHandler or setDcsHandler). The most recently-added handler is tried first. |
+| callback | `function` |  The function to handle the sequence. Note that the function will only be called once if the sequence finished sucessfully. There is currently no way to intercept smaller data chunks, data chunks will be stored up until the sequence is finished. Since DCS sequences are not limited by the amount of data this might impose a problem for big payloads. Currently xterm.js limits DCS payload to 10 MB which should give enough room for most use cases. The function gets the payload and numerical parameters as arguments. Return true if the sequence was handled; false if we should try a previous handler (set by addDcsHandler or setDcsHandler). The most recently added handler is tried first. |
 
 **Returns:** [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 An IDisposable you can call to remove this handler.
@@ -74,7 +74,7 @@ ___
 
 ▸ **addEscHandler**(id: *[IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})*, handler: *`function`*): [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
-*Defined in [xterm.d.ts:1085](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L1085)*
+*Defined in [xterm.d.ts:1108](https://github.com/Tyriar/xterm.js/blob/4.3.0/typings/xterm.d.ts#L1108)*
 
 Adds a handler for ESC escape sequences.
 
@@ -95,7 +95,7 @@ ___
 
 ▸ **addOscHandler**(ident: *`number`*, callback: *`function`*): [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
-*Defined in [xterm.d.ts:1103](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L1103)*
+*Defined in [xterm.d.ts:1126](https://github.com/Tyriar/xterm.js/blob/4.3.0/typings/xterm.d.ts#L1126)*
 
 Adds a handler for OSC escape sequences.
 
@@ -104,7 +104,7 @@ Adds a handler for OSC escape sequences.
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | ident | `number` |  The number (first parameter) of the sequence. |
-| callback | `function` |  The function to handle the sequence. Note that the function will only be called once if the sequence finished sucessfully. There is currently no way to intercept smaller data chunks, data chunks will be stored up until the sequence is finished. Since OSC sequences are not limited by the amount of data this might impose a problem for big payloads. Currently xterm.js limits OSC payload to 10 MB which should give enough room for most use cases. The callback is called with OSC data string. Return true if the sequence was handled; false if we should try a previous handler (set by addOscHandler or setOscHandler). The most recently-added handler is tried first. |
+| callback | `function` |  The function to handle the sequence. Note that the function will only be called once if the sequence finished sucessfully. There is currently no way to intercept smaller data chunks, data chunks will be stored up until the sequence is finished. Since OSC sequences are not limited by the amount of data this might impose a problem for big payloads. Currently xterm.js limits OSC payload to 10 MB which should give enough room for most use cases. The callback is called with OSC data string. Return true if the sequence was handled; false if we should try a previous handler (set by addOscHandler or setOscHandler). The most recently added handler is tried first. |
 
 **Returns:** [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 An IDisposable you can call to remove this handler.

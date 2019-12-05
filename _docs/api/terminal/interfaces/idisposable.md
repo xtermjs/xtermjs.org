@@ -37,7 +37,7 @@ An object that can be disposed via a dispose function.
 
 ▸ **dispose**(): `void`
 
-*Defined in [xterm.d.ts:315](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L315)*
+*Defined in [xterm.d.ts:327](https://github.com/Tyriar/xterm.js/blob/4.3.0/typings/xterm.d.ts#L327)*
 
 **Returns:** `void`
 

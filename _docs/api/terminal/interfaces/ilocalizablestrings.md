@@ -30,7 +30,7 @@ The set of localizable strings.
 
 **● promptLabel**: *`string`*
 
-*Defined in [xterm.d.ts:356](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L356)*
+*Defined in [xterm.d.ts:368](https://github.com/Tyriar/xterm.js/blob/4.3.0/typings/xterm.d.ts#L368)*
 
 The aria label for the underlying input textarea for the terminal.
 
@@ -41,7 +41,7 @@ ___
 
 **● tooMuchOutput**: *`string`*
 
-*Defined in [xterm.d.ts:362](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L362)*
+*Defined in [xterm.d.ts:374](https://github.com/Tyriar/xterm.js/blob/4.3.0/typings/xterm.d.ts#L374)*
 
 Announcement for when line reading is suppressed due to too many lines being printed to the terminal when `screenReaderMode` is enabled.
 
