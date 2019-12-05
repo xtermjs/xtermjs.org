@@ -34,7 +34,7 @@ An object containing options for a link matcher.
 
 **● leaveCallback**: *`function`*
 
-*Defined in [xterm.d.ts:293](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L293)*
+*Defined in [xterm.d.ts:305](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L305)*
 
 A callback that fires when the mouse leaves a link. Note that this can happen even when tooltipCallback hasn't fired for the link yet.
 
@@ -50,7 +50,7 @@ ___
 
 **● matchIndex**: *`number`*
 
-*Defined in [xterm.d.ts:276](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L276)*
+*Defined in [xterm.d.ts:288](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L288)*
 
 The index of the link from the regex.match(text) call. This defaults to 0 (for regular expressions without capture groups).
 
@@ -61,7 +61,7 @@ ___
 
 **● priority**: *`number`*
 
-*Defined in [xterm.d.ts:300](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L300)*
+*Defined in [xterm.d.ts:312](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L312)*
 
 The priority of the link matcher, this defines the order in which the link matcher is evaluated relative to others, from highest to lowest. The default value is 0.
 
@@ -72,7 +72,7 @@ ___
 
 **● tooltipCallback**: *`function`*
 
-*Defined in [xterm.d.ts:287](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L287)*
+*Defined in [xterm.d.ts:299](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L299)*
 
 A callback that fires when the mouse hovers over a link for a moment.
 
@@ -96,7 +96,7 @@ ___
 
 **● validationCallback**: *`function`*
 
-*Defined in [xterm.d.ts:282](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L282)*
+*Defined in [xterm.d.ts:294](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L294)*
 
 A callback that validates whether to create an individual link, pass whether the link is valid to the callback.
 
@@ -119,7 +119,7 @@ ___
 
 **● willLinkActivate**: *`function`*
 
-*Defined in [xterm.d.ts:308](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L308)*
+*Defined in [xterm.d.ts:320](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L320)*
 
 A callback that fires when the mousedown and click events occur that determines whether a link will be activated upon click. This enables only activating a link when a certain modifier is held down, if not the mouse event will continue propagation (eg. double click to select word).
 

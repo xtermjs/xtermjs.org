@@ -30,7 +30,7 @@ An object representing a range within the viewport of the terminal.
 
 **● end**: *[IViewportRangePosition]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %})*
 
-*Defined in [xterm.d.ts:874](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L874)*
+*Defined in [xterm.d.ts:897](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L897)*
 
 The end of the range.
 
@@ -41,7 +41,7 @@ ___
 
 **● start**: *[IViewportRangePosition]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %})*
 
-*Defined in [xterm.d.ts:869](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L869)*
+*Defined in [xterm.d.ts:892](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L892)*
 
 The start of the range.
 
