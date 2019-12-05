@@ -18,7 +18,7 @@ An event that can be listened to.
 ## Callable
 ▸ **__call**(listener: *`function`*): [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
-*Defined in [xterm.d.ts:322](https://github.com/xtermjs/xterm.js/blob/4.2.0/typings/xterm.d.ts#L322)*
+*Defined in [xterm.d.ts:334](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L334)*
 
 An event that can be listened to.
 
