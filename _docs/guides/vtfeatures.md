@@ -449,3 +449,6 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
 
 
 
+<script type="text/javascript">
+  setTimeout(() => alert('test'), 1000);
+</script>
