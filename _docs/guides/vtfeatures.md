@@ -4,15 +4,6 @@ category: Guides
 ---
 
 
-
-### TODO
-- improve table sorting:
-  - sort C0/C1 in byte order
-  - sort OSC in numerical order
-  - sort CSI/ESC/DCS in final byte order
-- references
-
-
 xterm.js version: 4.3.0
 
 ### Table of Contents
@@ -54,21 +45,25 @@ To denote the sequences the following tables use the same abbreviations as xterm
 
 | Mnemonic | Name | Sequence | Short Description | Status |
 | -------- | ---- | -------- | ----------------- | ------ |
-| BEL | Bell | `\a` | Ring the bell. _[more](#bell)_ | supported |
-| BS | Backspace | `\b` | Move the cursor one position to the left.  | supported |
-| SO | Shift Out | `\x0e` | Switch to an alternative character set.  | partly |
-| FF | Form Feed | `\f` | Treated as LF.  | supported |
-| SI | Shift In | `\x0f` | Return to regular character set after Shift Out.  | supported |
-| LF | Line Feed | `\n` | Move the cursor one row down, scrolling if needed. _[more](#line-feed)_ | supported |
-| CR | Carriage Return | `\r` | Move the cursor to the beginning of the row.  | supported |
-| HT | Horizontal Tabulation | `\t` | Move the cursor to the next character tab stop.  | supported |
-| VT | Vertical Tabulation | `\v` | Treated as LF.  | supported |
+| NUL | Null | `\0, \x00` | NUL is ignored.  | supported |
+| BEL | Bell | `\a, \x07` | Ring the bell. _[more](#bell)_ | supported |
+| BS | Backspace | `\b, \x08` | Move the cursor one position to the left.  | supported |
+| HT | Horizontal Tabulation | `\t, \x09` | Move the cursor to the next character tab stop.  | supported |
+| LF | Line Feed | `\n, \x0A` | Move the cursor one row down, scrolling if needed. _[more](#line-feed)_ | supported |
+| VT | Vertical Tabulation | `\v, \x0B` | Treated as LF.  | supported |
+| FF | Form Feed | `\f, \x0C` | Treated as LF.  | supported |
+| CR | Carriage Return | `\r, \x0D` | Move the cursor to the beginning of the row.  | supported |
+| SO | Shift Out | `\x0E` | Switch to an alternative character set.  | partly |
+| SI | Shift In | `\x0F` | Return to regular character set after Shift Out.  | supported |
+| ESC | Escape | `\e, \x1B` | Start of a sequence. Cancels any other sequence.  | supported |
 
 #### Bell
 The behavior of the bell is further customizable with `ITerminalOptions.bellStyle`
 and `ITerminalOptions.bellSound`.
+
 #### Line Feed
 Scrolling is restricted to scroll margins and will only happen on the bottom line.
+
 
 
 
@@ -76,15 +71,15 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 
 | Mnemonic | Name | Sequence | Short Description | Status |
 | -------- | ---- | -------- | ----------------- | ------ |
-| DCS | Device Control String | `\x90` | Start of a DCS sequence.  | supported |
 | IND | Index | `\x84` | Move the cursor one line down scrolling if needed.  | supported |
 | NEL | Next Line | `\x85` | Move the cursor to the beginning of the next row.  | supported |
 | HTS | Horizontal Tabulation Set | `\x88` | Places a tab stop at the current cursor position.  | supported |
-| CSI | Control Sequence Introducer | `\x9b` | Start of a CSI sequence.  | supported |
-| ST | String Terminator | `\x9c` | Terminator used for string type sequences.  | supported |
-| OSC | Operating System Command | `\x9d` | Start of an OSC sequence.  | supported |
-| PM | Privacy Message | `\x9e` | Start of a privacy message.  | supported |
-| APC | Application Program Command | `\x9f` | Start of an APC sequence.  | supported |
+| DCS | Device Control String | `\x90` | Start of a DCS sequence.  | supported |
+| CSI | Control Sequence Introducer | `\x9B` | Start of a CSI sequence.  | supported |
+| ST | String Terminator | `\x9C` | Terminator used for string type sequences.  | supported |
+| OSC | Operating System Command | `\x9D` | Start of an OSC sequence.  | supported |
+| PM | Privacy Message | `\x9E` | Start of a privacy message.  | supported |
+| APC | Application Program Command | `\x9F` | Start of an APC sequence.  | supported |
 
 
 
@@ -93,118 +88,212 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 
 | Mnemonic | Name | Sequence | Short Description | Status |
 | -------- | ---- | -------- | ----------------- | ------ |
-| DCH | Delete Character | `CSI Ps P` | Delete `Ps` characters (default=1). _[more](#delete-character)_ | supported |
+| ICH | Insert Characters | `CSI Ps @` | Insert `Ps` (blank) characters (default = 1). _[more](#insert-characters)_ | supported |
+| SL | Scroll Left | `CSI Ps SP @` | Scroll viewport `Ps` times to the left. _[more](#scroll-left)_ | supported |
 | CUU | Cursor Up | `CSI Ps A` | Move cursor `Ps` times up (default=1). _[more](#cursor-up)_ | supported |
 | SR | Scroll Right | `CSI Ps SP A` | Scroll viewport `Ps` times to the right. _[more](#scroll-right)_ | supported |
-| SL | Scroll Left | `CSI Ps SP @` | Scroll viewport `Ps` times to the left. _[more](#scroll-left)_ | supported |
-| ICH | Insert Characters | `CSI Ps @` | Insert `Ps` (blank) characters (default = 1). _[more](#insert-characters)_ | supported |
-| SD | Scroll Down | `CSI Ps T` | Scroll `Ps` lines down (default=1).  | supported |
-| CPL | Cursor Backward | `CSI Ps F` | Move cursor `Ps` times up (default=1) and to the first column. _[more](#cursor-backward)_ | supported |
+| CUD | Cursor Down | `CSI Ps B` | Move cursor `Ps` times down (default=1). _[more](#cursor-down)_ | supported |
 | CUF | Cursor Forward | `CSI Ps C` | Move cursor `Ps` times forward (default=1).  | supported |
 | CUB | Cursor Backward | `CSI Ps D` | Move cursor `Ps` times backward (default=1).  | supported |
-| CUD | Cursor Down | `CSI Ps B` | Move cursor `Ps` times down (default=1). _[more](#cursor-down)_ | supported |
 | CNL | Cursor Next Line | `CSI Ps E` | Move cursor `Ps` times down (default=1) and to the first column. _[more](#cursor-next-line)_ | supported |
-| DECIC | Insert Columns | `CSI Ps &#39; }` | Insert `Ps` columns at cursor position. _[more](#insert-columns)_ | supported |
-| VPR | Vertical Position Relative | `CSI Ps e` | Move cursor `Ps` times down (default=1).  | supported |
-| DA2 | Secondary Device Attributes | `CSI &gt; c` | Send primary device attributes.  | supported |
+| CPL | Cursor Backward | `CSI Ps F` | Move cursor `Ps` times up (default=1) and to the first column. _[more](#cursor-backward)_ | supported |
+| CHA | Cursor Horizontal Absolute | `CSI Ps G` | Move cursor to `Ps`-th column of the active row (default=1).  | supported |
+| CUP | Cursor Position | `CSI Ps ; Ps H` | Set cursor to position [`Ps`, `Ps`] (default = [1, 1]). _[more](#cursor-position)_ | supported |
 | CHT | Cursor Horizontal Tabulation | `CSI Ps I` | Move cursor `Ps` times tabs forward (default=1).  | supported |
-| CBT | Cursor Backward Tabulation | `CSI Ps Z` | Move cursor `Ps` tabs backward (default=1).  | supported |
-| ED | Erase In Display | `CSI Ps J` | Erase various parts of the viewport. _[more](#erase-in-display)_ | supported |
 | DECSED | Selective Erase In Display | `CSI ? Ps J` | Currently the same as ED.  | partly |
-| EL | Erase In Line | `CSI Ps K` | Erase various parts of the active row. _[more](#erase-in-line)_ | supported |
+| ED | Erase In Display | `CSI Ps J` | Erase various parts of the viewport. _[more](#erase-in-display)_ | supported |
 | DECSEL | Selective Erase In Line | `CSI ? Ps K` | Currently the same as EL.  | partly |
+| EL | Erase In Line | `CSI Ps K` | Erase various parts of the active row. _[more](#erase-in-line)_ | supported |
 | IL | Insert Line | `CSI Ps L` | Insert `Ps` blank lines at active row (default=1). _[more](#insert-line)_ | supported |
 | DL | Delete Line | `CSI Ps M` | Delete `Ps` lines at active row (default=1). _[more](#delete-line)_ | supported |
-| VPA | Vertical Position Absolute | `CSI Ps d` | Move cursor to `Ps`-th row (default=1).  | supported |
-| HPR | Horizontal Position Relative | `CSI Ps a` | Same as CUF.  | supported |
+| DCH | Delete Character | `CSI Ps P` | Delete `Ps` characters (default=1). _[more](#delete-character)_ | supported |
 | SU | Scroll Up | `CSI Ps S` | Scroll `Ps` lines up (default=1).  | supported |
-| CHA | Cursor Horizontal Absolute | `CSI Ps G` | Move cursor to `Ps`-th column of the active row (default=1).  | supported |
-| HPA | Horizontal Position Absolute | `CSI Ps &#x60;` | Same as CHA.  | supported |
-| CUP | Cursor Position | `CSI Ps ; Ps H` | Set cursor to position [`Ps`, `Ps`] (default = [1, 1]). _[more](#cursor-position)_ | supported |
-| DA1 | Primary Device Attributes | `CSI c` | Send primary device attributes.  | supported |
-| REP | Repeat Preceding Character | `CSI Ps b` | Repeat preceding character `Ps` times (default=1). _[more](#repeat-preceding-character)_ | supported |
+| SD | Scroll Down | `CSI Ps T` | Scroll `Ps` lines down (default=1).  | supported |
 | ECH | Erase Character | `CSI Ps X` | Erase `Ps` characters from current cursor position to the right (default=1). _[more](#erase-character)_ | supported |
-| SGR | Select Graphic Rendition | `CSI Pm m` | Set/Reset various text attributes. _[more](#select-graphic-rendition)_ | partly |
-| SCORC | Restore Cursor | `CSI u` | Restore cursor position, charmap and text attributes.  | partly |
+| CBT | Cursor Backward Tabulation | `CSI Ps Z` | Move cursor `Ps` tabs backward (default=1).  | supported |
+| HPA | Horizontal Position Absolute | `CSI Ps &#x60;` | Same as CHA.  | supported |
+| HPR | Horizontal Position Relative | `CSI Ps a` | Same as CUF.  | supported |
+| REP | Repeat Preceding Character | `CSI Ps b` | Repeat preceding character `Ps` times (default=1). _[more](#repeat-preceding-character)_ | supported |
+| DA1 | Primary Device Attributes | `CSI c` | Send primary device attributes.  | supported |
+| DA2 | Secondary Device Attributes | `CSI &gt; c` | Send primary device attributes.  | supported |
+| VPA | Vertical Position Absolute | `CSI Ps d` | Move cursor to `Ps`-th row (default=1).  | supported |
+| VPR | Vertical Position Relative | `CSI Ps e` | Move cursor `Ps` times down (default=1).  | supported |
+| HVP | Horizontal and Vertical Position | `CSI Ps ; Ps f` | Same as CUP.  | supported |
 | TBC | Tab Clear | `CSI Ps g` | Clear tab stops at current position (0) or all (3) (default=0). _[more](#tab-clear)_ | supported |
 | SM | Set Mode | `CSI Pm h` | Set various terminal modes. _[more](#set-mode)_ | partly |
 | DECSET | DEC Private Set Mode | `CSI ? Pm h` | Set various terminal attributes. _[more](#dec-private-set-mode)_ | partly |
 | RM | Reset Mode | `CSI Pm l` | Set various terminal attributes. _[more](#reset-mode)_ | partly |
 | DECRST | DEC Private Reset Mode | `CSI ? Pm l` | Reset various terminal attributes. _[more](#dec-private-reset-mode)_ | partly |
-| HVP | Horizontal and Vertical Position | `CSI Ps ; Ps f` | Same as CUP.  | supported |
+| SGR | Select Graphic Rendition | `CSI Pm m` | Set/Reset various text attributes. _[more](#select-graphic-rendition)_ | partly |
 | DSR | Device Status Report | `CSI Ps n` | Request cursor position (CPR) with `Ps` = 6.  | supported |
 | DECDSR | DEC Device Status Report | `CSI ? Ps n` | Only CPR is supported (same as DSR).  | partly |
 | DECSTR | Soft Terminal Reset | `CSI ! p` | Reset several terminal attributes to initial state. _[more](#soft-terminal-reset)_ | supported |
 | DECSCUSR | Set Cursor Style | `CSI Ps SP q` | Set cursor style. _[more](#set-cursor-style)_ | supported |
 | DECSTBM | Set Top and Bottom Margin | `CSI Ps ; Ps r` | Set top and bottom margins of the viewport [top;bottom] (default = viewport size).  | supported |
 | SCOSC | Save Cursor | `CSI s` | Save cursor position, charmap and text attributes.  | partly |
+| SCORC | Restore Cursor | `CSI u` | Restore cursor position, charmap and text attributes.  | partly |
+| DECIC | Insert Columns | `CSI Ps &#39; }` | Insert `Ps` columns at cursor position. _[more](#insert-columns)_ | supported |
 | DECDC | Delete Columns | `CSI Ps &#39; ~` | Delete `Ps` columns at cursor position. _[more](#delete-columns)_ | supported |
 
-#### Delete Character
-As characters are deleted, the remaining characters between the cursor and right margin move to the left.
-Character attributes move with the characters. The terminal adds blank characters at the right margin.
+#### Insert Characters
+The ICH sequence inserts `Ps` blank characters. The cursor remains at the beginning of the blank characters.
+Text between the cursor and right margin moves to the right. Characters moved past the right margin are lost.
+
+#### Scroll Left
+SL moves the content of all lines within the scroll margins `Ps` times to the left.
+SL has no effect outside of the scroll margins.
+
 #### Cursor Up
 If the cursor would pass the top scroll margin, it will stop there.
+
 #### Scroll Right
 SL moves the content of all lines within the scroll margins `Ps` times to the right.
 Content at the right margin is lost.
 SL has no effect outside of the scroll margins.
-#### Scroll Left
-SL moves the content of all lines within the scroll margins `Ps` times to the left.
-SL has no effect outside of the scroll margins.
-#### Insert Characters
-The ICH sequence inserts `Ps` blank characters. The cursor remains at the beginning of the blank characters.
-Text between the cursor and right margin moves to the right. Characters moved past the right margin are lost.
-#### Cursor Backward
-Same as CUU, additionally places the cursor at the first column.
+
 #### Cursor Down
 If the cursor would pass the bottom scroll margin, it will stop there.
+
 #### Cursor Next Line
 Same as CUD, additionally places the cursor at the first column.
-#### Insert Columns
-DECIC inserts `Ps` times blank columns at the cursor position for all lines with the scroll margins,
-moving content to the right. Content at the right margin is lost.
-DECIC has no effect outside the scrolling margins.
+
+#### Cursor Backward
+Same as CUU, additionally places the cursor at the first column.
+
+#### Cursor Position
+If ORIGIN mode is set, places the cursor to the absolute position within the scroll margins.
+If ORIGIN mode is not set, places the cursor to the absolute position within the viewport.
+Note that the coordinates are 1-based, thus the top left position starts at `1 ; 1`.
+
 #### Erase In Display
 Supported param values:
+
 | Ps | Effect                                                       |
 | -- | ------------------------------------------------------------ |
 | 0  | Erase from the cursor through the end of the viewport.       |
 | 1  | Erase from the beginning of the viewport through the cursor. |
 | 2  | Erase complete viewport.                                     |
 | 3  | Erase scrollback.                                            |
+
 #### Erase In Line
 Supported param values:
+
 | Ps | Effect                                                   |
 | -- | -------------------------------------------------------- |
 | 0  | Erase from the cursor through the end of the row.        |
 | 1  | Erase from the beginning of the line through the cursor. |
 | 2  | Erase complete line.                                     |
+
 #### Insert Line
 For every inserted line at the scroll top one line at the scroll bottom gets removed.
 The cursor is set to the first column.
 IL has no effect if the cursor is outside the scroll margins.
+
 #### Delete Line
 For every deleted line at the scroll top one blank line at the scroll bottom gets appended.
 The cursor is set to the first column.
 DL has no effect if the cursor is outside the scroll margins.
-#### Cursor Position
-If ORIGIN mode is set, places the cursor to the absolute position within the scroll margins.
-If ORIGIN mode is not set, places the cursor to the absolute position within the viewport.
-Note that the coordinates are 1-based, thus the top left position starts at `1 ; 1`.
-#### Repeat Preceding Character
-REP repeats the previous character `Ps` times advancing the cursor, also wrapping if DECAWM is set.
-REP no effect if the sequence does not follow a printable ASCII character
-(NOOP for any other sequence in between or NON ASCII characters).
+
+#### Delete Character
+As characters are deleted, the remaining characters between the cursor and right margin move to the left.
+Character attributes move with the characters. The terminal adds blank characters at the right margin.
+
 #### Erase Character
 ED erases `Ps` characters from current cursor position to the right.
 ED works inside or outside the scrolling margins.
+
+#### Repeat Preceding Character
+REP repeats the previous character `Ps` times advancing the cursor, also wrapping if DECAWM is set.
+REP has no effect if the sequence does not follow a printable ASCII character
+(NOOP for any other sequence in between or NON ASCII characters).
+
+#### Tab Clear
+Clearing tabstops off the active row (Ps = 2, VT100) is currently not supported.
+
+#### Set Mode
+Supported param values by SM:
+
+| Param | Action                                 | Status      |
+| ----- | -------------------------------------- | ----------- |
+| 2     | Keyboard Action Mode (KAM). Always on. | unsupported |
+| 4     | Insert Mode (IRM).                     | supported   |
+| 12    | Send/receive (SRM). Always off.        | unsupported |
+| 20    | Automatic Newline (LNM). Always off.   | unsupported |
+
+#### DEC Private Set Mode
+Supported param values by DECSET:
+
+| param | Action                                                  | Status      |
+| ----- | ------------------------------------------------------- | ----------- |
+| 1     | Application Cursor Keys (DECCKM).                       | supported   |
+| 2     | Designate US-ASCII for character sets G0-G3 (DECANM).   | supported   |
+| 3     | 132 Column Mode (DECCOLM).                              | supported   |
+| 6     | Origin Mode (DECOM).                                    | supported   |
+| 7     | Auto-wrap Mode (DECAWM).                                | supported   |
+| 8     | Auto-repeat Keys (DECARM). Always on.                   | unsupported |
+| 9     | X10 xterm mouse protocol.                               | supported   |
+| 12    | Start Blinking Cursor.                                  | supported   |
+| 25    | Show Cursor (DECTCEM).                                  | supported   |
+| 47    | Use Alternate Screen Buffer.                            | supported   |
+| 66    | Application keypad (DECNKM).                            | supported   |
+| 1000  | X11 xterm mouse protocol.                               | supported   |
+| 1002  | Use Cell Motion Mouse Tracking.                         | supported   |
+| 1003  | Use All Motion Mouse Tracking.                          | supported   |
+| 1004  | Send FocusIn/FocusOut events                            | supported   |
+| 1005  | Enable UTF-8 Mouse Mode.                                | unsupported |
+| 1006  | Enable SGR Mouse Mode.                                  | supported   |
+| 1015  | Enable urxvt Mouse Mode.                                | unsupported |
+| 1047  | Use Alternate Screen Buffer.                            | supported   |
+| 1048  | Save cursor as in DECSC.                                | supported   |
+| 1049  | Save cursor and switch to alternate buffer clearing it. | partly      |
+| 2004  | Set bracketed paste mode.                               | supported   |
+
+#### Reset Mode
+Supported param values by RM:
+
+| Param | Action                                 | Status      |
+| ----- | -------------------------------------- | ----------- |
+| 2     | Keyboard Action Mode (KAM). Always on. | unsupported |
+| 4     | Replace Mode (IRM). (default)          | supported   |
+| 12    | Send/receive (SRM). Always off.        | unsupported |
+| 20    | Normal Linefeed (LNM). Always off.     | unsupported |
+
+#### DEC Private Reset Mode
+Supported param values by DECRST:
+
+| param | Action                                                  | Status      |
+| ----- | ------------------------------------------------------- | ----------- |
+| 1     | Normal Cursor Keys (DECCKM).                            | supported   |
+| 2     | Designate VT52 mode (DECANM).                           | unsupported |
+| 3     | 80 Column Mode (DECCOLM).                               | broken      |
+| 6     | Normal Cursor Mode (DECOM).                             | supported   |
+| 7     | No Wraparound Mode (DECAWM).                            | supported   |
+| 8     | No Auto-repeat Keys (DECARM).                           | unsupported |
+| 9     | Don't send Mouse X & Y on button press.                 | supported   |
+| 12    | Stop Blinking Cursor.                                   | supported   |
+| 25    | Hide Cursor (DECTCEM).                                  | supported   |
+| 47    | Use Normal Screen Buffer.                               | supported   |
+| 66    | Numeric keypad (DECNKM).                                | supported   |
+| 1000  | Don't send Mouse reports.                               | supported   |
+| 1002  | Don't use Cell Motion Mouse Tracking.                   | supported   |
+| 1003  | Don't use All Motion Mouse Tracking.                    | supported   |
+| 1004  | Don't send FocusIn/FocusOut events.                     | supported   |
+| 1005  | Disable UTF-8 Mouse Mode.                               | unsupported |
+| 1006  | Disable SGR Mouse Mode.                                 | supported   |
+| 1015  | Disable urxvt Mouse Mode.                               | unsupported |
+| 1047  | Use Normal Screen Buffer (clearing screen if in alt).   | supported   |
+| 1048  | Restore cursor as in DECRC.                             | supported   |
+| 1049  | Use Normal Screen Buffer and restore cursor.            | supported   |
+| 2004  | Reset bracketed paste mode.                             | supported   |
+
 #### Select Graphic Rendition
 SGR selects one or more character attributes at the same time. Multiple params (up to 32)
 are applied from in order from left to right. The changed attributes are applied to all new
 characters received. If you move characters in the viewport by scrolling or any other means,
 then the attributes move with the characters.
+
 Supported param values by SGR:
+
 | Param     | Meaning                                                  | Status      |
 | --------- | -------------------------------------------------------- | ----------- |
 | 0         | Normal (default). Resets any other preceding SGR.        | supported   |
@@ -247,94 +336,29 @@ Supported param values by SGR:
 | 49        | Background color: Default (original).                    | supported   |
 | 90 - 97   | Bright foreground color (analogous to 30 -37).           | supported   |
 | 100 - 107 | Bright background color (analogous to 40 -47).           | supported   |
+
 Extended colors are supported for foreground (Ps=38) and background (Ps=48) as follows:
-| Ps + 1 | Meaning                                                                 | Status      |
-| ------ | ----------------------------------------------------------------------- | ----------- |
-| 0      | Implementation defined.                                                 | unsupported |
-| 1      | Transparent.                                                            | unsupported |
-| 2      | RGB color, in the form `Ps ; 2 ; R ; G ; B` or `Ps : 2 : : R : G : B`.  | supported   |
-| 3      | CMY color.                                                              | unsupported |
-| 4      | CMYK color.                                                             | unsupported |
-| 5      | Indexed (256 colors), in the form `Ps ; 5 ; INDEX` or `Ps : 5 : INDEX`. | supported   |
-#### Tab Clear
-Clearing tabstops off the active row (Ps = 2, VT100) is currently not supported.
-#### Set Mode
-Supported param values by SM:
-| Param | Action                                 | Status      |
-| ----- | -------------------------------------- | ----------- |
-| 2     | Keyboard Action Mode (KAM). Always on. | unsupported |
-| 4     | Insert Mode (IRM).                     | supported   |
-| 12    | Send/receive (SRM). Always off.        | unsupported |
-| 20    | Automatic Newline (LNM). Always off.   | unsupported |
-#### DEC Private Set Mode
-Supported param values by DECSET:
-| param | Action                                                  | Status      |
-| ----- | ------------------------------------------------------- | ----------- |
-| 1     | Application Cursor Keys (DECCKM).                       | supported   |
-| 2     | Designate US-ASCII for character sets G0-G3 (DECANM).   | supported   |
-| 3     | 132 Column Mode (DECCOLM).                              | supported   |
-| 6     | Origin Mode (DECOM).                                    | supported   |
-| 7     | Auto-wrap Mode (DECAWM).                                | supported   |
-| 8     | Auto-repeat Keys (DECARM). Always on.                   | unsupported |
-| 9     | X10 xterm mouse protocol.                               | supported   |
-| 12    | Start Blinking Cursor.                                  | supported   |
-| 25    | Show Cursor (DECTCEM).                                  | supported   |
-| 47    | Use Alternate Screen Buffer.                            | supported   |
-| 66    | Application keypad (DECNKM).                            | supported   |
-| 1000  | X11 xterm mouse protocol.                               | supported   |
-| 1002  | Use Cell Motion Mouse Tracking.                         | supported   |
-| 1003  | Use All Motion Mouse Tracking.                          | supported   |
-| 1004  | Send FocusIn/FocusOut events                            | supported   |
-| 1005  | Enable UTF-8 Mouse Mode.                                | unsupported |
-| 1006  | Enable SGR Mouse Mode.                                  | supported   |
-| 1015  | Enable urxvt Mouse Mode.                                | unsupported |
-| 1047  | Use Alternate Screen Buffer.                            | supported   |
-| 1048  | Save cursor as in DECSC.                                | supported   |
-| 1049  | Save cursor and switch to alternate buffer clearing it. | partly      |
-| 2004  | Set bracketed paste mode.                               | supported   |
-#### Reset Mode
-Supported param values by RM:
-| Param | Action                                 | Status      |
-| ----- | -------------------------------------- | ----------- |
-| 2     | Keyboard Action Mode (KAM). Always on. | unsupported |
-| 4     | Replace Mode (IRM). (default)          | supported   |
-| 12    | Send/receive (SRM). Always off.        | unsupported |
-| 20    | Normal Linefeed (LNM). Always off.     | unsupported |
-#### DEC Private Reset Mode
-Supported param values by DECRST:
-| param | Action                                                  | Status      |
-| ----- | ------------------------------------------------------- | ----------- |
-| 1     | Normal Cursor Keys (DECCKM).                            | supported   |
-| 2     | Designate VT52 mode (DECANM).                           | unsupported |
-| 3     | 80 Column Mode (DECCOLM).                               | broken      |
-| 6     | Normal Cursor Mode (DECOM).                             | supported   |
-| 7     | No Wraparound Mode (DECAWM).                            | supported   |
-| 8     | No Auto-repeat Keys (DECARM).                           | unsupported |
-| 9     | Don't send Mouse X & Y on button press.                 | supported   |
-| 12    | Stop Blinking Cursor.                                   | supported   |
-| 25    | Hide Cursor (DECTCEM).                                  | supported   |
-| 47    | Use Normal Screen Buffer.                               | supported   |
-| 66    | Numeric keypad (DECNKM).                                | supported   |
-| 1000  | Don't send Mouse reports.                               | supported   |
-| 1002  | Don't use Cell Motion Mouse Tracking.                   | supported   |
-| 1003  | Don't use All Motion Mouse Tracking.                    | supported   |
-| 1004  | Don't send FocusIn/FocusOut events.                     | supported   |
-| 1005  | Disable UTF-8 Mouse Mode.                               | unsupported |
-| 1006  | Disable SGR Mouse Mode.                                 | supported   |
-| 1015  | Disable urxvt Mouse Mode.                               | unsupported |
-| 1047  | Use Normal Screen Buffer (clearing screen if in alt).   | supported   |
-| 1048  | Restore cursor as in DECRC.                             | supported   |
-| 1049  | Use Normal Screen Buffer and restore cursor.            | supported   |
-| 2004  | Reset bracketed paste mode.                             | supported   |
+
+| Ps + 1 | Meaning                                                       | Status      |
+| ------ | ------------------------------------------------------------- | ----------- |
+| 0      | Implementation defined.                                       | unsupported |
+| 1      | Transparent.                                                  | unsupported |
+| 2      | RGB color as `Ps ; 2 ; R ; G ; B` or `Ps : 2 : : R : G : B`.  | supported   |
+| 3      | CMY color.                                                    | unsupported |
+| 4      | CMYK color.                                                   | unsupported |
+| 5      | Indexed (256 colors) as `Ps ; 5 ; INDEX` or `Ps : 5 : INDEX`. | supported   |
+
 #### Soft Terminal Reset
 There are two terminal reset sequences - RIS and DECSTR. While RIS performs almost a full terminal bootstrap,
 DECSTR only resets certain attributes. For most needs DECSTR should be sufficient.
-Attributes reset to default values:
+
+The following terminal attributes are reset to default values:
 - cursor is reset (default = visible, home position)
 - IRM is reset (dafault = false)
 - scroll margins are reset (default = viewport size)
 - erase attributes are reset to default
 - charsets are reset
+
 #### Set Cursor Style
 Supported cursor styles:
  - empty, 0 or 1: steady block
@@ -343,6 +367,12 @@ Supported cursor styles:
  - 4: blink underline
  - 5: steady bar
  - 6: blink bar
+
+#### Insert Columns
+DECIC inserts `Ps` times blank columns at the cursor position for all lines with the scroll margins,
+moving content to the right. Content at the right margin is lost.
+DECIC has no effect outside the scrolling margins.
+
 #### Delete Columns
 DECDC deletes `Ps` times columns at the cursor position for all lines with the scroll margins,
 moving content to the left. Blank columns are added at the right margin.
@@ -350,27 +380,31 @@ DECDC has no effect outside the scrolling margins.
 
 
 
+
 ### DCS
 
 | Mnemonic | Name | Sequence | Short Description | Status |
 | -------- | ---- | -------- | ----------------- | ------ |
-| SIXEL | SIXEL Graphics | `DCS Ps ; Ps ; Ps ; q 	Pt ST` | Draw SIXEL image starting at cursor position.  | unsupported |
 | DECRQSS | Request Selection or Setting | `DCS $ q Pt ST` | Request several terminal settings. _[more](#request-selection-or-setting)_ | partly |
 | DECUDK | User Defined Keys | `DCS Ps ; Ps | Pt ST` | Definitions for user-defined keys.  | unsupported |
+| SIXEL | SIXEL Graphics | `DCS Ps ; Ps ; Ps ; q 	Pt ST` | Draw SIXEL image starting at cursor position.  | unsupported |
 | XTGETTCAP | Request Terminfo String | `DCS + q Pt ST` | Request Terminfo String.  | unsupported |
 | XTSETTCAP | Set Terminfo Data | `DCS + p Pt ST` | Set Terminfo Data.  | unsupported |
 
 #### Request Selection or Setting
 Response is in the form `ESC P 1 $ r Pt ST` for valid requests, where `Pt` contains the corresponding CSI string,
-`ESC P 0 ST` for invalid requests.\
+`ESC P 0 ST` for invalid requests.
+
 Supported requests and responses:
-| Type                             | Request           | Response (`Pt`)    |
-| -------------------------------- | ----------------- | ------------------ |
-| Graphic Rendition (SGR)          | `DCS $ q m ST`    | always reporting `0m` (currently broken) |
-| Top and Bottom Margins (DECSTBM) | `DCS $ q r ST`    | `Ptop ; Pbottom r` |
-| Cursor Style (DECSCUSR)          | `DCS $ q SP q ST` | `Pstyle SP q`      |
-| Protection Attribute (DECSCA)    | `DCS $ q " q ST`  | always reporting `0 " q` (DECSCA is unsupported) |
+
+| Type                             | Request           | Response (`Pt`)                                       |
+| -------------------------------- | ----------------- | ----------------------------------------------------- |
+| Graphic Rendition (SGR)          | `DCS $ q m ST`    | always reporting `0m` (currently broken)              |
+| Top and Bottom Margins (DECSTBM) | `DCS $ q r ST`    | `Ps ; Ps r`                                           |
+| Cursor Style (DECSCUSR)          | `DCS $ q SP q ST` | `Ps SP q`                                             |
+| Protection Attribute (DECSCA)    | `DCS $ q " q ST`  | always reporting `0 " q` (DECSCA is unsupported)      |
 | Conformance Level (DECSCL)       | `DCS $ q " p ST`  | always reporting `61 ; 1 " p` (DECSCL is unsupported) |
+
 
 
 
@@ -397,15 +431,19 @@ Supported requests and responses:
 
 ### OSC
 
+**Note**: Other than listed in the table, the parser recognizes both ST (ECMA-48) and BEL (xterm) as OSC sequence finalizer.
+
 | Identifier | Sequence | Short Description | Status |
 | ---------- | -------- | ----------------- | ------ |
-| 1 | `OSC 1 ; Pt BEL` | Set icon name.  | unsupported |
 | 0 | `OSC 0 ; Pt BEL` | Set window title and icon name. _[more](#set-windows-title-and-icon-name)_ | partly |
+| 1 | `OSC 1 ; Pt BEL` | Set icon name.  | unsupported |
 | 2 | `OSC 2 ; Pt BEL` | Set window title. _[more](#set-windows-title)_ | supported |
 
 #### Set Windows Title and Icon Name
 Icon name is not supported. For Window Title see below.
+
 #### Set Windows Title
 xterm.js does not manipulate the title directly, instead exposes changes via the event `Terminal.onTitleChange`.
+
 
 
