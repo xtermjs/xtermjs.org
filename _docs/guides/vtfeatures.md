@@ -6,7 +6,11 @@ category: Guides
 
 xterm.js version: 4.3.0
 
-### Table of Contents
+
+
+xterm.js version: 4.3.0
+
+## Table of Contents
 
 - [General notes](#general-notes)
 - [C0](#c0)
@@ -16,7 +20,7 @@ xterm.js version: 4.3.0
 - [ESC](#esc)
 - [OSC](#osc)
 
-### General notes
+## General notes
 
 This document lists xterm.js' support of terminal sequences. The sequences are grouped by their type:
 
@@ -41,7 +45,7 @@ To denote the sequences the following tables use the same abbreviations as xterm
   ASCII printables are specified to work. Additionally the parser will let pass any codepoint greater than C1 as printable.
 
 
-### C0
+## C0
 
 | Mnemonic | Name | Sequence | Short Description | Status |
 | -------- | ---- | -------- | ----------------- | ------ |
@@ -57,17 +61,17 @@ To denote the sequences the following tables use the same abbreviations as xterm
 | SI | Shift In | `\x0F` | Return to regular character set after Shift Out.  | supported |
 | ESC | Escape | `\e, \x1B` | Start of a sequence. Cancels any other sequence.  | supported |
 
-#### Bell
+### Bell
 The behavior of the bell is further customizable with `ITerminalOptions.bellStyle`
 and `ITerminalOptions.bellSound`.
 
-#### Line Feed
+### Line Feed
 Scrolling is restricted to scroll margins and will only happen on the bottom line.
 
 
 
 
-### C1
+## C1
 
 | Mnemonic | Name | Sequence | Short Description | Status |
 | -------- | ---- | -------- | ----------------- | ------ |
@@ -84,7 +88,7 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 
 
 
-### CSI
+## CSI
 
 | Mnemonic | Name | Sequence | Short Description | Status |
 | -------- | ---- | -------- | ----------------- | ------ |
@@ -135,37 +139,37 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 | DECIC | Insert Columns | `CSI Ps &#39; }` | Insert `Ps` columns at cursor position. _[more](#insert-columns)_ | supported |
 | DECDC | Delete Columns | `CSI Ps &#39; ~` | Delete `Ps` columns at cursor position. _[more](#delete-columns)_ | supported |
 
-#### Insert Characters
+### Insert Characters
 The ICH sequence inserts `Ps` blank characters. The cursor remains at the beginning of the blank characters.
 Text between the cursor and right margin moves to the right. Characters moved past the right margin are lost.
 
-#### Scroll Left
+### Scroll Left
 SL moves the content of all lines within the scroll margins `Ps` times to the left.
 SL has no effect outside of the scroll margins.
 
-#### Cursor Up
+### Cursor Up
 If the cursor would pass the top scroll margin, it will stop there.
 
-#### Scroll Right
+### Scroll Right
 SL moves the content of all lines within the scroll margins `Ps` times to the right.
 Content at the right margin is lost.
 SL has no effect outside of the scroll margins.
 
-#### Cursor Down
+### Cursor Down
 If the cursor would pass the bottom scroll margin, it will stop there.
 
-#### Cursor Next Line
+### Cursor Next Line
 Same as CUD, additionally places the cursor at the first column.
 
-#### Cursor Backward
+### Cursor Backward
 Same as CUU, additionally places the cursor at the first column.
 
-#### Cursor Position
+### Cursor Position
 If ORIGIN mode is set, places the cursor to the absolute position within the scroll margins.
 If ORIGIN mode is not set, places the cursor to the absolute position within the viewport.
 Note that the coordinates are 1-based, thus the top left position starts at `1 ; 1`.
 
-#### Erase In Display
+### Erase In Display
 Supported param values:
 
 | Ps | Effect                                                       |
@@ -175,7 +179,7 @@ Supported param values:
 | 2  | Erase complete viewport.                                     |
 | 3  | Erase scrollback.                                            |
 
-#### Erase In Line
+### Erase In Line
 Supported param values:
 
 | Ps | Effect                                                   |
@@ -184,33 +188,33 @@ Supported param values:
 | 1  | Erase from the beginning of the line through the cursor. |
 | 2  | Erase complete line.                                     |
 
-#### Insert Line
+### Insert Line
 For every inserted line at the scroll top one line at the scroll bottom gets removed.
 The cursor is set to the first column.
 IL has no effect if the cursor is outside the scroll margins.
 
-#### Delete Line
+### Delete Line
 For every deleted line at the scroll top one blank line at the scroll bottom gets appended.
 The cursor is set to the first column.
 DL has no effect if the cursor is outside the scroll margins.
 
-#### Delete Character
+### Delete Character
 As characters are deleted, the remaining characters between the cursor and right margin move to the left.
 Character attributes move with the characters. The terminal adds blank characters at the right margin.
 
-#### Erase Character
+### Erase Character
 ED erases `Ps` characters from current cursor position to the right.
 ED works inside or outside the scrolling margins.
 
-#### Repeat Preceding Character
+### Repeat Preceding Character
 REP repeats the previous character `Ps` times advancing the cursor, also wrapping if DECAWM is set.
 REP has no effect if the sequence does not follow a printable ASCII character
 (NOOP for any other sequence in between or NON ASCII characters).
 
-#### Tab Clear
+### Tab Clear
 Clearing tabstops off the active row (Ps = 2, VT100) is currently not supported.
 
-#### Set Mode
+### Set Mode
 Supported param values by SM:
 
 | Param | Action                                 | Status      |
@@ -220,7 +224,7 @@ Supported param values by SM:
 | 12    | Send/receive (SRM). Always off.        | unsupported |
 | 20    | Automatic Newline (LNM). Always off.   | unsupported |
 
-#### DEC Private Set Mode
+### DEC Private Set Mode
 Supported param values by DECSET:
 
 | param | Action                                                  | Status      |
@@ -248,7 +252,7 @@ Supported param values by DECSET:
 | 1049  | Save cursor and switch to alternate buffer clearing it. | partly      |
 | 2004  | Set bracketed paste mode.                               | supported   |
 
-#### Reset Mode
+### Reset Mode
 Supported param values by RM:
 
 | Param | Action                                 | Status      |
@@ -258,7 +262,7 @@ Supported param values by RM:
 | 12    | Send/receive (SRM). Always off.        | unsupported |
 | 20    | Normal Linefeed (LNM). Always off.     | unsupported |
 
-#### DEC Private Reset Mode
+### DEC Private Reset Mode
 Supported param values by DECRST:
 
 | param | Action                                                  | Status      |
@@ -286,7 +290,7 @@ Supported param values by DECRST:
 | 1049  | Use Normal Screen Buffer and restore cursor.            | supported   |
 | 2004  | Reset bracketed paste mode.                             | supported   |
 
-#### Select Graphic Rendition
+### Select Graphic Rendition
 SGR selects one or more character attributes at the same time. Multiple params (up to 32)
 are applied from in order from left to right. The changed attributes are applied to all new
 characters received. If you move characters in the viewport by scrolling or any other means,
@@ -348,7 +352,7 @@ Extended colors are supported for foreground (Ps=38) and background (Ps=48) as f
 | 4      | CMYK color.                                                   | unsupported |
 | 5      | Indexed (256 colors) as `Ps ; 5 ; INDEX` or `Ps : 5 : INDEX`. | supported   |
 
-#### Soft Terminal Reset
+### Soft Terminal Reset
 There are two terminal reset sequences - RIS and DECSTR. While RIS performs almost a full terminal bootstrap,
 DECSTR only resets certain attributes. For most needs DECSTR should be sufficient.
 
@@ -359,7 +363,7 @@ The following terminal attributes are reset to default values:
 - erase attributes are reset to default
 - charsets are reset
 
-#### Set Cursor Style
+### Set Cursor Style
 Supported cursor styles:
  - empty, 0 or 1: steady block
  - 2: blink block
@@ -368,12 +372,12 @@ Supported cursor styles:
  - 5: steady bar
  - 6: blink bar
 
-#### Insert Columns
+### Insert Columns
 DECIC inserts `Ps` times blank columns at the cursor position for all lines with the scroll margins,
 moving content to the right. Content at the right margin is lost.
 DECIC has no effect outside the scrolling margins.
 
-#### Delete Columns
+### Delete Columns
 DECDC deletes `Ps` times columns at the cursor position for all lines with the scroll margins,
 moving content to the left. Blank columns are added at the right margin.
 DECDC has no effect outside the scrolling margins.
@@ -381,7 +385,7 @@ DECDC has no effect outside the scrolling margins.
 
 
 
-### DCS
+## DCS
 
 | Mnemonic | Name | Sequence | Short Description | Status |
 | -------- | ---- | -------- | ----------------- | ------ |
@@ -391,7 +395,7 @@ DECDC has no effect outside the scrolling margins.
 | XTGETTCAP | Request Terminfo String | `DCS + q Pt ST` | Request Terminfo String.  | unsupported |
 | XTSETTCAP | Set Terminfo Data | `DCS + p Pt ST` | Set Terminfo Data.  | unsupported |
 
-#### Request Selection or Setting
+### Request Selection or Setting
 Response is in the form `ESC P 1 $ r Pt ST` for valid requests, where `Pt` contains the corresponding CSI string,
 `ESC P 0 ST` for invalid requests.
 
@@ -408,7 +412,7 @@ Supported requests and responses:
 
 
 
-### ESC
+## ESC
 
 | Mnemonic | Name | Sequence | Short Description | Status |
 | -------- | ---- | -------- | ----------------- | ------ |
@@ -429,7 +433,7 @@ Supported requests and responses:
 
 
 
-### OSC
+## OSC
 
 **Note**: Other than listed in the table, the parser recognizes both ST (ECMA-48) and BEL (xterm) as OSC sequence finalizer.
 
@@ -439,11 +443,12 @@ Supported requests and responses:
 | 1 | `OSC 1 ; Pt BEL` | Set icon name.  | unsupported |
 | 2 | `OSC 2 ; Pt BEL` | Set window title. _[more](#set-windows-title)_ | supported |
 
-#### Set Windows Title and Icon Name
+### Set Windows Title and Icon Name
 Icon name is not supported. For Window Title see below.
 
-#### Set Windows Title
+### Set Windows Title
 xterm.js does not manipulate the title directly, instead exposes changes via the event `Terminal.onTitleChange`.
+
 
 
 
