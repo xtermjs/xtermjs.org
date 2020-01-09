@@ -4,6 +4,8 @@ category: Guides
 ---
 
 
+
+
 xterm.js version: 4.3.0
 
 ## Table of Contents
@@ -43,19 +45,19 @@ To denote the sequences the tables use the same abbreviations as xterm does:
 
 ## C0
 
-| Mnemonic | Name | Sequence | Short Description | Status |
-| -------- | ---- | -------- | ----------------- | ------ |
-| NUL | Null | `\0, \x00` | NUL is ignored.  | supported |
-| BEL | Bell | `\a, \x07` | Ring the bell. _[more](#bell)_ | supported |
-| BS | Backspace | `\b, \x08` | Move the cursor one position to the left.  | supported |
-| HT | Horizontal Tabulation | `\t, \x09` | Move the cursor to the next character tab stop.  | supported |
-| LF | Line Feed | `\n, \x0A` | Move the cursor one row down, scrolling if needed. _[more](#line-feed)_ | supported |
-| VT | Vertical Tabulation | `\v, \x0B` | Treated as LF.  | supported |
-| FF | Form Feed | `\f, \x0C` | Treated as LF.  | supported |
-| CR | Carriage Return | `\r, \x0D` | Move the cursor to the beginning of the row.  | supported |
-| SO | Shift Out | `\x0E` | Switch to an alternative character set.  | partly |
-| SI | Shift In | `\x0F` | Return to regular character set after Shift Out.  | supported |
-| ESC | Escape | `\e, \x1B` | Start of a sequence. Cancels any other sequence.  | supported |
+| Mnemonic | Name | Sequence | Short Description | Support |
+| -------- | ---- | -------- | ----------------- | ------- |
+| NUL | Null | `\0, \x00` | NUL is ignored.  | <span title="supported">✓</span> |
+| BEL | Bell | `\a, \x07` | Ring the bell. _[more](#bell)_ | <span title="supported">✓</span> |
+| BS | Backspace | `\b, \x08` | Move the cursor one position to the left.  | <span title="supported">✓</span> |
+| HT | Horizontal Tabulation | `\t, \x09` | Move the cursor to the next character tab stop.  | <span title="supported">✓</span> |
+| LF | Line Feed | `\n, \x0A` | Move the cursor one row down, scrolling if needed. _[more](#line-feed)_ | <span title="supported">✓</span> |
+| VT | Vertical Tabulation | `\v, \x0B` | Treated as LF.  | <span title="supported">✓</span> |
+| FF | Form Feed | `\f, \x0C` | Treated as LF.  | <span title="supported">✓</span> |
+| CR | Carriage Return | `\r, \x0D` | Move the cursor to the beginning of the row.  | <span title="supported">✓</span> |
+| SO | Shift Out | `\x0E` | Switch to an alternative character set.  | <span title="Only limited ISO-2022 charset support.">Partial</span> |
+| SI | Shift In | `\x0F` | Return to regular character set after Shift Out.  | <span title="supported">✓</span> |
+| ESC | Escape | `\e, \x1B` | Start of a sequence. Cancels any other sequence.  | <span title="supported">✓</span> |
 
 ### Bell
 The behavior of the bell is further customizable with `ITerminalOptions.bellStyle`
@@ -69,71 +71,71 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 
 ## C1
 
-| Mnemonic | Name | Sequence | Short Description | Status |
-| -------- | ---- | -------- | ----------------- | ------ |
-| IND | Index | `\x84` | Move the cursor one line down scrolling if needed.  | supported |
-| NEL | Next Line | `\x85` | Move the cursor to the beginning of the next row.  | supported |
-| HTS | Horizontal Tabulation Set | `\x88` | Places a tab stop at the current cursor position.  | supported |
-| DCS | Device Control String | `\x90` | Start of a DCS sequence.  | supported |
-| CSI | Control Sequence Introducer | `\x9B` | Start of a CSI sequence.  | supported |
-| ST | String Terminator | `\x9C` | Terminator used for string type sequences.  | supported |
-| OSC | Operating System Command | `\x9D` | Start of an OSC sequence.  | supported |
-| PM | Privacy Message | `\x9E` | Start of a privacy message.  | supported |
-| APC | Application Program Command | `\x9F` | Start of an APC sequence.  | supported |
+| Mnemonic | Name | Sequence | Short Description | Support |
+| -------- | ---- | -------- | ----------------- | ------- |
+| IND | Index | `\x84` | Move the cursor one line down scrolling if needed.  | <span title="supported">✓</span> |
+| NEL | Next Line | `\x85` | Move the cursor to the beginning of the next row.  | <span title="supported">✓</span> |
+| HTS | Horizontal Tabulation Set | `\x88` | Places a tab stop at the current cursor position.  | <span title="supported">✓</span> |
+| DCS | Device Control String | `\x90` | Start of a DCS sequence.  | <span title="supported">✓</span> |
+| CSI | Control Sequence Introducer | `\x9B` | Start of a CSI sequence.  | <span title="supported">✓</span> |
+| ST | String Terminator | `\x9C` | Terminator used for string type sequences.  | <span title="supported">✓</span> |
+| OSC | Operating System Command | `\x9D` | Start of an OSC sequence.  | <span title="supported">✓</span> |
+| PM | Privacy Message | `\x9E` | Start of a privacy message.  | <span title="supported">✓</span> |
+| APC | Application Program Command | `\x9F` | Start of an APC sequence.  | <span title="supported">✓</span> |
 
 
 
 
 ## CSI
 
-| Mnemonic | Name | Sequence | Short Description | Status |
-| -------- | ---- | -------- | ----------------- | ------ |
-| ICH | Insert Characters | ``CSI Ps @`` | Insert `Ps` (blank) characters (default = 1). _[more](#insert-characters)_ | supported |
-| SL | Scroll Left | ``CSI Ps SP @`` | Scroll viewport `Ps` times to the left. _[more](#scroll-left)_ | supported |
-| CUU | Cursor Up | ``CSI Ps A`` | Move cursor `Ps` times up (default=1). _[more](#cursor-up)_ | supported |
-| SR | Scroll Right | ``CSI Ps SP A`` | Scroll viewport `Ps` times to the right. _[more](#scroll-right)_ | supported |
-| CUD | Cursor Down | ``CSI Ps B`` | Move cursor `Ps` times down (default=1). _[more](#cursor-down)_ | supported |
-| CUF | Cursor Forward | ``CSI Ps C`` | Move cursor `Ps` times forward (default=1).  | supported |
-| CUB | Cursor Backward | ``CSI Ps D`` | Move cursor `Ps` times backward (default=1).  | supported |
-| CNL | Cursor Next Line | ``CSI Ps E`` | Move cursor `Ps` times down (default=1) and to the first column. _[more](#cursor-next-line)_ | supported |
-| CPL | Cursor Backward | ``CSI Ps F`` | Move cursor `Ps` times up (default=1) and to the first column. _[more](#cursor-backward)_ | supported |
-| CHA | Cursor Horizontal Absolute | ``CSI Ps G`` | Move cursor to `Ps`-th column of the active row (default=1).  | supported |
-| CUP | Cursor Position | ``CSI Ps ; Ps H`` | Set cursor to position [`Ps`, `Ps`] (default = [1, 1]). _[more](#cursor-position)_ | supported |
-| CHT | Cursor Horizontal Tabulation | ``CSI Ps I`` | Move cursor `Ps` times tabs forward (default=1).  | supported |
-| DECSED | Selective Erase In Display | ``CSI ? Ps J`` | Currently the same as ED.  | partly |
-| ED | Erase In Display | ``CSI Ps J`` | Erase various parts of the viewport. _[more](#erase-in-display)_ | supported |
-| DECSEL | Selective Erase In Line | ``CSI ? Ps K`` | Currently the same as EL.  | partly |
-| EL | Erase In Line | ``CSI Ps K`` | Erase various parts of the active row. _[more](#erase-in-line)_ | supported |
-| IL | Insert Line | ``CSI Ps L`` | Insert `Ps` blank lines at active row (default=1). _[more](#insert-line)_ | supported |
-| DL | Delete Line | ``CSI Ps M`` | Delete `Ps` lines at active row (default=1). _[more](#delete-line)_ | supported |
-| DCH | Delete Character | ``CSI Ps P`` | Delete `Ps` characters (default=1). _[more](#delete-character)_ | supported |
-| SU | Scroll Up | ``CSI Ps S`` | Scroll `Ps` lines up (default=1).  | supported |
-| SD | Scroll Down | ``CSI Ps T`` | Scroll `Ps` lines down (default=1).  | supported |
-| ECH | Erase Character | ``CSI Ps X`` | Erase `Ps` characters from current cursor position to the right (default=1). _[more](#erase-character)_ | supported |
-| CBT | Cursor Backward Tabulation | ``CSI Ps Z`` | Move cursor `Ps` tabs backward (default=1).  | supported |
-| HPA | Horizontal Position Absolute | ``CSI Ps ` `` | Same as CHA.  | supported |
-| HPR | Horizontal Position Relative | ``CSI Ps a`` | Same as CUF.  | supported |
-| REP | Repeat Preceding Character | ``CSI Ps b`` | Repeat preceding character `Ps` times (default=1). _[more](#repeat-preceding-character)_ | supported |
-| DA1 | Primary Device Attributes | ``CSI c`` | Send primary device attributes.  | supported |
-| DA2 | Secondary Device Attributes | ``CSI > c`` | Send primary device attributes.  | supported |
-| VPA | Vertical Position Absolute | ``CSI Ps d`` | Move cursor to `Ps`-th row (default=1).  | supported |
-| VPR | Vertical Position Relative | ``CSI Ps e`` | Move cursor `Ps` times down (default=1).  | supported |
-| HVP | Horizontal and Vertical Position | ``CSI Ps ; Ps f`` | Same as CUP.  | supported |
-| TBC | Tab Clear | ``CSI Ps g`` | Clear tab stops at current position (0) or all (3) (default=0). _[more](#tab-clear)_ | supported |
-| SM | Set Mode | ``CSI Pm h`` | Set various terminal modes. _[more](#set-mode)_ | partly |
-| DECSET | DEC Private Set Mode | ``CSI ? Pm h`` | Set various terminal attributes. _[more](#dec-private-set-mode)_ | partly |
-| RM | Reset Mode | ``CSI Pm l`` | Set various terminal attributes. _[more](#reset-mode)_ | partly |
-| DECRST | DEC Private Reset Mode | ``CSI ? Pm l`` | Reset various terminal attributes. _[more](#dec-private-reset-mode)_ | partly |
-| SGR | Select Graphic Rendition | ``CSI Pm m`` | Set/Reset various text attributes. _[more](#select-graphic-rendition)_ | partly |
-| DSR | Device Status Report | ``CSI Ps n`` | Request cursor position (CPR) with `Ps` = 6.  | supported |
-| DECDSR | DEC Device Status Report | ``CSI ? Ps n`` | Only CPR is supported (same as DSR).  | partly |
-| DECSTR | Soft Terminal Reset | ``CSI ! p`` | Reset several terminal attributes to initial state. _[more](#soft-terminal-reset)_ | supported |
-| DECSCUSR | Set Cursor Style | ``CSI Ps SP q`` | Set cursor style. _[more](#set-cursor-style)_ | supported |
-| DECSTBM | Set Top and Bottom Margin | ``CSI Ps ; Ps r`` | Set top and bottom margins of the viewport [top;bottom] (default = viewport size).  | supported |
-| SCOSC | Save Cursor | ``CSI s`` | Save cursor position, charmap and text attributes.  | partly |
-| SCORC | Restore Cursor | ``CSI u`` | Restore cursor position, charmap and text attributes.  | partly |
-| DECIC | Insert Columns | ``CSI Ps ' }`` | Insert `Ps` columns at cursor position. _[more](#insert-columns)_ | supported |
-| DECDC | Delete Columns | ``CSI Ps ' ~`` | Delete `Ps` columns at cursor position. _[more](#delete-columns)_ | supported |
+| Mnemonic | Name | Sequence | Short Description | Support |
+| -------- | ---- | -------- | ----------------- | ------- |
+| ICH | Insert Characters | ``CSI Ps @`` | Insert `Ps` (blank) characters (default = 1). _[more](#insert-characters)_ | <span title="supported">✓</span> |
+| SL | Scroll Left | ``CSI Ps SP @`` | Scroll viewport `Ps` times to the left. _[more](#scroll-left)_ | <span title="supported">✓</span> |
+| CUU | Cursor Up | ``CSI Ps A`` | Move cursor `Ps` times up (default=1). _[more](#cursor-up)_ | <span title="supported">✓</span> |
+| SR | Scroll Right | ``CSI Ps SP A`` | Scroll viewport `Ps` times to the right. _[more](#scroll-right)_ | <span title="supported">✓</span> |
+| CUD | Cursor Down | ``CSI Ps B`` | Move cursor `Ps` times down (default=1). _[more](#cursor-down)_ | <span title="supported">✓</span> |
+| CUF | Cursor Forward | ``CSI Ps C`` | Move cursor `Ps` times forward (default=1).  | <span title="supported">✓</span> |
+| CUB | Cursor Backward | ``CSI Ps D`` | Move cursor `Ps` times backward (default=1).  | <span title="supported">✓</span> |
+| CNL | Cursor Next Line | ``CSI Ps E`` | Move cursor `Ps` times down (default=1) and to the first column. _[more](#cursor-next-line)_ | <span title="supported">✓</span> |
+| CPL | Cursor Backward | ``CSI Ps F`` | Move cursor `Ps` times up (default=1) and to the first column. _[more](#cursor-backward)_ | <span title="supported">✓</span> |
+| CHA | Cursor Horizontal Absolute | ``CSI Ps G`` | Move cursor to `Ps`-th column of the active row (default=1).  | <span title="supported">✓</span> |
+| CUP | Cursor Position | ``CSI Ps ; Ps H`` | Set cursor to position [`Ps`, `Ps`] (default = [1, 1]). _[more](#cursor-position)_ | <span title="supported">✓</span> |
+| CHT | Cursor Horizontal Tabulation | ``CSI Ps I`` | Move cursor `Ps` times tabs forward (default=1).  | <span title="supported">✓</span> |
+| DECSED | Selective Erase In Display | ``CSI ? Ps J`` | Currently the same as ED.  | <span title="Protection attributes are not supported.">Partial</span> |
+| ED | Erase In Display | ``CSI Ps J`` | Erase various parts of the viewport. _[more](#erase-in-display)_ | <span title="supported">✓</span> |
+| DECSEL | Selective Erase In Line | ``CSI ? Ps K`` | Currently the same as EL.  | <span title="Protection attributes are not supported.">Partial</span> |
+| EL | Erase In Line | ``CSI Ps K`` | Erase various parts of the active row. _[more](#erase-in-line)_ | <span title="supported">✓</span> |
+| IL | Insert Line | ``CSI Ps L`` | Insert `Ps` blank lines at active row (default=1). _[more](#insert-line)_ | <span title="supported">✓</span> |
+| DL | Delete Line | ``CSI Ps M`` | Delete `Ps` lines at active row (default=1). _[more](#delete-line)_ | <span title="supported">✓</span> |
+| DCH | Delete Character | ``CSI Ps P`` | Delete `Ps` characters (default=1). _[more](#delete-character)_ | <span title="supported">✓</span> |
+| SU | Scroll Up | ``CSI Ps S`` | Scroll `Ps` lines up (default=1).  | <span title="supported">✓</span> |
+| SD | Scroll Down | ``CSI Ps T`` | Scroll `Ps` lines down (default=1).  | <span title="supported">✓</span> |
+| ECH | Erase Character | ``CSI Ps X`` | Erase `Ps` characters from current cursor position to the right (default=1). _[more](#erase-character)_ | <span title="supported">✓</span> |
+| CBT | Cursor Backward Tabulation | ``CSI Ps Z`` | Move cursor `Ps` tabs backward (default=1).  | <span title="supported">✓</span> |
+| HPA | Horizontal Position Absolute | ``CSI Ps ` `` | Same as CHA.  | <span title="supported">✓</span> |
+| HPR | Horizontal Position Relative | ``CSI Ps a`` | Same as CUF.  | <span title="supported">✓</span> |
+| REP | Repeat Preceding Character | ``CSI Ps b`` | Repeat preceding character `Ps` times (default=1). _[more](#repeat-preceding-character)_ | <span title="supported">✓</span> |
+| DA1 | Primary Device Attributes | ``CSI c`` | Send primary device attributes.  | <span title="supported">✓</span> |
+| DA2 | Secondary Device Attributes | ``CSI > c`` | Send primary device attributes.  | <span title="supported">✓</span> |
+| VPA | Vertical Position Absolute | ``CSI Ps d`` | Move cursor to `Ps`-th row (default=1).  | <span title="supported">✓</span> |
+| VPR | Vertical Position Relative | ``CSI Ps e`` | Move cursor `Ps` times down (default=1).  | <span title="supported">✓</span> |
+| HVP | Horizontal and Vertical Position | ``CSI Ps ; Ps f`` | Same as CUP.  | <span title="supported">✓</span> |
+| TBC | Tab Clear | ``CSI Ps g`` | Clear tab stops at current position (0) or all (3) (default=0). _[more](#tab-clear)_ | <span title="supported">✓</span> |
+| SM | Set Mode | ``CSI Pm h`` | Set various terminal modes. _[more](#set-mode)_ | <span title="Only IRM is supported.">Partial</span> |
+| DECSET | DEC Private Set Mode | ``CSI ? Pm h`` | Set various terminal attributes. _[more](#dec-private-set-mode)_ | <span title="See below for supported modes.">Partial</span> |
+| RM | Reset Mode | ``CSI Pm l`` | Set various terminal attributes. _[more](#reset-mode)_ | <span title="Only IRM is supported.">Partial</span> |
+| DECRST | DEC Private Reset Mode | ``CSI ? Pm l`` | Reset various terminal attributes. _[more](#dec-private-reset-mode)_ | <span title="See below for supported modes.">Partial</span> |
+| SGR | Select Graphic Rendition | ``CSI Pm m`` | Set/Reset various text attributes. _[more](#select-graphic-rendition)_ | <span title="See below for supported attributes.">Partial</span> |
+| DSR | Device Status Report | ``CSI Ps n`` | Request cursor position (CPR) with `Ps` = 6.  | <span title="supported">✓</span> |
+| DECDSR | DEC Device Status Report | ``CSI ? Ps n`` | Only CPR is supported (same as DSR).  | <span title="Only CPR is supported.">Partial</span> |
+| DECSTR | Soft Terminal Reset | ``CSI ! p`` | Reset several terminal attributes to initial state. _[more](#soft-terminal-reset)_ | <span title="supported">✓</span> |
+| DECSCUSR | Set Cursor Style | ``CSI Ps SP q`` | Set cursor style. _[more](#set-cursor-style)_ | <span title="supported">✓</span> |
+| DECSTBM | Set Top and Bottom Margin | ``CSI Ps ; Ps r`` | Set top and bottom margins of the viewport [top;bottom] (default = viewport size).  | <span title="supported">✓</span> |
+| SCOSC | Save Cursor | ``CSI s`` | Save cursor position, charmap and text attributes.  | <span title="TODO...">Partial</span> |
+| SCORC | Restore Cursor | ``CSI u`` | Restore cursor position, charmap and text attributes.  | <span title="TODO...">Partial</span> |
+| DECIC | Insert Columns | ``CSI Ps ' }`` | Insert `Ps` columns at cursor position. _[more](#insert-columns)_ | <span title="supported">✓</span> |
+| DECDC | Delete Columns | ``CSI Ps ' ~`` | Delete `Ps` columns at cursor position. _[more](#delete-columns)_ | <span title="supported">✓</span> |
 
 ### Insert Characters
 The ICH sequence inserts `Ps` blank characters. The cursor remains at the beginning of the blank characters.
@@ -213,78 +215,78 @@ Clearing tabstops off the active row (Ps = 2, VT100) is currently not supported.
 ### Set Mode
 Supported param values by SM:
 
-| Param | Action                                 | Status      |
-| ----- | -------------------------------------- | ----------- |
-| 2     | Keyboard Action Mode (KAM). Always on. | unsupported |
-| 4     | Insert Mode (IRM).                     | supported   |
-| 12    | Send/receive (SRM). Always off.        | unsupported |
-| 20    | Automatic Newline (LNM). Always off.   | unsupported |
+| Param | Action                                 | Support |
+| ----- | -------------------------------------- | ------- |
+| 2     | Keyboard Action Mode (KAM). Always on. | <span title="unsupported">✗</span>      |
+| 4     | Insert Mode (IRM).                     | <span title="supported">✓</span>      |
+| 12    | Send/receive (SRM). Always off.        | <span title="unsupported">✗</span>      |
+| 20    | Automatic Newline (LNM). Always off.   | <span title="unsupported">✗</span>      |
 
 ### DEC Private Set Mode
 Supported param values by DECSET:
 
-| param | Action                                                  | Status      |
-| ----- | ------------------------------------------------------- | ----------- |
-| 1     | Application Cursor Keys (DECCKM).                       | supported   |
-| 2     | Designate US-ASCII for character sets G0-G3 (DECANM).   | supported   |
-| 3     | 132 Column Mode (DECCOLM).                              | supported   |
-| 6     | Origin Mode (DECOM).                                    | supported   |
-| 7     | Auto-wrap Mode (DECAWM).                                | supported   |
-| 8     | Auto-repeat Keys (DECARM). Always on.                   | unsupported |
-| 9     | X10 xterm mouse protocol.                               | supported   |
-| 12    | Start Blinking Cursor.                                  | supported   |
-| 25    | Show Cursor (DECTCEM).                                  | supported   |
-| 47    | Use Alternate Screen Buffer.                            | supported   |
-| 66    | Application keypad (DECNKM).                            | supported   |
-| 1000  | X11 xterm mouse protocol.                               | supported   |
-| 1002  | Use Cell Motion Mouse Tracking.                         | supported   |
-| 1003  | Use All Motion Mouse Tracking.                          | supported   |
-| 1004  | Send FocusIn/FocusOut events                            | supported   |
-| 1005  | Enable UTF-8 Mouse Mode.                                | unsupported |
-| 1006  | Enable SGR Mouse Mode.                                  | supported   |
-| 1015  | Enable urxvt Mouse Mode.                                | unsupported |
-| 1047  | Use Alternate Screen Buffer.                            | supported   |
-| 1048  | Save cursor as in DECSC.                                | supported   |
-| 1049  | Save cursor and switch to alternate buffer clearing it. | partly      |
-| 2004  | Set bracketed paste mode.                               | supported   |
+| param | Action                                                  | Support |
+| ----- | ------------------------------------------------------- | --------|
+| 1     | Application Cursor Keys (DECCKM).                       | <span title="supported">✓</span>      |
+| 2     | Designate US-ASCII for character sets G0-G3 (DECANM).   | <span title="supported">✓</span>      |
+| 3     | 132 Column Mode (DECCOLM).                              | <span title="supported">✓</span>      |
+| 6     | Origin Mode (DECOM).                                    | <span title="supported">✓</span>      |
+| 7     | Auto-wrap Mode (DECAWM).                                | <span title="supported">✓</span>      |
+| 8     | Auto-repeat Keys (DECARM). Always on.                   | <span title="unsupported">✗</span>      |
+| 9     | X10 xterm mouse protocol.                               | <span title="supported">✓</span>      |
+| 12    | Start Blinking Cursor.                                  | <span title="supported">✓</span>      |
+| 25    | Show Cursor (DECTCEM).                                  | <span title="supported">✓</span>      |
+| 47    | Use Alternate Screen Buffer.                            | <span title="supported">✓</span>      |
+| 66    | Application keypad (DECNKM).                            | <span title="supported">✓</span>      |
+| 1000  | X11 xterm mouse protocol.                               | <span title="supported">✓</span>      |
+| 1002  | Use Cell Motion Mouse Tracking.                         | <span title="supported">✓</span>      |
+| 1003  | Use All Motion Mouse Tracking.                          | <span title="supported">✓</span>      |
+| 1004  | Send FocusIn/FocusOut events                            | <span title="supported">✓</span>      |
+| 1005  | Enable UTF-8 Mouse Mode.                                | <span title="unsupported">✗</span>      |
+| 1006  | Enable SGR Mouse Mode.                                  | <span title="supported">✓</span>      |
+| 1015  | Enable urxvt Mouse Mode.                                | <span title="unsupported">✗</span>      |
+| 1047  | Use Alternate Screen Buffer.                            | <span title="supported">✓</span>      |
+| 1048  | Save cursor as in DECSC.                                | <span title="supported">✓</span>      |
+| 1049  | Save cursor and switch to alternate buffer clearing it. | <span title="Does not clear the alternate buffer.">Partial</span> |
+| 2004  | Set bracketed paste mode.                               | <span title="supported">✓</span>      |
 
 ### Reset Mode
 Supported param values by RM:
 
-| Param | Action                                 | Status      |
-| ----- | -------------------------------------- | ----------- |
-| 2     | Keyboard Action Mode (KAM). Always on. | unsupported |
-| 4     | Replace Mode (IRM). (default)          | supported   |
-| 12    | Send/receive (SRM). Always off.        | unsupported |
-| 20    | Normal Linefeed (LNM). Always off.     | unsupported |
+| Param | Action                                 | Support |
+| ----- | -------------------------------------- | ------- |
+| 2     | Keyboard Action Mode (KAM). Always on. | <span title="unsupported">✗</span>      |
+| 4     | Replace Mode (IRM). (default)          | <span title="supported">✓</span>      |
+| 12    | Send/receive (SRM). Always off.        | <span title="unsupported">✗</span>      |
+| 20    | Normal Linefeed (LNM). Always off.     | <span title="unsupported">✗</span>      |
 
 ### DEC Private Reset Mode
 Supported param values by DECRST:
 
-| param | Action                                                  | Status      |
-| ----- | ------------------------------------------------------- | ----------- |
-| 1     | Normal Cursor Keys (DECCKM).                            | supported   |
-| 2     | Designate VT52 mode (DECANM).                           | unsupported |
-| 3     | 80 Column Mode (DECCOLM).                               | broken      |
-| 6     | Normal Cursor Mode (DECOM).                             | supported   |
-| 7     | No Wraparound Mode (DECAWM).                            | supported   |
-| 8     | No Auto-repeat Keys (DECARM).                           | unsupported |
-| 9     | Don't send Mouse X & Y on button press.                 | supported   |
-| 12    | Stop Blinking Cursor.                                   | supported   |
-| 25    | Hide Cursor (DECTCEM).                                  | supported   |
-| 47    | Use Normal Screen Buffer.                               | supported   |
-| 66    | Numeric keypad (DECNKM).                                | supported   |
-| 1000  | Don't send Mouse reports.                               | supported   |
-| 1002  | Don't use Cell Motion Mouse Tracking.                   | supported   |
-| 1003  | Don't use All Motion Mouse Tracking.                    | supported   |
-| 1004  | Don't send FocusIn/FocusOut events.                     | supported   |
-| 1005  | Disable UTF-8 Mouse Mode.                               | unsupported |
-| 1006  | Disable SGR Mouse Mode.                                 | supported   |
-| 1015  | Disable urxvt Mouse Mode.                               | unsupported |
-| 1047  | Use Normal Screen Buffer (clearing screen if in alt).   | supported   |
-| 1048  | Restore cursor as in DECRC.                             | supported   |
-| 1049  | Use Normal Screen Buffer and restore cursor.            | supported   |
-| 2004  | Reset bracketed paste mode.                             | supported   |
+| param | Action                                                  | Support |
+| ----- | ------------------------------------------------------- | ------- |
+| 1     | Normal Cursor Keys (DECCKM).                            | <span title="supported">✓</span>      |
+| 2     | Designate VT52 mode (DECANM).                           | <span title="unsupported">✗</span>      |
+| 3     | 80 Column Mode (DECCOLM).                               | <span title="Switches to old column width instead of 80.">Broken</span> |
+| 6     | Normal Cursor Mode (DECOM).                             | <span title="supported">✓</span>      |
+| 7     | No Wraparound Mode (DECAWM).                            | <span title="supported">✓</span>      |
+| 8     | No Auto-repeat Keys (DECARM).                           | <span title="unsupported">✗</span>      |
+| 9     | Don't send Mouse X & Y on button press.                 | <span title="supported">✓</span>      |
+| 12    | Stop Blinking Cursor.                                   | <span title="supported">✓</span>      |
+| 25    | Hide Cursor (DECTCEM).                                  | <span title="supported">✓</span>      |
+| 47    | Use Normal Screen Buffer.                               | <span title="supported">✓</span>      |
+| 66    | Numeric keypad (DECNKM).                                | <span title="supported">✓</span>      |
+| 1000  | Don't send Mouse reports.                               | <span title="supported">✓</span>      |
+| 1002  | Don't use Cell Motion Mouse Tracking.                   | <span title="supported">✓</span>      |
+| 1003  | Don't use All Motion Mouse Tracking.                    | <span title="supported">✓</span>      |
+| 1004  | Don't send FocusIn/FocusOut events.                     | <span title="supported">✓</span>      |
+| 1005  | Disable UTF-8 Mouse Mode.                               | <span title="unsupported">✗</span>      |
+| 1006  | Disable SGR Mouse Mode.                                 | <span title="supported">✓</span>      |
+| 1015  | Disable urxvt Mouse Mode.                               | <span title="unsupported">✗</span>      |
+| 1047  | Use Normal Screen Buffer (clearing screen if in alt).   | <span title="supported">✓</span>      |
+| 1048  | Restore cursor as in DECRC.                             | <span title="supported">✓</span>      |
+| 1049  | Use Normal Screen Buffer and restore cursor.            | <span title="supported">✓</span>      |
+| 2004  | Reset bracketed paste mode.                             | <span title="supported">✓</span>      |
 
 ### Select Graphic Rendition
 SGR selects one or more character attributes at the same time. Multiple params (up to 32)
@@ -294,59 +296,59 @@ then the attributes move with the characters.
 
 Supported param values by SGR:
 
-| Param     | Meaning                                                  | Status      |
-| --------- | -------------------------------------------------------- | ----------- |
-| 0         | Normal (default). Resets any other preceding SGR.        | supported   |
-| 1         | Bold. (also see `options.drawBoldTextInBrightColors`)    | supported   |
-| 2         | Faint, decreased intensity.                              | supported   |
-| 3         | Italic.                                                  | supported   |
-| 4         | Underlined. (no support for newer underline styles)      | supported   |
-| 5         | Slowly blinking.                                         | unsupported |
-| 6         | Rapidly blinking.                                        | unsupported |
-| 7         | Inverse. Flips foreground and background color.          | supported   |
-| 8         | Invisible (hidden).                                      | supported   |
-| 9         | Crossed-out characters.                                  | unsupported |
-| 21        | Doubly  underlined.                                      | unsupported |
-| 22        | Normal (neither bold nor faint).                         | supported   |
-| 23        | No italic.                                               | supported   |
-| 24        | Not underlined.                                          | supported   |
-| 25        | Steady (not blinking).                                   | supported   |
-| 27        | Positive (not inverse).                                  | supported   |
-| 28        | Visible (not hidden).                                    | supported   |
-| 29        | Not Crossed-out.                                         | unsupported |
-| 30        | Foreground color: Black.                                 | supported   |
-| 31        | Foreground color: Red.                                   | supported   |
-| 32        | Foreground color: Green.                                 | supported   |
-| 33        | Foreground color: Yellow.                                | supported   |
-| 34        | Foreground color: Blue.                                  | supported   |
-| 35        | Foreground color: Magenta.                               | supported   |
-| 36        | Foreground color: Cyan.                                  | supported   |
-| 37        | Foreground color: White.                                 | supported   |
-| 38        | Foreground color: Extended color (see below).            | supported   |
-| 39        | Foreground color: Default (original).                    | supported   |
-| 40        | Background color: Black.                                 | supported   |
-| 41        | Background color: Red.                                   | supported   |
-| 42        | Background color: Green.                                 | supported   |
-| 43        | Background color: Yellow.                                | supported   |
-| 44        | Background color: Blue.                                  | supported   |
-| 45        | Background color: Magenta.                               | supported   |
-| 46        | Background color: Cyan.                                  | supported   |
-| 47        | Background color: White.                                 | supported   |
-| 48        | Background color: Extended color (see below).            | supported   |
-| 49        | Background color: Default (original).                    | supported   |
-| 90 - 97   | Bright foreground color (analogous to 30 -37).           | supported   |
-| 100 - 107 | Bright background color (analogous to 40 -47).           | supported   |
+| Param     | Meaning                                                  | Support |
+| --------- | -------------------------------------------------------- | ------- |
+| 0         | Normal (default). Resets any other preceding SGR.        | <span title="supported">✓</span>      |
+| 1         | Bold. (also see `options.drawBoldTextInBrightColors`)    | <span title="supported">✓</span>      |
+| 2         | Faint, decreased intensity.                              | <span title="supported">✓</span>      |
+| 3         | Italic.                                                  | <span title="supported">✓</span>      |
+| 4         | Underlined. (no support for newer underline styles)      | <span title="supported">✓</span>      |
+| 5         | Slowly blinking.                                         | <span title="unsupported">✗</span>      |
+| 6         | Rapidly blinking.                                        | <span title="unsupported">✗</span>      |
+| 7         | Inverse. Flips foreground and background color.          | <span title="supported">✓</span>      |
+| 8         | Invisible (hidden).                                      | <span title="supported">✓</span>      |
+| 9         | Crossed-out characters.                                  | <span title="unsupported">✗</span>      |
+| 21        | Doubly  underlined.                                      | <span title="unsupported">✗</span>      |
+| 22        | Normal (neither bold nor faint).                         | <span title="supported">✓</span>      |
+| 23        | No italic.                                               | <span title="supported">✓</span>      |
+| 24        | Not underlined.                                          | <span title="supported">✓</span>      |
+| 25        | Steady (not blinking).                                   | <span title="supported">✓</span>      |
+| 27        | Positive (not inverse).                                  | <span title="supported">✓</span>      |
+| 28        | Visible (not hidden).                                    | <span title="supported">✓</span>      |
+| 29        | Not Crossed-out.                                         | <span title="unsupported">✗</span>      |
+| 30        | Foreground color: Black.                                 | <span title="supported">✓</span>      |
+| 31        | Foreground color: Red.                                   | <span title="supported">✓</span>      |
+| 32        | Foreground color: Green.                                 | <span title="supported">✓</span>      |
+| 33        | Foreground color: Yellow.                                | <span title="supported">✓</span>      |
+| 34        | Foreground color: Blue.                                  | <span title="supported">✓</span>      |
+| 35        | Foreground color: Magenta.                               | <span title="supported">✓</span>      |
+| 36        | Foreground color: Cyan.                                  | <span title="supported">✓</span>      |
+| 37        | Foreground color: White.                                 | <span title="supported">✓</span>      |
+| 38        | Foreground color: Extended color.                        | <span title="Support for RGB and indexed colors, see below.">Partial</span> |
+| 39        | Foreground color: Default (original).                    | <span title="supported">✓</span>      |
+| 40        | Background color: Black.                                 | <span title="supported">✓</span>      |
+| 41        | Background color: Red.                                   | <span title="supported">✓</span>      |
+| 42        | Background color: Green.                                 | <span title="supported">✓</span>      |
+| 43        | Background color: Yellow.                                | <span title="supported">✓</span>      |
+| 44        | Background color: Blue.                                  | <span title="supported">✓</span>      |
+| 45        | Background color: Magenta.                               | <span title="supported">✓</span>      |
+| 46        | Background color: Cyan.                                  | <span title="supported">✓</span>      |
+| 47        | Background color: White.                                 | <span title="supported">✓</span>      |
+| 48        | Background color: Extended color.                        | <span title="Support for RGB and indexed colors, see below.">Partial</span> |
+| 49        | Background color: Default (original).                    | <span title="supported">✓</span>      |
+| 90 - 97   | Bright foreground color (analogous to 30 - 37).          | <span title="supported">✓</span>      |
+| 100 - 107 | Bright background color (analogous to 40 - 47).          | <span title="supported">✓</span>      |
 
 Extended colors are supported for foreground (Ps=38) and background (Ps=48) as follows:
 
-| Ps + 1 | Meaning                                                       | Status      |
-| ------ | ------------------------------------------------------------- | ----------- |
-| 0      | Implementation defined.                                       | unsupported |
-| 1      | Transparent.                                                  | unsupported |
-| 2      | RGB color as `Ps ; 2 ; R ; G ; B` or `Ps : 2 : : R : G : B`.  | supported   |
-| 3      | CMY color.                                                    | unsupported |
-| 4      | CMYK color.                                                   | unsupported |
-| 5      | Indexed (256 colors) as `Ps ; 5 ; INDEX` or `Ps : 5 : INDEX`. | supported   |
+| Ps + 1 | Meaning                                                       | Support |
+| ------ | ------------------------------------------------------------- | ------- |
+| 0      | Implementation defined.                                       | <span title="unsupported">✗</span>      |
+| 1      | Transparent.                                                  | <span title="unsupported">✗</span>      |
+| 2      | RGB color as `Ps ; 2 ; R ; G ; B` or `Ps : 2 : : R : G : B`.  | <span title="supported">✓</span>      |
+| 3      | CMY color.                                                    | <span title="unsupported">✗</span>      |
+| 4      | CMYK color.                                                   | <span title="unsupported">✗</span>      |
+| 5      | Indexed (256 colors) as `Ps ; 5 ; INDEX` or `Ps : 5 : INDEX`. | <span title="supported">✓</span>      |
 
 ### Soft Terminal Reset
 There are two terminal reset sequences - RIS and DECSTR. While RIS performs almost a full terminal bootstrap,
@@ -383,13 +385,13 @@ DECDC has no effect outside the scrolling margins.
 
 ## DCS
 
-| Mnemonic | Name | Sequence | Short Description | Status |
-| -------- | ---- | -------- | ----------------- | ------ |
-| DECRQSS | Request Selection or Setting | `DCS $ q Pt ST` | Request several terminal settings. _[more](#request-selection-or-setting)_ | partly |
-| DECUDK | User Defined Keys | `DCS Ps ; Ps | Pt ST` | Definitions for user-defined keys.  | unsupported |
-| SIXEL | SIXEL Graphics | `DCS Ps ; Ps ; Ps ; q 	Pt ST` | Draw SIXEL image starting at cursor position.  | unsupported |
-| XTGETTCAP | Request Terminfo String | `DCS + q Pt ST` | Request Terminfo String.  | unsupported |
-| XTSETTCAP | Set Terminfo Data | `DCS + p Pt ST` | Set Terminfo Data.  | unsupported |
+| Mnemonic | Name | Sequence | Short Description | Support |
+| -------- | ---- | -------- | ----------------- | ------- |
+| DECRQSS | Request Selection or Setting | `DCS $ q Pt ST` | Request several terminal settings. _[more](#request-selection-or-setting)_ | <span title="See limited support below.">Partial</span> |
+| DECUDK | User Defined Keys | `DCS Ps ; Ps | Pt ST` | Definitions for user-defined keys.  | <span title="unsupported">✗</span> |
+| SIXEL | SIXEL Graphics | `DCS Ps ; Ps ; Ps ; q 	Pt ST` | Draw SIXEL image starting at cursor position.  | <span title="unsupported">✗</span> |
+| XTGETTCAP | Request Terminfo String | `DCS + q Pt ST` | Request Terminfo String.  | <span title="unsupported">✗</span> |
+| XTSETTCAP | Set Terminfo Data | `DCS + p Pt ST` | Set Terminfo Data.  | <span title="unsupported">✗</span> |
 
 ### Request Selection or Setting
 Response is in the form `ESC P 1 $ r Pt ST` for valid requests, where `Pt` contains the corresponding CSI string,
@@ -410,21 +412,21 @@ Supported requests and responses:
 
 ## ESC
 
-| Mnemonic | Name | Sequence | Short Description | Status |
-| -------- | ---- | -------- | ----------------- | ------ |
-| SC | Save Cursor | `ESC 7` | Save cursor position, charmap and text attributes.  | supported |
-| DECALN | Screen Alignment Pattern | `ESC # 8` | Fill viewport with a test pattern (E).  | supported |
-| RC | Restore Cursor | `ESC 8` | Restore cursor position, charmap and text attributes.  | supported |
-| IND | Index | `ESC D` | Move the cursor one line down scrolling if needed.  | supported |
-| NEL | Next Line | `ESC E` | Move the cursor to the beginning of the next row.  | supported |
-| HTS | Horizontal Tabulation Set | `ESC H` | Places a tab stop at the current cursor position.  | supported |
-| IR | Reverse Index | `ESC M` | Move the cursor one line up scrolling if needed.  | supported |
-| DCS | Device Control String | `ESC P` | Start of a DCS sequence.  | supported |
-| CSI | Control Sequence Introducer | `ESC [` | Start of a CSI sequence.  | supported |
-| ST | String Terminator | `ESC \` | Terminator used for string type sequences.  | supported |
-| OSC | Operating System Command | `ESC ]` | Start of an OSC sequence.  | supported |
-| PM | Privacy Message | `ESC ^` | Start of a privacy message.  | supported |
-| APC | Application Program Command | `ESC _` | Start of an APC sequence.  | supported |
+| Mnemonic | Name | Sequence | Short Description | Support |
+| -------- | ---- | -------- | ----------------- | ------- |
+| SC | Save Cursor | `ESC 7` | Save cursor position, charmap and text attributes.  | <span title="supported">✓</span> |
+| DECALN | Screen Alignment Pattern | `ESC # 8` | Fill viewport with a test pattern (E).  | <span title="supported">✓</span> |
+| RC | Restore Cursor | `ESC 8` | Restore cursor position, charmap and text attributes.  | <span title="supported">✓</span> |
+| IND | Index | `ESC D` | Move the cursor one line down scrolling if needed.  | <span title="supported">✓</span> |
+| NEL | Next Line | `ESC E` | Move the cursor to the beginning of the next row.  | <span title="supported">✓</span> |
+| HTS | Horizontal Tabulation Set | `ESC H` | Places a tab stop at the current cursor position.  | <span title="supported">✓</span> |
+| IR | Reverse Index | `ESC M` | Move the cursor one line up scrolling if needed.  | <span title="supported">✓</span> |
+| DCS | Device Control String | `ESC P` | Start of a DCS sequence.  | <span title="supported">✓</span> |
+| CSI | Control Sequence Introducer | `ESC [` | Start of a CSI sequence.  | <span title="supported">✓</span> |
+| ST | String Terminator | `ESC \` | Terminator used for string type sequences.  | <span title="supported">✓</span> |
+| OSC | Operating System Command | `ESC ]` | Start of an OSC sequence.  | <span title="supported">✓</span> |
+| PM | Privacy Message | `ESC ^` | Start of a privacy message.  | <span title="supported">✓</span> |
+| APC | Application Program Command | `ESC _` | Start of an APC sequence.  | <span title="supported">✓</span> |
 
 
 
@@ -433,11 +435,11 @@ Supported requests and responses:
 
 **Note**: Other than listed in the table, the parser recognizes both ST (ECMA-48) and BEL (xterm) as OSC sequence finalizer.
 
-| Identifier | Sequence | Short Description | Status |
-| ---------- | -------- | ----------------- | ------ |
-| 0 | `OSC 0 ; Pt BEL` | Set window title and icon name. _[more](#set-windows-title-and-icon-name)_ | partly |
-| 1 | `OSC 1 ; Pt BEL` | Set icon name.  | unsupported |
-| 2 | `OSC 2 ; Pt BEL` | Set window title. _[more](#set-windows-title)_ | supported |
+| Identifier | Sequence | Short Description | Support |
+| ---------- | -------- | ----------------- | ------- |
+| 0 | `OSC 0 ; Pt BEL` | Set window title and icon name. _[more](#set-windows-title-and-icon-name)_ | <span title="Icon name is not exposed.">Partial</span> |
+| 1 | `OSC 1 ; Pt BEL` | Set icon name.  | <span title="unsupported">✗</span> |
+| 2 | `OSC 2 ; Pt BEL` | Set window title. _[more](#set-windows-title)_ | <span title="supported">✓</span> |
 
 ### Set Windows Title and Icon Name
 Icon name is not supported. For Window Title see below.
