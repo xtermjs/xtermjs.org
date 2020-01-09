@@ -6,10 +6,6 @@ category: Guides
 
 xterm.js version: 4.3.0
 
-
-
-xterm.js version: 4.3.0
-
 ## Table of Contents
 
 - [General notes](#general-notes)
@@ -22,14 +18,14 @@ xterm.js version: 4.3.0
 
 ## General notes
 
-This document lists xterm.js' support of terminal sequences. The sequences are grouped by their type:
+This document lists xterm.js' support of terminal sequences. The sequences are grouped by their sequence type:
 
-- C0: single byte command (7bit control characters, byte range \x00 .. \x1f)
-- C1: single byte command (8bit control characters, byte range \x80 .. \x9f)
-- ESC: sequence starting with `ESC` (`\x1b`)
-- CSI - Control Sequence Introducer: sequence starting with `ESC [` (7bit) or CSI (`\x9b` 8bit)
+- C0: single byte command (7bit control codes, byte range \x00 .. \x1F, )
+- C1: single byte command (8bit control codes, byte range \x80 .. \x9F)
+- ESC: sequence starting with `ESC` (`\x1B`)
+- CSI - Control Sequence Introducer: sequence starting with `ESC [` (7bit) or CSI (`\x9B` 8bit)
 - DCS - Device Control String: sequence starting with `ESC P` (7bit) or DCS (`\x90` 8bit)
-- OSC - Operating System Command: sequence starting with `ESC ]` (7bit) or OSC (`\x9d` 8bit)
+- OSC - Operating System Command: sequence starting with `ESC ]` (7bit) or OSC (`\x9D` 8bit)
 
 Application Program Command (APC), Privacy Message (PM) and Start of String (SOS) are recognized but not supported,
 any sequence of these types will be ignored. They are also not hookable by the API.
@@ -37,7 +33,7 @@ any sequence of these types will be ignored. They are also not hookable by the A
 Note that the list only contains sequences implemented in xterm.js' core codebase. Missing sequences are either
 not supported or unstable/experimental. Furthermore addons or integrations can provide additional custom sequences.
 
-To denote the sequences the following tables use the same abbreviations as xterm does:
+To denote the sequences the tables use the same abbreviations as xterm does:
 - `Ps`: A single (usually optional) numeric parameter, composed of one or more decimal digits.
 - `Pm`: A multiple numeric parameter composed of any number of single numeric parameters, separated by ; character(s),
   e.g. ` Ps ; Ps ; ... `.
@@ -92,52 +88,52 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 
 | Mnemonic | Name | Sequence | Short Description | Status |
 | -------- | ---- | -------- | ----------------- | ------ |
-| ICH | Insert Characters | `CSI Ps @` | Insert `Ps` (blank) characters (default = 1). _[more](#insert-characters)_ | supported |
-| SL | Scroll Left | `CSI Ps SP @` | Scroll viewport `Ps` times to the left. _[more](#scroll-left)_ | supported |
-| CUU | Cursor Up | `CSI Ps A` | Move cursor `Ps` times up (default=1). _[more](#cursor-up)_ | supported |
-| SR | Scroll Right | `CSI Ps SP A` | Scroll viewport `Ps` times to the right. _[more](#scroll-right)_ | supported |
-| CUD | Cursor Down | `CSI Ps B` | Move cursor `Ps` times down (default=1). _[more](#cursor-down)_ | supported |
-| CUF | Cursor Forward | `CSI Ps C` | Move cursor `Ps` times forward (default=1).  | supported |
-| CUB | Cursor Backward | `CSI Ps D` | Move cursor `Ps` times backward (default=1).  | supported |
-| CNL | Cursor Next Line | `CSI Ps E` | Move cursor `Ps` times down (default=1) and to the first column. _[more](#cursor-next-line)_ | supported |
-| CPL | Cursor Backward | `CSI Ps F` | Move cursor `Ps` times up (default=1) and to the first column. _[more](#cursor-backward)_ | supported |
-| CHA | Cursor Horizontal Absolute | `CSI Ps G` | Move cursor to `Ps`-th column of the active row (default=1).  | supported |
-| CUP | Cursor Position | `CSI Ps ; Ps H` | Set cursor to position [`Ps`, `Ps`] (default = [1, 1]). _[more](#cursor-position)_ | supported |
-| CHT | Cursor Horizontal Tabulation | `CSI Ps I` | Move cursor `Ps` times tabs forward (default=1).  | supported |
-| DECSED | Selective Erase In Display | `CSI ? Ps J` | Currently the same as ED.  | partly |
-| ED | Erase In Display | `CSI Ps J` | Erase various parts of the viewport. _[more](#erase-in-display)_ | supported |
-| DECSEL | Selective Erase In Line | `CSI ? Ps K` | Currently the same as EL.  | partly |
-| EL | Erase In Line | `CSI Ps K` | Erase various parts of the active row. _[more](#erase-in-line)_ | supported |
-| IL | Insert Line | `CSI Ps L` | Insert `Ps` blank lines at active row (default=1). _[more](#insert-line)_ | supported |
-| DL | Delete Line | `CSI Ps M` | Delete `Ps` lines at active row (default=1). _[more](#delete-line)_ | supported |
-| DCH | Delete Character | `CSI Ps P` | Delete `Ps` characters (default=1). _[more](#delete-character)_ | supported |
-| SU | Scroll Up | `CSI Ps S` | Scroll `Ps` lines up (default=1).  | supported |
-| SD | Scroll Down | `CSI Ps T` | Scroll `Ps` lines down (default=1).  | supported |
-| ECH | Erase Character | `CSI Ps X` | Erase `Ps` characters from current cursor position to the right (default=1). _[more](#erase-character)_ | supported |
-| CBT | Cursor Backward Tabulation | `CSI Ps Z` | Move cursor `Ps` tabs backward (default=1).  | supported |
-| HPA | Horizontal Position Absolute | `CSI Ps &#x60;` | Same as CHA.  | supported |
-| HPR | Horizontal Position Relative | `CSI Ps a` | Same as CUF.  | supported |
-| REP | Repeat Preceding Character | `CSI Ps b` | Repeat preceding character `Ps` times (default=1). _[more](#repeat-preceding-character)_ | supported |
-| DA1 | Primary Device Attributes | `CSI c` | Send primary device attributes.  | supported |
-| DA2 | Secondary Device Attributes | `CSI &gt; c` | Send primary device attributes.  | supported |
-| VPA | Vertical Position Absolute | `CSI Ps d` | Move cursor to `Ps`-th row (default=1).  | supported |
-| VPR | Vertical Position Relative | `CSI Ps e` | Move cursor `Ps` times down (default=1).  | supported |
-| HVP | Horizontal and Vertical Position | `CSI Ps ; Ps f` | Same as CUP.  | supported |
-| TBC | Tab Clear | `CSI Ps g` | Clear tab stops at current position (0) or all (3) (default=0). _[more](#tab-clear)_ | supported |
-| SM | Set Mode | `CSI Pm h` | Set various terminal modes. _[more](#set-mode)_ | partly |
-| DECSET | DEC Private Set Mode | `CSI ? Pm h` | Set various terminal attributes. _[more](#dec-private-set-mode)_ | partly |
-| RM | Reset Mode | `CSI Pm l` | Set various terminal attributes. _[more](#reset-mode)_ | partly |
-| DECRST | DEC Private Reset Mode | `CSI ? Pm l` | Reset various terminal attributes. _[more](#dec-private-reset-mode)_ | partly |
-| SGR | Select Graphic Rendition | `CSI Pm m` | Set/Reset various text attributes. _[more](#select-graphic-rendition)_ | partly |
-| DSR | Device Status Report | `CSI Ps n` | Request cursor position (CPR) with `Ps` = 6.  | supported |
-| DECDSR | DEC Device Status Report | `CSI ? Ps n` | Only CPR is supported (same as DSR).  | partly |
-| DECSTR | Soft Terminal Reset | `CSI ! p` | Reset several terminal attributes to initial state. _[more](#soft-terminal-reset)_ | supported |
-| DECSCUSR | Set Cursor Style | `CSI Ps SP q` | Set cursor style. _[more](#set-cursor-style)_ | supported |
-| DECSTBM | Set Top and Bottom Margin | `CSI Ps ; Ps r` | Set top and bottom margins of the viewport [top;bottom] (default = viewport size).  | supported |
-| SCOSC | Save Cursor | `CSI s` | Save cursor position, charmap and text attributes.  | partly |
-| SCORC | Restore Cursor | `CSI u` | Restore cursor position, charmap and text attributes.  | partly |
-| DECIC | Insert Columns | `CSI Ps &#39; }` | Insert `Ps` columns at cursor position. _[more](#insert-columns)_ | supported |
-| DECDC | Delete Columns | `CSI Ps &#39; ~` | Delete `Ps` columns at cursor position. _[more](#delete-columns)_ | supported |
+| ICH | Insert Characters | ``CSI Ps @`` | Insert `Ps` (blank) characters (default = 1). _[more](#insert-characters)_ | supported |
+| SL | Scroll Left | ``CSI Ps SP @`` | Scroll viewport `Ps` times to the left. _[more](#scroll-left)_ | supported |
+| CUU | Cursor Up | ``CSI Ps A`` | Move cursor `Ps` times up (default=1). _[more](#cursor-up)_ | supported |
+| SR | Scroll Right | ``CSI Ps SP A`` | Scroll viewport `Ps` times to the right. _[more](#scroll-right)_ | supported |
+| CUD | Cursor Down | ``CSI Ps B`` | Move cursor `Ps` times down (default=1). _[more](#cursor-down)_ | supported |
+| CUF | Cursor Forward | ``CSI Ps C`` | Move cursor `Ps` times forward (default=1).  | supported |
+| CUB | Cursor Backward | ``CSI Ps D`` | Move cursor `Ps` times backward (default=1).  | supported |
+| CNL | Cursor Next Line | ``CSI Ps E`` | Move cursor `Ps` times down (default=1) and to the first column. _[more](#cursor-next-line)_ | supported |
+| CPL | Cursor Backward | ``CSI Ps F`` | Move cursor `Ps` times up (default=1) and to the first column. _[more](#cursor-backward)_ | supported |
+| CHA | Cursor Horizontal Absolute | ``CSI Ps G`` | Move cursor to `Ps`-th column of the active row (default=1).  | supported |
+| CUP | Cursor Position | ``CSI Ps ; Ps H`` | Set cursor to position [`Ps`, `Ps`] (default = [1, 1]). _[more](#cursor-position)_ | supported |
+| CHT | Cursor Horizontal Tabulation | ``CSI Ps I`` | Move cursor `Ps` times tabs forward (default=1).  | supported |
+| DECSED | Selective Erase In Display | ``CSI ? Ps J`` | Currently the same as ED.  | partly |
+| ED | Erase In Display | ``CSI Ps J`` | Erase various parts of the viewport. _[more](#erase-in-display)_ | supported |
+| DECSEL | Selective Erase In Line | ``CSI ? Ps K`` | Currently the same as EL.  | partly |
+| EL | Erase In Line | ``CSI Ps K`` | Erase various parts of the active row. _[more](#erase-in-line)_ | supported |
+| IL | Insert Line | ``CSI Ps L`` | Insert `Ps` blank lines at active row (default=1). _[more](#insert-line)_ | supported |
+| DL | Delete Line | ``CSI Ps M`` | Delete `Ps` lines at active row (default=1). _[more](#delete-line)_ | supported |
+| DCH | Delete Character | ``CSI Ps P`` | Delete `Ps` characters (default=1). _[more](#delete-character)_ | supported |
+| SU | Scroll Up | ``CSI Ps S`` | Scroll `Ps` lines up (default=1).  | supported |
+| SD | Scroll Down | ``CSI Ps T`` | Scroll `Ps` lines down (default=1).  | supported |
+| ECH | Erase Character | ``CSI Ps X`` | Erase `Ps` characters from current cursor position to the right (default=1). _[more](#erase-character)_ | supported |
+| CBT | Cursor Backward Tabulation | ``CSI Ps Z`` | Move cursor `Ps` tabs backward (default=1).  | supported |
+| HPA | Horizontal Position Absolute | ``CSI Ps ` `` | Same as CHA.  | supported |
+| HPR | Horizontal Position Relative | ``CSI Ps a`` | Same as CUF.  | supported |
+| REP | Repeat Preceding Character | ``CSI Ps b`` | Repeat preceding character `Ps` times (default=1). _[more](#repeat-preceding-character)_ | supported |
+| DA1 | Primary Device Attributes | ``CSI c`` | Send primary device attributes.  | supported |
+| DA2 | Secondary Device Attributes | ``CSI > c`` | Send primary device attributes.  | supported |
+| VPA | Vertical Position Absolute | ``CSI Ps d`` | Move cursor to `Ps`-th row (default=1).  | supported |
+| VPR | Vertical Position Relative | ``CSI Ps e`` | Move cursor `Ps` times down (default=1).  | supported |
+| HVP | Horizontal and Vertical Position | ``CSI Ps ; Ps f`` | Same as CUP.  | supported |
+| TBC | Tab Clear | ``CSI Ps g`` | Clear tab stops at current position (0) or all (3) (default=0). _[more](#tab-clear)_ | supported |
+| SM | Set Mode | ``CSI Pm h`` | Set various terminal modes. _[more](#set-mode)_ | partly |
+| DECSET | DEC Private Set Mode | ``CSI ? Pm h`` | Set various terminal attributes. _[more](#dec-private-set-mode)_ | partly |
+| RM | Reset Mode | ``CSI Pm l`` | Set various terminal attributes. _[more](#reset-mode)_ | partly |
+| DECRST | DEC Private Reset Mode | ``CSI ? Pm l`` | Reset various terminal attributes. _[more](#dec-private-reset-mode)_ | partly |
+| SGR | Select Graphic Rendition | ``CSI Pm m`` | Set/Reset various text attributes. _[more](#select-graphic-rendition)_ | partly |
+| DSR | Device Status Report | ``CSI Ps n`` | Request cursor position (CPR) with `Ps` = 6.  | supported |
+| DECDSR | DEC Device Status Report | ``CSI ? Ps n`` | Only CPR is supported (same as DSR).  | partly |
+| DECSTR | Soft Terminal Reset | ``CSI ! p`` | Reset several terminal attributes to initial state. _[more](#soft-terminal-reset)_ | supported |
+| DECSCUSR | Set Cursor Style | ``CSI Ps SP q`` | Set cursor style. _[more](#set-cursor-style)_ | supported |
+| DECSTBM | Set Top and Bottom Margin | ``CSI Ps ; Ps r`` | Set top and bottom margins of the viewport [top;bottom] (default = viewport size).  | supported |
+| SCOSC | Save Cursor | ``CSI s`` | Save cursor position, charmap and text attributes.  | partly |
+| SCORC | Restore Cursor | ``CSI u`` | Restore cursor position, charmap and text attributes.  | partly |
+| DECIC | Insert Columns | ``CSI Ps ' }`` | Insert `Ps` columns at cursor position. _[more](#insert-columns)_ | supported |
+| DECDC | Delete Columns | ``CSI Ps ' ~`` | Delete `Ps` columns at cursor position. _[more](#delete-columns)_ | supported |
 
 ### Insert Characters
 The ICH sequence inserts `Ps` blank characters. The cursor remains at the beginning of the blank characters.
@@ -448,7 +444,6 @@ Icon name is not supported. For Window Title see below.
 
 ### Set Windows Title
 xterm.js does not manipulate the title directly, instead exposes changes via the event `Terminal.onTitleChange`.
-
 
 
 
