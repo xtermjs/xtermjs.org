@@ -4,6 +4,8 @@ category: Guides
 ---
 
 
+{::options parse_block_html="true" /}
+
 
 xterm.js version: 4.3.0
 
