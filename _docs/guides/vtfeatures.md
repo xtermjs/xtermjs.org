@@ -5,6 +5,7 @@ category: Guides
 
 
 
+
 {::options parse_block_html="true" /}
 
 xterm.js version: 4.3.0
@@ -575,4 +576,58 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
 
 </section>
 
+
+<script type="text/javascript">
+  const linkStates = {};
+  
+  function hideDetailSections() {
+    for (let section of document.getElementsByClassName('sequence-details')) section.style.display = 'none';
+  }
+  
+  function decorateDetailLinks() {
+    for (let link of document.getElementsByClassName('link-details')) {
+      link.addEventListener("click", toggleDetails, false);
+      if (linkStates[link.href] === undefined) {
+        linkStates[link.href] = {open: false, links: [], trElem: null};
+      }
+      linkStates[link.href].links.push(link);
+    }
+  }
+
+  function openDetails(link) {
+    const closestTr = link.closest('tr');
+    if (!closestTr || !closestTr.parentNode) return;
+    const newRow = closestTr.parentNode.insertRow(closestTr.rowIndex);
+    const cell = newRow.insertCell(0);
+    cell.innerHTML = document.getElementById(link.href.split('#')[1]).closest('section').innerHTML;
+    cell.colSpan = closestTr.children.length;
+    const state = linkStates[link.href];
+    state.trElem = newRow;
+    state.open = true;
+  }
+
+  function closeDetails(link) {
+    const state = linkStates[link.href];
+    if (state.trElem) {
+      if (state.trElem.parentNode) state.trElem.parentNode.deleteRow(state.trElem.rowIndex);
+      state.trElem.remove();
+      state.trElem = null;
+    }
+    state.open = false;
+  }
+  
+  function toggleDetails(ev) {
+    if (!ev.target || !ev.target.href) return;
+    const isOpen = linkStates[ev.target.href].open;
+    if (isOpen === undefined) return;
+    if (isOpen) closeDetails(ev.target);
+    else openDetails(ev.target);
+  }
+
+  function load() {
+    hideDetailSections();
+    decorateDetailLinks();
+  }
+  load(); // dont wait for onload
+</script>
 
