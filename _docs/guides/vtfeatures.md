@@ -5,10 +5,11 @@ category: Guides
 
 
 
-
 xterm.js version: 4.3.0
 
 ## Table of Contents
+
+<nav>
 
 - [General notes](#general-notes)
 - [C0](#c0)
@@ -17,6 +18,9 @@ xterm.js version: 4.3.0
 - [DCS](#dcs)
 - [ESC](#esc)
 - [OSC](#osc)
+
+</nav>
+
 
 ## General notes
 
@@ -43,6 +47,7 @@ To denote the sequences the tables use the same abbreviations as xterm does:
   ASCII printables are specified to work. Additionally the parser will let pass any codepoint greater than C1 as printable.
 
 
+
 ## C0
 
 | Mnemonic | Name | Sequence | Short Description | Support |
@@ -59,13 +64,21 @@ To denote the sequences the tables use the same abbreviations as xterm does:
 | SI | Shift In | `\x0F` | Return to regular character set after Shift Out.  | <span title="supported">✓</span> |
 | ESC | Escape | `\e, \x1B` | Start of a sequence. Cancels any other sequence.  | <span title="supported">✓</span> |
 
+<section>
+
 ### Bell
 The behavior of the bell is further customizable with `ITerminalOptions.bellStyle`
 and `ITerminalOptions.bellSound`.
 
+
+</section>
+<section>
+
 ### Line Feed
 Scrolling is restricted to scroll margins and will only happen on the bottom line.
 
+
+</section>
 
 
 
@@ -137,35 +150,69 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 | DECIC | Insert Columns | ``CSI Ps ' }`` | Insert `Ps` columns at cursor position. _[more](#insert-columns)_ | <span title="supported">✓</span> |
 | DECDC | Delete Columns | ``CSI Ps ' ~`` | Delete `Ps` columns at cursor position. _[more](#delete-columns)_ | <span title="supported">✓</span> |
 
+<section>
+
 ### Insert Characters
 The ICH sequence inserts `Ps` blank characters. The cursor remains at the beginning of the blank characters.
 Text between the cursor and right margin moves to the right. Characters moved past the right margin are lost.
+
+
+</section>
+<section>
 
 ### Scroll Left
 SL moves the content of all lines within the scroll margins `Ps` times to the left.
 SL has no effect outside of the scroll margins.
 
+
+</section>
+<section>
+
 ### Cursor Up
 If the cursor would pass the top scroll margin, it will stop there.
+
+
+</section>
+<section>
 
 ### Scroll Right
 SL moves the content of all lines within the scroll margins `Ps` times to the right.
 Content at the right margin is lost.
 SL has no effect outside of the scroll margins.
 
+
+</section>
+<section>
+
 ### Cursor Down
 If the cursor would pass the bottom scroll margin, it will stop there.
+
+
+</section>
+<section>
 
 ### Cursor Next Line
 Same as CUD, additionally places the cursor at the first column.
 
+
+</section>
+<section>
+
 ### Cursor Backward
 Same as CUU, additionally places the cursor at the first column.
+
+
+</section>
+<section>
 
 ### Cursor Position
 If ORIGIN mode is set, places the cursor to the absolute position within the scroll margins.
 If ORIGIN mode is not set, places the cursor to the absolute position within the viewport.
 Note that the coordinates are 1-based, thus the top left position starts at `1 ; 1`.
+
+
+</section>
+<section>
 
 ### Erase In Display
 Supported param values:
@@ -177,6 +224,10 @@ Supported param values:
 | 2  | Erase complete viewport.                                     |
 | 3  | Erase scrollback.                                            |
 
+
+</section>
+<section>
+
 ### Erase In Line
 Supported param values:
 
@@ -186,31 +237,59 @@ Supported param values:
 | 1  | Erase from the beginning of the line through the cursor. |
 | 2  | Erase complete line.                                     |
 
+
+</section>
+<section>
+
 ### Insert Line
 For every inserted line at the scroll top one line at the scroll bottom gets removed.
 The cursor is set to the first column.
 IL has no effect if the cursor is outside the scroll margins.
+
+
+</section>
+<section>
 
 ### Delete Line
 For every deleted line at the scroll top one blank line at the scroll bottom gets appended.
 The cursor is set to the first column.
 DL has no effect if the cursor is outside the scroll margins.
 
+
+</section>
+<section>
+
 ### Delete Character
 As characters are deleted, the remaining characters between the cursor and right margin move to the left.
 Character attributes move with the characters. The terminal adds blank characters at the right margin.
 
+
+</section>
+<section>
+
 ### Erase Character
 ED erases `Ps` characters from current cursor position to the right.
 ED works inside or outside the scrolling margins.
+
+
+</section>
+<section>
 
 ### Repeat Preceding Character
 REP repeats the previous character `Ps` times advancing the cursor, also wrapping if DECAWM is set.
 REP has no effect if the sequence does not follow a printable ASCII character
 (NOOP for any other sequence in between or NON ASCII characters).
 
+
+</section>
+<section>
+
 ### Tab Clear
 Clearing tabstops off the active row (Ps = 2, VT100) is currently not supported.
+
+
+</section>
+<section>
 
 ### Set Mode
 Supported param values by SM:
@@ -221,6 +300,10 @@ Supported param values by SM:
 | 4     | Insert Mode (IRM).                     | <span title="supported">✓</span>      |
 | 12    | Send/receive (SRM). Always off.        | <span title="unsupported">✗</span>      |
 | 20    | Automatic Newline (LNM). Always off.   | <span title="unsupported">✗</span>      |
+
+
+</section>
+<section>
 
 ### DEC Private Set Mode
 Supported param values by DECSET:
@@ -250,6 +333,10 @@ Supported param values by DECSET:
 | 1049  | Save cursor and switch to alternate buffer clearing it. | <span title="Does not clear the alternate buffer.">Partial</span> |
 | 2004  | Set bracketed paste mode.                               | <span title="supported">✓</span>      |
 
+
+</section>
+<section>
+
 ### Reset Mode
 Supported param values by RM:
 
@@ -259,6 +346,10 @@ Supported param values by RM:
 | 4     | Replace Mode (IRM). (default)          | <span title="supported">✓</span>      |
 | 12    | Send/receive (SRM). Always off.        | <span title="unsupported">✗</span>      |
 | 20    | Normal Linefeed (LNM). Always off.     | <span title="unsupported">✗</span>      |
+
+
+</section>
+<section>
 
 ### DEC Private Reset Mode
 Supported param values by DECRST:
@@ -287,6 +378,10 @@ Supported param values by DECRST:
 | 1048  | Restore cursor as in DECRC.                             | <span title="supported">✓</span>      |
 | 1049  | Use Normal Screen Buffer and restore cursor.            | <span title="supported">✓</span>      |
 | 2004  | Reset bracketed paste mode.                             | <span title="supported">✓</span>      |
+
+
+</section>
+<section>
 
 ### Select Graphic Rendition
 SGR selects one or more character attributes at the same time. Multiple params (up to 32)
@@ -350,6 +445,10 @@ Extended colors are supported for foreground (Ps=38) and background (Ps=48) as f
 | 4      | CMYK color.                                                   | <span title="unsupported">✗</span>      |
 | 5      | Indexed (256 colors) as `Ps ; 5 ; INDEX` or `Ps : 5 : INDEX`. | <span title="supported">✓</span>      |
 
+
+</section>
+<section>
+
 ### Soft Terminal Reset
 There are two terminal reset sequences - RIS and DECSTR. While RIS performs almost a full terminal bootstrap,
 DECSTR only resets certain attributes. For most needs DECSTR should be sufficient.
@@ -361,6 +460,10 @@ The following terminal attributes are reset to default values:
 - erase attributes are reset to default
 - charsets are reset
 
+
+</section>
+<section>
+
 ### Set Cursor Style
 Supported cursor styles:
  - empty, 0 or 1: steady block
@@ -370,16 +473,26 @@ Supported cursor styles:
  - 5: steady bar
  - 6: blink bar
 
+
+</section>
+<section>
+
 ### Insert Columns
 DECIC inserts `Ps` times blank columns at the cursor position for all lines with the scroll margins,
 moving content to the right. Content at the right margin is lost.
 DECIC has no effect outside the scrolling margins.
+
+
+</section>
+<section>
 
 ### Delete Columns
 DECDC deletes `Ps` times columns at the cursor position for all lines with the scroll margins,
 moving content to the left. Blank columns are added at the right margin.
 DECDC has no effect outside the scrolling margins.
 
+
+</section>
 
 
 
@@ -392,6 +505,8 @@ DECDC has no effect outside the scrolling margins.
 | SIXEL | SIXEL Graphics | `DCS Ps ; Ps ; Ps ; q 	Pt ST` | Draw SIXEL image starting at cursor position.  | <span title="unsupported">✗</span> |
 | XTGETTCAP | Request Terminfo String | `DCS + q Pt ST` | Request Terminfo String.  | <span title="unsupported">✗</span> |
 | XTSETTCAP | Set Terminfo Data | `DCS + p Pt ST` | Set Terminfo Data.  | <span title="unsupported">✗</span> |
+
+<section>
 
 ### Request Selection or Setting
 Response is in the form `ESC P 1 $ r Pt ST` for valid requests, where `Pt` contains the corresponding CSI string,
@@ -407,6 +522,8 @@ Supported requests and responses:
 | Protection Attribute (DECSCA)    | `DCS $ q " q ST`  | always reporting `0 " q` (DECSCA is unsupported)      |
 | Conformance Level (DECSCL)       | `DCS $ q " p ST`  | always reporting `61 ; 1 " p` (DECSCL is unsupported) |
 
+
+</section>
 
 
 
@@ -441,54 +558,19 @@ Supported requests and responses:
 | 1 | `OSC 1 ; Pt BEL` | Set icon name.  | <span title="unsupported">✗</span> |
 | 2 | `OSC 2 ; Pt BEL` | Set window title. _[more](#set-windows-title)_ | <span title="supported">✓</span> |
 
+<section>
+
 ### Set Windows Title and Icon Name
 Icon name is not supported. For Window Title see below.
+
+
+</section>
+<section>
 
 ### Set Windows Title
 xterm.js does not manipulate the title directly, instead exposes changes via the event `Terminal.onTitleChange`.
 
 
-
-
-
-<script type="text/javascript">
-function openRow() {
-  console.log('does this work?');
-  document.getElementById('test').style.display='block';
-}
-</script>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Identifier</th>
-      <th>Sequence</th>
-      <th>Short Description</th>
-      <th>Support</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td><code>OSC 0 ; Pt BEL</code></td>
-      <td>Set window title and icon name. <em><a href="#set-windows-title-and-icon-name" onclick="openRow()">more</a></em></td>
-      <td><span title="Icon name is not exposed.">Partial</span></td>
-    </tr><tr id="husten" style="display: none"><td colspan="4">hello world!</td></tr>
-    <tr>
-      <td>1</td>
-      <td><code>OSC 1 ; Pt BEL</code></td>
-      <td>Set icon name.</td>
-      <td><span title="unsupported">✗</span></td>
-    </tr><tr id="husten" style="display: none"><td colspan="4">hello world!</td></tr>
-    <tr>
-      <td>2</td>
-      <td><code>OSC 2 ; Pt BEL</code></td>
-      <td>Set window title. <em><a href="#set-windows-title" onclick="openRow()">more</a></em></td>
-      <td><span title="supported">✓</span></td>
-    </tr><tr id="husten" style="display: none"><td colspan="4">hello world!</td></tr>
-  </tbody>
-</table>
-
+</section>
 
 
