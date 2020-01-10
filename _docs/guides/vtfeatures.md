@@ -450,6 +450,15 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
 
 
 
+
+<script type="text/javascript">
+function openRow() {
+  console.log('does this work?');
+  document.getElementById('test').style.display='block';
+}
+</script>
+
+
 <table>
   <thead>
     <tr>
@@ -463,7 +472,7 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
     <tr>
       <td>0</td>
       <td><code>OSC 0 ; Pt BEL</code></td>
-      <td>Set window title and icon name. <em><a href="#set-windows-title-and-icon-name" onclick="openRow">more</a></em></td>
+      <td>Set window title and icon name. <em><a href="#set-windows-title-and-icon-name" onclick="openRow()">more</a></em></td>
       <td><span title="Icon name is not exposed.">Partial</span></td>
     </tr><tr id="husten" style="display: none"><td colspan="4">hello world!</td></tr>
     <tr>
@@ -475,16 +484,11 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
     <tr>
       <td>2</td>
       <td><code>OSC 2 ; Pt BEL</code></td>
-      <td>Set window title. <em><a href="#set-windows-title" onclick="openRow">more</a></em></td>
+      <td>Set window title. <em><a href="#set-windows-title" onclick="openRow()">more</a></em></td>
       <td><span title="supported">✓</span></td>
     </tr><tr id="husten" style="display: none"><td colspan="4">hello world!</td></tr>
   </tbody>
 </table>
 
-<script type="text/javascript">
-function openRow() {
-  console.log('does this work?');
-  document.getElementById('test').style.display='block';
-}
-</script>
+
 
