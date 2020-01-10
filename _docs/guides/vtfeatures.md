@@ -6,7 +6,6 @@ category: Guides
 
 {::options parse_block_html="true" /}
 
-
 xterm.js version: 4.3.0
 
 ## Table of Contents
@@ -66,7 +65,7 @@ To denote the sequences the tables use the same abbreviations as xterm does:
 | SI | Shift In | `\x0F` | Return to regular character set after Shift Out.  | <span title="supported">✓</span> |
 | ESC | Escape | `\e, \x1B` | Start of a sequence. Cancels any other sequence.  | <span title="supported">✓</span> |
 
-<section>
+<section class="sequence-details">
 
 ### Bell
 The behavior of the bell is further customizable with `ITerminalOptions.bellStyle`
@@ -74,7 +73,7 @@ and `ITerminalOptions.bellSound`.
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Line Feed
 Scrolling is restricted to scroll margins and will only happen on the bottom line.
@@ -152,7 +151,7 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 | DECIC | Insert Columns | ``CSI Ps ' }`` | Insert `Ps` columns at cursor position. _[more](#insert-columns)_ | <span title="supported">✓</span> |
 | DECDC | Delete Columns | ``CSI Ps ' ~`` | Delete `Ps` columns at cursor position. _[more](#delete-columns)_ | <span title="supported">✓</span> |
 
-<section>
+<section class="sequence-details">
 
 ### Insert Characters
 The ICH sequence inserts `Ps` blank characters. The cursor remains at the beginning of the blank characters.
@@ -160,7 +159,7 @@ Text between the cursor and right margin moves to the right. Characters moved pa
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Scroll Left
 SL moves the content of all lines within the scroll margins `Ps` times to the left.
@@ -168,14 +167,14 @@ SL has no effect outside of the scroll margins.
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Cursor Up
 If the cursor would pass the top scroll margin, it will stop there.
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Scroll Right
 SL moves the content of all lines within the scroll margins `Ps` times to the right.
@@ -184,28 +183,28 @@ SL has no effect outside of the scroll margins.
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Cursor Down
 If the cursor would pass the bottom scroll margin, it will stop there.
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Cursor Next Line
 Same as CUD, additionally places the cursor at the first column.
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Cursor Backward
 Same as CUU, additionally places the cursor at the first column.
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Cursor Position
 If ORIGIN mode is set, places the cursor to the absolute position within the scroll margins.
@@ -214,7 +213,7 @@ Note that the coordinates are 1-based, thus the top left position starts at `1 ;
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Erase In Display
 Supported param values:
@@ -228,7 +227,7 @@ Supported param values:
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Erase In Line
 Supported param values:
@@ -241,7 +240,7 @@ Supported param values:
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Insert Line
 For every inserted line at the scroll top one line at the scroll bottom gets removed.
@@ -250,7 +249,7 @@ IL has no effect if the cursor is outside the scroll margins.
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Delete Line
 For every deleted line at the scroll top one blank line at the scroll bottom gets appended.
@@ -259,7 +258,7 @@ DL has no effect if the cursor is outside the scroll margins.
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Delete Character
 As characters are deleted, the remaining characters between the cursor and right margin move to the left.
@@ -267,7 +266,7 @@ Character attributes move with the characters. The terminal adds blank character
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Erase Character
 ED erases `Ps` characters from current cursor position to the right.
@@ -275,7 +274,7 @@ ED works inside or outside the scrolling margins.
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Repeat Preceding Character
 REP repeats the previous character `Ps` times advancing the cursor, also wrapping if DECAWM is set.
@@ -284,14 +283,14 @@ REP has no effect if the sequence does not follow a printable ASCII character
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Tab Clear
 Clearing tabstops off the active row (Ps = 2, VT100) is currently not supported.
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Set Mode
 Supported param values by SM:
@@ -305,7 +304,7 @@ Supported param values by SM:
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### DEC Private Set Mode
 Supported param values by DECSET:
@@ -337,7 +336,7 @@ Supported param values by DECSET:
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Reset Mode
 Supported param values by RM:
@@ -351,7 +350,7 @@ Supported param values by RM:
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### DEC Private Reset Mode
 Supported param values by DECRST:
@@ -383,7 +382,7 @@ Supported param values by DECRST:
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Select Graphic Rendition
 SGR selects one or more character attributes at the same time. Multiple params (up to 32)
@@ -449,7 +448,7 @@ Extended colors are supported for foreground (Ps=38) and background (Ps=48) as f
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Soft Terminal Reset
 There are two terminal reset sequences - RIS and DECSTR. While RIS performs almost a full terminal bootstrap,
@@ -464,7 +463,7 @@ The following terminal attributes are reset to default values:
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Set Cursor Style
 Supported cursor styles:
@@ -477,7 +476,7 @@ Supported cursor styles:
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Insert Columns
 DECIC inserts `Ps` times blank columns at the cursor position for all lines with the scroll margins,
@@ -486,7 +485,7 @@ DECIC has no effect outside the scrolling margins.
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Delete Columns
 DECDC deletes `Ps` times columns at the cursor position for all lines with the scroll margins,
@@ -508,7 +507,7 @@ DECDC has no effect outside the scrolling margins.
 | XTGETTCAP | Request Terminfo String | `DCS + q Pt ST` | Request Terminfo String.  | <span title="unsupported">✗</span> |
 | XTSETTCAP | Set Terminfo Data | `DCS + p Pt ST` | Set Terminfo Data.  | <span title="unsupported">✗</span> |
 
-<section>
+<section class="sequence-details">
 
 ### Request Selection or Setting
 Response is in the form `ESC P 1 $ r Pt ST` for valid requests, where `Pt` contains the corresponding CSI string,
@@ -560,14 +559,14 @@ Supported requests and responses:
 | 1 | `OSC 1 ; Pt BEL` | Set icon name.  | <span title="unsupported">✗</span> |
 | 2 | `OSC 2 ; Pt BEL` | Set window title. _[more](#set-windows-title)_ | <span title="supported">✓</span> |
 
-<section>
+<section class="sequence-details">
 
 ### Set Windows Title and Icon Name
 Icon name is not supported. For Window Title see below.
 
 
 </section>
-<section>
+<section class="sequence-details">
 
 ### Set Windows Title
 xterm.js does not manipulate the title directly, instead exposes changes via the event `Terminal.onTitleChange`.
