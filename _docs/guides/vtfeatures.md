@@ -22,12 +22,12 @@ xterm.js version: 4.3.0
 
 This document lists xterm.js' support of terminal sequences. The sequences are grouped by their sequence type:
 
-- C0: single byte command (7bit control codes, byte range \x00 .. \x1F, )
-- C1: single byte command (8bit control codes, byte range \x80 .. \x9F)
+- C0: single byte command (7bit control codes, byte range `\x00` .. `\x1F`, `\x7F`)
+- C1: single byte command (8bit control codes, byte range `\x80` .. `\x9F`)
 - ESC: sequence starting with `ESC` (`\x1B`)
-- CSI - Control Sequence Introducer: sequence starting with `ESC [` (7bit) or CSI (`\x9B` 8bit)
-- DCS - Device Control String: sequence starting with `ESC P` (7bit) or DCS (`\x90` 8bit)
-- OSC - Operating System Command: sequence starting with `ESC ]` (7bit) or OSC (`\x9D` 8bit)
+- CSI - Control Sequence Introducer: sequence starting with `ESC [` (7bit) or CSI (`\x9B`, 8bit)
+- DCS - Device Control String: sequence starting with `ESC P` (7bit) or DCS (`\x90`, 8bit)
+- OSC - Operating System Command: sequence starting with `ESC ]` (7bit) or OSC (`\x9D`, 8bit)
 
 Application Program Command (APC), Privacy Message (PM) and Start of String (SOS) are recognized but not supported,
 any sequence of these types will be ignored. They are also not hookable by the API.
@@ -449,6 +449,42 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
 
 
 
+
+<table>
+  <thead>
+    <tr>
+      <th>Identifier</th>
+      <th>Sequence</th>
+      <th>Short Description</th>
+      <th>Support</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td><code>OSC 0 ; Pt BEL</code></td>
+      <td>Set window title and icon name. <em><a href="#set-windows-title-and-icon-name" onclick="openRow">more</a></em></td>
+      <td><span title="Icon name is not exposed.">Partial</span></td>
+    </tr><tr id="husten" style="display: none"><td colspan="4">hello world!</td></tr>
+    <tr>
+      <td>1</td>
+      <td><code>OSC 1 ; Pt BEL</code></td>
+      <td>Set icon name.</td>
+      <td><span title="unsupported">✗</span></td>
+    </tr><tr id="husten" style="display: none"><td colspan="4">hello world!</td></tr>
+    <tr>
+      <td>2</td>
+      <td><code>OSC 2 ; Pt BEL</code></td>
+      <td>Set window title. <em><a href="#set-windows-title" onclick="openRow">more</a></em></td>
+      <td><span title="supported">✓</span></td>
+    </tr><tr id="husten" style="display: none"><td colspan="4">hello world!</td></tr>
+  </tbody>
+</table>
+
 <script type="text/javascript">
-  setTimeout(() => alert('test'), 1000);
+function openRow() {
+  console.log('does this work?');
+  document.getElementById('test').style.display='block';
+}
 </script>
+
