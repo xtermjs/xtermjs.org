@@ -606,6 +606,7 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
     const state = linkStates[link.href];
     state.trElem = newRow;
     state.open = true;
+    if (link.innerHTML === 'more') link.innerHTML = 'less';
   }
 
   function closeDetails(link) {
@@ -616,6 +617,7 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
       state.trElem = null;
     }
     state.open = false;
+    if (link.innerHTML === 'less') link.innerHTML = 'more';
   }
 
   function toggleDetails(ev) {
