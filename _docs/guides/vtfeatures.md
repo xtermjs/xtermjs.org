@@ -4,8 +4,6 @@ category: Guides
 ---
 
 
-
-
 {::options parse_block_html="true" /}
 
 xterm.js version: 4.3.0
@@ -579,7 +577,7 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
 
 <script type="text/javascript">
   const linkStates = {};
-  
+
   function hideDetailSections() {
     for (let section of document.getElementsByClassName('sequence-details')) section.style.display = 'none';
   }
@@ -608,8 +606,8 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
 
   function closeDetails(link) {
     const state = linkStates[link.href];
-    if (state.trElem) {
-      if (state.trElem.parentNode) state.trElem.parentNode.deleteRow(state.trElem.rowIndex);
+    if (state.trElem && state.trElem.rowIndex !== -1) {
+      if (state.trElem.parentNode) state.trElem.parentNode.deleteRow(state.trElem.rowIndex-1); // why -1 here?
       state.trElem.remove();
       state.trElem = null;
     }
@@ -622,12 +620,14 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
     if (isOpen === undefined) return;
     if (isOpen) closeDetails(ev.target);
     else openDetails(ev.target);
+    ev.preventDefault();
+    return false;
   }
 
   function load() {
     hideDetailSections();
     decorateDetailLinks();
   }
-  load(); // dont wait for onload
+  load(); // we are inlined behind all needed data, thus dont wait for onload (avoids flickering)
 </script>
 
