@@ -61,7 +61,7 @@ To denote the sequences the tables use the same abbreviations as xterm does:
 | VT | Vertical Tabulation | `\v, \x0B` | Treated as LF.  | <span title="supported">✓</span> |
 | FF | Form Feed | `\f, \x0C` | Treated as LF.  | <span title="supported">✓</span> |
 | CR | Carriage Return | `\r, \x0D` | Move the cursor to the beginning of the row.  | <span title="supported">✓</span> |
-| SO | Shift Out | `\x0E` | Switch to an alternative character set.  | <span title="Only limited ISO-2022 charset support.">Partial</span> |
+| SO | Shift Out | `\x0E` | Switch to an alternative character set.  | <span title="Only limited ISO-2022 charset support." style="text-decoration-style: dashed">Partial</span> |
 | SI | Shift In | `\x0F` | Return to regular character set after Shift Out.  | <span title="supported">✓</span> |
 | ESC | Escape | `\e, \x1B` | Start of a sequence. Cancels any other sequence.  | <span title="supported">✓</span> |
 
@@ -116,9 +116,9 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 | CHA | Cursor Horizontal Absolute | ``CSI Ps G`` | Move cursor to `Ps`-th column of the active row (default=1).  | <span title="supported">✓</span> |
 | CUP | Cursor Position | ``CSI Ps ; Ps H`` | Set cursor to position [`Ps`, `Ps`] (default = [1, 1]). _[more](#cursor-position){: .link-details}_ | <span title="supported">✓</span> |
 | CHT | Cursor Horizontal Tabulation | ``CSI Ps I`` | Move cursor `Ps` times tabs forward (default=1).  | <span title="supported">✓</span> |
-| DECSED | Selective Erase In Display | ``CSI ? Ps J`` | Currently the same as ED.  | <span title="Protection attributes are not supported.">Partial</span> |
+| DECSED | Selective Erase In Display | ``CSI ? Ps J`` | Currently the same as ED.  | <span title="Protection attributes are not supported." style="text-decoration-style: dashed">Partial</span> |
 | ED | Erase In Display | ``CSI Ps J`` | Erase various parts of the viewport. _[more](#erase-in-display){: .link-details}_ | <span title="supported">✓</span> |
-| DECSEL | Selective Erase In Line | ``CSI ? Ps K`` | Currently the same as EL.  | <span title="Protection attributes are not supported.">Partial</span> |
+| DECSEL | Selective Erase In Line | ``CSI ? Ps K`` | Currently the same as EL.  | <span title="Protection attributes are not supported." style="text-decoration-style: dashed">Partial</span> |
 | EL | Erase In Line | ``CSI Ps K`` | Erase various parts of the active row. _[more](#erase-in-line){: .link-details}_ | <span title="supported">✓</span> |
 | IL | Insert Line | ``CSI Ps L`` | Insert `Ps` blank lines at active row (default=1). _[more](#insert-line){: .link-details}_ | <span title="supported">✓</span> |
 | DL | Delete Line | ``CSI Ps M`` | Delete `Ps` lines at active row (default=1). _[more](#delete-line){: .link-details}_ | <span title="supported">✓</span> |
@@ -136,18 +136,18 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 | VPR | Vertical Position Relative | ``CSI Ps e`` | Move cursor `Ps` times down (default=1).  | <span title="supported">✓</span> |
 | HVP | Horizontal and Vertical Position | ``CSI Ps ; Ps f`` | Same as CUP.  | <span title="supported">✓</span> |
 | TBC | Tab Clear | ``CSI Ps g`` | Clear tab stops at current position (0) or all (3) (default=0). _[more](#tab-clear){: .link-details}_ | <span title="supported">✓</span> |
-| SM | Set Mode | ``CSI Pm h`` | Set various terminal modes. _[more](#set-mode){: .link-details}_ | <span title="Only IRM is supported.">Partial</span> |
-| DECSET | DEC Private Set Mode | ``CSI ? Pm h`` | Set various terminal attributes. _[more](#dec-private-set-mode){: .link-details}_ | <span title="See below for supported modes.">Partial</span> |
-| RM | Reset Mode | ``CSI Pm l`` | Set various terminal attributes. _[more](#reset-mode){: .link-details}_ | <span title="Only IRM is supported.">Partial</span> |
-| DECRST | DEC Private Reset Mode | ``CSI ? Pm l`` | Reset various terminal attributes. _[more](#dec-private-reset-mode){: .link-details}_ | <span title="See below for supported modes.">Partial</span> |
-| SGR | Select Graphic Rendition | ``CSI Pm m`` | Set/Reset various text attributes. _[more](#select-graphic-rendition){: .link-details}_ | <span title="See below for supported attributes.">Partial</span> |
+| SM | Set Mode | ``CSI Pm h`` | Set various terminal modes. _[more](#set-mode){: .link-details}_ | <span title="Only IRM is supported." style="text-decoration-style: dashed">Partial</span> |
+| DECSET | DEC Private Set Mode | ``CSI ? Pm h`` | Set various terminal attributes. _[more](#dec-private-set-mode){: .link-details}_ | <span title="See below for supported modes." style="text-decoration-style: dashed">Partial</span> |
+| RM | Reset Mode | ``CSI Pm l`` | Set various terminal attributes. _[more](#reset-mode){: .link-details}_ | <span title="Only IRM is supported." style="text-decoration-style: dashed">Partial</span> |
+| DECRST | DEC Private Reset Mode | ``CSI ? Pm l`` | Reset various terminal attributes. _[more](#dec-private-reset-mode){: .link-details}_ | <span title="See below for supported modes." style="text-decoration-style: dashed">Partial</span> |
+| SGR | Select Graphic Rendition | ``CSI Pm m`` | Set/Reset various text attributes. _[more](#select-graphic-rendition){: .link-details}_ | <span title="See below for supported attributes." style="text-decoration-style: dashed">Partial</span> |
 | DSR | Device Status Report | ``CSI Ps n`` | Request cursor position (CPR) with `Ps` = 6.  | <span title="supported">✓</span> |
-| DECDSR | DEC Device Status Report | ``CSI ? Ps n`` | Only CPR is supported (same as DSR).  | <span title="Only CPR is supported.">Partial</span> |
+| DECDSR | DEC Device Status Report | ``CSI ? Ps n`` | Only CPR is supported (same as DSR).  | <span title="Only CPR is supported." style="text-decoration-style: dashed">Partial</span> |
 | DECSTR | Soft Terminal Reset | ``CSI ! p`` | Reset several terminal attributes to initial state. _[more](#soft-terminal-reset){: .link-details}_ | <span title="supported">✓</span> |
 | DECSCUSR | Set Cursor Style | ``CSI Ps SP q`` | Set cursor style. _[more](#set-cursor-style){: .link-details}_ | <span title="supported">✓</span> |
 | DECSTBM | Set Top and Bottom Margin | ``CSI Ps ; Ps r`` | Set top and bottom margins of the viewport [top;bottom] (default = viewport size).  | <span title="supported">✓</span> |
-| SCOSC | Save Cursor | ``CSI s`` | Save cursor position, charmap and text attributes.  | <span title="TODO...">Partial</span> |
-| SCORC | Restore Cursor | ``CSI u`` | Restore cursor position, charmap and text attributes.  | <span title="TODO...">Partial</span> |
+| SCOSC | Save Cursor | ``CSI s`` | Save cursor position, charmap and text attributes.  | <span title="TODO..." style="text-decoration-style: dashed">Partial</span> |
+| SCORC | Restore Cursor | ``CSI u`` | Restore cursor position, charmap and text attributes.  | <span title="TODO..." style="text-decoration-style: dashed">Partial</span> |
 | DECIC | Insert Columns | ``CSI Ps ' }`` | Insert `Ps` columns at cursor position. _[more](#insert-columns){: .link-details}_ | <span title="supported">✓</span> |
 | DECDC | Delete Columns | ``CSI Ps ' ~`` | Delete `Ps` columns at cursor position. _[more](#delete-columns){: .link-details}_ | <span title="supported">✓</span> |
 
@@ -331,7 +331,7 @@ Supported param values by DECSET:
 | 1015  | Enable urxvt Mouse Mode.                                | <span title="unsupported">✗</span>      |
 | 1047  | Use Alternate Screen Buffer.                            | <span title="supported">✓</span>      |
 | 1048  | Save cursor as in DECSC.                                | <span title="supported">✓</span>      |
-| 1049  | Save cursor and switch to alternate buffer clearing it. | <span title="Does not clear the alternate buffer.">Partial</span> |
+| 1049  | Save cursor and switch to alternate buffer clearing it. | <span title="Does not clear the alternate buffer." style="text-decoration-style: dashed">Partial</span> |
 | 2004  | Set bracketed paste mode.                               | <span title="supported">✓</span>      |
 
 
@@ -359,7 +359,7 @@ Supported param values by DECRST:
 | ----- | ------------------------------------------------------- | ------- |
 | 1     | Normal Cursor Keys (DECCKM).                            | <span title="supported">✓</span>      |
 | 2     | Designate VT52 mode (DECANM).                           | <span title="unsupported">✗</span>      |
-| 3     | 80 Column Mode (DECCOLM).                               | <span title="Switches to old column width instead of 80.">Broken</span> |
+| 3     | 80 Column Mode (DECCOLM).                               | <span title="Switches to old column width instead of 80." style="text-decoration-style: dashed">Broken</span> |
 | 6     | Normal Cursor Mode (DECOM).                             | <span title="supported">✓</span>      |
 | 7     | No Wraparound Mode (DECAWM).                            | <span title="supported">✓</span>      |
 | 8     | No Auto-repeat Keys (DECARM).                           | <span title="unsupported">✗</span>      |
@@ -420,7 +420,7 @@ Supported param values by SGR:
 | 35        | Foreground color: Magenta.                               | <span title="supported">✓</span>      |
 | 36        | Foreground color: Cyan.                                  | <span title="supported">✓</span>      |
 | 37        | Foreground color: White.                                 | <span title="supported">✓</span>      |
-| 38        | Foreground color: Extended color.                        | <span title="Support for RGB and indexed colors, see below.">Partial</span> |
+| 38        | Foreground color: Extended color.                        | <span title="Support for RGB and indexed colors, see below." style="text-decoration-style: dashed">Partial</span> |
 | 39        | Foreground color: Default (original).                    | <span title="supported">✓</span>      |
 | 40        | Background color: Black.                                 | <span title="supported">✓</span>      |
 | 41        | Background color: Red.                                   | <span title="supported">✓</span>      |
@@ -430,7 +430,7 @@ Supported param values by SGR:
 | 45        | Background color: Magenta.                               | <span title="supported">✓</span>      |
 | 46        | Background color: Cyan.                                  | <span title="supported">✓</span>      |
 | 47        | Background color: White.                                 | <span title="supported">✓</span>      |
-| 48        | Background color: Extended color.                        | <span title="Support for RGB and indexed colors, see below.">Partial</span> |
+| 48        | Background color: Extended color.                        | <span title="Support for RGB and indexed colors, see below." style="text-decoration-style: dashed">Partial</span> |
 | 49        | Background color: Default (original).                    | <span title="supported">✓</span>      |
 | 90 - 97   | Bright foreground color (analogous to 30 - 37).          | <span title="supported">✓</span>      |
 | 100 - 107 | Bright background color (analogous to 40 - 47).          | <span title="supported">✓</span>      |
@@ -501,7 +501,7 @@ DECDC has no effect outside the scrolling margins.
 
 | Mnemonic | Name | Sequence | Short Description | Support |
 | -------- | ---- | -------- | ----------------- | ------- |
-| DECRQSS | Request Selection or Setting | `DCS $ q Pt ST` | Request several terminal settings. _[more](#request-selection-or-setting){: .link-details}_ | <span title="See limited support below.">Partial</span> |
+| DECRQSS | Request Selection or Setting | `DCS $ q Pt ST` | Request several terminal settings. _[more](#request-selection-or-setting){: .link-details}_ | <span title="See limited support below." style="text-decoration-style: dashed">Partial</span> |
 | DECUDK | User Defined Keys | `DCS Ps ; Ps | Pt ST` | Definitions for user-defined keys.  | <span title="unsupported">✗</span> |
 | SIXEL | SIXEL Graphics | `DCS Ps ; Ps ; Ps ; q 	Pt ST` | Draw SIXEL image starting at cursor position.  | <span title="unsupported">✗</span> |
 | XTGETTCAP | Request Terminfo String | `DCS + q Pt ST` | Request Terminfo String.  | <span title="unsupported">✗</span> |
@@ -555,7 +555,7 @@ Supported requests and responses:
 
 | Identifier | Sequence | Short Description | Support |
 | ---------- | -------- | ----------------- | ------- |
-| 0 | `OSC 0 ; Pt BEL` | Set window title and icon name. _[more](#set-windows-title-and-icon-name){: .link-details}_ | <span title="Icon name is not exposed.">Partial</span> |
+| 0 | `OSC 0 ; Pt BEL` | Set window title and icon name. _[more](#set-windows-title-and-icon-name){: .link-details}_ | <span title="Icon name is not exposed." style="text-decoration-style: dashed">Partial</span> |
 | 1 | `OSC 1 ; Pt BEL` | Set icon name.  | <span title="unsupported">✗</span> |
 | 2 | `OSC 2 ; Pt BEL` | Set window title. _[more](#set-windows-title){: .link-details}_ | <span title="supported">✓</span> |
 
@@ -595,9 +595,13 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
   function openDetails(link) {
     const closestTr = link.closest('tr');
     if (!closestTr || !closestTr.parentNode) return;
+    const closestSection = document.getElementById(link.href.split('#')[1]).closest('section');
+    if (!closestSection || !closestSection.innerHTML) return;
+    const content = closestSection.innerHTML.split('</h3>')[1];
+
     const newRow = closestTr.parentNode.insertRow(closestTr.rowIndex);
     const cell = newRow.insertCell(0);
-    cell.innerHTML = document.getElementById(link.href.split('#')[1]).closest('section').innerHTML;
+    cell.innerHTML = '<div style="font-style: italic">' + content + '</div>';
     cell.colSpan = closestTr.children.length;
     const state = linkStates[link.href];
     state.trElem = newRow;
@@ -613,7 +617,7 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
     }
     state.open = false;
   }
-  
+
   function toggleDetails(ev) {
     if (!ev.target || !ev.target.href) return;
     const isOpen = linkStates[ev.target.href].open;
