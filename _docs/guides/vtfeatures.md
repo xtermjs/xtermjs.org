@@ -4,6 +4,7 @@ category: Guides
 ---
 
 
+
 {::options parse_block_html="true" /}
 
 xterm.js version: 4.3.0
@@ -54,10 +55,10 @@ To denote the sequences the tables use the same abbreviations as xterm does:
 | Mnemonic | Name | Sequence | Short Description | Support |
 | -------- | ---- | -------- | ----------------- | ------- |
 | NUL | Null | `\0, \x00` | NUL is ignored.  | <span title="supported">✓</span> |
-| BEL | Bell | `\a, \x07` | Ring the bell. _[more](#bell)_ | <span title="supported">✓</span> |
+| BEL | Bell | `\a, \x07` | Ring the bell. _[more](#bell){: .link-details}_ | <span title="supported">✓</span> |
 | BS | Backspace | `\b, \x08` | Move the cursor one position to the left.  | <span title="supported">✓</span> |
 | HT | Horizontal Tabulation | `\t, \x09` | Move the cursor to the next character tab stop.  | <span title="supported">✓</span> |
-| LF | Line Feed | `\n, \x0A` | Move the cursor one row down, scrolling if needed. _[more](#line-feed)_ | <span title="supported">✓</span> |
+| LF | Line Feed | `\n, \x0A` | Move the cursor one row down, scrolling if needed. _[more](#line-feed){: .link-details}_ | <span title="supported">✓</span> |
 | VT | Vertical Tabulation | `\v, \x0B` | Treated as LF.  | <span title="supported">✓</span> |
 | FF | Form Feed | `\f, \x0C` | Treated as LF.  | <span title="supported">✓</span> |
 | CR | Carriage Return | `\r, \x0D` | Move the cursor to the beginning of the row.  | <span title="supported">✓</span> |
@@ -104,52 +105,52 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 
 | Mnemonic | Name | Sequence | Short Description | Support |
 | -------- | ---- | -------- | ----------------- | ------- |
-| ICH | Insert Characters | ``CSI Ps @`` | Insert `Ps` (blank) characters (default = 1). _[more](#insert-characters)_ | <span title="supported">✓</span> |
-| SL | Scroll Left | ``CSI Ps SP @`` | Scroll viewport `Ps` times to the left. _[more](#scroll-left)_ | <span title="supported">✓</span> |
-| CUU | Cursor Up | ``CSI Ps A`` | Move cursor `Ps` times up (default=1). _[more](#cursor-up)_ | <span title="supported">✓</span> |
-| SR | Scroll Right | ``CSI Ps SP A`` | Scroll viewport `Ps` times to the right. _[more](#scroll-right)_ | <span title="supported">✓</span> |
-| CUD | Cursor Down | ``CSI Ps B`` | Move cursor `Ps` times down (default=1). _[more](#cursor-down)_ | <span title="supported">✓</span> |
+| ICH | Insert Characters | ``CSI Ps @`` | Insert `Ps` (blank) characters (default = 1). _[more](#insert-characters){: .link-details}_ | <span title="supported">✓</span> |
+| SL | Scroll Left | ``CSI Ps SP @`` | Scroll viewport `Ps` times to the left. _[more](#scroll-left){: .link-details}_ | <span title="supported">✓</span> |
+| CUU | Cursor Up | ``CSI Ps A`` | Move cursor `Ps` times up (default=1). _[more](#cursor-up){: .link-details}_ | <span title="supported">✓</span> |
+| SR | Scroll Right | ``CSI Ps SP A`` | Scroll viewport `Ps` times to the right. _[more](#scroll-right){: .link-details}_ | <span title="supported">✓</span> |
+| CUD | Cursor Down | ``CSI Ps B`` | Move cursor `Ps` times down (default=1). _[more](#cursor-down){: .link-details}_ | <span title="supported">✓</span> |
 | CUF | Cursor Forward | ``CSI Ps C`` | Move cursor `Ps` times forward (default=1).  | <span title="supported">✓</span> |
 | CUB | Cursor Backward | ``CSI Ps D`` | Move cursor `Ps` times backward (default=1).  | <span title="supported">✓</span> |
-| CNL | Cursor Next Line | ``CSI Ps E`` | Move cursor `Ps` times down (default=1) and to the first column. _[more](#cursor-next-line)_ | <span title="supported">✓</span> |
-| CPL | Cursor Backward | ``CSI Ps F`` | Move cursor `Ps` times up (default=1) and to the first column. _[more](#cursor-backward)_ | <span title="supported">✓</span> |
+| CNL | Cursor Next Line | ``CSI Ps E`` | Move cursor `Ps` times down (default=1) and to the first column. _[more](#cursor-next-line){: .link-details}_ | <span title="supported">✓</span> |
+| CPL | Cursor Backward | ``CSI Ps F`` | Move cursor `Ps` times up (default=1) and to the first column. _[more](#cursor-backward){: .link-details}_ | <span title="supported">✓</span> |
 | CHA | Cursor Horizontal Absolute | ``CSI Ps G`` | Move cursor to `Ps`-th column of the active row (default=1).  | <span title="supported">✓</span> |
-| CUP | Cursor Position | ``CSI Ps ; Ps H`` | Set cursor to position [`Ps`, `Ps`] (default = [1, 1]). _[more](#cursor-position)_ | <span title="supported">✓</span> |
+| CUP | Cursor Position | ``CSI Ps ; Ps H`` | Set cursor to position [`Ps`, `Ps`] (default = [1, 1]). _[more](#cursor-position){: .link-details}_ | <span title="supported">✓</span> |
 | CHT | Cursor Horizontal Tabulation | ``CSI Ps I`` | Move cursor `Ps` times tabs forward (default=1).  | <span title="supported">✓</span> |
 | DECSED | Selective Erase In Display | ``CSI ? Ps J`` | Currently the same as ED.  | <span title="Protection attributes are not supported.">Partial</span> |
-| ED | Erase In Display | ``CSI Ps J`` | Erase various parts of the viewport. _[more](#erase-in-display)_ | <span title="supported">✓</span> |
+| ED | Erase In Display | ``CSI Ps J`` | Erase various parts of the viewport. _[more](#erase-in-display){: .link-details}_ | <span title="supported">✓</span> |
 | DECSEL | Selective Erase In Line | ``CSI ? Ps K`` | Currently the same as EL.  | <span title="Protection attributes are not supported.">Partial</span> |
-| EL | Erase In Line | ``CSI Ps K`` | Erase various parts of the active row. _[more](#erase-in-line)_ | <span title="supported">✓</span> |
-| IL | Insert Line | ``CSI Ps L`` | Insert `Ps` blank lines at active row (default=1). _[more](#insert-line)_ | <span title="supported">✓</span> |
-| DL | Delete Line | ``CSI Ps M`` | Delete `Ps` lines at active row (default=1). _[more](#delete-line)_ | <span title="supported">✓</span> |
-| DCH | Delete Character | ``CSI Ps P`` | Delete `Ps` characters (default=1). _[more](#delete-character)_ | <span title="supported">✓</span> |
+| EL | Erase In Line | ``CSI Ps K`` | Erase various parts of the active row. _[more](#erase-in-line){: .link-details}_ | <span title="supported">✓</span> |
+| IL | Insert Line | ``CSI Ps L`` | Insert `Ps` blank lines at active row (default=1). _[more](#insert-line){: .link-details}_ | <span title="supported">✓</span> |
+| DL | Delete Line | ``CSI Ps M`` | Delete `Ps` lines at active row (default=1). _[more](#delete-line){: .link-details}_ | <span title="supported">✓</span> |
+| DCH | Delete Character | ``CSI Ps P`` | Delete `Ps` characters (default=1). _[more](#delete-character){: .link-details}_ | <span title="supported">✓</span> |
 | SU | Scroll Up | ``CSI Ps S`` | Scroll `Ps` lines up (default=1).  | <span title="supported">✓</span> |
 | SD | Scroll Down | ``CSI Ps T`` | Scroll `Ps` lines down (default=1).  | <span title="supported">✓</span> |
-| ECH | Erase Character | ``CSI Ps X`` | Erase `Ps` characters from current cursor position to the right (default=1). _[more](#erase-character)_ | <span title="supported">✓</span> |
+| ECH | Erase Character | ``CSI Ps X`` | Erase `Ps` characters from current cursor position to the right (default=1). _[more](#erase-character){: .link-details}_ | <span title="supported">✓</span> |
 | CBT | Cursor Backward Tabulation | ``CSI Ps Z`` | Move cursor `Ps` tabs backward (default=1).  | <span title="supported">✓</span> |
 | HPA | Horizontal Position Absolute | ``CSI Ps ` `` | Same as CHA.  | <span title="supported">✓</span> |
 | HPR | Horizontal Position Relative | ``CSI Ps a`` | Same as CUF.  | <span title="supported">✓</span> |
-| REP | Repeat Preceding Character | ``CSI Ps b`` | Repeat preceding character `Ps` times (default=1). _[more](#repeat-preceding-character)_ | <span title="supported">✓</span> |
+| REP | Repeat Preceding Character | ``CSI Ps b`` | Repeat preceding character `Ps` times (default=1). _[more](#repeat-preceding-character){: .link-details}_ | <span title="supported">✓</span> |
 | DA1 | Primary Device Attributes | ``CSI c`` | Send primary device attributes.  | <span title="supported">✓</span> |
 | DA2 | Secondary Device Attributes | ``CSI > c`` | Send primary device attributes.  | <span title="supported">✓</span> |
 | VPA | Vertical Position Absolute | ``CSI Ps d`` | Move cursor to `Ps`-th row (default=1).  | <span title="supported">✓</span> |
 | VPR | Vertical Position Relative | ``CSI Ps e`` | Move cursor `Ps` times down (default=1).  | <span title="supported">✓</span> |
 | HVP | Horizontal and Vertical Position | ``CSI Ps ; Ps f`` | Same as CUP.  | <span title="supported">✓</span> |
-| TBC | Tab Clear | ``CSI Ps g`` | Clear tab stops at current position (0) or all (3) (default=0). _[more](#tab-clear)_ | <span title="supported">✓</span> |
-| SM | Set Mode | ``CSI Pm h`` | Set various terminal modes. _[more](#set-mode)_ | <span title="Only IRM is supported.">Partial</span> |
-| DECSET | DEC Private Set Mode | ``CSI ? Pm h`` | Set various terminal attributes. _[more](#dec-private-set-mode)_ | <span title="See below for supported modes.">Partial</span> |
-| RM | Reset Mode | ``CSI Pm l`` | Set various terminal attributes. _[more](#reset-mode)_ | <span title="Only IRM is supported.">Partial</span> |
-| DECRST | DEC Private Reset Mode | ``CSI ? Pm l`` | Reset various terminal attributes. _[more](#dec-private-reset-mode)_ | <span title="See below for supported modes.">Partial</span> |
-| SGR | Select Graphic Rendition | ``CSI Pm m`` | Set/Reset various text attributes. _[more](#select-graphic-rendition)_ | <span title="See below for supported attributes.">Partial</span> |
+| TBC | Tab Clear | ``CSI Ps g`` | Clear tab stops at current position (0) or all (3) (default=0). _[more](#tab-clear){: .link-details}_ | <span title="supported">✓</span> |
+| SM | Set Mode | ``CSI Pm h`` | Set various terminal modes. _[more](#set-mode){: .link-details}_ | <span title="Only IRM is supported.">Partial</span> |
+| DECSET | DEC Private Set Mode | ``CSI ? Pm h`` | Set various terminal attributes. _[more](#dec-private-set-mode){: .link-details}_ | <span title="See below for supported modes.">Partial</span> |
+| RM | Reset Mode | ``CSI Pm l`` | Set various terminal attributes. _[more](#reset-mode){: .link-details}_ | <span title="Only IRM is supported.">Partial</span> |
+| DECRST | DEC Private Reset Mode | ``CSI ? Pm l`` | Reset various terminal attributes. _[more](#dec-private-reset-mode){: .link-details}_ | <span title="See below for supported modes.">Partial</span> |
+| SGR | Select Graphic Rendition | ``CSI Pm m`` | Set/Reset various text attributes. _[more](#select-graphic-rendition){: .link-details}_ | <span title="See below for supported attributes.">Partial</span> |
 | DSR | Device Status Report | ``CSI Ps n`` | Request cursor position (CPR) with `Ps` = 6.  | <span title="supported">✓</span> |
 | DECDSR | DEC Device Status Report | ``CSI ? Ps n`` | Only CPR is supported (same as DSR).  | <span title="Only CPR is supported.">Partial</span> |
-| DECSTR | Soft Terminal Reset | ``CSI ! p`` | Reset several terminal attributes to initial state. _[more](#soft-terminal-reset)_ | <span title="supported">✓</span> |
-| DECSCUSR | Set Cursor Style | ``CSI Ps SP q`` | Set cursor style. _[more](#set-cursor-style)_ | <span title="supported">✓</span> |
+| DECSTR | Soft Terminal Reset | ``CSI ! p`` | Reset several terminal attributes to initial state. _[more](#soft-terminal-reset){: .link-details}_ | <span title="supported">✓</span> |
+| DECSCUSR | Set Cursor Style | ``CSI Ps SP q`` | Set cursor style. _[more](#set-cursor-style){: .link-details}_ | <span title="supported">✓</span> |
 | DECSTBM | Set Top and Bottom Margin | ``CSI Ps ; Ps r`` | Set top and bottom margins of the viewport [top;bottom] (default = viewport size).  | <span title="supported">✓</span> |
 | SCOSC | Save Cursor | ``CSI s`` | Save cursor position, charmap and text attributes.  | <span title="TODO...">Partial</span> |
 | SCORC | Restore Cursor | ``CSI u`` | Restore cursor position, charmap and text attributes.  | <span title="TODO...">Partial</span> |
-| DECIC | Insert Columns | ``CSI Ps ' }`` | Insert `Ps` columns at cursor position. _[more](#insert-columns)_ | <span title="supported">✓</span> |
-| DECDC | Delete Columns | ``CSI Ps ' ~`` | Delete `Ps` columns at cursor position. _[more](#delete-columns)_ | <span title="supported">✓</span> |
+| DECIC | Insert Columns | ``CSI Ps ' }`` | Insert `Ps` columns at cursor position. _[more](#insert-columns){: .link-details}_ | <span title="supported">✓</span> |
+| DECDC | Delete Columns | ``CSI Ps ' ~`` | Delete `Ps` columns at cursor position. _[more](#delete-columns){: .link-details}_ | <span title="supported">✓</span> |
 
 <section class="sequence-details">
 
@@ -501,7 +502,7 @@ DECDC has no effect outside the scrolling margins.
 
 | Mnemonic | Name | Sequence | Short Description | Support |
 | -------- | ---- | -------- | ----------------- | ------- |
-| DECRQSS | Request Selection or Setting | `DCS $ q Pt ST` | Request several terminal settings. _[more](#request-selection-or-setting)_ | <span title="See limited support below.">Partial</span> |
+| DECRQSS | Request Selection or Setting | `DCS $ q Pt ST` | Request several terminal settings. _[more](#request-selection-or-setting){: .link-details}_ | <span title="See limited support below.">Partial</span> |
 | DECUDK | User Defined Keys | `DCS Ps ; Ps | Pt ST` | Definitions for user-defined keys.  | <span title="unsupported">✗</span> |
 | SIXEL | SIXEL Graphics | `DCS Ps ; Ps ; Ps ; q 	Pt ST` | Draw SIXEL image starting at cursor position.  | <span title="unsupported">✗</span> |
 | XTGETTCAP | Request Terminfo String | `DCS + q Pt ST` | Request Terminfo String.  | <span title="unsupported">✗</span> |
@@ -555,9 +556,9 @@ Supported requests and responses:
 
 | Identifier | Sequence | Short Description | Support |
 | ---------- | -------- | ----------------- | ------- |
-| 0 | `OSC 0 ; Pt BEL` | Set window title and icon name. _[more](#set-windows-title-and-icon-name)_ | <span title="Icon name is not exposed.">Partial</span> |
+| 0 | `OSC 0 ; Pt BEL` | Set window title and icon name. _[more](#set-windows-title-and-icon-name){: .link-details}_ | <span title="Icon name is not exposed.">Partial</span> |
 | 1 | `OSC 1 ; Pt BEL` | Set icon name.  | <span title="unsupported">✗</span> |
-| 2 | `OSC 2 ; Pt BEL` | Set window title. _[more](#set-windows-title)_ | <span title="supported">✓</span> |
+| 2 | `OSC 2 ; Pt BEL` | Set window title. _[more](#set-windows-title){: .link-details}_ | <span title="supported">✓</span> |
 
 <section class="sequence-details">
 
