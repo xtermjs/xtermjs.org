@@ -11,6 +11,7 @@ An event that can be listened to.
 
 ## Type parameters
 #### T 
+#### U 
 ## Hierarchy
 
 **IEvent**
@@ -18,7 +19,7 @@ An event that can be listened to.
 ## Callable
 ▸ **__call**(listener: *`function`*): [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
-*Defined in [xterm.d.ts:334](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L334)*
+*Defined in [xterm.d.ts:345](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L345)*
 
 An event that can be listened to.
 
