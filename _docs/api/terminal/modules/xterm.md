@@ -33,8 +33,11 @@ This contains the type declarations for the xterm.js library. Note that some int
 * [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})
 * [ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %})
 * [ITheme]({% link _docs/api/terminal/interfaces/itheme.md %})
+* [IUnicodeHandling]({% link _docs/api/terminal/interfaces/iunicodehandling.md %})
+* [IUnicodeVersionProvider]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %})
 * [IViewportRange]({% link _docs/api/terminal/interfaces/iviewportrange.md %})
 * [IViewportRangePosition]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %})
+* [IWindowOptions]({% link _docs/api/terminal/interfaces/iwindowoptions.md %})
 
 ### Type aliases
 
@@ -52,7 +55,7 @@ This contains the type declarations for the xterm.js library. Note that some int
 
 **Ƭ FontWeight**: *"normal" \| "bold" \| "100" \| "200" \| "300" \| "400" \| "500" \| "600" \| "700" \| "800" \| "900"*
 
-*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L16)*
+*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L16)*
 
 A string representing text font weight.
 
@@ -63,7 +66,7 @@ ___
 
 **Ƭ LogLevel**: *"debug" \| "info" \| "warn" \| "error" \| "off"*
 
-*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L21)*
+*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L21)*
 
 A string representing log level.
 
@@ -74,7 +77,7 @@ ___
 
 **Ƭ RendererType**: *"dom" \| "canvas"*
 
-*Defined in [xterm.d.ts:26](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L26)*
+*Defined in [xterm.d.ts:26](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L26)*
 
 A string representing a renderer type.
 
