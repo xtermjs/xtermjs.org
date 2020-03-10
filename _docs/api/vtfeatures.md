@@ -1,3 +1,7 @@
+---
+title: Supported Terminal Sequences
+category: API
+---
 
 {::options parse_block_html="true" /}
 
