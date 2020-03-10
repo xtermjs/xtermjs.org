@@ -54,6 +54,9 @@ update() {
   git commit -m "${COMMIT_MESSAGE:-Update docs: build ID [skip ci]}"
   git tag docs-$version
 
+  # add vtfeatures md file
+  $(cd _xterm.js && npm install mustache && npm run --silent vtfeatures > ../_docs/api/vtfeatures.md)
+
   # Push to Github - Security Note: redirect stderr and stdout to /dev/null
   git remote add deploy ${remote} > /dev/null 2>&1
   git push --follow-tags --quiet --set-upstream deploy ${branch}
