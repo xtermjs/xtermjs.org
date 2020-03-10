@@ -5,6 +5,8 @@ category: API
 
 {::options parse_block_html="true" /}
 
+# Supported Terminal Sequences
+
 xterm.js version: 4.4.0
 
 ## Table of Contents
