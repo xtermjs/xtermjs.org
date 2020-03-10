@@ -1,3 +1,4 @@
+
 ---
 title: Supported Terminal Sequences
 category: API

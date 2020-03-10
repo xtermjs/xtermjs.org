@@ -16,6 +16,9 @@ TAG=$(cd _xterm.js && git describe --tags)
 
 npm run build:docs
 
+# add vtfeatures md file
+VTFEATURES=$(cd _xterm.js && npm install mustache && npm run --silent vtfeatures > ../_docs/api/vtfeatures.md)
+
 # This function should remain CI-agnostic to avoid tight integrations
 update() {
   if [[ $TAG =~ ^([0-9]\.){2}[0-9] ]]; then
@@ -53,9 +56,6 @@ update() {
   git config --global user.name "${COMMIT_USER:-ci-name}"
   git commit -m "${COMMIT_MESSAGE:-Update docs: build ID [skip ci]}"
   git tag docs-$version
-
-  # add vtfeatures md file
-  $(cd _xterm.js && npm install mustache && npm run --silent vtfeatures > ../_docs/api/vtfeatures.md)
 
   # Push to Github - Security Note: redirect stderr and stdout to /dev/null
   git remote add deploy ${remote} > /dev/null 2>&1
