@@ -1,15 +1,232 @@
 ---
-title: Terminal Sequences & Parser Hooks
+title: Parser Hooks & Terminal Sequences
 category: Guides
 ---
 
 The following guide gives a short overview on how to extend xterm.js's functionality by using parser hooks. With these you can either modify the default behavior for certain terminal sequences or build custom sequences with custom functionality.
 
-## What are terminal sequences?
+
+## Getting started with parser hooks
+
+### What is hookable?
+
+xterm.js currently exposes hooks for these terminal sequences types:
+
+- ESC sequence type via `parser.registerEscHandler`
+- CSI sequence type via `parser.registerCsiHandler`
+- DCS sequence type via `parser.registerDcsHandler`
+- OSC sequence type via `parser.registerOscHandler`
+
+See [list of supported sequences]({{site.baseurl}}/docs/api/vtfeatures/) to get an idea of which functionality can be
+intercepted or altered by parser hooks. Internally all sequence functionality in xterm.js is implemented with parser hooks.
+
+
+### Lifecycle / Execution context of parser hooks
+
+To work with parser hooks correctly it is important to understand, how and when they are executed. xterm.js maintains roughly 4 time slices of execution contexts:
+1. Terminal input  
+  Whenever a `term.write(data, callback)` is done, the data gets added synchronously to an input write buffer and will return immediately. This is the only action that is guaranteed to be synchronous to your calling context.
+2. Input processing  
+  Triggered asynchronously by a `setTimeout` call whenever there is pending write buffer data. Here the transformation of the input data into the terminal state happens, roughly:
+
+    - The data gets decoded to UTF32 codepoints, either from `string` or `Uint8Array` (UTF8 byte sequence).
+    - The parser walks the codepoints to identify sequences. For every finished sequence the parser stops parsing and calls the attached sequence handlers (in-band processing). The sequence handlers are hookable ("parser hooks").
+    - For every sequence type the parser maintains a list of attached handlers. They are probed in reverse registering order until one returned `true` or the list was exhausted (with a default fallback).
+    - A sequence handler does the needed state transformation on the terminal object (mainly involves terminal buffer changes) and returns.
+
+    When the parser has finished processing a single chunk, the callback given by the `write` call gets triggered to indicate, that this particular chunk was finally processed. So far no screen updates have happened. Yet some of the changes might have scheduled screen updates.
+
+    **Note:** The whole parsing and state manipulation process is synchronous to a position in a chunk of data and cannot be interupted. This is important to note and somewhat limits the possibilities to postpone heavy work from within a sequence handler. If you have to do use async interfaces, keep in mind that the terminal state will have progressed by the time the call returns.
+
+3. Screen updates  
+  Step 2. is only allowed to run for a certain time. After that time it gets halted at a chunk border and the screen update happens. The renderer code will evaluate the terminal state and decide, what has to be re-drawn. It is not possible to conclude, whether or when a certain chunk of data will finally appear on the screen. Note that there is a chance under heavy input that a chunk will never make it to the screen, just because the terminal state already progressed further before any screen update happened (slow scroll mode is not supported by xterm.js). Further note that the screen update involves multiple async calls itself, thus it is not executed as a single synchronous block (other than step 2. which is always executed as a synchronous block).
+
+4. Event processing  
+  Any browser event (e.g. mouse movements, keystrokes) will be processed between the other 3 steps.
+
+**Takeaway**:
+  - Parser hooks should only contain synchronous code.
+  - Parser hooks should return a truish value, if a sequence was successfully handled and no further processing shall happen.
+  - Parser hooks are blocking, the terminal state will not mutate by any other actions during their invocation.
+  - Assumptions about the terminal state are only valid within a single hook invocation.
+  - Parser hooks should finish quickly to not slow down input processing too much.
+
+
+### Simple Hook Example
+
+Let's walk the steps to create a custom parser hook by a simple example. Given you want to be informed whenever the cursor gets repositioned absolutely. First we search the corresponding sequence in the list of [supported sequences]({{site.baseurl}}/docs/api/vtfeatures/). It turns out that `CUP` is what we are looking for and is defined as:
+
+```
+CSI Ps ; Ps H
+```
+
+This tells us 3 important things:
+- sequences type is CSI
+- the sequence is expected to have up to 2 numerical params
+- final byte is `H`, no prefix or intermediate bytes (see below to understand the sequence formats)
+
+With this information creating a hook for `CUP` is straight forward:
+
+```typescript
+// a simple custom hook indicating when the cursor got moved by CUP
+const myHook = term.parser.registerCsiHandler({final: 'H'}, params => {
+  console.log('cursor got repositioned absolutely by CUP');
+  return false;   // also probe for other handlers
+});
+...
+// get rid of the custom hook later on
+myHook.dispose();
+```
+
+Dealing with numerical parameters is abit more tricky, as they are always treated as optional by the parser. This means, that the parser would recognize any of these as a valid `CUP` sequence:
+- no params - `CSI H`
+- one explicit param - `CSI 10 H`
+- two default params - `CSI ; H`
+- two explicit params - `CSI 10 ; 20 H`
+- more explicit params - `CSI 1 ; 2 ; 3 ; 4 ; 5 H`
+
+If no parameters are given to a CSI sequence, the parser would always append one default parameter as 0. Also any other not explicitly given parameter will be treated as a default value of 0 (zero default mode - ZDM). After these parameter extensions done by the parser, `params` will finally contain the following:
+- `CSI H` --> `[0]`
+- `CSI 10 H` --> `[10]`
+- `CSI ; H` --> `[0, 0]`
+- `CSI 10 ; 20 H` --> `[10, 20]`
+- `CSI 1 ; 2 ; 3 ; 4 ; 5 H` --> `[1, 2, 3, 4, 5]`
+
+Obviously some of them do not fit into the format definition given for `CUP`. To figure out how a terminal would deal with these edge cases, it is important to know more about handling of default values by a certain sequence function and error recovery in general. We cannot cover this in detail here, so lets just point out, how `CUP` is typically implemented:
+- a parameter of 0 defaults to 1
+- missing parameters are set to 1
+- excessive parameters are ignored
+
+Since the parser does not know anything about these sequence specific rules, we have to apply them manually and can finally work with those values:
+
+```typescript
+// custom hook indicating new cursor position set by CUP
+const myHook = term.parser.registerCsiHandler({final: 'H'}, params => {
+  // 0 defaults to 1
+  params = params.map(p => p || 1);
+  // fill up to 2 params with default value
+  while (params.length < 2) params.push(1);
+  // ignore excessive params
+  params = params.slice(2);
+  // do some work
+  console.log({row: params[0], col: params[1]});
+  return false;   // also probe for other handlers
+});
+...
+// get rid of the custom hook later on
+myHook.dispose();
+```
+
+which should lead to this output:
+- `CSI H` --> `{row: 1, col: 1}`
+- `CSI 10 H` --> `{row: 10, col: 1}`
+- `CSI ; H` --> `{row: 1, col: 1}`
+- `CSI 10 ; 20 H` --> `{row: 10, col: 20}`
+- `CSI 1 ; 2 ; 3 ; 4 ; 5 H` --> `{row: 1, col: 2}`
+
+Congratulations, you have build your first working terminal sequence function by hooking into the parser. For other sequence types it works conceptually similar with slightly different callback interfaces. As you might have figured already by reading the example, creating a properly working terminal sequence hook needs some knowledge about sequence formats and their default behavior. For a general introduction into terminal sequences, see below. For a more detailed description of certain terminal functions, see [ECMA-48](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-048.pdf), [DEC STD 070](https://ia801903.us.archive.org/16/items/bitsavers_decstandar0VideoSystemsReferenceManualDec91_74264381/EL-SM070-00_DEC_STD_070_Video_Systems_Reference_Manual_Dec91.pdf) or the [VT520 Programmer Information](https://vt100.net/docs/vt520-rm/ek-vt520-rm.pdf) on [VT100.net](https://vt100.net/). 
+
+
+### Return Value and Execution Order
+
+The return value of a hook handler determines, whether another handler should be probed. To make sense of this, it is important to know, that hook handlers are registered like event handlers, but in reverse order (last one added always to be probed first by the parser):
+
+```typescript
+const term = new Terminal();
+
+// after startup we have one default CUP handler
+term.write(`\x1b[H`);  // write CUP(1, 1):   --> default
+
+// register second CUP handler
+const customCUP = term.parser.registerCsiHandler({final: 'H'}, params => {...});
+term.write(`\x1b[H`);  // write CUP(1, 1):   --> customCUP --> default
+
+// register third CUP handler
+const anotherCUP = term.parser.registerCsiHandler({final: 'H'}, params => {...});
+term.write(`\x1b[H`);  // write CUP(1, 1):   --> anotherCUP --> customCUP --> default
+```
+
+This makes it possible to intercept terminal sequences in complex ways. Please note, for built-in sequence support you should never skip the default handler execution by returning `true` from your handler, unless you know what you are doing.
+
+
+## Custom Terminal Sequences
+
+With the parser hooks system it is quite easy to define your own custom sequences, which can be used to extend xterm.js' functionality even further.
+
+Before doing this, it is important to note, that a custom terminal sequence will most likely break support with other terminals, thus this step should only be considered as a last resort. If interoperability with other terminals is no issue, read on.
+
+Given you want to be able to send some arbitrary data over to xterm.js and handle it in a certain way, these are the steps to achieve that:
+
+- Find a suitable sequence type to carry your data.  
+  In general CSI sequences are only useful to carry positive integer parameters up to a certain size and length. In xterm.js they are limited to 32 16-bit parameters. OSC and DCS sequences are defined as ASCII string types, thus are allowed to carry any ASCII printable characters as payload, which makes them useful for BASE64 encoded binary data transport. Main difference between OCS and DCS is the fact, that DCS additionally supports numercial parameters in the same fashion as CSI sequences. 
+- Consult [ECMA-48](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-048.pdf) and [DEC STD 070](https://ia801903.us.archive.org/16/items/bitsavers_decstandar0VideoSystemsReferenceManualDec91_74264381/EL-SM070-00_DEC_STD_070_Video_Systems_Reference_Manual_Dec91.pdf) to find a free function identifier.  
+  This is important to not clash with any other existing predefined function. Sadly there is no good unified ressource about pre-taken function identifiers across common terminal emulators. If in doubt, also consult their documentation. As a rule of thumb - resort to private area for CSI (see ECMA-48, watch out for DEC privates) or take a rather high number (>1000) for an OSC function.
+- Create a hook to digest the data.
+
+Let's illustrate this further by a quick example. Given you want to be able send MIDI data over to xterm.js to be output by the browser. Furthermore you want to be able to alter the pitch before outputting it, thus you have basically this abstract function declaration:
+
+```typescript
+function outputMidi(pitch: number, data: MidiData);
+```
+
+For payload we either need OSC or DCS, as CSI cannot transport it. Now DCS can express positive integer values directly, it might be good enough for us. If `pitch` shall be `float` or allowed to be negative, this might not work anymore and we would have to put `pitch` into the payload as well.
+
+If a positive integer is enough, we can get away with this DCS sequence definition:
+
+```
+DCS ? Ps a Pt ST  - play BASE64 encoded midi data in Pt pitched by Ps
+```
+
+which defines a DCS sequence with the identifier `{prefix: '?', final: 'a'}` to contain one numerical parameter `Ps` and payload in `Pt`. On xterm.js side this can be set up as follows:
+
+```typescript
+const midiHandler = term.registerDcsHandler({prefix: '?', final: 'a'}, (params, data) => {
+  // default: pitch to 440 Hz
+  const pitch = params[0] || 440;
+  // some midi player you wrote before
+  midiPlayer.play(pitch, atob(data));   
+});
+```
+
+Now a program running in xterm.js can directly play midi with a certain pitch:
+
+```typescript
+process.stdout.write(`\x1bP?${pitch}a${binaryMidiData.toString('base64')}\x1b\\`);
+process.stdout.write(`\x1bP?a${binaryMidiData.toString('base64')}\x1b\\`);  // default pitch of 440 Hz
+```
+
+Hopefully this small example illustrates the power of the hooks system. But always keep in mind, that extending xterm.js this way will make your program incompatible with other terminal emulators. Still a well thought-out extension might find its way into other emulators, if it is seen as a useful extension to the terminal interface in general.
+
+
+## Limitations of Parser Hooks
+
+### Async Actions in Hooks
+The parser executes hook handlers synchronously. This is a must have to guarantee synchronicity to the incoming stream data while keeping the parser performant. Actions altering the terminal buffer must not use async code without special preparations.
+
+### Filtering of Parameters
+Some CSI sequences like `SGR` support parameter stacking, where these calls:
+- `SGR 0`
+- `SGR 1`
+- `SGR 2`
+
+whould be equivalent to this single call:
+- `SGR 0 ; 1 ; 2`
+
+In the first case the parser would call 3 times into an `SGR` hook with one parameter, while the latter would create one call with all 3 paramters applied at once. While in the first case a hook can deliberately stop the call propagation for a certain parameter value, it is not possible to do that in the latter case without stopping the other parameters as well. If you run into this edge case, please file an issue to discuss, whether we should implement parameter filtering.
+
+### Reduced Terminal State
+xterm.js exposes only a reduced set of the terminal state via its public API. This is mainly to keep the API as stable and useful as possible without cluttering it too much. If you have an urgent need for some missing bits, please file an issue to discuss this further.
+
+### Payload limits for OSC/DCS
+The OSC and DCS API have a hardcoded payload limit of 10MB to avoid running into out-of-memory issues.
+
+
+
+## Background - What are terminal sequences?
 
 Terminal sequences are instructions targeted at a terminal (emulator) to alter certain aspects of data processing and data presentation. They are directly embedded in the data stream (in-band) and can be seen as a kind of markup system for the terminal.
 
-**Note:** Other than most modern document based markup languages, many terminal sequences do not enforce enclosing data (as seen in XML, e.g. &lt;command&gt;data&lt;/command&gt;), instead they operate in a more stream friendly manner by manipulating a terminal state immediately that stays active until another sequence might alter it.
+**Note:** Other than most modern document based markup languages, many terminal sequences do not enforce enclosing data (as seen in XML, e.g. &lt;command&gt;data&lt;/command&gt;), instead they operate in a more stream friendly manner by manipulating a terminal state immediately that stays active until another sequence might alter it again.
 
 Terminal sequences have a long history and originate in the need to control certain aspects of mechanical input/output devices like real typewriters, well known examples:
 - **LF** (line feed `'\n'`)  
@@ -43,104 +260,21 @@ With the upcoming of the more capable video terminals in the early 70s there was
   - common form: `ESC <optional prefix byte> <optional intermediate byte> <final byte>`
   - usage: simple control functions without further params (similar to C0/C1)
 - **CSI - CONTROL SEQUENCE INTRODUCER**
-  - common form: `ESC <optional prefix byte> P1 ; P2 ; ... <optional intermediate byte> <final byte>`
+  - common form: `CSI <optional prefix byte> P1 ; P2 ; ... <optional intermediate bytes> <final byte>`
   - usage: control functions with numerical params (P1, P2, ...)
 - **OSC - OPERATING SYSTEM COMMAND**
   - common form: `OSC <identifier> ; <payload> ST`
-  - usage: control functions meant to deal with certain OS aspects, with payload
-  - note: The identifier is not part of any official specification, still using a numercial function identifier became a de-facto standard.
+  - usage: control functions meant to deal with certain OS aspects, with string payload (printables)
+  - note: The identifier is not part of any official specification, still using a numercial function identifier became a de-facto standard these days.
 - **DCS - DEVICE CONTROL STRING**
-  - common form: `DCS <optional prefix byte> P1 ; P2 ; ... <optional intermediate byte> <final byte> <payload> ST`
-  - control functions meant to deal with the device (the terminal itself), with payload
-- **APM/SOS/PM** (skipped here, since mostly unsupported by emulators)
+  - common form: `DCS <optional prefix byte> P1 ; P2 ; ... <optional intermediate bytes> <final byte> <payload> ST`
+  - control functions meant to deal with the device (the terminal itself), with string payload (printables)
+- **APM/SOS/PM** (skipped here, since mostly unsupported by common emulators)
 
-These sequences are known as "ANSI escape sequences" (they all start with the escape control code `ESC` in 7-bit mode and were adopted by ANSI in 1979). They build the foundation of most control functions of a terminal long with the older C0/C1 control codes.
+These sequences are known as "ANSI escape sequences" (they all start with the escape control code `ESC` in 7-bit mode and were adopted by ANSI in 1979). They build the foundation of most control functions of a terminal along with the older C0/C1 control codes.
 
 In the late 70s and early 80s, many vendors came up with different terminal types and tons of control functions (most notably DEC with its [VT series](https://vt100.net/)). The number of partly incompatible devices was a major burden for software developers, which led to the idea to collect their features (`termcap`/`terminfo`) and to level out the differences by higher level TUI libraries (`curses`/`ncurses` under Unix). This made it possible to support several terminal types without the need to write terminal specific sequences yourself. Most advanced command-line applications on POSIX systems use those libraries or alternatives today.
 
-With the upcoming of affordable, more capable graphical hardware in the 90s and the wider adoption of GUIs in general, hardware terminals became obsolete. ????? some notes about emulators....
+With the upcoming of affordable, more capable graphical hardware in the 90s and the wider adoption of GUIs in general, hardware terminals became quickly obsolete. Still POSIX like operating system kept their strong affiliation to the command-line interface in the form of terminal emulators running within the GUIs.
 
-
-Prominent early emulator examples are `DECTerm` and `xterm`, which both aimed primarily for DEC VT series compatibility. While the slightly superior `DECTerm` did not manage to escape the vendor locked-in golden cage of DEC operating systems, `xterm` soon closed the gap, was widely available and eventually became the de-facto standard of VT compatible emulation these days. Despite its age `xterm` is still under very active development by Thomas E. Dickey ([changelog](https://invisible-island.net/xterm/xterm.log.html)).
-
-
-## Terminal Sequences in xterm.js
-
-xterm.js tries to deliver support for most commonly seen terminal sequences 
-
-## Parser in xterm.js
-
-The parser in xterm.js closely resembles the parser described on [VT100.net](https://vt100.net/emu/dec_ansi_parser). It is mostly ANSI compatible with several DEC specific alterations.
-
-
-
-
-## Lifecycle / Execution context of parser hooks
-
-To work with parser hooks correctly it is important to understand, how and when they are executed. xterm.js maintains roughly 4 time slices of execution contexts:
-1. Terminal input  
-  Whenever a `term.write(data, callback)` is done, the data gets added synchronously to an input write buffer and will return immediately. This is the only action that is guaranteed to be synchronous to your calling context.
-2. Input processing  
-  Triggered asynchronously by a `setTimeout(..., 0)` call whenever there is pending write buffer data. Here the transformation of the input data into the terminal state happens, roughly:
-
-    - The data gets decoded to UTF32 codepoints.
-    - The parser walks the codepoints to identify sequences. For every finished sequence the parser stops parsing and calls the attached sequence handlers (in-band processing). The sequence handlers are hookable ("parser hooks").
-    - For every sequence type the parser maintains a list of attached handlers. They are probed in reverse registering order until one returned `true` or the list was exhausted (with a default fallback).
-    - A sequence handler does the needed state transformation on the terminal object (mainly involves terminal buffer changes) and returns.
-
-    When the parser has finished processing a single chunk, the callback given by the `write` call gets triggered and indicates, that this particular chunk was finally processed and the chunk gets discarded. So far no screen updates have happened. Still some of the changes already might have scheduled screen update needs.
-
-    **Note:** The whole parsing and state manipulation process is synchronous to a position in a chunk of data and cannot be interupted. This is important to note and somewhat limits the possibilities to postpone heavy work from within a sequence handler. If you have to do use async interfaces, keep in mind that the terminal state will have progessed by the time the call returns.
-
-3. Screen updates  
-  Step 2. is only allowed to run for a certain time. After that it gets interrupted (at chunk borders) and the screen update happens. The renderer code will evaluate the terminal state and decide, what has to be redrawn. It is not possible to conclude, whether or when a certain chunk of data will finally appear on the screen. Note that there is a chance under heavy input that a chunk will never make it the screen, just because the terminal state already progressed further before any screen update happened. Slow scroll mode is not supported by xterm.js. Further note that the screen updates involves multiple async calls itself, thus it is not executed as a synchronous block (other than step 2. which is always executed synchronously itself).
-
-4. Event processing  
-  Any browser event (e.g. mouse movements, keystrokes) will be processed between the other 3 steps.
-
-Takeaway:
-  - Parser hooks should only contain synchronous code.
-  - Parser hooks should return a truish value, if a sequence was successfully handled.
-  - Parser hooks are blocking, the terminal state will not mutate by any other actions during their invocation.
-  - Assumptions about the terminal state are only valid within a single hook invocation.
-  - Parser hooks should finish quickly to not slow down input processing too much.
-
-### What to do, if an async call shall alter the terminal buffer?
-
-First - avoid this at any cost, as it violates the in-band principle of a terminal - any data/sequence should take immediately effect on a terminal. Let's make up a not very useful example to illustrate this further:
-
-Given you want to create a sequence that pulls content of an URL into the terminal output. We first define a sequence that is capable to hold the needed bits. For this we take a sequence type, that can have payload, like OSC:
-
-  `OSC 12345 ; <URL> BEL`
-
-The URL here is the payload, '12345' is our own function identifier that would trigger our new control function (see paragraph about designing custom sequences to make the sequence bullet proof):
-
-```typescript
-term.addOscHandler(12345, url => {
-  url = sanitizeUrl(url);
-  const content = fetch(url); // async call - content is a promise
-  // what to do about terminal state here?
-  ...
-  return true;
-});
-
-```
-Now if the terminal data stream contains anything like `'\x1b]12345;http://example.com\x07'` the parser would trigger our stub handler with `'http://example.com'` as url. The stub also would correctly fetch the resource (if allowed), but would not present it to JS before any further data parsing has finished. How to get the response into the terminal?
-
-Well you cannot (at least not in a single pass). Note that a terminal is meant as an output device for the data coming from an application (pty). This basic rule binds anything that shall be shown on a terminal to the data stream. It also makes things shown predictable for the application side. Following this rule, the terminal should not be responsible to pull other content into its output. If the application wants to show content of a foreign URL resource, it should have pulled the content itself and placed it right into the data stream. This is a very fundamental principle of terminals, they are dumb devices in this regard and not "rich clients".
-
-*"But I want that feature! Now!"*
-Ok, you want a rich client, fine. Just keep in mind that any higher level functionality put on the terminal undermines the application side as controlling instance with all drawbacks (like security concerns about side channelling foreign stuff, screwed up screen assumptions).
-
-Solutions to get this done:
-
-1. Tell the application to wait with further output until some kind of confirmation was sent back. Ideally now that sequence is always the last one sent. Now you can attach a `Thenable` to the fetch promise above, that parses the URL content, writes it to the terminal with `.write` and finally sends a confirmation back to the application. Pros/Cons...
-
-2. Make room in the terminal buffer to later hold the content. This can be done by placing markers at the current cursor position, inserting blank content and later during promise resolving using the marker to place the content there. Pros/Cons...
-
-3. Write some fixed placeholder in the terminal buffer, thats identifyable by the user to have an additional effect (like hovering would open a popup with the contents).
-
-
-## Designing custom sequences and parser hooks
-
-
+Prominent early emulator examples are `DECTerm` and `xterm`, which both aimed primarily for DEC VT series compatibility. While `DECTerm` was seen as superior in the beginning in terms of emulated capabilities, `xterm` soon closed the gap, was widely available as an capable open source emulator and eventually became the de-facto standard of VT compatible emulation these days. Despite its age, `xterm` is still under very active development by Thomas E. Dickey ([changelog](https://invisible-island.net/xterm/xterm.log.html)).
