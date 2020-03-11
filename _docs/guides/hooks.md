@@ -21,7 +21,7 @@ See [list of supported sequences]({{site.baseurl}}/docs/api/vtfeatures/) to get 
 intercepted or altered by parser hooks. Internally all sequence functionality in xterm.js is implemented with parser hooks.
 
 
-### Lifecycle / Execution context of parser hooks
+### Lifecycle / Execution Context of Parser Hooks
 
 To work with parser hooks correctly it is important to understand, how and when they are executed. xterm.js maintains roughly 4 time slices of execution contexts:
 1. Terminal input  
@@ -222,7 +222,7 @@ The OSC and DCS API have a hardcoded payload limit of 10MB to avoid running into
 
 
 
-## Background - What are terminal sequences?
+## Background - What are Terminal Sequences?
 
 Terminal sequences are instructions targeted at a terminal (emulator) to alter certain aspects of data processing and data presentation. They are directly embedded in the data stream (in-band) and can be seen as a kind of markup system for the terminal.
 
