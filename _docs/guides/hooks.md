@@ -19,15 +19,15 @@ The following guide gives a short overview on how to extend xterm.js' functional
 
 ### What is hookable?
 
-xterm.js currently exposes hooks for these terminal sequences types:
+xterm.js currently exposes parser hooks for these terminal sequences types:
 
-- ESC sequence type via `parser.registerEscHandler`
-- CSI sequence type via `parser.registerCsiHandler`
-- DCS sequence type via `parser.registerDcsHandler`
-- OSC sequence type via `parser.registerOscHandler`
+- `ESC` type via `parser.registerEscHandler`
+- `CSI` type via `parser.registerCsiHandler`
+- `DCS` type via `parser.registerDcsHandler`
+- `OSC` type via `parser.registerOscHandler`
 
-See [list of supported sequences]({{site.baseurl}}/docs/api/vtfeatures/) to get an idea of which functionality can be
-intercepted or altered by parser hooks. Internally all sequence functionality in xterm.js is implemented with parser hooks.
+See the [list of supported sequences]({{site.baseurl}}/docs/api/vtfeatures/) to get an idea, which functionality can be
+intercepted or altered by parser hooks. Hooks for single byte control functions (C0/C1) and `PRINT` are currently not exposed. `PM`, `SOS` and `APC`, though being recognized on parser level, are not supported.
 
 
 ### Lifecycle / Execution Context of Parser Hooks
@@ -36,19 +36,19 @@ To work with parser hooks correctly it is important to understand, how and when 
 1. Terminal input  
   Whenever a `term.write(data, callback)` is done, the data gets added synchronously to an input write buffer and will return immediately. This is the only action that is guaranteed to be synchronous to your calling context.
 2. Input processing  
-  Triggered asynchronously by a `setTimeout` call whenever there is pending write buffer data. Here the transformation of the input data into the terminal state happens, roughly:
+  The input processing is triggered asynchronously by a `setTimeout` call whenever there is pending write buffer data. Here the transformation of the input data into the terminal state happens, roughly:
 
     - The data gets decoded to UTF32 codepoints, either from `string` or `Uint8Array` (UTF8 byte sequence).
-    - The parser walks the codepoints to identify sequences. For every finished sequence the parser stops parsing and calls the attached sequence handlers (in-band processing). The sequence handlers are hookable ("parser hooks").
-    - For every sequence type the parser maintains a list of attached handlers. They are probed in reverse registering order until one returned `true` or the list was exhausted (with a default fallback).
-    - A sequence handler does the needed state transformation on the terminal object (mainly involves terminal buffer changes) and returns.
+    - The parser walks the codepoints to identify terminal sequences. For every finished sequence the parser stops parsing and calls the attached sequence handlers (in-band processing). The sequence handlers are hookable ("parser hooks").
+    - For every sequence type the parser maintains a list of attached handlers. They are probed in reverse registering order until one returned `true` or the list was exhausted.
+    - A sequence handler does the state transformation on the terminal object (mainly involves terminal buffer content changes and cursor updates).
 
-    When the parser has finished processing a single chunk, the callback given by the `write` call gets triggered to indicate, that this particular chunk was finally processed. So far no screen updates have happened. Yet some of the changes might have scheduled screen updates.
+    When the parser has finished processing a single chunk, the callback given to the `write` call gets triggered to indicate, that this particular chunk was finally processed and the chunk data gets eventually discarded. So far no screen updates have happened.
 
-    **Note:** The whole parsing and state manipulation process is synchronous to a position in a chunk of data and cannot be interupted. This is important to note and somewhat limits the possibilities to postpone heavy work from within a sequence handler. If you have to do use async interfaces, keep in mind that the terminal state will have progressed by the time the call returns.
+    **Note:** The whole parsing and state manipulation process is synchronous to a position in a chunk of data and cannot be interupted. This is important to note and limits the possibilities to postpone heavy work from within a sequence handler. If you have to do use async interfaces, keep in mind that the terminal state will have progressed by the time the async call gets executed.
 
 3. Screen updates  
-  Step 2. is only allowed to run for a certain time. After that time it gets halted at a chunk border and the screen update happens. The renderer code will evaluate the terminal state and decide, what has to be re-drawn. It is not possible to conclude, whether or when a certain chunk of data will finally appear on the screen. Note that there is a chance under heavy input that a chunk will never make it to the screen, just because the terminal state already progressed further before any screen update happened (slow scroll mode is not supported by xterm.js). Further note that the screen update involves multiple async calls itself, thus it is not executed as a single synchronous block (other than step 2. which is always executed as a synchronous block).
+  Step 2. is only allowed to run for a certain time. After that time it gets halted at a chunk border and the screen update happens. The renderer code will evaluate the terminal state and decide, what has to be re-drawn. It is not possible to conclude, whether or when a certain chunk of data will finally appear on the screen. Note that there is a chance under heavy data input, that a chunk will never make it to the screen, just because the terminal state has already progressed further before any screen redraw happened (slow scroll mode is not supported by xterm.js).
 
 4. Event processing  
   Any browser event (e.g. mouse movements, keystrokes) will be processed between the other 3 steps.
