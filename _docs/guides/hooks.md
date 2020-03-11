@@ -3,10 +3,19 @@ title: Parser Hooks & Terminal Sequences
 category: Guides
 ---
 
-The following guide gives a short overview on how to extend xterm.js's functionality by using parser hooks. With these you can either modify the default behavior for certain terminal sequences or build custom sequences with custom functionality.
+The following guide gives a short overview on how to extend xterm.js' functionality by using parser hooks. With these you can either modify the default behavior for certain terminal sequences or build custom sequences with your own functionality.
 
+### Contents
+- [Getting started with Parser Hooks](#getting-started-with-parser-hooks)
+  * [What is hookable?](#what-is-hookable-)
+  * [Lifecycle / Execution Context of Parser Hooks](#lifecycle---execution-context-of-parser-hooks)
+  * [Simple Hook Example](#simple-hook-example)
+  * [Return Value and Execution Order](#return-value-and-execution-order)
+- [Custom Terminal Sequences](#custom-terminal-sequences)
+- [Limitations of Parser Hooks](#limitations-of-parser-hooks)
+- [Background - What are Terminal Sequences?](#background---what-are-terminal-sequences-)
 
-## Getting started with parser hooks
+## Getting started with Parser Hooks
 
 ### What is hookable?
 
@@ -200,25 +209,26 @@ Hopefully this small example illustrates the power of the hooks system. But alwa
 
 ## Limitations of Parser Hooks
 
-### Async Actions in Hooks
-The parser executes hook handlers synchronously. This is a must have to guarantee synchronicity to the incoming stream data while keeping the parser performant. Actions altering the terminal buffer must not use async code without special preparations.
+- **Async Actions in Hooks**  
+  The parser executes hook handlers synchronously. This is a must have to guarantee synchronicity to the incoming stream data while keeping the parser performant. Actions altering the terminal buffer must not use async code without special preparations.
 
-### Filtering of Parameters
-Some CSI sequences like `SGR` support parameter stacking, where these calls:
-- `SGR 0`
-- `SGR 1`
-- `SGR 2`
+- **Filtering of Parameters**  
+  Some CSI sequences like `SGR` support parameter stacking, where these calls:
 
-whould be equivalent to this single call:
-- `SGR 0 ; 1 ; 2`
+  - `SGR 0`
+  - `SGR 1`
+  - `SGR 2`
 
-In the first case the parser would call 3 times into an `SGR` hook with one parameter, while the latter would create one call with all 3 paramters applied at once. While in the first case a hook can deliberately stop the call propagation for a certain parameter value, it is not possible to do that in the latter case without stopping the other parameters as well. If you run into this edge case, please file an issue to discuss, whether we should implement parameter filtering.
+  whould be equivalent to this single call:
+  - `SGR 0 ; 1 ; 2`
 
-### Reduced Terminal State
-xterm.js exposes only a reduced set of the terminal state via its public API. This is mainly to keep the API as stable and useful as possible without cluttering it too much. If you have an urgent need for some missing bits, please file an issue to discuss this further.
+  In the first case the parser would call 3 times into an `SGR` hook with one parameter, while the latter would create one call with all 3 paramters applied at once. While in the first case a hook can deliberately stop the call propagation for a certain parameter value, it is not possible to do that in the latter case without stopping the other parameters as well. If you run into this edge case, please file an issue to discuss, whether we should implement parameter filtering.
 
-### Payload limits for OSC/DCS
-The OSC and DCS API have a hardcoded payload limit of 10MB to avoid running into out-of-memory issues.
+- **Reduced Terminal State**  
+  xterm.js exposes only a reduced set of the terminal state via its public API. This is mainly to keep the API as stable and useful as possible without cluttering it too much. If you have an urgent need for some missing bits, please file an issue to discuss this further.
+
+- **Payload limits for OSC/DCS**  
+  The OSC and DCS API have a hardcoded payload limit of 10MB to avoid running into out-of-memory issues.
 
 
 
@@ -277,4 +287,4 @@ In the late 70s and early 80s, many vendors came up with different terminal type
 
 With the upcoming of affordable, more capable graphical hardware in the 90s and the wider adoption of GUIs in general, hardware terminals became quickly obsolete. Still POSIX derived operating systems kept their strong affiliation to the command-line interface in the form of terminal emulators running in the GUI.
 
-Prominent early emulator examples are `DECTerm` and `xterm`, which both aimed primarily for DEC VT series compatibility. While `DECTerm` was seen as superior in the beginning in terms of emulated capabilities, `xterm` soon closed the gap, was widely available as a capable open source emulator and eventually became the de-facto standard of VT compatible emulation these days. Despite its age, `xterm` is still under very active development by Thomas E. Dickey ([changelog](https://invisible-island.net/xterm/xterm.log.html)).
+Prominent early emulators of the 80s are `DECTerm` and `xterm`, which both aimed primarily for DEC VT series compatibility. While `DECTerm` was seen as superior in the beginning in terms of emulated capabilities, `xterm` soon closed the gap, was widely available as an open source emulator and eventually became the de-facto standard of VT compatible emulation these days. Despite its age, `xterm` is still under very active development by Thomas E. Dickey ([changelog](https://invisible-island.net/xterm/xterm.log.html)).
