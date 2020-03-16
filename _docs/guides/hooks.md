@@ -116,7 +116,7 @@ const myHook = term.parser.registerCsiHandler({final: 'H'}, params => {
   // fill up to 2 params with default value
   while (params.length < 2) params.push(1);
   // ignore excessive params
-  params = params.slice(2);
+  params = params.slice(0, 2);
   // do some work
   console.log({row: params[0], col: params[1]});
   return false;   // also probe for other handlers
