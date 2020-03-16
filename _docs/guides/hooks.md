@@ -153,6 +153,10 @@ term.write(`\x1b[H`);  // write CUP(1, 1):   --> customCUP --> default
 // register third CUP handler
 const anotherCUP = term.parser.registerCsiHandler({final: 'H'}, params => {...});
 term.write(`\x1b[H`);  // write CUP(1, 1):   --> anotherCUP --> customCUP --> default
+
+// register CUP handler, that stops further processing
+const stopCUP = term.parser.registerCsiHandler({final: 'H'}, params => { ...; return true; });
+term.write(`\x1b[H`);  // write CUP(1, 1):   --> stopCUP
 ```
 
 This makes it possible to intercept terminal sequences in complex ways. Please note, for built-in sequence support you should never skip the default handler execution by returning `true` from your handler, unless you know what you are doing.
@@ -175,10 +179,10 @@ Given you want to be able to send some arbitrary data over to xterm.js and handl
 Let's illustrate this further by a quick example. Given you want to be able send MIDI data over to xterm.js to be output by the browser. Furthermore you want to be able to alter the pitch before outputting it, thus you have basically this abstract function declaration:
 
 ```typescript
-function outputMidi(pitch: number, data: MidiData);
+function outputMidi(pitch: number, payload: MidiData);
 ```
 
-For payload we either need OSC or DCS, as CSI cannot transport it. Now DCS can express positive integer values directly, it might be good enough for us. If `pitch` shall be `float` or allowed to be negative, this might not work anymore and we would have to put `pitch` into the payload as well.
+For payload we either need a sequence type of OSC or DCS, as CSI cannot transport it. Now DCS can express positive integer values as parameters directly, it might be good enough for us. If `pitch` shall be `float` or allowed to be negative, this might not work anymore and we would have to put `pitch` into the payload as well.
 
 If a positive integer is enough, we can get away with this DCS sequence definition:
 
@@ -186,10 +190,13 @@ If a positive integer is enough, we can get away with this DCS sequence definiti
 DCS ? Ps a Pt ST  - play BASE64 encoded midi data in Pt pitched by Ps
 ```
 
-which defines a DCS sequence with the identifier `{prefix: '?', final: 'a'}` to contain one numerical parameter `Ps` and payload in `Pt`. On xterm.js side this can be set up as follows:
+which defines a DCS sequence with the identifier `{prefix: '?', final: 'a'}` to contain one numerical parameter `Ps` and payload in `Pt`. As noted above, selecting a free function identifier is tricky and involves searching through official documentation. To our knowledge a combination of '?' as prefix byte and 'a' as the final byte is not yet taken in DCS. Further note that the allowed bytes are also limited (see API documentation for `IFunctionIdentifier`). Those limits are tested by xterm.js and will throw an error if not respected.
+
+Now on xterm.js side this can be set up as follows:
 
 ```typescript
 const midiHandler = term.registerDcsHandler({prefix: '?', final: 'a'}, (params, data) => {
+  // since params are optional, we have to provide some sane default
   // default: pitch to 440 Hz
   const pitch = params[0] || 440;
   // some midi player you wrote before
