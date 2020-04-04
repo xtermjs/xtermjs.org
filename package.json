@@ -9,7 +9,7 @@
   "scripts": {
     "build:docs": "gulp docs"
   },
-  "dependencies": {
+  "devDependencies": {
     "@types/gulp": "^4.0.6",
     "@types/node": "^6.0.108",
     "fs-extra": "^9.0.0",
