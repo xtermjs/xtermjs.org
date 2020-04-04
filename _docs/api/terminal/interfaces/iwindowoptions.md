@@ -9,10 +9,10 @@ layout: docs
 
 Enable various window manipulation and report features (CSI Ps ; Ps ; Ps t).
 
-Most settings have no default implementation, as they heavily rely on the embedding environment.
+Most settings have no default implementation, as they heavily rely on
+the embedding environment.
 
 To implement a feature, create a custom CSI hook like this:
-
 ```ts
 term.parser.addCsiHandler({final: 't'}, params => {
   const ps = params[0];
@@ -25,283 +25,302 @@ term.parser.addCsiHandler({final: 't'}, params => {
 });
 ```
 
-Note on security: Most features are meant to deal with some information of the host machine where the terminal runs on. This is seen as a security risk possibly leaking sensitive data of the host to the program in the terminal. Therefore all options (even those without a default implementation) are guarded by the boolean flag and disabled by default.
+Note on security:
+Most features are meant to deal with some information of the host machine
+where the terminal runs on. This is seen as a security risk possibly leaking
+sensitive data of the host to the program in the terminal. Therefore all options
+(even those without a default implementation) are guarded by the boolean flag
+and disabled by default.
 
 ## Hierarchy
 
-**IWindowOptions**
+* **IWindowOptions**
 
 ## Index
 
 ### Properties
 
-* [fullscreenWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#fullscreenwin)
-* [getCellSizePixels]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#getcellsizepixels)
-* [getIconTitle]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#geticontitle)
-* [getScreenSizeChars]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#getscreensizechars)
-* [getScreenSizePixels]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#getscreensizepixels)
-* [getWinPosition]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#getwinposition)
-* [getWinSizeChars]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#getwinsizechars)
-* [getWinSizePixels]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#getwinsizepixels)
-* [getWinState]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#getwinstate)
-* [getWinTitle]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#getwintitle)
-* [lowerWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#lowerwin)
-* [maximizeWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#maximizewin)
-* [minimizeWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#minimizewin)
-* [popTitle]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#poptitle)
-* [pushTitle]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#pushtitle)
-* [raiseWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#raisewin)
-* [refreshWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#refreshwin)
-* [restoreWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#restorewin)
-* [setWinLines]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#setwinlines)
-* [setWinPosition]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#setwinposition)
-* [setWinSizeChars]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#setwinsizechars)
-* [setWinSizePixels]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#setwinsizepixels)
-
----
+* [fullscreenWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-fullscreenwin)
+* [getCellSizePixels]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-getcellsizepixels)
+* [getIconTitle]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-geticontitle)
+* [getScreenSizeChars]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-getscreensizechars)
+* [getScreenSizePixels]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-getscreensizepixels)
+* [getWinPosition]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-getwinposition)
+* [getWinSizeChars]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-getwinsizechars)
+* [getWinSizePixels]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-getwinsizepixels)
+* [getWinState]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-getwinstate)
+* [getWinTitle]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-getwintitle)
+* [lowerWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-lowerwin)
+* [maximizeWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-maximizewin)
+* [minimizeWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-minimizewin)
+* [popTitle]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-poptitle)
+* [pushTitle]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-pushtitle)
+* [raiseWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-raisewin)
+* [refreshWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-refreshwin)
+* [restoreWin]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-restorewin)
+* [setWinLines]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-setwinlines)
+* [setWinPosition]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-setwinposition)
+* [setWinSizeChars]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-setwinsizechars)
+* [setWinSizePixels]({% link _docs/api/terminal/interfaces/iwindowoptions.md %}#optional-setwinsizepixels)
 
 ## Properties
 
-<a id="fullscreenwin"></a>
+### `Optional` fullscreenWin
 
-### `<Optional>` fullscreenWin
-
-**● fullscreenWin**: *`boolean`*
+• **fullscreenWin**? : *boolean*
 
 *Defined in [xterm.d.ts:473](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L473)*
 
-Ps=10 ; 0 Undo full-screen mode. Ps=10 ; 1 Change to full-screen. Ps=10 ; 2 Toggle full-screen. No default implementation.
+Ps=10 ; 0  Undo full-screen mode.
+Ps=10 ; 1  Change to full-screen.
+Ps=10 ; 2  Toggle full-screen.
+No default implementation.
 
 ___
-<a id="getcellsizepixels"></a>
 
-### `<Optional>` getCellSizePixels
+### `Optional` getCellSizePixels
 
-**● getCellSizePixels**: *`boolean`*
+• **getCellSizePixels**? : *boolean*
 
 *Defined in [xterm.d.ts:501](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L501)*
 
-Ps=16 Report xterm character cell size in pixels. Result is "CSI 6 ; height ; width t". Has a default implementation.
+Ps=16  Report xterm character cell size in pixels. Result is "CSI 6 ; height ; width t".
+Has a default implementation.
 
 ___
-<a id="geticontitle"></a>
 
-### `<Optional>` getIconTitle
+### `Optional` getIconTitle
 
-**● getIconTitle**: *`boolean`*
+• **getIconTitle**? : *boolean*
 
 *Defined in [xterm.d.ts:516](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L516)*
 
-Ps=20 Report xterm window's icon label. Result is "OSC L label ST". No default implementation.
+Ps=20  Report xterm window's icon label. Result is "OSC L label ST".
+No default implementation.
 
 ___
-<a id="getscreensizechars"></a>
 
-### `<Optional>` getScreenSizeChars
+### `Optional` getScreenSizeChars
 
-**● getScreenSizeChars**: *`boolean`*
+• **getScreenSizeChars**? : *boolean*
 
 *Defined in [xterm.d.ts:511](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L511)*
 
-Ps=19 Report the size of the screen in characters. Result is "CSI 9 ; height ; width t". No default implementation.
+Ps=19  Report the size of the screen in characters. Result is "CSI 9 ; height ; width t".
+No default implementation.
 
 ___
-<a id="getscreensizepixels"></a>
 
-### `<Optional>` getScreenSizePixels
+### `Optional` getScreenSizePixels
 
-**● getScreenSizePixels**: *`boolean`*
+• **getScreenSizePixels**? : *boolean*
 
 *Defined in [xterm.d.ts:496](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L496)*
 
-Ps=15 Report size of the screen in pixels. Result is "CSI 5 ; height ; width t". No default implementation.
+Ps=15    Report size of the screen in pixels. Result is "CSI 5 ; height ; width t".
+No default implementation.
 
 ___
-<a id="getwinposition"></a>
 
-### `<Optional>` getWinPosition
+### `Optional` getWinPosition
 
-**● getWinPosition**: *`boolean`*
+• **getWinPosition**? : *boolean*
 
 *Defined in [xterm.d.ts:485](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L485)*
 
-Ps=13 Report xterm window position. Result is "CSI 3 ; x ; y t". Ps=13 ; 2 Report xterm text-area position. Result is "CSI 3 ; x ; y t". No default implementation.
+Ps=13      Report xterm window position. Result is "CSI 3 ; x ; y t".
+Ps=13 ; 2  Report xterm text-area position. Result is "CSI 3 ; x ; y t".
+No default implementation.
 
 ___
-<a id="getwinsizechars"></a>
 
-### `<Optional>` getWinSizeChars
+### `Optional` getWinSizeChars
 
-**● getWinSizeChars**: *`boolean`*
+• **getWinSizeChars**? : *boolean*
 
 *Defined in [xterm.d.ts:506](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L506)*
 
-Ps=18 Report the size of the text area in characters. Result is "CSI 8 ; height ; width t". Has a default implementation.
+Ps=18  Report the size of the text area in characters. Result is "CSI 8 ; height ; width t".
+Has a default implementation.
 
 ___
-<a id="getwinsizepixels"></a>
 
-### `<Optional>` getWinSizePixels
+### `Optional` getWinSizePixels
 
-**● getWinSizePixels**: *`boolean`*
+• **getWinSizePixels**? : *boolean*
 
 *Defined in [xterm.d.ts:491](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L491)*
 
-Ps=14 Report xterm text area size in pixels. Result is "CSI 4 ; height ; width t". Ps=14 ; 2 Report xterm window size in pixels. Result is "CSI 4 ; height ; width t". Has a default implementation.
+Ps=14      Report xterm text area size in pixels. Result is "CSI 4 ; height ; width t".
+Ps=14 ; 2  Report xterm window size in pixels. Result is "CSI  4 ; height ; width t".
+Has a default implementation.
 
 ___
-<a id="getwinstate"></a>
 
-### `<Optional>` getWinState
+### `Optional` getWinState
 
-**● getWinState**: *`boolean`*
+• **getWinState**? : *boolean*
 
 *Defined in [xterm.d.ts:479](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L479)*
 
-Ps=11 Report xterm window state. If the xterm window is non-iconified, it returns "CSI 1 t". If the xterm window is iconified, it returns "CSI 2 t". No default implementation.
+Ps=11   Report xterm window state.
+If the xterm window is non-iconified, it returns "CSI 1 t".
+If the xterm window is iconified, it returns "CSI 2 t".
+No default implementation.
 
 ___
-<a id="getwintitle"></a>
 
-### `<Optional>` getWinTitle
+### `Optional` getWinTitle
 
-**● getWinTitle**: *`boolean`*
+• **getWinTitle**? : *boolean*
 
 *Defined in [xterm.d.ts:521](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L521)*
 
-Ps=21 Report xterm window's title. Result is "OSC l label ST". No default implementation.
+Ps=21  Report xterm window's title. Result is "OSC l label ST".
+No default implementation.
 
 ___
-<a id="lowerwin"></a>
 
-### `<Optional>` lowerWin
+### `Optional` lowerWin
 
-**● lowerWin**: *`boolean`*
+• **lowerWin**? : *boolean*
 
 *Defined in [xterm.d.ts:448](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L448)*
 
-Ps=6 Lower the xterm window to the bottom of the stacking order. No default implementation.
+Ps=6    Lower the xterm window to the bottom of the stacking order.
+No default implementation.
 
 ___
-<a id="maximizewin"></a>
 
-### `<Optional>` maximizeWin
+### `Optional` maximizeWin
 
-**● maximizeWin**: *`boolean`*
+• **maximizeWin**? : *boolean*
 
 *Defined in [xterm.d.ts:466](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L466)*
 
-Ps=9 ; 0 Restore maximized window. Ps=9 ; 1 Maximize window (i.e., resize to screen size). Ps=9 ; 2 Maximize window vertically. Ps=9 ; 3 Maximize window horizontally. No default implementation.
+Ps=9 ; 0   Restore maximized window.
+Ps=9 ; 1   Maximize window (i.e., resize to screen size).
+Ps=9 ; 2   Maximize window vertically.
+Ps=9 ; 3   Maximize window horizontally.
+No default implementation.
 
 ___
-<a id="minimizewin"></a>
 
-### `<Optional>` minimizeWin
+### `Optional` minimizeWin
 
-**● minimizeWin**: *`boolean`*
+• **minimizeWin**? : *boolean*
 
 *Defined in [xterm.d.ts:424](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L424)*
 
-Ps=2 Iconify window. No default implementation.
+Ps=2    Iconify window.
+No default implementation.
 
 ___
-<a id="poptitle"></a>
 
-### `<Optional>` popTitle
+### `Optional` popTitle
 
-**● popTitle**: *`boolean`*
+• **popTitle**? : *boolean*
 
 *Defined in [xterm.d.ts:535](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L535)*
 
-Ps=23 ; 0 Restore xterm icon and window title from stack. Ps=23 ; 1 Restore xterm icon title from stack. Ps=23 ; 2 Restore xterm window title from stack. All variants have a default implementation.
+Ps=23 ; 0  Restore xterm icon and window title from stack.
+Ps=23 ; 1  Restore xterm icon title from stack.
+Ps=23 ; 2  Restore xterm window title from stack.
+All variants have a default implementation.
 
 ___
-<a id="pushtitle"></a>
 
-### `<Optional>` pushTitle
+### `Optional` pushTitle
 
-**● pushTitle**: *`boolean`*
+• **pushTitle**? : *boolean*
 
 *Defined in [xterm.d.ts:528](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L528)*
 
-Ps=22 ; 0 Save xterm icon and window title on stack. Ps=22 ; 1 Save xterm icon title on stack. Ps=22 ; 2 Save xterm window title on stack. All variants have a default implementation.
+Ps=22 ; 0  Save xterm icon and window title on stack.
+Ps=22 ; 1  Save xterm icon title on stack.
+Ps=22 ; 2  Save xterm window title on stack.
+All variants have a default implementation.
 
 ___
-<a id="raisewin"></a>
 
-### `<Optional>` raiseWin
+### `Optional` raiseWin
 
-**● raiseWin**: *`boolean`*
+• **raiseWin**? : *boolean*
 
 *Defined in [xterm.d.ts:443](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L443)*
 
-Ps=5 Raise the window to the front of the stacking order. No default implementation.
+Ps=5    Raise the window to the front of the stacking order.
+No default implementation.
 
 ___
-<a id="refreshwin"></a>
 
-### `<Optional>` refreshWin
+### `Optional` refreshWin
 
-**● refreshWin**: *`boolean`*
+• **refreshWin**? : *boolean*
 
 *Defined in [xterm.d.ts:450](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L450)*
 
-Ps=7 Refresh the window.
+Ps=7    Refresh the window.
 
 ___
-<a id="restorewin"></a>
 
-### `<Optional>` restoreWin
+### `Optional` restoreWin
 
-**● restoreWin**: *`boolean`*
+• **restoreWin**? : *boolean*
 
 *Defined in [xterm.d.ts:419](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L419)*
 
-Ps=1 De-iconify window. No default implementation.
+Ps=1    De-iconify window.
+No default implementation.
 
 ___
-<a id="setwinlines"></a>
 
-### `<Optional>` setWinLines
+### `Optional` setWinLines
 
-**● setWinLines**: *`boolean`*
+• **setWinLines**? : *boolean*
 
 *Defined in [xterm.d.ts:541](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L541)*
 
-Ps>=24 Resize to Ps lines (DECSLPP). DECSLPP is not implemented. This settings is also used to enable / disable DECCOLM (earlier variant of DECSLPP).
+Ps>=24  Resize to Ps lines (DECSLPP).
+DECSLPP is not implemented. This settings is also used to
+enable / disable DECCOLM (earlier variant of DECSLPP).
 
 ___
-<a id="setwinposition"></a>
 
-### `<Optional>` setWinPosition
+### `Optional` setWinPosition
 
-**● setWinPosition**: *`boolean`*
+• **setWinPosition**? : *boolean*
 
 *Defined in [xterm.d.ts:430](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L430)*
 
-Ps=3 ; x ; y Move window to \[x, y\]. No default implementation.
+Ps=3 ; x ; y
+Move window to [x, y].
+No default implementation.
 
 ___
-<a id="setwinsizechars"></a>
 
-### `<Optional>` setWinSizeChars
+### `Optional` setWinSizeChars
 
-**● setWinSizeChars**: *`boolean`*
+• **setWinSizeChars**? : *boolean*
 
 *Defined in [xterm.d.ts:458](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L458)*
 
-Ps = 8 ; height ; width Resize the text area to given height and width in characters. Omitted parameters should reuse the current height or width. Zero parameters use the display's height or width. No default implementation.
+Ps = 8 ; height ; width
+Resize the text area to given height and width in characters.
+Omitted parameters should reuse the current height or width.
+Zero parameters use the display's height or width.
+No default implementation.
 
 ___
-<a id="setwinsizepixels"></a>
 
-### `<Optional>` setWinSizePixels
+### `Optional` setWinSizePixels
 
-**● setWinSizePixels**: *`boolean`*
+• **setWinSizePixels**? : *boolean*
 
 *Defined in [xterm.d.ts:438](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L438)*
 
-Ps = 4 ; height ; width Resize the window to given `height` and `width` in pixels. Omitted parameters should reuse the current height or width. Zero parameters should use the display's height or width. No default implementation.
-
-___
-
+Ps = 4 ; height ; width
+Resize the window to given `height` and `width` in pixels.
+Omitted parameters should reuse the current height or width.
+Zero parameters should use the display's height or width.
+No default implementation.

@@ -11,11 +11,11 @@ An object that can be disposed via a dispose function.
 
 ## Hierarchy
 
-**IDisposable**
+* **IDisposable**
 
-↳  [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
+  ↳ [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
 
-↳  [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})
+  ↳ [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})
 
 ## Implemented by
 
@@ -27,19 +27,12 @@ An object that can be disposed via a dispose function.
 
 * [dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)
 
----
-
 ## Methods
-
-<a id="dispose"></a>
 
 ###  dispose
 
-▸ **dispose**(): `void`
+▸ **dispose**(): *void*
 
 *Defined in [xterm.d.ts:338](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L338)*
 
-**Returns:** `void`
-
-___
-
+**Returns:** *void*

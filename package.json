@@ -16,6 +16,6 @@
     "gulp": "^4.0.2",
     "gulp-typedoc": "^2.2.4",
     "typedoc": "^0.15.0",
-    "typedoc-plugin-markdown": "1.2"
+    "typedoc-plugin-markdown": "^2.2.17"
   }
 }

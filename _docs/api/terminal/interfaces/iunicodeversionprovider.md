@@ -7,11 +7,12 @@ layout: docs
 
 # Interface: IUnicodeVersionProvider
 
-(EXPERIMENTAL) Unicode version provider. Used to register custom Unicode versions with `Terminal.unicode.register`.
+(EXPERIMENTAL) Unicode version provider.
+Used to register custom Unicode versions with `Terminal.unicode.register`.
 
 ## Hierarchy
 
-**IUnicodeVersionProvider**
+* **IUnicodeVersionProvider**
 
 ## Index
 
@@ -23,29 +24,21 @@ layout: docs
 
 * [wcwidth]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %}#wcwidth)
 
----
-
 ## Properties
-
-<a id="version"></a>
 
 ###  version
 
-**● version**: *`string`*
+• **version**: *string*
 
 *Defined in [xterm.d.ts:1392](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1392)*
 
 String indicating the Unicode version provided.
 
-___
-
 ## Methods
-
-<a id="wcwidth"></a>
 
 ###  wcwidth
 
-▸ **wcwidth**(codepoint: *`number`*): `0` \| `1` \| `2`
+▸ **wcwidth**(`codepoint`: number): *0 | 1 | 2*
 
 *Defined in [xterm.d.ts:1397](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1397)*
 
@@ -53,11 +46,8 @@ Unicode version dependent wcwidth implementation.
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| codepoint | `number` |
+Name | Type |
+------ | ------ |
+`codepoint` | number |
 
-**Returns:** `0` \| `1` \| `2`
-
-___
-
+**Returns:** *0 | 1 | 2*
