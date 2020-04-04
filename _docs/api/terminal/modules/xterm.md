@@ -7,9 +7,12 @@ layout: docs
 
 # Module: "xterm"
 
-*__license__*: MIT
+**`license`** MIT
 
-This contains the type declarations for the xterm.js library. Note that some interfaces differ between this file and the actual implementation in src/, that's because this file declares the _public_ API which is intended to be stable and consumed by external programs.
+This contains the type declarations for the xterm.js library. Note that
+some interfaces differ between this file and the actual implementation in
+src/, that's because this file declares the *public* API which is intended
+to be stable and consumed by external programs.
 
 ## Index
 
@@ -45,41 +48,32 @@ This contains the type declarations for the xterm.js library. Note that some int
 * [LogLevel]({% link _docs/api/terminal/modules/xterm.md %}#loglevel)
 * [RendererType]({% link _docs/api/terminal/modules/xterm.md %}#renderertype)
 
----
-
 ## Type aliases
-
-<a id="fontweight"></a>
 
 ###  FontWeight
 
-**Ƭ FontWeight**: *"normal" \| "bold" \| "100" \| "200" \| "300" \| "400" \| "500" \| "600" \| "700" \| "800" \| "900"*
+Ƭ **FontWeight**: *"normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900"*
 
 *Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L16)*
 
 A string representing text font weight.
 
 ___
-<a id="loglevel"></a>
 
 ###  LogLevel
 
-**Ƭ LogLevel**: *"debug" \| "info" \| "warn" \| "error" \| "off"*
+Ƭ **LogLevel**: *"debug" | "info" | "warn" | "error" | "off"*
 
 *Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L21)*
 
 A string representing log level.
 
 ___
-<a id="renderertype"></a>
 
 ###  RendererType
 
-**Ƭ RendererType**: *"dom" \| "canvas"*
+Ƭ **RendererType**: *"dom" | "canvas"*
 
 *Defined in [xterm.d.ts:26](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L26)*
 
 A string representing a renderer type.
-
-___
-
