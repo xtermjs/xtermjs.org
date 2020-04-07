@@ -43,7 +43,7 @@ To work with parser hooks correctly it is important to understand, how and when 
     - For every sequence type the parser maintains a list of attached handlers. They are probed in reverse registering order until one returned `true` or the list was exhausted.
     - A sequence handler does the state transformation on the terminal object (mainly involves terminal buffer content changes and cursor updates).
 
-    When the parser has finished processing a single chunk, the callback given to the `write` call gets triggered to indicate, that this particular chunk was finally processed and the chunk data gets eventually discarded. So far no screen updates have happened.
+    When the parser has finished processing a single chunk, the callback given to the `write` call gets triggered to indicate that this particular chunk was finally processed and the data gets eventually discarded. So far no screen updates have happened.
 
     **Note:** The whole parsing and state manipulation process is synchronous to a position in a chunk of data and cannot be interupted. This is important to note and limits the possibilities to postpone heavy work from within a sequence handler. If you have to do use async interfaces, keep in mind that the terminal state will have progressed by the time the async call gets executed.
 
@@ -55,7 +55,7 @@ To work with parser hooks correctly it is important to understand, how and when 
 
 **Takeaway**:
   - Parser hooks should only contain synchronous code.
-  - Parser hooks should return a truish value, if a sequence was successfully handled and no further processing shall happen.
+  - Parser hooks should return whether a sequence was successfully handled and no further processing shall happen.
   - Parser hooks are blocking, the terminal state will not mutate by any other actions during their invocation.
   - Assumptions about the terminal state are only valid within a single hook invocation.
   - Parser hooks should finish quickly to not slow down input processing too much.
@@ -171,7 +171,7 @@ Before doing this, it is important to note, that a custom terminal sequence will
 Given you want to be able to send some arbitrary data over to xterm.js and handle it in a certain way, these are the steps to achieve that:
 
 - Find a suitable sequence type to carry your data.  
-  In general CSI sequences are only useful to carry positive integer parameters up to a certain size and length. In xterm.js they are limited to 32 16-bit parameters. OSC and DCS sequences are defined as ASCII string types, thus allow to carry any ASCII printable characters as payload, which makes them useful for BASE64 encoded binary data transport. Main difference between OCS and DCS is the fact, that DCS additionally supports numercial parameters in the same fashion as CSI sequences do. 
+  In general CSI sequences are only useful to carry positive integer parameters up to a certain size and length. In xterm.js they are limited to 32 32-bit parameters (up to 2³¹ - 1). OSC and DCS sequences are defined as ASCII string types, thus allow to carry any ASCII printable characters as payload, which makes them useful for BASE64 encoded binary data transport. Main difference between OCS and DCS is the fact, that DCS additionally supports numercial parameters in the same fashion as CSI sequences do. **Caveat** If you use OSC/DCS sequences to transport arbitrary or string data, always treat the data as untrusted on emulator side that might need further sanitizing before doing any further processing.
 - Consult [ECMA-48](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-048.pdf) and [DEC STD 070](https://ia801903.us.archive.org/16/items/bitsavers_decstandar0VideoSystemsReferenceManualDec91_74264381/EL-SM070-00_DEC_STD_070_Video_Systems_Reference_Manual_Dec91.pdf) to find a free function identifier.  
   This is important to not clash with any other existing predefined function. Sadly there is no good unified ressource about pre-taken function identifiers across common terminal emulators. If in doubt, also consult their documentation. As a rule of thumb - resort to private area for CSI (see ECMA-48, watch out for DEC privates) or take a rather high number (>1000) for an OSC function.
 - Create a hook to digest the data.
@@ -199,8 +199,13 @@ const midiHandler = term.registerDcsHandler({prefix: '?', final: 'a'}, (params, 
   // since params are optional, we have to provide some sane default
   // default: pitch to 440 Hz
   const pitch = params[0] || 440;
-  // some midi player you wrote before
-  midiPlayer.play(pitch, atob(data));   
+  // convert BASE64 string back to your midi format
+  const midiData = convertB64ToMidi(data);
+  // sanity checks (never skip that step, as the data might be malicious)
+  if (isValidData(midiData)) {
+    // some midi player you wrote before
+    midiPlayer.play(pitch, atob(data));
+  }  
 });
 ```
 
@@ -211,7 +216,9 @@ process.stdout.write(`\x1bP?${pitch}a${binaryMidiData.toString('base64')}\x1b\\`
 process.stdout.write(`\x1bP?a${binaryMidiData.toString('base64')}\x1b\\`);  // default pitch of 440 Hz
 ```
 
-Hopefully this small example illustrates the power of the hooks system. But always keep in mind, that extending xterm.js this way will make your program incompatible with other terminal emulators. Still a well thought-out extension might find its way into other emulators, if it is seen as a useful extension to the terminal interface in general.
+Hopefully this small example illustrates the power of the hooks system. It makes xterm.js a great playground for experimenting with new terminal features by utilizing the npm ecosystem, which might help to get terminals out of the dusty corner of hardly noticed, yet very helpful everyday utilities.
+
+For production usage always keep in mind, that extending xterm.js this way will make your program incompatible with other terminal emulators. Still a well thought-out extension might find its way into other emulators, if it is seen as a useful extension to the terminal interface in general.
 
 
 ## Limitations of Parser Hooks
