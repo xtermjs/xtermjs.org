@@ -7,13 +7,13 @@ The following guide gives a short overview on how to extend xterm.js' functional
 
 ### Contents
 - [Getting started with Parser Hooks](#getting-started-with-parser-hooks)
-  * [What is hookable?](#what-is-hookable-)
-  * [Lifecycle / Execution Context of Parser Hooks](#lifecycle---execution-context-of-parser-hooks)
+  * [What is hookable?](#what-is-hookable)
+  * [Lifecycle / Execution Context of Parser Hooks](#lifecycle--execution-context-of-parser-hooks)
   * [Simple Hook Example](#simple-hook-example)
   * [Return Value and Execution Order](#return-value-and-execution-order)
 - [Custom Terminal Sequences](#custom-terminal-sequences)
 - [Limitations of Parser Hooks](#limitations-of-parser-hooks)
-- [Background - What are Terminal Sequences?](#background---what-are-terminal-sequences-)
+- [Background - What are Terminal Sequences?](#background---what-are-terminal-sequences)
 
 ## Getting started with Parser Hooks
 
