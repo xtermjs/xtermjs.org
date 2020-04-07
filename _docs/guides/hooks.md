@@ -274,8 +274,8 @@ Used as end-of-file marker (EOF) under POSIX (exiting a foreground process).
 
 With the upcoming of the more capable video terminals in the early 70s there was the need to handle new features that could not be controlled by a single byte anymore, which eventually led to the specification of longer sequences spanning multiple bytes (ECMA-48, first release in 1976, with several revisions up to 1991):
 - **ESC - ESCAPE**
-  - common form: `ESC <optional prefix byte> <optional intermediate byte> <final byte>`
-  - usage: simple control functions without further params (similar to C0/C1)
+  - common form: `ESC <optional intermediate bytes> <final byte>`
+  - usage: simple control functions without further params (similar to C0/C1, further subspecified by ECMA-35)
 - **CSI - CONTROL SEQUENCE INTRODUCER**
   - common form: `CSI <optional prefix byte> P1 ; P2 ; ... <optional intermediate bytes> <final byte>`
   - usage: control functions with numerical params (P1, P2, ...)
@@ -286,7 +286,8 @@ With the upcoming of the more capable video terminals in the early 70s there was
 - **DCS - DEVICE CONTROL STRING**
   - common form: `DCS <optional prefix byte> P1 ; P2 ; ... <optional intermediate bytes> <final byte> <payload> ST`
   - control functions meant to deal with the device (the terminal itself), with string payload (printables)
-- **APM/SOS/PM** (skipped here, since mostly unsupported by common emulators)
+  - note: The form listed here is adopted from DEC, while ECMA-48 does not specify the inner structure of DCS commands.
+- **APC/SOS/PM** (skipped here, since mostly unsupported by common emulators)
 
 These sequences are known as "ANSI escape sequences" (they all start with the escape control code `ESC` in 7-bit mode and were adopted by ANSI in 1979). They build the foundation of most control functions of a terminal along with the older C0/C1 control codes.
 
