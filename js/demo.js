@@ -20,19 +20,21 @@ $(function () {
         term.writeln('');
         prompt(term);
 
-        term.onKey(e => {
-            const printable = !e.domEvent.altKey && !e.domEvent.altGraphKey && !e.domEvent.ctrlKey && !e.domEvent.metaKey;
-
-            if (e.domEvent.keyCode === 13) {
-                prompt(term);
-            } else if (e.domEvent.keyCode === 8) {
-                // Do not delete the prompt
-                if (term._core.buffer.x > 2) {
-                    term.write('\b \b');
-                }
-            } else if (printable) {
-                term.write(e.key);
-            }
+        term.onData(e => {
+          switch (e) {
+            case '\r': // Enter
+            case '\u0003': // Ctrl+C
+              prompt(term);
+              break;
+            case '\u007F': // Backspace (DEL)
+              // Do not delete the prompt
+              if (term._core.buffer.x > 2) {
+                term.write('\b \b');
+              }
+              break;
+            default: // Print all other characters for demo
+              term.write(e);
+          }
         });
     }
 
