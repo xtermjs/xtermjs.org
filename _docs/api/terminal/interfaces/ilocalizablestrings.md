@@ -11,7 +11,7 @@ The set of localizable strings.
 
 ## Hierarchy
 
-**ILocalizableStrings**
+* **ILocalizableStrings**
 
 ## Index
 
@@ -20,30 +20,23 @@ The set of localizable strings.
 * [promptLabel]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %}#promptlabel)
 * [tooMuchOutput]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %}#toomuchoutput)
 
----
-
 ## Properties
-
-<a id="promptlabel"></a>
 
 ###  promptLabel
 
-**● promptLabel**: *`string`*
+• **promptLabel**: *string*
 
-*Defined in [xterm.d.ts:368](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L368)*
+*Defined in [xterm.d.ts:379](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L379)*
 
 The aria label for the underlying input textarea for the terminal.
 
 ___
-<a id="toomuchoutput"></a>
 
 ###  tooMuchOutput
 
-**● tooMuchOutput**: *`string`*
+• **tooMuchOutput**: *string*
 
-*Defined in [xterm.d.ts:374](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L374)*
+*Defined in [xterm.d.ts:385](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L385)*
 
-Announcement for when line reading is suppressed due to too many lines being printed to the terminal when `screenReaderMode` is enabled.
-
-___
-
+Announcement for when line reading is suppressed due to too many lines
+being printed to the terminal when `screenReaderMode` is enabled.

@@ -18,6 +18,6 @@ bundle exec jekyll serve
 ## Update API documentation
 
 ```bash
-npm install
+yarn
 ./bin/update-docs
 ```

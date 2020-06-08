@@ -11,129 +11,128 @@ An object containing options for a link matcher.
 
 ## Hierarchy
 
-**ILinkMatcherOptions**
+* **ILinkMatcherOptions**
 
 ## Index
 
 ### Properties
 
-* [leaveCallback]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#leavecallback)
-* [matchIndex]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#matchindex)
-* [priority]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#priority)
-* [tooltipCallback]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#tooltipcallback)
-* [validationCallback]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#validationcallback)
-* [willLinkActivate]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#willlinkactivate)
-
----
+* [leaveCallback]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#optional-leavecallback)
+* [matchIndex]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#optional-matchindex)
+* [priority]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#optional-priority)
+* [tooltipCallback]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#optional-tooltipcallback)
+* [validationCallback]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#optional-validationcallback)
+* [willLinkActivate]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %}#optional-willlinkactivate)
 
 ## Properties
 
-<a id="leavecallback"></a>
+### `Optional` leaveCallback
 
-### `<Optional>` leaveCallback
+• **leaveCallback**? : *function*
 
-**● leaveCallback**: *`function`*
+*Defined in [xterm.d.ts:316](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L316)*
 
-*Defined in [xterm.d.ts:305](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L305)*
+A callback that fires when the mouse leaves a link. Note that this can
+happen even when tooltipCallback hasn't fired for the link yet.
 
-A callback that fires when the mouse leaves a link. Note that this can happen even when tooltipCallback hasn't fired for the link yet.
+#### Type declaration:
 
-#### Type declaration
-▸(): `void`
-
-**Returns:** `void`
+▸ (): *void*
 
 ___
-<a id="matchindex"></a>
 
-### `<Optional>` matchIndex
+### `Optional` matchIndex
 
-**● matchIndex**: *`number`*
+• **matchIndex**? : *number*
 
-*Defined in [xterm.d.ts:288](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L288)*
+*Defined in [xterm.d.ts:299](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L299)*
 
-The index of the link from the regex.match(text) call. This defaults to 0 (for regular expressions without capture groups).
-
-___
-<a id="priority"></a>
-
-### `<Optional>` priority
-
-**● priority**: *`number`*
-
-*Defined in [xterm.d.ts:312](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L312)*
-
-The priority of the link matcher, this defines the order in which the link matcher is evaluated relative to others, from highest to lowest. The default value is 0.
+The index of the link from the regex.match(text) call. This defaults to 0
+(for regular expressions without capture groups).
 
 ___
-<a id="tooltipcallback"></a>
 
-### `<Optional>` tooltipCallback
+### `Optional` priority
 
-**● tooltipCallback**: *`function`*
+• **priority**? : *number*
 
-*Defined in [xterm.d.ts:299](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L299)*
+*Defined in [xterm.d.ts:323](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L323)*
+
+The priority of the link matcher, this defines the order in which the
+link matcher is evaluated relative to others, from highest to lowest. The
+default value is 0.
+
+___
+
+### `Optional` tooltipCallback
+
+• **tooltipCallback**? : *function*
+
+*Defined in [xterm.d.ts:310](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L310)*
 
 A callback that fires when the mouse hovers over a link for a moment.
 
-#### Type declaration
-▸(event: *`MouseEvent`*, uri: *`string`*, location: *[IViewportRange]({% link _docs/api/terminal/interfaces/iviewportrange.md %})*): `boolean` \| `void`
+#### Type declaration:
+
+▸ (`event`: MouseEvent, `uri`: string, `location`: [IViewportRange]({% link _docs/api/terminal/interfaces/iviewportrange.md %})): *boolean | void*
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| event | `MouseEvent` |
-| uri | `string` |
-| location | [IViewportRange]({% link _docs/api/terminal/interfaces/iviewportrange.md %}) |
-
-**Returns:** `boolean` \| `void`
+Name | Type |
+------ | ------ |
+`event` | MouseEvent |
+`uri` | string |
+`location` | [IViewportRange]({% link _docs/api/terminal/interfaces/iviewportrange.md %}) |
 
 ___
-<a id="validationcallback"></a>
 
-### `<Optional>` validationCallback
+### `Optional` validationCallback
 
-**● validationCallback**: *`function`*
+• **validationCallback**? : *function*
 
-*Defined in [xterm.d.ts:294](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L294)*
+*Defined in [xterm.d.ts:305](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L305)*
 
-A callback that validates whether to create an individual link, pass whether the link is valid to the callback.
+A callback that validates whether to create an individual link, pass
+whether the link is valid to the callback.
 
-#### Type declaration
-▸(uri: *`string`*, callback: *`function`*): `void`
+#### Type declaration:
+
+▸ (`uri`: string, `callback`: function): *void*
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| uri | `string` |
-| callback | `function` |
+▪ **uri**: *string*
 
-**Returns:** `void`
+▪ **callback**: *function*
 
-___
-<a id="willlinkactivate"></a>
-
-### `<Optional>` willLinkActivate
-
-**● willLinkActivate**: *`function`*
-
-*Defined in [xterm.d.ts:320](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L320)*
-
-A callback that fires when the mousedown and click events occur that determines whether a link will be activated upon click. This enables only activating a link when a certain modifier is held down, if not the mouse event will continue propagation (eg. double click to select word).
-
-#### Type declaration
-▸(event: *`MouseEvent`*, uri: *`string`*): `boolean`
+▸ (`isValid`: boolean): *void*
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| event | `MouseEvent` |
-| uri | `string` |
-
-**Returns:** `boolean`
+Name | Type |
+------ | ------ |
+`isValid` | boolean |
 
 ___
 
+### `Optional` willLinkActivate
+
+• **willLinkActivate**? : *function*
+
+*Defined in [xterm.d.ts:331](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L331)*
+
+A callback that fires when the mousedown and click events occur that
+determines whether a link will be activated upon click. This enables
+only activating a link when a certain modifier is held down, if not the
+mouse event will continue propagation (eg. double click to select word).
+
+#### Type declaration:
+
+▸ (`event`: MouseEvent, `uri`: string): *boolean*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`event` | MouseEvent |
+`uri` | string |

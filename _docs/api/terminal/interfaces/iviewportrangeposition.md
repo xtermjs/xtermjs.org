@@ -11,7 +11,7 @@ An object representing a cell position within the viewport of the terminal.
 
 ## Hierarchy
 
-**IViewportRangePosition**
+* **IViewportRangePosition**
 
 ## Index
 
@@ -20,30 +20,27 @@ An object representing a cell position within the viewport of the terminal.
 * [x]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %}#x)
 * [y]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %}#y)
 
----
-
 ## Properties
-
-<a id="x"></a>
 
 ###  x
 
-**● x**: *`number`*
+• **x**: *number*
 
-*Defined in [xterm.d.ts:911](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L911)*
+*Defined in [xterm.d.ts:1067](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1067)*
 
-The x position of the cell. This is a 0-based index that refers to the space in between columns, not the column itself. Index 0 refers to the left side of the viewport, index `Terminal.cols` refers to the right side of the viewport. This can be thought of as how a cursor is positioned in a text editor.
+The x position of the cell. This is a 0-based index that refers to the
+space in between columns, not the column itself. Index 0 refers to the
+left side of the viewport, index `Terminal.cols` refers to the right side
+of the viewport. This can be thought of as how a cursor is positioned in
+a text editor.
 
 ___
-<a id="y"></a>
 
 ###  y
 
-**● y**: *`number`*
+• **y**: *number*
 
-*Defined in [xterm.d.ts:917](https://github.com/xtermjs/xterm.js/blob/4.3.0/typings/xterm.d.ts#L917)*
+*Defined in [xterm.d.ts:1073](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1073)*
 
-The y position of the cell. This is a 0-based index that refers to a specific row.
-
-___
-
+The y position of the cell. This is a 0-based index that refers to a
+specific row.
