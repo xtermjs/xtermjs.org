@@ -5,9 +5,6 @@ This repository hosts the code for http://xtermjs.org.
 You need [ruby](https://www.ruby-lang.org) and [bundler](https://bundler.io) installed first.
 
 ```bash
-# Required by nokogiri
-sudo apt-get install zlib1g-dev
-
 # Install dependencies
 bundle install
 
