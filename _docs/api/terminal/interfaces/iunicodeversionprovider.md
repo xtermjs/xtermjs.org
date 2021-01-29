@@ -30,7 +30,7 @@ Used to register custom Unicode versions with `Terminal.unicode.register`.
 
 • **version**: *string*
 
-*Defined in [xterm.d.ts:1392](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1392)*
+*Defined in [xterm.d.ts:1579](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1579)*
 
 String indicating the Unicode version provided.
 
@@ -40,7 +40,7 @@ String indicating the Unicode version provided.
 
 ▸ **wcwidth**(`codepoint`: number): *0 | 1 | 2*
 
-*Defined in [xterm.d.ts:1397](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1397)*
+*Defined in [xterm.d.ts:1584](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1584)*
 
 Unicode version dependent wcwidth implementation.
 
