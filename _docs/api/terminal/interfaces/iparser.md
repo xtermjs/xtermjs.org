@@ -28,7 +28,7 @@ Allows hooking into the parser for custom handling of escape sequences.
 
 ▸ **registerCsiHandler**(`id`: [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}), `callback`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:1331](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1331)*
+*Defined in [xterm.d.ts:1518](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1518)*
 
 Adds a handler for CSI escape sequences.
 
@@ -66,7 +66,7 @@ ___
 
 ▸ **registerDcsHandler**(`id`: [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}), `callback`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:1350](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1350)*
+*Defined in [xterm.d.ts:1537](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1537)*
 
 Adds a handler for DCS escape sequences.
 
@@ -110,7 +110,7 @@ ___
 
 ▸ **registerEscHandler**(`id`: [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}), `handler`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:1363](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1363)*
+*Defined in [xterm.d.ts:1550](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1550)*
 
 Adds a handler for ESC escape sequences.
 
@@ -136,7 +136,7 @@ ___
 
 ▸ **registerOscHandler**(`ident`: number, `callback`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:1381](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1381)*
+*Defined in [xterm.d.ts:1568](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1568)*
 
 Adds a handler for OSC escape sequences.
 

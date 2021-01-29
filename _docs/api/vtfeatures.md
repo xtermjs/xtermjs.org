@@ -7,7 +7,7 @@ category: API
 
 # Supported Terminal Sequences
 
-xterm.js version: 4.4.0
+xterm.js version: 4.10.0
 
 ## Table of Contents
 
@@ -56,7 +56,7 @@ To denote the sequences the tables use the same abbreviations as xterm does:
 | -------- | ---- | -------- | ----------------- | ------- |
 | NUL | Null | `\0, \x00` | NUL is ignored.  | <span title="supported">✓</span> |
 | BEL | Bell | `\a, \x07` | Ring the bell. _[more](#bell){: .link-details}_ | <span title="supported">✓</span> |
-| BS | Backspace | `\b, \x08` | Move the cursor one position to the left.  | <span title="supported">✓</span> |
+| BS | Backspace | `\b, \x08` | Move the cursor one position to the left. _[more](#backspace){: .link-details}_ | <span title="supported">✓</span> |
 | HT | Horizontal Tabulation | `\t, \x09` | Move the cursor to the next character tab stop.  | <span title="supported">✓</span> |
 | LF | Line Feed | `\n, \x0A` | Move the cursor one row down, scrolling if needed. _[more](#line-feed){: .link-details}_ | <span title="supported">✓</span> |
 | VT | Vertical Tabulation | `\v, \x0B` | Treated as LF.  | <span title="supported">✓</span> |
@@ -71,6 +71,17 @@ To denote the sequences the tables use the same abbreviations as xterm does:
 ### Bell
 The behavior of the bell is further customizable with `ITerminalOptions.bellStyle`
 and `ITerminalOptions.bellSound`.
+
+
+</section>
+<section class="sequence-details">
+
+### Backspace
+By default it is not possible to move the cursor past the leftmost position.
+If `reverse wrap-around` (`CSI ? 45 h`) is set, a previous soft line wrap (DECAWM)
+can be undone with BS within the scroll margins. In that case the cursor will wrap back
+to the end of the previous row. Note that it is not possible to peek back into the scrollbuffer
+with the cursor, thus at the home position (top-leftmost cell) this has no effect.
 
 
 </section>
@@ -117,10 +128,10 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 | CHA | Cursor Horizontal Absolute | ``CSI Ps G`` | Move cursor to `Ps`-th column of the active row (default=1).  | <span title="supported">✓</span> |
 | CUP | Cursor Position | ``CSI Ps ; Ps H`` | Set cursor to position [`Ps`, `Ps`] (default = [1, 1]). _[more](#cursor-position){: .link-details}_ | <span title="supported">✓</span> |
 | CHT | Cursor Horizontal Tabulation | ``CSI Ps I`` | Move cursor `Ps` times tabs forward (default=1).  | <span title="supported">✓</span> |
-| DECSED | Selective Erase In Display | ``CSI ? Ps J`` | Currently the same as ED.  | <span title="Protection attributes are not supported." style="text-decoration: underline">Partial</span> |
 | ED | Erase In Display | ``CSI Ps J`` | Erase various parts of the viewport. _[more](#erase-in-display){: .link-details}_ | <span title="supported">✓</span> |
-| DECSEL | Selective Erase In Line | ``CSI ? Ps K`` | Currently the same as EL.  | <span title="Protection attributes are not supported." style="text-decoration: underline">Partial</span> |
+| DECSED | Selective Erase In Display | ``CSI ? Ps J`` | Currently the same as ED.  | <span title="Protection attributes are not supported." style="text-decoration: underline">Partial</span> |
 | EL | Erase In Line | ``CSI Ps K`` | Erase various parts of the active row. _[more](#erase-in-line){: .link-details}_ | <span title="supported">✓</span> |
+| DECSEL | Selective Erase In Line | ``CSI ? Ps K`` | Currently the same as EL.  | <span title="Protection attributes are not supported." style="text-decoration: underline">Partial</span> |
 | IL | Insert Line | ``CSI Ps L`` | Insert `Ps` blank lines at active row (default=1). _[more](#insert-line){: .link-details}_ | <span title="supported">✓</span> |
 | DL | Delete Line | ``CSI Ps M`` | Delete `Ps` lines at active row (default=1). _[more](#delete-line){: .link-details}_ | <span title="supported">✓</span> |
 | DCH | Delete Character | ``CSI Ps P`` | Delete `Ps` characters (default=1). _[more](#delete-character){: .link-details}_ | <span title="supported">✓</span> |
@@ -321,6 +332,7 @@ Supported param values by DECSET:
 | 9     | X10 xterm mouse protocol.                               | <span title="supported">✓</span>      |
 | 12    | Start Blinking Cursor.                                  | <span title="supported">✓</span>      |
 | 25    | Show Cursor (DECTCEM).                                  | <span title="supported">✓</span>      |
+| 45    | Reverse wrap-around.                                    | <span title="supported">✓</span>      |
 | 47    | Use Alternate Screen Buffer.                            | <span title="supported">✓</span>      |
 | 66    | Application keypad (DECNKM).                            | <span title="supported">✓</span>      |
 | 1000  | X11 xterm mouse protocol.                               | <span title="supported">✓</span>      |
@@ -367,6 +379,7 @@ Supported param values by DECRST:
 | 9     | Don't send Mouse X & Y on button press.                 | <span title="supported">✓</span>      |
 | 12    | Stop Blinking Cursor.                                   | <span title="supported">✓</span>      |
 | 25    | Hide Cursor (DECTCEM).                                  | <span title="supported">✓</span>      |
+| 45    | No reverse wrap-around.                                 | <span title="supported">✓</span>      |
 | 47    | Use Normal Screen Buffer.                               | <span title="supported">✓</span>      |
 | 66    | Numeric keypad (DECNKM).                                | <span title="supported">✓</span>      |
 | 1000  | Don't send Mouse reports.                               | <span title="supported">✓</span>      |
@@ -387,7 +400,7 @@ Supported param values by DECRST:
 
 ### Select Graphic Rendition
 SGR selects one or more character attributes at the same time. Multiple params (up to 32)
-are applied from in order from left to right. The changed attributes are applied to all new
+are applied in order from left to right. The changed attributes are applied to all new
 characters received. If you move characters in the viewport by scrolling or any other means,
 then the attributes move with the characters.
 
@@ -399,13 +412,13 @@ Supported param values by SGR:
 | 1         | Bold. (also see `options.drawBoldTextInBrightColors`)    | <span title="supported">✓</span>      |
 | 2         | Faint, decreased intensity.                              | <span title="supported">✓</span>      |
 | 3         | Italic.                                                  | <span title="supported">✓</span>      |
-| 4         | Underlined. (no support for newer underline styles)      | <span title="supported">✓</span>      |
+| 4         | Underlined (see below for style support).                | <span title="supported">✓</span>      |
 | 5         | Slowly blinking.                                         | <span title="unsupported">✗</span>      |
 | 6         | Rapidly blinking.                                        | <span title="unsupported">✗</span>      |
 | 7         | Inverse. Flips foreground and background color.          | <span title="supported">✓</span>      |
 | 8         | Invisible (hidden).                                      | <span title="supported">✓</span>      |
 | 9         | Crossed-out characters.                                  | <span title="unsupported">✗</span>      |
-| 21        | Doubly  underlined.                                      | <span title="unsupported">✗</span>      |
+| 21        | Doubly underlined.                                       | <span title="Currently outputs a single underline." style="text-decoration: underline">Partial</span> |
 | 22        | Normal (neither bold nor faint).                         | <span title="supported">✓</span>      |
 | 23        | No italic.                                               | <span title="supported">✓</span>      |
 | 24        | Not underlined.                                          | <span title="supported">✓</span>      |
@@ -436,6 +449,18 @@ Supported param values by SGR:
 | 90 - 97   | Bright foreground color (analogous to 30 - 37).          | <span title="supported">✓</span>      |
 | 100 - 107 | Bright background color (analogous to 40 - 47).          | <span title="supported">✓</span>      |
 
+Underline supports subparams to denote the style in the form `4 : x`:
+
+| x      | Meaning                                                       | Support |
+| ------ | ------------------------------------------------------------- | ------- |
+| 0      | No underline. Same as `SGR 24 m`.                             | <span title="supported">✓</span>      |
+| 1      | Single underline. Same as `SGR 4 m`.                          | <span title="supported">✓</span>      |
+| 2      | Double underline.                                             | <span title="Currently outputs a single underline." style="text-decoration: underline">Partial</span> |
+| 3      | Curly underline.                                              | <span title="Currently outputs a single underline." style="text-decoration: underline">Partial</span> |
+| 4      | Dotted underline.                                             | <span title="Currently outputs a single underline." style="text-decoration: underline">Partial</span> |
+| 5      | Dashed underline.                                             | <span title="Currently outputs a single underline." style="text-decoration: underline">Partial</span> |
+| other  | Single underline. Same as `SGR 4 m`.                          | <span title="supported">✓</span>      |
+
 Extended colors are supported for foreground (Ps=38) and background (Ps=48) as follows:
 
 | Ps + 1 | Meaning                                                       | Support |
@@ -456,11 +481,12 @@ There are two terminal reset sequences - RIS and DECSTR. While RIS performs almo
 DECSTR only resets certain attributes. For most needs DECSTR should be sufficient.
 
 The following terminal attributes are reset to default values:
-- cursor is reset (default = visible, home position)
 - IRM is reset (dafault = false)
 - scroll margins are reset (default = viewport size)
 - erase attributes are reset to default
 - charsets are reset
+- DECSC data is reset to initial values
+- DECOM is reset to absolute mode
 
 
 </section>
@@ -502,9 +528,9 @@ DECDC has no effect outside the scrolling margins.
 
 | Mnemonic | Name | Sequence | Short Description | Support |
 | -------- | ---- | -------- | ----------------- | ------- |
+| SIXEL | SIXEL Graphics | `DCS Ps ; Ps ; Ps ; q 	Pt ST` | Draw SIXEL image starting at cursor position.  | <span title="unsupported">✗</span> |
 | DECRQSS | Request Selection or Setting | `DCS $ q Pt ST` | Request several terminal settings. _[more](#request-selection-or-setting){: .link-details}_ | <span title="See limited support below." style="text-decoration: underline">Partial</span> |
 | DECUDK | User Defined Keys | `DCS Ps ; Ps | Pt ST` | Definitions for user-defined keys.  | <span title="unsupported">✗</span> |
-| SIXEL | SIXEL Graphics | `DCS Ps ; Ps ; Ps ; q 	Pt ST` | Draw SIXEL image starting at cursor position.  | <span title="unsupported">✗</span> |
 | XTGETTCAP | Request Terminfo String | `DCS + q Pt ST` | Request Terminfo String.  | <span title="unsupported">✗</span> |
 | XTSETTCAP | Set Terminfo Data | `DCS + p Pt ST` | Set Terminfo Data.  | <span title="unsupported">✗</span> |
 
@@ -534,8 +560,8 @@ Supported requests and responses:
 | Mnemonic | Name | Sequence | Short Description | Support |
 | -------- | ---- | -------- | ----------------- | ------- |
 | SC | Save Cursor | `ESC 7` | Save cursor position, charmap and text attributes.  | <span title="supported">✓</span> |
-| DECALN | Screen Alignment Pattern | `ESC # 8` | Fill viewport with a test pattern (E).  | <span title="supported">✓</span> |
 | RC | Restore Cursor | `ESC 8` | Restore cursor position, charmap and text attributes.  | <span title="supported">✓</span> |
+| DECALN | Screen Alignment Pattern | `ESC # 8` | Fill viewport with a test pattern (E).  | <span title="supported">✓</span> |
 | IND | Index | `ESC D` | Move the cursor one line down scrolling if needed.  | <span title="supported">✓</span> |
 | NEL | Next Line | `ESC E` | Move the cursor to the beginning of the next row.  | <span title="supported">✓</span> |
 | HTS | Horizontal Tabulation Set | `ESC H` | Places a tab stop at the current cursor position.  | <span title="supported">✓</span> |
@@ -559,6 +585,7 @@ Supported requests and responses:
 | 0 | `OSC 0 ; Pt BEL` | Set window title and icon name. _[more](#set-windows-title-and-icon-name){: .link-details}_ | <span title="Icon name is not exposed." style="text-decoration: underline">Partial</span> |
 | 1 | `OSC 1 ; Pt BEL` | Set icon name.  | <span title="unsupported">✗</span> |
 | 2 | `OSC 2 ; Pt BEL` | Set window title. _[more](#set-windows-title){: .link-details}_ | <span title="supported">✓</span> |
+| 4 | `OSC 4 ; c ; spec BEL` | Change color number `c` to the color specified by `spec`. _[more](#set-ansi-color){: .link-details}_ | <span title="supported">✓</span> |
 
 <section class="sequence-details">
 
@@ -574,6 +601,14 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
 
 
 </section>
+<section class="sequence-details">
+
+### Set ANSI color
+`c` is the color index between 0 and 255. `spec` color format is 'rgb:hh/hh/hh' where `h` are hexadecimal digits.
+There may be multipe c ; spec elements present in the same instruction, e.g. 1;rgb:10/20/30;2;rgb:a0/b0/c0.
+
+
+</section>
 
 
 <script type="text/javascript">
@@ -582,7 +617,7 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
   function hideDetailSections() {
     for (let section of document.getElementsByClassName('sequence-details')) section.style.display = 'none';
   }
-  
+
   function decorateDetailLinks() {
     for (let link of document.getElementsByClassName('link-details')) {
       link.addEventListener("click", toggleDetails, false);

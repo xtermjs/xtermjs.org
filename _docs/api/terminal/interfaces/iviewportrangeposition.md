@@ -26,7 +26,7 @@ An object representing a cell position within the viewport of the terminal.
 
 • **x**: *number*
 
-*Defined in [xterm.d.ts:1067](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1067)*
+*Defined in [xterm.d.ts:1113](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1113)*
 
 The x position of the cell. This is a 0-based index that refers to the
 space in between columns, not the column itself. Index 0 refers to the
@@ -40,7 +40,7 @@ ___
 
 • **y**: *number*
 
-*Defined in [xterm.d.ts:1073](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1073)*
+*Defined in [xterm.d.ts:1119](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1119)*
 
 The y position of the cell. This is a 0-based index that refers to a
 specific row.

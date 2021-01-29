@@ -45,7 +45,7 @@ Represents a single cell in the terminal's buffer.
 
 ▸ **getBgColor**(): *number*
 
-*Defined in [xterm.d.ts:1237](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1237)*
+*Defined in [xterm.d.ts:1424](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1424)*
 
 Gets a cell's background color number, this differs depending on what the
 color mode of the cell is:
@@ -65,7 +65,7 @@ ___
 
 ▸ **getBgColorMode**(): *number*
 
-*Defined in [xterm.d.ts:1211](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1211)*
+*Defined in [xterm.d.ts:1398](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1398)*
 
 Gets the number representation of the background color mode, this can be
 used to perform quick comparisons of 2 cells to see if they're the same.
@@ -80,7 +80,7 @@ ___
 
 ▸ **getChars**(): *string*
 
-*Defined in [xterm.d.ts:1189](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1189)*
+*Defined in [xterm.d.ts:1376](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1376)*
 
 The character(s) within the cell. Examples of what this can contain:
 
@@ -96,7 +96,7 @@ ___
 
 ▸ **getCode**(): *number*
 
-*Defined in [xterm.d.ts:1195](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1195)*
+*Defined in [xterm.d.ts:1382](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1382)*
 
 Gets the UTF32 codepoint of single characters, if content is a combined
 string it returns the codepoint of the last character in the string.
@@ -109,7 +109,7 @@ ___
 
 ▸ **getFgColor**(): *number*
 
-*Defined in [xterm.d.ts:1224](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1224)*
+*Defined in [xterm.d.ts:1411](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1411)*
 
 Gets a cell's foreground color number, this differs depending on what the
 color mode of the cell is:
@@ -129,7 +129,7 @@ ___
 
 ▸ **getFgColorMode**(): *number*
 
-*Defined in [xterm.d.ts:1203](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1203)*
+*Defined in [xterm.d.ts:1390](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1390)*
 
 Gets the number representation of the foreground color mode, this can be
 used to perform quick comparisons of 2 cells to see if they're the same.
@@ -144,7 +144,7 @@ ___
 
 ▸ **getWidth**(): *number*
 
-*Defined in [xterm.d.ts:1180](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1180)*
+*Defined in [xterm.d.ts:1367](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1367)*
 
 The width of the character. Some examples:
 
@@ -160,7 +160,7 @@ ___
 
 ▸ **isAttributeDefault**(): *boolean*
 
-*Defined in [xterm.d.ts:1268](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1268)*
+*Defined in [xterm.d.ts:1455](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1455)*
 
 Whether the cell has the default attribute (no color or style).
 
@@ -172,7 +172,7 @@ ___
 
 ▸ **isBgDefault**(): *boolean*
 
-*Defined in [xterm.d.ts:1265](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1265)*
+*Defined in [xterm.d.ts:1452](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1452)*
 
 Whether the cell is using the default background color mode.
 
@@ -184,7 +184,7 @@ ___
 
 ▸ **isBgPalette**(): *boolean*
 
-*Defined in [xterm.d.ts:1261](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1261)*
+*Defined in [xterm.d.ts:1448](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1448)*
 
 Whether the cell is using the palette background color mode.
 
@@ -196,7 +196,7 @@ ___
 
 ▸ **isBgRGB**(): *boolean*
 
-*Defined in [xterm.d.ts:1257](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1257)*
+*Defined in [xterm.d.ts:1444](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1444)*
 
 Whether the cell is using the RGB background color mode.
 
@@ -208,7 +208,7 @@ ___
 
 ▸ **isBlink**(): *number*
 
-*Defined in [xterm.d.ts:1248](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1248)*
+*Defined in [xterm.d.ts:1435](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1435)*
 
 Whether the cell has the inverse attribute (CSI 5 m).
 
@@ -220,7 +220,7 @@ ___
 
 ▸ **isBold**(): *number*
 
-*Defined in [xterm.d.ts:1240](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1240)*
+*Defined in [xterm.d.ts:1427](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1427)*
 
 Whether the cell has the bold attribute (CSI 1 m).
 
@@ -232,7 +232,7 @@ ___
 
 ▸ **isDim**(): *number*
 
-*Defined in [xterm.d.ts:1244](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1244)*
+*Defined in [xterm.d.ts:1431](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1431)*
 
 Whether the cell has the inverse attribute (CSI 2 m).
 
@@ -244,7 +244,7 @@ ___
 
 ▸ **isFgDefault**(): *boolean*
 
-*Defined in [xterm.d.ts:1263](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1263)*
+*Defined in [xterm.d.ts:1450](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1450)*
 
 Whether the cell is using the default foreground color mode.
 
@@ -256,7 +256,7 @@ ___
 
 ▸ **isFgPalette**(): *boolean*
 
-*Defined in [xterm.d.ts:1259](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1259)*
+*Defined in [xterm.d.ts:1446](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1446)*
 
 Whether the cell is using the palette foreground color mode.
 
@@ -268,7 +268,7 @@ ___
 
 ▸ **isFgRGB**(): *boolean*
 
-*Defined in [xterm.d.ts:1255](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1255)*
+*Defined in [xterm.d.ts:1442](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1442)*
 
 Whether the cell is using the RGB foreground color mode.
 
@@ -280,7 +280,7 @@ ___
 
 ▸ **isInverse**(): *number*
 
-*Defined in [xterm.d.ts:1250](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1250)*
+*Defined in [xterm.d.ts:1437](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1437)*
 
 Whether the cell has the inverse attribute (CSI 7 m).
 
@@ -292,7 +292,7 @@ ___
 
 ▸ **isInvisible**(): *number*
 
-*Defined in [xterm.d.ts:1252](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1252)*
+*Defined in [xterm.d.ts:1439](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1439)*
 
 Whether the cell has the inverse attribute (CSI 8 m).
 
@@ -304,7 +304,7 @@ ___
 
 ▸ **isItalic**(): *number*
 
-*Defined in [xterm.d.ts:1242](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1242)*
+*Defined in [xterm.d.ts:1429](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1429)*
 
 Whether the cell has the inverse attribute (CSI 3 m).
 
@@ -316,7 +316,7 @@ ___
 
 ▸ **isUnderline**(): *number*
 
-*Defined in [xterm.d.ts:1246](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1246)*
+*Defined in [xterm.d.ts:1433](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1433)*
 
 Whether the cell has the underline attribute (CSI 4 m).
 

@@ -26,7 +26,7 @@ An object representing a range within the viewport of the terminal.
 
 • **end**: *[IViewportRangePosition]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %})*
 
-*Defined in [xterm.d.ts:1053](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1053)*
+*Defined in [xterm.d.ts:1099](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1099)*
 
 The end of the range.
 
@@ -36,6 +36,6 @@ ___
 
 • **start**: *[IViewportRangePosition]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %})*
 
-*Defined in [xterm.d.ts:1048](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L1048)*
+*Defined in [xterm.d.ts:1094](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1094)*
 
 The start of the range.

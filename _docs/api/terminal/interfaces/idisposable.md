@@ -33,6 +33,6 @@ An object that can be disposed via a dispose function.
 
 ▸ **dispose**(): *void*
 
-*Defined in [xterm.d.ts:338](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L338)*
+*Defined in [xterm.d.ts:359](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L359)*
 
 **Returns:** *void*

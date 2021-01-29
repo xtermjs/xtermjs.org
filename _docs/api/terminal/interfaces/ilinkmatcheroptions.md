@@ -30,7 +30,7 @@ An object containing options for a link matcher.
 
 • **leaveCallback**? : *function*
 
-*Defined in [xterm.d.ts:316](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L316)*
+*Defined in [xterm.d.ts:337](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L337)*
 
 A callback that fires when the mouse leaves a link. Note that this can
 happen even when tooltipCallback hasn't fired for the link yet.
@@ -45,7 +45,7 @@ ___
 
 • **matchIndex**? : *number*
 
-*Defined in [xterm.d.ts:299](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L299)*
+*Defined in [xterm.d.ts:319](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L319)*
 
 The index of the link from the regex.match(text) call. This defaults to 0
 (for regular expressions without capture groups).
@@ -56,7 +56,7 @@ ___
 
 • **priority**? : *number*
 
-*Defined in [xterm.d.ts:323](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L323)*
+*Defined in [xterm.d.ts:344](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L344)*
 
 The priority of the link matcher, this defines the order in which the
 link matcher is evaluated relative to others, from highest to lowest. The
@@ -68,9 +68,10 @@ ___
 
 • **tooltipCallback**? : *function*
 
-*Defined in [xterm.d.ts:310](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L310)*
+*Defined in [xterm.d.ts:331](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L331)*
 
-A callback that fires when the mouse hovers over a link for a moment.
+A callback that fires when the mouse hovers over a link for a period of
+time (defined by [ITerminalOptions.linkTooltipHoverDuration]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-linktooltiphoverduration)).
 
 #### Type declaration:
 
@@ -90,7 +91,7 @@ ___
 
 • **validationCallback**? : *function*
 
-*Defined in [xterm.d.ts:305](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L305)*
+*Defined in [xterm.d.ts:325](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L325)*
 
 A callback that validates whether to create an individual link, pass
 whether the link is valid to the callback.
@@ -119,7 +120,7 @@ ___
 
 • **willLinkActivate**? : *function*
 
-*Defined in [xterm.d.ts:331](https://github.com/xtermjs/xterm.js/blob/4.4.0/typings/xterm.d.ts#L331)*
+*Defined in [xterm.d.ts:352](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L352)*
 
 A callback that fires when the mousedown and click events occur that
 determines whether a link will be activated upon click. This enables
