@@ -12,6 +12,7 @@ The following guide gives a short overview on how to extend xterm.js' functional
   * [Simple Hook Example](#simple-hook-example)
   * [Return Value and Execution Order](#return-value-and-execution-order)
 - [Custom Terminal Sequences](#custom-terminal-sequences)
+- [Async Actions in Parser Hooks](#async-actions-in-parser-hooks)
 - [Limitations of Parser Hooks](#limitations-of-parser-hooks)
 - [Background - What are Terminal Sequences?](#background---what-are-terminal-sequences)
 
@@ -45,7 +46,7 @@ To work with parser hooks correctly it is important to understand, how and when 
 
     When the parser has finished processing a single chunk, the callback given to the `write` call gets triggered to indicate that this particular chunk was finally processed and the data gets eventually discarded. So far no screen updates have happened.
 
-    **Note:** The whole parsing and state manipulation process is synchronous to a position in a chunk of data and cannot be interupted. This is important to note and limits the possibilities to postpone heavy work from within a sequence handler. If you have to do use async interfaces, keep in mind that the terminal state will have progressed by the time the async call gets executed.
+    **Note:** The whole parsing and state manipulation process is synchronous to a position in a chunk of data and should not be interupted. With some limitations it is possible to use async code in parser hooks (see [below](#async-actions-in-parser-hooks)). Also with async hooks the execution contexts are more complicated than illustrated here, yet the idea regarding the chunk position remains the same.
 
 3. Screen updates  
   Step 2. is only allowed to run for a certain time. After that time it gets halted at a chunk border and the screen update happens. The renderer code will evaluate the terminal state and decide, what has to be re-drawn. It is not possible to conclude, whether or when a certain chunk of data will finally appear on the screen. Note that there is a chance under heavy data input, that a chunk will never make it to the screen, just because the terminal state has already progressed further before any screen redraw happened (slow scroll mode is not supported by xterm.js).
@@ -56,8 +57,7 @@ To work with parser hooks correctly it is important to understand, how and when 
 **Takeaway**:
   - Parser hooks should only contain synchronous code.
   - Parser hooks should return whether a sequence was successfully handled and no further processing shall happen.
-  - Parser hooks are blocking, the terminal state will not mutate by any other actions during their invocation.
-  - Assumptions about the terminal state are only valid within a single hook invocation.
+  - Parser hooks are blocking regarding the input data, the terminal state will not progress before a hook was finished.
   - Parser hooks should finish quickly to not slow down input processing too much.
 
 
@@ -221,10 +221,79 @@ Hopefully this small example illustrates the power of the hooks system. It makes
 For production usage always keep in mind, that extending xterm.js this way will make your program incompatible with other terminal emulators. Still a well thought-out extension might find its way into other emulators, if it is seen as a useful extension to the terminal interface in general.
 
 
-## Limitations of Parser Hooks
+## Async Actions in Parser Hooks
 
-- **Async Actions in Hooks**  
-  The parser executes hook handlers synchronously. This is a must have to guarantee synchronicity to the incoming stream data while keeping the parser performant. Actions altering the terminal buffer must not use async code without special preparations.
+Normally a custom parser handler should only contain synchronous code and finish rather quickly. All default handlers shipped with xterm.js are build that way to provide very fast input processing.
+
+Still there are circumstances where the invocation of an async interface is needed before the input processing should continue.
+For these cases a handler may also return a promise which resolves to a `boolean`:
+
+```typescript
+const myCustomHandler = term.registerCsiHandler(..., params => {
+  if (canBeSyncCode) {
+    // fast sync path
+    ...
+    return false;
+  }
+  // slow async path
+  const someWaitingCondition: Promise<any> = asyncInterface(...);
+  return someWaitingCondition
+    .then(more)
+    .then(steps)
+    .then(() => false)
+});
+```
+Or with `async`/`await` syntax:
+
+```typescript
+const myCustomHandler = term.registerCsiHandler(..., async params => {
+  const someWaitingCondition: Promise<any> = asyncInterface(...);
+  await steps(await more(await someWaitingCondition));
+  return false;
+});
+```
+
+Whenever a handler returns a promise, the parser stops input processing at the current band position
+and returns control to the top level (stack unwinding). Input processing will not resume until
+that promise got fulfilled (resolved or rejected). With this in-band blocking the parser can
+guarantee the right execution order of sequence handlers, the terminal state will not progress by later
+input data before the active async handler finally finished its work.
+
+Note that the second example should only be used, if all control paths have to go through async code.
+As soon as your handler has an opportunity for a sync code path, the first example should be preferred
+to benefit from the parser's sync code optimization.
+
+
+Caveats regarding async parser handlers:
+- **general slowdown of input processing**  
+  Due to needed stack unwinding async handlers come to a rather high price of poor parsing throughput.
+  They should only be used if a synchronous implementation is not applicable.
+- **can block terminal input forever**  
+  Make sure that a returned promise will always be fulfilled in a timely fashion to avoid
+  poor user experience. With `logLevel.WARN` or higher, the terminal will warn about an async handler
+  taking too long (after 5s), which might be helpful during development. Note that a dangling promise,
+  that never gets fulfilled, will render the terminal unusable (partially recoverable by calling `Terminal.reset`).
+- **partially mutating terminal state**  
+  Although the terminal state will not progress by data input between several `Thenables` of an active async handler,
+  it still will change shape from other user actions like resizing or calling `Terminal.reset`. Always re-check
+  your state assumptions at the beginning of a `Thenable` before applying your changes.
+- **proper insert/error strategy**  
+  If your handler has to rely on multiple event loop invocations (multiple `Thenables`) try to avoid
+  altering the terminal state piece-by-piece. Instead collect your own state information and insert it late
+  in one action. This way chances are low to leave garbage on the terminal due to some late error in your handler.
+  Note that the terminal tries to keep working on async errors and logs the error to `console`.
+  Still expected errors should be properly guarded as usual for promised code (skipped in examples above for better
+  readability).
+
+_Given all those limitations, what are indicators to actually use an async handler?_
+- any functionality depending on async browser interfaces to overcome their "viral" nature
+- handlers with perceivable negative impact on mainthread performance
+  (high computation needs or busy waiting conditions)
+- a slow consuming handler to get proper flow control with backpressure
+- exceptional rare sequences with almost no impact on normal input data flow
+
+
+## Limitations of Parser Hooks
 
 - **Filtering of Parameters**  
   Some CSI sequences like `SGR` support parameter stacking, where these calls:
