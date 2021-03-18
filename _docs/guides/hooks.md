@@ -57,8 +57,7 @@ To work with parser hooks correctly it is important to understand, how and when 
 **Takeaway**:
   - Parser hooks should only contain synchronous code.
   - Parser hooks should return whether a sequence was successfully handled and no further processing shall happen.
-  - Parser hooks are blocking, the terminal state will not mutate by any other actions during their invocation.
-  - Assumptions about the terminal state are only valid within a single hook invocation.
+  - Parser hooks are blocking regarding the input data, the terminal state will not progress before a hook was finished.
   - Parser hooks should finish quickly to not slow down input processing too much.
 
 
