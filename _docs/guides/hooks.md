@@ -46,7 +46,7 @@ To work with parser hooks correctly it is important to understand, how and when 
 
     When the parser has finished processing a single chunk, the callback given to the `write` call gets triggered to indicate that this particular chunk was finally processed and the data gets eventually discarded. So far no screen updates have happened.
 
-    **Note:** The whole parsing and state manipulation process is synchronous to a position in a chunk of data and cannot be interupted. This is important to note and limits the possibilities to postpone heavy work from within a sequence handler. If you have to do use async interfaces, keep in mind that the terminal state will have progressed by the time the async call gets executed.
+    **Note:** The whole parsing and state manipulation process is synchronous to a position in a chunk of data and should not be interupted. With some limitations it is possible to use async code in parser hooks (see [below](#async-actions-in-parser-hooks)). Also with async hooks the execution contexts are more complicated than illustrated here, yet the idea regarding the chunk position remains the same.
 
 3. Screen updates  
   Step 2. is only allowed to run for a certain time. After that time it gets halted at a chunk border and the screen update happens. The renderer code will evaluate the terminal state and decide, what has to be re-drawn. It is not possible to conclude, whether or when a certain chunk of data will finally appear on the screen. Note that there is a chance under heavy data input, that a chunk will never make it to the screen, just because the terminal state has already progressed further before any screen redraw happened (slow scroll mode is not supported by xterm.js).
@@ -223,7 +223,8 @@ For production usage always keep in mind, that extending xterm.js this way will 
 
 
 ## Async Actions in Parser Hooks
-Normally custom parser handlers should only contain synchronous code and finish rather quickly. All default handlers shipped with xterm.js are build that way to provide very fast input processing.
+
+Normally a custom parser handler should only contain synchronous code and finish rather quickly. All default handlers shipped with xterm.js are build that way to provide very fast input processing.
 
 Still there are circumstances where the invocation of an async interface is needed before the input processing should continue.
 For these cases a handler may also return a promise which resolves to a `boolean`:
@@ -243,34 +244,38 @@ const myCustomHandler = term.registerCsiHandler(..., params => {
     .then(() => false)
 });
 ```
-Or with `async`/`await` syntax (discouraged if there is a synchronous side path):
+Or with `async`/`await` syntax:
 
 ```typescript
 const myCustomHandler = term.registerCsiHandler(..., async params => {
-  const someWaitingResult: any = await asyncInterface(...);
-  await steps(await more(someWaitingResult));
+  const someWaitingCondition: Promise<any> = asyncInterface(...);
+  await steps(await more(await someWaitingCondition));
   return false;
 });
 ```
 
 Whenever a handler returns a promise, the parser stops input processing at the current band position
 and returns control to the top level (stack unwinding). Input processing will not resume until
-that promise got fullfilled (resolved or rejected). With this in-band blocking the parser can
+that promise got fulfilled (resolved or rejected). With this in-band blocking the parser can
 guarantee the right execution order of sequence handlers, the terminal state will not progress by later
 input data before the active async handler finally finished its work.
+
+Note that the second example should only be used, if all control paths have to go through async code.
+As soon as your handler has an opportunity for a sync code path, the first example should be preferred
+to benefit from the parser's sync code optimization.
 
 
 Caveats regarding async parser handlers:
 - **general slowdown of input processing**  
-  Due to needed stack unwinding async handlers come to a rather high price of poor input throughput.
+  Due to needed stack unwinding async handlers come to a rather high price of poor parsing throughput.
   They should only be used if a synchronous implementation is not applicable.
 - **can block terminal input forever**  
-  Make sure that a returned promise will always be fullfilled in a timely fashion to avoid
-  poor user experience. With `logLevel.WARN` or higher the terminal will warn about an async handler
+  Make sure that a returned promise will always be fulfilled in a timely fashion to avoid
+  poor user experience. With `logLevel.WARN` or higher, the terminal will warn about an async handler
   taking too long (after 5s), which might be helpful during development. Note that a dangling promise,
-  that never gets fullfilled, will render the terminal unusable (partially recoverable by calling `Terminal.reset`).
+  that never gets fulfilled, will render the terminal unusable (partially recoverable by calling `Terminal.reset`).
 - **partially mutating terminal state**  
-  Although the terminal state will not progress by data input between several `Thenables` from an active async handler,
+  Although the terminal state will not progress by data input between several `Thenables` of an active async handler,
   it still will change shape from other user actions like resizing or calling `Terminal.reset`. Always re-check
   your state assumptions at the beginning of a `Thenable` before applying your changes.
 - **proper insert/error strategy**  
@@ -281,7 +286,7 @@ Caveats regarding async parser handlers:
   Still expected errors should be properly guarded as usual for promised code (skipped in examples above for better
   readability).
 
-_Given all those limitations, what are strong indicators to actually use an async handler?_
+_Given all those limitations, what are indicators to actually use an async handler?_
 - any functionality depending on async browser interfaces to overcome their "viral" nature
 - handlers with perceivable negative impact on mainthread performance
   (high computation needs or busy waiting conditions)
