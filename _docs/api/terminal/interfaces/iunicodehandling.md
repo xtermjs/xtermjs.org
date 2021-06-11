@@ -7,8 +7,6 @@ layout: docs
 
 # Interface: IUnicodeHandling
 
-(EXPERIMENTAL) Unicode handling interface.
-
 ## Hierarchy
 
 * **IUnicodeHandling**
@@ -30,9 +28,7 @@ layout: docs
 
 • **activeVersion**: *string*
 
-*Defined in [xterm.d.ts:1604](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1604)*
-
-Getter/setter for active Unicode version.
+*Defined in [xterm.d.ts:1623](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1623)*
 
 ___
 
@@ -40,9 +36,7 @@ ___
 
 • **versions**: *ReadonlyArray‹string›*
 
-*Defined in [xterm.d.ts:1599](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1599)*
-
-Registered Unicode versions.
+*Defined in [xterm.d.ts:1618](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1618)*
 
 ## Methods
 
@@ -50,9 +44,7 @@ Registered Unicode versions.
 
 ▸ **register**(`provider`: [IUnicodeVersionProvider]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %})): *void*
 
-*Defined in [xterm.d.ts:1594](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1594)*
-
-Register a custom Unicode version provider.
+*Defined in [xterm.d.ts:1613](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1613)*
 
 **Parameters:**
 

@@ -7,13 +7,6 @@ layout: docs
 
 # Module: "xterm"
 
-**`license`** MIT
-
-This contains the type declarations for the xterm.js library. Note that
-some interfaces differ between this file and the actual implementation in
-src/, that's because this file declares the *public* API which is intended
-to be stable and consumed by external programs.
-
 ## Index
 
 ### Classes
@@ -60,9 +53,7 @@ to be stable and consumed by external programs.
 
 Ƭ **FontWeight**: *"normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | number*
 
-*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L16)*
-
-A string or number representing text font weight.
+*Defined in [xterm.d.ts:16](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L16)*
 
 ___
 
@@ -70,9 +61,7 @@ ___
 
 Ƭ **LogLevel**: *"debug" | "info" | "warn" | "error" | "off"*
 
-*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L21)*
-
-A string representing log level.
+*Defined in [xterm.d.ts:21](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L21)*
 
 ___
 
@@ -80,6 +69,4 @@ ___
 
 Ƭ **RendererType**: *"dom" | "canvas"*
 
-*Defined in [xterm.d.ts:26](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L26)*
-
-A string representing a renderer type.
+*Defined in [xterm.d.ts:26](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L26)*

@@ -7,8 +7,6 @@ layout: docs
 
 # Interface: ITerminalAddon
 
-An addon that can provide additional functionality to the terminal.
-
 ## Hierarchy
 
 * [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
@@ -28,9 +26,7 @@ An addon that can provide additional functionality to the terminal.
 
 ▸ **activate**(`terminal`: [Terminal]({% link _docs/api/terminal/classes/terminal.md %})): *void*
 
-*Defined in [xterm.d.ts:1059](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1059)*
-
-This is called when the addon is activated.
+*Defined in [xterm.d.ts:1065](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1065)*
 
 **Parameters:**
 
@@ -48,6 +44,6 @@ ___
 
 *Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
-*Defined in [xterm.d.ts:359](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L359)*
+*Defined in [xterm.d.ts:359](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L359)*
 
 **Returns:** *void*

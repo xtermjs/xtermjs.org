@@ -7,9 +7,6 @@ layout: docs
 
 # Interface: IUnicodeVersionProvider
 
-(EXPERIMENTAL) Unicode version provider.
-Used to register custom Unicode versions with `Terminal.unicode.register`.
-
 ## Hierarchy
 
 * **IUnicodeVersionProvider**
@@ -30,9 +27,7 @@ Used to register custom Unicode versions with `Terminal.unicode.register`.
 
 • **version**: *string*
 
-*Defined in [xterm.d.ts:1579](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1579)*
-
-String indicating the Unicode version provided.
+*Defined in [xterm.d.ts:1598](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1598)*
 
 ## Methods
 
@@ -40,9 +35,7 @@ String indicating the Unicode version provided.
 
 ▸ **wcwidth**(`codepoint`: number): *0 | 1 | 2*
 
-*Defined in [xterm.d.ts:1584](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1584)*
-
-Unicode version dependent wcwidth implementation.
+*Defined in [xterm.d.ts:1603](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1603)*
 
 **Parameters:**
 

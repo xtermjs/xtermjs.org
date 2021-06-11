@@ -7,7 +7,7 @@ category: API
 
 # Supported Terminal Sequences
 
-xterm.js version: 4.10.0
+xterm.js version: 4.12.0
 
 ## Table of Contents
 

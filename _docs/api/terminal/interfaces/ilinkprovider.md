@@ -7,8 +7,6 @@ layout: docs
 
 # Interface: ILinkProvider
 
-A custom link provider.
-
 ## Hierarchy
 
 * **ILinkProvider**
@@ -25,21 +23,13 @@ A custom link provider.
 
 ▸ **provideLinks**(`bufferLineNumber`: number, `callback`: function): *void*
 
-*Defined in [xterm.d.ts:1133](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1133)*
-
-Provides a link a buffer position
+*Defined in [xterm.d.ts:1139](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1139)*
 
 **Parameters:**
 
 ▪ **bufferLineNumber**: *number*
 
-The y position of the buffer to check for links
-within.
-
 ▪ **callback**: *function*
-
-The callback to be fired when ready with the resulting
-link(s) for the line or `undefined`.
 
 ▸ (`links`: [ILink]({% link _docs/api/terminal/interfaces/ilink.md %})[] | undefined): *void*
 

@@ -7,8 +7,6 @@ layout: docs
 
 # Interface: IDisposable
 
-An object that can be disposed via a dispose function.
-
 ## Hierarchy
 
 * **IDisposable**
@@ -33,6 +31,6 @@ An object that can be disposed via a dispose function.
 
 ▸ **dispose**(): *void*
 
-*Defined in [xterm.d.ts:359](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L359)*
+*Defined in [xterm.d.ts:359](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L359)*
 
 **Returns:** *void*
