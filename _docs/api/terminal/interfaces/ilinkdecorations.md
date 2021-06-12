@@ -7,8 +7,6 @@ layout: docs
 
 # Interface: ILinkDecorations
 
-A set of decorations that can be applied to links.
-
 ## Hierarchy
 
 * **ILinkDecorations**
@@ -26,9 +24,7 @@ A set of decorations that can be applied to links.
 
 • **pointerCursor**: *boolean*
 
-*Defined in [xterm.d.ts:1193](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1193)*
-
-Whether the cursor is set to pointer.
+*Defined in [xterm.d.ts:1199](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1199)*
 
 ___
 
@@ -36,6 +32,4 @@ ___
 
 • **underline**: *boolean*
 
-*Defined in [xterm.d.ts:1198](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1198)*
-
-Whether the underline is visible
+*Defined in [xterm.d.ts:1204](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1204)*

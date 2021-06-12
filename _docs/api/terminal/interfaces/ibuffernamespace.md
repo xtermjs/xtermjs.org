@@ -7,8 +7,6 @@ layout: docs
 
 # Interface: IBufferNamespace
 
-Represents the terminal's set of buffers.
-
 ## Hierarchy
 
 * **IBufferNamespace**
@@ -28,9 +26,7 @@ Represents the terminal's set of buffers.
 
 • **active**: *[IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})*
 
-*Defined in [xterm.d.ts:1296](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1296)*
-
-The active buffer, this will either be the normal or alternate buffers.
+*Defined in [xterm.d.ts:1302](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1302)*
 
 ___
 
@@ -38,10 +34,7 @@ ___
 
 • **alternate**: *[IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})*
 
-*Defined in [xterm.d.ts:1307](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1307)*
-
-The alternate buffer, this becomes the active buffer when an application
-enters this mode via DECSET (`CSI ? 4 7 h`)
+*Defined in [xterm.d.ts:1313](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1313)*
 
 ___
 
@@ -49,9 +42,7 @@ ___
 
 • **normal**: *[IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})*
 
-*Defined in [xterm.d.ts:1301](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1301)*
-
-The normal buffer.
+*Defined in [xterm.d.ts:1307](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1307)*
 
 ___
 
@@ -59,8 +50,4 @@ ___
 
 • **onBufferChange**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹[IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})›*
 
-*Defined in [xterm.d.ts:1313](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1313)*
-
-Adds an event listener for when the active buffer changes.
-
-**`returns`** an `IDisposable` to stop listening.
+*Defined in [xterm.d.ts:1319](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1319)*

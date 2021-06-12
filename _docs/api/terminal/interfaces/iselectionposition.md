@@ -7,8 +7,6 @@ layout: docs
 
 # Interface: ISelectionPosition
 
-An object representing a selection within the terminal.
-
 ## Hierarchy
 
 * **ISelectionPosition**
@@ -28,9 +26,7 @@ An object representing a selection within the terminal.
 
 • **endColumn**: *number*
 
-*Defined in [xterm.d.ts:1079](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1079)*
-
-The end column of the selection.
+*Defined in [xterm.d.ts:1085](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1085)*
 
 ___
 
@@ -38,9 +34,7 @@ ___
 
 • **endRow**: *number*
 
-*Defined in [xterm.d.ts:1084](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1084)*
-
-The end row of the selection.
+*Defined in [xterm.d.ts:1090](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1090)*
 
 ___
 
@@ -48,9 +42,7 @@ ___
 
 • **startColumn**: *number*
 
-*Defined in [xterm.d.ts:1069](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1069)*
-
-The start column of the selection.
+*Defined in [xterm.d.ts:1075](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1075)*
 
 ___
 
@@ -58,6 +50,4 @@ ___
 
 • **startRow**: *number*
 
-*Defined in [xterm.d.ts:1074](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1074)*
-
-The start row of the selection.
+*Defined in [xterm.d.ts:1080](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1080)*

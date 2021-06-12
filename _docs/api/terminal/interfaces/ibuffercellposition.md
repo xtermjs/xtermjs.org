@@ -7,8 +7,6 @@ layout: docs
 
 # Interface: IBufferCellPosition
 
-A position within a buffer.
-
 ## Hierarchy
 
 * **IBufferCellPosition**
@@ -26,9 +24,7 @@ A position within a buffer.
 
 • **x**: *number*
 
-*Defined in [xterm.d.ts:1223](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1223)*
-
-The x position within the buffer.
+*Defined in [xterm.d.ts:1229](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1229)*
 
 ___
 
@@ -36,6 +32,4 @@ ___
 
 • **y**: *number*
 
-*Defined in [xterm.d.ts:1228](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1228)*
-
-The y position within the buffer.
+*Defined in [xterm.d.ts:1234](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1234)*

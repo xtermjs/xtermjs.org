@@ -7,8 +7,6 @@ layout: docs
 
 # Interface: IBufferLine
 
-Represents a line in the terminal's buffer.
-
 ## Hierarchy
 
 * **IBufferLine**
@@ -31,9 +29,7 @@ Represents a line in the terminal's buffer.
 
 • **isWrapped**: *boolean*
 
-*Defined in [xterm.d.ts:1323](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1323)*
-
-Whether the line is wrapped from the previous line.
+*Defined in [xterm.d.ts:1329](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1329)*
 
 ___
 
@@ -41,10 +37,7 @@ ___
 
 • **length**: *number*
 
-*Defined in [xterm.d.ts:1329](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1329)*
-
-The length of the line, all call to getCell beyond the length will result
-in `undefined`.
+*Defined in [xterm.d.ts:1335](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1335)*
 
 ## Methods
 
@@ -52,13 +45,7 @@ in `undefined`.
 
 ▸ **getCell**(`x`: number, `cell?`: [IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %})): *[IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %}) | undefined*
 
-*Defined in [xterm.d.ts:1343](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1343)*
-
-Gets a cell from the line, or undefined if the line index does not exist.
-
-Note that the result of this function should be used immediately after
-calling as when the terminal updates it could lead to unexpected
-behavior.
+*Defined in [xterm.d.ts:1349](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1349)*
 
 **Parameters:**
 
@@ -75,10 +62,7 @@ ___
 
 ▸ **translateToString**(`trimRight?`: boolean, `startColumn?`: number, `endColumn?`: number): *string*
 
-*Defined in [xterm.d.ts:1353](https://github.com/xtermjs/xterm.js/blob/4.10.0/typings/xterm.d.ts#L1353)*
-
-Gets the line as a string. Note that this is gets only the string for the
-line, not taking isWrapped into account.
+*Defined in [xterm.d.ts:1359](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1359)*
 
 **Parameters:**
 
