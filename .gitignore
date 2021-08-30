@@ -2,6 +2,10 @@ _site
 .sass-cache
 .jekyll-metadata
 
+# Ruby/Jekyll
+.bundle/
+vendor/
+
 # Node.js
 package-lock.json
 node_modules/

@@ -1,8 +1,20 @@
 This repository hosts the code for http://xtermjs.org.
 
-## Running the website locally
 
-You need [ruby](https://www.ruby-lang.org) and [bundler](https://bundler.io) installed first.
+
+## Prerequisites
+
+Linux dependencies:
+
+```
+sudo apt install zlib1g-dev
+```
+
+You also need [ruby](https://www.ruby-lang.org) and [bundler](https://bundler.io) installed.
+
+
+
+## Running the website locally
 
 ```bash
 # Install dependencies
@@ -11,6 +23,8 @@ bundle install
 # Serve the website
 bundle exec jekyll serve
 ```
+
+
 
 ## Update API documentation
 
