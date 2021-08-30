@@ -52,6 +52,13 @@ $(function () {
   });
   term.open(document.querySelector('.demo .inner'));
 
+  try {
+    const webgl = new window.WebglAddon.WebglAddon();
+    term.loadAddon(webgl);
+  } catch (e) {
+    console.warn('WebGL addon threw an exception during load', e);
+  }
+
   // Cancel wheel events from scrolling the page if the terminal has scrollback
   document.querySelector('.xterm').addEventListener('wheel', e => {
     if (term.buffer.active.baseY > 0) {
@@ -234,21 +241,23 @@ $(function () {
         let testData = [];
         let byteCount = 0;
         let start = performance.now();
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 50; i++) {
           let count = 1 + Math.floor(Math.random() * 79);
-          byteCount += count;
-          let data = new Uint8Array(count);
+          byteCount += count + 2;
+          let data = new Uint8Array(count + 2);
           for (let i = 0; i < count; i++) {
-            data[i] = 0x20 + Math.floor(Math.random() * (0x7B - 0x20));
+            data[i] = 0x61 + Math.floor(Math.random() * (0x7A - 0x61));
           }
+          data[i++] = 0xA; // \n
+          data[i  ] = 0xD; // \r
           testData.push(data);
         }
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 1024; i++) {
           for (const d of testData) {
-            term.writeln(d);
+            term.write(d);
           }
         }
-        term.write(`\r\nWrote ${byteCount * 100} bytes in ${Math.round((performance.now() - start) * 1000)}ms`);
+        term.write(`\r\nWrote ${byteCount}kB in ${Math.round((performance.now() - start) * 1000)}ms`);
         term.prompt();
       },
       description: 'Simulate a lot of data coming from a process'
@@ -261,11 +270,11 @@ $(function () {
       term.writeln('');
       if (command in commands) {
         commands[command].f();
-      } else {
-        term.writeln(`${command}: command not found`);
-        prompt(term);
+        return;
       }
+      term.writeln(`${command}: command not found`);
     }
+    prompt(term);
   }
 
   runFakeTerminal();
