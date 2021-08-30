@@ -1,9 +1,43 @@
 $(function () {
+  var baseTheme = {
+    background: '#2D2E2C'
+  };
+  // vscode-snazzy https://github.com/Tyriar/vscode-snazzy
+  var otherTheme = {
+    foreground: '#eff0eb',
+    background: '#282a36',
+    selection: '#97979b33',
+    black: '#282a36',
+    brightBlack: '#686868',
+    red: '#ff5c57',
+    brightRed: '#ff5c57',
+    green: '#5af78e',
+    brightGreen: '#5af78e',
+    yellow: '#f3f99d',
+    brightYellow: '#f3f99d',
+    blue: '#57c7ff',
+    brightBlue: '#57c7ff',
+    magenta: '#ff6ac1',
+    brightMagenta: '#ff6ac1',
+    cyan: '#9aedfe',
+    brightCyan: '#9aedfe',
+    white: '#f1f1f0',
+    brightWhite: '#eff0eb'
+  };
+  var isBaseTheme = true;
+
   var term = new window.Terminal({
     fontFamily: '"Cascadia Code", Menlo, monospace',
-    // rendererType: 'dom'
+    theme: baseTheme
   });
   term.open(document.querySelector('.demo .inner'));
+
+  // Cancel wheel events from scrolling the page if the terminal has scrollback
+  document.querySelector('.xterm').addEventListener('wheel', e => {
+    if (term.buffer.active.baseY > 0) {
+      e.preventDefault();
+    }
+  });
 
   function runFakeTerminal() {
     if (term._initialized) {
@@ -23,26 +57,25 @@ $(function () {
       '',
       ' ┌ \x1b[1mFeatures\x1b[0m ──────────────────────────────────────────────────────────────────┐',
       ' │                                                                            │',
-      ' │  \x1b[1mApps just work                         Performance\x1b[0m                        │',
+      ' │  \x1b[31;1mApps just work                         \x1b[32mPerformance\x1b[0m                        │',
       // TODO: Link to https://www.npmjs.com/package/xterm-addon-webgl
-      ' │    Xterm.js works with most terminal     Xterm.js is \x1b[3mfast\x1b[0m and includes an  │',
-      ' │    apps like bash, vim and tmux          optional WebGL-based renderer     │',
+      ' │   Xterm.js works with most terminal      Xterm.js is \x1b[3mfast\x1b[0m and includes an  │',
+      ' │   apps like bash, vim and tmux           optional WebGL-based renderer     │',
       ' │                                                                            │',
-      ' │  \x1b[1mUnicode support                        Self-contained\x1b[0m                     │',
-      ' │    Supports CJK, emojis and IMEs         Zero external dependencies        │',
+      ' │  \x1b[33;1mAccessible                             \x1b[34mSelf-contained\x1b[0m                     │',
+      ' │   A screen reader mode is available      Zero external dependencies        │',
       ' │                                                                            │',
-      ' │  \x1b[1mAccessible                             And much more...\x1b[0m                   │',
+      ' │  \x1b[35;1mUnicode support                        \x1b[36mAnd much more...\x1b[0m                   │',
       // TODO: Links/buttons
-      ' │    A screen reader mode is available     Links, themes, addons, typed API  │',
+      ' │   Supports CJK 語 and emoji \u2764\ufe0f            Links, themes, addons, typed API  │',
+      ' │                                            ⮤ Try clicking                  │',
       ' │                                                                            │',
       ' └────────────────────────────────────────────────────────────────────────────┘',
       ''
     ].join('\n\r'));
 
-    term.writeln('Welcome to xterm.js');
-    term.writeln('This is a local terminal emulation, without a real terminal in the back-end.');
-    term.writeln('Type some keys and commands to play around.');
     term.writeln('');
+    term.writeln('Below is a simple emulated backend, try running `help`.');
     prompt(term);
 
     term.onData(e => {
@@ -60,6 +93,36 @@ $(function () {
           break;
         default: // Print all other characters for demo
           term.write(e);
+      }
+    });
+
+    // Create a very simple link provider which hardcodes links for certain lines
+    term.registerLinkProvider({
+      provideLinks(bufferLineNumber, callback) {
+        switch (bufferLineNumber) {
+          case 14:
+            callback([
+              {
+                text: 'Links',
+                range: { start: { x: 45, y: 14 }, end: { x: 49, y: 14 } },
+                activate() {
+                  window.open('https://github.com/xtermjs/xterm.js', '_blank');
+                }
+              },
+              {
+                text: 'themes',
+                range: { start: { x: 52, y: 14 }, end: { x: 57, y: 14 } },
+                activate() {
+                  console.log('themes');
+                  isBaseTheme = !isBaseTheme;
+                  term.setOption('theme', isBaseTheme ? baseTheme : otherTheme);
+                  document.querySelector('.demo .inner').classList.toggle('other-theme', !isBaseTheme);
+                }
+              }
+            ]);
+            return;
+        }
+        callback(undefined);
       }
     });
   }
