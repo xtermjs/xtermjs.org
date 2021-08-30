@@ -1,6 +1,5 @@
 $(function () {
-  // HACK: This should be window.Terminal once upgraded to 4.0.1
-  var term = new window.Terminal.Terminal();
+  var term = new window.Terminal();
   term.open(document.getElementById('terminal'));
 
   function runFakeTerminal() {

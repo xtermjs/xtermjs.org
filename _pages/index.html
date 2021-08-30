@@ -17,11 +17,11 @@ permalink: /
     {% capture about %}{% include xtermjs-description.md %}{% endcapture %}
     {{ about | markdownify }}
   </article>
+  
+  {% include demo.html %}
 
   {% capture getting_started %}{% include getting-started.md %}{% endcapture %}
   {{ getting_started | markdownify }}
-
-  {% include demo.html %}
 
   {% capture real_world_uses %}{% include real-world-uses.md %}{% endcapture %}
   {{ real_world_uses | markdownify }}
