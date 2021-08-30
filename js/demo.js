@@ -21,8 +21,9 @@ $(function () {
 
     term.onData(e => {
       switch (e) {
-        case '\r': // Enter
         case '\u0003': // Ctrl+C
+          term.write('^C');
+        case '\r': // Enter
           prompt(term);
           break;
         case '\u007F': // Backspace (DEL)
