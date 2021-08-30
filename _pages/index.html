@@ -5,6 +5,14 @@ permalink: /
 
 <div class="home">
 
+  <div class="logo">
+    <img src="/images/logo-full.png">
+  </div>
+
+  <div class="description">
+    <p>Build terminals in the browser</p>
+  </div>
+  
   <article>
     {% capture about %}{% include xtermjs-description.md %}{% endcapture %}
     {{ about | markdownify }}
@@ -19,3 +27,6 @@ permalink: /
   {{ real_world_uses | markdownify }}
 
 </div>
+
+
+TODO: Stick this somewhere: It's used by popular projects such as VS Code, Hyper and Theia.

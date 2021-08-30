@@ -1,10 +1,10 @@
-Xterm.js is a front-end component written in TypeScript that lets applications bring fully-featured terminals to their users in the browser. It's used by popular projects such as VS Code, Hyper and Theia.
-
 ## Features
 
-- **Terminal apps just work**: Xterm.js works with most terminal apps such as `bash`, `vim` and `tmux`, this includes support for curses-based apps and mouse event support
-- **Performant**: Xterm.js is *really* fast, it even includes a GPU-accelerated renderer
-- **Rich unicode support**: Supports CJK, emojis and IMEs
-- **Self-contained**: Requires zero dependencies to work
-- **Accessible**: Screen reader support can be turned on using the `screenReaderMode` option
-- **And much more**: Links, theming, addons, well documented API, etc.
+- **Apps just work**: Xterm.js works with most terminal apps like `bash`, `vim` and `tmux`, including curses-based app and mouse support
+- **Performance**: Xterm.js is _fast_ and includes an optional [WebGL-based renderer](https://www.npmjs.com/package/xterm-addon-webgl)
+- **Unicode support**: Supports CJK, emojis and IMEs
+- **Self-contained**: Zero external dependencies
+- **Accessible**: A screen reader mode is available
+- **And much more**: Links, themes, addons, well documented API, etc.
+
+Xterm.js powers the terminal in VS Code, Hyper and Theia
