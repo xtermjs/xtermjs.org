@@ -17,7 +17,7 @@ $(function () {
     magenta: '#BC5ED1',
     brightMagenta: '#E572FF',
     cyan: '#5DA5D5',
-    brightCyan: '#72F0FFk',
+    brightCyan: '#72F0FF',
     white: '#F8F8F8',
     brightWhite: '#FFFFFF'
   };
@@ -95,21 +95,32 @@ $(function () {
     term.writeln('Below is a simple emulated backend, try running `help`.');
     prompt(term);
 
+    var command = '';
+
     term.onData(e => {
       switch (e) {
         case '\u0003': // Ctrl+C
           term.write('^C');
-        case '\r': // Enter
           prompt(term);
+          break;
+        case '\r': // Enter
+          runCommand(term, command);
+          command = '';
           break;
         case '\u007F': // Backspace (DEL)
           // Do not delete the prompt
           if (term._core.buffer.x > 2) {
             term.write('\b \b');
+            if (command.length > 0) {
+              command = command.substr(0, command.length - 1);
+            }
           }
           break;
         default: // Print all other characters for demo
-          term.write(e);
+          if (e >= String.fromCharCode(0x20) && e <= String.fromCharCode(0x7B)) {
+            command += e;
+            term.write(e);
+          }
       }
     });
 
@@ -197,6 +208,65 @@ $(function () {
 
   function prompt(term) {
     term.write('\r\n$ ');
-  }  
+  }
+
+  var commands = {
+    help: {
+      f: () => {
+        term.writeln([
+          'Welcome to xterm.js! Try some of the commands below.',
+          '',
+          ...Object.keys(commands).map(e => `  ${e.padEnd(10)} ${commands[e].description}`)
+        ].join('\n\r'));
+        prompt(term);
+      },
+      description: 'Prints this help message',
+    },
+    ls: {
+      f: () => {
+        term.writeln(['a', 'bunch', 'of', 'fake', 'files'].join('\r\n'));
+        term.prompt(term);
+      },
+      description: 'Prints a fake directory structure'
+    },
+    loadtest: {
+      f: () => {
+        let testData = [];
+        let byteCount = 0;
+        let start = performance.now();
+        for (let i = 0; i < 100; i++) {
+          let count = 1 + Math.floor(Math.random() * 79);
+          byteCount += count;
+          let data = new Uint8Array(count);
+          for (let i = 0; i < count; i++) {
+            data[i] = 0x20 + Math.floor(Math.random() * (0x7B - 0x20));
+          }
+          testData.push(data);
+        }
+        for (let i = 0; i < 100; i++) {
+          for (const d of testData) {
+            term.writeln(d);
+          }
+        }
+        term.write(`\r\nWrote ${byteCount * 100} bytes in ${Math.round((performance.now() - start) * 1000)}ms`);
+        term.prompt();
+      },
+      description: 'Simulate a lot of data coming from a process'
+    }
+  };
+
+  function runCommand(term, text) {
+    const command = text.trim().split(' ')[0];
+    if (command.length > 0) {
+      term.writeln('');
+      if (command in commands) {
+        commands[command].f();
+      } else {
+        term.writeln(`${command}: command not found`);
+        prompt(term);
+      }
+    }
+  }
+
   runFakeTerminal();
 });
