@@ -102,8 +102,6 @@ $(function () {
     term.writeln('Below is a simple emulated backend, try running `help`.');
     prompt(term);
 
-    var command = '';
-
     term.onData(e => {
       switch (e) {
         case '\u0003': // Ctrl+C
@@ -214,9 +212,11 @@ $(function () {
   }
 
   function prompt(term) {
+    command = '';
     term.write('\r\n$ ');
   }
 
+  var command = '';
   var commands = {
     help: {
       f: () => {
