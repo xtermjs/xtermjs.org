@@ -5,15 +5,23 @@ permalink: /
 
 <div class="home">
 
-  <article>
-    {% capture about %}{% include xtermjs-description.md %}{% endcapture %}
-    {{ about | markdownify }}
-  </article>
+  <div class="logo">
+    <img src="/images/logo-full.png">
+  </div>
+
+  <div class="description">
+    <p>Build terminals in the browser</p>
+  </div>
+
+  <div class="npm-install">
+    <div class="text">npm install xterm</div>
+    <button class="copy" title="Copy to clipboard" onclick="navigator.clipboard.writeText('npm install xterm'); document.querySelector('.copy').textContent = '\u2713'">Copy</div>
+  </div>
+  
+  {% include demo.html %}
 
   {% capture getting_started %}{% include getting-started.md %}{% endcapture %}
   {{ getting_started | markdownify }}
-
-  {% include demo.html %}
 
   {% capture real_world_uses %}{% include real-world-uses.md %}{% endcapture %}
   {{ real_world_uses | markdownify }}

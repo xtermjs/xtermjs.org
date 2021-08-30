@@ -1,0 +1,49 @@
+.home {
+    .logo {
+        text-align: center;
+    }
+
+    .description {
+        // max-width: 500px;
+        text-align: center;
+        font-size: 1.3em;
+        margin: 1em auto;
+        opacity: 0.8;
+    }
+
+    .npm-install {
+        display: flex;
+        width: 300px;
+        margin: auto;
+        justify-content: space-between;
+        background-color: #F8F8F8;
+        padding: 5px 14px 5px 20px;
+        border-radius: 4px;
+        .text {
+            font-family: monospace;
+            padding: 2px 0;
+        }
+        .copy {
+            border: 0;
+            background: none;
+            padding: 2px 6px;
+            &:hover {
+                background-color: #00000020;
+            }
+        }
+    }
+}
+
+.demo {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 50px;
+    .inner {
+        padding: 10px 20px;
+        border-radius: 4px;
+        background-color: #2D2E2C;
+        &.other-theme {
+            background-color: #282a36;
+        }
+    }
+}
