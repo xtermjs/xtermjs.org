@@ -33,3 +33,14 @@
         }
     }
 }
+
+.demo {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    .inner {
+        padding: 10px 20px;
+        border-radius: 4px;
+        background-color: #000;
+    }
+}

@@ -18,11 +18,6 @@ permalink: /
     <button class="copy" title="Copy to clipboard">Copy</div>
   </div>
   
-  <article>
-    {% capture about %}{% include xtermjs-description.md %}{% endcapture %}
-    {{ about | markdownify }}
-  </article>
-  
   {% include demo.html %}
 
   {% capture getting_started %}{% include getting-started.md %}{% endcapture %}
