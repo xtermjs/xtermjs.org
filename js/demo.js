@@ -265,7 +265,7 @@ $(function () {
         term.write('', () => {
           let time = Math.round(performance.now() - start);
           let mbs = ((byteCount / 1024) * (1 / (time / 1000))).toFixed(2);
-          term.write(`\n\r\nWrote ${byteCount}kB in ${time}ms (${mbs}MB/s) using the (${isWebglEnabled ? 'webgl' : 'canvas'} renderer)`);
+          term.write(`\n\r\nWrote ${byteCount}kB in ${time}ms (${mbs}MB/s) using the ${isWebglEnabled ? 'webgl' : 'canvas'} renderer`);
           term.prompt();
         });
       },
