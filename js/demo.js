@@ -52,9 +52,11 @@ $(function () {
   });
   term.open(document.querySelector('.demo .inner'));
 
+  var isWebglEnabled = false;
   try {
     const webgl = new window.WebglAddon.WebglAddon();
     term.loadAddon(webgl);
+    isWebglEnabled = true;
   } catch (e) {
     console.warn('WebGL addon threw an exception during load', e);
   }
@@ -257,7 +259,7 @@ $(function () {
             term.write(d);
           }
         }
-        term.write(`\r\nWrote ${byteCount}kB in ${Math.round((performance.now() - start) * 1000)}ms`);
+        term.write(`\r\nWrote ${byteCount}kB in ${Math.round((performance.now() - start) * 1000)}ms (${isWebglEnabled ? 'webgl' : 'canvas'} renderer)`);
         term.prompt();
       },
       description: 'Simulate a lot of data coming from a process'
