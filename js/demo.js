@@ -242,7 +242,6 @@ $(function () {
       f: () => {
         let testData = [];
         let byteCount = 0;
-        let start = performance.now();
         for (let i = 0; i < 50; i++) {
           let count = 1 + Math.floor(Math.random() * 79);
           byteCount += count + 2;
@@ -256,6 +255,7 @@ $(function () {
           data[data.length - 1] = 0x0D; // \r
           testData.push(data);
         }
+        let start = performance.now();
         for (let i = 0; i < 1024; i++) {
           for (const d of testData) {
             term.write(d);
