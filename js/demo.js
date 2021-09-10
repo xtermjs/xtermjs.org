@@ -95,7 +95,7 @@ $(function () {
       ' │                                                                            │',
       ' │  \x1b[35;1mUnicode support                        \x1b[36mAnd much more...\x1b[0m                   │',
       ' │   Supports CJK 語 and emoji \u2764\ufe0f            \x1b[3mLinks\x1b[0m, \x1b[3mthemes\x1b[0m, \x1b[3maddons\x1b[0m, \x1b[3mtyped API\x1b[0m  │',
-      ' │                                            ⮤ Try clicking italic text      │',
+      ' │                                            ^ Try clicking italic text      │',
       ' │                                                                            │',
       ' └────────────────────────────────────────────────────────────────────────────┘',
       ''
