@@ -24,7 +24,7 @@ layout: docs
 
 • **pointerCursor**: *boolean*
 
-*Defined in [xterm.d.ts:1199](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1199)*
+*Defined in [xterm.d.ts:1212](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1212)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **underline**: *boolean*
 
-*Defined in [xterm.d.ts:1204](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1204)*
+*Defined in [xterm.d.ts:1217](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1217)*

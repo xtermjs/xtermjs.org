@@ -32,7 +32,7 @@ layout: docs
 
 • **decorations**? : *[ILinkDecorations]({% link _docs/api/terminal/interfaces/ilinkdecorations.md %})*
 
-*Defined in [xterm.d.ts:1161](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1161)*
+*Defined in [xterm.d.ts:1174](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1174)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **range**: *[IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %})*
 
-*Defined in [xterm.d.ts:1149](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1149)*
+*Defined in [xterm.d.ts:1162](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1162)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **text**: *string*
 
-*Defined in [xterm.d.ts:1154](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1154)*
+*Defined in [xterm.d.ts:1167](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1167)*
 
 ## Methods
 
@@ -56,7 +56,7 @@ ___
 
 ▸ **activate**(`event`: MouseEvent, `text`: string): *void*
 
-*Defined in [xterm.d.ts:1168](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1168)*
+*Defined in [xterm.d.ts:1181](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1181)*
 
 **Parameters:**
 
@@ -73,7 +73,7 @@ ___
 
 ▸ **dispose**(): *void*
 
-*Defined in [xterm.d.ts:1189](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1189)*
+*Defined in [xterm.d.ts:1202](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1202)*
 
 **Returns:** *void*
 
@@ -83,7 +83,7 @@ ___
 
 ▸ **hover**(`event`: MouseEvent, `text`: string): *void*
 
-*Defined in [xterm.d.ts:1177](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1177)*
+*Defined in [xterm.d.ts:1190](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1190)*
 
 **Parameters:**
 
@@ -100,7 +100,7 @@ ___
 
 ▸ **leave**(`event`: MouseEvent, `text`: string): *void*
 
-*Defined in [xterm.d.ts:1184](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1184)*
+*Defined in [xterm.d.ts:1197](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1197)*
 
 **Parameters:**
 

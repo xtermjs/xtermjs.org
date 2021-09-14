@@ -7,7 +7,7 @@ category: API
 
 # Supported Terminal Sequences
 
-xterm.js version: 4.12.0
+xterm.js version: 4.14.1
 
 ## Table of Contents
 
@@ -417,7 +417,7 @@ Supported param values by SGR:
 | 6         | Rapidly blinking.                                        | <span title="unsupported">✗</span>      |
 | 7         | Inverse. Flips foreground and background color.          | <span title="supported">✓</span>      |
 | 8         | Invisible (hidden).                                      | <span title="supported">✓</span>      |
-| 9         | Crossed-out characters.                                  | <span title="unsupported">✗</span>      |
+| 9         | Crossed-out characters (strikethrough).                  | <span title="supported">✓</span>      |
 | 21        | Doubly underlined.                                       | <span title="Currently outputs a single underline." style="text-decoration: underline">Partial</span> |
 | 22        | Normal (neither bold nor faint).                         | <span title="supported">✓</span>      |
 | 23        | No italic.                                               | <span title="supported">✓</span>      |
@@ -425,7 +425,7 @@ Supported param values by SGR:
 | 25        | Steady (not blinking).                                   | <span title="supported">✓</span>      |
 | 27        | Positive (not inverse).                                  | <span title="supported">✓</span>      |
 | 28        | Visible (not hidden).                                    | <span title="supported">✓</span>      |
-| 29        | Not Crossed-out.                                         | <span title="unsupported">✗</span>      |
+| 29        | Not Crossed-out (strikethrough).                         | <span title="supported">✓</span>      |
 | 30        | Foreground color: Black.                                 | <span title="supported">✓</span>      |
 | 31        | Foreground color: Red.                                   | <span title="supported">✓</span>      |
 | 32        | Foreground color: Green.                                 | <span title="supported">✓</span>      |

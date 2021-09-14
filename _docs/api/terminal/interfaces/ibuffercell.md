@@ -43,7 +43,7 @@ layout: docs
 
 ▸ **getBgColor**(): *number*
 
-*Defined in [xterm.d.ts:1430](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1430)*
+*Defined in [xterm.d.ts:1443](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1443)*
 
 **Returns:** *number*
 
@@ -53,7 +53,7 @@ ___
 
 ▸ **getBgColorMode**(): *number*
 
-*Defined in [xterm.d.ts:1404](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1404)*
+*Defined in [xterm.d.ts:1417](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1417)*
 
 **Returns:** *number*
 
@@ -63,7 +63,7 @@ ___
 
 ▸ **getChars**(): *string*
 
-*Defined in [xterm.d.ts:1382](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1382)*
+*Defined in [xterm.d.ts:1395](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1395)*
 
 **Returns:** *string*
 
@@ -73,7 +73,7 @@ ___
 
 ▸ **getCode**(): *number*
 
-*Defined in [xterm.d.ts:1388](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1388)*
+*Defined in [xterm.d.ts:1401](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1401)*
 
 **Returns:** *number*
 
@@ -83,7 +83,7 @@ ___
 
 ▸ **getFgColor**(): *number*
 
-*Defined in [xterm.d.ts:1417](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1417)*
+*Defined in [xterm.d.ts:1430](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1430)*
 
 **Returns:** *number*
 
@@ -93,7 +93,7 @@ ___
 
 ▸ **getFgColorMode**(): *number*
 
-*Defined in [xterm.d.ts:1396](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1396)*
+*Defined in [xterm.d.ts:1409](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1409)*
 
 **Returns:** *number*
 
@@ -103,7 +103,7 @@ ___
 
 ▸ **getWidth**(): *number*
 
-*Defined in [xterm.d.ts:1373](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1373)*
+*Defined in [xterm.d.ts:1386](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1386)*
 
 **Returns:** *number*
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **isAttributeDefault**(): *boolean*
 
-*Defined in [xterm.d.ts:1461](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1461)*
+*Defined in [xterm.d.ts:1474](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1474)*
 
 **Returns:** *boolean*
 
@@ -123,7 +123,7 @@ ___
 
 ▸ **isBgDefault**(): *boolean*
 
-*Defined in [xterm.d.ts:1458](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1458)*
+*Defined in [xterm.d.ts:1471](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1471)*
 
 **Returns:** *boolean*
 
@@ -133,7 +133,7 @@ ___
 
 ▸ **isBgPalette**(): *boolean*
 
-*Defined in [xterm.d.ts:1454](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1454)*
+*Defined in [xterm.d.ts:1467](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1467)*
 
 **Returns:** *boolean*
 
@@ -143,7 +143,7 @@ ___
 
 ▸ **isBgRGB**(): *boolean*
 
-*Defined in [xterm.d.ts:1450](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1450)*
+*Defined in [xterm.d.ts:1463](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1463)*
 
 **Returns:** *boolean*
 
@@ -153,7 +153,7 @@ ___
 
 ▸ **isBlink**(): *number*
 
-*Defined in [xterm.d.ts:1441](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1441)*
+*Defined in [xterm.d.ts:1454](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1454)*
 
 **Returns:** *number*
 
@@ -163,7 +163,7 @@ ___
 
 ▸ **isBold**(): *number*
 
-*Defined in [xterm.d.ts:1433](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1433)*
+*Defined in [xterm.d.ts:1446](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1446)*
 
 **Returns:** *number*
 
@@ -173,7 +173,7 @@ ___
 
 ▸ **isDim**(): *number*
 
-*Defined in [xterm.d.ts:1437](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1437)*
+*Defined in [xterm.d.ts:1450](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1450)*
 
 **Returns:** *number*
 
@@ -183,7 +183,7 @@ ___
 
 ▸ **isFgDefault**(): *boolean*
 
-*Defined in [xterm.d.ts:1456](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1456)*
+*Defined in [xterm.d.ts:1469](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1469)*
 
 **Returns:** *boolean*
 
@@ -193,7 +193,7 @@ ___
 
 ▸ **isFgPalette**(): *boolean*
 
-*Defined in [xterm.d.ts:1452](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1452)*
+*Defined in [xterm.d.ts:1465](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1465)*
 
 **Returns:** *boolean*
 
@@ -203,7 +203,7 @@ ___
 
 ▸ **isFgRGB**(): *boolean*
 
-*Defined in [xterm.d.ts:1448](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1448)*
+*Defined in [xterm.d.ts:1461](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1461)*
 
 **Returns:** *boolean*
 
@@ -213,7 +213,7 @@ ___
 
 ▸ **isInverse**(): *number*
 
-*Defined in [xterm.d.ts:1443](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1443)*
+*Defined in [xterm.d.ts:1456](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1456)*
 
 **Returns:** *number*
 
@@ -223,7 +223,7 @@ ___
 
 ▸ **isInvisible**(): *number*
 
-*Defined in [xterm.d.ts:1445](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1445)*
+*Defined in [xterm.d.ts:1458](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1458)*
 
 **Returns:** *number*
 
@@ -233,7 +233,7 @@ ___
 
 ▸ **isItalic**(): *number*
 
-*Defined in [xterm.d.ts:1435](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1435)*
+*Defined in [xterm.d.ts:1448](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1448)*
 
 **Returns:** *number*
 
@@ -243,6 +243,6 @@ ___
 
 ▸ **isUnderline**(): *number*
 
-*Defined in [xterm.d.ts:1439](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1439)*
+*Defined in [xterm.d.ts:1452](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1452)*
 
 **Returns:** *number*

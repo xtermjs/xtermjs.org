@@ -29,7 +29,7 @@ layout: docs
 
 • **isWrapped**: *boolean*
 
-*Defined in [xterm.d.ts:1329](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1329)*
+*Defined in [xterm.d.ts:1342](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1342)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **length**: *number*
 
-*Defined in [xterm.d.ts:1335](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1335)*
+*Defined in [xterm.d.ts:1348](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1348)*
 
 ## Methods
 
@@ -45,7 +45,7 @@ ___
 
 ▸ **getCell**(`x`: number, `cell?`: [IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %})): *[IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %}) | undefined*
 
-*Defined in [xterm.d.ts:1349](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1349)*
+*Defined in [xterm.d.ts:1362](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1362)*
 
 **Parameters:**
 
@@ -62,7 +62,7 @@ ___
 
 ▸ **translateToString**(`trimRight?`: boolean, `startColumn?`: number, `endColumn?`: number): *string*
 
-*Defined in [xterm.d.ts:1359](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1359)*
+*Defined in [xterm.d.ts:1372](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1372)*
 
 **Parameters:**
 

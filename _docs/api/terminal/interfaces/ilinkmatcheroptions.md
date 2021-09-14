@@ -28,7 +28,7 @@ layout: docs
 
 • **leaveCallback**? : *function*
 
-*Defined in [xterm.d.ts:337](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L337)*
+*Defined in [xterm.d.ts:345](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L345)*
 
 #### Type declaration:
 
@@ -40,7 +40,7 @@ ___
 
 • **matchIndex**? : *number*
 
-*Defined in [xterm.d.ts:319](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L319)*
+*Defined in [xterm.d.ts:327](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L327)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **priority**? : *number*
 
-*Defined in [xterm.d.ts:344](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L344)*
+*Defined in [xterm.d.ts:352](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L352)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **tooltipCallback**? : *function*
 
-*Defined in [xterm.d.ts:331](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L331)*
+*Defined in [xterm.d.ts:339](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L339)*
 
 #### Type declaration:
 
@@ -76,7 +76,7 @@ ___
 
 • **validationCallback**? : *function*
 
-*Defined in [xterm.d.ts:325](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L325)*
+*Defined in [xterm.d.ts:333](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L333)*
 
 #### Type declaration:
 
@@ -102,7 +102,7 @@ ___
 
 • **willLinkActivate**? : *function*
 
-*Defined in [xterm.d.ts:352](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L352)*
+*Defined in [xterm.d.ts:360](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L360)*
 
 #### Type declaration:
 

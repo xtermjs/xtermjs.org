@@ -44,7 +44,7 @@ layout: docs
 
 • **fullscreenWin**? : *boolean*
 
-*Defined in [xterm.d.ts:501](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L501)*
+*Defined in [xterm.d.ts:509](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L509)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **getCellSizePixels**? : *boolean*
 
-*Defined in [xterm.d.ts:529](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L529)*
+*Defined in [xterm.d.ts:537](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L537)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **getIconTitle**? : *boolean*
 
-*Defined in [xterm.d.ts:544](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L544)*
+*Defined in [xterm.d.ts:552](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L552)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **getScreenSizeChars**? : *boolean*
 
-*Defined in [xterm.d.ts:539](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L539)*
+*Defined in [xterm.d.ts:547](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L547)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **getScreenSizePixels**? : *boolean*
 
-*Defined in [xterm.d.ts:524](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L524)*
+*Defined in [xterm.d.ts:532](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L532)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **getWinPosition**? : *boolean*
 
-*Defined in [xterm.d.ts:513](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L513)*
+*Defined in [xterm.d.ts:521](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L521)*
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 • **getWinSizeChars**? : *boolean*
 
-*Defined in [xterm.d.ts:534](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L534)*
+*Defined in [xterm.d.ts:542](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L542)*
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 • **getWinSizePixels**? : *boolean*
 
-*Defined in [xterm.d.ts:519](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L519)*
+*Defined in [xterm.d.ts:527](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L527)*
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 • **getWinState**? : *boolean*
 
-*Defined in [xterm.d.ts:507](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L507)*
+*Defined in [xterm.d.ts:515](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L515)*
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 • **getWinTitle**? : *boolean*
 
-*Defined in [xterm.d.ts:549](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L549)*
+*Defined in [xterm.d.ts:557](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L557)*
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 • **lowerWin**? : *boolean*
 
-*Defined in [xterm.d.ts:476](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L476)*
+*Defined in [xterm.d.ts:484](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L484)*
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 • **maximizeWin**? : *boolean*
 
-*Defined in [xterm.d.ts:494](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L494)*
+*Defined in [xterm.d.ts:502](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L502)*
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 • **minimizeWin**? : *boolean*
 
-*Defined in [xterm.d.ts:452](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L452)*
+*Defined in [xterm.d.ts:460](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L460)*
 
 ___
 
@@ -148,7 +148,7 @@ ___
 
 • **popTitle**? : *boolean*
 
-*Defined in [xterm.d.ts:563](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L563)*
+*Defined in [xterm.d.ts:571](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L571)*
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 • **pushTitle**? : *boolean*
 
-*Defined in [xterm.d.ts:556](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L556)*
+*Defined in [xterm.d.ts:564](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L564)*
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 • **raiseWin**? : *boolean*
 
-*Defined in [xterm.d.ts:471](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L471)*
+*Defined in [xterm.d.ts:479](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L479)*
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 • **refreshWin**? : *boolean*
 
-*Defined in [xterm.d.ts:478](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L478)*
+*Defined in [xterm.d.ts:486](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L486)*
 
 ___
 
@@ -180,7 +180,7 @@ ___
 
 • **restoreWin**? : *boolean*
 
-*Defined in [xterm.d.ts:447](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L447)*
+*Defined in [xterm.d.ts:455](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L455)*
 
 ___
 
@@ -188,7 +188,7 @@ ___
 
 • **setWinLines**? : *boolean*
 
-*Defined in [xterm.d.ts:569](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L569)*
+*Defined in [xterm.d.ts:577](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L577)*
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 • **setWinPosition**? : *boolean*
 
-*Defined in [xterm.d.ts:458](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L458)*
+*Defined in [xterm.d.ts:466](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L466)*
 
 ___
 
@@ -204,7 +204,7 @@ ___
 
 • **setWinSizeChars**? : *boolean*
 
-*Defined in [xterm.d.ts:486](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L486)*
+*Defined in [xterm.d.ts:494](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L494)*
 
 ___
 
@@ -212,4 +212,4 @@ ___
 
 • **setWinSizePixels**? : *boolean*
 
-*Defined in [xterm.d.ts:466](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L466)*
+*Defined in [xterm.d.ts:474](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L474)*
