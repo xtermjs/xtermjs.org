@@ -30,6 +30,7 @@ layout: docs
 * [ILinkProvider]({% link _docs/api/terminal/interfaces/ilinkprovider.md %})
 * [ILocalizableStrings]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %})
 * [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
+* [IModes]({% link _docs/api/terminal/interfaces/imodes.md %})
 * [IParser]({% link _docs/api/terminal/interfaces/iparser.md %})
 * [ISelectionPosition]({% link _docs/api/terminal/interfaces/iselectionposition.md %})
 * [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})
@@ -53,7 +54,7 @@ layout: docs
 
 Ƭ **FontWeight**: *"normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | number*
 
-*Defined in [xterm.d.ts:16](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L16)*
+*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L16)*
 
 ___
 
@@ -61,7 +62,7 @@ ___
 
 Ƭ **LogLevel**: *"debug" | "info" | "warn" | "error" | "off"*
 
-*Defined in [xterm.d.ts:21](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L21)*
+*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L21)*
 
 ___
 
@@ -69,4 +70,4 @@ ___
 
 Ƭ **RendererType**: *"dom" | "canvas"*
 
-*Defined in [xterm.d.ts:26](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L26)*
+*Defined in [xterm.d.ts:26](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L26)*

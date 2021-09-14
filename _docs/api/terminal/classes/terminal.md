@@ -27,6 +27,7 @@ layout: docs
 * [cols]({% link _docs/api/terminal/classes/terminal.md %}#cols)
 * [element]({% link _docs/api/terminal/classes/terminal.md %}#element)
 * [markers]({% link _docs/api/terminal/classes/terminal.md %}#markers)
+* [modes]({% link _docs/api/terminal/classes/terminal.md %}#modes)
 * [onBell]({% link _docs/api/terminal/classes/terminal.md %}#onbell)
 * [onBinary]({% link _docs/api/terminal/classes/terminal.md %}#onbinary)
 * [onCursorMove]({% link _docs/api/terminal/classes/terminal.md %}#oncursormove)
@@ -88,7 +89,7 @@ layout: docs
 
 \+ **new Terminal**(`options?`: [ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %})): *[Terminal]({% link _docs/api/terminal/classes/terminal.md %})*
 
-*Defined in [xterm.d.ts:628](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L628)*
+*Defined in [xterm.d.ts:641](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L641)*
 
 **Parameters:**
 
@@ -104,7 +105,7 @@ Name | Type | Description |
 
 • **buffer**: *[IBufferNamespace]({% link _docs/api/terminal/interfaces/ibuffernamespace.md %})*
 
-*Defined in [xterm.d.ts:605](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L605)*
+*Defined in [xterm.d.ts:613](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L613)*
 
 ___
 
@@ -112,7 +113,7 @@ ___
 
 • **cols**: *number*
 
-*Defined in [xterm.d.ts:598](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L598)*
+*Defined in [xterm.d.ts:606](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L606)*
 
 ___
 
@@ -120,7 +121,7 @@ ___
 
 • **element**: *HTMLElement | undefined*
 
-*Defined in [xterm.d.ts:579](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L579)*
+*Defined in [xterm.d.ts:587](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L587)*
 
 ___
 
@@ -128,7 +129,15 @@ ___
 
 • **markers**: *ReadonlyArray‹[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})›*
 
-*Defined in [xterm.d.ts:611](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L611)*
+*Defined in [xterm.d.ts:619](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L619)*
+
+___
+
+###  modes
+
+• **modes**: *[IModes]({% link _docs/api/terminal/interfaces/imodes.md %})*
+
+*Defined in [xterm.d.ts:636](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L636)*
 
 ___
 
@@ -136,7 +145,7 @@ ___
 
 • **onBell**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-*Defined in [xterm.d.ts:716](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L716)*
+*Defined in [xterm.d.ts:654](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L654)*
 
 ___
 
@@ -144,7 +153,7 @@ ___
 
 • **onBinary**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹string›*
 
-*Defined in [xterm.d.ts:646](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L646)*
+*Defined in [xterm.d.ts:665](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L665)*
 
 ___
 
@@ -152,7 +161,7 @@ ___
 
 • **onCursorMove**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-*Defined in [xterm.d.ts:652](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L652)*
+*Defined in [xterm.d.ts:671](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L671)*
 
 ___
 
@@ -160,7 +169,7 @@ ___
 
 • **onData**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹string›*
 
-*Defined in [xterm.d.ts:661](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L661)*
+*Defined in [xterm.d.ts:680](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L680)*
 
 ___
 
@@ -168,7 +177,7 @@ ___
 
 • **onKey**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹object›*
 
-*Defined in [xterm.d.ts:669](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L669)*
+*Defined in [xterm.d.ts:688](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L688)*
 
 ___
 
@@ -176,7 +185,7 @@ ___
 
 • **onLineFeed**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-*Defined in [xterm.d.ts:675](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L675)*
+*Defined in [xterm.d.ts:694](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L694)*
 
 ___
 
@@ -184,7 +193,7 @@ ___
 
 • **onRender**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹object›*
 
-*Defined in [xterm.d.ts:696](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L696)*
+*Defined in [xterm.d.ts:702](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L702)*
 
 ___
 
@@ -192,7 +201,7 @@ ___
 
 • **onResize**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹object›*
 
-*Defined in [xterm.d.ts:703](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L703)*
+*Defined in [xterm.d.ts:709](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L709)*
 
 ___
 
@@ -200,7 +209,7 @@ ___
 
 • **onScroll**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹number›*
 
-*Defined in [xterm.d.ts:682](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L682)*
+*Defined in [xterm.d.ts:716](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L716)*
 
 ___
 
@@ -208,7 +217,7 @@ ___
 
 • **onSelectionChange**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-*Defined in [xterm.d.ts:688](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L688)*
+*Defined in [xterm.d.ts:722](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L722)*
 
 ___
 
@@ -216,7 +225,7 @@ ___
 
 • **onTitleChange**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹string›*
 
-*Defined in [xterm.d.ts:710](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L710)*
+*Defined in [xterm.d.ts:729](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L729)*
 
 ___
 
@@ -224,7 +233,7 @@ ___
 
 • **parser**: *[IParser]({% link _docs/api/terminal/interfaces/iparser.md %})*
 
-*Defined in [xterm.d.ts:617](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L617)*
+*Defined in [xterm.d.ts:625](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L625)*
 
 ___
 
@@ -232,7 +241,7 @@ ___
 
 • **rows**: *number*
 
-*Defined in [xterm.d.ts:591](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L591)*
+*Defined in [xterm.d.ts:599](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L599)*
 
 ___
 
@@ -240,7 +249,7 @@ ___
 
 • **textarea**: *HTMLTextAreaElement | undefined*
 
-*Defined in [xterm.d.ts:584](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L584)*
+*Defined in [xterm.d.ts:592](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L592)*
 
 ___
 
@@ -248,7 +257,7 @@ ___
 
 • **unicode**: *[IUnicodeHandling]({% link _docs/api/terminal/interfaces/iunicodehandling.md %})*
 
-*Defined in [xterm.d.ts:623](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L623)*
+*Defined in [xterm.d.ts:631](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L631)*
 
 ___
 
@@ -256,7 +265,7 @@ ___
 
 ▪ **strings**: *[ILocalizableStrings]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %})*
 
-*Defined in [xterm.d.ts:628](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L628)*
+*Defined in [xterm.d.ts:641](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L641)*
 
 ## Methods
 
@@ -264,7 +273,7 @@ ___
 
 ▸ **addMarker**(`cursorYOffset`: number): *[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %}) | undefined*
 
-*Defined in [xterm.d.ts:835](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L835)*
+*Defined in [xterm.d.ts:848](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L848)*
 
 **Parameters:**
 
@@ -280,7 +289,7 @@ ___
 
 ▸ **attachCustomKeyEventHandler**(`customKeyEventHandler`: function): *void*
 
-*Defined in [xterm.d.ts:754](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L754)*
+*Defined in [xterm.d.ts:767](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L767)*
 
 **Parameters:**
 
@@ -302,7 +311,7 @@ ___
 
 ▸ **blur**(): *void*
 
-*Defined in [xterm.d.ts:721](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L721)*
+*Defined in [xterm.d.ts:734](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L734)*
 
 **Returns:** *void*
 
@@ -312,7 +321,7 @@ ___
 
 ▸ **clear**(): *void*
 
-*Defined in [xterm.d.ts:915](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L915)*
+*Defined in [xterm.d.ts:928](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L928)*
 
 **Returns:** *void*
 
@@ -322,7 +331,7 @@ ___
 
 ▸ **clearSelection**(): *void*
 
-*Defined in [xterm.d.ts:856](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L856)*
+*Defined in [xterm.d.ts:869](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L869)*
 
 **Returns:** *void*
 
@@ -332,7 +341,7 @@ ___
 
 ▸ **deregisterCharacterJoiner**(`joinerId`: number): *void*
 
-*Defined in [xterm.d.ts:822](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L822)*
+*Defined in [xterm.d.ts:835](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L835)*
 
 **Parameters:**
 
@@ -348,7 +357,7 @@ ___
 
 ▸ **deregisterLinkMatcher**(`matcherId`: number): *void*
 
-*Defined in [xterm.d.ts:776](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L776)*
+*Defined in [xterm.d.ts:789](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L789)*
 
 **Parameters:**
 
@@ -366,7 +375,7 @@ ___
 
 *Implementation of [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:882](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L882)*
+*Defined in [xterm.d.ts:895](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L895)*
 
 **Returns:** *void*
 
@@ -376,7 +385,7 @@ ___
 
 ▸ **focus**(): *void*
 
-*Defined in [xterm.d.ts:726](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L726)*
+*Defined in [xterm.d.ts:739](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L739)*
 
 **Returns:** *void*
 
@@ -386,7 +395,7 @@ ___
 
 ▸ **getOption**(`key`: "bellSound" | "bellStyle" | "cursorStyle" | "fontFamily" | "logLevel" | "rendererType" | "termName" | "wordSeparator"): *string*
 
-*Defined in [xterm.d.ts:955](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L955)*
+*Defined in [xterm.d.ts:968](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L968)*
 
 **Parameters:**
 
@@ -398,7 +407,7 @@ Name | Type | Description |
 
 ▸ **getOption**(`key`: "allowTransparency" | "cancelEvents" | "convertEol" | "cursorBlink" | "disableStdin" | "macOptionIsMeta" | "rightClickSelectsWord" | "popOnBell" | "visualBell" | "windowsMode"): *boolean*
 
-*Defined in [xterm.d.ts:960](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L960)*
+*Defined in [xterm.d.ts:973](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L973)*
 
 **Parameters:**
 
@@ -410,7 +419,7 @@ Name | Type | Description |
 
 ▸ **getOption**(`key`: "cols" | "fontSize" | "letterSpacing" | "lineHeight" | "rows" | "tabStopWidth" | "scrollback"): *number*
 
-*Defined in [xterm.d.ts:965](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L965)*
+*Defined in [xterm.d.ts:978](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L978)*
 
 **Parameters:**
 
@@ -422,7 +431,7 @@ Name | Type | Description |
 
 ▸ **getOption**(`key`: "fontWeight" | "fontWeightBold"): *[FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)*
 
-*Defined in [xterm.d.ts:970](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L970)*
+*Defined in [xterm.d.ts:983](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L983)*
 
 **Parameters:**
 
@@ -434,7 +443,7 @@ Name | Type | Description |
 
 ▸ **getOption**(`key`: string): *any*
 
-*Defined in [xterm.d.ts:975](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L975)*
+*Defined in [xterm.d.ts:988](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L988)*
 
 **Parameters:**
 
@@ -450,7 +459,7 @@ ___
 
 ▸ **getSelection**(): *string*
 
-*Defined in [xterm.d.ts:846](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L846)*
+*Defined in [xterm.d.ts:859](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L859)*
 
 **Returns:** *string*
 
@@ -460,7 +469,7 @@ ___
 
 ▸ **getSelectionPosition**(): *[ISelectionPosition]({% link _docs/api/terminal/interfaces/iselectionposition.md %}) | undefined*
 
-*Defined in [xterm.d.ts:851](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L851)*
+*Defined in [xterm.d.ts:864](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L864)*
 
 **Returns:** *[ISelectionPosition]({% link _docs/api/terminal/interfaces/iselectionposition.md %}) | undefined*
 
@@ -470,7 +479,7 @@ ___
 
 ▸ **hasSelection**(): *boolean*
 
-*Defined in [xterm.d.ts:840](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L840)*
+*Defined in [xterm.d.ts:853](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L853)*
 
 **Returns:** *boolean*
 
@@ -480,7 +489,7 @@ ___
 
 ▸ **loadAddon**(`addon`: [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})): *void*
 
-*Defined in [xterm.d.ts:1055](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1055)*
+*Defined in [xterm.d.ts:1068](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1068)*
 
 **Parameters:**
 
@@ -496,7 +505,7 @@ ___
 
 ▸ **open**(`parent`: HTMLElement): *void*
 
-*Defined in [xterm.d.ts:743](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L743)*
+*Defined in [xterm.d.ts:756](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L756)*
 
 **Parameters:**
 
@@ -512,7 +521,7 @@ ___
 
 ▸ **paste**(`data`: string): *void*
 
-*Defined in [xterm.d.ts:949](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L949)*
+*Defined in [xterm.d.ts:962](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L962)*
 
 **Parameters:**
 
@@ -528,7 +537,7 @@ ___
 
 ▸ **refresh**(`start`: number, `end`: number): *void*
 
-*Defined in [xterm.d.ts:1044](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1044)*
+*Defined in [xterm.d.ts:1057](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1057)*
 
 **Parameters:**
 
@@ -545,7 +554,7 @@ ___
 
 ▸ **registerCharacterJoiner**(`handler`: function): *number*
 
-*Defined in [xterm.d.ts:815](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L815)*
+*Defined in [xterm.d.ts:828](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L828)*
 
 **Parameters:**
 
@@ -569,7 +578,7 @@ ___
 
 ▸ **registerLinkMatcher**(`regex`: RegExp, `handler`: function, `options?`: [ILinkMatcherOptions]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %})): *number*
 
-*Defined in [xterm.d.ts:768](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L768)*
+*Defined in [xterm.d.ts:781](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L781)*
 
 **Parameters:**
 
@@ -598,7 +607,7 @@ ___
 
 ▸ **registerLinkProvider**(`linkProvider`: [ILinkProvider]({% link _docs/api/terminal/interfaces/ilinkprovider.md %})): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:784](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L784)*
+*Defined in [xterm.d.ts:797](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L797)*
 
 **Parameters:**
 
@@ -614,7 +623,7 @@ ___
 
 ▸ **registerMarker**(`cursorYOffset`: number): *[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %}) | undefined*
 
-*Defined in [xterm.d.ts:830](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L830)*
+*Defined in [xterm.d.ts:843](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L843)*
 
 **Parameters:**
 
@@ -632,7 +641,7 @@ ___
 
 ▸ **reset**(): *void*
 
-*Defined in [xterm.d.ts:1049](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1049)*
+*Defined in [xterm.d.ts:1062](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1062)*
 
 **Returns:** *void*
 
@@ -642,7 +651,7 @@ ___
 
 ▸ **resize**(`columns`: number, `rows`: number): *void*
 
-*Defined in [xterm.d.ts:735](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L735)*
+*Defined in [xterm.d.ts:748](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L748)*
 
 **Parameters:**
 
@@ -659,7 +668,7 @@ ___
 
 ▸ **scrollLines**(`amount`: number): *void*
 
-*Defined in [xterm.d.ts:888](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L888)*
+*Defined in [xterm.d.ts:901](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L901)*
 
 **Parameters:**
 
@@ -675,7 +684,7 @@ ___
 
 ▸ **scrollPages**(`pageCount`: number): *void*
 
-*Defined in [xterm.d.ts:894](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L894)*
+*Defined in [xterm.d.ts:907](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L907)*
 
 **Parameters:**
 
@@ -691,7 +700,7 @@ ___
 
 ▸ **scrollToBottom**(): *void*
 
-*Defined in [xterm.d.ts:904](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L904)*
+*Defined in [xterm.d.ts:917](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L917)*
 
 **Returns:** *void*
 
@@ -701,7 +710,7 @@ ___
 
 ▸ **scrollToLine**(`line`: number): *void*
 
-*Defined in [xterm.d.ts:910](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L910)*
+*Defined in [xterm.d.ts:923](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L923)*
 
 **Parameters:**
 
@@ -717,7 +726,7 @@ ___
 
 ▸ **scrollToTop**(): *void*
 
-*Defined in [xterm.d.ts:899](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L899)*
+*Defined in [xterm.d.ts:912](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L912)*
 
 **Returns:** *void*
 
@@ -727,7 +736,7 @@ ___
 
 ▸ **select**(`column`: number, `row`: number, `length`: number): *void*
 
-*Defined in [xterm.d.ts:864](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L864)*
+*Defined in [xterm.d.ts:877](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L877)*
 
 **Parameters:**
 
@@ -745,7 +754,7 @@ ___
 
 ▸ **selectAll**(): *void*
 
-*Defined in [xterm.d.ts:869](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L869)*
+*Defined in [xterm.d.ts:882](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L882)*
 
 **Returns:** *void*
 
@@ -755,7 +764,7 @@ ___
 
 ▸ **selectLines**(`start`: number, `end`: number): *void*
 
-*Defined in [xterm.d.ts:876](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L876)*
+*Defined in [xterm.d.ts:889](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L889)*
 
 **Parameters:**
 
@@ -772,7 +781,7 @@ ___
 
 ▸ **setOption**(`key`: "fontFamily" | "termName" | "bellSound" | "wordSeparator", `value`: string): *void*
 
-*Defined in [xterm.d.ts:982](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L982)*
+*Defined in [xterm.d.ts:995](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L995)*
 
 **Parameters:**
 
@@ -785,7 +794,7 @@ Name | Type | Description |
 
 ▸ **setOption**(`key`: "fontWeight" | "fontWeightBold", `value`: null | "normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | number): *void*
 
-*Defined in [xterm.d.ts:988](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L988)*
+*Defined in [xterm.d.ts:1001](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1001)*
 
 **Parameters:**
 
@@ -798,7 +807,7 @@ Name | Type | Description |
 
 ▸ **setOption**(`key`: "logLevel", `value`: [LogLevel]({% link _docs/api/terminal/modules/xterm.md %}#loglevel)): *void*
 
-*Defined in [xterm.d.ts:994](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L994)*
+*Defined in [xterm.d.ts:1007](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1007)*
 
 **Parameters:**
 
@@ -811,7 +820,7 @@ Name | Type | Description |
 
 ▸ **setOption**(`key`: "bellStyle", `value`: null | "none" | "visual" | "sound" | "both"): *void*
 
-*Defined in [xterm.d.ts:1000](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1000)*
+*Defined in [xterm.d.ts:1013](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1013)*
 
 **Parameters:**
 
@@ -824,7 +833,7 @@ Name | Type | Description |
 
 ▸ **setOption**(`key`: "cursorStyle", `value`: null | "block" | "underline" | "bar"): *void*
 
-*Defined in [xterm.d.ts:1006](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1006)*
+*Defined in [xterm.d.ts:1019](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1019)*
 
 **Parameters:**
 
@@ -837,7 +846,7 @@ Name | Type | Description |
 
 ▸ **setOption**(`key`: "allowTransparency" | "cancelEvents" | "convertEol" | "cursorBlink" | "disableStdin" | "macOptionIsMeta" | "popOnBell" | "rightClickSelectsWord" | "visualBell" | "windowsMode", `value`: boolean): *void*
 
-*Defined in [xterm.d.ts:1012](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1012)*
+*Defined in [xterm.d.ts:1025](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1025)*
 
 **Parameters:**
 
@@ -850,7 +859,7 @@ Name | Type | Description |
 
 ▸ **setOption**(`key`: "fontSize" | "letterSpacing" | "lineHeight" | "tabStopWidth" | "scrollback", `value`: number): *void*
 
-*Defined in [xterm.d.ts:1018](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1018)*
+*Defined in [xterm.d.ts:1031](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1031)*
 
 **Parameters:**
 
@@ -863,7 +872,7 @@ Name | Type | Description |
 
 ▸ **setOption**(`key`: "theme", `value`: [ITheme]({% link _docs/api/terminal/interfaces/itheme.md %})): *void*
 
-*Defined in [xterm.d.ts:1024](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1024)*
+*Defined in [xterm.d.ts:1037](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1037)*
 
 **Parameters:**
 
@@ -876,7 +885,7 @@ Name | Type | Description |
 
 ▸ **setOption**(`key`: "cols" | "rows", `value`: number): *void*
 
-*Defined in [xterm.d.ts:1030](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1030)*
+*Defined in [xterm.d.ts:1043](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1043)*
 
 **Parameters:**
 
@@ -889,7 +898,7 @@ Name | Type | Description |
 
 ▸ **setOption**(`key`: string, `value`: any): *void*
 
-*Defined in [xterm.d.ts:1036](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1036)*
+*Defined in [xterm.d.ts:1049](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1049)*
 
 **Parameters:**
 
@@ -906,7 +915,7 @@ ___
 
 ▸ **write**(`data`: string | Uint8Array, `callback?`: function): *void*
 
-*Defined in [xterm.d.ts:925](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L925)*
+*Defined in [xterm.d.ts:938](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L938)*
 
 **Parameters:**
 
@@ -924,7 +933,7 @@ ___
 
 ▸ **writeUtf8**(`data`: Uint8Array, `callback?`: function): *void*
 
-*Defined in [xterm.d.ts:943](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L943)*
+*Defined in [xterm.d.ts:956](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L956)*
 
 **Parameters:**
 
@@ -942,7 +951,7 @@ ___
 
 ▸ **writeln**(`data`: string | Uint8Array, `callback?`: function): *void*
 
-*Defined in [xterm.d.ts:935](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L935)*
+*Defined in [xterm.d.ts:948](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L948)*
 
 **Parameters:**
 

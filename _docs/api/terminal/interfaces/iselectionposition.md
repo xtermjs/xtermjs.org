@@ -26,7 +26,7 @@ layout: docs
 
 • **endColumn**: *number*
 
-*Defined in [xterm.d.ts:1085](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1085)*
+*Defined in [xterm.d.ts:1098](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1098)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **endRow**: *number*
 
-*Defined in [xterm.d.ts:1090](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1090)*
+*Defined in [xterm.d.ts:1103](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1103)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **startColumn**: *number*
 
-*Defined in [xterm.d.ts:1075](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1075)*
+*Defined in [xterm.d.ts:1088](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1088)*
 
 ___
 
@@ -50,4 +50,4 @@ ___
 
 • **startRow**: *number*
 
-*Defined in [xterm.d.ts:1080](https://github.com/meganrogge/xterm.js/blob/4.13.0/typings/xterm.d.ts#L1080)*
+*Defined in [xterm.d.ts:1093](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1093)*
