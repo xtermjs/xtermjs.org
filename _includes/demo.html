@@ -1,7 +1,22 @@
 <div class="demo">
     <div class="inner"></div>
 </div>
-<link rel="stylesheet" href="https://unpkg.com/xterm@4.13.0/css/xterm.css" />
-<script src="https://unpkg.com/xterm@4.13.0/lib/xterm.js"></script>
-<script src="https://unpkg.com/xterm-addon-webgl@0.11.1/lib/xterm-addon-webgl.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/xterm@4.14.0/css/xterm.css" />
+<style>
+.xterm-viewport.xterm-viewport {
+    scrollbar-width: thin;
+}
+.xterm-viewport::-webkit-scrollbar {
+    width: 10px;
+}
+.xterm-viewport::-webkit-scrollbar-track {
+    opacity: 0;
+}
+.xterm-viewport::-webkit-scrollbar-thumb {
+    min-height: 20px;
+    background-color: #ffffff20;
+}
+</style>
+<script src="https://unpkg.com/xterm@4.14.0/lib/xterm.js"></script>
+<script src="https://unpkg.com/xterm-addon-webgl@0.11.2/lib/xterm-addon-webgl.js"></script>
 <script src="{{ "/js/demo.js" | prepend: site.baseurl }}"></script>
