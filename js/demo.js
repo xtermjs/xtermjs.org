@@ -94,16 +94,16 @@ $(function () {
       ' │   A screen reader mode is available      Zero external dependencies        │',
       ' │                                                                            │',
       ' │  \x1b[35;1mUnicode support                        \x1b[36mAnd much more...\x1b[0m                   │',
-      ' │   Supports CJK 語 and emoji \u2764\ufe0f            \x1b[3mLinks\x1b[0m, \x1b[3mthemes\x1b[0m, \x1b[3maddons\x1b[0m, \x1b[3mtyped API\x1b[0m  │',
-      ' │                                            ^ Try clicking italic text      │',
+      ' │   Supports CJK 語 and emoji \u2764\ufe0f            \x1b[3mLinks\x1b[0m, \x1b[3mthemes\x1b[0m, \x1b[3maddons\x1b[0m,            │',
+      ' │                                          \x1b[3mtyped API\x1b[0m, \x1b[3mdecorations\x1b[0m            │',
       ' │                                                                            │',
       ' └────────────────────────────────────────────────────────────────────────────┘',
       ''
     ].join('\n\r'));
 
     term.writeln('Below is a simple emulated backend, try running `help`.');
+    addDecoration(term);
     prompt(term);
-
     term.onData(e => {
       switch (e) {
         case '\u0003': // Ctrl+C
@@ -197,15 +197,25 @@ $(function () {
                 activate() {
                   window.open('/docs/guides/using-addons/', '_blank');
                 }
-              },
-              {
-                text: 'typed API',
-                range: { start: { x: 68, y: 14 }, end: { x: 76, y: 14 } },
-                activate() {
-                  window.open('https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts', '_blank');
-                }
-              },
+              }
             ]);
+            return;
+          case 15: callback([
+            {
+              text: 'typed API',
+              range: { start: { x: 45, y: 15 }, end: { x: 53, y: 15 } },
+              activate() {
+                window.open('https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts', '_blank');
+              }
+            },
+            {
+              text: 'decorations',
+              range: { start: { x: 56, y: 15 }, end: { x: 66, y: 15 } },
+              activate() {
+                window.open('https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L947', '_blank');
+              }
+            },
+          ]);
             return;
         }
         callback(undefined);
@@ -288,3 +298,14 @@ $(function () {
 
   runFakeTerminal();
 });
+
+function addDecoration(term) {
+  const marker = term.addMarker(16);
+  const decoration = term.registerDecoration({ marker, x: 45, width: 20 });
+  decoration.onRender(element => {
+    element.classList.add('link-hint-decoration');
+    element.innerText = 'Try clicking italic text';
+    element.style.height = '25px';
+    element.style.color = 'white';
+  });
+}

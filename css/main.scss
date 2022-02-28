@@ -185,6 +185,27 @@ h4:hover, h5:hover, h6:hover {
 
 }
 
+.link-hint-decoration {
+  background-color: #ff4500;
+  position: relative;
+  display: inline-block;
+  padding: .2em .5em;
+  border-radius: 15px;
+}
+
+.link-hint-decoration::after {
+  border-bottom: 10px solid #ff4500;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  width: 0;
+  height: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  left: 1em;
+}
+
 @import 'code';
 @import 'home';
 @import 'syntax_highlight';
