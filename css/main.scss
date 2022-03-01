@@ -189,6 +189,10 @@ h4:hover, h5:hover, h6:hover {
   background-color: #5f5d5d;
   padding: .2em .5em;
   border-radius: 7px;
+  color: white;
+  border-top-right-radius: 0px;
+  margin-top: 8px;
+  font-size: 15px;
 }
 
 .link-hint-decoration::after {

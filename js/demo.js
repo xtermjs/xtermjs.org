@@ -301,15 +301,12 @@ $(function () {
 
 function addDecoration(term) {
   const marker = term.addMarker(15);
-  const decoration = term.registerDecoration({ marker, x: 44, width: 20 });
+  const decoration = term.registerDecoration({ marker, x: 44 });
   decoration.onRender(element => {
     element.classList.add('link-hint-decoration');
     element.innerText = 'Try clicking italic text';
+    // must be inlined to override inlined width/height coming from xterm
     element.style.height = '';
     element.style.width = '';
-    element.style.color = 'white';
-    element.style.borderTopRightRadius = '0px';
-    element.style.marginTop = '8px';
-    element.style.fontSize = '15px';
   });
 }
