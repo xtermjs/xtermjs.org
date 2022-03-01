@@ -300,12 +300,15 @@ $(function () {
 });
 
 function addDecoration(term) {
-  const marker = term.addMarker(16);
-  const decoration = term.registerDecoration({ marker, x: 45, width: 20 });
+  const marker = term.addMarker(15);
+  const decoration = term.registerDecoration({ marker, x: 44, width: 20 });
   decoration.onRender(element => {
     element.classList.add('link-hint-decoration');
     element.innerText = 'Try clicking italic text';
-    element.style.height = '25px';
+    element.style.height = '';
+    element.style.width = '';
     element.style.color = 'white';
+    element.style.borderTopRightRadius = '0px';
+    element.style.marginTop = '8px';
   });
 }
