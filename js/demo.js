@@ -104,7 +104,7 @@ $(function () {
     term.writeln('Below is a simple emulated backend, try running `help`.');
     addDecoration(term);
     prompt(term);
-    
+
     term.onData(e => {
       switch (e) {
         case '\u0003': // Ctrl+C
