@@ -310,5 +310,6 @@ function addDecoration(term) {
     element.style.color = 'white';
     element.style.borderTopRightRadius = '0px';
     element.style.marginTop = '8px';
+    element.style.fontSize = '15px';
   });
 }
