@@ -185,6 +185,28 @@ h4:hover, h5:hover, h6:hover {
 
 }
 
+.link-hint-decoration {
+  background-color: #5f5d5d;
+  padding: .2em .5em;
+  border-radius: 7px;
+  color: white;
+  border-top-right-radius: 0px;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.link-hint-decoration::after {
+  border-bottom: 6px solid #5f5d5d;
+  border-left: 6px solid transparent;
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  right: 0px;
+}
+
 @import 'code';
 @import 'home';
 @import 'syntax_highlight';
