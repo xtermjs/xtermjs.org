@@ -333,7 +333,7 @@ Still in common use:
 - **LF** (line feed `'\n'`)  
 Moves the printing position one line down (sometimes also to the left). Used as end-of-line marker (EOL) in Unix and derived operating systems.
 - **CR** (carriage return `'\r'`)  
-Moves the printing position to the start of the line, allowing overprinting. Used in combination with line feed CRFL as end-of-line marker (EOL) in Windows and several protocols like HTTP, FTP and SMTP.
+Moves the printing position to the start of the line, allowing overprinting. Used in combination with line feed CRLF as end-of-line marker (EOL) in Windows and several protocols like HTTP, FTP and SMTP.
 - **HT** (horizontal tab `'\t'`)  
 Moves the printing position right to the next tab stop. Understood by most editors.
 - **NUL** (null `'\0'`)  
