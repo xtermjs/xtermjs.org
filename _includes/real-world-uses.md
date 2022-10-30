@@ -1,6 +1,3 @@
-## Real-world uses
-Xterm.js is used in several world-class applications to provide great terminal experiences.
-
 - [**SourceLair**](https://www.sourcelair.com/): In-browser IDE that provides its users with fully-featured Linux terminals based on xterm.js.
 - [**Microsoft Visual Studio Code**](http://code.visualstudio.com/): Modern, versatile and powerful open source code editor that provides an integrated terminal based on xterm.js.
 - [**ttyd**](https://github.com/tsl0922/ttyd): A command-line tool for sharing terminal over the web, with fully-featured terminal emulation based on xterm.js.
@@ -55,5 +52,3 @@ Xterm.js is used in several world-class applications to provide great terminal e
 - [**PHP App Server**](https://github.com/cubiclesoft/php-app-server/): Create lightweight, installable almost-native applications for desktop OSes.  ExecTerminal (nicely wraps the xterm.js Terminal), TerminalManager, and RunProcessSDK are self-contained, reusable ES5+ compliant Javascript components.
 - [**NgTerminal**](https://github.com/qwefgh90/ng-terminal): NgTerminal is a web terminal that leverages xterm.js on Angular 7+. You can easily add it into your application by adding `<ng-terminal></ng-terminal>` into your component.
 - [**tty-share**](https://tty-share.com): Extremely simple terminal sharing over the Internet.
-
-[And much more...](https://github.com/xtermjs/xterm.js/network/dependents?package_id=UGFja2FnZS0xNjYzMjc4OQ%3D%3D)
