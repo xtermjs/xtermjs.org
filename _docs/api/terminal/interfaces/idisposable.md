@@ -11,7 +11,7 @@ layout: docs
 
 * **IDisposable**
 
-  ↳ [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
+  ↳ [IDisposableWithEvent]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %})
 
   ↳ [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})
 
@@ -31,6 +31,6 @@ layout: docs
 
 ▸ **dispose**(): *void*
 
-*Defined in [xterm.d.ts:367](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L367)*
+*Defined in [xterm.d.ts:327](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L327)*
 
 **Returns:** *void*

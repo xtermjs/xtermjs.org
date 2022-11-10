@@ -9,7 +9,7 @@ layout: docs
 
 ## Hierarchy
 
-* [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
+  ↳ [IDisposableWithEvent]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %})
 
   ↳ **IMarker**
 
@@ -32,7 +32,7 @@ layout: docs
 
 • **id**: *number*
 
-*Defined in [xterm.d.ts:387](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L387)*
+*Defined in [xterm.d.ts:347](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L347)*
 
 ___
 
@@ -40,7 +40,9 @@ ___
 
 • **isDisposed**: *boolean*
 
-*Defined in [xterm.d.ts:392](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L392)*
+*Inherited from [IDisposableWithEvent]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}).[isDisposed]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#isdisposed)*
+
+*Defined in [xterm.d.ts:370](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L370)*
 
 ___
 
@@ -48,7 +50,7 @@ ___
 
 • **line**: *number*
 
-*Defined in [xterm.d.ts:398](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L398)*
+*Defined in [xterm.d.ts:353](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L353)*
 
 ___
 
@@ -56,7 +58,9 @@ ___
 
 • **onDispose**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-*Defined in [xterm.d.ts:405](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L405)*
+*Inherited from [IDisposableWithEvent]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}).[onDispose]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#ondispose)*
+
+*Defined in [xterm.d.ts:365](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L365)*
 
 ## Methods
 
@@ -66,6 +70,6 @@ ___
 
 *Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
-*Defined in [xterm.d.ts:367](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L367)*
+*Defined in [xterm.d.ts:327](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L327)*
 
 **Returns:** *void*

@@ -29,11 +29,14 @@ layout: docs
 * [cursor]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-cursor)
 * [cursorAccent]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-cursoraccent)
 * [cyan]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-cyan)
+* [extendedAnsi]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-extendedansi)
 * [foreground]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-foreground)
 * [green]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-green)
 * [magenta]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-magenta)
 * [red]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-red)
-* [selection]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-selection)
+* [selectionBackground]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-selectionbackground)
+* [selectionForeground]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-selectionforeground)
+* [selectionInactiveBackground]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-selectioninactivebackground)
 * [white]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-white)
 * [yellow]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-yellow)
 
@@ -43,7 +46,7 @@ layout: docs
 
 • **background**? : *string*
 
-*Defined in [xterm.d.ts:278](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L278)*
+*Defined in [xterm.d.ts:276](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L276)*
 
 ___
 
@@ -51,7 +54,7 @@ ___
 
 • **black**? : *string*
 
-*Defined in [xterm.d.ts:286](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L286)*
+*Defined in [xterm.d.ts:288](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L288)*
 
 ___
 
@@ -59,7 +62,7 @@ ___
 
 • **blue**? : *string*
 
-*Defined in [xterm.d.ts:294](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L294)*
+*Defined in [xterm.d.ts:296](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L296)*
 
 ___
 
@@ -67,7 +70,7 @@ ___
 
 • **brightBlack**? : *string*
 
-*Defined in [xterm.d.ts:302](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L302)*
+*Defined in [xterm.d.ts:304](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L304)*
 
 ___
 
@@ -75,7 +78,7 @@ ___
 
 • **brightBlue**? : *string*
 
-*Defined in [xterm.d.ts:310](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L310)*
+*Defined in [xterm.d.ts:312](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L312)*
 
 ___
 
@@ -83,7 +86,7 @@ ___
 
 • **brightCyan**? : *string*
 
-*Defined in [xterm.d.ts:314](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L314)*
+*Defined in [xterm.d.ts:316](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L316)*
 
 ___
 
@@ -91,7 +94,7 @@ ___
 
 • **brightGreen**? : *string*
 
-*Defined in [xterm.d.ts:306](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L306)*
+*Defined in [xterm.d.ts:308](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L308)*
 
 ___
 
@@ -99,7 +102,7 @@ ___
 
 • **brightMagenta**? : *string*
 
-*Defined in [xterm.d.ts:312](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L312)*
+*Defined in [xterm.d.ts:314](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L314)*
 
 ___
 
@@ -107,7 +110,7 @@ ___
 
 • **brightRed**? : *string*
 
-*Defined in [xterm.d.ts:304](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L304)*
+*Defined in [xterm.d.ts:306](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L306)*
 
 ___
 
@@ -115,7 +118,7 @@ ___
 
 • **brightWhite**? : *string*
 
-*Defined in [xterm.d.ts:316](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L316)*
+*Defined in [xterm.d.ts:318](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L318)*
 
 ___
 
@@ -123,7 +126,7 @@ ___
 
 • **brightYellow**? : *string*
 
-*Defined in [xterm.d.ts:308](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L308)*
+*Defined in [xterm.d.ts:310](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L310)*
 
 ___
 
@@ -131,7 +134,7 @@ ___
 
 • **cursor**? : *string*
 
-*Defined in [xterm.d.ts:280](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L280)*
+*Defined in [xterm.d.ts:278](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L278)*
 
 ___
 
@@ -139,7 +142,7 @@ ___
 
 • **cursorAccent**? : *string*
 
-*Defined in [xterm.d.ts:282](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L282)*
+*Defined in [xterm.d.ts:280](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L280)*
 
 ___
 
@@ -147,7 +150,15 @@ ___
 
 • **cyan**? : *string*
 
-*Defined in [xterm.d.ts:298](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L298)*
+*Defined in [xterm.d.ts:300](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L300)*
+
+___
+
+### `Optional` extendedAnsi
+
+• **extendedAnsi**? : *string[]*
+
+*Defined in [xterm.d.ts:320](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L320)*
 
 ___
 
@@ -155,7 +166,7 @@ ___
 
 • **foreground**? : *string*
 
-*Defined in [xterm.d.ts:276](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L276)*
+*Defined in [xterm.d.ts:274](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L274)*
 
 ___
 
@@ -163,7 +174,7 @@ ___
 
 • **green**? : *string*
 
-*Defined in [xterm.d.ts:290](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L290)*
+*Defined in [xterm.d.ts:292](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L292)*
 
 ___
 
@@ -171,7 +182,7 @@ ___
 
 • **magenta**? : *string*
 
-*Defined in [xterm.d.ts:296](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L296)*
+*Defined in [xterm.d.ts:298](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L298)*
 
 ___
 
@@ -179,15 +190,31 @@ ___
 
 • **red**? : *string*
 
-*Defined in [xterm.d.ts:288](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L288)*
+*Defined in [xterm.d.ts:290](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L290)*
 
 ___
 
-### `Optional` selection
+### `Optional` selectionBackground
 
-• **selection**? : *string*
+• **selectionBackground**? : *string*
 
-*Defined in [xterm.d.ts:284](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L284)*
+*Defined in [xterm.d.ts:282](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L282)*
+
+___
+
+### `Optional` selectionForeground
+
+• **selectionForeground**? : *string*
+
+*Defined in [xterm.d.ts:284](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L284)*
+
+___
+
+### `Optional` selectionInactiveBackground
+
+• **selectionInactiveBackground**? : *string*
+
+*Defined in [xterm.d.ts:286](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L286)*
 
 ___
 
@@ -195,7 +222,7 @@ ___
 
 • **white**? : *string*
 
-*Defined in [xterm.d.ts:300](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L300)*
+*Defined in [xterm.d.ts:302](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L302)*
 
 ___
 
@@ -203,4 +230,4 @@ ___
 
 • **yellow**? : *string*
 
-*Defined in [xterm.d.ts:292](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L292)*
+*Defined in [xterm.d.ts:294](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L294)*

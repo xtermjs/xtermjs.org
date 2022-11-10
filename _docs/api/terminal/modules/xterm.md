@@ -21,19 +21,23 @@ layout: docs
 * [IBufferLine]({% link _docs/api/terminal/interfaces/ibufferline.md %})
 * [IBufferNamespace]({% link _docs/api/terminal/interfaces/ibuffernamespace.md %})
 * [IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %})
+* [IDecoration]({% link _docs/api/terminal/interfaces/idecoration.md %})
+* [IDecorationOptions]({% link _docs/api/terminal/interfaces/idecorationoptions.md %})
+* [IDecorationOverviewRulerOptions]({% link _docs/api/terminal/interfaces/idecorationoverviewruleroptions.md %})
 * [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
+* [IDisposableWithEvent]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %})
 * [IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})
 * [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})
 * [ILink]({% link _docs/api/terminal/interfaces/ilink.md %})
 * [ILinkDecorations]({% link _docs/api/terminal/interfaces/ilinkdecorations.md %})
-* [ILinkMatcherOptions]({% link _docs/api/terminal/interfaces/ilinkmatcheroptions.md %})
+* [ILinkHandler]({% link _docs/api/terminal/interfaces/ilinkhandler.md %})
 * [ILinkProvider]({% link _docs/api/terminal/interfaces/ilinkprovider.md %})
 * [ILocalizableStrings]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %})
 * [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
 * [IModes]({% link _docs/api/terminal/interfaces/imodes.md %})
 * [IParser]({% link _docs/api/terminal/interfaces/iparser.md %})
-* [ISelectionPosition]({% link _docs/api/terminal/interfaces/iselectionposition.md %})
 * [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})
+* [ITerminalInitOnlyOptions]({% link _docs/api/terminal/interfaces/iterminalinitonlyoptions.md %})
 * [ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %})
 * [ITheme]({% link _docs/api/terminal/interfaces/itheme.md %})
 * [IUnicodeHandling]({% link _docs/api/terminal/interfaces/iunicodehandling.md %})
@@ -46,7 +50,6 @@ layout: docs
 
 * [FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)
 * [LogLevel]({% link _docs/api/terminal/modules/xterm.md %}#loglevel)
-* [RendererType]({% link _docs/api/terminal/modules/xterm.md %}#renderertype)
 
 ## Type aliases
 
@@ -54,7 +57,7 @@ layout: docs
 
 Ƭ **FontWeight**: *"normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | number*
 
-*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L16)*
+*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L16)*
 
 ___
 
@@ -62,12 +65,4 @@ ___
 
 Ƭ **LogLevel**: *"debug" | "info" | "warn" | "error" | "off"*
 
-*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L21)*
-
-___
-
-###  RendererType
-
-Ƭ **RendererType**: *"dom" | "canvas"*
-
-*Defined in [xterm.d.ts:26](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L26)*
+*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L21)*

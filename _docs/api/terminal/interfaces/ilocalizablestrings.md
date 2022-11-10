@@ -24,7 +24,7 @@ layout: docs
 
 • **promptLabel**: *string*
 
-*Defined in [xterm.d.ts:415](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L415)*
+*Defined in [xterm.d.ts:484](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L484)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **tooMuchOutput**: *string*
 
-*Defined in [xterm.d.ts:421](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L421)*
+*Defined in [xterm.d.ts:490](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L490)*

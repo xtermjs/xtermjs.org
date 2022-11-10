@@ -24,7 +24,7 @@ layout: docs
 
 • **x**: *number*
 
-*Defined in [xterm.d.ts:1132](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1132)*
+*Defined in [xterm.d.ts:1108](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1108)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **y**: *number*
 
-*Defined in [xterm.d.ts:1138](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1138)*
+*Defined in [xterm.d.ts:1114](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1114)*
