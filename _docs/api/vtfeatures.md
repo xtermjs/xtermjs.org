@@ -7,7 +7,7 @@ category: API
 
 # Supported Terminal Sequences
 
-xterm.js version: 4.14.1
+xterm.js version: 5.0.0
 
 ## Table of Contents
 
@@ -36,14 +36,15 @@ This document lists xterm.js' support of terminal sequences. The sequences are g
 - OSC - Operating System Command: sequence starting with `ESC ]` (7bit) or OSC (`\x9D`, 8bit)
 
 Application Program Command (APC), Privacy Message (PM) and Start of String (SOS) are recognized but not supported,
-any sequence of these types will be ignored. They are also not hookable by the API.
+any sequence of these types will be silently ignored. They are also not hookable by the API.
 
-Note that the list only contains sequences implemented in xterm.js' core codebase. Missing sequences are either
-not supported or unstable/experimental. Furthermore addons or integrations can provide additional custom sequences.
+Note that the list only marks sequences implemented in xterm.js' core codebase as supported. Missing sequences are either
+not supported or unstable/experimental. Furthermore addons or integrations can provide additional custom sequences
+(denoted as "External" where known).
 
 To denote the sequences the tables use the same abbreviations as xterm does:
 - `Ps`: A single (usually optional) numeric parameter, composed of one or more decimal digits.
-- `Pm`: A multiple numeric parameter composed of any number of single numeric parameters, separated by ; character(s),
+- `Pm`: Multiple numeric parameters composed of any number of single numeric parameters, separated by ; character(s),
   e.g. ` Ps ; Ps ; ... `.
 - `Pt`: A text parameter composed of printable characters. Note that for most commands with `Pt` only
   ASCII printables are specified to work. Additionally the parser will let pass any codepoint greater than C1 as printable.
@@ -129,9 +130,9 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 | CUP | Cursor Position | ``CSI Ps ; Ps H`` | Set cursor to position [`Ps`, `Ps`] (default = [1, 1]). _[more](#cursor-position){: .link-details}_ | <span title="supported">✓</span> |
 | CHT | Cursor Horizontal Tabulation | ``CSI Ps I`` | Move cursor `Ps` times tabs forward (default=1).  | <span title="supported">✓</span> |
 | ED | Erase In Display | ``CSI Ps J`` | Erase various parts of the viewport. _[more](#erase-in-display){: .link-details}_ | <span title="supported">✓</span> |
-| DECSED | Selective Erase In Display | ``CSI ? Ps J`` | Currently the same as ED.  | <span title="Protection attributes are not supported." style="text-decoration: underline">Partial</span> |
+| DECSED | Selective Erase In Display | ``CSI ? Ps J`` | Same as ED with respecting protection flag.  | <span title="supported">✓</span> |
 | EL | Erase In Line | ``CSI Ps K`` | Erase various parts of the active row. _[more](#erase-in-line){: .link-details}_ | <span title="supported">✓</span> |
-| DECSEL | Selective Erase In Line | ``CSI ? Ps K`` | Currently the same as EL.  | <span title="Protection attributes are not supported." style="text-decoration: underline">Partial</span> |
+| DECSEL | Selective Erase In Line | ``CSI ? Ps K`` | Same as EL with respecting protecting flag.  | <span title="supported">✓</span> |
 | IL | Insert Line | ``CSI Ps L`` | Insert `Ps` blank lines at active row (default=1). _[more](#insert-line){: .link-details}_ | <span title="supported">✓</span> |
 | DL | Delete Line | ``CSI Ps M`` | Delete `Ps` lines at active row (default=1). _[more](#delete-line){: .link-details}_ | <span title="supported">✓</span> |
 | DCH | Delete Character | ``CSI Ps P`` | Delete `Ps` characters (default=1). _[more](#delete-character){: .link-details}_ | <span title="supported">✓</span> |
@@ -155,7 +156,9 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 | SGR | Select Graphic Rendition | ``CSI Pm m`` | Set/Reset various text attributes. _[more](#select-graphic-rendition){: .link-details}_ | <span title="See below for supported attributes." style="text-decoration: underline">Partial</span> |
 | DSR | Device Status Report | ``CSI Ps n`` | Request cursor position (CPR) with `Ps` = 6.  | <span title="supported">✓</span> |
 | DECDSR | DEC Device Status Report | ``CSI ? Ps n`` | Only CPR is supported (same as DSR).  | <span title="Only CPR is supported." style="text-decoration: underline">Partial</span> |
+| DECRQM | Request Mode | ``CSI Ps $p`` | Request mode state. _[more](#request-mode){: .link-details}_ | <span title="supported">✓</span> |
 | DECSTR | Soft Terminal Reset | ``CSI ! p`` | Reset several terminal attributes to initial state. _[more](#soft-terminal-reset){: .link-details}_ | <span title="supported">✓</span> |
+| DECSCA | Select Character Protection Attribute | ``CSI Ps " q`` | Whether DECSED and DECSEL can erase (0=default, 2) or not (1).  | <span title="supported">✓</span> |
 | DECSCUSR | Set Cursor Style | ``CSI Ps SP q`` | Set cursor style. _[more](#set-cursor-style){: .link-details}_ | <span title="supported">✓</span> |
 | DECSTBM | Set Top and Bottom Margin | ``CSI Ps ; Ps r`` | Set top and bottom margins of the viewport [top;bottom] (default = viewport size).  | <span title="supported">✓</span> |
 | SCOSC | Save Cursor | ``CSI s`` | Save cursor position, charmap and text attributes.  | <span title="TODO..." style="text-decoration: underline">Partial</span> |
@@ -312,7 +315,7 @@ Supported param values by SM:
 | 2     | Keyboard Action Mode (KAM). Always on. | <span title="unsupported">✗</span>      |
 | 4     | Insert Mode (IRM).                     | <span title="supported">✓</span>      |
 | 12    | Send/receive (SRM). Always off.        | <span title="unsupported">✗</span>      |
-| 20    | Automatic Newline (LNM). Always off.   | <span title="unsupported">✗</span>      |
+| 20    | Automatic Newline (LNM).               | <span title="supported">✓</span>      |
 
 
 </section>
@@ -342,6 +345,7 @@ Supported param values by DECSET:
 | 1005  | Enable UTF-8 Mouse Mode.                                | <span title="unsupported">✗</span>      |
 | 1006  | Enable SGR Mouse Mode.                                  | <span title="supported">✓</span>      |
 | 1015  | Enable urxvt Mouse Mode.                                | <span title="unsupported">✗</span>      |
+| 1016  | Enable SGR-Pixels Mouse Mode.                           | <span title="supported">✓</span>      |
 | 1047  | Use Alternate Screen Buffer.                            | <span title="supported">✓</span>      |
 | 1048  | Save cursor as in DECSC.                                | <span title="supported">✓</span>      |
 | 1049  | Save cursor and switch to alternate buffer clearing it. | <span title="Does not clear the alternate buffer." style="text-decoration: underline">Partial</span> |
@@ -359,7 +363,7 @@ Supported param values by RM:
 | 2     | Keyboard Action Mode (KAM). Always on. | <span title="unsupported">✗</span>      |
 | 4     | Replace Mode (IRM). (default)          | <span title="supported">✓</span>      |
 | 12    | Send/receive (SRM). Always off.        | <span title="unsupported">✗</span>      |
-| 20    | Normal Linefeed (LNM). Always off.     | <span title="unsupported">✗</span>      |
+| 20    | Normal Linefeed (LNM).                 | <span title="supported">✓</span>      |
 
 
 </section>
@@ -389,6 +393,7 @@ Supported param values by DECRST:
 | 1005  | Disable UTF-8 Mouse Mode.                               | <span title="unsupported">✗</span>      |
 | 1006  | Disable SGR Mouse Mode.                                 | <span title="supported">✓</span>      |
 | 1015  | Disable urxvt Mouse Mode.                               | <span title="unsupported">✗</span>      |
+| 1016  | Disable SGR-Pixels Mouse Mode.                          | <span title="supported">✓</span>      |
 | 1047  | Use Normal Screen Buffer (clearing screen if in alt).   | <span title="supported">✓</span>      |
 | 1048  | Restore cursor as in DECRC.                             | <span title="supported">✓</span>      |
 | 1049  | Use Normal Screen Buffer and restore cursor.            | <span title="supported">✓</span>      |
@@ -418,7 +423,7 @@ Supported param values by SGR:
 | 7         | Inverse. Flips foreground and background color.          | <span title="supported">✓</span>      |
 | 8         | Invisible (hidden).                                      | <span title="supported">✓</span>      |
 | 9         | Crossed-out characters (strikethrough).                  | <span title="supported">✓</span>      |
-| 21        | Doubly underlined.                                       | <span title="Currently outputs a single underline." style="text-decoration: underline">Partial</span> |
+| 21        | Doubly underlined.                                       | <span title="supported">✓</span>      |
 | 22        | Normal (neither bold nor faint).                         | <span title="supported">✓</span>      |
 | 23        | No italic.                                               | <span title="supported">✓</span>      |
 | 24        | Not underlined.                                          | <span title="supported">✓</span>      |
@@ -446,6 +451,7 @@ Supported param values by SGR:
 | 47        | Background color: White.                                 | <span title="supported">✓</span>      |
 | 48        | Background color: Extended color.                        | <span title="Support for RGB and indexed colors, see below." style="text-decoration: underline">Partial</span> |
 | 49        | Background color: Default (original).                    | <span title="supported">✓</span>      |
+| 58        | Underline color: Extended color.                         | <span title="Support for RGB and indexed colors, see below." style="text-decoration: underline">Partial</span> |
 | 90 - 97   | Bright foreground color (analogous to 30 - 37).          | <span title="supported">✓</span>      |
 | 100 - 107 | Bright background color (analogous to 40 - 47).          | <span title="supported">✓</span>      |
 
@@ -455,13 +461,13 @@ Underline supports subparams to denote the style in the form `4 : x`:
 | ------ | ------------------------------------------------------------- | ------- |
 | 0      | No underline. Same as `SGR 24 m`.                             | <span title="supported">✓</span>      |
 | 1      | Single underline. Same as `SGR 4 m`.                          | <span title="supported">✓</span>      |
-| 2      | Double underline.                                             | <span title="Currently outputs a single underline." style="text-decoration: underline">Partial</span> |
-| 3      | Curly underline.                                              | <span title="Currently outputs a single underline." style="text-decoration: underline">Partial</span> |
-| 4      | Dotted underline.                                             | <span title="Currently outputs a single underline." style="text-decoration: underline">Partial</span> |
-| 5      | Dashed underline.                                             | <span title="Currently outputs a single underline." style="text-decoration: underline">Partial</span> |
+| 2      | Double underline.                                             | <span title="supported">✓</span>      |
+| 3      | Curly underline.                                              | <span title="supported">✓</span>      |
+| 4      | Dotted underline.                                             | <span title="supported">✓</span>      |
+| 5      | Dashed underline.                                             | <span title="supported">✓</span>      |
 | other  | Single underline. Same as `SGR 4 m`.                          | <span title="supported">✓</span>      |
 
-Extended colors are supported for foreground (Ps=38) and background (Ps=48) as follows:
+Extended colors are supported for foreground (Ps=38), background (Ps=48) and underline (Ps=58) as follows:
 
 | Ps + 1 | Meaning                                                       | Support |
 | ------ | ------------------------------------------------------------- | ------- |
@@ -471,6 +477,32 @@ Extended colors are supported for foreground (Ps=38) and background (Ps=48) as f
 | 3      | CMY color.                                                    | <span title="unsupported">✗</span>      |
 | 4      | CMYK color.                                                   | <span title="unsupported">✗</span>      |
 | 5      | Indexed (256 colors) as `Ps ; 5 ; INDEX` or `Ps : 5 : INDEX`. | <span title="supported">✓</span>      |
+
+
+</section>
+<section class="sequence-details">
+
+### Request Mode
+Returns a report as `CSI Ps; Pm $ y` (DECRPM), where `Ps` is the mode number as in SM/RM
+or DECSET/DECRST, and `Pm` is the mode value:
+- 0: not recognized
+- 1: set
+- 2: reset
+- 3: permanently set
+- 4: permanently reset
+
+For modes not understood xterm.js always returns `notRecognized`. In general this means,
+that a certain operation mode is not implemented and cannot be used.
+
+Modes changing the active terminal buffer (47, 1047, 1049) are not subqueried
+and only report, whether the alternate buffer is set.
+
+Mouse encodings and mouse protocols are handled mutual exclusive,
+thus only one of each of those can be set at a given time.
+
+There is a chance, that some mode reports are not fully in line with xterm.js' behavior,
+e.g. if the default implementation already exposes a certain behavior. If you find
+discrepancies in the mode reports, please file a bug.
 
 
 </section>
@@ -528,11 +560,11 @@ DECDC has no effect outside the scrolling margins.
 
 | Mnemonic | Name | Sequence | Short Description | Support |
 | -------- | ---- | -------- | ----------------- | ------- |
-| SIXEL | SIXEL Graphics | `DCS Ps ; Ps ; Ps ; q 	Pt ST` | Draw SIXEL image starting at cursor position.  | <span title="unsupported">✗</span> |
-| DECRQSS | Request Selection or Setting | `DCS $ q Pt ST` | Request several terminal settings. _[more](#request-selection-or-setting){: .link-details}_ | <span title="See limited support below." style="text-decoration: underline">Partial</span> |
-| DECUDK | User Defined Keys | `DCS Ps ; Ps | Pt ST` | Definitions for user-defined keys.  | <span title="unsupported">✗</span> |
+| SIXEL | SIXEL Graphics | `DCS Ps ; Ps ; Ps ; q 	Pt ST` | Draw SIXEL image.  | <span title="Supported via xterm-addon-image." style="text-decoration: underline">External</span> |
+| DECUDK | User Defined Keys | `DCS Ps ; Ps \| Pt ST` | Definitions for user-defined keys.  | <span title="unsupported">✗</span> |
 | XTGETTCAP | Request Terminfo String | `DCS + q Pt ST` | Request Terminfo String.  | <span title="unsupported">✗</span> |
 | XTSETTCAP | Set Terminfo Data | `DCS + p Pt ST` | Set Terminfo Data.  | <span title="unsupported">✗</span> |
+| DECRQSS | Request Selection or Setting | `DCS $ q Pt ST` | Request several terminal settings. _[more](#request-selection-or-setting){: .link-details}_ | <span title="Limited support, see below." style="text-decoration: underline">Partial</span> |
 
 <section class="sequence-details">
 
@@ -547,7 +579,7 @@ Supported requests and responses:
 | Graphic Rendition (SGR)          | `DCS $ q m ST`    | always reporting `0m` (currently broken)              |
 | Top and Bottom Margins (DECSTBM) | `DCS $ q r ST`    | `Ps ; Ps r`                                           |
 | Cursor Style (DECSCUSR)          | `DCS $ q SP q ST` | `Ps SP q`                                             |
-| Protection Attribute (DECSCA)    | `DCS $ q " q ST`  | always reporting `0 " q` (DECSCA is unsupported)      |
+| Protection Attribute (DECSCA)    | `DCS $ q " q ST`  | `Ps " q` (DECSCA 2 is reported as Ps = 0)             |
 | Conformance Level (DECSCL)       | `DCS $ q " p ST`  | always reporting `61 ; 1 " p` (DECSCL is unsupported) |
 
 
@@ -586,6 +618,14 @@ Supported requests and responses:
 | 1 | `OSC 1 ; Pt BEL` | Set icon name.  | <span title="unsupported">✗</span> |
 | 2 | `OSC 2 ; Pt BEL` | Set window title. _[more](#set-windows-title){: .link-details}_ | <span title="supported">✓</span> |
 | 4 | `OSC 4 ; c ; spec BEL` | Change color number `c` to the color specified by `spec`. _[more](#set-ansi-color){: .link-details}_ | <span title="supported">✓</span> |
+| 8 | `OSC 8 ; params ; uri BEL` | Create a hyperlink to `uri` using `params`. _[more](#create-hyperlink){: .link-details}_ | <span title="supported">✓</span> |
+| 10 | `OSC 10 ; Pt BEL` | Set or query default foreground color. _[more](#set-or-query-default-foreground-color){: .link-details}_ | <span title="supported">✓</span> |
+| 11 | `OSC 11 ; Pt BEL` | Same as OSC 10, but for default background.  | <span title="supported">✓</span> |
+| 12 | `OSC 12 ; Pt BEL` | Same as OSC 10, but for default cursor color.  | <span title="supported">✓</span> |
+| 104 | `OSC 104 ; c BEL` | Reset color number `c` to themed color. _[more](#reset-ansi-color){: .link-details}_ | <span title="supported">✓</span> |
+| 110 | `OSC 110 BEL` | Restore default foreground to themed color.  | <span title="supported">✓</span> |
+| 111 | `OSC 111 BEL` | Restore default background to themed color.  | <span title="supported">✓</span> |
+| 112 | `OSC 112 BEL` | Restore default cursor to themed color.  | <span title="supported">✓</span> |
 
 <section class="sequence-details">
 
@@ -604,8 +644,51 @@ xterm.js does not manipulate the title directly, instead exposes changes via the
 <section class="sequence-details">
 
 ### Set ANSI color
-`c` is the color index between 0 and 255. `spec` color format is 'rgb:hh/hh/hh' where `h` are hexadecimal digits.
-There may be multipe c ; spec elements present in the same instruction, e.g. 1;rgb:10/20/30;2;rgb:a0/b0/c0.
+`c` is the color index between 0 and 255. The color format of `spec` is derived from `XParseColor` (see OSC 10 for supported formats).
+There may be multipe `c ; spec` pairs present in the same instruction.
+If `spec` contains `?` the terminal returns a sequence with the currently set color.
+
+
+</section>
+<section class="sequence-details">
+
+### Create hyperlink
+`uri` is a hyperlink starting with `http://`, `https://`, `ftp://`, `file://` or `mailto://`. `params` is an
+optional list of key=value assignments, separated by the : character. Example: `id=xyz123:foo=bar:baz=quux`.
+Currently only the id key is defined. Cells that share the same ID and URI share hover feedback.
+Use `OSC 8 ; ; BEL` to finish the current hyperlink.
+
+
+</section>
+<section class="sequence-details">
+
+### Set or query default foreground color
+To set the color, the following color specification formats are supported:
+- `rgb:<red>/<green>/<blue>` for  `<red>, <green>, <blue>` in `h | hh | hhh | hhhh`, where
+  `h` is a single hexadecimal digit (case insignificant). The different widths scale
+  from 4 bit (`h`) to 16 bit (`hhhh`) and get converted to 8 bit (`hh`).
+- `#RGB` - 4 bits per channel, expanded to `#R0G0B0`
+- `#RRGGBB` - 8 bits per channel
+- `#RRRGGGBBB` - 12 bits per channel, truncated to `#RRGGBB`
+- `#RRRRGGGGBBBB` - 16 bits per channel, truncated to `#RRGGBB`
+
+**Note:** X11 named colors are currently unsupported.
+
+If `Pt` contains `?` instead of a color specification, the terminal
+returns a sequence with the current default foreground color
+(use that sequence to restore the color after changes).
+
+**Note:** Other than xterm, xterm.js does not support OSC 12 - 19.
+Therefore stacking multiple `Pt` separated by `;` only works for the first two entries.
+
+
+</section>
+<section class="sequence-details">
+
+### Reset ANSI color
+`c` is the color index between 0 and 255. This function restores the default color for `c` as
+specified by the loaded theme. Any number of `c` parameters may be given.
+If no parameters are given, the entire indexed color table will be reset.
 
 
 </section>
