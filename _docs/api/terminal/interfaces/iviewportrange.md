@@ -24,7 +24,7 @@ layout: docs
 
 • **end**: *[IViewportRangePosition]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %})*
 
-*Defined in [xterm.d.ts:1118](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1118)*
+*Defined in [xterm.d.ts:1094](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1094)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **start**: *[IViewportRangePosition]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %})*
 
-*Defined in [xterm.d.ts:1113](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1113)*
+*Defined in [xterm.d.ts:1089](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1089)*

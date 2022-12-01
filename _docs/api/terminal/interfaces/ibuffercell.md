@@ -35,6 +35,7 @@ layout: docs
 * [isInverse]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isinverse)
 * [isInvisible]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isinvisible)
 * [isItalic]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isitalic)
+* [isStrikethrough]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isstrikethrough)
 * [isUnderline]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isunderline)
 
 ## Methods
@@ -43,7 +44,7 @@ layout: docs
 
 ▸ **getBgColor**(): *number*
 
-*Defined in [xterm.d.ts:1443](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1443)*
+*Defined in [xterm.d.ts:1452](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1452)*
 
 **Returns:** *number*
 
@@ -53,7 +54,7 @@ ___
 
 ▸ **getBgColorMode**(): *number*
 
-*Defined in [xterm.d.ts:1417](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1417)*
+*Defined in [xterm.d.ts:1426](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1426)*
 
 **Returns:** *number*
 
@@ -63,7 +64,7 @@ ___
 
 ▸ **getChars**(): *string*
 
-*Defined in [xterm.d.ts:1395](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1395)*
+*Defined in [xterm.d.ts:1404](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1404)*
 
 **Returns:** *string*
 
@@ -73,7 +74,7 @@ ___
 
 ▸ **getCode**(): *number*
 
-*Defined in [xterm.d.ts:1401](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1401)*
+*Defined in [xterm.d.ts:1410](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1410)*
 
 **Returns:** *number*
 
@@ -83,7 +84,7 @@ ___
 
 ▸ **getFgColor**(): *number*
 
-*Defined in [xterm.d.ts:1430](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1430)*
+*Defined in [xterm.d.ts:1439](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1439)*
 
 **Returns:** *number*
 
@@ -93,7 +94,7 @@ ___
 
 ▸ **getFgColorMode**(): *number*
 
-*Defined in [xterm.d.ts:1409](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1409)*
+*Defined in [xterm.d.ts:1418](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1418)*
 
 **Returns:** *number*
 
@@ -103,7 +104,7 @@ ___
 
 ▸ **getWidth**(): *number*
 
-*Defined in [xterm.d.ts:1386](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1386)*
+*Defined in [xterm.d.ts:1395](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1395)*
 
 **Returns:** *number*
 
@@ -113,7 +114,7 @@ ___
 
 ▸ **isAttributeDefault**(): *boolean*
 
-*Defined in [xterm.d.ts:1474](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1474)*
+*Defined in [xterm.d.ts:1485](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1485)*
 
 **Returns:** *boolean*
 
@@ -123,7 +124,7 @@ ___
 
 ▸ **isBgDefault**(): *boolean*
 
-*Defined in [xterm.d.ts:1471](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1471)*
+*Defined in [xterm.d.ts:1482](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1482)*
 
 **Returns:** *boolean*
 
@@ -133,7 +134,7 @@ ___
 
 ▸ **isBgPalette**(): *boolean*
 
-*Defined in [xterm.d.ts:1467](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1467)*
+*Defined in [xterm.d.ts:1478](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1478)*
 
 **Returns:** *boolean*
 
@@ -143,7 +144,7 @@ ___
 
 ▸ **isBgRGB**(): *boolean*
 
-*Defined in [xterm.d.ts:1463](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1463)*
+*Defined in [xterm.d.ts:1474](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1474)*
 
 **Returns:** *boolean*
 
@@ -153,7 +154,7 @@ ___
 
 ▸ **isBlink**(): *number*
 
-*Defined in [xterm.d.ts:1454](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1454)*
+*Defined in [xterm.d.ts:1463](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1463)*
 
 **Returns:** *number*
 
@@ -163,7 +164,7 @@ ___
 
 ▸ **isBold**(): *number*
 
-*Defined in [xterm.d.ts:1446](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1446)*
+*Defined in [xterm.d.ts:1455](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1455)*
 
 **Returns:** *number*
 
@@ -173,7 +174,7 @@ ___
 
 ▸ **isDim**(): *number*
 
-*Defined in [xterm.d.ts:1450](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1450)*
+*Defined in [xterm.d.ts:1459](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1459)*
 
 **Returns:** *number*
 
@@ -183,7 +184,7 @@ ___
 
 ▸ **isFgDefault**(): *boolean*
 
-*Defined in [xterm.d.ts:1469](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1469)*
+*Defined in [xterm.d.ts:1480](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1480)*
 
 **Returns:** *boolean*
 
@@ -193,7 +194,7 @@ ___
 
 ▸ **isFgPalette**(): *boolean*
 
-*Defined in [xterm.d.ts:1465](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1465)*
+*Defined in [xterm.d.ts:1476](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1476)*
 
 **Returns:** *boolean*
 
@@ -203,7 +204,7 @@ ___
 
 ▸ **isFgRGB**(): *boolean*
 
-*Defined in [xterm.d.ts:1461](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1461)*
+*Defined in [xterm.d.ts:1472](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1472)*
 
 **Returns:** *boolean*
 
@@ -213,7 +214,7 @@ ___
 
 ▸ **isInverse**(): *number*
 
-*Defined in [xterm.d.ts:1456](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1456)*
+*Defined in [xterm.d.ts:1465](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1465)*
 
 **Returns:** *number*
 
@@ -223,7 +224,7 @@ ___
 
 ▸ **isInvisible**(): *number*
 
-*Defined in [xterm.d.ts:1458](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1458)*
+*Defined in [xterm.d.ts:1467](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1467)*
 
 **Returns:** *number*
 
@@ -233,7 +234,17 @@ ___
 
 ▸ **isItalic**(): *number*
 
-*Defined in [xterm.d.ts:1448](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1448)*
+*Defined in [xterm.d.ts:1457](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1457)*
+
+**Returns:** *number*
+
+___
+
+###  isStrikethrough
+
+▸ **isStrikethrough**(): *number*
+
+*Defined in [xterm.d.ts:1469](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1469)*
 
 **Returns:** *number*
 
@@ -243,6 +254,6 @@ ___
 
 ▸ **isUnderline**(): *number*
 
-*Defined in [xterm.d.ts:1452](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1452)*
+*Defined in [xterm.d.ts:1461](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1461)*
 
 **Returns:** *number*
