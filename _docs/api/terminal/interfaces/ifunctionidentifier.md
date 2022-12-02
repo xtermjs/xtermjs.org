@@ -25,7 +25,7 @@ layout: docs
 
 • **final**: *string*
 
-*Defined in [xterm.d.ts:1518](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1518)*
+*Defined in [xterm.d.ts:1529](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1529)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **intermediates**? : *string*
 
-*Defined in [xterm.d.ts:1513](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1513)*
+*Defined in [xterm.d.ts:1524](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1524)*
 
 ___
 
@@ -41,4 +41,4 @@ ___
 
 • **prefix**? : *string*
 
-*Defined in [xterm.d.ts:1508](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1508)*
+*Defined in [xterm.d.ts:1519](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1519)*

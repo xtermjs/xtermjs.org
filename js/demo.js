@@ -125,7 +125,7 @@ $(function () {
           }
           break;
         default: // Print all other characters for demo
-          if (e >= String.fromCharCode(0x20) && e <= String.fromCharCode(0x7B) || e >= '\u00a0') {
+          if (e >= String.fromCharCode(0x20) && e <= String.fromCharCode(0x7E) || e >= '\u00a0') {
             command += e;
             term.write(e);
           }
@@ -213,7 +213,7 @@ $(function () {
               text: 'decorations',
               range: { start: { x: 56, y: 15 }, end: { x: 66, y: 15 } },
               activate() {
-                window.open('https://github.com/xtermjs/xterm.js/blob/master/typings/xterm.d.ts#L947', '_blank');
+                window.open('https://github.com/xtermjs/xterm.js/blob/a351f5758a5126308b90d60b604b528462f6f051/typings/xterm.d.ts#L372', '_blank');
               }
             },
           ]);
