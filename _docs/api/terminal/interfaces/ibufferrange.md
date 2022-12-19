@@ -24,7 +24,7 @@ layout: docs
 
 • **end**: *[IBufferCellPosition]({% link _docs/api/terminal/interfaces/ibuffercellposition.md %})*
 
-*Defined in [xterm.d.ts:1232](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1232)*
+*Defined in [xterm.d.ts:1239](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1239)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **start**: *[IBufferCellPosition]({% link _docs/api/terminal/interfaces/ibuffercellposition.md %})*
 
-*Defined in [xterm.d.ts:1227](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1227)*
+*Defined in [xterm.d.ts:1234](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1234)*

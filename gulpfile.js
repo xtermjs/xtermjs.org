@@ -98,9 +98,9 @@ gulp.task('docs', gulp.series('typedoc', async function() {
 
         // Replace xtermjs.org repo links with xterm.js
         if (/^https?/.test(uri)) {
-          uri = uri.replace('xtermjs.org/blob', 'xterm.js/blob');
+          uri = uri.replace(/[^\/]*\/xtermjs.org/, 'xtermjs/xterm.js');
           link = `[${title}](${uri})`;
-          data = `${data.substr(0, match.index)}${link}${data.substr(re.lastIndex)}`;
+          data = `${data.substring(0, match.index)}${link}${data.substring(re.lastIndex)}`;
           continue;
         }
 
@@ -119,12 +119,12 @@ gulp.task('docs', gulp.series('typedoc', async function() {
 
         link = `[${title}]({% link ${uri[1]} %}${uri[2]})`;
 
-        data = data.substr(0, match.index) + link + data.substr(re.lastIndex);
+        data = data.substring(0, match.index) + link + data.substring(re.lastIndex);
         re.lastIndex = match.index + link.length;
       }
 
       // Remove the navigation links and prepend YAML Front Matters
-      data = header + data.substr(data.indexOf('\n') + 1);
+      data = header + data.substring(data.indexOf('\n') + 1);
 
       await fs.ensureDir(path.dirname(outFile));
       await fs.writeFile(outFile, data, 'utf-8');

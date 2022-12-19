@@ -28,7 +28,7 @@ layout: docs
 
 • **activeVersion**: *string*
 
-*Defined in [xterm.d.ts:1636](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1636)*
+*Defined in [xterm.d.ts:1647](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1647)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **versions**: *ReadonlyArray‹string›*
 
-*Defined in [xterm.d.ts:1631](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1631)*
+*Defined in [xterm.d.ts:1642](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1642)*
 
 ## Methods
 
@@ -44,7 +44,7 @@ ___
 
 ▸ **register**(`provider`: [IUnicodeVersionProvider]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %})): *void*
 
-*Defined in [xterm.d.ts:1626](https://github.com/xtermjs/xterm.js/blob/4.14.1/typings/xterm.d.ts#L1626)*
+*Defined in [xterm.d.ts:1637](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1637)*
 
 **Parameters:**
 
