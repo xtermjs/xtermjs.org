@@ -12,18 +12,17 @@ jobs:
     steps:
 
       - name: Pull xtermjs documentation repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
       
       - name: Pull xtermjs repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
         with:
           repository: xtermjs/xterm.js
           path: _xterm.js
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # v3.5.1
         with:
           node-version: '14'
-
 
       - name: Build the docs
         id: build_docs
@@ -40,12 +39,12 @@ jobs:
       
       - name: Fetch xterm.js version
         id: package-version
-        uses: martinbeentjes/npm-get-version-action@master
+        uses: martinbeentjes/npm-get-version-action@7aa1d82604bb2dbe377a64ca35e692e6fe333c9c # v1.2.3
         with:
           path: _xterm.js
       
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+        uses: https://github.com/peter-evans/create-pull-request@2b011faafdcbc9ceb11414d64d0573f37c774b04 # v4.2.3
         with:
           commit-message: Update documentation to v${{ steps.package-version.outputs.current-version }}
           title: Update documentation to v${{ steps.package-version.outputs.current-version }}
