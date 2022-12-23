@@ -48,7 +48,8 @@ $(function () {
   var term = new window.Terminal({
     fontFamily: '"Cascadia Code", Menlo, monospace',
     theme: baseTheme,
-    cursorBlink: true
+    cursorBlink: true,
+    allowProposedApi: true
   });
   term.open(document.querySelector('.demo .inner'));
 
@@ -186,7 +187,7 @@ $(function () {
                 range: { start: { x: 52, y: 14 }, end: { x: 57, y: 14 } },
                 activate() {
                   isBaseTheme = !isBaseTheme;
-                  term.setOption('theme', isBaseTheme ? baseTheme : otherTheme);
+                  term.options.theme = isBaseTheme ? baseTheme : otherTheme;
                   document.querySelector('.demo .inner').classList.toggle('other-theme', !isBaseTheme);
                   term.write(`\r\nActivated ${isBaseTheme ? 'xterm.js' : 'snazzy'} theme`);
                   prompt(term);
@@ -301,7 +302,7 @@ $(function () {
 });
 
 function addDecoration(term) {
-  const marker = term.addMarker(15);
+  const marker = term.registerMarker(15);
   const decoration = term.registerDecoration({ marker, x: 44 });
   decoration.onRender(element => {
     element.classList.add('link-hint-decoration');
