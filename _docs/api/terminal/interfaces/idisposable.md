@@ -31,6 +31,6 @@ layout: docs
 
 ▸ **dispose**(): *void*
 
-*Defined in [xterm.d.ts:327](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L327)*
+*Defined in [xterm.d.ts:337](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L337)*
 
 **Returns:** *void*

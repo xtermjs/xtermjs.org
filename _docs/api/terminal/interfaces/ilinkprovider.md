@@ -23,7 +23,7 @@ layout: docs
 
 ▸ **provideLinks**(`bufferLineNumber`: number, `callback`: function): *void*
 
-*Defined in [xterm.d.ts:1159](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1159)*
+*Defined in [xterm.d.ts:1202](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1202)*
 
 **Parameters:**
 

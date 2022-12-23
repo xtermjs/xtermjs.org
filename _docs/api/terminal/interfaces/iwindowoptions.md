@@ -44,7 +44,7 @@ layout: docs
 
 • **fullscreenWin**? : *boolean*
 
-*Defined in [xterm.d.ts:578](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L578)*
+*Defined in [xterm.d.ts:588](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L588)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **getCellSizePixels**? : *boolean*
 
-*Defined in [xterm.d.ts:606](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L606)*
+*Defined in [xterm.d.ts:616](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L616)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **getIconTitle**? : *boolean*
 
-*Defined in [xterm.d.ts:621](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L621)*
+*Defined in [xterm.d.ts:631](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L631)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **getScreenSizeChars**? : *boolean*
 
-*Defined in [xterm.d.ts:616](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L616)*
+*Defined in [xterm.d.ts:626](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L626)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **getScreenSizePixels**? : *boolean*
 
-*Defined in [xterm.d.ts:601](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L601)*
+*Defined in [xterm.d.ts:611](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L611)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **getWinPosition**? : *boolean*
 
-*Defined in [xterm.d.ts:590](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L590)*
+*Defined in [xterm.d.ts:600](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L600)*
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 • **getWinSizeChars**? : *boolean*
 
-*Defined in [xterm.d.ts:611](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L611)*
+*Defined in [xterm.d.ts:621](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L621)*
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 • **getWinSizePixels**? : *boolean*
 
-*Defined in [xterm.d.ts:596](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L596)*
+*Defined in [xterm.d.ts:606](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L606)*
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 • **getWinState**? : *boolean*
 
-*Defined in [xterm.d.ts:584](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L584)*
+*Defined in [xterm.d.ts:594](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L594)*
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 • **getWinTitle**? : *boolean*
 
-*Defined in [xterm.d.ts:626](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L626)*
+*Defined in [xterm.d.ts:636](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L636)*
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 • **lowerWin**? : *boolean*
 
-*Defined in [xterm.d.ts:553](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L553)*
+*Defined in [xterm.d.ts:563](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L563)*
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 • **maximizeWin**? : *boolean*
 
-*Defined in [xterm.d.ts:571](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L571)*
+*Defined in [xterm.d.ts:581](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L581)*
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 • **minimizeWin**? : *boolean*
 
-*Defined in [xterm.d.ts:529](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L529)*
+*Defined in [xterm.d.ts:539](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L539)*
 
 ___
 
@@ -148,7 +148,7 @@ ___
 
 • **popTitle**? : *boolean*
 
-*Defined in [xterm.d.ts:640](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L640)*
+*Defined in [xterm.d.ts:650](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L650)*
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 • **pushTitle**? : *boolean*
 
-*Defined in [xterm.d.ts:633](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L633)*
+*Defined in [xterm.d.ts:643](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L643)*
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 • **raiseWin**? : *boolean*
 
-*Defined in [xterm.d.ts:548](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L548)*
+*Defined in [xterm.d.ts:558](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L558)*
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 • **refreshWin**? : *boolean*
 
-*Defined in [xterm.d.ts:555](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L555)*
+*Defined in [xterm.d.ts:565](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L565)*
 
 ___
 
@@ -180,7 +180,7 @@ ___
 
 • **restoreWin**? : *boolean*
 
-*Defined in [xterm.d.ts:524](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L524)*
+*Defined in [xterm.d.ts:534](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L534)*
 
 ___
 
@@ -188,7 +188,7 @@ ___
 
 • **setWinLines**? : *boolean*
 
-*Defined in [xterm.d.ts:646](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L646)*
+*Defined in [xterm.d.ts:656](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L656)*
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 • **setWinPosition**? : *boolean*
 
-*Defined in [xterm.d.ts:535](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L535)*
+*Defined in [xterm.d.ts:545](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L545)*
 
 ___
 
@@ -204,7 +204,7 @@ ___
 
 • **setWinSizeChars**? : *boolean*
 
-*Defined in [xterm.d.ts:563](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L563)*
+*Defined in [xterm.d.ts:573](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L573)*
 
 ___
 
@@ -212,4 +212,4 @@ ___
 
 • **setWinSizePixels**? : *boolean*
 
-*Defined in [xterm.d.ts:543](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L543)*
+*Defined in [xterm.d.ts:553](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L553)*

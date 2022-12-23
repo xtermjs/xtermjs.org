@@ -26,7 +26,7 @@ layout: docs
 
 ▸ **activate**(`terminal`: [Terminal]({% link _docs/api/terminal/classes/terminal.md %})): *void*
 
-*Defined in [xterm.d.ts:1079](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1079)*
+*Defined in [xterm.d.ts:1115](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1115)*
 
 **Parameters:**
 
@@ -44,6 +44,6 @@ ___
 
 *Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
-*Defined in [xterm.d.ts:327](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L327)*
+*Defined in [xterm.d.ts:337](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L337)*
 
 **Returns:** *void*

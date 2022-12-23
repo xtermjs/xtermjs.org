@@ -26,7 +26,7 @@ layout: docs
 
 • **active**: *[IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})*
 
-*Defined in [xterm.d.ts:1322](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1322)*
+*Defined in [xterm.d.ts:1365](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1365)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **alternate**: *[IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})*
 
-*Defined in [xterm.d.ts:1333](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1333)*
+*Defined in [xterm.d.ts:1376](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1376)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **normal**: *[IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})*
 
-*Defined in [xterm.d.ts:1327](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1327)*
+*Defined in [xterm.d.ts:1370](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1370)*
 
 ___
 
@@ -50,4 +50,4 @@ ___
 
 • **onBufferChange**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹[IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})›*
 
-*Defined in [xterm.d.ts:1339](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1339)*
+*Defined in [xterm.d.ts:1382](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1382)*

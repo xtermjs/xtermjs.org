@@ -27,7 +27,7 @@ layout: docs
 
 • **version**: *string*
 
-*Defined in [xterm.d.ts:1622](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1622)*
+*Defined in [xterm.d.ts:1665](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1665)*
 
 ## Methods
 
@@ -35,7 +35,7 @@ layout: docs
 
 ▸ **wcwidth**(`codepoint`: number): *0 | 1 | 2*
 
-*Defined in [xterm.d.ts:1627](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1627)*
+*Defined in [xterm.d.ts:1670](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1670)*
 
 **Parameters:**
 

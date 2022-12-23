@@ -34,7 +34,7 @@ layout: docs
 
 • **isDisposed**: *boolean*
 
-*Defined in [xterm.d.ts:370](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L370)*
+*Defined in [xterm.d.ts:380](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L380)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **onDispose**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-*Defined in [xterm.d.ts:365](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L365)*
+*Defined in [xterm.d.ts:375](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L375)*
 
 ## Methods
 
@@ -52,6 +52,6 @@ ___
 
 *Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
-*Defined in [xterm.d.ts:327](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L327)*
+*Defined in [xterm.d.ts:337](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L337)*
 
 **Returns:** *void*

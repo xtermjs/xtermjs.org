@@ -21,7 +21,7 @@ layout: docs
 
 ▸ (`listener`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:334](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L334)*
+*Defined in [xterm.d.ts:344](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L344)*
 
 **Parameters:**
 

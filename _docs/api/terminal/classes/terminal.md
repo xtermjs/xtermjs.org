@@ -87,7 +87,7 @@ layout: docs
 
 \+ **new Terminal**(`options?`: [ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}) & [ITerminalInitOnlyOptions]({% link _docs/api/terminal/interfaces/iterminalinitonlyoptions.md %})): *[Terminal]({% link _docs/api/terminal/classes/terminal.md %})*
 
-*Defined in [xterm.d.ts:735](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L735)*
+*Defined in [xterm.d.ts:753](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L753)*
 
 **Parameters:**
 
@@ -103,7 +103,7 @@ Name | Type | Description |
 
 • **buffer**: *[IBufferNamespace]({% link _docs/api/terminal/interfaces/ibuffernamespace.md %})*
 
-*Defined in [xterm.d.ts:680](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L680)*
+*Defined in [xterm.d.ts:690](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L690)*
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 • **cols**: *number*
 
-*Defined in [xterm.d.ts:675](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L675)*
+*Defined in [xterm.d.ts:685](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L685)*
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 • **element**: *HTMLElement | undefined*
 
-*Defined in [xterm.d.ts:656](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L656)*
+*Defined in [xterm.d.ts:666](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L666)*
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 • **markers**: *ReadonlyArray‹[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})›*
 
-*Defined in [xterm.d.ts:686](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L686)*
+*Defined in [xterm.d.ts:696](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L696)*
 
 ___
 
@@ -135,7 +135,7 @@ ___
 
 • **modes**: *[IModes]({% link _docs/api/terminal/interfaces/imodes.md %})*
 
-*Defined in [xterm.d.ts:702](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L702)*
+*Defined in [xterm.d.ts:712](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L712)*
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 • **onBell**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-*Defined in [xterm.d.ts:748](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L748)*
+*Defined in [xterm.d.ts:766](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L766)*
 
 ___
 
@@ -151,7 +151,7 @@ ___
 
 • **onBinary**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹string›*
 
-*Defined in [xterm.d.ts:759](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L759)*
+*Defined in [xterm.d.ts:777](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L777)*
 
 ___
 
@@ -159,7 +159,7 @@ ___
 
 • **onCursorMove**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-*Defined in [xterm.d.ts:765](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L765)*
+*Defined in [xterm.d.ts:783](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L783)*
 
 ___
 
@@ -167,7 +167,7 @@ ___
 
 • **onData**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹string›*
 
-*Defined in [xterm.d.ts:774](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L774)*
+*Defined in [xterm.d.ts:792](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L792)*
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 • **onKey**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹object›*
 
-*Defined in [xterm.d.ts:782](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L782)*
+*Defined in [xterm.d.ts:800](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L800)*
 
 ___
 
@@ -183,7 +183,7 @@ ___
 
 • **onLineFeed**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-*Defined in [xterm.d.ts:788](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L788)*
+*Defined in [xterm.d.ts:806](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L806)*
 
 ___
 
@@ -191,7 +191,7 @@ ___
 
 • **onRender**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹object›*
 
-*Defined in [xterm.d.ts:796](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L796)*
+*Defined in [xterm.d.ts:814](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L814)*
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 • **onResize**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹object›*
 
-*Defined in [xterm.d.ts:814](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L814)*
+*Defined in [xterm.d.ts:832](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L832)*
 
 ___
 
@@ -207,7 +207,7 @@ ___
 
 • **onScroll**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹number›*
 
-*Defined in [xterm.d.ts:821](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L821)*
+*Defined in [xterm.d.ts:839](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L839)*
 
 ___
 
@@ -215,7 +215,7 @@ ___
 
 • **onSelectionChange**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-*Defined in [xterm.d.ts:827](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L827)*
+*Defined in [xterm.d.ts:845](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L845)*
 
 ___
 
@@ -223,7 +223,7 @@ ___
 
 • **onTitleChange**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹string›*
 
-*Defined in [xterm.d.ts:834](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L834)*
+*Defined in [xterm.d.ts:852](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L852)*
 
 ___
 
@@ -231,7 +231,7 @@ ___
 
 • **onWriteParsed**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-*Defined in [xterm.d.ts:807](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L807)*
+*Defined in [xterm.d.ts:825](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L825)*
 
 ___
 
@@ -239,7 +239,7 @@ ___
 
 • **options**: *[ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %})*
 
-*Defined in [xterm.d.ts:730](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L730)*
+*Defined in [xterm.d.ts:748](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L748)*
 
 ___
 
@@ -247,7 +247,7 @@ ___
 
 • **parser**: *[IParser]({% link _docs/api/terminal/interfaces/iparser.md %})*
 
-*Defined in [xterm.d.ts:691](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L691)*
+*Defined in [xterm.d.ts:701](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L701)*
 
 ___
 
@@ -255,7 +255,7 @@ ___
 
 • **rows**: *number*
 
-*Defined in [xterm.d.ts:668](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L668)*
+*Defined in [xterm.d.ts:678](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L678)*
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 • **textarea**: *HTMLTextAreaElement | undefined*
 
-*Defined in [xterm.d.ts:661](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L661)*
+*Defined in [xterm.d.ts:671](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L671)*
 
 ___
 
@@ -271,7 +271,7 @@ ___
 
 • **unicode**: *[IUnicodeHandling]({% link _docs/api/terminal/interfaces/iunicodehandling.md %})*
 
-*Defined in [xterm.d.ts:697](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L697)*
+*Defined in [xterm.d.ts:707](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L707)*
 
 ___
 
@@ -279,7 +279,7 @@ ___
 
 ▪ **strings**: *[ILocalizableStrings]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %})*
 
-*Defined in [xterm.d.ts:735](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L735)*
+*Defined in [xterm.d.ts:753](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L753)*
 
 ## Methods
 
@@ -287,7 +287,7 @@ ___
 
 ▸ **attachCustomKeyEventHandler**(`customKeyEventHandler`: function): *void*
 
-*Defined in [xterm.d.ts:872](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L872)*
+*Defined in [xterm.d.ts:908](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L908)*
 
 **Parameters:**
 
@@ -309,7 +309,7 @@ ___
 
 ▸ **blur**(): *void*
 
-*Defined in [xterm.d.ts:839](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L839)*
+*Defined in [xterm.d.ts:857](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L857)*
 
 **Returns:** *void*
 
@@ -319,7 +319,7 @@ ___
 
 ▸ **clear**(): *void*
 
-*Defined in [xterm.d.ts:1016](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1016)*
+*Defined in [xterm.d.ts:1052](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1052)*
 
 **Returns:** *void*
 
@@ -329,7 +329,7 @@ ___
 
 ▸ **clearSelection**(): *void*
 
-*Defined in [xterm.d.ts:956](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L956)*
+*Defined in [xterm.d.ts:992](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L992)*
 
 **Returns:** *void*
 
@@ -339,7 +339,7 @@ ___
 
 ▸ **clearTextureAtlas**(): *void*
 
-*Defined in [xterm.d.ts:1058](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1058)*
+*Defined in [xterm.d.ts:1094](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1094)*
 
 **Returns:** *void*
 
@@ -349,7 +349,7 @@ ___
 
 ▸ **deregisterCharacterJoiner**(`joinerId`: number): *void*
 
-*Defined in [xterm.d.ts:918](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L918)*
+*Defined in [xterm.d.ts:954](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L954)*
 
 **Parameters:**
 
@@ -367,7 +367,7 @@ ___
 
 *Implementation of [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:983](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L983)*
+*Defined in [xterm.d.ts:1019](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1019)*
 
 **Returns:** *void*
 
@@ -377,7 +377,7 @@ ___
 
 ▸ **focus**(): *void*
 
-*Defined in [xterm.d.ts:844](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L844)*
+*Defined in [xterm.d.ts:862](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L862)*
 
 **Returns:** *void*
 
@@ -387,7 +387,7 @@ ___
 
 ▸ **getSelection**(): *string*
 
-*Defined in [xterm.d.ts:946](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L946)*
+*Defined in [xterm.d.ts:982](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L982)*
 
 **Returns:** *string*
 
@@ -397,7 +397,7 @@ ___
 
 ▸ **getSelectionPosition**(): *[IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %}) | undefined*
 
-*Defined in [xterm.d.ts:951](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L951)*
+*Defined in [xterm.d.ts:987](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L987)*
 
 **Returns:** *[IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %}) | undefined*
 
@@ -407,7 +407,7 @@ ___
 
 ▸ **hasSelection**(): *boolean*
 
-*Defined in [xterm.d.ts:940](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L940)*
+*Defined in [xterm.d.ts:976](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L976)*
 
 **Returns:** *boolean*
 
@@ -417,7 +417,7 @@ ___
 
 ▸ **loadAddon**(`addon`: [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})): *void*
 
-*Defined in [xterm.d.ts:1069](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1069)*
+*Defined in [xterm.d.ts:1105](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1105)*
 
 **Parameters:**
 
@@ -433,7 +433,7 @@ ___
 
 ▸ **open**(`parent`: HTMLElement): *void*
 
-*Defined in [xterm.d.ts:861](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L861)*
+*Defined in [xterm.d.ts:879](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L879)*
 
 **Parameters:**
 
@@ -449,7 +449,7 @@ ___
 
 ▸ **paste**(`data`: string): *void*
 
-*Defined in [xterm.d.ts:1042](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1042)*
+*Defined in [xterm.d.ts:1078](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1078)*
 
 **Parameters:**
 
@@ -465,7 +465,7 @@ ___
 
 ▸ **refresh**(`start`: number, `end`: number): *void*
 
-*Defined in [xterm.d.ts:1050](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1050)*
+*Defined in [xterm.d.ts:1086](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1086)*
 
 **Parameters:**
 
@@ -482,7 +482,7 @@ ___
 
 ▸ **registerCharacterJoiner**(`handler`: function): *number*
 
-*Defined in [xterm.d.ts:911](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L911)*
+*Defined in [xterm.d.ts:947](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L947)*
 
 **Parameters:**
 
@@ -506,7 +506,7 @@ ___
 
 ▸ **registerDecoration**(`decorationOptions`: [IDecorationOptions]({% link _docs/api/terminal/interfaces/idecorationoptions.md %})): *[IDecoration]({% link _docs/api/terminal/interfaces/idecoration.md %}) | undefined*
 
-*Defined in [xterm.d.ts:935](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L935)*
+*Defined in [xterm.d.ts:971](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L971)*
 
 **Parameters:**
 
@@ -522,7 +522,7 @@ ___
 
 ▸ **registerLinkProvider**(`linkProvider`: [ILinkProvider]({% link _docs/api/terminal/interfaces/ilinkprovider.md %})): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:880](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L880)*
+*Defined in [xterm.d.ts:916](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L916)*
 
 **Parameters:**
 
@@ -538,7 +538,7 @@ ___
 
 ▸ **registerMarker**(`cursorYOffset?`: number): *[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %}) | undefined*
 
-*Defined in [xterm.d.ts:926](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L926)*
+*Defined in [xterm.d.ts:962](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L962)*
 
 **Parameters:**
 
@@ -556,7 +556,7 @@ ___
 
 ▸ **reset**(): *void*
 
-*Defined in [xterm.d.ts:1063](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1063)*
+*Defined in [xterm.d.ts:1099](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1099)*
 
 **Returns:** *void*
 
@@ -566,7 +566,7 @@ ___
 
 ▸ **resize**(`columns`: number, `rows`: number): *void*
 
-*Defined in [xterm.d.ts:853](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L853)*
+*Defined in [xterm.d.ts:871](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L871)*
 
 **Parameters:**
 
@@ -583,7 +583,7 @@ ___
 
 ▸ **scrollLines**(`amount`: number): *void*
 
-*Defined in [xterm.d.ts:989](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L989)*
+*Defined in [xterm.d.ts:1025](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1025)*
 
 **Parameters:**
 
@@ -599,7 +599,7 @@ ___
 
 ▸ **scrollPages**(`pageCount`: number): *void*
 
-*Defined in [xterm.d.ts:995](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L995)*
+*Defined in [xterm.d.ts:1031](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1031)*
 
 **Parameters:**
 
@@ -615,7 +615,7 @@ ___
 
 ▸ **scrollToBottom**(): *void*
 
-*Defined in [xterm.d.ts:1005](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1005)*
+*Defined in [xterm.d.ts:1041](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1041)*
 
 **Returns:** *void*
 
@@ -625,7 +625,7 @@ ___
 
 ▸ **scrollToLine**(`line`: number): *void*
 
-*Defined in [xterm.d.ts:1011](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1011)*
+*Defined in [xterm.d.ts:1047](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1047)*
 
 **Parameters:**
 
@@ -641,7 +641,7 @@ ___
 
 ▸ **scrollToTop**(): *void*
 
-*Defined in [xterm.d.ts:1000](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1000)*
+*Defined in [xterm.d.ts:1036](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1036)*
 
 **Returns:** *void*
 
@@ -651,7 +651,7 @@ ___
 
 ▸ **select**(`column`: number, `row`: number, `length`: number): *void*
 
-*Defined in [xterm.d.ts:964](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L964)*
+*Defined in [xterm.d.ts:1000](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1000)*
 
 **Parameters:**
 
@@ -669,7 +669,7 @@ ___
 
 ▸ **selectAll**(): *void*
 
-*Defined in [xterm.d.ts:969](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L969)*
+*Defined in [xterm.d.ts:1005](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1005)*
 
 **Returns:** *void*
 
@@ -679,7 +679,7 @@ ___
 
 ▸ **selectLines**(`start`: number, `end`: number): *void*
 
-*Defined in [xterm.d.ts:976](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L976)*
+*Defined in [xterm.d.ts:1012](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1012)*
 
 **Parameters:**
 
@@ -696,7 +696,7 @@ ___
 
 ▸ **write**(`data`: string | Uint8Array, `callback?`: function): *void*
 
-*Defined in [xterm.d.ts:1026](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1026)*
+*Defined in [xterm.d.ts:1062](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1062)*
 
 **Parameters:**
 
@@ -714,7 +714,7 @@ ___
 
 ▸ **writeln**(`data`: string | Uint8Array, `callback?`: function): *void*
 
-*Defined in [xterm.d.ts:1036](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1036)*
+*Defined in [xterm.d.ts:1072](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1072)*
 
 **Parameters:**
 
