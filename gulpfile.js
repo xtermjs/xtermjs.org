@@ -130,6 +130,11 @@ gulp.task('docs', gulp.series('typedoc', async function() {
       await fs.writeFile(outFile, data, 'utf-8');
     }
   }
+
+  // also copy files over needed for demo to run
+  gulp.src('./node_modules/xterm/css/xterm.css').pipe(gulp.dest('./css'));
+  gulp.src('./node_modules/xterm/lib/xterm.js').pipe(gulp.dest('./js'));
+  gulp.src('./node_modules/xterm-addon-webgl/lib/xterm-addon-webgl.js').pipe(gulp.dest('./js'));
 }));
 
 gulp.task('default', gulp.series('docs'));
