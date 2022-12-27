@@ -24,7 +24,7 @@ layout: docs
 
 • **color**: *string*
 
-*Defined in [xterm.d.ts:409](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L409)*
+*Defined in [xterm.d.ts:419](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L419)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **position**? : *"left" | "center" | "right" | "full"*
 
-*Defined in [xterm.d.ts:410](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L410)*
+*Defined in [xterm.d.ts:420](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L420)*

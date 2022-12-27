@@ -13,11 +13,23 @@ layout: docs
 
 ## Index
 
+### Properties
+
+* [allowNonHttpProtocols]({% link _docs/api/terminal/interfaces/ilinkhandler.md %}#optional-allownonhttpprotocols)
+
 ### Methods
 
 * [activate]({% link _docs/api/terminal/interfaces/ilinkhandler.md %}#activate)
 * [hover]({% link _docs/api/terminal/interfaces/ilinkhandler.md %}#optional-hover)
 * [leave]({% link _docs/api/terminal/interfaces/ilinkhandler.md %}#optional-leave)
+
+## Properties
+
+### `Optional` allowNonHttpProtocols
+
+• **allowNonHttpProtocols**? : *boolean*
+
+*Defined in [xterm.d.ts:1188](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1188)*
 
 ## Methods
 
@@ -25,7 +37,7 @@ layout: docs
 
 ▸ **activate**(`event`: MouseEvent, `text`: string, `range`: [IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %})): *void*
 
-*Defined in [xterm.d.ts:1127](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1127)*
+*Defined in [xterm.d.ts:1163](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1163)*
 
 **Parameters:**
 
@@ -43,7 +55,7 @@ ___
 
 ▸ **hover**(`event`: MouseEvent, `text`: string, `range`: [IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %})): *void*
 
-*Defined in [xterm.d.ts:1137](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1137)*
+*Defined in [xterm.d.ts:1173](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1173)*
 
 **Parameters:**
 
@@ -61,7 +73,7 @@ ___
 
 ▸ **leave**(`event`: MouseEvent, `text`: string, `range`: [IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %})): *void*
 
-*Defined in [xterm.d.ts:1145](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L1145)*
+*Defined in [xterm.d.ts:1181](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1181)*
 
 **Parameters:**
 

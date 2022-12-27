@@ -57,7 +57,7 @@ layout: docs
 
 Ƭ **FontWeight**: *"normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | number*
 
-*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L16)*
+*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L16)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 Ƭ **LogLevel**: *"debug" | "info" | "warn" | "error" | "off"*
 
-*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/5.0.0/typings/xterm.d.ts#L21)*
+*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L21)*
