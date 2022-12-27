@@ -10,7 +10,6 @@ markdown: kramdown
 
 defaults:
   - {scope: {type: docs}, values: {layout: docs}}
-  - {scope: {type: posts}, values: {layout: post, permalink: '/blog/articles/:year-:month-:day-:title'}}
 
 include:
   - _pages
