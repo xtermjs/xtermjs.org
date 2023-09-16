@@ -5,8 +5,7 @@
 			"type": "npm",
 			"script": "start",
 			"problemMatcher": [],
-			"label": "npm: start",
-			"detail": "bundle exec jekyll serve",
+			"label": "start",
 			"group": {
 				"kind": "build",
 				"isDefault": true
