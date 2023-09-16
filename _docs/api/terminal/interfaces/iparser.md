@@ -26,7 +26,7 @@ layout: docs
 
 ▸ **registerCsiHandler**(`id`: [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}), `callback`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:1607](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1607)*
+*Defined in [xterm.d.ts:1712](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1712)*
 
 **Parameters:**
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **registerDcsHandler**(`id`: [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}), `callback`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:1625](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1625)*
+*Defined in [xterm.d.ts:1730](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1730)*
 
 **Parameters:**
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **registerEscHandler**(`id`: [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}), `handler`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:1637](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1637)*
+*Defined in [xterm.d.ts:1742](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1742)*
 
 **Parameters:**
 
@@ -99,7 +99,7 @@ ___
 
 ▸ **registerOscHandler**(`ident`: number, `callback`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:1654](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1654)*
+*Defined in [xterm.d.ts:1759](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1759)*
 
 **Parameters:**
 

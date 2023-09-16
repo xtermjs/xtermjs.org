@@ -34,7 +34,7 @@ layout: docs
 
 • **element**: *HTMLElement | undefined*
 
-*Defined in [xterm.d.ts:404](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L404)*
+*Defined in [xterm.d.ts:492](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L492)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 *Inherited from [IDisposableWithEvent]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}).[isDisposed]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#isdisposed)*
 
-*Defined in [xterm.d.ts:380](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L380)*
+*Defined in [xterm.d.ts:467](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L467)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **marker**: *[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})*
 
-*Defined in [xterm.d.ts:390](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L390)*
+*Defined in [xterm.d.ts:478](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L478)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 *Inherited from [IDisposableWithEvent]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}).[onDispose]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#ondispose)*
 
-*Defined in [xterm.d.ts:375](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L375)*
+*Defined in [xterm.d.ts:462](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L462)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **onRender**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹HTMLElement›*
 
-*Defined in [xterm.d.ts:397](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L397)*
+*Defined in [xterm.d.ts:485](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L485)*
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 • **options**: *Pick‹[IDecorationOptions]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}), "overviewRulerOptions"›*
 
-*Defined in [xterm.d.ts:411](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L411)*
+*Defined in [xterm.d.ts:499](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L499)*
 
 ## Methods
 
@@ -88,6 +88,6 @@ ___
 
 *Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
-*Defined in [xterm.d.ts:337](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L337)*
+*Defined in [xterm.d.ts:426](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L426)*
 
 **Returns:** *void*

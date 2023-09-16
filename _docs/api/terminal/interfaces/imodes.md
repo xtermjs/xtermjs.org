@@ -31,7 +31,7 @@ layout: docs
 
 • **applicationCursorKeysMode**: *boolean*
 
-*Defined in [xterm.d.ts:1700](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1700)*
+*Defined in [xterm.d.ts:1806](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1806)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **applicationKeypadMode**: *boolean*
 
-*Defined in [xterm.d.ts:1704](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1704)*
+*Defined in [xterm.d.ts:1810](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1810)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **bracketedPasteMode**: *boolean*
 
-*Defined in [xterm.d.ts:1708](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1708)*
+*Defined in [xterm.d.ts:1814](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1814)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **insertMode**: *boolean*
 
-*Defined in [xterm.d.ts:1712](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1712)*
+*Defined in [xterm.d.ts:1818](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1818)*
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 • **mouseTrackingMode**: *"none" | "x10" | "vt200" | "drag" | "any"*
 
-*Defined in [xterm.d.ts:1721](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1721)*
+*Defined in [xterm.d.ts:1827](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1827)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **originMode**: *boolean*
 
-*Defined in [xterm.d.ts:1725](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1725)*
+*Defined in [xterm.d.ts:1831](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1831)*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 • **reverseWraparoundMode**: *boolean*
 
-*Defined in [xterm.d.ts:1729](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1729)*
+*Defined in [xterm.d.ts:1835](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1835)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 • **sendFocusMode**: *boolean*
 
-*Defined in [xterm.d.ts:1733](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1733)*
+*Defined in [xterm.d.ts:1839](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1839)*
 
 ___
 
@@ -95,4 +95,4 @@ ___
 
 • **wraparoundMode**: *boolean*
 
-*Defined in [xterm.d.ts:1737](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1737)*
+*Defined in [xterm.d.ts:1843](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1843)*

@@ -20,6 +20,7 @@ layout: docs
 * [altClickMovesCursor]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-altclickmovescursor)
 * [convertEol]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-converteol)
 * [cursorBlink]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-cursorblink)
+* [cursorInactiveStyle]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-cursorinactivestyle)
 * [cursorStyle]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-cursorstyle)
 * [cursorWidth]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-cursorwidth)
 * [customGlyphs]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-customglyphs)
@@ -31,10 +32,12 @@ layout: docs
 * [fontSize]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-fontsize)
 * [fontWeight]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-fontweight)
 * [fontWeightBold]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-fontweightbold)
+* [ignoreBracketedPasteMode]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-ignorebracketedpastemode)
 * [letterSpacing]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-letterspacing)
 * [lineHeight]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-lineheight)
 * [linkHandler]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-linkhandler)
 * [logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-loglevel)
+* [logger]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-logger)
 * [macOptionClickForcesSelection]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-macoptionclickforcesselection)
 * [macOptionIsMeta]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-macoptionismeta)
 * [minimumContrastRatio]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-minimumcontrastratio)
@@ -49,6 +52,7 @@ layout: docs
 * [theme]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-theme)
 * [windowOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-windowoptions)
 * [windowsMode]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-windowsmode)
+* [windowsPty]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-windowspty)
 * [wordSeparator]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-wordseparator)
 
 ## Properties
@@ -57,7 +61,7 @@ layout: docs
 
 • **allowProposedApi**? : *boolean*
 
-*Defined in [xterm.d.ts:31](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L31)*
+*Defined in [xterm.d.ts:32](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L32)*
 
 ___
 
@@ -65,7 +69,7 @@ ___
 
 • **allowTransparency**? : *boolean*
 
-*Defined in [xterm.d.ts:39](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L39)*
+*Defined in [xterm.d.ts:40](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L40)*
 
 ___
 
@@ -73,7 +77,7 @@ ___
 
 • **altClickMovesCursor**? : *boolean*
 
-*Defined in [xterm.d.ts:45](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L45)*
+*Defined in [xterm.d.ts:46](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L46)*
 
 ___
 
@@ -81,7 +85,7 @@ ___
 
 • **convertEol**? : *boolean*
 
-*Defined in [xterm.d.ts:55](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L55)*
+*Defined in [xterm.d.ts:56](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L56)*
 
 ___
 
@@ -89,7 +93,15 @@ ___
 
 • **cursorBlink**? : *boolean*
 
-*Defined in [xterm.d.ts:60](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L60)*
+*Defined in [xterm.d.ts:61](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L61)*
+
+___
+
+### `Optional` cursorInactiveStyle
+
+• **cursorInactiveStyle**? : *"outline" | "block" | "bar" | "underline" | "none"*
+
+*Defined in [xterm.d.ts:76](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L76)*
 
 ___
 
@@ -97,7 +109,7 @@ ___
 
 • **cursorStyle**? : *"block" | "underline" | "bar"*
 
-*Defined in [xterm.d.ts:65](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L65)*
+*Defined in [xterm.d.ts:66](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L66)*
 
 ___
 
@@ -105,7 +117,7 @@ ___
 
 • **cursorWidth**? : *number*
 
-*Defined in [xterm.d.ts:70](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L70)*
+*Defined in [xterm.d.ts:71](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L71)*
 
 ___
 
@@ -113,7 +125,7 @@ ___
 
 • **customGlyphs**? : *boolean*
 
-*Defined in [xterm.d.ts:78](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L78)*
+*Defined in [xterm.d.ts:85](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L85)*
 
 ___
 
@@ -121,7 +133,7 @@ ___
 
 • **disableStdin**? : *boolean*
 
-*Defined in [xterm.d.ts:83](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L83)*
+*Defined in [xterm.d.ts:90](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L90)*
 
 ___
 
@@ -129,7 +141,7 @@ ___
 
 • **drawBoldTextInBrightColors**? : *boolean*
 
-*Defined in [xterm.d.ts:88](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L88)*
+*Defined in [xterm.d.ts:95](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L95)*
 
 ___
 
@@ -137,7 +149,7 @@ ___
 
 • **fastScrollModifier**? : *"none" | "alt" | "ctrl" | "shift"*
 
-*Defined in [xterm.d.ts:93](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L93)*
+*Defined in [xterm.d.ts:100](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L100)*
 
 ___
 
@@ -145,7 +157,7 @@ ___
 
 • **fastScrollSensitivity**? : *number*
 
-*Defined in [xterm.d.ts:98](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L98)*
+*Defined in [xterm.d.ts:105](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L105)*
 
 ___
 
@@ -153,7 +165,7 @@ ___
 
 • **fontFamily**? : *string*
 
-*Defined in [xterm.d.ts:108](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L108)*
+*Defined in [xterm.d.ts:115](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L115)*
 
 ___
 
@@ -161,7 +173,7 @@ ___
 
 • **fontSize**? : *number*
 
-*Defined in [xterm.d.ts:103](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L103)*
+*Defined in [xterm.d.ts:110](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L110)*
 
 ___
 
@@ -169,7 +181,7 @@ ___
 
 • **fontWeight**? : *[FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)*
 
-*Defined in [xterm.d.ts:113](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L113)*
+*Defined in [xterm.d.ts:120](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L120)*
 
 ___
 
@@ -177,7 +189,15 @@ ___
 
 • **fontWeightBold**? : *[FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)*
 
-*Defined in [xterm.d.ts:118](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L118)*
+*Defined in [xterm.d.ts:125](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L125)*
+
+___
+
+### `Optional` ignoreBracketedPasteMode
+
+• **ignoreBracketedPasteMode**? : *boolean*
+
+*Defined in [xterm.d.ts:132](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L132)*
 
 ___
 
@@ -185,7 +205,7 @@ ___
 
 • **letterSpacing**? : *number*
 
-*Defined in [xterm.d.ts:123](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L123)*
+*Defined in [xterm.d.ts:137](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L137)*
 
 ___
 
@@ -193,7 +213,7 @@ ___
 
 • **lineHeight**? : *number*
 
-*Defined in [xterm.d.ts:128](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L128)*
+*Defined in [xterm.d.ts:142](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L142)*
 
 ___
 
@@ -201,7 +221,7 @@ ___
 
 • **linkHandler**? : *[ILinkHandler]({% link _docs/api/terminal/interfaces/ilinkhandler.md %}) | null*
 
-*Defined in [xterm.d.ts:141](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L141)*
+*Defined in [xterm.d.ts:155](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L155)*
 
 ___
 
@@ -209,7 +229,15 @@ ___
 
 • **logLevel**? : *[LogLevel]({% link _docs/api/terminal/modules/xterm.md %}#loglevel)*
 
-*Defined in [xterm.d.ts:153](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L153)*
+*Defined in [xterm.d.ts:168](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L168)*
+
+___
+
+### `Optional` logger
+
+• **logger**? : *[ILogger]({% link _docs/api/terminal/interfaces/ilogger.md %}) | null*
+
+*Defined in [xterm.d.ts:173](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L173)*
 
 ___
 
@@ -217,7 +245,7 @@ ___
 
 • **macOptionClickForcesSelection**? : *boolean*
 
-*Defined in [xterm.d.ts:167](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L167)*
+*Defined in [xterm.d.ts:187](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L187)*
 
 ___
 
@@ -225,7 +253,7 @@ ___
 
 • **macOptionIsMeta**? : *boolean*
 
-*Defined in [xterm.d.ts:158](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L158)*
+*Defined in [xterm.d.ts:178](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L178)*
 
 ___
 
@@ -233,7 +261,7 @@ ___
 
 • **minimumContrastRatio**? : *number*
 
-*Defined in [xterm.d.ts:179](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L179)*
+*Defined in [xterm.d.ts:199](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L199)*
 
 ___
 
@@ -241,7 +269,7 @@ ___
 
 • **overviewRulerWidth**? : *number*
 
-*Defined in [xterm.d.ts:260](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L260)*
+*Defined in [xterm.d.ts:301](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L301)*
 
 ___
 
@@ -249,7 +277,7 @@ ___
 
 • **rightClickSelectsWord**? : *boolean*
 
-*Defined in [xterm.d.ts:185](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L185)*
+*Defined in [xterm.d.ts:205](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L205)*
 
 ___
 
@@ -257,7 +285,7 @@ ___
 
 • **screenReaderMode**? : *boolean*
 
-*Defined in [xterm.d.ts:192](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L192)*
+*Defined in [xterm.d.ts:212](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L212)*
 
 ___
 
@@ -265,7 +293,7 @@ ___
 
 • **scrollOnUserInput**? : *boolean*
 
-*Defined in [xterm.d.ts:205](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L205)*
+*Defined in [xterm.d.ts:225](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L225)*
 
 ___
 
@@ -273,7 +301,7 @@ ___
 
 • **scrollSensitivity**? : *number*
 
-*Defined in [xterm.d.ts:210](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L210)*
+*Defined in [xterm.d.ts:230](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L230)*
 
 ___
 
@@ -281,7 +309,7 @@ ___
 
 • **scrollback**? : *number*
 
-*Defined in [xterm.d.ts:199](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L199)*
+*Defined in [xterm.d.ts:219](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L219)*
 
 ___
 
@@ -289,7 +317,7 @@ ___
 
 • **smoothScrollDuration**? : *number*
 
-*Defined in [xterm.d.ts:216](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L216)*
+*Defined in [xterm.d.ts:236](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L236)*
 
 ___
 
@@ -297,7 +325,7 @@ ___
 
 • **tabStopWidth**? : *number*
 
-*Defined in [xterm.d.ts:221](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L221)*
+*Defined in [xterm.d.ts:241](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L241)*
 
 ___
 
@@ -305,7 +333,7 @@ ___
 
 • **theme**? : *[ITheme]({% link _docs/api/terminal/interfaces/itheme.md %})*
 
-*Defined in [xterm.d.ts:226](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L226)*
+*Defined in [xterm.d.ts:246](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L246)*
 
 ___
 
@@ -313,7 +341,7 @@ ___
 
 • **windowOptions**? : *[IWindowOptions]({% link _docs/api/terminal/interfaces/iwindowoptions.md %})*
 
-*Defined in [xterm.d.ts:254](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L254)*
+*Defined in [xterm.d.ts:295](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L295)*
 
 ___
 
@@ -321,7 +349,15 @@ ___
 
 • **windowsMode**? : *boolean*
 
-*Defined in [xterm.d.ts:242](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L242)*
+*Defined in [xterm.d.ts:265](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L265)*
+
+___
+
+### `Optional` windowsPty
+
+• **windowsPty**? : *[IWindowsPty]({% link _docs/api/terminal/interfaces/iwindowspty.md %})*
+
+*Defined in [xterm.d.ts:283](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L283)*
 
 ___
 
@@ -329,4 +365,4 @@ ___
 
 • **wordSeparator**? : *string*
 
-*Defined in [xterm.d.ts:248](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L248)*
+*Defined in [xterm.d.ts:289](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L289)*
