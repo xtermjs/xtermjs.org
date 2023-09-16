@@ -18,6 +18,7 @@ layout: docs
 * [IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})
 * [IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %})
 * [IBufferCellPosition]({% link _docs/api/terminal/interfaces/ibuffercellposition.md %})
+* [IBufferElementProvider]({% link _docs/api/terminal/interfaces/ibufferelementprovider.md %})
 * [IBufferLine]({% link _docs/api/terminal/interfaces/ibufferline.md %})
 * [IBufferNamespace]({% link _docs/api/terminal/interfaces/ibuffernamespace.md %})
 * [IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %})
@@ -33,6 +34,7 @@ layout: docs
 * [ILinkHandler]({% link _docs/api/terminal/interfaces/ilinkhandler.md %})
 * [ILinkProvider]({% link _docs/api/terminal/interfaces/ilinkprovider.md %})
 * [ILocalizableStrings]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %})
+* [ILogger]({% link _docs/api/terminal/interfaces/ilogger.md %})
 * [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
 * [IModes]({% link _docs/api/terminal/interfaces/imodes.md %})
 * [IParser]({% link _docs/api/terminal/interfaces/iparser.md %})
@@ -45,6 +47,7 @@ layout: docs
 * [IViewportRange]({% link _docs/api/terminal/interfaces/iviewportrange.md %})
 * [IViewportRangePosition]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %})
 * [IWindowOptions]({% link _docs/api/terminal/interfaces/iwindowoptions.md %})
+* [IWindowsPty]({% link _docs/api/terminal/interfaces/iwindowspty.md %})
 
 ### Type aliases
 
@@ -57,12 +60,12 @@ layout: docs
 
 Ƭ **FontWeight**: *"normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | number*
 
-*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L16)*
+*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L16)*
 
 ___
 
 ###  LogLevel
 
-Ƭ **LogLevel**: *"debug" | "info" | "warn" | "error" | "off"*
+Ƭ **LogLevel**: *"trace" | "debug" | "info" | "warn" | "error" | "off"*
 
-*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L21)*
+*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L21)*

@@ -46,7 +46,7 @@ layout: docs
 
 • **background**? : *string*
 
-*Defined in [xterm.d.ts:286](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L286)*
+*Defined in [xterm.d.ts:327](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L327)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **black**? : *string*
 
-*Defined in [xterm.d.ts:298](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L298)*
+*Defined in [xterm.d.ts:342](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L342)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • **blue**? : *string*
 
-*Defined in [xterm.d.ts:306](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L306)*
+*Defined in [xterm.d.ts:350](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L350)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **brightBlack**? : *string*
 
-*Defined in [xterm.d.ts:314](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L314)*
+*Defined in [xterm.d.ts:358](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L358)*
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 • **brightBlue**? : *string*
 
-*Defined in [xterm.d.ts:322](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L322)*
+*Defined in [xterm.d.ts:366](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L366)*
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 • **brightCyan**? : *string*
 
-*Defined in [xterm.d.ts:326](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L326)*
+*Defined in [xterm.d.ts:370](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L370)*
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 • **brightGreen**? : *string*
 
-*Defined in [xterm.d.ts:318](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L318)*
+*Defined in [xterm.d.ts:362](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L362)*
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 • **brightMagenta**? : *string*
 
-*Defined in [xterm.d.ts:324](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L324)*
+*Defined in [xterm.d.ts:368](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L368)*
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 • **brightRed**? : *string*
 
-*Defined in [xterm.d.ts:316](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L316)*
+*Defined in [xterm.d.ts:360](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L360)*
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 • **brightWhite**? : *string*
 
-*Defined in [xterm.d.ts:328](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L328)*
+*Defined in [xterm.d.ts:372](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L372)*
 
 ___
 
@@ -126,7 +126,7 @@ ___
 
 • **brightYellow**? : *string*
 
-*Defined in [xterm.d.ts:320](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L320)*
+*Defined in [xterm.d.ts:364](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L364)*
 
 ___
 
@@ -134,7 +134,7 @@ ___
 
 • **cursor**? : *string*
 
-*Defined in [xterm.d.ts:288](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L288)*
+*Defined in [xterm.d.ts:329](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L329)*
 
 ___
 
@@ -142,7 +142,7 @@ ___
 
 • **cursorAccent**? : *string*
 
-*Defined in [xterm.d.ts:290](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L290)*
+*Defined in [xterm.d.ts:331](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L331)*
 
 ___
 
@@ -150,7 +150,7 @@ ___
 
 • **cyan**? : *string*
 
-*Defined in [xterm.d.ts:310](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L310)*
+*Defined in [xterm.d.ts:354](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L354)*
 
 ___
 
@@ -158,7 +158,7 @@ ___
 
 • **extendedAnsi**? : *string[]*
 
-*Defined in [xterm.d.ts:330](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L330)*
+*Defined in [xterm.d.ts:374](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L374)*
 
 ___
 
@@ -166,7 +166,7 @@ ___
 
 • **foreground**? : *string*
 
-*Defined in [xterm.d.ts:284](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L284)*
+*Defined in [xterm.d.ts:325](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L325)*
 
 ___
 
@@ -174,7 +174,7 @@ ___
 
 • **green**? : *string*
 
-*Defined in [xterm.d.ts:302](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L302)*
+*Defined in [xterm.d.ts:346](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L346)*
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 • **magenta**? : *string*
 
-*Defined in [xterm.d.ts:308](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L308)*
+*Defined in [xterm.d.ts:352](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L352)*
 
 ___
 
@@ -190,7 +190,7 @@ ___
 
 • **red**? : *string*
 
-*Defined in [xterm.d.ts:300](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L300)*
+*Defined in [xterm.d.ts:344](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L344)*
 
 ___
 
@@ -198,7 +198,7 @@ ___
 
 • **selectionBackground**? : *string*
 
-*Defined in [xterm.d.ts:292](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L292)*
+*Defined in [xterm.d.ts:333](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L333)*
 
 ___
 
@@ -206,7 +206,7 @@ ___
 
 • **selectionForeground**? : *string*
 
-*Defined in [xterm.d.ts:294](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L294)*
+*Defined in [xterm.d.ts:335](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L335)*
 
 ___
 
@@ -214,7 +214,7 @@ ___
 
 • **selectionInactiveBackground**? : *string*
 
-*Defined in [xterm.d.ts:296](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L296)*
+*Defined in [xterm.d.ts:340](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L340)*
 
 ___
 
@@ -222,7 +222,7 @@ ___
 
 • **white**? : *string*
 
-*Defined in [xterm.d.ts:312](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L312)*
+*Defined in [xterm.d.ts:356](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L356)*
 
 ___
 
@@ -230,4 +230,4 @@ ___
 
 • **yellow**? : *string*
 
-*Defined in [xterm.d.ts:304](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L304)*
+*Defined in [xterm.d.ts:348](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L348)*
