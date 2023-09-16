@@ -32,7 +32,7 @@ layout: docs
 
 • **decorations**? : *[ILinkDecorations]({% link _docs/api/terminal/interfaces/ilinkdecorations.md %})*
 
-*Defined in [xterm.d.ts:1224](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1224)*
+*Defined in [xterm.d.ts:1318](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1318)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **range**: *[IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %})*
 
-*Defined in [xterm.d.ts:1212](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1212)*
+*Defined in [xterm.d.ts:1306](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1306)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **text**: *string*
 
-*Defined in [xterm.d.ts:1217](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1217)*
+*Defined in [xterm.d.ts:1311](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1311)*
 
 ## Methods
 
@@ -56,7 +56,7 @@ ___
 
 ▸ **activate**(`event`: MouseEvent, `text`: string): *void*
 
-*Defined in [xterm.d.ts:1231](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1231)*
+*Defined in [xterm.d.ts:1325](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1325)*
 
 **Parameters:**
 
@@ -73,7 +73,7 @@ ___
 
 ▸ **dispose**(): *void*
 
-*Defined in [xterm.d.ts:1252](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1252)*
+*Defined in [xterm.d.ts:1347](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1347)*
 
 **Returns:** *void*
 
@@ -83,7 +83,7 @@ ___
 
 ▸ **hover**(`event`: MouseEvent, `text`: string): *void*
 
-*Defined in [xterm.d.ts:1240](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1240)*
+*Defined in [xterm.d.ts:1335](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1335)*
 
 **Parameters:**
 
@@ -100,7 +100,7 @@ ___
 
 ▸ **leave**(`event`: MouseEvent, `text`: string): *void*
 
-*Defined in [xterm.d.ts:1247](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1247)*
+*Defined in [xterm.d.ts:1342](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1342)*
 
 **Parameters:**
 

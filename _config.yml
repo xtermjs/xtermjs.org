@@ -4,7 +4,7 @@ description: Terminal front-end component written in JavaScript that works in th
 baseurl: ''
 url: 'http://xtermjs.org'
 
-version: '5.1'
+version: '5.3'
 
 markdown: kramdown
 

@@ -31,7 +31,7 @@ layout: docs
 
 • **anchor**? : *"right" | "left"*
 
-*Defined in [xterm.d.ts:437](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L437)*
+*Defined in [xterm.d.ts:525](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L525)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **backgroundColor**? : *string*
 
-*Defined in [xterm.d.ts:459](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L459)*
+*Defined in [xterm.d.ts:548](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L548)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **foregroundColor**? : *string*
 
-*Defined in [xterm.d.ts:465](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L465)*
+*Defined in [xterm.d.ts:555](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L555)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **height**? : *number*
 
-*Defined in [xterm.d.ts:453](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L453)*
+*Defined in [xterm.d.ts:541](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L541)*
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 • **layer**? : *"bottom" | "top"*
 
-*Defined in [xterm.d.ts:475](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L475)*
+*Defined in [xterm.d.ts:565](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L565)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **marker**: *[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})*
 
-*Defined in [xterm.d.ts:431](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L431)*
+*Defined in [xterm.d.ts:519](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L519)*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 • **overviewRulerOptions**? : *[IDecorationOverviewRulerOptions]({% link _docs/api/terminal/interfaces/idecorationoverviewruleroptions.md %})*
 
-*Defined in [xterm.d.ts:484](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L484)*
+*Defined in [xterm.d.ts:574](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L574)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 • **width**? : *number*
 
-*Defined in [xterm.d.ts:448](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L448)*
+*Defined in [xterm.d.ts:536](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L536)*
 
 ___
 
@@ -95,4 +95,4 @@ ___
 
 • **x**? : *number*
 
-*Defined in [xterm.d.ts:442](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L442)*
+*Defined in [xterm.d.ts:530](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L530)*

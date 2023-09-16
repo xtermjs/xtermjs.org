@@ -33,7 +33,7 @@ layout: docs
 
 • **baseY**: *number*
 
-*Defined in [xterm.d.ts:1331](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1331)*
+*Defined in [xterm.d.ts:1426](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1426)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **cursorX**: *number*
 
-*Defined in [xterm.d.ts:1320](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1320)*
+*Defined in [xterm.d.ts:1415](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1415)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **cursorY**: *number*
 
-*Defined in [xterm.d.ts:1314](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1314)*
+*Defined in [xterm.d.ts:1409](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1409)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **length**: *number*
 
-*Defined in [xterm.d.ts:1336](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1336)*
+*Defined in [xterm.d.ts:1431](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1431)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 • **type**: *"normal" | "alternate"*
 
-*Defined in [xterm.d.ts:1307](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1307)*
+*Defined in [xterm.d.ts:1402](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1402)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 • **viewportY**: *number*
 
-*Defined in [xterm.d.ts:1325](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1325)*
+*Defined in [xterm.d.ts:1420](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1420)*
 
 ## Methods
 
@@ -81,7 +81,7 @@ ___
 
 ▸ **getLine**(`y`: number): *[IBufferLine]({% link _docs/api/terminal/interfaces/ibufferline.md %}) | undefined*
 
-*Defined in [xterm.d.ts:1348](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1348)*
+*Defined in [xterm.d.ts:1443](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1443)*
 
 **Parameters:**
 
@@ -97,6 +97,6 @@ ___
 
 ▸ **getNullCell**(): *[IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %})*
 
-*Defined in [xterm.d.ts:1355](https://github.com/xtermjs/xterm.js/blob/5.1.0/typings/xterm.d.ts#L1355)*
+*Defined in [xterm.d.ts:1450](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1450)*
 
 **Returns:** *[IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %})*
