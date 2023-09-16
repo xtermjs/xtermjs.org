@@ -1,0 +1,52 @@
+name: Update documentation for release
+
+on:
+  # Allow to run the workflow by dispatching
+  workflow_dispatch:
+
+jobs:
+
+  update-documentation: 
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Pull xtermjs documentation repo
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+      
+      - name: Pull xtermjs repo
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+        with:
+          repository: xtermjs/xterm.js
+          path: _xterm.js
+
+      - uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
+        with:
+          node-version: '18'
+
+      - name: Build the docs
+        id: build_docs
+        run: |
+        
+          # install deps
+          npm install -g yarn && yarn install
+
+          # build docs
+          npm run build:docs
+
+          # run vt features
+          cd _xterm.js && npm install mustache && npm run --silent vtfeatures > ../_docs/api/vtfeatures.md & cd ..
+      
+      - name: Fetch xterm.js version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@3cf273023a0dda27efcd3164bdfb51908dd46a5b # v1.3.1
+        with:
+          path: _xterm.js
+      
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@153407881ec5c347639a548ade7d8ad1d6740e38 # v5.0.2
+        with:
+          commit-message: Update documentation to v${{ steps.package-version.outputs.current-version }}
+          title: Update documentation to v${{ steps.package-version.outputs.current-version }}
+          body: Update documentation to v${{ steps.package-version.outputs.current-version }}
+          branch: update-docs-${{ steps.package-version.outputs.current-version }}
