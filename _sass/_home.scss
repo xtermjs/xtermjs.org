@@ -47,3 +47,12 @@
         }
     }
 }
+
+details summary {
+  cursor: pointer;
+  display: list-item !important;
+
+  > * {
+    display: inline;
+  }
+}

@@ -1,8 +1,5 @@
-## Real-world uses
-Xterm.js is used in several world-class applications to provide great terminal experiences.
-
 - [**SourceLair**](https://www.sourcelair.com/): In-browser IDE that provides its users with fully-featured Linux terminals based on xterm.js.
-- [**Microsoft Visual Studio Code**](http://code.visualstudio.com/): Modern, versatile and powerful open source code editor that provides an integrated terminal based on xterm.js.
+- [**Microsoft Visual Studio Code**](http://code.visualstudio.com/): Modern, versatile, and powerful open source code editor that provides an integrated terminal based on xterm.js.
 - [**ttyd**](https://github.com/tsl0922/ttyd): A command-line tool for sharing terminal over the web, with fully-featured terminal emulation based on xterm.js.
 - [**Katacoda**](https://www.katacoda.com/): Katacoda is an Interactive Learning Platform for software developers, covering the latest Cloud Native technologies.
 - [**Eclipse Che**](http://www.eclipse.org/che): Developer workspace server, cloud IDE, and Eclipse next-generation IDE.
@@ -11,13 +8,13 @@ Xterm.js is used in several world-class applications to provide great terminal e
 - [**WebSSH2**](https://github.com/billchurch/WebSSH2): A web based SSH2 client using xterm.js, socket.io, and ssh2.
 - [**Spyder Terminal**](https://github.com/spyder-ide/spyder-terminal): A full fledged system terminal embedded on Spyder IDE.
 - [**Cloud Commander**](https://cloudcmd.io "Cloud Commander"): Orthodox web file manager with console and editor.
-- [**Codevolve**](https://www.codevolve.com "Codevolve"): Online platform for interactive coding and web development courses. Live container-backed terminal uses xterm.js.
+- [**Next Tech**](https://next.tech "Next Tech"): Online platform for interactive coding and web development courses. Live container-backed terminal uses xterm.js.
 - [**RStudio**](https://www.rstudio.com/products/RStudio "RStudio"): RStudio is an integrated development environment (IDE) for R.
 - [**Terminal for Atom**](https://github.com/jsmecham/atom-terminal-tab): A simple terminal for the Atom text editor.
-- [**Eclipse Orion**](https://orionhub.org): A modern, open source software development environment that runs in the cloud. Code, deploy and run in the cloud.
+- [**Eclipse Orion**](https://orionhub.org): A modern, open source software development environment that runs in the cloud. Code, deploy, and run in the cloud.
 - [**Gravitational Teleport**](https://github.com/gravitational/teleport): Gravitational Teleport is a modern SSH server for remotely accessing clusters of Linux servers via SSH or HTTPS.
 - [**Hexlet**](https://en.hexlet.io): Practical programming courses (JavaScript, PHP, Unix, databases, functional programming). A steady path from the first line of code to the first job.
-- [**Selenoid UI**](https://github.com/aerokube/selenoid-ui): Simple UI for the scallable golang implementation of Selenium Hub named Selenoid. We use XTerm for streaming logs over websockets from docker containers.
+- [**Selenoid UI**](https://github.com/aerokube/selenoid-ui): Simple UI for the scalable golang implementation of Selenium Hub named Selenoid. We use XTerm for streaming logs over websockets from docker containers.
 - [**Portainer**](https://portainer.io): Simple management UI for Docker.
 - [**SSHy**](https://github.com/stuicey/SSHy): HTML5 Based SSHv2 Web Client with E2E encryption utilising xterm.js, SJCL & websockets.
 - [**JupyterLab**](https://github.com/jupyterlab/jupyterlab): An extensible computational environment for Jupyter, supporting interactive data science and scientific computing across all programming languages.
@@ -39,12 +36,11 @@ Xterm.js is used in several world-class applications to provide great terminal e
 - [**Fluent Terminal**](https://github.com/felixse/FluentTerminal): A terminal emulator based on UWP and web technologies.
 - [**Hyper**](https://hyper.is): A terminal built on web technologies.
 - [**Diag**](https://diag.ai): A better way to troubleshoot problems faster. Capture, share and reapply troubleshooting knowledge so you can focus on solving problems that matter.
-- [**GoTTY**](https://github.com/yudai/gotty): A simple command line tool that shares your terminal as a web application based on xterm.js.
+- [**GoTTY**](https://github.com/sorenisanerd/gotty): A simple command line tool that shares your terminal as a web application based on xterm.js.
 - [**genact**](https://github.com/svenstaro/genact): A nonsense activity generator.
 - [**cPanel & WHM**](https://cpanel.com): The hosting platform of choice.
 - [**Nutanix**](https://github.com/nutanix): Nutanix Enterprise Cloud uses xterm in the webssh functionality within Nutanix Calm, and is also looking to move our old noserial (termjs) functionality to xterm.js.
 - [**SSH Web Client**](https://github.com/roke22/PHP-SSH2-Web-Client): SSH Web Client with PHP.
-- [**Shellvault**](https://www.shellvault.io): The cloud-based SSH terminal you can access from anywhere.
 - [**Juno**](http://junolab.org/): A flexible Julia IDE, based on Atom.
 - [**webssh**](https://github.com/huashengdun/webssh): Web based ssh client.
 - [**info-beamer hosted**](https://info-beamer.com): Uses xterm.js to manage digital signage devices from the web dashboard.
@@ -55,5 +51,41 @@ Xterm.js is used in several world-class applications to provide great terminal e
 - [**PHP App Server**](https://github.com/cubiclesoft/php-app-server/): Create lightweight, installable almost-native applications for desktop OSes.  ExecTerminal (nicely wraps the xterm.js Terminal), TerminalManager, and RunProcessSDK are self-contained, reusable ES5+ compliant Javascript components.
 - [**NgTerminal**](https://github.com/qwefgh90/ng-terminal): NgTerminal is a web terminal that leverages xterm.js on Angular 7+. You can easily add it into your application by adding `<ng-terminal></ng-terminal>` into your component.
 - [**tty-share**](https://tty-share.com): Extremely simple terminal sharing over the Internet.
-
-[And much more...](https://github.com/xtermjs/xterm.js/network/dependents?package_id=UGFja2FnZS0xNjYzMjc4OQ%3D%3D)
+- [**Ten Hands**](https://github.com/saisandeepvaddi/ten-hands): One place to run your command-line tasks.
+- [**WebAssembly.sh**](https://webassembly.sh): A WebAssembly WASI browser terminal
+- [**Gus**](https://gus.jp): A shared coding pad where you can run Python with xterm.js
+- [**Linode**](https://linode.com): Linode uses xterm.js to provide users a web console for their Linode instances.
+- [**FluffOS**](https://www.fluffos.info): Active maintained LPMUD driver with websocket support.
+- [**x-terminal**](https://atom.io/packages/x-terminal): Atom plugin for providing terminals inside your Atom workspace.
+- [**CoCalc**](https://cocalc.com/): Lots of free software pre-installed, to chat, collaborate, develop, program, publish, research, share, teach, in C++, HTML, Julia, Jupyter, LaTeX, Markdown, Python, R, SageMath, Scala, ...
+- [**Dank Domain**](https://www.DDgame.us/): Open source multiuser medieval game supporting old & new terminal emulation.
+- [**DockerStacks**](https://docker-stacks.com/): Local LAMP/LEMP development studio
+- [**Codecademy**](https://codecademy.com/): Uses xterm.js in its courses on Bash.
+- [**Laravel Ssh Web Client**](https://github.com/roke22/Laravel-ssh-client): Laravel server inventory with ssh web client to connect at server using xterm.js
+- [**Replit**](https://replit.com): Collaborative browser based IDE with support for 50+ different languages.
+- [**TeleType**](https://github.com/akshaykmr/TeleType): cli tool that allows you to share your terminal online conveniently. Show off mad cli-fu, help a colleague, teach, or troubleshoot.
+- [**Intervue**](https://www.intervue.io): Pair programming for interviews. Multiple programming languages are supported, with results displayed by xterm.js.
+- [**TRASA**](https://trasa.io): Zero trust access to Web, SSH, RDP, and Database services.
+- [**Commas**](https://github.com/CyanSalt/commas): Commas is a hackable terminal and command runner.
+- [**Devtron**](https://github.com/devtron-labs/devtron): Software Delivery Workflow For Kubernetes.
+- [**NxShell**](https://github.com/nxshell/nxshell): An easy to use new terminal for SSH.
+- [**gifcast**](https://dstein64.github.io/gifcast/): Converts an asciinema cast to an animated GIF.
+- [**WizardWebssh**](https://gitlab.com/mikeramsey/wizardwebssh): A terminal with Pyqt5 Widget for embedding, which can be used as an ssh client to connect to your ssh servers. It is written in Python, based on tornado, paramiko, and xterm.js.
+- [**Wizard Assistant**](https://wizardassistant.com/): Wizard Assistant comes with advanced automation tools, preloaded common and special time-saving commands, and a built-in SSH terminal. Now you can remotely administer, troubleshoot, and analyze any system with ease.
+- [**ucli**](https://github.com/tsadarsh/ucli): Command Line for everyone :family_man_woman_girl_boy: at [www.ucli.tech](https://www.ucli.tech).
+- [**Tess**](https://github.com/SquitchYT/Tess/): Simple Terminal Fully Customizable for Everyone. Discover more at [tessapp.dev](https://tessapp.dev)
+- [**HashiCorp Nomad**](https://www.nomadproject.io/): A container orchestrator with the ability to connect to remote tasks via a web interface using websockets and xterm.js.
+- [**TermPair**](https://github.com/cs01/termpair): View and control terminals from your browser with end-to-end encryption
+- [**gdbgui**](https://github.com/cs01/gdbgui): Browser-based frontend to gdb (gnu debugger)
+- [**goormIDE**](https://ide.goorm.io/): Run almost every programming languages with real-time collaboration, live pair programming, and built-in messenger.
+- [**FleetDeck**](https://fleetdeck.io): Remote desktop & virtual terminal
+- [**OpenSumi**](https://github.com/opensumi/core): A framework helps you quickly build Cloud or Desktop IDE products.
+- [**KubeSail**](https://kubesail.com): The Self-Hosting Company - uses xterm to allow users to exec into kubernetes pods and build github apps
+- [**WiTTY**](https://github.com/syssecfsu/witty): Web-based interactive terminal emulator that allows users to easily record, share, and replay console sessions.
+- [**libv86 Terminal Forwarding**](https://github.com/hello-smile6/libv86-terminal-forwarding): Peer-to-peer SSH for the web, using WebRTC via [Bugout](https://github.com/chr15m/bugout) for data transfer and [v86](https://github.com/copy/v86) for web-based virtualization.
+- [**hack.courses**](https://hack.courses): Interactive Linux and command-line classes using xterm.js to expose a real terminal available for everyone.
+- [**Render**](https://render.com): Platform-as-a-service for your apps, websites, and databases using xterm.js to provide a command prompt for user containers and for streaming build and runtime logs.
+- [**CloudTTY**](https://github.com/cloudtty/cloudtty): A Friendly Kubernetes CloudShell (Web Terminal).
+- [**Go SSH Web Client**](https://github.com/wuchihsu/go-ssh-web-client): A simple SSH web client using Go, WebSocket and Xterm.js.
+- [**web3os**](https://web3os.sh): A decentralized operating system for the next web
+- [**Cratecode**](https://cratecode.com): Learn to program for free through interactive online lessons. Cratecode uses xterm.js to give users access to their own Linux environment.
