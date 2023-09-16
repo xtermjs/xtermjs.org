@@ -336,8 +336,8 @@ $(function () {
           ['           │', [..._1to64.map(e => `\x1b[38;2;${64 * 1 + e - 1};0;0m●`)].join('')],
           ['           │', [..._1to64.map(e => `\x1b[38;2;${64 * 2 + e - 1};0;0m●`)].join('')],
           ['           └', [..._1to64.map(e => `\x1b[38;2;${64 * 3 + e - 1};0;0m●`)].join('')],
-          ['Styles ─', ['\x1b[1mBold', '\x1b[2mFaint', '\x1b[3mItalics', '\x1b[7mInverse', '\x1b[9mStrikethrough', '\x1b[8mInvisible'].join('\x1b[0m ')],
-          ['Underlines ─', '\x1b[4:1mStraight\x1b[0m, \x1b[4:2mDouble\x1b[0m, \x1b[4:3mCurly\x1b[0m, \x1b[4:4mDotted\x1b[0m, \x1b[4:5mDashed'],
+          ['Styles ─', ['\x1b[1mBold', '\x1b[2mFaint', '\x1b[3mItalics', '\x1b[7mInverse', '\x1b[9mStrikethrough', '\x1b[8mInvisible'].join('\x1b[0m, ')],
+          ['Underlines ─', ['\x1b[4:1mStraight', '\x1b[4:2mDouble', '\x1b[4:3mCurly', '\x1b[4:4mDotted', '\x1b[4:5mDashed'].join('\x1b[0m, ')],
         ];
         const maxLength = lines.reduce((p, c) => Math.max(p, c[0].length), 0);
         term.write('\r\n');
