@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build:docs": "gulp docs",
-    "start": "bundle exec jekyll serve"
+    "start": "bundle exec jekyll serve --force_polling"
   },
   "devDependencies": {
     "@types/gulp": "^4.0.6",
