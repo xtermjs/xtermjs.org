@@ -4,11 +4,32 @@
 		{
 			"type": "npm",
 			"script": "start",
-			"problemMatcher": [],
 			"label": "start",
 			"group": {
 				"kind": "build",
 				"isDefault": true
+			},
+			"isBackground": true,
+			"problemMatcher": {
+				"owner": "typescript",
+				"fileLocation": [
+					"relative",
+					"${workspaceFolder}"
+				],
+				"pattern": [
+				  {
+					// We don't track errors, only when the task is active
+					"regexp": "^fake problem matcher$",
+					"file": 1,
+					"location": 2,
+					"message": 3
+				  }
+				],
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "Regenerating:",
+					"endsPattern": "(Server running\\.\\.\\.|\\.\\.\\.done in .+ seconds)"
+				}
 			}
 		}
 	]
