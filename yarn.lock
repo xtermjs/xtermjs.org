@@ -152,6 +152,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@xterm/addon-webgl@npm:^0.17.0":
+  version: 0.17.0
+  resolution: "@xterm/addon-webgl@npm:0.17.0"
+  peerDependencies:
+    "@xterm/xterm": ^5.0.0
+  checksum: 10/8e59c4e8441855a8a87ca1370ee8c2a811a6ff9daae97951b91068ab646251f158247c20f2b09761210326cb841ee8c2727525fb1dcf457b02dc660f7ce28b4e
+  languageName: node
+  linkType: hard
+
+"@xterm/xterm@npm:^5.4.0":
+  version: 5.4.0
+  resolution: "@xterm/xterm@npm:5.4.0"
+  checksum: 10/972ee16f2e2763abeb08f51ece710dc92707054bca3929620332db3af476268e3868f841d14961a37011ce3704f99e25d0d44f3cb962851e68c9ae3412b289ed
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:^2.0.0":
   version: 2.0.0
   resolution: "abbrev@npm:2.0.0"
@@ -4154,35 +4170,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xterm-addon-webgl@npm:^0.14.0":
-  version: 0.14.0
-  resolution: "xterm-addon-webgl@npm:0.14.0"
-  peerDependencies:
-    xterm: ^5.0.0
-  checksum: 10/3df3bd9493bda98657e6758dfeb498879550850f6457783b58e8f2a8ce16a25979d22b9fe4388f5b1859d965f4fbe9b9fc2cb018a09db905934bfe0be757ef80
-  languageName: node
-  linkType: hard
-
-"xterm@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "xterm@npm:5.1.0"
-  checksum: 10/0ddc2997b6652beb7c3962114593adf7579299fbf52a43febd08c5dd0f04de1bd7ef1937a8bf72e2d47f95fa7c605c6bd77199cd551344a23dbb3941b799e49a
-  languageName: node
-  linkType: hard
-
 "xtermjs.org@workspace:.":
   version: 0.0.0-use.local
   resolution: "xtermjs.org@workspace:."
   dependencies:
     "@types/gulp": "npm:^4.0.6"
     "@types/node": "npm:^6.0.108"
+    "@xterm/addon-webgl": "npm:^0.17.0"
+    "@xterm/xterm": "npm:^5.4.0"
     fs-extra: "npm:^9.0.0"
     gulp: "npm:^4.0.2"
     gulp-typedoc: "npm:^2.2.4"
     typedoc: "npm:^0.15.0"
     typedoc-plugin-markdown: "npm:^2.2.17"
-    xterm: "npm:^5.1.0"
-    xterm-addon-webgl: "npm:^0.14.0"
   languageName: unknown
   linkType: soft
 
