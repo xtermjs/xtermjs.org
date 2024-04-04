@@ -13,9 +13,10 @@ The best way to download xterm.js for use in your project is with [`npm`](http:/
 
 ```bash
 # Install with npm
-npm install --save xterm
+npm install @xterm/xterm
 
 # Or alternatively, install with Yarn
+yarn add @xterm/xterm
 ```
 
 ## GitHub Releases

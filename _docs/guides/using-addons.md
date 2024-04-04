@@ -15,8 +15,8 @@ To use an xterm.js addon, you have to:
 ## Usage example
 
 ```ts
-import { Terminal } from 'xterm';
-import { FitAddon } from 'xterm-addon-fit';
+import { Terminal } from '@xterm/xterm';
+import { FitAddon } from '@xterm/addon-fit';
 
 const term = new Terminal();
 const fitAddon = new FitAddon();
@@ -34,7 +34,7 @@ fitAddon.fit();
 Creating an addon is quite simple, you just need to export some object that has an `activate` and `dispose` method. The following addon logs any `onData` events coming from the terminal which fire when the user types:
 
 ```ts
-import { Terminal, IDisposable } from 'xterm';
+import { Terminal, IDisposable } from '@xterm/xterm';
 
 class DataLoggerAddon {
   private _disposables: IDisposable[] = [];
