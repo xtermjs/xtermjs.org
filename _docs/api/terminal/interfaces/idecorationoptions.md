@@ -1,98 +1,137 @@
 ---
-title: IDecorationOptions
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IDecorationOptions
+
 # Interface: IDecorationOptions
-
-## Hierarchy
-
-* **IDecorationOptions**
-
-## Index
-
-### Properties
-
-* [anchor]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#optional-anchor)
-* [backgroundColor]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#optional-backgroundcolor)
-* [foregroundColor]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#optional-foregroundcolor)
-* [height]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#optional-height)
-* [layer]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#optional-layer)
-* [marker]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#marker)
-* [overviewRulerOptions]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#optional-overviewruleroptions)
-* [width]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#optional-width)
-* [x]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#optional-x)
 
 ## Properties
 
-### `Optional` anchor
+### anchor?
 
-• **anchor**? : *"right" | "left"*
+> **`optional`** **`readonly`** **anchor**: `"left"` \| `"right"`
 
-*Defined in [xterm.d.ts:525](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L525)*
+#### Source
 
-___
+[xterm.d.ts:536](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L536)
 
-### `Optional` backgroundColor
+***
 
-• **backgroundColor**? : *string*
+### backgroundColor?
 
-*Defined in [xterm.d.ts:548](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L548)*
+> **`optional`** **`readonly`** **backgroundColor**: `string`
 
-___
+The background color of the cell(s). When 2 decorations both set the
+foreground color the last registered decoration will be used. Only the
+`#RRGGBB` format is supported.
 
-### `Optional` foregroundColor
+#### Source
 
-• **foregroundColor**? : *string*
+[xterm.d.ts:559](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L559)
 
-*Defined in [xterm.d.ts:555](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L555)*
+***
 
-___
+### foregroundColor?
 
-### `Optional` height
+> **`optional`** **`readonly`** **foregroundColor**: `string`
 
-• **height**? : *number*
+The foreground color of the cell(s). When 2 decorations both set the
+foreground color the last registered decoration will be used. Only the
+`#RRGGBB` format is supported.
 
-*Defined in [xterm.d.ts:541](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L541)*
+#### Source
 
-___
+[xterm.d.ts:566](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L566)
 
-### `Optional` layer
+***
 
-• **layer**? : *"bottom" | "top"*
+### height?
 
-*Defined in [xterm.d.ts:565](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L565)*
+> **`optional`** **`readonly`** **height**: `number`
 
-___
+The height of the decoration in cells, defaults to 1.
 
-###  marker
+#### Source
 
-• **marker**: *[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})*
+[xterm.d.ts:552](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L552)
 
-*Defined in [xterm.d.ts:519](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L519)*
+***
 
-___
+### layer?
 
-### `Optional` overviewRulerOptions
+> **`optional`** **`readonly`** **layer**: `"bottom"` \| `"top"`
 
-• **overviewRulerOptions**? : *[IDecorationOverviewRulerOptions]({% link _docs/api/terminal/interfaces/idecorationoverviewruleroptions.md %})*
+What layer to render the decoration at when [backgroundColor]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#backgroundcolor) or
+[foregroundColor]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#foregroundcolor) are used. `'bottom'` will render under the
+selection, `'top`' will render above the selection\*.
 
-*Defined in [xterm.d.ts:574](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L574)*
+*\* The selection will render on top regardless of layer on the canvas
+renderer due to how it renders selection separately.*
 
-___
+#### Source
 
-### `Optional` width
+[xterm.d.ts:576](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L576)
 
-• **width**? : *number*
+***
 
-*Defined in [xterm.d.ts:536](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L536)*
+### marker
 
-___
+> **`readonly`** **marker**: [`IMarker`]({% link _docs/api/terminal/interfaces/imarker.md %})
 
-### `Optional` x
+The line in the terminal where
+the decoration will be displayed
 
-• **x**? : *number*
+#### Source
 
-*Defined in [xterm.d.ts:530](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L530)*
+[xterm.d.ts:530](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L530)
+
+***
+
+### overviewRulerOptions?
+
+> **`optional`** **overviewRulerOptions**: [`IDecorationOverviewRulerOptions`]({% link _docs/api/terminal/interfaces/idecorationoverviewruleroptions.md %})
+
+When defined, renders the decoration in the overview ruler to the right
+of the terminal. [ITerminalOptions.overviewRulerWidth]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#overviewrulerwidth) must be set
+in order to see the overview ruler.
+
+#### Param
+
+The color of the decoration.
+
+#### Param
+
+The position of the decoration.
+
+#### Source
+
+[xterm.d.ts:585](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L585)
+
+***
+
+### width?
+
+> **`optional`** **`readonly`** **width**: `number`
+
+The width of the decoration in cells, defaults to 1.
+
+#### Source
+
+[xterm.d.ts:547](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L547)
+
+***
+
+### x?
+
+> **`optional`** **`readonly`** **x**: `number`
+
+The x position offset relative to the anchor
+
+#### Source
+
+[xterm.d.ts:541](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L541)

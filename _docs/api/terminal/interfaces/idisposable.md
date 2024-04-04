@@ -1,36 +1,32 @@
 ---
-title: IDisposable
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IDisposable
+
 # Interface: IDisposable
 
-## Hierarchy
+An object that can be disposed via a dispose function.
 
-* **IDisposable**
+## Extended by
 
-  ↳ [IDisposableWithEvent]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %})
-
-  ↳ [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})
-
-## Implemented by
-
-* [Terminal]({% link _docs/api/terminal/classes/terminal.md %})
-
-## Index
-
-### Methods
-
-* [dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)
+- [`IDisposableWithEvent`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %})
+- [`ITerminalAddon`]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})
 
 ## Methods
 
-###  dispose
+### dispose()
 
-▸ **dispose**(): *void*
+> **dispose**(): `void`
 
-*Defined in [xterm.d.ts:426](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L426)*
+#### Returns
 
-**Returns:** *void*
+`void`
+
+#### Source
+
+[xterm.d.ts:437](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L437)

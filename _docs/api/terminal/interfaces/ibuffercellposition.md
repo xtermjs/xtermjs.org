@@ -1,35 +1,37 @@
 ---
-title: IBufferCellPosition
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IBufferCellPosition
+
 # Interface: IBufferCellPosition
 
-## Hierarchy
-
-* **IBufferCellPosition**
-
-## Index
-
-### Properties
-
-* [x]({% link _docs/api/terminal/interfaces/ibuffercellposition.md %}#x)
-* [y]({% link _docs/api/terminal/interfaces/ibuffercellposition.md %}#y)
+A position within a buffer.
 
 ## Properties
 
-###  x
+### x
 
-• **x**: *number*
+> **x**: `number`
 
-*Defined in [xterm.d.ts:1387](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1387)*
+The x position within the buffer (1-based).
 
-___
+#### Source
 
-###  y
+[xterm.d.ts:1433](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1433)
 
-• **y**: *number*
+***
 
-*Defined in [xterm.d.ts:1392](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1392)*
+### y
+
+> **y**: `number`
+
+The y position within the buffer (1-based).
+
+#### Source
+
+[xterm.d.ts:1438](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1438)

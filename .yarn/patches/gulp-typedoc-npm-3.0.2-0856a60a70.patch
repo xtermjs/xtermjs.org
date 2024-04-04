@@ -1,0 +1,57 @@
+diff --git a/index.js b/index.js
+index 9ecbf78ddc35232355c8f3be1acd0ef62be5d3cd..627bc820568c8171478001d14c218029b63a2e77 100644
+--- a/index.js
++++ b/index.js
+@@ -18,7 +18,7 @@ function typedoc(options) {
+ 
+ 	return es.through(function(file) {
+ 		files.push(file.path);
+-	}, function() {
++	}, async function() {
+ 		// end of stream, start typedoc
+ 		const stream = this;
+ 
+@@ -34,32 +34,27 @@ function typedoc(options) {
+ 			const json = opts.json;
+ 			const version = opts.version;
+ 
+-			if (!opts.logger) {
+-				// reduce console logging
+-				opts.logger = function(message, level, newline) {
+-					if (level === 3) {
+-						log(colors.red(message));
+-					}
+-				};
+-			}
+-
+ 			// typedoc instance
+-			const app = new typedocModule.Application();
+-			if (semver.gte(typedocModule.Application.VERSION, '0.16.1')) {
++			let app;
++			if (opts.plugin) {
++				app = await typedocModule.Application.bootstrapWithPlugins({ ...opts, entryPoints: files });
++			} else {
++				app = await typedocModule.Application.bootstrap({ ...opts, entryPoints: files });
++			}
++			if (semver.gte(typedocModule.Application.VERSION, '0.25.0')) {
+ 				app.options.addReader(new typedocModule.TSConfigReader());
+ 				app.options.addReader(new typedocModule.TypeDocReader());
+ 			}
+ 
+-			if (version && opts.logger !== "none") {
++			if (version && opts.logLevel !== "None") {
+ 				log(app.toString());
+ 			}
+ 			try {
+ 				// Specify the entry points to be documented by TypeDoc.
+-				app.bootstrap({ ...opts, entryPoints: files });
+-				const project = app.convert();
++				const project = await app.convert();
+ 				if (project) {
+-					if (out) app.generateDocs(project, out);  // TODO promisified!!
+-					if (json) app.generateJson(project, json); // TODO promisified!!
++					if (out) await app.generateDocs(project, out);  // TODO promisified!!
++					if (json) await app.generateJson(project, json); // TODO promisified!!
+ 					if (app.logger.hasErrors()) {
+ 						stream.emit("error", new PluginError(PLUGIN_NAME, "There were errors generating TypeDoc output, see above."));
+ 						stream.emit("end");

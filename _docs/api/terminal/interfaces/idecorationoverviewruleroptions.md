@@ -1,35 +1,33 @@
 ---
-title: IDecorationOverviewRulerOptions
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IDecorationOverviewRulerOptions
+
 # Interface: IDecorationOverviewRulerOptions
 
-## Hierarchy
-
-* **IDecorationOverviewRulerOptions**
-
-## Index
-
-### Properties
-
-* [color]({% link _docs/api/terminal/interfaces/idecorationoverviewruleroptions.md %}#color)
-* [position]({% link _docs/api/terminal/interfaces/idecorationoverviewruleroptions.md %}#optional-position)
+Overview ruler decoration options
 
 ## Properties
 
-###  color
+### color
 
-• **color**: *string*
+> **color**: `string`
 
-*Defined in [xterm.d.ts:507](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L507)*
+#### Source
 
-___
+[xterm.d.ts:518](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L518)
 
-### `Optional` position
+***
 
-• **position**? : *"left" | "center" | "right" | "full"*
+### position?
 
-*Defined in [xterm.d.ts:508](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L508)*
+> **`optional`** **position**: `"left"` \| `"center"` \| `"right"` \| `"full"`
+
+#### Source
+
+[xterm.d.ts:519](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L519)

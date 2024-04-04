@@ -1,102 +1,134 @@
 ---
-title: IBuffer
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IBuffer
+
 # Interface: IBuffer
 
-## Hierarchy
-
-* **IBuffer**
-
-## Index
-
-### Properties
-
-* [baseY]({% link _docs/api/terminal/interfaces/ibuffer.md %}#basey)
-* [cursorX]({% link _docs/api/terminal/interfaces/ibuffer.md %}#cursorx)
-* [cursorY]({% link _docs/api/terminal/interfaces/ibuffer.md %}#cursory)
-* [length]({% link _docs/api/terminal/interfaces/ibuffer.md %}#length)
-* [type]({% link _docs/api/terminal/interfaces/ibuffer.md %}#type)
-* [viewportY]({% link _docs/api/terminal/interfaces/ibuffer.md %}#viewporty)
-
-### Methods
-
-* [getLine]({% link _docs/api/terminal/interfaces/ibuffer.md %}#getline)
-* [getNullCell]({% link _docs/api/terminal/interfaces/ibuffer.md %}#getnullcell)
+Represents a terminal buffer.
 
 ## Properties
 
-###  baseY
+### baseY
 
-• **baseY**: *number*
+> **`readonly`** **baseY**: `number`
 
-*Defined in [xterm.d.ts:1426](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1426)*
+The line within the buffer where the top of the bottom page is (when
+fully scrolled down).
 
-___
+#### Source
 
-###  cursorX
+[xterm.d.ts:1472](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1472)
 
-• **cursorX**: *number*
+***
 
-*Defined in [xterm.d.ts:1415](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1415)*
+### cursorX
 
-___
+> **`readonly`** **cursorX**: `number`
 
-###  cursorY
+The x position of the cursor. This ranges between `0` (left side) and
+`Terminal.cols` (after last cell of the row).
 
-• **cursorY**: *number*
+#### Source
 
-*Defined in [xterm.d.ts:1409](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1409)*
+[xterm.d.ts:1461](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1461)
 
-___
+***
 
-###  length
+### cursorY
 
-• **length**: *number*
+> **`readonly`** **cursorY**: `number`
 
-*Defined in [xterm.d.ts:1431](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1431)*
+The y position of the cursor. This ranges between `0` (when the
+cursor is at baseY) and `Terminal.rows - 1` (when the cursor is on the
+last row).
 
-___
+#### Source
 
-###  type
+[xterm.d.ts:1455](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1455)
 
-• **type**: *"normal" | "alternate"*
+***
 
-*Defined in [xterm.d.ts:1402](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1402)*
+### length
 
-___
+> **`readonly`** **length**: `number`
 
-###  viewportY
+The amount of lines in the buffer.
 
-• **viewportY**: *number*
+#### Source
 
-*Defined in [xterm.d.ts:1420](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1420)*
+[xterm.d.ts:1477](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1477)
+
+***
+
+### type
+
+> **`readonly`** **type**: `"normal"` \| `"alternate"`
+
+The type of the buffer.
+
+#### Source
+
+[xterm.d.ts:1448](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1448)
+
+***
+
+### viewportY
+
+> **`readonly`** **viewportY**: `number`
+
+The line within the buffer where the top of the viewport is.
+
+#### Source
+
+[xterm.d.ts:1466](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1466)
 
 ## Methods
 
-###  getLine
+### getLine()
 
-▸ **getLine**(`y`: number): *[IBufferLine]({% link _docs/api/terminal/interfaces/ibufferline.md %}) | undefined*
+> **getLine**(`y`): [`IBufferLine`]({% link _docs/api/terminal/interfaces/ibufferline.md %})
 
-*Defined in [xterm.d.ts:1443](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1443)*
+Gets a line from the buffer, or undefined if the line index does not
+exist.
 
-**Parameters:**
+Note that the result of this function should be used immediately after
+calling as when the terminal updates it could lead to unexpected
+behavior.
 
-Name | Type | Description |
------- | ------ | ------ |
-`y` | number | The line index to get.  |
+#### Parameters
 
-**Returns:** *[IBufferLine]({% link _docs/api/terminal/interfaces/ibufferline.md %}) | undefined*
+• **y**: `number`
 
-___
+The line index to get.
 
-###  getNullCell
+#### Returns
 
-▸ **getNullCell**(): *[IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %})*
+[`IBufferLine`]({% link _docs/api/terminal/interfaces/ibufferline.md %})
 
-*Defined in [xterm.d.ts:1450](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1450)*
+#### Source
 
-**Returns:** *[IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %})*
+[xterm.d.ts:1489](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1489)
+
+***
+
+### getNullCell()
+
+> **getNullCell**(): [`IBufferCell`]({% link _docs/api/terminal/interfaces/ibuffercell.md %})
+
+Creates an empty cell object suitable as a cell reference in
+`line.getCell(x, cell)`. Use this to avoid costly recreation of
+cell objects when dealing with tons of cells.
+
+#### Returns
+
+[`IBufferCell`]({% link _docs/api/terminal/interfaces/ibuffercell.md %})
+
+#### Source
+
+[xterm.d.ts:1496](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1496)

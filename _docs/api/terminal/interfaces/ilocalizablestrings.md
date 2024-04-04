@@ -1,35 +1,38 @@
 ---
-title: ILocalizableStrings
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / ILocalizableStrings
+
 # Interface: ILocalizableStrings
 
-## Hierarchy
-
-* **ILocalizableStrings**
-
-## Index
-
-### Properties
-
-* [promptLabel]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %}#promptlabel)
-* [tooMuchOutput]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %}#toomuchoutput)
+The set of localizable strings.
 
 ## Properties
 
-###  promptLabel
+### promptLabel
 
-• **promptLabel**: *string*
+> **promptLabel**: `string`
 
-*Defined in [xterm.d.ts:584](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L584)*
+The aria label for the underlying input textarea for the terminal.
 
-___
+#### Source
 
-###  tooMuchOutput
+[xterm.d.ts:595](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L595)
 
-• **tooMuchOutput**: *string*
+***
 
-*Defined in [xterm.d.ts:590](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L590)*
+### tooMuchOutput
+
+> **tooMuchOutput**: `string`
+
+Announcement for when line reading is suppressed due to too many lines
+being printed to the terminal when `screenReaderMode` is enabled.
+
+#### Source
+
+[xterm.d.ts:601](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L601)

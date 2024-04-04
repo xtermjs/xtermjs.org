@@ -1,35 +1,37 @@
 ---
-title: IBufferRange
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IBufferRange
+
 # Interface: IBufferRange
 
-## Hierarchy
-
-* **IBufferRange**
-
-## Index
-
-### Properties
-
-* [end]({% link _docs/api/terminal/interfaces/ibufferrange.md %}#end)
-* [start]({% link _docs/api/terminal/interfaces/ibufferrange.md %}#start)
+A range within a buffer.
 
 ## Properties
 
-###  end
+### end
 
-• **end**: *[IBufferCellPosition]({% link _docs/api/terminal/interfaces/ibuffercellposition.md %})*
+> **end**: [`IBufferCellPosition`]({% link _docs/api/terminal/interfaces/ibuffercellposition.md %})
 
-*Defined in [xterm.d.ts:1377](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1377)*
+The end position of the range.
 
-___
+#### Source
 
-###  start
+[xterm.d.ts:1423](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1423)
 
-• **start**: *[IBufferCellPosition]({% link _docs/api/terminal/interfaces/ibuffercellposition.md %})*
+***
 
-*Defined in [xterm.d.ts:1372](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1372)*
+### start
+
+> **start**: [`IBufferCellPosition`]({% link _docs/api/terminal/interfaces/ibuffercellposition.md %})
+
+The start position of the range.
+
+#### Source
+
+[xterm.d.ts:1418](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1418)

@@ -1,75 +1,94 @@
 ---
-title: IMarker
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IMarker
+
 # Interface: IMarker
 
-## Hierarchy
+Represents a specific line in the terminal that is tracked when scrollback
+is trimmed and lines are added or removed. This is a single line that may
+be part of a larger wrapped line.
 
-  ↳ [IDisposableWithEvent]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %})
+## Extends
 
-  ↳ **IMarker**
-
-## Index
-
-### Properties
-
-* [id]({% link _docs/api/terminal/interfaces/imarker.md %}#id)
-* [isDisposed]({% link _docs/api/terminal/interfaces/imarker.md %}#isdisposed)
-* [line]({% link _docs/api/terminal/interfaces/imarker.md %}#line)
-* [onDispose]({% link _docs/api/terminal/interfaces/imarker.md %}#ondispose)
-
-### Methods
-
-* [dispose]({% link _docs/api/terminal/interfaces/imarker.md %}#dispose)
+- [`IDisposableWithEvent`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %})
 
 ## Properties
 
-###  id
+### id
 
-• **id**: *number*
+> **`readonly`** **id**: `number`
 
-*Defined in [xterm.d.ts:446](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L446)*
+A unique identifier for this marker.
 
-___
+#### Source
 
-###  isDisposed
+[xterm.d.ts:457](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L457)
 
-• **isDisposed**: *boolean*
+***
 
-*Inherited from [IDisposableWithEvent]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}).[isDisposed]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#isdisposed)*
+### isDisposed
 
-*Defined in [xterm.d.ts:467](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L467)*
+> **`readonly`** **isDisposed**: `boolean`
 
-___
+Whether this is disposed.
 
-###  line
+#### Inherited from
 
-• **line**: *number*
+[`IDisposableWithEvent`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}).[`isDisposed`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#isdisposed)
 
-*Defined in [xterm.d.ts:452](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L452)*
+#### Source
 
-___
+[xterm.d.ts:478](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L478)
 
-###  onDispose
+***
 
-• **onDispose**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
+### line
 
-*Inherited from [IDisposableWithEvent]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}).[onDispose]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#ondispose)*
+> **`readonly`** **line**: `number`
 
-*Defined in [xterm.d.ts:462](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L462)*
+The actual line index in the buffer at this point in time. This is set to
+-1 if the marker has been disposed.
+
+#### Source
+
+[xterm.d.ts:463](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L463)
+
+***
+
+### onDispose
+
+> **onDispose**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`void`, `void`\>
+
+Event listener to get notified when this gets disposed.
+
+#### Inherited from
+
+[`IDisposableWithEvent`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}).[`onDispose`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#ondispose)
+
+#### Source
+
+[xterm.d.ts:473](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L473)
 
 ## Methods
 
-###  dispose
+### dispose()
 
-▸ **dispose**(): *void*
+> **dispose**(): `void`
 
-*Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
+#### Returns
 
-*Defined in [xterm.d.ts:426](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L426)*
+`void`
 
-**Returns:** *void*
+#### Inherited from
+
+[`IDisposableWithEvent`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}).[`dispose`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#dispose)
+
+#### Source
+
+[xterm.d.ts:437](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L437)

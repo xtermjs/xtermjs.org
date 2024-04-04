@@ -1,107 +1,128 @@
 ---
-title: ILogger
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / ILogger
+
 # Interface: ILogger
 
-## Hierarchy
-
-* **ILogger**
-
-## Index
-
-### Methods
-
-* [debug]({% link _docs/api/terminal/interfaces/ilogger.md %}#debug)
-* [error]({% link _docs/api/terminal/interfaces/ilogger.md %}#error)
-* [info]({% link _docs/api/terminal/interfaces/ilogger.md %}#info)
-* [trace]({% link _docs/api/terminal/interfaces/ilogger.md %}#trace)
-* [warn]({% link _docs/api/terminal/interfaces/ilogger.md %}#warn)
+A replacement logger for `console`.
 
 ## Methods
 
-###  debug
+### debug()
 
-▸ **debug**(`message`: string, ...`args`: any[]): *void*
+> **debug**(`message`, ...`args`): `void`
 
-*Defined in [xterm.d.ts:404](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L404)*
+Log a debug message, this will only be called if
+[ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#loglevel) is set to debug or below.
 
-**Parameters:**
+#### Parameters
 
-Name | Type |
------- | ------ |
-`message` | string |
-`...args` | any[] |
+• **message**: `string`
 
-**Returns:** *void*
+• ...**args**: `any`[]
 
-___
+#### Returns
 
-###  error
+`void`
 
-▸ **error**(`message`: string | Error, ...`args`: any[]): *void*
+#### Source
 
-*Defined in [xterm.d.ts:419](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L419)*
+[xterm.d.ts:415](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L415)
 
-**Parameters:**
+***
 
-Name | Type |
------- | ------ |
-`message` | string &#124; Error |
-`...args` | any[] |
+### error()
 
-**Returns:** *void*
+> **error**(`message`, ...`args`): `void`
 
-___
+Log a debug message, this will only be called if
+[ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#loglevel) is set to error or below.
 
-###  info
+#### Parameters
 
-▸ **info**(`message`: string, ...`args`: any[]): *void*
+• **message**: `string` \| `Error`
 
-*Defined in [xterm.d.ts:409](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L409)*
+• ...**args**: `any`[]
 
-**Parameters:**
+#### Returns
 
-Name | Type |
------- | ------ |
-`message` | string |
-`...args` | any[] |
+`void`
 
-**Returns:** *void*
+#### Source
 
-___
+[xterm.d.ts:430](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L430)
 
-###  trace
+***
 
-▸ **trace**(`message`: string, ...`args`: any[]): *void*
+### info()
 
-*Defined in [xterm.d.ts:399](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L399)*
+> **info**(`message`, ...`args`): `void`
 
-**Parameters:**
+Log a debug message, this will only be called if
+[ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#loglevel) is set to info or below.
 
-Name | Type |
------- | ------ |
-`message` | string |
-`...args` | any[] |
+#### Parameters
 
-**Returns:** *void*
+• **message**: `string`
 
-___
+• ...**args**: `any`[]
 
-###  warn
+#### Returns
 
-▸ **warn**(`message`: string, ...`args`: any[]): *void*
+`void`
 
-*Defined in [xterm.d.ts:414](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L414)*
+#### Source
 
-**Parameters:**
+[xterm.d.ts:420](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L420)
 
-Name | Type |
------- | ------ |
-`message` | string |
-`...args` | any[] |
+***
 
-**Returns:** *void*
+### trace()
+
+> **trace**(`message`, ...`args`): `void`
+
+Log a trace message, this will only be called if
+[ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#loglevel) is set to trace.
+
+#### Parameters
+
+• **message**: `string`
+
+• ...**args**: `any`[]
+
+#### Returns
+
+`void`
+
+#### Source
+
+[xterm.d.ts:410](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L410)
+
+***
+
+### warn()
+
+> **warn**(`message`, ...`args`): `void`
+
+Log a debug message, this will only be called if
+[ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#loglevel) is set to warn or below.
+
+#### Parameters
+
+• **message**: `string`
+
+• ...**args**: `any`[]
+
+#### Returns
+
+`void`
+
+#### Source
+
+[xterm.d.ts:425](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L425)

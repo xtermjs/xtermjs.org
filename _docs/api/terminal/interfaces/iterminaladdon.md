@@ -1,49 +1,55 @@
 ---
-title: ITerminalAddon
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / ITerminalAddon
+
 # Interface: ITerminalAddon
 
-## Hierarchy
+An addon that can provide additional functionality to the terminal.
 
-* [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
+## Extends
 
-  ↳ **ITerminalAddon**
-
-## Index
-
-### Methods
-
-* [activate]({% link _docs/api/terminal/interfaces/iterminaladdon.md %}#activate)
-* [dispose]({% link _docs/api/terminal/interfaces/iterminaladdon.md %}#dispose)
+- [`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 ## Methods
 
-###  activate
+### activate()
 
-▸ **activate**(`terminal`: [Terminal]({% link _docs/api/terminal/classes/terminal.md %})): *void*
+> **activate**(`terminal`): `void`
 
-*Defined in [xterm.d.ts:1207](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1207)*
+This is called when the addon is activated.
 
-**Parameters:**
+#### Parameters
 
-Name | Type |
------- | ------ |
-`terminal` | [Terminal]({% link _docs/api/terminal/classes/terminal.md %}) |
+• **terminal**: [`Terminal`]({% link _docs/api/terminal/classes/terminal.md %})
 
-**Returns:** *void*
+#### Returns
 
-___
+`void`
 
-###  dispose
+#### Source
 
-▸ **dispose**(): *void*
+[xterm.d.ts:1253](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1253)
 
-*Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
+***
 
-*Defined in [xterm.d.ts:426](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L426)*
+### dispose()
 
-**Returns:** *void*
+> **dispose**(): `void`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %}).[`dispose`]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)
+
+#### Source
+
+[xterm.d.ts:437](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L437)

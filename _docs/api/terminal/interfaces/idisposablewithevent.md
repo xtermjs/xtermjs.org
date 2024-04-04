@@ -1,57 +1,59 @@
 ---
-title: IDisposableWithEvent
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IDisposableWithEvent
+
 # Interface: IDisposableWithEvent
 
-## Hierarchy
+Represents a disposable that tracks is disposed state.
 
-* [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
+## Extends
 
-  ↳ **IDisposableWithEvent**
-
-  ↳ [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
-
-  ↳ [IDecoration]({% link _docs/api/terminal/interfaces/idecoration.md %})
-
-## Index
-
-### Properties
-
-* [isDisposed]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#isdisposed)
-* [onDispose]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#ondispose)
-
-### Methods
-
-* [dispose]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#dispose)
+- [`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 ## Properties
 
-###  isDisposed
+### isDisposed
 
-• **isDisposed**: *boolean*
+> **`readonly`** **isDisposed**: `boolean`
 
-*Defined in [xterm.d.ts:467](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L467)*
+Whether this is disposed.
 
-___
+#### Source
 
-###  onDispose
+[xterm.d.ts:478](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L478)
 
-• **onDispose**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
+***
 
-*Defined in [xterm.d.ts:462](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L462)*
+### onDispose
+
+> **onDispose**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`void`, `void`\>
+
+Event listener to get notified when this gets disposed.
+
+#### Source
+
+[xterm.d.ts:473](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L473)
 
 ## Methods
 
-###  dispose
+### dispose()
 
-▸ **dispose**(): *void*
+> **dispose**(): `void`
 
-*Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
+#### Returns
 
-*Defined in [xterm.d.ts:426](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L426)*
+`void`
 
-**Returns:** *void*
+#### Inherited from
+
+[`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %}).[`dispose`]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)
+
+#### Source
+
+[xterm.d.ts:437](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L437)

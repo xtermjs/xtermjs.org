@@ -1,75 +1,103 @@
 ---
-title: IBufferLine
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IBufferLine
+
 # Interface: IBufferLine
 
-## Hierarchy
-
-* **IBufferLine**
-
-## Index
-
-### Properties
-
-* [isWrapped]({% link _docs/api/terminal/interfaces/ibufferline.md %}#iswrapped)
-* [length]({% link _docs/api/terminal/interfaces/ibufferline.md %}#length)
-
-### Methods
-
-* [getCell]({% link _docs/api/terminal/interfaces/ibufferline.md %}#getcell)
-* [translateToString]({% link _docs/api/terminal/interfaces/ibufferline.md %}#translatetostring)
+Represents a line in the terminal's buffer.
 
 ## Properties
 
-###  isWrapped
+### isWrapped
 
-• **isWrapped**: *boolean*
+> **`readonly`** **isWrapped**: `boolean`
 
-*Defined in [xterm.d.ts:1495](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1495)*
+Whether the line is wrapped from the previous line.
 
-___
+#### Source
 
-###  length
+[xterm.d.ts:1541](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1541)
 
-• **length**: *number*
+***
 
-*Defined in [xterm.d.ts:1503](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1503)*
+### length
+
+> **`readonly`** **length**: `number`
+
+The length of the line, all call to getCell beyond the length will result
+in `undefined`. Note that this may exceed columns as the line array may
+not be trimmed after a resize, compare against [Terminal.cols]({% link _docs/api/terminal/classes/terminal.md %}#cols) to
+get the actual maximum length of a line.
+
+#### Source
+
+[xterm.d.ts:1549](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1549)
 
 ## Methods
 
-###  getCell
+### getCell()
 
-▸ **getCell**(`x`: number, `cell?`: [IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %})): *[IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %}) | undefined*
+> **getCell**(`x`, `cell`?): [`IBufferCell`]({% link _docs/api/terminal/interfaces/ibuffercell.md %})
 
-*Defined in [xterm.d.ts:1517](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1517)*
+Gets a cell from the line, or undefined if the line index does not exist.
 
-**Parameters:**
+Note that the result of this function should be used immediately after
+calling as when the terminal updates it could lead to unexpected
+behavior.
 
-Name | Type | Description |
------- | ------ | ------ |
-`x` | number | The character index to get. |
-`cell?` | [IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %}) | Optional cell object to load data into for performance reasons. This is mainly useful when every cell in the buffer is being looped over to avoid creating new objects for every cell.  |
+#### Parameters
 
-**Returns:** *[IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %}) | undefined*
+• **x**: `number`
 
-___
+The character index to get.
 
-###  translateToString
+• **cell?**: [`IBufferCell`]({% link _docs/api/terminal/interfaces/ibuffercell.md %})
 
-▸ **translateToString**(`trimRight?`: boolean, `startColumn?`: number, `endColumn?`: number): *string*
+Optional cell object to load data into for performance
+reasons. This is mainly useful when every cell in the buffer is being
+looped over to avoid creating new objects for every cell.
 
-*Defined in [xterm.d.ts:1527](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1527)*
+#### Returns
 
-**Parameters:**
+[`IBufferCell`]({% link _docs/api/terminal/interfaces/ibuffercell.md %})
 
-Name | Type | Description |
------- | ------ | ------ |
-`trimRight?` | boolean | Whether to trim any whitespace at the right of the line. |
-`startColumn?` | number | The column to start from (inclusive). |
-`endColumn?` | number | The column to end at (exclusive).  |
+#### Source
 
-**Returns:** *string*
+[xterm.d.ts:1563](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1563)
+
+***
+
+### translateToString()
+
+> **translateToString**(`trimRight`?, `startColumn`?, `endColumn`?): `string`
+
+Gets the line as a string. Note that this is gets only the string for the
+line, not taking isWrapped into account.
+
+#### Parameters
+
+• **trimRight?**: `boolean`
+
+Whether to trim any whitespace at the right of the line.
+
+• **startColumn?**: `number`
+
+The column to start from (inclusive).
+
+• **endColumn?**: `number`
+
+The column to end at (exclusive).
+
+#### Returns
+
+`string`
+
+#### Source
+
+[xterm.d.ts:1573](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1573)

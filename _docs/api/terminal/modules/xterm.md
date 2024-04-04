@@ -1,71 +1,54 @@
 ---
-title: "xterm"
 category: API-modules
 layout: docs
 ---
 
 
-# Module: "xterm"
+***
 
-## Index
+# @xterm/xterm
 
-### Classes
+## Classes
 
-* [Terminal]({% link _docs/api/terminal/classes/terminal.md %})
+- [Terminal]({% link _docs/api/terminal/modules/classes/terminal.md %})
 
-### Interfaces
+## Interfaces
 
-* [IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})
-* [IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %})
-* [IBufferCellPosition]({% link _docs/api/terminal/interfaces/ibuffercellposition.md %})
-* [IBufferElementProvider]({% link _docs/api/terminal/interfaces/ibufferelementprovider.md %})
-* [IBufferLine]({% link _docs/api/terminal/interfaces/ibufferline.md %})
-* [IBufferNamespace]({% link _docs/api/terminal/interfaces/ibuffernamespace.md %})
-* [IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %})
-* [IDecoration]({% link _docs/api/terminal/interfaces/idecoration.md %})
-* [IDecorationOptions]({% link _docs/api/terminal/interfaces/idecorationoptions.md %})
-* [IDecorationOverviewRulerOptions]({% link _docs/api/terminal/interfaces/idecorationoverviewruleroptions.md %})
-* [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
-* [IDisposableWithEvent]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %})
-* [IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})
-* [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})
-* [ILink]({% link _docs/api/terminal/interfaces/ilink.md %})
-* [ILinkDecorations]({% link _docs/api/terminal/interfaces/ilinkdecorations.md %})
-* [ILinkHandler]({% link _docs/api/terminal/interfaces/ilinkhandler.md %})
-* [ILinkProvider]({% link _docs/api/terminal/interfaces/ilinkprovider.md %})
-* [ILocalizableStrings]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %})
-* [ILogger]({% link _docs/api/terminal/interfaces/ilogger.md %})
-* [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
-* [IModes]({% link _docs/api/terminal/interfaces/imodes.md %})
-* [IParser]({% link _docs/api/terminal/interfaces/iparser.md %})
-* [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})
-* [ITerminalInitOnlyOptions]({% link _docs/api/terminal/interfaces/iterminalinitonlyoptions.md %})
-* [ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %})
-* [ITheme]({% link _docs/api/terminal/interfaces/itheme.md %})
-* [IUnicodeHandling]({% link _docs/api/terminal/interfaces/iunicodehandling.md %})
-* [IUnicodeVersionProvider]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %})
-* [IViewportRange]({% link _docs/api/terminal/interfaces/iviewportrange.md %})
-* [IViewportRangePosition]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %})
-* [IWindowOptions]({% link _docs/api/terminal/interfaces/iwindowoptions.md %})
-* [IWindowsPty]({% link _docs/api/terminal/interfaces/iwindowspty.md %})
+- [IBuffer]({% link _docs/api/terminal/modules/interfaces/ibuffer.md %})
+- [IBufferCell]({% link _docs/api/terminal/modules/interfaces/ibuffercell.md %})
+- [IBufferCellPosition]({% link _docs/api/terminal/modules/interfaces/ibuffercellposition.md %})
+- [IBufferElementProvider]({% link _docs/api/terminal/modules/interfaces/ibufferelementprovider.md %})
+- [IBufferLine]({% link _docs/api/terminal/modules/interfaces/ibufferline.md %})
+- [IBufferNamespace]({% link _docs/api/terminal/modules/interfaces/ibuffernamespace.md %})
+- [IBufferRange]({% link _docs/api/terminal/modules/interfaces/ibufferrange.md %})
+- [IDecoration]({% link _docs/api/terminal/modules/interfaces/idecoration.md %})
+- [IDecorationOptions]({% link _docs/api/terminal/modules/interfaces/idecorationoptions.md %})
+- [IDecorationOverviewRulerOptions]({% link _docs/api/terminal/modules/interfaces/idecorationoverviewruleroptions.md %})
+- [IDisposable]({% link _docs/api/terminal/modules/interfaces/idisposable.md %})
+- [IDisposableWithEvent]({% link _docs/api/terminal/modules/interfaces/idisposablewithevent.md %})
+- [IEvent]({% link _docs/api/terminal/modules/interfaces/ievent.md %})
+- [IFunctionIdentifier]({% link _docs/api/terminal/modules/interfaces/ifunctionidentifier.md %})
+- [ILink]({% link _docs/api/terminal/modules/interfaces/ilink.md %})
+- [ILinkDecorations]({% link _docs/api/terminal/modules/interfaces/ilinkdecorations.md %})
+- [ILinkHandler]({% link _docs/api/terminal/modules/interfaces/ilinkhandler.md %})
+- [ILinkProvider]({% link _docs/api/terminal/modules/interfaces/ilinkprovider.md %})
+- [ILocalizableStrings]({% link _docs/api/terminal/modules/interfaces/ilocalizablestrings.md %})
+- [ILogger]({% link _docs/api/terminal/modules/interfaces/ilogger.md %})
+- [IMarker]({% link _docs/api/terminal/modules/interfaces/imarker.md %})
+- [IModes]({% link _docs/api/terminal/modules/interfaces/imodes.md %})
+- [IParser]({% link _docs/api/terminal/modules/interfaces/iparser.md %})
+- [ITerminalAddon]({% link _docs/api/terminal/modules/interfaces/iterminaladdon.md %})
+- [ITerminalInitOnlyOptions]({% link _docs/api/terminal/modules/interfaces/iterminalinitonlyoptions.md %})
+- [ITerminalOptions]({% link _docs/api/terminal/modules/interfaces/iterminaloptions.md %})
+- [ITheme]({% link _docs/api/terminal/modules/interfaces/itheme.md %})
+- [IUnicodeHandling]({% link _docs/api/terminal/modules/interfaces/iunicodehandling.md %})
+- [IUnicodeVersionProvider]({% link _docs/api/terminal/modules/interfaces/iunicodeversionprovider.md %})
+- [IViewportRange]({% link _docs/api/terminal/modules/interfaces/iviewportrange.md %})
+- [IViewportRangePosition]({% link _docs/api/terminal/modules/interfaces/iviewportrangeposition.md %})
+- [IWindowOptions]({% link _docs/api/terminal/modules/interfaces/iwindowoptions.md %})
+- [IWindowsPty]({% link _docs/api/terminal/modules/interfaces/iwindowspty.md %})
 
-### Type aliases
+## Type Aliases
 
-* [FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)
-* [LogLevel]({% link _docs/api/terminal/modules/xterm.md %}#loglevel)
-
-## Type aliases
-
-###  FontWeight
-
-Ƭ **FontWeight**: *"normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | number*
-
-*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L16)*
-
-___
-
-###  LogLevel
-
-Ƭ **LogLevel**: *"trace" | "debug" | "info" | "warn" | "error" | "off"*
-
-*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L21)*
+- [FontWeight]({% link _docs/api/terminal/modules/type-aliases/fontweight.md %})
+- [LogLevel]({% link _docs/api/terminal/modules/type-aliases/loglevel.md %})

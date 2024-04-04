@@ -1,64 +1,66 @@
 ---
-title: IUnicodeVersionProvider
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IUnicodeVersionProvider
+
 # Interface: IUnicodeVersionProvider
 
-## Hierarchy
-
-* **IUnicodeVersionProvider**
-
-## Index
-
-### Properties
-
-* [version]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %}#version)
-
-### Methods
-
-* [charProperties]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %}#charproperties)
-* [wcwidth]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %}#wcwidth)
+(EXPERIMENTAL) Unicode version provider.
+Used to register custom Unicode versions with `Terminal.unicode.register`.
 
 ## Properties
 
-###  version
+### version
 
-• **version**: *string*
+> **`readonly`** **version**: `string`
 
-*Defined in [xterm.d.ts:1770](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1770)*
+String indicating the Unicode version provided.
+
+#### Source
+
+[xterm.d.ts:1816](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1816)
 
 ## Methods
 
-###  charProperties
+### charProperties()
 
-▸ **charProperties**(`codepoint`: number, `preceding`: number): *number*
+> **charProperties**(`codepoint`, `preceding`): `number`
 
-*Defined in [xterm.d.ts:1776](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1776)*
+#### Parameters
 
-**Parameters:**
+• **codepoint**: `number`
 
-Name | Type |
------- | ------ |
-`codepoint` | number |
-`preceding` | number |
+• **preceding**: `number`
 
-**Returns:** *number*
+#### Returns
 
-___
+`number`
 
-###  wcwidth
+#### Source
 
-▸ **wcwidth**(`codepoint`: number): *0 | 1 | 2*
+[xterm.d.ts:1822](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1822)
 
-*Defined in [xterm.d.ts:1775](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1775)*
+***
 
-**Parameters:**
+### wcwidth()
 
-Name | Type |
------- | ------ |
-`codepoint` | number |
+> **wcwidth**(`codepoint`): `0` \| `1` \| `2`
 
-**Returns:** *0 | 1 | 2*
+Unicode version dependent wcwidth implementation.
+
+#### Parameters
+
+• **codepoint**: `number`
+
+#### Returns
+
+`0` \| `1` \| `2`
+
+#### Source
+
+[xterm.d.ts:1821](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1821)

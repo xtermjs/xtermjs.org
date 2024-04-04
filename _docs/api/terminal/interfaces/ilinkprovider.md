@@ -1,42 +1,41 @@
 ---
-title: ILinkProvider
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / ILinkProvider
+
 # Interface: ILinkProvider
 
-## Hierarchy
-
-* **ILinkProvider**
-
-## Index
-
-### Methods
-
-* [provideLinks]({% link _docs/api/terminal/interfaces/ilinkprovider.md %}#providelinks)
+A custom link provider.
 
 ## Methods
 
-###  provideLinks
+### provideLinks()
 
-▸ **provideLinks**(`bufferLineNumber`: number, `callback`: function): *void*
+> **provideLinks**(`bufferLineNumber`, `callback`): `void`
 
-*Defined in [xterm.d.ts:1296](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1296)*
+Provides a link a buffer position
 
-**Parameters:**
+#### Parameters
 
-▪ **bufferLineNumber**: *number*
+• **bufferLineNumber**: `number`
 
-▪ **callback**: *function*
+The y position of the buffer to check for links
+within.
 
-▸ (`links`: [ILink]({% link _docs/api/terminal/interfaces/ilink.md %})[] | undefined): *void*
+• **callback**
 
-**Parameters:**
+The callback to be fired when ready with the resulting
+link(s) for the line or `undefined`.
 
-Name | Type |
------- | ------ |
-`links` | [ILink]({% link _docs/api/terminal/interfaces/ilink.md %})[] &#124; undefined |
+#### Returns
 
-**Returns:** *void*
+`void`
+
+#### Source
+
+[xterm.d.ts:1342](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1342)

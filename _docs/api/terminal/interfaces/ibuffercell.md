@@ -1,270 +1,412 @@
 ---
-title: IBufferCell
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IBufferCell
+
 # Interface: IBufferCell
 
-## Hierarchy
-
-* **IBufferCell**
-
-## Index
-
-### Methods
-
-* [getBgColor]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#getbgcolor)
-* [getBgColorMode]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#getbgcolormode)
-* [getChars]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#getchars)
-* [getCode]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#getcode)
-* [getFgColor]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#getfgcolor)
-* [getFgColorMode]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#getfgcolormode)
-* [getWidth]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#getwidth)
-* [isAttributeDefault]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isattributedefault)
-* [isBgDefault]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isbgdefault)
-* [isBgPalette]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isbgpalette)
-* [isBgRGB]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isbgrgb)
-* [isBlink]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isblink)
-* [isBold]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isbold)
-* [isDim]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isdim)
-* [isFgDefault]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isfgdefault)
-* [isFgPalette]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isfgpalette)
-* [isFgRGB]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isfgrgb)
-* [isInverse]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isinverse)
-* [isInvisible]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isinvisible)
-* [isItalic]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isitalic)
-* [isOverline]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isoverline)
-* [isStrikethrough]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isstrikethrough)
-* [isUnderline]({% link _docs/api/terminal/interfaces/ibuffercell.md %}#isunderline)
+Represents a single cell in the terminal's buffer.
 
 ## Methods
 
-###  getBgColor
+### getBgColor()
 
-▸ **getBgColor**(): *number*
+> **getBgColor**(): `number`
 
-*Defined in [xterm.d.ts:1598](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1598)*
+Gets a cell's background color number, this differs depending on what the
+color mode of the cell is:
 
-**Returns:** *number*
+- Default: This should be 0, representing the default background color
+  (CSI 49 m).
+- Palette: This is a number from 0 to 255 of ANSI colors
+  (CSI 4(0-7) m, CSI 10(0-7) m, CSI 48 ; 5 ; 0-255 m).
+- RGB: A hex value representing a 'true color': 0xRRGGBB
+  (CSI 4 8 ; 2 ; Pi ; Pr ; Pg ; Pb)
 
-___
+#### Returns
 
-###  getBgColorMode
+`number`
 
-▸ **getBgColorMode**(): *number*
+#### Source
 
-*Defined in [xterm.d.ts:1572](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1572)*
+[xterm.d.ts:1644](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1644)
 
-**Returns:** *number*
+***
 
-___
+### getBgColorMode()
 
-###  getChars
+> **getBgColorMode**(): `number`
 
-▸ **getChars**(): *string*
+Gets the number representation of the background color mode, this can be
+used to perform quick comparisons of 2 cells to see if they're the same.
+Use `isBgRGB`, `isBgPalette` and `isBgDefault` to check what color mode
+a cell is.
 
-*Defined in [xterm.d.ts:1550](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1550)*
+#### Returns
 
-**Returns:** *string*
+`number`
 
-___
+#### Source
 
-###  getCode
+[xterm.d.ts:1618](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1618)
 
-▸ **getCode**(): *number*
+***
 
-*Defined in [xterm.d.ts:1556](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1556)*
+### getChars()
 
-**Returns:** *number*
+> **getChars**(): `string`
 
-___
+The character(s) within the cell. Examples of what this can contain:
 
-###  getFgColor
+- A normal width character
+- A wide character (eg. CJK)
+- An emoji
 
-▸ **getFgColor**(): *number*
+#### Returns
 
-*Defined in [xterm.d.ts:1585](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1585)*
+`string`
 
-**Returns:** *number*
+#### Source
 
-___
+[xterm.d.ts:1596](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1596)
 
-###  getFgColorMode
+***
 
-▸ **getFgColorMode**(): *number*
+### getCode()
 
-*Defined in [xterm.d.ts:1564](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1564)*
+> **getCode**(): `number`
 
-**Returns:** *number*
+Gets the UTF32 codepoint of single characters, if content is a combined
+string it returns the codepoint of the last character in the string.
 
-___
+#### Returns
 
-###  getWidth
+`number`
 
-▸ **getWidth**(): *number*
+#### Source
 
-*Defined in [xterm.d.ts:1541](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1541)*
+[xterm.d.ts:1602](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1602)
 
-**Returns:** *number*
+***
 
-___
+### getFgColor()
 
-###  isAttributeDefault
+> **getFgColor**(): `number`
 
-▸ **isAttributeDefault**(): *boolean*
+Gets a cell's foreground color number, this differs depending on what the
+color mode of the cell is:
 
-*Defined in [xterm.d.ts:1633](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1633)*
+- Default: This should be 0, representing the default foreground color
+  (CSI 39 m).
+- Palette: This is a number from 0 to 255 of ANSI colors (CSI 3(0-7) m,
+  CSI 9(0-7) m, CSI 38 ; 5 ; 0-255 m).
+- RGB: A hex value representing a 'true color': 0xRRGGBB.
+  (CSI 3 8 ; 2 ; Pi ; Pr ; Pg ; Pb)
 
-**Returns:** *boolean*
+#### Returns
 
-___
+`number`
 
-###  isBgDefault
+#### Source
 
-▸ **isBgDefault**(): *boolean*
+[xterm.d.ts:1631](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1631)
 
-*Defined in [xterm.d.ts:1630](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1630)*
+***
 
-**Returns:** *boolean*
+### getFgColorMode()
 
-___
+> **getFgColorMode**(): `number`
 
-###  isBgPalette
+Gets the number representation of the foreground color mode, this can be
+used to perform quick comparisons of 2 cells to see if they're the same.
+Use `isFgRGB`, `isFgPalette` and `isFgDefault` to check what color mode
+a cell is.
 
-▸ **isBgPalette**(): *boolean*
+#### Returns
 
-*Defined in [xterm.d.ts:1626](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1626)*
+`number`
 
-**Returns:** *boolean*
+#### Source
 
-___
+[xterm.d.ts:1610](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1610)
 
-###  isBgRGB
+***
 
-▸ **isBgRGB**(): *boolean*
+### getWidth()
 
-*Defined in [xterm.d.ts:1622](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1622)*
+> **getWidth**(): `number`
 
-**Returns:** *boolean*
+The width of the character. Some examples:
 
-___
+- `1` for most cells.
+- `2` for wide character like CJK glyphs.
+- `0` for cells immediately following cells with a width of `2`.
 
-###  isBlink
+#### Returns
 
-▸ **isBlink**(): *number*
+`number`
 
-*Defined in [xterm.d.ts:1609](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1609)*
+#### Source
 
-**Returns:** *number*
+[xterm.d.ts:1587](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1587)
 
-___
+***
 
-###  isBold
+### isAttributeDefault()
 
-▸ **isBold**(): *number*
+> **isAttributeDefault**(): `boolean`
 
-*Defined in [xterm.d.ts:1601](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1601)*
+Whether the cell has the default attribute (no color or style).
 
-**Returns:** *number*
+#### Returns
 
-___
+`boolean`
 
-###  isDim
+#### Source
 
-▸ **isDim**(): *number*
+[xterm.d.ts:1679](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1679)
 
-*Defined in [xterm.d.ts:1605](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1605)*
+***
 
-**Returns:** *number*
+### isBgDefault()
 
-___
+> **isBgDefault**(): `boolean`
 
-###  isFgDefault
+Whether the cell is using the default background color mode.
 
-▸ **isFgDefault**(): *boolean*
+#### Returns
 
-*Defined in [xterm.d.ts:1628](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1628)*
+`boolean`
 
-**Returns:** *boolean*
+#### Source
 
-___
+[xterm.d.ts:1676](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1676)
 
-###  isFgPalette
+***
 
-▸ **isFgPalette**(): *boolean*
+### isBgPalette()
 
-*Defined in [xterm.d.ts:1624](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1624)*
+> **isBgPalette**(): `boolean`
 
-**Returns:** *boolean*
+Whether the cell is using the palette background color mode.
 
-___
+#### Returns
 
-###  isFgRGB
+`boolean`
 
-▸ **isFgRGB**(): *boolean*
+#### Source
 
-*Defined in [xterm.d.ts:1620](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1620)*
+[xterm.d.ts:1672](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1672)
 
-**Returns:** *boolean*
+***
 
-___
+### isBgRGB()
 
-###  isInverse
+> **isBgRGB**(): `boolean`
 
-▸ **isInverse**(): *number*
+Whether the cell is using the RGB background color mode.
 
-*Defined in [xterm.d.ts:1611](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1611)*
+#### Returns
 
-**Returns:** *number*
+`boolean`
 
-___
+#### Source
 
-###  isInvisible
+[xterm.d.ts:1668](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1668)
 
-▸ **isInvisible**(): *number*
+***
 
-*Defined in [xterm.d.ts:1613](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1613)*
+### isBlink()
 
-**Returns:** *number*
+> **isBlink**(): `number`
 
-___
+Whether the cell has the blink attribute (CSI 5 m).
 
-###  isItalic
+#### Returns
 
-▸ **isItalic**(): *number*
+`number`
 
-*Defined in [xterm.d.ts:1603](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1603)*
+#### Source
 
-**Returns:** *number*
+[xterm.d.ts:1655](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1655)
 
-___
+***
 
-###  isOverline
+### isBold()
 
-▸ **isOverline**(): *number*
+> **isBold**(): `number`
 
-*Defined in [xterm.d.ts:1617](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1617)*
+Whether the cell has the bold attribute (CSI 1 m).
 
-**Returns:** *number*
+#### Returns
 
-___
+`number`
 
-###  isStrikethrough
+#### Source
 
-▸ **isStrikethrough**(): *number*
+[xterm.d.ts:1647](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1647)
 
-*Defined in [xterm.d.ts:1615](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1615)*
+***
 
-**Returns:** *number*
+### isDim()
 
-___
+> **isDim**(): `number`
 
-###  isUnderline
+Whether the cell has the dim attribute (CSI 2 m).
 
-▸ **isUnderline**(): *number*
+#### Returns
 
-*Defined in [xterm.d.ts:1607](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1607)*
+`number`
 
-**Returns:** *number*
+#### Source
+
+[xterm.d.ts:1651](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1651)
+
+***
+
+### isFgDefault()
+
+> **isFgDefault**(): `boolean`
+
+Whether the cell is using the default foreground color mode.
+
+#### Returns
+
+`boolean`
+
+#### Source
+
+[xterm.d.ts:1674](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1674)
+
+***
+
+### isFgPalette()
+
+> **isFgPalette**(): `boolean`
+
+Whether the cell is using the palette foreground color mode.
+
+#### Returns
+
+`boolean`
+
+#### Source
+
+[xterm.d.ts:1670](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1670)
+
+***
+
+### isFgRGB()
+
+> **isFgRGB**(): `boolean`
+
+Whether the cell is using the RGB foreground color mode.
+
+#### Returns
+
+`boolean`
+
+#### Source
+
+[xterm.d.ts:1666](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1666)
+
+***
+
+### isInverse()
+
+> **isInverse**(): `number`
+
+Whether the cell has the inverse attribute (CSI 7 m).
+
+#### Returns
+
+`number`
+
+#### Source
+
+[xterm.d.ts:1657](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1657)
+
+***
+
+### isInvisible()
+
+> **isInvisible**(): `number`
+
+Whether the cell has the invisible attribute (CSI 8 m).
+
+#### Returns
+
+`number`
+
+#### Source
+
+[xterm.d.ts:1659](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1659)
+
+***
+
+### isItalic()
+
+> **isItalic**(): `number`
+
+Whether the cell has the italic attribute (CSI 3 m).
+
+#### Returns
+
+`number`
+
+#### Source
+
+[xterm.d.ts:1649](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1649)
+
+***
+
+### isOverline()
+
+> **isOverline**(): `number`
+
+Whether the cell has the overline attribute (CSI 53 m).
+
+#### Returns
+
+`number`
+
+#### Source
+
+[xterm.d.ts:1663](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1663)
+
+***
+
+### isStrikethrough()
+
+> **isStrikethrough**(): `number`
+
+Whether the cell has the strikethrough attribute (CSI 9 m).
+
+#### Returns
+
+`number`
+
+#### Source
+
+[xterm.d.ts:1661](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1661)
+
+***
+
+### isUnderline()
+
+> **isUnderline**(): `number`
+
+Whether the cell has the underline attribute (CSI 4 m).
+
+#### Returns
+
+`number`
+
+#### Source
+
+[xterm.d.ts:1653](https://github.com/xtermjs/xterm.js/blob/5.4.0/typings/xterm.d.ts#L1653)
