@@ -12,3 +12,16 @@ node_modules/
 
 _typedoc/
 _xterm.js/
+
+# Yarn 4
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# IDEs
+.idea/
+.vscode/

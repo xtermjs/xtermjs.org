@@ -22,5 +22,6 @@
   "dependencies": {
     "xterm": "^5.1.0",
     "xterm-addon-webgl": "^0.14.0"
-  }
+  },
+  "packageManager": "yarn@4.1.1"
 }
