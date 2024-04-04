@@ -11,7 +11,7 @@ The preferred way to import xterm.js and its addons is the [`import` statement](
 
 ```javascript
 
-import { Terminal } from 'xterm';
+import { Terminal } from '@xterm/xterm';
 
 const term = new Terminal();
 
