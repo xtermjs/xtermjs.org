@@ -11,7 +11,7 @@ Very fast producers on the application side can overwhelm xterm.js with too much
 
 To write stream data to the emulator we call `write` with chunks of a stream:
 
-```Javascript
+```javascript
 term.write(chunk_1);
 ...
 term.write(chunk_n);
@@ -26,14 +26,14 @@ Compared to very fast producers (up to several GB/s) this system has a rather lo
 
 To place a handbrake on caller side, we can use the optional callback of `write`:
 
-```Javascript
+```javascript
 term.write(chunk, () => {
   // do something when finished processing `chunk`
 });
 ```
 The callback gets called once when the chunk was processed. This waiting condition can be applied directly to incoming interfaces like the pty object of `node-pty`:
 
-```Javascript
+```javascript
 pty.onData(chunk => {
   pty.pause();
   term.write(chunk, () => {
@@ -52,7 +52,7 @@ If more layers are involved (e.g. websockets), their processing/latency will fur
 
 A more advanced mechanism would try to lower the needs for `pause` and `resume` calls. This can be achieved by measuring the written data as a "watermark", compare it with high and low limits and use write callbacks as a commit response:
 
-```Javascript
+```javascript
 const HIGH = 100000;
 const LOW = 10000;
 
@@ -76,7 +76,7 @@ This mechanism avoids most `pause` and `resume` calls and tries to get a steady 
 
 Note that this variant still does some nonsense work - it places a callback for every single chunk of data. There are several ways to reduce the callback pressure, e.g. place it only on every n-th chunk, or, as shown here, count pending callbacks instead:
 
-```Javascript
+```javascript
 const CALLBACK_BYTE_LIMIT = 100000;
 const HIGH = 5;
 const LOW = 2;
@@ -115,7 +115,7 @@ If a websocket is between your backend and xterm.js, additional work is needed t
 It is still possible to get some flow control working on top of websockets. For this we simply treat the websocket transport as a datasink with infinite buffers and unknown latency and skip it in the flow control handling. Instead we span the write callback accounting from client side to server side, schematically:
 
 **Client:**
-```Javascript
+```javascript
 if (ackCondition) {
   term.write(chunk, () => { /* send custom ACK to server */ });
 } else {
@@ -124,7 +124,7 @@ if (ackCondition) {
 ```
 
 **Server:**
-```Javascript
+```javascript
 pty.onData(chunk => {
   socket.write(chunk);
   if (stopCondition) {
