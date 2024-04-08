@@ -29,6 +29,7 @@ gulp.task('typedoc', function() {
     // TypeScript options (see typescript docs)
     module: 'commonjs',
     target: 'es5',
+    lib: "lib.es2018.d.ts",
 
     // Output options (see typedoc docs)
     out: './_typedoc',
@@ -134,7 +135,7 @@ gulp.task('docs', gulp.series('typedoc', async function() {
   // also copy files over needed for demo to run
   gulp.src('./node_modules/@xterm/xterm/css/xterm.css').pipe(gulp.dest('./css'));
   gulp.src('./node_modules/@xterm/xterm/lib/xterm.js').pipe(gulp.dest('./js'));
-  gulp.src('./node_modules/@xterm/addon-webgl/lib/xterm-addon-webgl.js').pipe(gulp.dest('./js'));
+  gulp.src('./node_modules/@xterm/addon-webgl/lib/addon-webgl.js').pipe(gulp.dest('./js'));
 }));
 
 gulp.task('default', gulp.series('docs'));

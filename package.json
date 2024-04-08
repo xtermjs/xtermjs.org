@@ -16,11 +16,12 @@
     "fs-extra": "^9.0.0",
     "gulp": "^4.0.2",
     "gulp-typedoc": "^2.2.4",
-    "typedoc": "^0.15.0",
-    "typedoc-plugin-markdown": "^2.2.17"
+    "typedoc": "^0.17.0",
+    "typedoc-plugin-markdown": "^2.2.17",
+    "typescript": "^4.8.4"
   },
   "dependencies": {
-    "xterm": "^5.1.0",
-    "xterm-addon-webgl": "^0.14.0"
+    "@xterm/xterm": "^5.5.0",
+    "@xterm/addon-webgl": "^0.18.0"
   }
 }
