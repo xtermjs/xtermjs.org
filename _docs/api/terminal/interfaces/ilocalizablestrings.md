@@ -7,6 +7,8 @@ layout: docs
 
 # Interface: ILocalizableStrings
 
+The set of localizable strings.
+
 ## Hierarchy
 
 * **ILocalizableStrings**
@@ -24,7 +26,9 @@ layout: docs
 
 • **promptLabel**: *string*
 
-*Defined in [xterm.d.ts:584](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L584)*
+*Defined in [xterm.d.ts:612](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L612)*
+
+The aria label for the underlying input textarea for the terminal.
 
 ___
 
@@ -32,4 +36,7 @@ ___
 
 • **tooMuchOutput**: *string*
 
-*Defined in [xterm.d.ts:590](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L590)*
+*Defined in [xterm.d.ts:618](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L618)*
+
+Announcement for when line reading is suppressed due to too many lines
+being printed to the terminal when `screenReaderMode` is enabled.

@@ -7,6 +7,8 @@ layout: docs
 
 # Interface: ILogger
 
+A replacement logger for `console`.
+
 ## Hierarchy
 
 * **ILogger**
@@ -27,7 +29,10 @@ layout: docs
 
 ▸ **debug**(`message`: string, ...`args`: any[]): *void*
 
-*Defined in [xterm.d.ts:404](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L404)*
+*Defined in [xterm.d.ts:432](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L432)*
+
+Log a debug message, this will only be called if
+[ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-loglevel) is set to debug or below.
 
 **Parameters:**
 
@@ -44,7 +49,10 @@ ___
 
 ▸ **error**(`message`: string | Error, ...`args`: any[]): *void*
 
-*Defined in [xterm.d.ts:419](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L419)*
+*Defined in [xterm.d.ts:447](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L447)*
+
+Log a debug message, this will only be called if
+[ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-loglevel) is set to error or below.
 
 **Parameters:**
 
@@ -61,7 +69,10 @@ ___
 
 ▸ **info**(`message`: string, ...`args`: any[]): *void*
 
-*Defined in [xterm.d.ts:409](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L409)*
+*Defined in [xterm.d.ts:437](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L437)*
+
+Log a debug message, this will only be called if
+[ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-loglevel) is set to info or below.
 
 **Parameters:**
 
@@ -78,7 +89,10 @@ ___
 
 ▸ **trace**(`message`: string, ...`args`: any[]): *void*
 
-*Defined in [xterm.d.ts:399](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L399)*
+*Defined in [xterm.d.ts:427](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L427)*
+
+Log a trace message, this will only be called if
+[ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-loglevel) is set to trace.
 
 **Parameters:**
 
@@ -95,7 +109,10 @@ ___
 
 ▸ **warn**(`message`: string, ...`args`: any[]): *void*
 
-*Defined in [xterm.d.ts:414](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L414)*
+*Defined in [xterm.d.ts:442](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L442)*
+
+Log a debug message, this will only be called if
+[ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-loglevel) is set to warn or below.
 
 **Parameters:**
 

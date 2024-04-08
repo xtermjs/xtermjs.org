@@ -7,7 +7,7 @@ category: API
 
 # Supported Terminal Sequences
 
-xterm.js version: 5.1.0
+xterm.js version: 5.5.0
 
 ## Table of Contents
 
@@ -169,8 +169,9 @@ Scrolling is restricted to scroll margins and will only happen on the bottom lin
 <section class="sequence-details">
 
 ### Insert Characters
-The ICH sequence inserts `Ps` blank characters. The cursor remains at the beginning of the blank characters.
-Text between the cursor and right margin moves to the right. Characters moved past the right margin are lost.
+The ICH sequence inserts `Ps` blank characters. The cursor remains at the beginning of the
+blank characters. Text between the cursor and right margin moves to the right. Characters moved
+past the right margin are lost.
 
 
 </section>
@@ -276,8 +277,9 @@ DL has no effect if the cursor is outside the scroll margins.
 <section class="sequence-details">
 
 ### Delete Character
-As characters are deleted, the remaining characters between the cursor and right margin move to the left.
-Character attributes move with the characters. The terminal adds blank characters at the right margin.
+As characters are deleted, the remaining characters between the cursor and right margin move to
+the left. Character attributes move with the characters. The terminal adds blank characters at
+the right margin.
 
 
 </section>
@@ -292,8 +294,8 @@ ED works inside or outside the scrolling margins.
 <section class="sequence-details">
 
 ### Repeat Preceding Character
-REP repeats the previous character `Ps` times advancing the cursor, also wrapping if DECAWM is set.
-REP has no effect if the sequence does not follow a printable ASCII character
+REP repeats the previous character `Ps` times advancing the cursor, also wrapping if DECAWM is
+set. REP has no effect if the sequence does not follow a printable ASCII character
 (NOOP for any other sequence in between or NON ASCII characters).
 
 
@@ -451,6 +453,8 @@ Supported param values by SGR:
 | 47        | Background color: White.                                 | <span title="supported">✓</span>      |
 | 48        | Background color: Extended color.                        | <span title="Support for RGB and indexed colors, see below." style="text-decoration: underline">Partial</span> |
 | 49        | Background color: Default (original).                    | <span title="supported">✓</span>      |
+| 53        | Overlined.                                               | <span title="supported">✓</span>      |
+| 55        | Not Overlined.                                           | <span title="supported">✓</span>      |
 | 58        | Underline color: Extended color.                         | <span title="Support for RGB and indexed colors, see below." style="text-decoration: underline">Partial</span> |
 | 90 - 97   | Bright foreground color (analogous to 30 - 37).          | <span title="supported">✓</span>      |
 | 100 - 107 | Bright background color (analogous to 40 - 47).          | <span title="supported">✓</span>      |
@@ -467,7 +471,8 @@ Underline supports subparams to denote the style in the form `4 : x`:
 | 5      | Dashed underline.                                             | <span title="supported">✓</span>      |
 | other  | Single underline. Same as `SGR 4 m`.                          | <span title="supported">✓</span>      |
 
-Extended colors are supported for foreground (Ps=38), background (Ps=48) and underline (Ps=58) as follows:
+Extended colors are supported for foreground (Ps=38), background (Ps=48) and underline (Ps=58)
+as follows:
 
 | Ps + 1 | Meaning                                                       | Support |
 | ------ | ------------------------------------------------------------- | ------- |
@@ -509,8 +514,9 @@ discrepancies in the mode reports, please file a bug.
 <section class="sequence-details">
 
 ### Soft Terminal Reset
-There are two terminal reset sequences - RIS and DECSTR. While RIS performs almost a full terminal bootstrap,
-DECSTR only resets certain attributes. For most needs DECSTR should be sufficient.
+There are two terminal reset sequences - RIS and DECSTR. While RIS performs almost a full
+terminal bootstrap, DECSTR only resets certain attributes. For most needs DECSTR should be
+sufficient.
 
 The following terminal attributes are reset to default values:
 - IRM is reset (dafault = false)
@@ -538,9 +544,9 @@ Supported cursor styles:
 <section class="sequence-details">
 
 ### Insert Columns
-DECIC inserts `Ps` times blank columns at the cursor position for all lines with the scroll margins,
-moving content to the right. Content at the right margin is lost.
-DECIC has no effect outside the scrolling margins.
+DECIC inserts `Ps` times blank columns at the cursor position for all lines with the scroll
+margins, moving content to the right. Content at the right margin is lost. DECIC has no effect
+outside the scrolling margins.
 
 
 </section>
@@ -560,7 +566,7 @@ DECDC has no effect outside the scrolling margins.
 
 | Mnemonic | Name | Sequence | Short Description | Support |
 | -------- | ---- | -------- | ----------------- | ------- |
-| SIXEL | SIXEL Graphics | `DCS Ps ; Ps ; Ps ; q 	Pt ST` | Draw SIXEL image.  | <span title="Supported via xterm-addon-image." style="text-decoration: underline">External</span> |
+| SIXEL | SIXEL Graphics | `DCS Ps ; Ps ; Ps ; q 	Pt ST` | Draw SIXEL image.  | <span title="Supported via @xterm/addon-image." style="text-decoration: underline">External</span> |
 | DECUDK | User Defined Keys | `DCS Ps ; Ps \| Pt ST` | Definitions for user-defined keys.  | <span title="unsupported">✗</span> |
 | XTGETTCAP | Request Terminfo String | `DCS + q Pt ST` | Request Terminfo String.  | <span title="unsupported">✗</span> |
 | XTSETTCAP | Set Terminfo Data | `DCS + p Pt ST` | Set Terminfo Data.  | <span title="unsupported">✗</span> |
@@ -569,8 +575,8 @@ DECDC has no effect outside the scrolling margins.
 <section class="sequence-details">
 
 ### Request Selection or Setting
-Response is in the form `ESC P 1 $ r Pt ST` for valid requests, where `Pt` contains the corresponding CSI string,
-`ESC P 0 ST` for invalid requests.
+Response is in the form `ESC P 1 $ r Pt ST` for valid requests, where `Pt` contains the
+corresponding CSI string, `ESC P 0 ST` for invalid requests.
 
 Supported requests and responses:
 
@@ -637,16 +643,18 @@ Icon name is not supported. For Window Title see below.
 <section class="sequence-details">
 
 ### Set Windows Title
-xterm.js does not manipulate the title directly, instead exposes changes via the event `Terminal.onTitleChange`.
+xterm.js does not manipulate the title directly, instead exposes changes via the event
+`Terminal.onTitleChange`.
 
 
 </section>
 <section class="sequence-details">
 
 ### Set ANSI color
-`c` is the color index between 0 and 255. The color format of `spec` is derived from `XParseColor` (see OSC 10 for supported formats).
-There may be multipe `c ; spec` pairs present in the same instruction.
-If `spec` contains `?` the terminal returns a sequence with the currently set color.
+`c` is the color index between 0 and 255. The color format of `spec` is derived from
+`XParseColor` (see OSC 10 for supported formats). There may be multipe `c ; spec` pairs present
+in the same instruction. If `spec` contains `?` the terminal returns a sequence with the
+currently set color.
 
 
 </section>
@@ -654,9 +662,10 @@ If `spec` contains `?` the terminal returns a sequence with the currently set co
 
 ### Create hyperlink
 `uri` is a hyperlink starting with `http://`, `https://`, `ftp://`, `file://` or `mailto://`. `params` is an
-optional list of key=value assignments, separated by the : character. Example: `id=xyz123:foo=bar:baz=quux`.
-Currently only the id key is defined. Cells that share the same ID and URI share hover feedback.
-Use `OSC 8 ; ; BEL` to finish the current hyperlink.
+optional list of key=value assignments, separated by the : character.
+Example: `id=xyz123:foo=bar:baz=quux`.
+Currently only the id key is defined. Cells that share the same ID and URI share hover
+feedback. Use `OSC 8 ; ; BEL` to finish the current hyperlink.
 
 
 </section>

@@ -7,6 +7,13 @@ layout: docs
 
 # Module: "xterm"
 
+**`license`** MIT
+
+This contains the type declarations for the xterm.js library. Note that
+some interfaces differ between this file and the actual implementation in
+src/, that's because this file declares the *public* API which is intended
+to be stable and consumed by external programs.
+
 ## Index
 
 ### Classes
@@ -60,7 +67,9 @@ layout: docs
 
 Ƭ **FontWeight**: *"normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | number*
 
-*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L16)*
+*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L16)*
+
+A string or number representing text font weight.
 
 ___
 
@@ -68,4 +77,6 @@ ___
 
 Ƭ **LogLevel**: *"trace" | "debug" | "info" | "warn" | "error" | "off"*
 
-*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L21)*
+*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L21)*
+
+A string representing log level.

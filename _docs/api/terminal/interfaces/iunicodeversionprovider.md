@@ -7,6 +7,9 @@ layout: docs
 
 # Interface: IUnicodeVersionProvider
 
+(EXPERIMENTAL) Unicode version provider.
+Used to register custom Unicode versions with `Terminal.unicode.register`.
+
 ## Hierarchy
 
 * **IUnicodeVersionProvider**
@@ -15,7 +18,7 @@ layout: docs
 
 ### Properties
 
-* [version]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %}#version)
+* [version]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %}#readonly-version)
 
 ### Methods
 
@@ -24,11 +27,13 @@ layout: docs
 
 ## Properties
 
-###  version
+### `Readonly` version
 
 • **version**: *string*
 
-*Defined in [xterm.d.ts:1770](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1770)*
+*Defined in [xterm.d.ts:1833](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1833)*
+
+String indicating the Unicode version provided.
 
 ## Methods
 
@@ -36,7 +41,7 @@ layout: docs
 
 ▸ **charProperties**(`codepoint`: number, `preceding`: number): *number*
 
-*Defined in [xterm.d.ts:1776](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1776)*
+*Defined in [xterm.d.ts:1839](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1839)*
 
 **Parameters:**
 
@@ -53,7 +58,9 @@ ___
 
 ▸ **wcwidth**(`codepoint`: number): *0 | 1 | 2*
 
-*Defined in [xterm.d.ts:1775](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1775)*
+*Defined in [xterm.d.ts:1838](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1838)*
+
+Unicode version dependent wcwidth implementation.
 
 **Parameters:**
 
