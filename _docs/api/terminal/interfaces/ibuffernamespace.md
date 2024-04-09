@@ -1,66 +1,62 @@
 ---
-title: IBufferNamespace
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IBufferNamespace
+
 # Interface: IBufferNamespace
 
 Represents the terminal's set of buffers.
 
-## Hierarchy
-
-* **IBufferNamespace**
-
-## Index
-
-### Properties
-
-* [active]({% link _docs/api/terminal/interfaces/ibuffernamespace.md %}#readonly-active)
-* [alternate]({% link _docs/api/terminal/interfaces/ibuffernamespace.md %}#readonly-alternate)
-* [normal]({% link _docs/api/terminal/interfaces/ibuffernamespace.md %}#readonly-normal)
-* [onBufferChange]({% link _docs/api/terminal/interfaces/ibuffernamespace.md %}#onbufferchange)
-
 ## Properties
 
-### `Readonly` active
+### active
 
-• **active**: *[IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})*
-
-*Defined in [xterm.d.ts:1531](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1531)*
+> **`readonly`** **active**: [`IBuffer`]({% link _docs/api/terminal/interfaces/ibuffer.md %})
 
 The active buffer, this will either be the normal or alternate buffers.
 
-___
+#### Source
 
-### `Readonly` alternate
+[xterm.d.ts:1531](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1531)
 
-• **alternate**: *[IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})*
+***
 
-*Defined in [xterm.d.ts:1542](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1542)*
+### alternate
+
+> **`readonly`** **alternate**: [`IBuffer`]({% link _docs/api/terminal/interfaces/ibuffer.md %})
 
 The alternate buffer, this becomes the active buffer when an application
 enters this mode via DECSET (`CSI ? 4 7 h`)
 
-___
+#### Source
 
-### `Readonly` normal
+[xterm.d.ts:1542](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1542)
 
-• **normal**: *[IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})*
+***
 
-*Defined in [xterm.d.ts:1536](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1536)*
+### normal
+
+> **`readonly`** **normal**: [`IBuffer`]({% link _docs/api/terminal/interfaces/ibuffer.md %})
 
 The normal buffer.
 
-___
+#### Source
 
-###  onBufferChange
+[xterm.d.ts:1536](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1536)
 
-• **onBufferChange**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹[IBuffer]({% link _docs/api/terminal/interfaces/ibuffer.md %})›*
+***
 
-*Defined in [xterm.d.ts:1548](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1548)*
+### onBufferChange
+
+> **onBufferChange**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<[`IBuffer`]({% link _docs/api/terminal/interfaces/ibuffer.md %}), `void`\>
 
 Adds an event listener for when the active buffer changes.
 
-**`returns`** an `IDisposable` to stop listening.
+#### Source
+
+[xterm.d.ts:1548](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1548)

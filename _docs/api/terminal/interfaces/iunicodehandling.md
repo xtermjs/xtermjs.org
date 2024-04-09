@@ -1,63 +1,57 @@
 ---
-title: IUnicodeHandling
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IUnicodeHandling
+
 # Interface: IUnicodeHandling
 
 (EXPERIMENTAL) Unicode handling interface.
 
-## Hierarchy
-
-* **IUnicodeHandling**
-
-## Index
-
-### Properties
-
-* [activeVersion]({% link _docs/api/terminal/interfaces/iunicodehandling.md %}#activeversion)
-* [versions]({% link _docs/api/terminal/interfaces/iunicodehandling.md %}#readonly-versions)
-
-### Methods
-
-* [register]({% link _docs/api/terminal/interfaces/iunicodehandling.md %}#register)
-
 ## Properties
 
-###  activeVersion
+### activeVersion
 
-• **activeVersion**: *string*
-
-*Defined in [xterm.d.ts:1859](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1859)*
+> **activeVersion**: `string`
 
 Getter/setter for active Unicode version.
 
-___
+#### Source
 
-### `Readonly` versions
+[xterm.d.ts:1859](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1859)
 
-• **versions**: *ReadonlyArray‹string›*
+***
 
-*Defined in [xterm.d.ts:1854](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1854)*
+### versions
+
+> **`readonly`** **versions**: readonly `string`[]
 
 Registered Unicode versions.
 
+#### Source
+
+[xterm.d.ts:1854](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1854)
+
 ## Methods
 
-###  register
+### register()
 
-▸ **register**(`provider`: [IUnicodeVersionProvider]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %})): *void*
-
-*Defined in [xterm.d.ts:1849](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1849)*
+> **register**(`provider`): `void`
 
 Register a custom Unicode version provider.
 
-**Parameters:**
+#### Parameters
 
-Name | Type |
------- | ------ |
-`provider` | [IUnicodeVersionProvider]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %}) |
+• **provider**: [`IUnicodeVersionProvider`]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %})
 
-**Returns:** *void*
+#### Returns
+
+`void`
+
+#### Source
+
+[xterm.d.ts:1849](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1849)
