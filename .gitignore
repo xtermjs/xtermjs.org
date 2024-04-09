@@ -7,7 +7,6 @@ _site
 vendor/
 
 # Node.js
-package-lock.json
 node_modules/
 
 _typedoc/

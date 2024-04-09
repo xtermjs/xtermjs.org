@@ -23,6 +23,9 @@ layout: docs
 
 ▸ **provideBufferElements**(): *DocumentFragment | HTMLElement*
 
-*Defined in [xterm.d.ts:1458](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L1458)*
+*Defined in [xterm.d.ts:1521](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1521)*
+
+Provides a document fragment or HTMLElement containing the buffer
+elements.
 
 **Returns:** *DocumentFragment | HTMLElement*

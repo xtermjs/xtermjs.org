@@ -38,6 +38,6 @@ bundle exec jekyll serve
 ## Update API documentation
 
 ```bash
-yarn
+npm ci
 ./bin/update-docs
 ```

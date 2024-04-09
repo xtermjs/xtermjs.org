@@ -7,6 +7,8 @@ layout: docs
 
 # Interface: IDisposableWithEvent
 
+Represents a disposable that tracks is disposed state.
+
 ## Hierarchy
 
 * [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
@@ -21,7 +23,7 @@ layout: docs
 
 ### Properties
 
-* [isDisposed]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#isdisposed)
+* [isDisposed]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#readonly-isdisposed)
 * [onDispose]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#ondispose)
 
 ### Methods
@@ -30,11 +32,13 @@ layout: docs
 
 ## Properties
 
-###  isDisposed
+### `Readonly` isDisposed
 
 • **isDisposed**: *boolean*
 
-*Defined in [xterm.d.ts:467](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L467)*
+*Defined in [xterm.d.ts:495](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L495)*
+
+Whether this is disposed.
 
 ___
 
@@ -42,7 +46,9 @@ ___
 
 • **onDispose**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-*Defined in [xterm.d.ts:462](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L462)*
+*Defined in [xterm.d.ts:490](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L490)*
+
+Event listener to get notified when this gets disposed.
 
 ## Methods
 
@@ -52,6 +58,6 @@ ___
 
 *Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
-*Defined in [xterm.d.ts:426](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L426)*
+*Defined in [xterm.d.ts:454](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L454)*
 
 **Returns:** *void*

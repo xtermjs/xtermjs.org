@@ -7,6 +7,9 @@ layout: docs
 
 # Interface: ITerminalInitOnlyOptions
 
+An object containing additional options for the terminal that can only be
+set on start up.
+
 ## Hierarchy
 
 * **ITerminalInitOnlyOptions**
@@ -24,7 +27,9 @@ layout: docs
 
 • **cols**? : *number*
 
-*Defined in [xterm.d.ts:312](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L312)*
+*Defined in [xterm.d.ts:340](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L340)*
+
+The number of columns in the terminal.
 
 ___
 
@@ -32,4 +37,6 @@ ___
 
 • **rows**? : *number*
 
-*Defined in [xterm.d.ts:317](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L317)*
+*Defined in [xterm.d.ts:345](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L345)*
+
+The number of rows in the terminal.

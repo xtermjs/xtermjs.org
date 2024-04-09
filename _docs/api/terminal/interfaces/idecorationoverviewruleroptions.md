@@ -7,6 +7,8 @@ layout: docs
 
 # Interface: IDecorationOverviewRulerOptions
 
+Overview ruler decoration options
+
 ## Hierarchy
 
 * **IDecorationOverviewRulerOptions**
@@ -24,7 +26,7 @@ layout: docs
 
 • **color**: *string*
 
-*Defined in [xterm.d.ts:507](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L507)*
+*Defined in [xterm.d.ts:535](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L535)*
 
 ___
 
@@ -32,4 +34,4 @@ ___
 
 • **position**? : *"left" | "center" | "right" | "full"*
 
-*Defined in [xterm.d.ts:508](https://github.com/xtermjs/xterm.js/blob/5.3.0/typings/xterm.d.ts#L508)*
+*Defined in [xterm.d.ts:536](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L536)*
