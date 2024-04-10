@@ -1,9 +1,12 @@
 ---
-title: IParser
 category: API-interfaces
 layout: docs
 ---
 
+
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IParser
 
 # Interface: IParser
 
@@ -26,37 +29,22 @@ Downside of an async handler is a rather bad throughput performance,
 thus use async handlers only as a last resort or for actions that have
 to rely on async interfaces itself.
 
-## Hierarchy
-
-* **IParser**
-
-## Index
-
-### Methods
-
-* [registerCsiHandler]({% link _docs/api/terminal/interfaces/iparser.md %}#registercsihandler)
-* [registerDcsHandler]({% link _docs/api/terminal/interfaces/iparser.md %}#registerdcshandler)
-* [registerEscHandler]({% link _docs/api/terminal/interfaces/iparser.md %}#registereschandler)
-* [registerOscHandler]({% link _docs/api/terminal/interfaces/iparser.md %}#registeroschandler)
-
 ## Methods
 
-###  registerCsiHandler
+### registerCsiHandler()
 
-▸ **registerCsiHandler**(`id`: [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}), `callback`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
-
-*Defined in [xterm.d.ts:1775](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1775)*
+> **registerCsiHandler**(`id`, `callback`): [`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 Adds a handler for CSI escape sequences.
 
-**Parameters:**
+#### Parameters
 
-▪ **id**: *[IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})*
+• **id**: [`IFunctionIdentifier`]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})
 
 Specifies the function identifier under which the callback gets
-registered, e.g. {final: 'm'} for SGR.
+registered, e.g. \{final: 'm'\} for SGR.
 
-▪ **callback**: *function*
+• **callback**
 
 The function to handle the sequence. The callback is
 called with the numerical params. If the sequence has subparams the array
@@ -64,36 +52,32 @@ will contain subarrays with their numercial values. Return `true` if the
 sequence was handled, `false` if the parser should try a previous
 handler. The most recently added handler is tried first.
 
-▸ (`params`: number | number[][]): *boolean | Promise‹boolean›*
+#### Returns
 
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`params` | number &#124; number[][] |
-
-**Returns:** *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
+[`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 An IDisposable you can call to remove this handler.
 
-___
+#### Source
 
-###  registerDcsHandler
+[xterm.d.ts:1775](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1775)
 
-▸ **registerDcsHandler**(`id`: [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}), `callback`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
+***
 
-*Defined in [xterm.d.ts:1793](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1793)*
+### registerDcsHandler()
+
+> **registerDcsHandler**(`id`, `callback`): [`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 Adds a handler for DCS escape sequences.
 
-**Parameters:**
+#### Parameters
 
-▪ **id**: *[IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})*
+• **id**: [`IFunctionIdentifier`]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})
 
 Specifies the function identifier under which the callback gets
-registered, e.g. {intermediates: '$' final: 'q'} for DECRQSS.
+registered, e.g. \{intermediates: '$' final: 'q'\} for DECRQSS.
 
-▪ **callback**: *function*
+• **callback**
 
 The function to handle the sequence. Note that the
 function will only be called once if the sequence finished sucessfully.
@@ -106,62 +90,59 @@ numerical parameters as arguments. Return `true` if the sequence was
 handled, `false` if the parser should try a previous handler. The most
 recently added handler is tried first.
 
-▸ (`data`: string, `param`: number | number[][]): *boolean | Promise‹boolean›*
+#### Returns
 
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`data` | string |
-`param` | number &#124; number[][] |
-
-**Returns:** *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
+[`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 An IDisposable you can call to remove this handler.
 
-___
+#### Source
 
-###  registerEscHandler
+[xterm.d.ts:1793](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1793)
 
-▸ **registerEscHandler**(`id`: [IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}), `handler`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
+***
 
-*Defined in [xterm.d.ts:1805](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1805)*
+### registerEscHandler()
+
+> **registerEscHandler**(`id`, `handler`): [`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 Adds a handler for ESC escape sequences.
 
-**Parameters:**
+#### Parameters
 
-▪ **id**: *[IFunctionIdentifier]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})*
+• **id**: [`IFunctionIdentifier`]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %})
 
 Specifies the function identifier under which the callback gets
-registered, e.g. {intermediates: '%' final: 'G'} for default charset
+registered, e.g. \{intermediates: '%' final: 'G'\} for default charset
 selection.
 
-▪ **handler**: *function*
+• **handler**
 
-▸ (): *boolean | Promise‹boolean›*
+#### Returns
 
-**Returns:** *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
+[`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 An IDisposable you can call to remove this handler.
 
-___
+#### Source
 
-###  registerOscHandler
+[xterm.d.ts:1805](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1805)
 
-▸ **registerOscHandler**(`ident`: number, `callback`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
+***
 
-*Defined in [xterm.d.ts:1822](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1822)*
+### registerOscHandler()
+
+> **registerOscHandler**(`ident`, `callback`): [`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 Adds a handler for OSC escape sequences.
 
-**Parameters:**
+#### Parameters
 
-▪ **ident**: *number*
+• **ident**: `number`
 
 The number (first parameter) of the sequence.
 
-▪ **callback**: *function*
+• **callback**
 
 The function to handle the sequence. Note that the
 function will only be called once if the sequence finished sucessfully.
@@ -174,14 +155,12 @@ string. Return `true` if the sequence was handled, `false` if the parser
 should try a previous handler. The most recently added handler is tried
 first.
 
-▸ (`data`: string): *boolean | Promise‹boolean›*
+#### Returns
 
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`data` | string |
-
-**Returns:** *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
+[`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
 
 An IDisposable you can call to remove this handler.
+
+#### Source
+
+[xterm.d.ts:1822](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1822)

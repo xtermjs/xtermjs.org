@@ -26,15 +26,8 @@ gulp.task('typedoc', function() {
 
   return gulp.src('./_xterm.js/typings/xterm.d.ts')
   .pipe(typedoc({
-    // TypeScript options (see typescript docs)
-    module: 'commonjs',
-    target: 'es5',
-    lib: "lib.es2018.d.ts",
-
     // Output options (see typedoc docs)
     out: './_typedoc',
-    // Required to process .d.ts files
-    includeDeclarations: true,
     // Exclude @types/node, etc.
     excludeExternals: true,
     // Excludes private class members
@@ -44,8 +37,7 @@ gulp.task('typedoc', function() {
 
     // TypeDoc options (see typedoc docs)
     readme: 'none',
-    theme: 'markdown',
-    ignoreCompilerErrors: false
+    plugin: ['typedoc-plugin-markdown'],
   }));
 });
 
@@ -63,7 +55,7 @@ gulp.task('docs', gulp.series('typedoc', async function() {
   // (1): ../classes/_xterm_d_._xterm_.foo.md#bar => ../classes/foo.md#bar
   // (2): modules/_xterm_d_._xterm_.md => modules/xterm.md
   const rename = (uri) =>
-    uri.replace(/(?:_?([^\/\.]+[^_])_?\.)+(md(?=#.*|$))/, '$1.$2');
+    uri.toLowerCase().replace(/(?:_?([^\/\.]+[^_])_?\.)+(md(?=#.*|$))/, '$1.$2');
 
   // The relative destination directory for processed files
   const destination = './_docs/api/terminal/';
@@ -76,8 +68,11 @@ gulp.task('docs', gulp.series('typedoc', async function() {
     await fs.remove(outDir);
   }
 
+  fs.mkdirpSync(path.join(srcDir, "modules"));
+  fs.moveSync(path.join(srcDir, "README.md"), path.join(srcDir, "modules", "xterm.md"));
+
   // The directories are used to specify a docs category: API-classes, etc.
-  const directories = ['modules', 'classes', 'interfaces'];
+  const directories = ['modules', 'classes', 'interfaces', 'type-aliases'];
 
   for (const dirType of directories) {
     const files = await fs.readdir(path.join(srcDir, dirType));

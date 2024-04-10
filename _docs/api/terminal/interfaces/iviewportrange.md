@@ -1,41 +1,37 @@
 ---
-title: IViewportRange
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IViewportRange
+
 # Interface: IViewportRange
 
 An object representing a range within the viewport of the terminal.
 
-## Hierarchy
-
-* **IViewportRange**
-
-## Index
-
-### Properties
-
-* [end]({% link _docs/api/terminal/interfaces/iviewportrange.md %}#end)
-* [start]({% link _docs/api/terminal/interfaces/iviewportrange.md %}#start)
-
 ## Properties
 
-###  end
+### end
 
-• **end**: *[IViewportRangePosition]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %})*
-
-*Defined in [xterm.d.ts:1285](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1285)*
+> **end**: [`IViewportRangePosition`]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %})
 
 The end of the range.
 
-___
+#### Source
 
-###  start
+[xterm.d.ts:1285](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1285)
 
-• **start**: *[IViewportRangePosition]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %})*
+***
 
-*Defined in [xterm.d.ts:1280](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1280)*
+### start
+
+> **start**: [`IViewportRangePosition`]({% link _docs/api/terminal/interfaces/iviewportrangeposition.md %})
 
 The start of the range.
+
+#### Source
+
+[xterm.d.ts:1280](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1280)

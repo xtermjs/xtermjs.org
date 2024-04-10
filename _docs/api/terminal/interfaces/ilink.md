@@ -1,133 +1,148 @@
 ---
-title: ILink
 category: API-interfaces
 layout: docs
 ---
 
 
+***
+
+[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / ILink
+
 # Interface: ILink
 
 A link within the terminal.
 
-## Hierarchy
-
-* **ILink**
-
-## Index
-
-### Properties
-
-* [decorations]({% link _docs/api/terminal/interfaces/ilink.md %}#optional-decorations)
-* [range]({% link _docs/api/terminal/interfaces/ilink.md %}#range)
-* [text]({% link _docs/api/terminal/interfaces/ilink.md %}#text)
-
-### Methods
-
-* [activate]({% link _docs/api/terminal/interfaces/ilink.md %}#activate)
-* [dispose]({% link _docs/api/terminal/interfaces/ilink.md %}#optional-dispose)
-* [hover]({% link _docs/api/terminal/interfaces/ilink.md %}#optional-hover)
-* [leave]({% link _docs/api/terminal/interfaces/ilink.md %}#optional-leave)
-
 ## Properties
 
-### `Optional` decorations
+### decorations?
 
-• **decorations**? : *[ILinkDecorations]({% link _docs/api/terminal/interfaces/ilinkdecorations.md %})*
-
-*Defined in [xterm.d.ts:1381](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1381)*
+> **`optional`** **decorations**: [`ILinkDecorations`]({% link _docs/api/terminal/interfaces/ilinkdecorations.md %})
 
 What link decorations to show when hovering the link, this property is
 tracked and changes made after the link is provided will trigger changes.
 If not set, all decroations will be enabled.
 
-___
+#### Source
 
-###  range
+[xterm.d.ts:1381](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1381)
 
-• **range**: *[IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %})*
+***
 
-*Defined in [xterm.d.ts:1369](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1369)*
+### range
+
+> **range**: [`IBufferRange`]({% link _docs/api/terminal/interfaces/ibufferrange.md %})
 
 The buffer range of the link.
 
-___
+#### Source
 
-###  text
+[xterm.d.ts:1369](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1369)
 
-• **text**: *string*
+***
 
-*Defined in [xterm.d.ts:1374](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1374)*
+### text
+
+> **text**: `string`
 
 The text of the link.
 
+#### Source
+
+[xterm.d.ts:1374](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1374)
+
 ## Methods
 
-###  activate
+### activate()
 
-▸ **activate**(`event`: MouseEvent, `text`: string): *void*
-
-*Defined in [xterm.d.ts:1388](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1388)*
+> **activate**(`event`, `text`): `void`
 
 Calls when the link is activated.
 
-**Parameters:**
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`event` | MouseEvent | The mouse event triggering the callback. |
-`text` | string | The text of the link.  |
+• **event**: `MouseEvent`
 
-**Returns:** *void*
+The mouse event triggering the callback.
 
-___
+• **text**: `string`
 
-### `Optional` dispose
+The text of the link.
 
-▸ **dispose**(): *void*
+#### Returns
 
-*Defined in [xterm.d.ts:1410](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1410)*
+`void`
+
+#### Source
+
+[xterm.d.ts:1388](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1388)
+
+***
+
+### dispose()?
+
+> **`optional`** **dispose**(): `void`
 
 Called when the link is released and no longer used by xterm.js.
 
-**Returns:** *void*
+#### Returns
 
-___
+`void`
 
-### `Optional` hover
+#### Source
 
-▸ **hover**(`event`: MouseEvent, `text`: string): *void*
+[xterm.d.ts:1410](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1410)
 
-*Defined in [xterm.d.ts:1398](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1398)*
+***
+
+### hover()?
+
+> **`optional`** **hover**(`event`, `text`): `void`
 
 Called when the mouse hovers the link. To use this to create a DOM-based
 hover tooltip, create the hover element within `Terminal.element` and add
 the `xterm-hover` class to it, that will cause mouse events to not fall
 through and activate other links.
 
-**Parameters:**
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`event` | MouseEvent | The mouse event triggering the callback. |
-`text` | string | The text of the link.  |
+• **event**: `MouseEvent`
 
-**Returns:** *void*
+The mouse event triggering the callback.
 
-___
+• **text**: `string`
 
-### `Optional` leave
+The text of the link.
 
-▸ **leave**(`event`: MouseEvent, `text`: string): *void*
+#### Returns
 
-*Defined in [xterm.d.ts:1405](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1405)*
+`void`
+
+#### Source
+
+[xterm.d.ts:1398](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1398)
+
+***
+
+### leave()?
+
+> **`optional`** **leave**(`event`, `text`): `void`
 
 Called when the mouse leaves the link.
 
-**Parameters:**
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`event` | MouseEvent | The mouse event triggering the callback. |
-`text` | string | The text of the link.  |
+• **event**: `MouseEvent`
 
-**Returns:** *void*
+The mouse event triggering the callback.
+
+• **text**: `string`
+
+The text of the link.
+
+#### Returns
+
+`void`
+
+#### Source
+
+[xterm.d.ts:1405](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1405)

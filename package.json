@@ -8,20 +8,25 @@
   "license": "MIT",
   "scripts": {
     "build:docs": "gulp docs",
-    "start": "bundle exec jekyll serve --force_polling"
+    "start": "bundle exec jekyll serve --force_polling",
+    "postinstall": "patch-package"
   },
   "devDependencies": {
     "@types/gulp": "^4.0.6",
     "@types/node": "^6.0.108",
     "fs-extra": "^9.0.0",
-    "gulp": "^4.0.2",
-    "gulp-typedoc": "^2.2.4",
-    "typedoc": "^0.17.0",
-    "typedoc-plugin-markdown": "^2.2.17",
-    "typescript": "^4.8.4"
+    "gulp": "^5.0.0",
+    "gulp-typedoc": "3.0.2",
+    "patch-package": "^8.0.0",
+    "typedoc": "^0.25.12",
+    "typedoc-plugin-markdown": "^4.0.0-next.54",
+    "typescript": "~5.0.4"
   },
   "dependencies": {
-    "@xterm/xterm": "^5.5.0",
-    "@xterm/addon-webgl": "^0.18.0"
+    "@xterm/addon-webgl": "^0.17.0",
+    "@xterm/xterm": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
