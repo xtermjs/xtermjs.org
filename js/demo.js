@@ -121,7 +121,7 @@ $(function () {
           if (term._core.buffer.x > 2) {
             term.write('\b \b');
             if (command.length > 0) {
-              command = command.substr(0, command.length - 1);
+              command = command.slice(0, command.length - 1);
             }
           }
           break;
