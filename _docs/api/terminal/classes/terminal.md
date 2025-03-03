@@ -1,5 +1,5 @@
 ---
-title: `Terminal`
+title: Terminal
 category: API-classes
 layout: docs
 ---
