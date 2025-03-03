@@ -1,55 +1,53 @@
 ---
+title: ITerminalAddon
 category: API-interfaces
 layout: docs
 ---
 
 
-***
-
-[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / ITerminalAddon
-
 # Interface: ITerminalAddon
 
 An addon that can provide additional functionality to the terminal.
 
-## Extends
+## Hierarchy
 
-- [`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
+* [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
+
+  ↳ **ITerminalAddon**
+
+## Index
+
+### Methods
+
+* [activate]({% link _docs/api/terminal/interfaces/iterminaladdon.md %}#activate)
+* [dispose]({% link _docs/api/terminal/interfaces/iterminaladdon.md %}#dispose)
 
 ## Methods
 
-### activate()
+###  activate
 
-> **activate**(`terminal`): `void`
+▸ **activate**(`terminal`: [Terminal]({% link _docs/api/terminal/classes/terminal.md %})): *void*
+
+*Defined in [xterm.d.ts:1270](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1270)*
 
 This is called when the addon is activated.
 
-#### Parameters
+**Parameters:**
 
-• **terminal**: [`Terminal`]({% link _docs/api/terminal/classes/terminal.md %})
+Name | Type |
+------ | ------ |
+`terminal` | [Terminal]({% link _docs/api/terminal/classes/terminal.md %}) |
 
-#### Returns
+**Returns:** *void*
 
-`void`
+___
 
-#### Source
+###  dispose
 
-[xterm.d.ts:1270](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1270)
+▸ **dispose**(): *void*
 
-***
+*Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
-### dispose()
+*Defined in [xterm.d.ts:454](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L454)*
 
-> **dispose**(): `void`
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-[`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %}).[`dispose`]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)
-
-#### Source
-
-[xterm.d.ts:454](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L454)
+**Returns:** *void*

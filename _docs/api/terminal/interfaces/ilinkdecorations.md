@@ -1,37 +1,41 @@
 ---
+title: ILinkDecorations
 category: API-interfaces
 layout: docs
 ---
 
 
-***
-
-[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / ILinkDecorations
-
 # Interface: ILinkDecorations
 
 A set of decorations that can be applied to links.
 
+## Hierarchy
+
+* **ILinkDecorations**
+
+## Index
+
+### Properties
+
+* [pointerCursor]({% link _docs/api/terminal/interfaces/ilinkdecorations.md %}#pointercursor)
+* [underline]({% link _docs/api/terminal/interfaces/ilinkdecorations.md %}#underline)
+
 ## Properties
 
-### pointerCursor
+###  pointerCursor
 
-> **pointerCursor**: `boolean`
+• **pointerCursor**: *boolean*
+
+*Defined in [xterm.d.ts:1420](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1420)*
 
 Whether the cursor is set to pointer.
 
-#### Source
+___
 
-[xterm.d.ts:1420](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1420)
+###  underline
 
-***
+• **underline**: *boolean*
 
-### underline
-
-> **underline**: `boolean`
+*Defined in [xterm.d.ts:1425](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1425)*
 
 Whether the underline is visible
-
-#### Source
-
-[xterm.d.ts:1425](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1425)

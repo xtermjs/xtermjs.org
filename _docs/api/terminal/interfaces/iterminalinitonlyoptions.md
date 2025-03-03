@@ -1,38 +1,42 @@
 ---
+title: ITerminalInitOnlyOptions
 category: API-interfaces
 layout: docs
 ---
 
-
-***
-
-[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / ITerminalInitOnlyOptions
 
 # Interface: ITerminalInitOnlyOptions
 
 An object containing additional options for the terminal that can only be
 set on start up.
 
+## Hierarchy
+
+* **ITerminalInitOnlyOptions**
+
+## Index
+
+### Properties
+
+* [cols]({% link _docs/api/terminal/interfaces/iterminalinitonlyoptions.md %}#optional-cols)
+* [rows]({% link _docs/api/terminal/interfaces/iterminalinitonlyoptions.md %}#optional-rows)
+
 ## Properties
 
-### cols?
+### `Optional` cols
 
-> **`optional`** **cols**: `number`
+• **cols**? : *number*
+
+*Defined in [xterm.d.ts:340](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L340)*
 
 The number of columns in the terminal.
 
-#### Source
+___
 
-[xterm.d.ts:340](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L340)
+### `Optional` rows
 
-***
+• **rows**? : *number*
 
-### rows?
-
-> **`optional`** **rows**: `number`
+*Defined in [xterm.d.ts:345](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L345)*
 
 The number of rows in the terminal.
-
-#### Source
-
-[xterm.d.ts:345](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L345)

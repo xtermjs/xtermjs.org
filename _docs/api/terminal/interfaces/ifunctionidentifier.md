@@ -1,12 +1,9 @@
 ---
+title: IFunctionIdentifier
 category: API-interfaces
 layout: docs
 ---
 
-
-***
-
-[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IFunctionIdentifier
 
 # Interface: IFunctionIdentifier
 
@@ -35,41 +32,47 @@ General recommendations:
 Notes: OSC command registration is handled differently (see addOscHandler)
        APC, PM or SOS is currently not supported.
 
+## Hierarchy
+
+* **IFunctionIdentifier**
+
+## Index
+
+### Properties
+
+* [final]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}#final)
+* [intermediates]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}#optional-intermediates)
+* [prefix]({% link _docs/api/terminal/interfaces/ifunctionidentifier.md %}#optional-prefix)
+
 ## Properties
 
-### final
+###  final
 
-> **final**: `string`
+• **final**: *string*
+
+*Defined in [xterm.d.ts:1740](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1740)*
 
 Final byte, must be in range \x40 .. \x7e for CSI and DCS,
 \x30 .. \x7e for ESC.
 
-#### Source
+___
 
-[xterm.d.ts:1740](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1740)
+### `Optional` intermediates
 
-***
+• **intermediates**? : *string*
 
-### intermediates?
-
-> **`optional`** **intermediates**: `string`
+*Defined in [xterm.d.ts:1735](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1735)*
 
 Optional intermediate bytes, must be in range \x20 .. \x2f.
 Usable in CSI, DCS and ESC.
 
-#### Source
+___
 
-[xterm.d.ts:1735](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1735)
+### `Optional` prefix
 
-***
+• **prefix**? : *string*
 
-### prefix?
-
-> **`optional`** **prefix**: `string`
+*Defined in [xterm.d.ts:1730](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1730)*
 
 Optional prefix byte, must be in range \x3c .. \x3f.
 Usable in CSI and DCS.
-
-#### Source
-
-[xterm.d.ts:1730](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1730)
