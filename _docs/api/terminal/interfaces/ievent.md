@@ -1,33 +1,45 @@
 ---
+title: IEvent
 category: API-interfaces
 layout: docs
 ---
 
 
-***
-
-[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IEvent
-
-# Interface: IEvent()\<T, U\>
+# Interface: IEvent ‹**T, U**›
 
 An event that can be listened to.
 
 ## Type parameters
 
-• **T**
+▪ **T**
 
-• **U** = `void`
+▪ **U**
 
-> **IEvent**(`listener`): [`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
+## Hierarchy
 
-## Parameters
+* **IEvent**
 
-• **listener**
+## Callable
 
-## Returns
+▸ (`listener`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-[`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
+*Defined in [xterm.d.ts:461](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L461)*
 
-## Source
+An event that can be listened to.
 
-[xterm.d.ts:462](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L462)
+**Parameters:**
+
+▪ **listener**: *function*
+
+▸ (`arg1`: T, `arg2`: U): *any*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`arg1` | T |
+`arg2` | U |
+
+**Returns:** *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
+
+an `IDisposable` to stop listening.

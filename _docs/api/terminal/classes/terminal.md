@@ -5,120 +5,176 @@ layout: docs
 ---
 
 
-***
-
-[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / Terminal
-
 # Class: Terminal
 
 The class that represents an xterm.js terminal.
 
+## Hierarchy
+
+* **Terminal**
+
 ## Implements
 
-- [`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
+* [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})
+
+## Index
+
+### Constructors
+
+* [constructor]({% link _docs/api/terminal/classes/terminal.md %}#constructor)
+
+### Properties
+
+* [buffer]({% link _docs/api/terminal/classes/terminal.md %}#readonly-buffer)
+* [cols]({% link _docs/api/terminal/classes/terminal.md %}#readonly-cols)
+* [element]({% link _docs/api/terminal/classes/terminal.md %}#readonly-element)
+* [markers]({% link _docs/api/terminal/classes/terminal.md %}#readonly-markers)
+* [modes]({% link _docs/api/terminal/classes/terminal.md %}#readonly-modes)
+* [onBell]({% link _docs/api/terminal/classes/terminal.md %}#onbell)
+* [onBinary]({% link _docs/api/terminal/classes/terminal.md %}#onbinary)
+* [onCursorMove]({% link _docs/api/terminal/classes/terminal.md %}#oncursormove)
+* [onData]({% link _docs/api/terminal/classes/terminal.md %}#ondata)
+* [onKey]({% link _docs/api/terminal/classes/terminal.md %}#onkey)
+* [onLineFeed]({% link _docs/api/terminal/classes/terminal.md %}#onlinefeed)
+* [onRender]({% link _docs/api/terminal/classes/terminal.md %}#onrender)
+* [onResize]({% link _docs/api/terminal/classes/terminal.md %}#onresize)
+* [onScroll]({% link _docs/api/terminal/classes/terminal.md %}#onscroll)
+* [onSelectionChange]({% link _docs/api/terminal/classes/terminal.md %}#onselectionchange)
+* [onTitleChange]({% link _docs/api/terminal/classes/terminal.md %}#ontitlechange)
+* [onWriteParsed]({% link _docs/api/terminal/classes/terminal.md %}#onwriteparsed)
+* [options]({% link _docs/api/terminal/classes/terminal.md %}#options)
+* [parser]({% link _docs/api/terminal/classes/terminal.md %}#readonly-parser)
+* [rows]({% link _docs/api/terminal/classes/terminal.md %}#readonly-rows)
+* [textarea]({% link _docs/api/terminal/classes/terminal.md %}#readonly-textarea)
+* [unicode]({% link _docs/api/terminal/classes/terminal.md %}#readonly-unicode)
+* [strings]({% link _docs/api/terminal/classes/terminal.md %}#static-strings)
+
+### Methods
+
+* [attachCustomKeyEventHandler]({% link _docs/api/terminal/classes/terminal.md %}#attachcustomkeyeventhandler)
+* [attachCustomWheelEventHandler]({% link _docs/api/terminal/classes/terminal.md %}#attachcustomwheeleventhandler)
+* [blur]({% link _docs/api/terminal/classes/terminal.md %}#blur)
+* [clear]({% link _docs/api/terminal/classes/terminal.md %}#clear)
+* [clearSelection]({% link _docs/api/terminal/classes/terminal.md %}#clearselection)
+* [clearTextureAtlas]({% link _docs/api/terminal/classes/terminal.md %}#cleartextureatlas)
+* [deregisterCharacterJoiner]({% link _docs/api/terminal/classes/terminal.md %}#deregistercharacterjoiner)
+* [dispose]({% link _docs/api/terminal/classes/terminal.md %}#dispose)
+* [focus]({% link _docs/api/terminal/classes/terminal.md %}#focus)
+* [getSelection]({% link _docs/api/terminal/classes/terminal.md %}#getselection)
+* [getSelectionPosition]({% link _docs/api/terminal/classes/terminal.md %}#getselectionposition)
+* [hasSelection]({% link _docs/api/terminal/classes/terminal.md %}#hasselection)
+* [input]({% link _docs/api/terminal/classes/terminal.md %}#input)
+* [loadAddon]({% link _docs/api/terminal/classes/terminal.md %}#loadaddon)
+* [open]({% link _docs/api/terminal/classes/terminal.md %}#open)
+* [paste]({% link _docs/api/terminal/classes/terminal.md %}#paste)
+* [refresh]({% link _docs/api/terminal/classes/terminal.md %}#refresh)
+* [registerCharacterJoiner]({% link _docs/api/terminal/classes/terminal.md %}#registercharacterjoiner)
+* [registerDecoration]({% link _docs/api/terminal/classes/terminal.md %}#registerdecoration)
+* [registerLinkProvider]({% link _docs/api/terminal/classes/terminal.md %}#registerlinkprovider)
+* [registerMarker]({% link _docs/api/terminal/classes/terminal.md %}#registermarker)
+* [reset]({% link _docs/api/terminal/classes/terminal.md %}#reset)
+* [resize]({% link _docs/api/terminal/classes/terminal.md %}#resize)
+* [scrollLines]({% link _docs/api/terminal/classes/terminal.md %}#scrolllines)
+* [scrollPages]({% link _docs/api/terminal/classes/terminal.md %}#scrollpages)
+* [scrollToBottom]({% link _docs/api/terminal/classes/terminal.md %}#scrolltobottom)
+* [scrollToLine]({% link _docs/api/terminal/classes/terminal.md %}#scrolltoline)
+* [scrollToTop]({% link _docs/api/terminal/classes/terminal.md %}#scrolltotop)
+* [select]({% link _docs/api/terminal/classes/terminal.md %}#select)
+* [selectAll]({% link _docs/api/terminal/classes/terminal.md %}#selectall)
+* [selectLines]({% link _docs/api/terminal/classes/terminal.md %}#selectlines)
+* [write]({% link _docs/api/terminal/classes/terminal.md %}#write)
+* [writeln]({% link _docs/api/terminal/classes/terminal.md %}#writeln)
 
 ## Constructors
 
-### new Terminal(options)
+###  constructor
 
-> **new Terminal**(`options`?): [`Terminal`]({% link _docs/api/terminal/classes/terminal.md %})
+\+ **new Terminal**(`options?`: [ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}) & [ITerminalInitOnlyOptions]({% link _docs/api/terminal/interfaces/iterminalinitonlyoptions.md %})): *[Terminal]({% link _docs/api/terminal/classes/terminal.md %})*
+
+*Defined in [xterm.d.ts:872](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L872)*
 
 Creates a new `Terminal` object.
 
-#### Parameters
+**Parameters:**
 
-• **options?**: [`ITerminalOptions`]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}) & [`ITerminalInitOnlyOptions`]({% link _docs/api/terminal/interfaces/iterminalinitonlyoptions.md %})
+Name | Type | Description |
+------ | ------ | ------ |
+`options?` | [ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}) & [ITerminalInitOnlyOptions]({% link _docs/api/terminal/interfaces/iterminalinitonlyoptions.md %}) | An object containing a set of options.  |
 
-An object containing a set of options.
-
-#### Returns
-
-[`Terminal`]({% link _docs/api/terminal/classes/terminal.md %})
-
-#### Source
-
-[xterm.d.ts:879](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L879)
+**Returns:** *[Terminal]({% link _docs/api/terminal/classes/terminal.md %})*
 
 ## Properties
 
-### buffer
+### `Readonly` buffer
 
-> **`readonly`** **buffer**: [`IBufferNamespace`]({% link _docs/api/terminal/interfaces/ibuffernamespace.md %})
+• **buffer**: *[IBufferNamespace]({% link _docs/api/terminal/interfaces/ibuffernamespace.md %})*
+
+*Defined in [xterm.d.ts:809](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L809)*
 
 Access to the terminal's normal and alt buffer.
 
-#### Source
+___
 
-[xterm.d.ts:809](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L809)
+### `Readonly` cols
 
-***
+• **cols**: *number*
 
-### cols
-
-> **`readonly`** **cols**: `number`
+*Defined in [xterm.d.ts:804](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L804)*
 
 The number of columns in the terminal's viewport. Use
 `ITerminalOptions.cols` to set this in the constructor and
 `Terminal.resize` for when the terminal exists.
 
-#### Source
+___
 
-[xterm.d.ts:804](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L804)
+### `Readonly` element
 
-***
+• **element**: *HTMLElement | undefined*
 
-### element
-
-> **`readonly`** **element**: `HTMLElement`
+*Defined in [xterm.d.ts:785](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L785)*
 
 The element containing the terminal.
 
-#### Source
+___
 
-[xterm.d.ts:785](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L785)
+### `Readonly` markers
 
-***
+• **markers**: *ReadonlyArray‹[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})›*
 
-### markers
-
-> **`readonly`** **markers**: readonly [`IMarker`]({% link _docs/api/terminal/interfaces/imarker.md %})[]
+*Defined in [xterm.d.ts:815](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L815)*
 
 (EXPERIMENTAL) Get all markers registered against the buffer. If the alt
 buffer is active this will always return [].
 
-#### Source
+___
 
-[xterm.d.ts:815](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L815)
+### `Readonly` modes
 
-***
+• **modes**: *[IModes]({% link _docs/api/terminal/interfaces/imodes.md %})*
 
-### modes
-
-> **`readonly`** **modes**: [`IModes`]({% link _docs/api/terminal/interfaces/imodes.md %})
+*Defined in [xterm.d.ts:831](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L831)*
 
 Gets the terminal modes as set by SM/DECSET.
 
-#### Source
+___
 
-[xterm.d.ts:831](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L831)
+###  onBell
 
-***
+• **onBell**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-### onBell
-
-> **onBell**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`void`, `void`\>
+*Defined in [xterm.d.ts:885](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L885)*
 
 Adds an event listener for when the bell is triggered.
 
-#### Source
+**`returns`** an `IDisposable` to stop listening.
 
-[xterm.d.ts:885](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L885)
+___
 
-***
+###  onBinary
 
-### onBinary
+• **onBinary**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹string›*
 
-> **onBinary**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`string`, `void`\>
+*Defined in [xterm.d.ts:896](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L896)*
 
 Adds an event listener for when a binary event fires. This is used to
 enable non UTF-8 conformant binary messages to be sent to the backend.
@@ -127,163 +183,133 @@ happen to be not UTF-8 compatible.
 The event value is a JS string, pass it to the underlying pty as
 binary data, e.g. `pty.write(Buffer.from(data, 'binary'))`.
 
-#### Source
+**`returns`** an `IDisposable` to stop listening.
 
-[xterm.d.ts:896](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L896)
+___
 
-***
+###  onCursorMove
 
-### onCursorMove
+• **onCursorMove**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-> **onCursorMove**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`void`, `void`\>
+*Defined in [xterm.d.ts:902](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L902)*
 
 Adds an event listener for the cursor moves.
 
-#### Source
+**`returns`** an `IDisposable` to stop listening.
 
-[xterm.d.ts:902](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L902)
+___
 
-***
+###  onData
 
-### onData
+• **onData**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹string›*
 
-> **onData**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`string`, `void`\>
+*Defined in [xterm.d.ts:911](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L911)*
 
 Adds an event listener for when a data event fires. This happens for
 example when the user types or pastes into the terminal. The event value
 is whatever `string` results, in a typical setup, this should be passed
 on to the backing pty.
 
-#### Source
+**`returns`** an `IDisposable` to stop listening.
 
-[xterm.d.ts:911](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L911)
+___
 
-***
+###  onKey
 
-### onKey
+• **onKey**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹object›*
 
-> **onKey**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`object`, `void`\>
+*Defined in [xterm.d.ts:919](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L919)*
 
 Adds an event listener for when a key is pressed. The event value
 contains the string that will be sent in the data event as well as the
 DOM event that triggered it.
 
-#### Type declaration
+**`returns`** an `IDisposable` to stop listening.
 
-##### domEvent
+___
 
-> **domEvent**: `KeyboardEvent`
+###  onLineFeed
 
-##### key
+• **onLineFeed**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-> **key**: `string`
-
-#### Source
-
-[xterm.d.ts:919](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L919)
-
-***
-
-### onLineFeed
-
-> **onLineFeed**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`void`, `void`\>
+*Defined in [xterm.d.ts:925](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L925)*
 
 Adds an event listener for when a line feed is added.
 
-#### Source
+**`returns`** an `IDisposable` to stop listening.
 
-[xterm.d.ts:925](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L925)
+___
 
-***
+###  onRender
 
-### onRender
+• **onRender**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹object›*
 
-> **onRender**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`object`, `void`\>
+*Defined in [xterm.d.ts:933](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L933)*
 
 Adds an event listener for when rows are rendered. The event value
 contains the start row and end rows of the rendered area (ranges from `0`
 to `Terminal.rows - 1`).
 
-#### Type declaration
+**`returns`** an `IDisposable` to stop listening.
 
-##### end
+___
 
-> **end**: `number`
+###  onResize
 
-##### start
+• **onResize**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹object›*
 
-> **start**: `number`
-
-#### Source
-
-[xterm.d.ts:933](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L933)
-
-***
-
-### onResize
-
-> **onResize**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`object`, `void`\>
+*Defined in [xterm.d.ts:951](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L951)*
 
 Adds an event listener for when the terminal is resized. The event value
 contains the new size.
 
-#### Type declaration
+**`returns`** an `IDisposable` to stop listening.
 
-##### cols
+___
 
-> **cols**: `number`
+###  onScroll
 
-##### rows
+• **onScroll**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹number›*
 
-> **rows**: `number`
-
-#### Source
-
-[xterm.d.ts:951](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L951)
-
-***
-
-### onScroll
-
-> **onScroll**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`number`, `void`\>
+*Defined in [xterm.d.ts:958](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L958)*
 
 Adds an event listener for when a scroll occurs. The event value is the
 new position of the viewport.
 
-#### Source
+**`returns`** an `IDisposable` to stop listening.
 
-[xterm.d.ts:958](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L958)
+___
 
-***
+###  onSelectionChange
 
-### onSelectionChange
+• **onSelectionChange**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-> **onSelectionChange**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`void`, `void`\>
+*Defined in [xterm.d.ts:964](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L964)*
 
 Adds an event listener for when a selection change occurs.
 
-#### Source
+**`returns`** an `IDisposable` to stop listening.
 
-[xterm.d.ts:964](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L964)
+___
 
-***
+###  onTitleChange
 
-### onTitleChange
+• **onTitleChange**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹string›*
 
-> **onTitleChange**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`string`, `void`\>
+*Defined in [xterm.d.ts:971](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L971)*
 
 Adds an event listener for when an OSC 0 or OSC 2 title change occurs.
 The event value is the new title.
 
-#### Source
+**`returns`** an `IDisposable` to stop listening.
 
-[xterm.d.ts:971](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L971)
+___
 
-***
+###  onWriteParsed
 
-### onWriteParsed
+• **onWriteParsed**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-> **onWriteParsed**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`void`, `void`\>
+*Defined in [xterm.d.ts:944](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L944)*
 
 Adds an event listener for when data has been parsed by the terminal,
 after [write]({% link _docs/api/terminal/classes/terminal.md %}#write) is called. This event is useful to listen for any
@@ -293,27 +319,23 @@ This fires at most once per frame, after data parsing completes. Note
 that this can fire when there are still writes pending if there is a lot
 of data.
 
-#### Source
+___
 
-[xterm.d.ts:944](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L944)
+###  options
 
-***
+• **options**: *[ITerminalOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %})*
 
-### options
-
-> **options**: [`ITerminalOptions`]({% link _docs/api/terminal/interfaces/iterminaloptions.md %})
+*Defined in [xterm.d.ts:867](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L867)*
 
 Gets or sets the terminal options. This supports setting multiple
 options.
 
-#### Example
-
+**`example`** Get a single option
 ```ts
 console.log(terminal.options.fontSize);
 ```
 
-#### Example
-
+**`example`** Set a single option:
 ```ts
 terminal.options.fontSize = 12;
 ```
@@ -330,8 +352,7 @@ terminal.options.theme = newValue;
 terminal.options.theme = { ...newValue };
 ```
 
-#### Example
-
+**`example`** Set multiple options
 ```ts
 terminal.options = {
   fontSize: 12,
@@ -339,98 +360,72 @@ terminal.options = {
 };
 ```
 
-#### Source
+___
 
-[xterm.d.ts:867](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L867)
+### `Readonly` parser
 
-***
+• **parser**: *[IParser]({% link _docs/api/terminal/interfaces/iparser.md %})*
 
-### parser
-
-> **`readonly`** **parser**: [`IParser`]({% link _docs/api/terminal/interfaces/iparser.md %})
+*Defined in [xterm.d.ts:820](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L820)*
 
 Get the parser interface to register custom escape sequence handlers.
 
-#### Source
+___
 
-[xterm.d.ts:820](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L820)
+### `Readonly` rows
 
-***
+• **rows**: *number*
 
-### rows
-
-> **`readonly`** **rows**: `number`
+*Defined in [xterm.d.ts:797](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L797)*
 
 The number of rows in the terminal's viewport. Use
 `ITerminalOptions.rows` to set this in the constructor and
 `Terminal.resize` for when the terminal exists.
 
-#### Source
+___
 
-[xterm.d.ts:797](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L797)
+### `Readonly` textarea
 
-***
+• **textarea**: *HTMLTextAreaElement | undefined*
 
-### textarea
-
-> **`readonly`** **textarea**: `HTMLTextAreaElement`
+*Defined in [xterm.d.ts:790](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L790)*
 
 The textarea that accepts input for the terminal.
 
-#### Source
+___
 
-[xterm.d.ts:790](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L790)
+### `Readonly` unicode
 
-***
+• **unicode**: *[IUnicodeHandling]({% link _docs/api/terminal/interfaces/iunicodehandling.md %})*
 
-### unicode
-
-> **`readonly`** **unicode**: [`IUnicodeHandling`]({% link _docs/api/terminal/interfaces/iunicodehandling.md %})
+*Defined in [xterm.d.ts:826](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L826)*
 
 (EXPERIMENTAL) Get the Unicode handling interface
 to register and switch Unicode version.
 
-#### Source
+___
 
-[xterm.d.ts:826](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L826)
+### `Static` strings
 
-***
+▪ **strings**: *[ILocalizableStrings]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %})*
 
-### strings
-
-> **`static`** **strings**: [`ILocalizableStrings`]({% link _docs/api/terminal/interfaces/ilocalizablestrings.md %})
+*Defined in [xterm.d.ts:872](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L872)*
 
 Natural language strings that can be localized.
 
-#### Source
-
-[xterm.d.ts:872](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L872)
-
 ## Methods
 
-### attachCustomKeyEventHandler()
+###  attachCustomKeyEventHandler
 
-> **attachCustomKeyEventHandler**(`customKeyEventHandler`): `void`
+▸ **attachCustomKeyEventHandler**(`customKeyEventHandler`: function): *void*
+
+*Defined in [xterm.d.ts:1040](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1040)*
 
 Attaches a custom key event handler which is run before keys are
 processed, giving consumers of xterm.js ultimate control as to what keys
 should be processed by the terminal and what keys should not.
 
-#### Parameters
-
-• **customKeyEventHandler**
-
-The custom KeyboardEvent handler to attach.
-This is a function that takes a KeyboardEvent, allowing consumers to stop
-propagation and/or prevent the default action. The function returns
-whether the event should be processed by xterm.js.
-
-#### Returns
-
-`void`
-
-#### Example
-
+**`example`** A custom keymap that overrides the backspace key
 ```ts
 const keymap = [
   { "key": "Backspace", "shiftKey": false, "mapCode": 8 },
@@ -448,35 +443,38 @@ term.attachCustomKeyEventHandler(ev => {
 });
 ```
 
-#### Source
+**Parameters:**
 
-[xterm.d.ts:1040](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1040)
+▪ **customKeyEventHandler**: *function*
 
-***
+The custom KeyboardEvent handler to attach.
+This is a function that takes a KeyboardEvent, allowing consumers to stop
+propagation and/or prevent the default action. The function returns
+whether the event should be processed by xterm.js.
 
-### attachCustomWheelEventHandler()
+▸ (`event`: KeyboardEvent): *boolean*
 
-> **attachCustomWheelEventHandler**(`customWheelEventHandler`): `void`
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`event` | KeyboardEvent |
+
+**Returns:** *void*
+
+___
+
+###  attachCustomWheelEventHandler
+
+▸ **attachCustomWheelEventHandler**(`customWheelEventHandler`: function): *void*
+
+*Defined in [xterm.d.ts:1062](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1062)*
 
 Attaches a custom wheel event handler which is run before keys are
 processed, giving consumers of xterm.js control over whether to proceed
 or cancel terminal wheel events.
 
-#### Parameters
-
-• **customWheelEventHandler**
-
-The custom WheelEvent handler to attach.
-This is a function that takes a WheelEvent, allowing consumers to stop
-propagation and/or prevent the default action. The function returns
-whether the event should be processed by xterm.js.
-
-#### Returns
-
-`void`
-
-#### Example
-
+**`example`** A handler that prevents all wheel events while ctrl is held from
 being processed.
 ```ts
 term.attachCustomWheelEventHandler(ev => {
@@ -487,316 +485,259 @@ term.attachCustomWheelEventHandler(ev => {
 });
 ```
 
-#### Source
+**Parameters:**
 
-[xterm.d.ts:1062](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1062)
+▪ **customWheelEventHandler**: *function*
 
-***
+The custom WheelEvent handler to attach.
+This is a function that takes a WheelEvent, allowing consumers to stop
+propagation and/or prevent the default action. The function returns
+whether the event should be processed by xterm.js.
 
-### blur()
+▸ (`event`: WheelEvent): *boolean*
 
-> **blur**(): `void`
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`event` | WheelEvent |
+
+**Returns:** *void*
+
+___
+
+###  blur
+
+▸ **blur**(): *void*
+
+*Defined in [xterm.d.ts:976](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L976)*
 
 Unfocus the terminal.
 
-#### Returns
+**Returns:** *void*
 
-`void`
+___
 
-#### Source
+###  clear
 
-[xterm.d.ts:976](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L976)
+▸ **clear**(): *void*
 
-***
-
-### clear()
-
-> **clear**(): `void`
+*Defined in [xterm.d.ts:1206](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1206)*
 
 Clear the entire buffer, making the prompt line the new first line.
 
-#### Returns
+**Returns:** *void*
 
-`void`
+___
 
-#### Source
+###  clearSelection
 
-[xterm.d.ts:1206](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1206)
+▸ **clearSelection**(): *void*
 
-***
-
-### clearSelection()
-
-> **clearSelection**(): `void`
+*Defined in [xterm.d.ts:1146](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1146)*
 
 Clears the current terminal selection.
 
-#### Returns
+**Returns:** *void*
 
-`void`
+___
 
-#### Source
+###  clearTextureAtlas
 
-[xterm.d.ts:1146](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1146)
+▸ **clearTextureAtlas**(): *void*
 
-***
-
-### clearTextureAtlas()
-
-> **clearTextureAtlas**(): `void`
+*Defined in [xterm.d.ts:1249](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1249)*
 
 Clears the texture atlas of the canvas renderer if it's active. Doing
 this will force a redraw of all glyphs which can workaround issues
 causing the texture to become corrupt, for example Chromium/Nvidia has an
 issue where the texture gets messed up when resuming the OS from sleep.
 
-#### Returns
+**Returns:** *void*
 
-`void`
+___
 
-#### Source
+###  deregisterCharacterJoiner
 
-[xterm.d.ts:1249](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1249)
+▸ **deregisterCharacterJoiner**(`joinerId`: number): *void*
 
-***
-
-### deregisterCharacterJoiner()
-
-> **deregisterCharacterJoiner**(`joinerId`): `void`
+*Defined in [xterm.d.ts:1108](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1108)*
 
 (EXPERIMENTAL) Deregisters the character joiner if one was registered.
 NOTE: character joiners are only used by the canvas renderer.
 
-#### Parameters
+**Parameters:**
 
-• **joinerId**: `number`
+Name | Type | Description |
+------ | ------ | ------ |
+`joinerId` | number | The character joiner's ID (returned after register)  |
 
-The character joiner's ID (returned after register)
+**Returns:** *void*
 
-#### Returns
+___
 
-`void`
+###  dispose
 
-#### Source
+▸ **dispose**(): *void*
 
-[xterm.d.ts:1108](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1108)
+*Implementation of [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-***
+*Defined in [xterm.d.ts:1173](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1173)*
 
-### dispose()
+**Returns:** *void*
 
-> **dispose**(): `void`
+___
 
-#### Returns
+###  focus
 
-`void`
+▸ **focus**(): *void*
 
-#### Implementation of
-
-[`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %}).[`dispose`]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)
-
-#### Source
-
-[xterm.d.ts:1173](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1173)
-
-***
-
-### focus()
-
-> **focus**(): `void`
+*Defined in [xterm.d.ts:981](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L981)*
 
 Focus the terminal.
 
-#### Returns
+**Returns:** *void*
 
-`void`
+___
 
-#### Source
+###  getSelection
 
-[xterm.d.ts:981](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L981)
+▸ **getSelection**(): *string*
 
-***
-
-### getSelection()
-
-> **getSelection**(): `string`
+*Defined in [xterm.d.ts:1136](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1136)*
 
 Gets the terminal's current selection, this is useful for implementing
 copy behavior outside of xterm.js.
 
-#### Returns
+**Returns:** *string*
 
-`string`
+___
 
-#### Source
+###  getSelectionPosition
 
-[xterm.d.ts:1136](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1136)
+▸ **getSelectionPosition**(): *[IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %}) | undefined*
 
-***
-
-### getSelectionPosition()
-
-> **getSelectionPosition**(): [`IBufferRange`]({% link _docs/api/terminal/interfaces/ibufferrange.md %})
+*Defined in [xterm.d.ts:1141](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1141)*
 
 Gets the selection position or undefined if there is no selection.
 
-#### Returns
+**Returns:** *[IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %}) | undefined*
 
-[`IBufferRange`]({% link _docs/api/terminal/interfaces/ibufferrange.md %})
+___
 
-#### Source
+###  hasSelection
 
-[xterm.d.ts:1141](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1141)
+▸ **hasSelection**(): *boolean*
 
-***
-
-### hasSelection()
-
-> **hasSelection**(): `boolean`
+*Defined in [xterm.d.ts:1130](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1130)*
 
 Gets whether the terminal has an active selection.
 
-#### Returns
+**Returns:** *boolean*
 
-`boolean`
+___
 
-#### Source
+###  input
 
-[xterm.d.ts:1130](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1130)
+▸ **input**(`data`: string, `wasUserInput?`: boolean): *void*
 
-***
-
-### input()
-
-> **input**(`data`, `wasUserInput`?): `void`
+*Defined in [xterm.d.ts:993](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L993)*
 
 Input data to application side. The data is treated the same way input
 typed into the terminal would (ie. the [onData]({% link _docs/api/terminal/classes/terminal.md %}#ondata) event will fire).
 
-#### Parameters
+**Parameters:**
 
-• **data**: `string`
+Name | Type | Description |
+------ | ------ | ------ |
+`data` | string | The data to forward to the application. |
+`wasUserInput?` | boolean | Whether the input is genuine user input. This is true by default and triggers additionalbehavior like focus or selection clearing. Set this to false if the data sent should not be treated like user input would, for example passing an escape sequence to the application.  |
 
-The data to forward to the application.
+**Returns:** *void*
 
-• **wasUserInput?**: `boolean`
+___
 
-Whether the input is genuine user input. This is true
-by default and triggers additionalbehavior like focus or selection
-clearing. Set this to false if the data sent should not be treated like
-user input would, for example passing an escape sequence to the
-application.
+###  loadAddon
 
-#### Returns
+▸ **loadAddon**(`addon`: [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})): *void*
 
-`void`
-
-#### Source
-
-[xterm.d.ts:993](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L993)
-
-***
-
-### loadAddon()
-
-> **loadAddon**(`addon`): `void`
+*Defined in [xterm.d.ts:1260](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1260)*
 
 Loads an addon into this instance of xterm.js.
 
-#### Parameters
+**Parameters:**
 
-• **addon**: [`ITerminalAddon`]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})
+Name | Type | Description |
+------ | ------ | ------ |
+`addon` | [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %}) | The addon to load.  |
 
-The addon to load.
+**Returns:** *void*
 
-#### Returns
+___
 
-`void`
+###  open
 
-#### Source
+▸ **open**(`parent`: HTMLElement): *void*
 
-[xterm.d.ts:1260](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1260)
-
-***
-
-### open()
-
-> **open**(`parent`): `void`
+*Defined in [xterm.d.ts:1011](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1011)*
 
 Opens the terminal within an element. This should also be called if the
 xterm.js element ever changes browser window.
 
-#### Parameters
+**Parameters:**
 
-• **parent**: `HTMLElement`
+Name | Type | Description |
+------ | ------ | ------ |
+`parent` | HTMLElement | The element to create the terminal within. This element must be visible (have dimensions) when `open` is called as several DOM- based measurements need to be performed when this function is called.  |
 
-The element to create the terminal within. This element
-must be visible (have dimensions) when `open` is called as several DOM-
-based measurements need to be performed when this function is called.
+**Returns:** *void*
 
-#### Returns
+___
 
-`void`
+###  paste
 
-#### Source
+▸ **paste**(`data`: string): *void*
 
-[xterm.d.ts:1011](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1011)
-
-***
-
-### paste()
-
-> **paste**(`data`): `void`
+*Defined in [xterm.d.ts:1233](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1233)*
 
 Writes text to the terminal, performing the necessary transformations for
 pasted text.
 
-#### Parameters
+**Parameters:**
 
-• **data**: `string`
+Name | Type | Description |
+------ | ------ | ------ |
+`data` | string | The text to write to the terminal.  |
 
-The text to write to the terminal.
+**Returns:** *void*
 
-#### Returns
+___
 
-`void`
+###  refresh
 
-#### Source
+▸ **refresh**(`start`: number, `end`: number): *void*
 
-[xterm.d.ts:1233](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1233)
-
-***
-
-### refresh()
-
-> **refresh**(`start`, `end`): `void`
+*Defined in [xterm.d.ts:1241](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1241)*
 
 Tells the renderer to refresh terminal content between two rows
 (inclusive) at the next opportunity.
 
-#### Parameters
+**Parameters:**
 
-• **start**: `number`
+Name | Type | Description |
+------ | ------ | ------ |
+`start` | number | The row to start from (between 0 and this.rows - 1). |
+`end` | number | The row to end at (between start and this.rows - 1).  |
 
-The row to start from (between 0 and this.rows - 1).
+**Returns:** *void*
 
-• **end**: `number`
+___
 
-The row to end at (between start and this.rows - 1).
+###  registerCharacterJoiner
 
-#### Returns
+▸ **registerCharacterJoiner**(`handler`: function): *number*
 
-`void`
-
-#### Source
-
-[xterm.d.ts:1241](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1241)
-
-***
-
-### registerCharacterJoiner()
-
-> **registerCharacterJoiner**(`handler`): `number`
+*Defined in [xterm.d.ts:1101](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1101)*
 
 (EXPERIMENTAL) Registers a character joiner, allowing custom sequences of
 characters to be rendered as a single unit. This is useful in particular
@@ -820,361 +761,299 @@ characters.
 
 NOTE: character joiners are only used by the canvas renderer.
 
-#### Parameters
+**Parameters:**
 
-• **handler**
+▪ **handler**: *function*
 
 The function that determines character joins. It is called
 with a string of text that is eligible for joining and returns an array
 where each entry is an array containing the start (inclusive) and end
 (exclusive) indexes of ranges that should be rendered as a single unit.
 
-#### Returns
+▸ (`text`: string): *[][]*
 
-`number`
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`text` | string |
+
+**Returns:** *number*
 
 The ID of the new joiner, this can be used to deregister
 
-#### Source
+___
 
-[xterm.d.ts:1101](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1101)
+###  registerDecoration
 
-***
+▸ **registerDecoration**(`decorationOptions`: [IDecorationOptions]({% link _docs/api/terminal/interfaces/idecorationoptions.md %})): *[IDecoration]({% link _docs/api/terminal/interfaces/idecoration.md %}) | undefined*
 
-### registerDecoration()
-
-> **registerDecoration**(`decorationOptions`): [`IDecoration`]({% link _docs/api/terminal/interfaces/idecoration.md %})
+*Defined in [xterm.d.ts:1125](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1125)*
 
 (EXPERIMENTAL) Adds a decoration to the terminal using
 
-#### Parameters
+**`throws`** when options include a negative x offset.
 
-• **decorationOptions**: [`IDecorationOptions`]({% link _docs/api/terminal/interfaces/idecorationoptions.md %})
+**Parameters:**
 
-#### Returns
+Name | Type |
+------ | ------ |
+`decorationOptions` | [IDecorationOptions]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}) |
 
-[`IDecoration`]({% link _docs/api/terminal/interfaces/idecoration.md %})
+**Returns:** *[IDecoration]({% link _docs/api/terminal/interfaces/idecoration.md %}) | undefined*
 
-#### Throws
+___
 
-when options include a negative x offset.
+###  registerLinkProvider
 
-#### Source
+▸ **registerLinkProvider**(`linkProvider`: [ILinkProvider]({% link _docs/api/terminal/interfaces/ilinkprovider.md %})): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-[xterm.d.ts:1125](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1125)
-
-***
-
-### registerLinkProvider()
-
-> **registerLinkProvider**(`linkProvider`): [`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
+*Defined in [xterm.d.ts:1070](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1070)*
 
 Registers a link provider, allowing a custom parser to be used to match
 and handle links. Multiple link providers can be used, they will be asked
 in the order in which they are registered.
 
-#### Parameters
+**Parameters:**
 
-• **linkProvider**: [`ILinkProvider`]({% link _docs/api/terminal/interfaces/ilinkprovider.md %})
+Name | Type | Description |
+------ | ------ | ------ |
+`linkProvider` | [ILinkProvider]({% link _docs/api/terminal/interfaces/ilinkprovider.md %}) | The link provider to use to detect links.  |
 
-The link provider to use to detect links.
+**Returns:** *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-#### Returns
+___
 
-[`IDisposable`]({% link _docs/api/terminal/interfaces/idisposable.md %})
+###  registerMarker
 
-#### Source
+▸ **registerMarker**(`cursorYOffset?`: number): *[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})*
 
-[xterm.d.ts:1070](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1070)
-
-***
-
-### registerMarker()
-
-> **registerMarker**(`cursorYOffset`?): [`IMarker`]({% link _docs/api/terminal/interfaces/imarker.md %})
+*Defined in [xterm.d.ts:1115](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1115)*
 
 Adds a marker to the normal buffer and returns it.
 
-#### Parameters
+**Parameters:**
 
-• **cursorYOffset?**: `number`
+Name | Type | Description |
+------ | ------ | ------ |
+`cursorYOffset?` | number | The y position offset of the marker from the cursor. |
 
-The y position offset of the marker from the cursor.
-
-#### Returns
-
-[`IMarker`]({% link _docs/api/terminal/interfaces/imarker.md %})
+**Returns:** *[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})*
 
 The new marker or undefined.
 
-#### Source
+___
 
-[xterm.d.ts:1115](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1115)
+###  reset
 
-***
+▸ **reset**(): *void*
 
-### reset()
-
-> **reset**(): `void`
+*Defined in [xterm.d.ts:1254](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1254)*
 
 Perform a full reset (RIS, aka '\x1bc').
 
-#### Returns
+**Returns:** *void*
 
-`void`
+___
 
-#### Source
+###  resize
 
-[xterm.d.ts:1254](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1254)
+▸ **resize**(`columns`: number, `rows`: number): *void*
 
-***
-
-### resize()
-
-> **resize**(`columns`, `rows`): `void`
+*Defined in [xterm.d.ts:1002](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1002)*
 
 Resizes the terminal. It's best practice to debounce calls to resize,
 this will help ensure that the pty can respond to the resize event
 before another one occurs.
 
-#### Parameters
+**Parameters:**
 
-• **columns**: `number`
+Name | Type |
+------ | ------ |
+`columns` | number |
+`rows` | number |
 
-• **rows**: `number`
+**Returns:** *void*
 
-#### Returns
+___
 
-`void`
+###  scrollLines
 
-#### Source
+▸ **scrollLines**(`amount`: number): *void*
 
-[xterm.d.ts:1002](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1002)
-
-***
-
-### scrollLines()
-
-> **scrollLines**(`amount`): `void`
+*Defined in [xterm.d.ts:1179](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1179)*
 
 Scroll the display of the terminal
 
-#### Parameters
+**Parameters:**
 
-• **amount**: `number`
+Name | Type | Description |
+------ | ------ | ------ |
+`amount` | number | The number of lines to scroll down (negative scroll up).  |
 
-The number of lines to scroll down (negative scroll up).
+**Returns:** *void*
 
-#### Returns
+___
 
-`void`
+###  scrollPages
 
-#### Source
+▸ **scrollPages**(`pageCount`: number): *void*
 
-[xterm.d.ts:1179](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1179)
-
-***
-
-### scrollPages()
-
-> **scrollPages**(`pageCount`): `void`
+*Defined in [xterm.d.ts:1185](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1185)*
 
 Scroll the display of the terminal by a number of pages.
 
-#### Parameters
+**Parameters:**
 
-• **pageCount**: `number`
+Name | Type | Description |
+------ | ------ | ------ |
+`pageCount` | number | The number of pages to scroll (negative scrolls up).  |
 
-The number of pages to scroll (negative scrolls up).
+**Returns:** *void*
 
-#### Returns
+___
 
-`void`
+###  scrollToBottom
 
-#### Source
+▸ **scrollToBottom**(): *void*
 
-[xterm.d.ts:1185](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1185)
-
-***
-
-### scrollToBottom()
-
-> **scrollToBottom**(): `void`
+*Defined in [xterm.d.ts:1195](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1195)*
 
 Scrolls the display of the terminal to the bottom.
 
-#### Returns
+**Returns:** *void*
 
-`void`
+___
 
-#### Source
+###  scrollToLine
 
-[xterm.d.ts:1195](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1195)
+▸ **scrollToLine**(`line`: number): *void*
 
-***
-
-### scrollToLine()
-
-> **scrollToLine**(`line`): `void`
+*Defined in [xterm.d.ts:1201](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1201)*
 
 Scrolls to a line within the buffer.
 
-#### Parameters
+**Parameters:**
 
-• **line**: `number`
+Name | Type | Description |
+------ | ------ | ------ |
+`line` | number | The 0-based line index to scroll to.  |
 
-The 0-based line index to scroll to.
+**Returns:** *void*
 
-#### Returns
+___
 
-`void`
+###  scrollToTop
 
-#### Source
+▸ **scrollToTop**(): *void*
 
-[xterm.d.ts:1201](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1201)
-
-***
-
-### scrollToTop()
-
-> **scrollToTop**(): `void`
+*Defined in [xterm.d.ts:1190](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1190)*
 
 Scrolls the display of the terminal to the top.
 
-#### Returns
+**Returns:** *void*
 
-`void`
+___
 
-#### Source
+###  select
 
-[xterm.d.ts:1190](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1190)
+▸ **select**(`column`: number, `row`: number, `length`: number): *void*
 
-***
-
-### select()
-
-> **select**(`column`, `row`, `length`): `void`
+*Defined in [xterm.d.ts:1154](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1154)*
 
 Selects text within the terminal.
 
-#### Parameters
+**Parameters:**
 
-• **column**: `number`
+Name | Type | Description |
+------ | ------ | ------ |
+`column` | number | The column the selection starts at. |
+`row` | number | The row the selection starts at. |
+`length` | number | The length of the selection.  |
 
-The column the selection starts at.
+**Returns:** *void*
 
-• **row**: `number`
+___
 
-The row the selection starts at.
+###  selectAll
 
-• **length**: `number`
+▸ **selectAll**(): *void*
 
-The length of the selection.
-
-#### Returns
-
-`void`
-
-#### Source
-
-[xterm.d.ts:1154](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1154)
-
-***
-
-### selectAll()
-
-> **selectAll**(): `void`
+*Defined in [xterm.d.ts:1159](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1159)*
 
 Selects all text within the terminal.
 
-#### Returns
+**Returns:** *void*
 
-`void`
+___
 
-#### Source
+###  selectLines
 
-[xterm.d.ts:1159](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1159)
+▸ **selectLines**(`start`: number, `end`: number): *void*
 
-***
-
-### selectLines()
-
-> **selectLines**(`start`, `end`): `void`
+*Defined in [xterm.d.ts:1166](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1166)*
 
 Selects text in the buffer between 2 lines.
 
-#### Parameters
+**Parameters:**
 
-• **start**: `number`
+Name | Type | Description |
+------ | ------ | ------ |
+`start` | number | The 0-based line index to select from (inclusive). |
+`end` | number | The 0-based line index to select to (inclusive).  |
 
-The 0-based line index to select from (inclusive).
+**Returns:** *void*
 
-• **end**: `number`
+___
 
-The 0-based line index to select to (inclusive).
+###  write
 
-#### Returns
+▸ **write**(`data`: string | Uint8Array, `callback?`: function): *void*
 
-`void`
-
-#### Source
-
-[xterm.d.ts:1166](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1166)
-
-***
-
-### write()
-
-> **write**(`data`, `callback`?): `void`
+*Defined in [xterm.d.ts:1216](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1216)*
 
 Write data to the terminal.
 
-#### Parameters
+**Parameters:**
 
-• **data**: `string` \| `Uint8Array`
+▪ **data**: *string | Uint8Array*
 
 The data to write to the terminal. This can either be raw
 bytes given as Uint8Array from the pty or a string. Raw bytes will always
 be treated as UTF-8 encoded, string data as UTF-16.
 
-• **callback?**
+▪`Optional`  **callback**: *function*
 
 Optional callback that fires when the data was processed
 by the parser.
 
-#### Returns
+▸ (): *void*
 
-`void`
+**Returns:** *void*
 
-#### Source
+___
 
-[xterm.d.ts:1216](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1216)
+###  writeln
 
-***
+▸ **writeln**(`data`: string | Uint8Array, `callback?`: function): *void*
 
-### writeln()
-
-> **writeln**(`data`, `callback`?): `void`
+*Defined in [xterm.d.ts:1226](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1226)*
 
 Writes data to the terminal, followed by a break line character (\n).
 
-#### Parameters
+**Parameters:**
 
-• **data**: `string` \| `Uint8Array`
+▪ **data**: *string | Uint8Array*
 
 The data to write to the terminal. This can either be raw
 bytes given as Uint8Array from the pty or a string. Raw bytes will always
 be treated as UTF-8 encoded, string data as UTF-16.
 
-• **callback?**
+▪`Optional`  **callback**: *function*
 
 Optional callback that fires when the data was processed
 by the parser.
 
-#### Returns
+▸ (): *void*
 
-`void`
-
-#### Source
-
-[xterm.d.ts:1226](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1226)
+**Returns:** *void*

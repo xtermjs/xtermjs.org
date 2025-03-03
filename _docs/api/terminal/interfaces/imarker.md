@@ -1,12 +1,9 @@
 ---
+title: IMarker
 category: API-interfaces
 layout: docs
 ---
 
-
-***
-
-[@xterm/xterm]({% link _docs/api/terminal/readme.md %}) / IMarker
 
 # Interface: IMarker
 
@@ -14,81 +11,78 @@ Represents a specific line in the terminal that is tracked when scrollback
 is trimmed and lines are added or removed. This is a single line that may
 be part of a larger wrapped line.
 
-## Extends
+## Hierarchy
 
-- [`IDisposableWithEvent`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %})
+  ↳ [IDisposableWithEvent]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %})
+
+  ↳ **IMarker**
+
+## Index
+
+### Properties
+
+* [id]({% link _docs/api/terminal/interfaces/imarker.md %}#readonly-id)
+* [isDisposed]({% link _docs/api/terminal/interfaces/imarker.md %}#readonly-isdisposed)
+* [line]({% link _docs/api/terminal/interfaces/imarker.md %}#readonly-line)
+* [onDispose]({% link _docs/api/terminal/interfaces/imarker.md %}#ondispose)
+
+### Methods
+
+* [dispose]({% link _docs/api/terminal/interfaces/imarker.md %}#dispose)
 
 ## Properties
 
-### id
+### `Readonly` id
 
-> **`readonly`** **id**: `number`
+• **id**: *number*
+
+*Defined in [xterm.d.ts:474](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L474)*
 
 A unique identifier for this marker.
 
-#### Source
+___
 
-[xterm.d.ts:474](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L474)
+### `Readonly` isDisposed
 
-***
+• **isDisposed**: *boolean*
 
-### isDisposed
+*Inherited from [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %}).[isDisposed]({% link _docs/api/terminal/interfaces/imarker.md %}#readonly-isdisposed)*
 
-> **`readonly`** **isDisposed**: `boolean`
+*Defined in [xterm.d.ts:495](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L495)*
 
 Whether this is disposed.
 
-#### Inherited from
+___
 
-[`IDisposableWithEvent`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}).[`isDisposed`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#isdisposed)
+### `Readonly` line
 
-#### Source
+• **line**: *number*
 
-[xterm.d.ts:495](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L495)
-
-***
-
-### line
-
-> **`readonly`** **line**: `number`
+*Defined in [xterm.d.ts:480](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L480)*
 
 The actual line index in the buffer at this point in time. This is set to
 -1 if the marker has been disposed.
 
-#### Source
+___
 
-[xterm.d.ts:480](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L480)
+###  onDispose
 
-***
+• **onDispose**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹void›*
 
-### onDispose
+*Inherited from [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %}).[onDispose]({% link _docs/api/terminal/interfaces/imarker.md %}#ondispose)*
 
-> **onDispose**: [`IEvent`]({% link _docs/api/terminal/interfaces/ievent.md %})\<`void`, `void`\>
+*Defined in [xterm.d.ts:490](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L490)*
 
 Event listener to get notified when this gets disposed.
 
-#### Inherited from
-
-[`IDisposableWithEvent`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}).[`onDispose`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#ondispose)
-
-#### Source
-
-[xterm.d.ts:490](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L490)
-
 ## Methods
 
-### dispose()
+###  dispose
 
-> **dispose**(): `void`
+▸ **dispose**(): *void*
 
-#### Returns
+*Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
-`void`
+*Defined in [xterm.d.ts:454](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L454)*
 
-#### Inherited from
-
-[`IDisposableWithEvent`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}).[`dispose`]({% link _docs/api/terminal/interfaces/idisposablewithevent.md %}#dispose)
-
-#### Source
-
-[xterm.d.ts:454](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L454)
+**Returns:** *void*
