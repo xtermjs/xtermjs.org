@@ -6,7 +6,7 @@ category: Guides
 Clickable links may appear in the terminal output two ways:
 
 * Emitted using an explicit escape sequence (OSC 8).
-* Implicitly using something that looks a URL in the output recognized by the `web-links` addon using pattern matching.
+* Implicitly using something that looks a URL in the output, recognized using pattern matching. This requires the `web-links` addon.
 
 ## Setup
 
@@ -29,12 +29,12 @@ webLinksAddon = new WebLinksAddon(activateLink, linkHandler);
 xterm.options.linkHandler = linkHandler;
 ```
 
-## Require modifier
+## Require modifier key
 
-Terminal emulators that handle clicking on a link commonly require a modifier to be pressed, to avoid unintentional window-opening. Commonly the `Ctrl` modifier (or on macOS the `Cmd` modifier) must be pressed.
+Terminal emulators that handle clicking on a link usually require a modifier to be pressed, to avoid unintentional window-opening. Commonly the `Ctrl` modifier (or on macOS the `Cmd` modifier) must be pressed.
 
 ```js
-function linkRequiesModifier() { return true; }
+function linkRequiresModifier() { return true; }
 function isMac() {
   return typeof navigator != "undefined" ? /Mac/.test(navigator.platform)
       : typeof os != "undefined" ? os.platform() == "darwin" : false;
@@ -43,7 +43,7 @@ function isMac() {
 // Replace activateLink above
 function activateLink(event, uri) {
   if ((isMac() ? event.metaKey : event.ctrlKey)
-    || ! linkRequiesModifier()) {
+    || ! linkRequiresModifier()) {
       doHandleLink(); // example: open link in new browser window
   }
 }
@@ -51,7 +51,7 @@ function activateLink(event, uri) {
 
 ## Display URL on hovering
 
-It might helpful to show the full URL when overing over link, especally for links created by OSC 8 (which might not show the actual URL). This is safety feature commonly implemented in web browsers and mail readers.
+It might be helpful to show the full URL when hovering over a link, especially for links created by OSC 8 (which might not show the actual URL). This is safety feature commonly implemented in web browsers and mail readers.
 
 ```js
 let _linkPopup;
@@ -69,7 +69,7 @@ function showLinkPopup(event, text, range) {
   popup.style.top = (event.clientY + 25) + 'px';
   popup.style.right = '0.5em';
   popup.innerText = text;
-  if (linkRequiesModifier()) {
+  if (linkRequiresModifier()) {
     popup.appendChild(document.createElement('br'));
     const e2 = document.createElement('i');
     e2.innerText = `(${isMac() ? 'Cmd' : 'Ctrl'}+Click to open link)`;
