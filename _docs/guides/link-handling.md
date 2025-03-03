@@ -2,16 +2,17 @@
 title: Link Handling
 category: Guides
 ---
+
 Clickable links may appear in the terminal output two ways:
 
 * Emitted using an explicit escape sequence (OSC 8).
+* Implicitly using something that looks a URL in the output recognized by the `web-links` addon using pattern matching.
 
-* Implicitly using something that looks a URL in the output
-  recognized by the `web-links` addon using pattern matching.
-  
-## Setup ##
+## Setup
+
 This is one way to handle both kinds of links.
-```
+
+```js
 function activateLink(event, uri) {
   doHandleLink(); // example: open link in new browser window
 }
@@ -27,11 +28,12 @@ webLinksAddon = new WebLinksAddon(activateLink, linkHandler);
 /* Handle explicit links using USC 8 escape sequences. */
 xterm.options.linkHandler = linkHandler;
 ```
-## Require modifier ##
-Terminal emulators that handle clicking on a link commonly require a
-modifier to be pressed, to avoid unintentional window-opening.
-Commonly the `Ctrl` modifier (or on macOS the `Cmd` modifier) must be pressed.
-```
+
+## Require modifier
+
+Terminal emulators that handle clicking on a link commonly require a modifier to be pressed, to avoid unintentional window-opening. Commonly the `Ctrl` modifier (or on macOS the `Cmd` modifier) must be pressed.
+
+```js
 function linkRequiesModifier() { return true; }
 function isMac() {
   return typeof navigator != "undefined" ? /Mac/.test(navigator.platform)
@@ -46,11 +48,12 @@ function activateLink(event, uri) {
   }
 }
 ```
-## Display URL on hovering ##
-It might helpful to show the full URL when overing over link,
-especally for links created by OSC 8 (which might not show the actual URL).
-This is safety feature commonly implemented in web browsers and mail readers.
-```
+
+## Display URL on hovering
+
+It might helpful to show the full URL when overing over link, especally for links created by OSC 8 (which might not show the actual URL). This is safety feature commonly implemented in web browsers and mail readers.
+
+```js
 let _linkPopup;
 function removeLinkPopup = (event, text, range) {
   if (_linkPopup) {
@@ -85,8 +88,10 @@ function showLinkPopup(event, text, range) {
 linkHandler.hover = showLinkPopup;
 linkHandler.leave = removeLinkPopup;
 ```
+
 Possible CSS styling for the hover popup:
-```
+
+```css
 div.xterm-link-popup {
   font-size: small;
   line-break: normal; /* auto doesn't work for WebKit */
@@ -98,4 +103,4 @@ div.xterm-link-popup {
   background: #6c4c4c;
   border-color: #150262;
 }
-````
+```
