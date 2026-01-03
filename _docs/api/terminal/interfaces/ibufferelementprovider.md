@@ -23,7 +23,7 @@ layout: docs
 
 ▸ **provideBufferElements**(): *DocumentFragment | HTMLElement*
 
-*Defined in [xterm.d.ts:1521](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1521)*
+*Defined in [xterm.d.ts:1563](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1563)*
 
 Provides a document fragment or HTMLElement containing the buffer
 elements.

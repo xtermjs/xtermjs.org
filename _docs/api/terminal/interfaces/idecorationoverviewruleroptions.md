@@ -26,7 +26,7 @@ Overview ruler decoration options
 
 • **color**: *string*
 
-*Defined in [xterm.d.ts:535](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L535)*
+*Defined in [xterm.d.ts:548](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L548)*
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 • **position**? : *"left" | "center" | "right" | "full"*
 
-*Defined in [xterm.d.ts:536](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L536)*
+*Defined in [xterm.d.ts:549](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L549)*

@@ -29,7 +29,6 @@ An object containing options for the terminal.
 * [disableStdin]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-disablestdin)
 * [documentOverride]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-documentoverride)
 * [drawBoldTextInBrightColors]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-drawboldtextinbrightcolors)
-* [fastScrollModifier]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-fastscrollmodifier)
 * [fastScrollSensitivity]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-fastscrollsensitivity)
 * [fontFamily]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-fontfamily)
 * [fontSize]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-fontsize)
@@ -44,10 +43,12 @@ An object containing options for the terminal.
 * [macOptionClickForcesSelection]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-macoptionclickforcesselection)
 * [macOptionIsMeta]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-macoptionismeta)
 * [minimumContrastRatio]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-minimumcontrastratio)
-* [overviewRulerWidth]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-overviewrulerwidth)
+* [overviewRuler]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-overviewruler)
+* [reflowCursorLine]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-reflowcursorline)
 * [rescaleOverlappingGlyphs]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-rescaleoverlappingglyphs)
 * [rightClickSelectsWord]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-rightclickselectsword)
 * [screenReaderMode]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-screenreadermode)
+* [scrollOnEraseInDisplay]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-scrolloneraseindisplay)
 * [scrollOnUserInput]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-scrollonuserinput)
 * [scrollSensitivity]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-scrollsensitivity)
 * [scrollback]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-scrollback)
@@ -55,7 +56,6 @@ An object containing options for the terminal.
 * [tabStopWidth]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-tabstopwidth)
 * [theme]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-theme)
 * [windowOptions]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-windowoptions)
-* [windowsMode]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-windowsmode)
 * [windowsPty]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-windowspty)
 * [wordSeparator]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-wordseparator)
 
@@ -65,7 +65,7 @@ An object containing options for the terminal.
 
 • **allowProposedApi**? : *boolean*
 
-*Defined in [xterm.d.ts:32](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L32)*
+*Defined in [xterm.d.ts:32](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L32)*
 
 Whether to allow the use of proposed API. When false, any usage of APIs
 marked as experimental/proposed will throw an error. The default is
@@ -77,7 +77,7 @@ ___
 
 • **allowTransparency**? : *boolean*
 
-*Defined in [xterm.d.ts:40](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L40)*
+*Defined in [xterm.d.ts:40](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L40)*
 
 Whether background should support non-opaque color. It must be set before
 executing the `Terminal.open()` method and can't be changed later without
@@ -90,7 +90,7 @@ ___
 
 • **altClickMovesCursor**? : *boolean*
 
-*Defined in [xterm.d.ts:46](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L46)*
+*Defined in [xterm.d.ts:46](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L46)*
 
 If enabled, alt + click will move the prompt cursor to position
 underneath the mouse. The default is true.
@@ -101,14 +101,16 @@ ___
 
 • **convertEol**? : *boolean*
 
-*Defined in [xterm.d.ts:56](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L56)*
+*Defined in [xterm.d.ts:58](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L58)*
 
 When enabled the cursor will be set to the beginning of the next line
-with every new line. This is equivalent to sending '\r\n' for each '\n'.
-Normally the termios settings of the underlying PTY deals with the
-translation of '\n' to '\r\n' and this setting should not be used. If you
+with every new line. This is equivalent to sending `\r\n` for each `\n`.
+Normally the settings of the underlying PTY (`termios`) deal with the
+translation of `\n` to `\r\n` and this setting should not be used. If you
 deal with data from a non-PTY related source, this settings might be
 useful.
+
+**`see`** https://pubs.opengroup.org/onlinepubs/007904975/basedefs/termios.h.html
 
 ___
 
@@ -116,7 +118,7 @@ ___
 
 • **cursorBlink**? : *boolean*
 
-*Defined in [xterm.d.ts:61](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L61)*
+*Defined in [xterm.d.ts:63](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L63)*
 
 Whether the cursor blinks.
 
@@ -126,7 +128,7 @@ ___
 
 • **cursorInactiveStyle**? : *"outline" | "block" | "bar" | "underline" | "none"*
 
-*Defined in [xterm.d.ts:76](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L76)*
+*Defined in [xterm.d.ts:78](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L78)*
 
 The style of the cursor when the terminal is not focused.
 
@@ -136,7 +138,7 @@ ___
 
 • **cursorStyle**? : *"block" | "underline" | "bar"*
 
-*Defined in [xterm.d.ts:66](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L66)*
+*Defined in [xterm.d.ts:68](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L68)*
 
 The style of the cursor when the terminal is focused.
 
@@ -146,7 +148,7 @@ ___
 
 • **cursorWidth**? : *number*
 
-*Defined in [xterm.d.ts:71](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L71)*
+*Defined in [xterm.d.ts:73](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L73)*
 
 The width of the cursor in CSS pixels when `cursorStyle` is set to 'bar'.
 
@@ -156,7 +158,7 @@ ___
 
 • **customGlyphs**? : *boolean*
 
-*Defined in [xterm.d.ts:85](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L85)*
+*Defined in [xterm.d.ts:87](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L87)*
 
 Whether to draw custom glyphs for block element and box drawing
 characters instead of using the font. This should typically result in
@@ -170,7 +172,7 @@ ___
 
 • **disableStdin**? : *boolean*
 
-*Defined in [xterm.d.ts:90](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L90)*
+*Defined in [xterm.d.ts:92](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L92)*
 
 Whether input should be disabled.
 
@@ -180,7 +182,7 @@ ___
 
 • **documentOverride**? : *any | null*
 
-*Defined in [xterm.d.ts:101](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L101)*
+*Defined in [xterm.d.ts:103](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L103)*
 
 A {@link Document} to use instead of the one that xterm.js was attached
 to. The purpose of this is to improve support in multi-window
@@ -196,19 +198,9 @@ ___
 
 • **drawBoldTextInBrightColors**? : *boolean*
 
-*Defined in [xterm.d.ts:106](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L106)*
+*Defined in [xterm.d.ts:108](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L108)*
 
 Whether to draw bold text in bright colors. The default is true.
-
-___
-
-### `Optional` fastScrollModifier
-
-• **fastScrollModifier**? : *"none" | "alt" | "ctrl" | "shift"*
-
-*Defined in [xterm.d.ts:111](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L111)*
-
-The modifier key hold to multiply scroll speed.
 
 ___
 
@@ -216,9 +208,9 @@ ___
 
 • **fastScrollSensitivity**? : *number*
 
-*Defined in [xterm.d.ts:116](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L116)*
+*Defined in [xterm.d.ts:113](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L113)*
 
-The scroll speed multiplier used for fast scrolling.
+The scroll speed multiplier used for fast scrolling when `Alt` is held.
 
 ___
 
@@ -226,7 +218,7 @@ ___
 
 • **fontFamily**? : *string*
 
-*Defined in [xterm.d.ts:126](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L126)*
+*Defined in [xterm.d.ts:123](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L123)*
 
 The font family used to render text.
 
@@ -236,7 +228,7 @@ ___
 
 • **fontSize**? : *number*
 
-*Defined in [xterm.d.ts:121](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L121)*
+*Defined in [xterm.d.ts:118](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L118)*
 
 The font size used to render text.
 
@@ -246,7 +238,7 @@ ___
 
 • **fontWeight**? : *[FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)*
 
-*Defined in [xterm.d.ts:131](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L131)*
+*Defined in [xterm.d.ts:128](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L128)*
 
 The font weight used to render non-bold text.
 
@@ -256,7 +248,7 @@ ___
 
 • **fontWeightBold**? : *[FontWeight]({% link _docs/api/terminal/modules/xterm.md %}#fontweight)*
 
-*Defined in [xterm.d.ts:136](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L136)*
+*Defined in [xterm.d.ts:133](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L133)*
 
 The font weight used to render bold text.
 
@@ -266,7 +258,7 @@ ___
 
 • **ignoreBracketedPasteMode**? : *boolean*
 
-*Defined in [xterm.d.ts:143](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L143)*
+*Defined in [xterm.d.ts:140](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L140)*
 
 Whether to ignore the bracketed paste mode. When true, this will always
 paste without the `\x1b[200~` and `\x1b[201~` sequences, even when the
@@ -278,7 +270,7 @@ ___
 
 • **letterSpacing**? : *number*
 
-*Defined in [xterm.d.ts:148](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L148)*
+*Defined in [xterm.d.ts:145](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L145)*
 
 The spacing in whole pixels between characters.
 
@@ -288,7 +280,7 @@ ___
 
 • **lineHeight**? : *number*
 
-*Defined in [xterm.d.ts:153](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L153)*
+*Defined in [xterm.d.ts:150](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L150)*
 
 The line height used to render text.
 
@@ -298,7 +290,7 @@ ___
 
 • **linkHandler**? : *[ILinkHandler]({% link _docs/api/terminal/interfaces/ilinkhandler.md %}) | null*
 
-*Defined in [xterm.d.ts:166](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L166)*
+*Defined in [xterm.d.ts:163](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L163)*
 
 The handler for OSC 8 hyperlinks. Links will use the `confirm` browser
 API with a strongly worded warning if no link handler is set.
@@ -316,7 +308,7 @@ ___
 
 • **logLevel**? : *[LogLevel]({% link _docs/api/terminal/modules/xterm.md %}#loglevel)*
 
-*Defined in [xterm.d.ts:179](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L179)*
+*Defined in [xterm.d.ts:176](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L176)*
 
 What log level to use, this will log for all levels below and including
 what is set:
@@ -334,7 +326,7 @@ ___
 
 • **logger**? : *[ILogger]({% link _docs/api/terminal/interfaces/ilogger.md %}) | null*
 
-*Defined in [xterm.d.ts:184](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L184)*
+*Defined in [xterm.d.ts:181](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L181)*
 
 A logger to use instead of `console`.
 
@@ -344,7 +336,7 @@ ___
 
 • **macOptionClickForcesSelection**? : *boolean*
 
-*Defined in [xterm.d.ts:198](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L198)*
+*Defined in [xterm.d.ts:195](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L195)*
 
 Whether holding a modifier key will force normal selection behavior,
 regardless of whether the terminal is in mouse events mode. This will
@@ -358,7 +350,7 @@ ___
 
 • **macOptionIsMeta**? : *boolean*
 
-*Defined in [xterm.d.ts:189](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L189)*
+*Defined in [xterm.d.ts:186](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L186)*
 
 Whether to treat option as the meta key.
 
@@ -368,7 +360,7 @@ ___
 
 • **minimumContrastRatio**? : *number*
 
-*Defined in [xterm.d.ts:210](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L210)*
+*Defined in [xterm.d.ts:207](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L207)*
 
 The minimum contrast ratio for text in the terminal, setting this will
 change the foreground color dynamically depending on whether the contrast
@@ -381,14 +373,26 @@ ratio is met. Example values:
 
 ___
 
-### `Optional` overviewRulerWidth
+### `Optional` overviewRuler
 
-• **overviewRulerWidth**? : *number*
+• **overviewRuler**? : *[IOverviewRulerOptions]({% link _docs/api/terminal/interfaces/ioverviewruleroptions.md %})*
 
-*Defined in [xterm.d.ts:329](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L329)*
+*Defined in [xterm.d.ts:321](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L321)*
 
-The width, in pixels, of the canvas for the overview ruler. The overview
-ruler will be hidden when not set.
+Controls the visibility and style of the overview ruler which visualizes
+decorations underneath the scroll bar.
+
+___
+
+### `Optional` reflowCursorLine
+
+• **reflowCursorLine**? : *boolean*
+
+*Defined in [xterm.d.ts:214](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L214)*
+
+Whether to reflow the line containing the cursor when the terminal is
+resized. Defaults to false, because shells usually handle this
+themselves.
 
 ___
 
@@ -396,7 +400,7 @@ ___
 
 • **rescaleOverlappingGlyphs**? : *boolean*
 
-*Defined in [xterm.d.ts:227](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L227)*
+*Defined in [xterm.d.ts:231](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L231)*
 
 Whether to rescale glyphs horizontally that are a single cell wide but
 have glyphs that would overlap following cell(s). This typically happens
@@ -418,7 +422,7 @@ ___
 
 • **rightClickSelectsWord**? : *boolean*
 
-*Defined in [xterm.d.ts:233](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L233)*
+*Defined in [xterm.d.ts:237](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L237)*
 
 Whether to select the word under the cursor on right click, this is
 standard behavior in a lot of macOS applications.
@@ -429,7 +433,7 @@ ___
 
 • **screenReaderMode**? : *boolean*
 
-*Defined in [xterm.d.ts:240](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L240)*
+*Defined in [xterm.d.ts:244](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L244)*
 
 Whether screen reader support is enabled. When on this will expose
 supporting elements in the DOM to support NVDA on Windows and VoiceOver
@@ -437,11 +441,23 @@ on macOS.
 
 ___
 
+### `Optional` scrollOnEraseInDisplay
+
+• **scrollOnEraseInDisplay**? : *boolean*
+
+*Defined in [xterm.d.ts:258](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L258)*
+
+If enabled the Erase in Display All (ED2) escape sequence will push
+erased text to scrollback, instead of clearing only the viewport portion.
+This emulates PuTTY's default clear screen behavior.
+
+___
+
 ### `Optional` scrollOnUserInput
 
 • **scrollOnUserInput**? : *boolean*
 
-*Defined in [xterm.d.ts:253](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L253)*
+*Defined in [xterm.d.ts:264](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L264)*
 
 Whether to scroll to the bottom whenever there is some user input. The
 default is true.
@@ -452,7 +468,7 @@ ___
 
 • **scrollSensitivity**? : *number*
 
-*Defined in [xterm.d.ts:258](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L258)*
+*Defined in [xterm.d.ts:269](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L269)*
 
 The scrolling speed multiplier used for adjusting normal scrolling speed.
 
@@ -462,7 +478,7 @@ ___
 
 • **scrollback**? : *number*
 
-*Defined in [xterm.d.ts:247](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L247)*
+*Defined in [xterm.d.ts:251](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L251)*
 
 The amount of scrollback in the terminal. Scrollback is the amount of
 rows that are retained when lines are scrolled beyond the initial
@@ -474,7 +490,7 @@ ___
 
 • **smoothScrollDuration**? : *number*
 
-*Defined in [xterm.d.ts:264](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L264)*
+*Defined in [xterm.d.ts:275](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L275)*
 
 The duration to smoothly scroll between the origin and the target in
 milliseconds. Set to 0 to disable smooth scrolling and scroll instantly.
@@ -485,7 +501,7 @@ ___
 
 • **tabStopWidth**? : *number*
 
-*Defined in [xterm.d.ts:269](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L269)*
+*Defined in [xterm.d.ts:280](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L280)*
 
 The size of tab stops in the terminal.
 
@@ -495,7 +511,7 @@ ___
 
 • **theme**? : *[ITheme]({% link _docs/api/terminal/interfaces/itheme.md %})*
 
-*Defined in [xterm.d.ts:274](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L274)*
+*Defined in [xterm.d.ts:285](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L285)*
 
 The color theme of the terminal.
 
@@ -505,34 +521,10 @@ ___
 
 • **windowOptions**? : *[IWindowOptions]({% link _docs/api/terminal/interfaces/iwindowoptions.md %})*
 
-*Defined in [xterm.d.ts:323](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L323)*
+*Defined in [xterm.d.ts:315](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L315)*
 
 Enable various window manipulation and report features.
 All features are disabled by default for security reasons.
-
-___
-
-### `Optional` windowsMode
-
-• **windowsMode**? : *boolean*
-
-*Defined in [xterm.d.ts:293](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L293)*
-
-Whether "Windows mode" is enabled. Because Windows backends winpty and
-conpty operate by doing line wrapping on their side, xterm.js does not
-have access to wrapped lines. When Windows mode is enabled the following
-changes will be in effect:
-
-- Reflow is disabled.
-- Lines are assumed to be wrapped if the last character of the line is
-  not whitespace.
-
-When using conpty on Windows 11 version >= 21376, it is recommended to
-disable this because native text wrapping sequences are output correctly
-thanks to https://github.com/microsoft/terminal/issues/405
-
-**`deprecated`** Use [windowsPty]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-windowspty). This value will be ignored if
-windowsPty is set.
 
 ___
 
@@ -540,7 +532,7 @@ ___
 
 • **windowsPty**? : *[IWindowsPty]({% link _docs/api/terminal/interfaces/iwindowspty.md %})*
 
-*Defined in [xterm.d.ts:311](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L311)*
+*Defined in [xterm.d.ts:303](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L303)*
 
 Compatibility information when the pty is known to be hosted on Windows.
 Setting this will turn on certain heuristics/workarounds depending on the
@@ -563,7 +555,7 @@ ___
 
 • **wordSeparator**? : *string*
 
-*Defined in [xterm.d.ts:317](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L317)*
+*Defined in [xterm.d.ts:309](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L309)*
 
 A string containing all characters that are considered word separated by
 the double click to select work logic.

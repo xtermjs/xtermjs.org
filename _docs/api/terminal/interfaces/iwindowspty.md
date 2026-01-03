@@ -26,7 +26,7 @@ Pty information for Windows.
 
 • **backend**? : *"conpty" | "winpty"*
 
-*Defined in [xterm.d.ts:412](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L412)*
+*Defined in [xterm.d.ts:425](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L425)*
 
 What pty emulation backend is being used.
 
@@ -36,6 +36,6 @@ ___
 
 • **buildNumber**? : *number*
 
-*Defined in [xterm.d.ts:416](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L416)*
+*Defined in [xterm.d.ts:429](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L429)*
 
 The Windows build version (eg. 19045)

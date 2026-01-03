@@ -34,7 +34,7 @@ A link within the terminal.
 
 • **decorations**? : *[ILinkDecorations]({% link _docs/api/terminal/interfaces/ilinkdecorations.md %})*
 
-*Defined in [xterm.d.ts:1381](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1381)*
+*Defined in [xterm.d.ts:1423](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1423)*
 
 What link decorations to show when hovering the link, this property is
 tracked and changes made after the link is provided will trigger changes.
@@ -46,7 +46,7 @@ ___
 
 • **range**: *[IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %})*
 
-*Defined in [xterm.d.ts:1369](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1369)*
+*Defined in [xterm.d.ts:1411](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1411)*
 
 The buffer range of the link.
 
@@ -56,7 +56,7 @@ ___
 
 • **text**: *string*
 
-*Defined in [xterm.d.ts:1374](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1374)*
+*Defined in [xterm.d.ts:1416](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1416)*
 
 The text of the link.
 
@@ -66,7 +66,7 @@ The text of the link.
 
 ▸ **activate**(`event`: MouseEvent, `text`: string): *void*
 
-*Defined in [xterm.d.ts:1388](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1388)*
+*Defined in [xterm.d.ts:1430](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1430)*
 
 Calls when the link is activated.
 
@@ -85,7 +85,7 @@ ___
 
 ▸ **dispose**(): *void*
 
-*Defined in [xterm.d.ts:1410](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1410)*
+*Defined in [xterm.d.ts:1452](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1452)*
 
 Called when the link is released and no longer used by xterm.js.
 
@@ -97,7 +97,7 @@ ___
 
 ▸ **hover**(`event`: MouseEvent, `text`: string): *void*
 
-*Defined in [xterm.d.ts:1398](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1398)*
+*Defined in [xterm.d.ts:1440](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1440)*
 
 Called when the mouse hovers the link. To use this to create a DOM-based
 hover tooltip, create the hover element within `Terminal.element` and add
@@ -119,7 +119,7 @@ ___
 
 ▸ **leave**(`event`: MouseEvent, `text`: string): *void*
 
-*Defined in [xterm.d.ts:1405](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1405)*
+*Defined in [xterm.d.ts:1447](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1447)*
 
 Called when the mouse leaves the link.
 

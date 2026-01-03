@@ -36,7 +36,7 @@ be part of a larger wrapped line.
 
 • **id**: *number*
 
-*Defined in [xterm.d.ts:474](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L474)*
+*Defined in [xterm.d.ts:487](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L487)*
 
 A unique identifier for this marker.
 
@@ -48,7 +48,7 @@ ___
 
 *Inherited from [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %}).[isDisposed]({% link _docs/api/terminal/interfaces/imarker.md %}#readonly-isdisposed)*
 
-*Defined in [xterm.d.ts:495](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L495)*
+*Defined in [xterm.d.ts:508](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L508)*
 
 Whether this is disposed.
 
@@ -58,7 +58,7 @@ ___
 
 • **line**: *number*
 
-*Defined in [xterm.d.ts:480](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L480)*
+*Defined in [xterm.d.ts:493](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L493)*
 
 The actual line index in the buffer at this point in time. This is set to
 -1 if the marker has been disposed.
@@ -71,7 +71,7 @@ ___
 
 *Inherited from [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %}).[onDispose]({% link _docs/api/terminal/interfaces/imarker.md %}#ondispose)*
 
-*Defined in [xterm.d.ts:490](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L490)*
+*Defined in [xterm.d.ts:503](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L503)*
 
 Event listener to get notified when this gets disposed.
 
@@ -83,6 +83,6 @@ Event listener to get notified when this gets disposed.
 
 *Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
-*Defined in [xterm.d.ts:454](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L454)*
+*Defined in [xterm.d.ts:467](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L467)*
 
 **Returns:** *void*

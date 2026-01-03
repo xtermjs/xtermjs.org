@@ -25,7 +25,7 @@ A custom link provider.
 
 ▸ **provideLinks**(`bufferLineNumber`: number, `callback`: function): *void*
 
-*Defined in [xterm.d.ts:1359](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1359)*
+*Defined in [xterm.d.ts:1401](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1401)*
 
 Provides a link a buffer position
 

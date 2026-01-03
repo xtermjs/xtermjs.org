@@ -35,7 +35,11 @@ Contains colors to theme the terminal with.
 * [foreground]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-foreground)
 * [green]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-green)
 * [magenta]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-magenta)
+* [overviewRulerBorder]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-overviewrulerborder)
 * [red]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-red)
+* [scrollbarSliderActiveBackground]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-scrollbarslideractivebackground)
+* [scrollbarSliderBackground]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-scrollbarsliderbackground)
+* [scrollbarSliderHoverBackground]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-scrollbarsliderhoverbackground)
 * [selectionBackground]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-selectionbackground)
 * [selectionForeground]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-selectionforeground)
 * [selectionInactiveBackground]({% link _docs/api/terminal/interfaces/itheme.md %}#optional-selectioninactivebackground)
@@ -48,7 +52,7 @@ Contains colors to theme the terminal with.
 
 • **background**? : *string*
 
-*Defined in [xterm.d.ts:355](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L355)*
+*Defined in [xterm.d.ts:347](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L347)*
 
 The default background color
 
@@ -58,7 +62,7 @@ ___
 
 • **black**? : *string*
 
-*Defined in [xterm.d.ts:370](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L370)*
+*Defined in [xterm.d.ts:383](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L383)*
 
 ANSI black (eg. `\x1b[30m`)
 
@@ -68,7 +72,7 @@ ___
 
 • **blue**? : *string*
 
-*Defined in [xterm.d.ts:378](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L378)*
+*Defined in [xterm.d.ts:391](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L391)*
 
 ANSI blue (eg. `\x1b[34m`)
 
@@ -78,7 +82,7 @@ ___
 
 • **brightBlack**? : *string*
 
-*Defined in [xterm.d.ts:386](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L386)*
+*Defined in [xterm.d.ts:399](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L399)*
 
 ANSI bright black (eg. `\x1b[1;30m`)
 
@@ -88,7 +92,7 @@ ___
 
 • **brightBlue**? : *string*
 
-*Defined in [xterm.d.ts:394](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L394)*
+*Defined in [xterm.d.ts:407](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L407)*
 
 ANSI bright blue (eg. `\x1b[1;34m`)
 
@@ -98,7 +102,7 @@ ___
 
 • **brightCyan**? : *string*
 
-*Defined in [xterm.d.ts:398](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L398)*
+*Defined in [xterm.d.ts:411](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L411)*
 
 ANSI bright cyan (eg. `\x1b[1;36m`)
 
@@ -108,7 +112,7 @@ ___
 
 • **brightGreen**? : *string*
 
-*Defined in [xterm.d.ts:390](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L390)*
+*Defined in [xterm.d.ts:403](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L403)*
 
 ANSI bright green (eg. `\x1b[1;32m`)
 
@@ -118,7 +122,7 @@ ___
 
 • **brightMagenta**? : *string*
 
-*Defined in [xterm.d.ts:396](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L396)*
+*Defined in [xterm.d.ts:409](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L409)*
 
 ANSI bright magenta (eg. `\x1b[1;35m`)
 
@@ -128,7 +132,7 @@ ___
 
 • **brightRed**? : *string*
 
-*Defined in [xterm.d.ts:388](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L388)*
+*Defined in [xterm.d.ts:401](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L401)*
 
 ANSI bright red (eg. `\x1b[1;31m`)
 
@@ -138,7 +142,7 @@ ___
 
 • **brightWhite**? : *string*
 
-*Defined in [xterm.d.ts:400](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L400)*
+*Defined in [xterm.d.ts:413](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L413)*
 
 ANSI bright white (eg. `\x1b[1;37m`)
 
@@ -148,7 +152,7 @@ ___
 
 • **brightYellow**? : *string*
 
-*Defined in [xterm.d.ts:392](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L392)*
+*Defined in [xterm.d.ts:405](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L405)*
 
 ANSI bright yellow (eg. `\x1b[1;33m`)
 
@@ -158,7 +162,7 @@ ___
 
 • **cursor**? : *string*
 
-*Defined in [xterm.d.ts:357](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L357)*
+*Defined in [xterm.d.ts:349](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L349)*
 
 The cursor color
 
@@ -168,7 +172,7 @@ ___
 
 • **cursorAccent**? : *string*
 
-*Defined in [xterm.d.ts:359](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L359)*
+*Defined in [xterm.d.ts:351](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L351)*
 
 The accent color of the cursor (fg color for a block cursor)
 
@@ -178,7 +182,7 @@ ___
 
 • **cyan**? : *string*
 
-*Defined in [xterm.d.ts:382](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L382)*
+*Defined in [xterm.d.ts:395](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L395)*
 
 ANSI cyan (eg. `\x1b[36m`)
 
@@ -188,7 +192,7 @@ ___
 
 • **extendedAnsi**? : *string[]*
 
-*Defined in [xterm.d.ts:402](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L402)*
+*Defined in [xterm.d.ts:415](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L415)*
 
 ANSI extended colors (16-255)
 
@@ -198,7 +202,7 @@ ___
 
 • **foreground**? : *string*
 
-*Defined in [xterm.d.ts:353](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L353)*
+*Defined in [xterm.d.ts:345](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L345)*
 
 The default foreground color
 
@@ -208,7 +212,7 @@ ___
 
 • **green**? : *string*
 
-*Defined in [xterm.d.ts:374](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L374)*
+*Defined in [xterm.d.ts:387](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L387)*
 
 ANSI green (eg. `\x1b[32m`)
 
@@ -218,9 +222,21 @@ ___
 
 • **magenta**? : *string*
 
-*Defined in [xterm.d.ts:380](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L380)*
+*Defined in [xterm.d.ts:393](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L393)*
 
 ANSI magenta (eg. `\x1b[35m`)
+
+___
+
+### `Optional` overviewRulerBorder
+
+• **overviewRulerBorder**? : *string*
+
+*Defined in [xterm.d.ts:381](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L381)*
+
+The border color of the overview ruler. This visually separates the
+terminal from the scroll bar when [IOverviewRulerOptions.width]({% link _docs/api/terminal/interfaces/ioverviewruleroptions.md %}#optional-width) is
+set. When this is not set it defaults to black (`#000000`).
 
 ___
 
@@ -228,9 +244,42 @@ ___
 
 • **red**? : *string*
 
-*Defined in [xterm.d.ts:372](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L372)*
+*Defined in [xterm.d.ts:385](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L385)*
 
 ANSI red (eg. `\x1b[31m`)
+
+___
+
+### `Optional` scrollbarSliderActiveBackground
+
+• **scrollbarSliderActiveBackground**? : *string*
+
+*Defined in [xterm.d.ts:375](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L375)*
+
+The scrollbar slider background color when clicked. Defaults to
+{@link ITerminalOptions.foreground foreground} with 50% opacity.
+
+___
+
+### `Optional` scrollbarSliderBackground
+
+• **scrollbarSliderBackground**? : *string*
+
+*Defined in [xterm.d.ts:365](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L365)*
+
+The scrollbar slider background color. Defaults to
+{@link ITerminalOptions.foreground foreground} with 20% opacity.
+
+___
+
+### `Optional` scrollbarSliderHoverBackground
+
+• **scrollbarSliderHoverBackground**? : *string*
+
+*Defined in [xterm.d.ts:370](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L370)*
+
+The scrollbar slider background color when hovered. Defaults to
+{@link ITerminalOptions.foreground foreground} with 40% opacity.
 
 ___
 
@@ -238,7 +287,7 @@ ___
 
 • **selectionBackground**? : *string*
 
-*Defined in [xterm.d.ts:361](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L361)*
+*Defined in [xterm.d.ts:353](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L353)*
 
 The selection background color (can be transparent)
 
@@ -248,7 +297,7 @@ ___
 
 • **selectionForeground**? : *string*
 
-*Defined in [xterm.d.ts:363](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L363)*
+*Defined in [xterm.d.ts:355](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L355)*
 
 The selection foreground color
 
@@ -258,7 +307,7 @@ ___
 
 • **selectionInactiveBackground**? : *string*
 
-*Defined in [xterm.d.ts:368](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L368)*
+*Defined in [xterm.d.ts:360](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L360)*
 
 The selection background color when the terminal does not have focus (can
 be transparent)
@@ -269,7 +318,7 @@ ___
 
 • **white**? : *string*
 
-*Defined in [xterm.d.ts:384](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L384)*
+*Defined in [xterm.d.ts:397](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L397)*
 
 ANSI white (eg. `\x1b[37m`)
 
@@ -279,6 +328,6 @@ ___
 
 • **yellow**? : *string*
 
-*Defined in [xterm.d.ts:376](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L376)*
+*Defined in [xterm.d.ts:389](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L389)*
 
 ANSI yellow (eg. `\x1b[33m`)

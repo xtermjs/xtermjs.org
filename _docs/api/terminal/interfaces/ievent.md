@@ -23,7 +23,7 @@ An event that can be listened to.
 
 ▸ (`listener`: function): *[IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %})*
 
-*Defined in [xterm.d.ts:461](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L461)*
+*Defined in [xterm.d.ts:474](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L474)*
 
 An event that can be listened to.
 

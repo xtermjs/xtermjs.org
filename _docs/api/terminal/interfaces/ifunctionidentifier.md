@@ -50,7 +50,7 @@ Notes: OSC command registration is handled differently (see addOscHandler)
 
 • **final**: *string*
 
-*Defined in [xterm.d.ts:1740](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1740)*
+*Defined in [xterm.d.ts:1782](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1782)*
 
 Final byte, must be in range \x40 .. \x7e for CSI and DCS,
 \x30 .. \x7e for ESC.
@@ -61,7 +61,7 @@ ___
 
 • **intermediates**? : *string*
 
-*Defined in [xterm.d.ts:1735](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1735)*
+*Defined in [xterm.d.ts:1777](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1777)*
 
 Optional intermediate bytes, must be in range \x20 .. \x2f.
 Usable in CSI, DCS and ESC.
@@ -72,7 +72,7 @@ ___
 
 • **prefix**? : *string*
 
-*Defined in [xterm.d.ts:1730](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1730)*
+*Defined in [xterm.d.ts:1772](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1772)*
 
 Optional prefix byte, must be in range \x3c .. \x3f.
 Usable in CSI and DCS.

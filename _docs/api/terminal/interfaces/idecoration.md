@@ -37,7 +37,7 @@ particular marker and DOM element.
 
 • **element**: *HTMLElement | undefined*
 
-*Defined in [xterm.d.ts:520](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L520)*
+*Defined in [xterm.d.ts:533](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L533)*
 
 The element that the decoration is rendered to. This will be undefined
 until it is rendered for the first time by [IDecoration.onRender]({% link _docs/api/terminal/interfaces/idecoration.md %}#readonly-onrender).
@@ -51,7 +51,7 @@ ___
 
 *Inherited from [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %}).[isDisposed]({% link _docs/api/terminal/interfaces/imarker.md %}#readonly-isdisposed)*
 
-*Defined in [xterm.d.ts:495](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L495)*
+*Defined in [xterm.d.ts:508](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L508)*
 
 Whether this is disposed.
 
@@ -61,7 +61,7 @@ ___
 
 • **marker**: *[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})*
 
-*Defined in [xterm.d.ts:506](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L506)*
+*Defined in [xterm.d.ts:519](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L519)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 *Inherited from [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %}).[onDispose]({% link _docs/api/terminal/interfaces/imarker.md %}#ondispose)*
 
-*Defined in [xterm.d.ts:490](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L490)*
+*Defined in [xterm.d.ts:503](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L503)*
 
 Event listener to get notified when this gets disposed.
 
@@ -81,7 +81,7 @@ ___
 
 • **onRender**: *[IEvent]({% link _docs/api/terminal/interfaces/ievent.md %})‹HTMLElement›*
 
-*Defined in [xterm.d.ts:513](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L513)*
+*Defined in [xterm.d.ts:526](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L526)*
 
 An event fired when the decoration
 is rendered, returns the dom element
@@ -93,7 +93,7 @@ ___
 
 • **options**: *Pick‹[IDecorationOptions]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}), "overviewRulerOptions"›*
 
-*Defined in [xterm.d.ts:527](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L527)*
+*Defined in [xterm.d.ts:540](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L540)*
 
 The options for the overview ruler that can be updated. This will only
 take effect when [IDecorationOptions.overviewRulerOptions]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#optional-overviewruleroptions) were
@@ -107,6 +107,6 @@ provided initially.
 
 *Inherited from [IDisposable]({% link _docs/api/terminal/interfaces/idisposable.md %}).[dispose]({% link _docs/api/terminal/interfaces/idisposable.md %}#dispose)*
 
-*Defined in [xterm.d.ts:454](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L454)*
+*Defined in [xterm.d.ts:467](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L467)*
 
 **Returns:** *void*

@@ -29,7 +29,7 @@ A replacement logger for `console`.
 
 ▸ **debug**(`message`: string, ...`args`: any[]): *void*
 
-*Defined in [xterm.d.ts:432](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L432)*
+*Defined in [xterm.d.ts:445](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L445)*
 
 Log a debug message, this will only be called if
 [ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-loglevel) is set to debug or below.
@@ -49,7 +49,7 @@ ___
 
 ▸ **error**(`message`: string | Error, ...`args`: any[]): *void*
 
-*Defined in [xterm.d.ts:447](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L447)*
+*Defined in [xterm.d.ts:460](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L460)*
 
 Log a debug message, this will only be called if
 [ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-loglevel) is set to error or below.
@@ -69,7 +69,7 @@ ___
 
 ▸ **info**(`message`: string, ...`args`: any[]): *void*
 
-*Defined in [xterm.d.ts:437](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L437)*
+*Defined in [xterm.d.ts:450](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L450)*
 
 Log a debug message, this will only be called if
 [ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-loglevel) is set to info or below.
@@ -89,7 +89,7 @@ ___
 
 ▸ **trace**(`message`: string, ...`args`: any[]): *void*
 
-*Defined in [xterm.d.ts:427](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L427)*
+*Defined in [xterm.d.ts:440](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L440)*
 
 Log a trace message, this will only be called if
 [ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-loglevel) is set to trace.
@@ -109,7 +109,7 @@ ___
 
 ▸ **warn**(`message`: string, ...`args`: any[]): *void*
 
-*Defined in [xterm.d.ts:442](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L442)*
+*Defined in [xterm.d.ts:455](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L455)*
 
 Log a debug message, this will only be called if
 [ITerminalOptions.logLevel]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-loglevel) is set to warn or below.

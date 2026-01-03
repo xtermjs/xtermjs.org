@@ -30,7 +30,7 @@ layout: docs
 
 • **activeVersion**: *string*
 
-*Defined in [xterm.d.ts:1859](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1859)*
+*Defined in [xterm.d.ts:1901](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1901)*
 
 Getter/setter for active Unicode version.
 
@@ -40,7 +40,7 @@ ___
 
 • **versions**: *ReadonlyArray‹string›*
 
-*Defined in [xterm.d.ts:1854](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1854)*
+*Defined in [xterm.d.ts:1896](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1896)*
 
 Registered Unicode versions.
 
@@ -50,7 +50,7 @@ Registered Unicode versions.
 
 ▸ **register**(`provider`: [IUnicodeVersionProvider]({% link _docs/api/terminal/interfaces/iunicodeversionprovider.md %})): *void*
 
-*Defined in [xterm.d.ts:1849](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1849)*
+*Defined in [xterm.d.ts:1891](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1891)*
 
 Register a custom Unicode version provider.
 

@@ -70,7 +70,7 @@ guarded by the boolean flag and disabled by default.
 
 • **fullscreenWin**? : *boolean*
 
-*Defined in [xterm.d.ts:707](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L707)*
+*Defined in [xterm.d.ts:739](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L739)*
 
 Ps=10 ; 0  Undo full-screen mode.
 Ps=10 ; 1  Change to full-screen.
@@ -83,7 +83,7 @@ ___
 
 • **getCellSizePixels**? : *boolean*
 
-*Defined in [xterm.d.ts:735](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L735)*
+*Defined in [xterm.d.ts:767](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L767)*
 
 Ps=16  Report xterm character cell size in pixels. Result is "CSI 6 ; height ; width t".
 Has a default implementation.
@@ -94,7 +94,7 @@ ___
 
 • **getIconTitle**? : *boolean*
 
-*Defined in [xterm.d.ts:750](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L750)*
+*Defined in [xterm.d.ts:782](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L782)*
 
 Ps=20  Report xterm window's icon label. Result is "OSC L label ST".
 No default implementation.
@@ -105,7 +105,7 @@ ___
 
 • **getScreenSizeChars**? : *boolean*
 
-*Defined in [xterm.d.ts:745](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L745)*
+*Defined in [xterm.d.ts:777](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L777)*
 
 Ps=19  Report the size of the screen in characters. Result is "CSI 9 ; height ; width t".
 No default implementation.
@@ -116,7 +116,7 @@ ___
 
 • **getScreenSizePixels**? : *boolean*
 
-*Defined in [xterm.d.ts:730](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L730)*
+*Defined in [xterm.d.ts:762](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L762)*
 
 Ps=15    Report size of the screen in pixels. Result is "CSI 5 ; height ; width t".
 No default implementation.
@@ -127,7 +127,7 @@ ___
 
 • **getWinPosition**? : *boolean*
 
-*Defined in [xterm.d.ts:719](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L719)*
+*Defined in [xterm.d.ts:751](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L751)*
 
 Ps=13      Report xterm window position. Result is "CSI 3 ; x ; y t".
 Ps=13 ; 2  Report xterm text-area position. Result is "CSI 3 ; x ; y t".
@@ -139,7 +139,7 @@ ___
 
 • **getWinSizeChars**? : *boolean*
 
-*Defined in [xterm.d.ts:740](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L740)*
+*Defined in [xterm.d.ts:772](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L772)*
 
 Ps=18  Report the size of the text area in characters. Result is "CSI 8 ; height ; width t".
 Has a default implementation.
@@ -150,7 +150,7 @@ ___
 
 • **getWinSizePixels**? : *boolean*
 
-*Defined in [xterm.d.ts:725](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L725)*
+*Defined in [xterm.d.ts:757](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L757)*
 
 Ps=14      Report xterm text area size in pixels. Result is "CSI 4 ; height ; width t".
 Ps=14 ; 2  Report xterm window size in pixels. Result is "CSI  4 ; height ; width t".
@@ -162,7 +162,7 @@ ___
 
 • **getWinState**? : *boolean*
 
-*Defined in [xterm.d.ts:713](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L713)*
+*Defined in [xterm.d.ts:745](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L745)*
 
 Ps=11   Report xterm window state.
 If the xterm window is non-iconified, it returns "CSI 1 t".
@@ -175,7 +175,7 @@ ___
 
 • **getWinTitle**? : *boolean*
 
-*Defined in [xterm.d.ts:755](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L755)*
+*Defined in [xterm.d.ts:787](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L787)*
 
 Ps=21  Report xterm window's title. Result is "OSC l label ST".
 No default implementation.
@@ -186,7 +186,7 @@ ___
 
 • **lowerWin**? : *boolean*
 
-*Defined in [xterm.d.ts:682](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L682)*
+*Defined in [xterm.d.ts:714](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L714)*
 
 Ps=6    Lower the xterm window to the bottom of the stacking order.
 No default implementation.
@@ -197,7 +197,7 @@ ___
 
 • **maximizeWin**? : *boolean*
 
-*Defined in [xterm.d.ts:700](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L700)*
+*Defined in [xterm.d.ts:732](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L732)*
 
 Ps=9 ; 0   Restore maximized window.
 Ps=9 ; 1   Maximize window (i.e., resize to screen size).
@@ -211,7 +211,7 @@ ___
 
 • **minimizeWin**? : *boolean*
 
-*Defined in [xterm.d.ts:658](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L658)*
+*Defined in [xterm.d.ts:690](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L690)*
 
 Ps=2    Iconify window.
 No default implementation.
@@ -222,7 +222,7 @@ ___
 
 • **popTitle**? : *boolean*
 
-*Defined in [xterm.d.ts:769](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L769)*
+*Defined in [xterm.d.ts:801](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L801)*
 
 Ps=23 ; 0  Restore xterm icon and window title from stack.
 Ps=23 ; 1  Restore xterm icon title from stack.
@@ -235,7 +235,7 @@ ___
 
 • **pushTitle**? : *boolean*
 
-*Defined in [xterm.d.ts:762](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L762)*
+*Defined in [xterm.d.ts:794](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L794)*
 
 Ps=22 ; 0  Save xterm icon and window title on stack.
 Ps=22 ; 1  Save xterm icon title on stack.
@@ -248,7 +248,7 @@ ___
 
 • **raiseWin**? : *boolean*
 
-*Defined in [xterm.d.ts:677](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L677)*
+*Defined in [xterm.d.ts:709](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L709)*
 
 Ps=5    Raise the window to the front of the stacking order.
 No default implementation.
@@ -259,7 +259,7 @@ ___
 
 • **refreshWin**? : *boolean*
 
-*Defined in [xterm.d.ts:684](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L684)*
+*Defined in [xterm.d.ts:716](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L716)*
 
 Ps=7    Refresh the window.
 
@@ -269,7 +269,7 @@ ___
 
 • **restoreWin**? : *boolean*
 
-*Defined in [xterm.d.ts:653](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L653)*
+*Defined in [xterm.d.ts:685](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L685)*
 
 Ps=1    De-iconify window.
 No default implementation.
@@ -280,7 +280,7 @@ ___
 
 • **setWinLines**? : *boolean*
 
-*Defined in [xterm.d.ts:775](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L775)*
+*Defined in [xterm.d.ts:807](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L807)*
 
 Ps>=24  Resize to Ps lines (DECSLPP).
 DECSLPP is not implemented. This settings is also used to
@@ -292,7 +292,7 @@ ___
 
 • **setWinPosition**? : *boolean*
 
-*Defined in [xterm.d.ts:664](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L664)*
+*Defined in [xterm.d.ts:696](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L696)*
 
 Ps=3 ; x ; y
 Move window to [x, y].
@@ -304,7 +304,7 @@ ___
 
 • **setWinSizeChars**? : *boolean*
 
-*Defined in [xterm.d.ts:692](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L692)*
+*Defined in [xterm.d.ts:724](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L724)*
 
 Ps = 8 ; height ; width
 Resize the text area to given height and width in characters.
@@ -318,7 +318,7 @@ ___
 
 • **setWinSizePixels**? : *boolean*
 
-*Defined in [xterm.d.ts:672](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L672)*
+*Defined in [xterm.d.ts:704](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L704)*
 
 Ps = 4 ; height ; width
 Resize the window to given `height` and `width` in pixels.

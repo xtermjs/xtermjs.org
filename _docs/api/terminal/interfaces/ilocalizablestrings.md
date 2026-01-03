@@ -26,7 +26,7 @@ The set of localizable strings.
 
 • **promptLabel**: *string*
 
-*Defined in [xterm.d.ts:612](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L612)*
+*Defined in [xterm.d.ts:622](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L622)*
 
 The aria label for the underlying input textarea for the terminal.
 
@@ -36,7 +36,7 @@ ___
 
 • **tooMuchOutput**: *string*
 
-*Defined in [xterm.d.ts:618](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L618)*
+*Defined in [xterm.d.ts:628](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L628)*
 
 Announcement for when line reading is suppressed due to too many lines
 being printed to the terminal when `screenReaderMode` is enabled.

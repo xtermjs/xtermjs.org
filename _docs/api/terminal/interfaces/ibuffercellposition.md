@@ -26,7 +26,7 @@ A position within a buffer.
 
 • **x**: *number*
 
-*Defined in [xterm.d.ts:1450](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1450)*
+*Defined in [xterm.d.ts:1492](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1492)*
 
 The x position within the buffer (1-based).
 
@@ -36,6 +36,6 @@ ___
 
 • **y**: *number*
 
-*Defined in [xterm.d.ts:1455](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1455)*
+*Defined in [xterm.d.ts:1497](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1497)*
 
 The y position within the buffer (1-based).

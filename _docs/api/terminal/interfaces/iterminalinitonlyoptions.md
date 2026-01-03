@@ -27,7 +27,7 @@ set on start up.
 
 • **cols**? : *number*
 
-*Defined in [xterm.d.ts:340](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L340)*
+*Defined in [xterm.d.ts:332](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L332)*
 
 The number of columns in the terminal.
 
@@ -37,6 +37,6 @@ ___
 
 • **rows**? : *number*
 
-*Defined in [xterm.d.ts:345](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L345)*
+*Defined in [xterm.d.ts:337](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L337)*
 
 The number of rows in the terminal.

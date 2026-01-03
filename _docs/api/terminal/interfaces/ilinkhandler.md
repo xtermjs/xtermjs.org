@@ -31,7 +31,7 @@ A link handler for OSC 8 hyperlinks.
 
 • **allowNonHttpProtocols**? : *boolean*
 
-*Defined in [xterm.d.ts:1345](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1345)*
+*Defined in [xterm.d.ts:1387](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1387)*
 
 Whether to receive non-HTTP URLs from LinkProvider. When false, any
 usage of non-HTTP URLs will be ignored. Enabling this option without
@@ -44,7 +44,7 @@ as XSS.
 
 ▸ **activate**(`event`: MouseEvent, `text`: string, `range`: [IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %})): *void*
 
-*Defined in [xterm.d.ts:1318](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1318)*
+*Defined in [xterm.d.ts:1360](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1360)*
 
 Calls when the link is activated.
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **hover**(`event`: MouseEvent, `text`: string, `range`: [IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %})): *void*
 
-*Defined in [xterm.d.ts:1329](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1329)*
+*Defined in [xterm.d.ts:1371](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1371)*
 
 Called when the mouse hovers the link. To use this to create a DOM-based
 hover tooltip, create the hover element within `Terminal.element` and
@@ -87,7 +87,7 @@ ___
 
 ▸ **leave**(`event`: MouseEvent, `text`: string, `range`: [IBufferRange]({% link _docs/api/terminal/interfaces/ibufferrange.md %})): *void*
 
-*Defined in [xterm.d.ts:1337](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1337)*
+*Defined in [xterm.d.ts:1379](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1379)*
 
 Called when the mouse leaves the link.
 

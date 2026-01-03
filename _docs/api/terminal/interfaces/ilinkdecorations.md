@@ -26,7 +26,7 @@ A set of decorations that can be applied to links.
 
 • **pointerCursor**: *boolean*
 
-*Defined in [xterm.d.ts:1420](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1420)*
+*Defined in [xterm.d.ts:1462](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1462)*
 
 Whether the cursor is set to pointer.
 
@@ -36,6 +36,6 @@ ___
 
 • **underline**: *boolean*
 
-*Defined in [xterm.d.ts:1425](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1425)*
+*Defined in [xterm.d.ts:1467](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1467)*
 
 Whether the underline is visible

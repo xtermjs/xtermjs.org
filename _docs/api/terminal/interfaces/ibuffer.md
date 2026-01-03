@@ -35,7 +35,7 @@ Represents a terminal buffer.
 
 • **baseY**: *number*
 
-*Defined in [xterm.d.ts:1489](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1489)*
+*Defined in [xterm.d.ts:1531](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1531)*
 
 The line within the buffer where the top of the bottom page is (when
 fully scrolled down).
@@ -46,7 +46,7 @@ ___
 
 • **cursorX**: *number*
 
-*Defined in [xterm.d.ts:1478](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1478)*
+*Defined in [xterm.d.ts:1520](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1520)*
 
 The x position of the cursor. This ranges between `0` (left side) and
 `Terminal.cols` (after last cell of the row).
@@ -57,7 +57,7 @@ ___
 
 • **cursorY**: *number*
 
-*Defined in [xterm.d.ts:1472](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1472)*
+*Defined in [xterm.d.ts:1514](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1514)*
 
 The y position of the cursor. This ranges between `0` (when the
 cursor is at baseY) and `Terminal.rows - 1` (when the cursor is on the
@@ -69,7 +69,7 @@ ___
 
 • **length**: *number*
 
-*Defined in [xterm.d.ts:1494](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1494)*
+*Defined in [xterm.d.ts:1536](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1536)*
 
 The amount of lines in the buffer.
 
@@ -79,7 +79,7 @@ ___
 
 • **type**: *"normal" | "alternate"*
 
-*Defined in [xterm.d.ts:1465](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1465)*
+*Defined in [xterm.d.ts:1507](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1507)*
 
 The type of the buffer.
 
@@ -89,7 +89,7 @@ ___
 
 • **viewportY**: *number*
 
-*Defined in [xterm.d.ts:1483](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1483)*
+*Defined in [xterm.d.ts:1525](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1525)*
 
 The line within the buffer where the top of the viewport is.
 
@@ -99,7 +99,7 @@ The line within the buffer where the top of the viewport is.
 
 ▸ **getLine**(`y`: number): *[IBufferLine]({% link _docs/api/terminal/interfaces/ibufferline.md %}) | undefined*
 
-*Defined in [xterm.d.ts:1506](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1506)*
+*Defined in [xterm.d.ts:1548](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1548)*
 
 Gets a line from the buffer, or undefined if the line index does not
 exist.
@@ -122,7 +122,7 @@ ___
 
 ▸ **getNullCell**(): *[IBufferCell]({% link _docs/api/terminal/interfaces/ibuffercell.md %})*
 
-*Defined in [xterm.d.ts:1513](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1513)*
+*Defined in [xterm.d.ts:1555](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1555)*
 
 Creates an empty cell object suitable as a cell reference in
 `line.getCell(x, cell)`. Use this to avoid costly recreation of

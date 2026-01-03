@@ -44,6 +44,7 @@ to be stable and consumed by external programs.
 * [ILogger]({% link _docs/api/terminal/interfaces/ilogger.md %})
 * [IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})
 * [IModes]({% link _docs/api/terminal/interfaces/imodes.md %})
+* [IOverviewRulerOptions]({% link _docs/api/terminal/interfaces/ioverviewruleroptions.md %})
 * [IParser]({% link _docs/api/terminal/interfaces/iparser.md %})
 * [ITerminalAddon]({% link _docs/api/terminal/interfaces/iterminaladdon.md %})
 * [ITerminalInitOnlyOptions]({% link _docs/api/terminal/interfaces/iterminalinitonlyoptions.md %})
@@ -67,7 +68,7 @@ to be stable and consumed by external programs.
 
 Ƭ **FontWeight**: *"normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | number*
 
-*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L16)*
+*Defined in [xterm.d.ts:16](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L16)*
 
 A string or number representing text font weight.
 
@@ -77,6 +78,6 @@ ___
 
 Ƭ **LogLevel**: *"trace" | "debug" | "info" | "warn" | "error" | "off"*
 
-*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L21)*
+*Defined in [xterm.d.ts:21](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L21)*
 
 A string representing log level.

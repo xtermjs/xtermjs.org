@@ -25,6 +25,7 @@ Terminal modes as set by SM/DECSET.
 * [originMode]({% link _docs/api/terminal/interfaces/imodes.md %}#readonly-originmode)
 * [reverseWraparoundMode]({% link _docs/api/terminal/interfaces/imodes.md %}#readonly-reversewraparoundmode)
 * [sendFocusMode]({% link _docs/api/terminal/interfaces/imodes.md %}#readonly-sendfocusmode)
+* [synchronizedOutputMode]({% link _docs/api/terminal/interfaces/imodes.md %}#readonly-synchronizedoutputmode)
 * [wraparoundMode]({% link _docs/api/terminal/interfaces/imodes.md %}#readonly-wraparoundmode)
 
 ## Properties
@@ -33,7 +34,7 @@ Terminal modes as set by SM/DECSET.
 
 • **applicationCursorKeysMode**: *boolean*
 
-*Defined in [xterm.d.ts:1869](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1869)*
+*Defined in [xterm.d.ts:1911](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1911)*
 
 Application Cursor Keys (DECCKM): `CSI ? 1 h`
 
@@ -43,7 +44,7 @@ ___
 
 • **applicationKeypadMode**: *boolean*
 
-*Defined in [xterm.d.ts:1873](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1873)*
+*Defined in [xterm.d.ts:1915](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1915)*
 
 Application Keypad Mode (DECNKM): `CSI ? 6 6 h`
 
@@ -53,7 +54,7 @@ ___
 
 • **bracketedPasteMode**: *boolean*
 
-*Defined in [xterm.d.ts:1877](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1877)*
+*Defined in [xterm.d.ts:1919](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1919)*
 
 Bracketed Paste Mode: `CSI ? 2 0 0 4 h`
 
@@ -63,7 +64,7 @@ ___
 
 • **insertMode**: *boolean*
 
-*Defined in [xterm.d.ts:1881](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1881)*
+*Defined in [xterm.d.ts:1923](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1923)*
 
 Insert Mode (IRM): `CSI 4 h`
 
@@ -73,7 +74,7 @@ ___
 
 • **mouseTrackingMode**: *"none" | "x10" | "vt200" | "drag" | "any"*
 
-*Defined in [xterm.d.ts:1890](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1890)*
+*Defined in [xterm.d.ts:1932](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1932)*
 
 Mouse Tracking, this can be one of the following:
 - none: This is the default value and can be reset with DECRST
@@ -88,7 +89,7 @@ ___
 
 • **originMode**: *boolean*
 
-*Defined in [xterm.d.ts:1894](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1894)*
+*Defined in [xterm.d.ts:1936](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1936)*
 
 Origin Mode (DECOM): `CSI ? 6 h`
 
@@ -98,7 +99,7 @@ ___
 
 • **reverseWraparoundMode**: *boolean*
 
-*Defined in [xterm.d.ts:1898](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1898)*
+*Defined in [xterm.d.ts:1940](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1940)*
 
 Reverse-wraparound Mode: `CSI ? 4 5 h`
 
@@ -108,9 +109,22 @@ ___
 
 • **sendFocusMode**: *boolean*
 
-*Defined in [xterm.d.ts:1902](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1902)*
+*Defined in [xterm.d.ts:1944](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1944)*
 
 Send FocusIn/FocusOut events: `CSI ? 1 0 0 4 h`
+
+___
+
+### `Readonly` synchronizedOutputMode
+
+• **synchronizedOutputMode**: *boolean*
+
+*Defined in [xterm.d.ts:1951](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1951)*
+
+Synchronized Output Mode: `CSI ? 2 0 2 6 h`
+
+When enabled, output is buffered and only rendered when the mode is
+disabled, allowing for atomic screen updates without tearing.
 
 ___
 
@@ -118,6 +132,6 @@ ___
 
 • **wraparoundMode**: *boolean*
 
-*Defined in [xterm.d.ts:1906](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1906)*
+*Defined in [xterm.d.ts:1955](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1955)*
 
 Auto-Wrap Mode (DECAWM): `CSI ? 7 h`

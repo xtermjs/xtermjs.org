@@ -26,7 +26,7 @@ A range within a buffer.
 
 • **end**: *[IBufferCellPosition]({% link _docs/api/terminal/interfaces/ibuffercellposition.md %})*
 
-*Defined in [xterm.d.ts:1440](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1440)*
+*Defined in [xterm.d.ts:1482](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1482)*
 
 The end position of the range.
 
@@ -36,6 +36,6 @@ ___
 
 • **start**: *[IBufferCellPosition]({% link _docs/api/terminal/interfaces/ibuffercellposition.md %})*
 
-*Defined in [xterm.d.ts:1435](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L1435)*
+*Defined in [xterm.d.ts:1477](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L1477)*
 
 The start position of the range.

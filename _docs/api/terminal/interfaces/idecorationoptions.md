@@ -31,7 +31,7 @@ layout: docs
 
 • **anchor**? : *"right" | "left"*
 
-*Defined in [xterm.d.ts:553](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L553)*
+*Defined in [xterm.d.ts:566](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L566)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **backgroundColor**? : *string*
 
-*Defined in [xterm.d.ts:576](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L576)*
+*Defined in [xterm.d.ts:589](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L589)*
 
 The background color of the cell(s). When 2 decorations both set the
 foreground color the last registered decoration will be used. Only the
@@ -51,7 +51,7 @@ ___
 
 • **foregroundColor**? : *string*
 
-*Defined in [xterm.d.ts:583](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L583)*
+*Defined in [xterm.d.ts:596](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L596)*
 
 The foreground color of the cell(s). When 2 decorations both set the
 foreground color the last registered decoration will be used. Only the
@@ -63,7 +63,7 @@ ___
 
 • **height**? : *number*
 
-*Defined in [xterm.d.ts:569](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L569)*
+*Defined in [xterm.d.ts:582](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L582)*
 
 The height of the decoration in cells, defaults to 1.
 
@@ -73,14 +73,11 @@ ___
 
 • **layer**? : *"bottom" | "top"*
 
-*Defined in [xterm.d.ts:593](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L593)*
+*Defined in [xterm.d.ts:603](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L603)*
 
 What layer to render the decoration at when [backgroundColor]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#optional-readonly-backgroundcolor) or
 [foregroundColor]({% link _docs/api/terminal/interfaces/idecorationoptions.md %}#optional-readonly-foregroundcolor) are used. `'bottom'` will render under the
 selection, `'top`' will render above the selection\*.
-
-*\* The selection will render on top regardless of layer on the canvas
-renderer due to how it renders selection separately.*
 
 ___
 
@@ -88,7 +85,7 @@ ___
 
 • **marker**: *[IMarker]({% link _docs/api/terminal/interfaces/imarker.md %})*
 
-*Defined in [xterm.d.ts:547](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L547)*
+*Defined in [xterm.d.ts:560](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L560)*
 
 The line in the terminal where
 the decoration will be displayed
@@ -99,11 +96,11 @@ ___
 
 • **overviewRulerOptions**? : *[IDecorationOverviewRulerOptions]({% link _docs/api/terminal/interfaces/idecorationoverviewruleroptions.md %})*
 
-*Defined in [xterm.d.ts:602](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L602)*
+*Defined in [xterm.d.ts:612](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L612)*
 
 When defined, renders the decoration in the overview ruler to the right
-of the terminal. [ITerminalOptions.overviewRulerWidth]({% link _docs/api/terminal/interfaces/iterminaloptions.md %}#optional-overviewrulerwidth) must be set
-in order to see the overview ruler.
+of the terminal. [IOverviewRulerOptions.width]({% link _docs/api/terminal/interfaces/ioverviewruleroptions.md %}#optional-width) must be set in order
+to see the overview ruler.
 
 **`param`** The color of the decoration.
 
@@ -115,7 +112,7 @@ ___
 
 • **width**? : *number*
 
-*Defined in [xterm.d.ts:564](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L564)*
+*Defined in [xterm.d.ts:577](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L577)*
 
 The width of the decoration in cells, defaults to 1.
 
@@ -125,6 +122,6 @@ ___
 
 • **x**? : *number*
 
-*Defined in [xterm.d.ts:558](https://github.com/xtermjs/xterm.js/blob/5.5.0/typings/xterm.d.ts#L558)*
+*Defined in [xterm.d.ts:571](https://github.com/xtermjs/xterm.js/blob/6.0.0/typings/xterm.d.ts#L571)*
 
 The x position offset relative to the anchor
