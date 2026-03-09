@@ -4,7 +4,6 @@ _site
 
 # Ruby/Jekyll
 .bundle/
-vendor/
 
 # Node.js
 node_modules/
