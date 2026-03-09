@@ -7,6 +7,7 @@
   "repository": "https://github.com/xtermjs/xtermjs.org",
   "license": "MIT",
   "scripts": {
+    "postinstall": "node ./_scripts/postinstall.mjs",
     "build:docs": "gulp docs",
     "start": "bundle exec jekyll serve --force_polling"
   },
