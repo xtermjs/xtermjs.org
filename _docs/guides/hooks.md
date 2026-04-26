@@ -20,7 +20,7 @@ The following guide gives a short overview on how to extend xterm.js' functional
 
 ### What is hookable?
 
-xterm.js currently exposes parser hooks for these terminal sequences types:
+xterm.js currently exposes parser hooks for these terminal sequence types:
 
 - `ESC` type via `parser.registerEscHandler`
   - format: `ESC <optional intermediate bytes> <final byte>`
