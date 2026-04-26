@@ -20,15 +20,35 @@ The following guide gives a short overview on how to extend xterm.js' functional
 
 ### What is hookable?
 
-xterm.js currently exposes parser hooks for these terminal sequences types:
+xterm.js currently exposes parser hooks for these terminal sequence types:
 
 - `ESC` type via `parser.registerEscHandler`
+  - format: `ESC <optional intermediate bytes> <final byte>`
+  - intermediates: up to 2 bytes in `\x20 .. \x2F`
+  - final: one byte in `\x30 .. \x7E`
 - `CSI` type via `parser.registerCsiHandler`
+  - format: `CSI <optional prefix byte> P1 ; P2 ; ... <optional intermediate bytes> <final byte>`
+  - prefix: one byte in `\x3C .. \x3F`
+  - intermediates: up to 2 bytes in `\x20 .. \x2F`
+  - final: one byte in `\x40 .. \x7E`
 - `DCS` type via `parser.registerDcsHandler`
+  - format: `DCS <optional prefix byte> P1 ; P2 ; ... <optional intermediate bytes> <final byte> <payload> ST`
+  - prefix: one byte in `\x3C .. \x3F`
+  - intermediates: up to 2 bytes in `\x20 .. \x2F`
+  - final: one byte in `\x40 .. \x7E`
+  - passed on payload: bytes in `\x00 .. \x7E`, `\xA0 - \U10FFFF`, except ESC, SUB, CAN
 - `OSC` type via `parser.registerOscHandler`
+  - format: `OSC <identifier> ; <payload> ST`
+  - identifier: decimal digits
+  - passed on payload: bytes in `\x20 .. \x7F`, `\xA0 - \U10FFFF`
+- `APC` type via `parser.registerApcHandler`
+  - format: `APC <optional intermediate bytes> <final byte> <payload> ST`
+  - intermediates: up to 2 bytes in `\x20 .. \x2F`
+  - final: one byte in `\x30 .. \x7E`
+  - passed on payload: bytes in `\x08 .. \x0E`, `\x20 .. \x7E`, `\xA0 - \U10FFFF`
 
 See the [list of supported sequences]({{site.baseurl}}/docs/api/vtfeatures/) to get an idea, which functionality can be
-intercepted or altered by parser hooks. Hooks for single byte control functions (C0/C1) and `PRINT` are currently not exposed. `PM`, `SOS` and `APC`, though being recognized on parser level, are not supported.
+intercepted or altered by parser hooks. Hooks for single byte control functions (C0/C1) and `PRINT` are currently not exposed. `PM` and `SOS`, though being recognized on parser level, are not supported.
 
 
 ### Lifecycle / Execution Context of Parser Hooks
@@ -204,7 +224,7 @@ const midiHandler = term.registerDcsHandler({prefix: '?', final: 'a'}, (params, 
   // sanity checks (never skip that step, as the data might be malicious)
   if (isValidData(midiData)) {
     // some midi player you wrote before
-    midiPlayer.play(pitch, atob(data));
+    midiPlayer.play(pitch, midiData);
   }  
 });
 ```
